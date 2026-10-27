@@ -1,0 +1,432 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-27-circuit-breaker",
+ "duration": 92.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "nome,": "nome:",
+   "Imagina,": "Imagina:"
+  }
+ },
+ "cuts": [
+  3.52,
+  23.75,
+  38.05,
+  47.1,
+  68.5,
+  82.35
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.52
+  },
+  {
+   "id": "celular",
+   "from": 3.52,
+   "to": 23.75
+  },
+  {
+   "id": "disjuntor",
+   "from": 23.75,
+   "to": 38.05
+  },
+  {
+   "id": "regras",
+   "from": 38.05,
+   "to": 47.1
+  },
+  {
+   "id": "linha_do_tempo",
+   "from": 47.1,
+   "to": 68.5
+  },
+  {
+   "id": "v_2008",
+   "from": 68.5,
+   "to": 82.35
+  },
+  {
+   "id": "escolha",
+   "from": 82.35,
+   "to": 92.0
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-timer",
+   "kind": "timer",
+   "start": "30:00",
+   "count_s": 6,
+   "label": "PREGÃO SUSPENSO",
+   "from": 15.6,
+   "to": 20.9
+  },
+  {
+   "id": "ov-today",
+   "kind": "text",
+   "text": "HOJE · 26/10/2026",
+   "from": 20.95,
+   "to": 22.45
+  },
+  {
+   "id": "ov-title",
+   "kind": "title",
+   "text": "CIRCUIT\nBREAKER",
+   "from": 22.6,
+   "to": 23.7
+  },
+  {
+   "id": "ov-r1",
+   "kind": "chip",
+   "style": "orange",
+   "text": "−10% → PAUSA DE 30 MIN",
+   "from": 41.08,
+   "to": 47.05
+  },
+  {
+   "id": "ov-r2",
+   "kind": "chip",
+   "style": "orange",
+   "text": "−15% → MAIS 1 HORA",
+   "from": 42.92,
+   "to": 47.05
+  },
+  {
+   "id": "ov-r3",
+   "kind": "chip",
+   "style": "red",
+   "text": "−20% → PODE FECHAR O DIA",
+   "from": 44.6,
+   "to": 47.05
+  },
+  {
+   "id": "ov-17",
+   "kind": "stat",
+   "big": "−17%",
+   "label": "NA MÍNIMA DO DIA",
+   "from": 65.2,
+   "to": 66.85
+  },
+  {
+   "id": "ov-usd",
+   "kind": "stat",
+   "big": "+8,4%",
+   "label": "DÓLAR NO DIA",
+   "from": 66.9,
+   "to": 68.5
+  },
+  {
+   "id": "ov-src1",
+   "kind": "source",
+   "text": "Fonte: CNN Brasil e Exame, 26/10/2026",
+   "from": 65.45,
+   "to": 68.5
+  },
+  {
+   "id": "ov-82",
+   "kind": "stat",
+   "big": "+82%",
+   "label": "IBOVESPA EM 2009",
+   "from": 76.8,
+   "to": 79.75
+  },
+  {
+   "id": "ov-src2",
+   "kind": "source",
+   "text": "Fonte: BM&FBovespa (B3), 2009: +82,7%",
+   "from": 76.9,
+   "to": 79.75
+  },
+  {
+   "id": "ov-q",
+   "kind": "question",
+   "text": "O que você faria?",
+   "sub": "@analogias.br",
+   "from": 82.5,
+   "to": 92.0
+  },
+  {
+   "id": "ov-disc",
+   "kind": "source",
+   "text": "Não é recomendação de investimento.",
+   "from": 83.0,
+   "to": 92.0
+  },
+  {
+   "id": "ov-cta",
+   "kind": "cta",
+   "html": "Comenta: <b>VENDO</b> ou <b>COMPRO</b>",
+   "from": 89.95,
+   "to": 92.0
+  }
+ ],
+ "sfx": [
+  [
+   0.3,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   1.66,
+   "impact-bass-1.mp3",
+   -5
+  ],
+  [
+   1.7,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   3.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   4.9,
+   "notification.mp3",
+   -14
+  ],
+  [
+   7.64,
+   "glitch-2.mp3",
+   -18
+  ],
+  [
+   11.86,
+   "click.mp3",
+   -7
+  ],
+  [
+   12.3,
+   "error.mp3",
+   -12
+  ],
+  [
+   14.0,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   17.12,
+   "riser.mp3",
+   -22
+  ],
+  [
+   22.6,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   23.7,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   27.06,
+   "click.mp3",
+   -5
+  ],
+  [
+   27.08,
+   "glitch-1.mp3",
+   -15
+  ],
+  [
+   27.08,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   33.62,
+   "click.mp3",
+   -5
+  ],
+  [
+   33.64,
+   "glitch-1.mp3",
+   -15
+  ],
+  [
+   33.64,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   36.2,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   38.0,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   39.34,
+   "pop.mp3",
+   -12
+  ],
+  [
+   42.3,
+   "pop.mp3",
+   -12
+  ],
+  [
+   44.05,
+   "pop.mp3",
+   -12
+  ],
+  [
+   45.35,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   47.05,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   52.34,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   54.08,
+   "pop.mp3",
+   -19
+  ],
+  [
+   54.25,
+   "pop.mp3",
+   -19
+  ],
+  [
+   54.42,
+   "pop.mp3",
+   -19
+  ],
+  [
+   54.59,
+   "pop.mp3",
+   -19
+  ],
+  [
+   54.76,
+   "pop.mp3",
+   -19
+  ],
+  [
+   54.93,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.02,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.19,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.36,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.53,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.7,
+   "pop.mp3",
+   -19
+  ],
+  [
+   58.87,
+   "pop.mp3",
+   -19
+  ],
+  [
+   60.98,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   62.6,
+   "key-press.mp3",
+   -14
+  ],
+  [
+   65.4,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   66.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   68.45,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   68.6,
+   "whoosh-cinematic.mp3",
+   -16
+  ],
+  [
+   71.96,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   75.86,
+   "riser.mp3",
+   -20
+  ],
+  [
+   76.8,
+   "ping.mp3",
+   -14
+  ],
+  [
+   79.86,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   82.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   84.96,
+   "click.mp3",
+   -6
+  ],
+  [
+   87.6,
+   "click.mp3",
+   -6
+  ],
+  [
+   89.95,
+   "ping.mp3",
+   -15
+  ]
+ ]
+}

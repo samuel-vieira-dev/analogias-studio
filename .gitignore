@@ -1,0 +1,17 @@
+node_modules/
+__pycache__/
+.DS_Store
+*.f32
+
+# gerado a cada vídeo (recriado pelos tools/)
+videos/*/build/
+videos/*/qa/
+videos/*/preview/
+videos/*/out/
+tests/*/build/
+tests/*/qa/
+tests/*/preview/
+
+# áudio pesado fica fora do git; os tempos das palavras ficam
+videos/*/audio/*
+!videos/*/audio/words.json

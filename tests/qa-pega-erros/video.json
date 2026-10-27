@@ -1,0 +1,35 @@
+{
+ "_doc": "Teste do QA: cada cena repete de propósito um defeito do circuit breaker V2. Ver tools/selftest.sh.",
+ "slug": "qa-pega-erros",
+ "duration": 8.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "cuts": [
+  2,
+  4,
+  6
+ ],
+ "overlays": [
+  {
+   "id": "ov-src",
+   "kind": "source",
+   "text": "Fonte: CNN Brasil, 26/10/2026",
+   "from": 4.1,
+   "to": 6.0
+  },
+  {
+   "id": "ov-17",
+   "kind": "stat",
+   "big": "−17%",
+   "label": "NA MÍNIMA DO DIA",
+   "from": 6.1,
+   "to": 8.0
+  }
+ ],
+ "sfx": []
+}

@@ -1,0 +1,30 @@
+{
+  "_doc": "Área segura única para Reels, TikTok e Shorts (1080x1920). É requisito do kit, não input do vídeo: build, câmera 3D e QA leem daqui.",
+  "canvas": { "w": 1080, "h": 1920, "fps": 30 },
+  "platform_margins": {
+    "_doc": "Faixas (px) que cada app cobre com a própria interface. A área única usa o pior caso de cada lado.",
+    "reels":   { "top": 220, "bottom": 420, "left": 35, "right": 170 },
+    "tiktok":  { "top": 108, "bottom": 322, "left": 40, "right": 190 },
+    "shorts":  { "top": 120, "bottom": 360, "left": 0,  "right": 96 },
+    "unified": { "top": 220, "bottom": 420, "left": 60, "right": 190 }
+  },
+  "safe": { "x": 60, "y": 220, "w": 830, "h": 1280 },
+  "zones": {
+    "source":     { "x": 60,  "y": 220,  "w": 830, "h": 66,   "_doc": "Fontes, referências e avisos: alinhados à direita no topo da área segura (canto superior direito), 1 linha, 28 px." },
+    "headline":   { "x": 60,  "y": 300,  "w": 830, "h": 260,  "_doc": "Títulos, números grandes, regras, pergunta final. Nunca em cima do 3D." },
+    "stage":      { "x": 60,  "y": 580,  "w": 830, "h": 750,  "_doc": "Palco 3D quando a faixa headline tem texto." },
+    "stage-tall": { "x": 60,  "y": 300,  "w": 830, "h": 1030, "_doc": "Palco 3D quando a faixa headline está vazia." },
+    "caption":    { "x": 60,  "y": 1366, "w": 830, "h": 110,  "_doc": "Legenda: 1 linha, base em y=1476 (24 px acima do fim da área segura)." }
+  },
+  "caption": { "bottom": 1476, "font_px": 58, "max_chars": 20, "max_words": 4, "pad_x": 30, "pad_y": 14 },
+  "camera": { "_doc": "Padrões do CAM.pose (engine/core.js). pad = folga mínima em px entre o objeto e a borda da zona.", "pad_px": 28, "fov": 40, "from": [0, 0.35, 1] },
+  "qa": {
+    "_doc": "Regras do tools/qa.cjs. Rodar antes de qualquer render.",
+    "step_s": 0.2,
+    "zone_tol_px": 4,
+    "text_hero_gap_px": 10,
+    "solid_overlap_ratio": 0.03,
+    "contact_tol": 0.04,
+    "decoration_selectors": ["#ov-flash", "#ov-prog-track", "#ov-prog"]
+  }
+}

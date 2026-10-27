@@ -1,0 +1,38 @@
+# Perfil fixo do canal. Tudo aqui vale para todos os vídeos; o input por vídeo fica em videos/<slug>/brief.yaml.
+canal:
+  handle: "@analogias.br"
+  nome: "Samuel Vieira"
+  idioma: pt-BR
+  publico: "brasileiro leigo, 20 a 45 anos, rolando o feed"
+  plataformas: [reels, tiktok, shorts]
+
+voz:
+  provedor: elevenlabs            # conector ElevenLabs (creative_generate_speech)
+  voice_id: qPfM2laM0pRL4rrZtBGl  # Sandro Dutra - Articulated and Clear
+  modelo: eleven_v4
+  takes: 2                        # gera 2 e escolhe pela transcrição
+  ritmo_max: 1.06                 # aceleração máxima permitida para caber na duração
+
+video:
+  duracao_alvo_s: 90
+  fps: 30
+  formato: 1080x1920
+  cauda_s: 2                      # segura o último quadro (CTA) por 2 s após a fala
+
+estilo:
+  fundo: "#160e0a"
+  laranja: "#ff6a2b"
+  destaque_legenda: "#ff5a1f"
+  vermelho: "#e0261b"
+  verde: "#2fae66"
+  creme: "#f4e8da"
+  fonte: Inter
+
+audio:
+  lufs: -14
+  true_peak: -1.5
+  musica: false                   # sem trilha: o Instagram permite adicionar na postagem
+
+entrega:
+  mac: "~/Movies/reels"           # pasta Filmes/reels
+  nome_arquivo: "{slug}.mp4"

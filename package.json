@@ -1,0 +1,13 @@
+{
+  "name": "analogias-studio",
+  "private": true,
+  "description": "Kit de produção dos Reels 3D narrados do @analogias.br",
+  "scripts": {
+    "setup": "bash tools/setup.sh",
+    "selftest": "bash tools/selftest.sh"
+  },
+  "devDependencies": {
+    "hyperframes": "0.8.206",
+    "playwright": "^1.55.0"
+  }
+}
