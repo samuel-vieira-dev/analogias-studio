@@ -1,6 +1,6 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — pesquisa e checa os fatos, oferece 5 hooks e 3 perguntas finais, escreve o roteiro e pede aprovação, gera a voz no ElevenLabs, monta as cenas 3D no kit analogias-studio, passa o QA de área segura e entrega o MP4.
+description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com QA de área segura e MP4.
 ---
 
 # Reel 3D narrado — @analogias.br
