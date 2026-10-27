@@ -1,0 +1,28 @@
+# Fatos — "Governo recua no fim da escala 6x1?" (2026-10-27)
+
+Checagem feita em 27/10/2026. Status `OK` = confirmado em duas fontes (uma primária quando existe). `Conferir — fora da fala` = não entra na narração.
+
+| # | Fato | Dado | Fonte | Status |
+| --- | --- | --- | --- | --- |
+| 1 | Senado aprovou a PEC 221/2019 (fim da 6x1) | 14/10/2026; 2º turno 75 a 1 (1º turno 76 a 1) | [Agência Brasil, 14/10](https://agenciabrasil.ebc.com.br/radioagencia-nacional/politica/audio/2026-10/senado-aprova-fim-da-escala-6x1-e-pec-vai-promulgacao) · [Senado Notícias](https://www12.senado.leg.br/noticias/materias/2026/10/14/senado-aprova-fim-da-6x1-em-primeiro-turno) | OK |
+| 2 | Câmara já tinha aprovado | maio de 2026 | Agência Brasil, 14/10 · [Senado Notícias, 13/10](https://www12.senado.leg.br/noticias/materias/2026/10/13/pec-do-fim-da-6x1-pode-ser-votada-nesta-quarta-apos-quinta-sessao-de-discussao) | OK |
+| 3 | Promulgada como Emenda Constitucional 141 | 16/10/2026 (DOU, edição extra), nove dias antes do 2º turno | [Planalto — EC 141](https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc141.htm) · [ND+](https://ndmais.com.br/politica/fim-da-escala-6x1-lula-quando-comeca-a-valer/) | OK |
+| 4 | Regra nova | 2 dias de repouso remunerado por semana (um preferencialmente no domingo); máximo 8 h/dia e 40 h/semana; sem redução de salário | EC 141, art. 1º e 2º · Senado Notícias, 13/10 | OK |
+| 5 | Transição | 2 meses após a publicação (16/12/2026): 42 h/semana e segunda folga; 1 ano depois (16/12/2027): 40 h | EC 141, arts. 6º e 10 · ND+ | OK |
+| 6 | A própria emenda já tem "portas" | §2º: folga compensada por acordo coletivo, com média de 2 folgas por semana no mês e ao menos 1 a cada semana · §3º: "lei poderá dispor" sobre regimes diferenciados | EC 141, art. 1º · Senado Notícias, 13/10 · CNN Brasil, 14/10 | OK |
+| 7 | Outras exceções já no texto | diploma superior + salário ≥ 2,5× teto do INSS (≈ R$ 21,1 mil) fora do controle de jornada; servidores públicos fora; terceirizados do setor público dependem de aditivo (até 1 ano) | EC 141, arts. 8º e 9º · Agência Brasil | OK (fora da fala, detalhe demais) |
+| 8 | Lula reeleito no 2º turno | 25/10/2026, 51,79% dos votos válidos, contra Flávio Bolsonaro | [TRE-SP](https://www.tre-sp.jus.br/comunicacao/noticias/2026/Outubro/eleicoes-2026-lula-e-reeleito-presidente-da-republica-confira-resultado-do-2o-turno-em-sp) · [InfoMoney](https://www.infomoney.com.br/politica/ao-vivo-eleicoes-segundo-turno-2026/) | OK |
+| 9 | Regulamentação adiada para depois do 2º turno | Casa Civil prepara decreto (negociação sindical) + projeto de lei complementar para escalas diferenciadas (ex.: petroleiros embarcados, aeroviários); Teresa Leitão (líder do governo no Senado) diz que o projeto tratará das exceções | Agência O Globo, via [Tribuna do Sertão, 22/10](https://www.tribunadosertao.com.br/financas/2026/10/22/1002835-fim-da-escala-6x1-governo-lula-adia-regulamentacao-para-apos-o-segundo-turno) · [Visão da Direita, 26/10](https://www.visaodadireita.com.br/passada-a-eleicao-governo-lula-recua-e-vai-manter-escala-6x1-para-varios-setores/) | OK, atribuído ("segundo O Globo") |
+| 10 | Nova PEC com exceções, guardada para depois do 2º turno | aliados do governo; setores citados: petroleiros embarcados, pilotos e aeronautas; Alcolumbre confirmou "ajustes"; Omar Aziz (relator): tratar "alguns setores" rápido; Eduardo Braga (PEC paralela) nega mexer nas duas folgas, cita risco de custo e inflação | coluna do Estadão, via Visão da Direita (26/10) e [ContraFatos (27/10)](https://www.contrafatos.com.br/apos-a-eleicao-governo-lula-recua-e-prepara-excecoes-ao-fim-da-escala-6x1) | OK só atribuído ("segundo o Estadão"); coluna original não acessível |
+| 11 | Não há revogação nem lista oficial | governo não anunciou revogação; nenhuma lista oficial de setores excluídos | ND+ · ContraFatos · [Correio do Interior, 27/10](https://www.correiodointerior.com.br/governo-lula-prepara-flexibilizacao-no-fim-da-escala-6x1-para-setores-estrategicos/) | OK |
+| 12 | Quem está na 6x1 hoje | quase 15 milhões (MTE: 14,8 mi em mar/2026, eSocial; 14,9 mi em mai/2026) | [Agência Gov via Diário do Comércio, 12/03](https://diariodocomercio.com.br/economia/escala-6x1-atinge-empregos-brasil-aponta-levantamento/) · MTE via O Povo, 26/05 | OK ("quase quinze milhões") |
+| 13 | 1988: última redução | Constituinte cortou de 48 para 44 h; as 40 h foram derrotadas, 44 h foi o meio-termo (emenda Gastone Righi) | [Agência Senado — Arquivo S](https://www12.senado.leg.br/noticias/especiais/arquivo-s/de-volta-a-pauta-legislativa-jornada-de-trabalho-causou-embates-na-constituinte) · [Congresso em Foco](https://www.congressoemfoco.com.br/noticia/123204/como-o-congresso-reduziu-a-jornada-de-trabalho-pela-ultima-vez) | OK |
+| 14 | Setores "saúde, segurança, transporte rodoviário" nas exceções | aparecem só em blogs, sem fonte primária | Correio do Interior, blogs | Conferir — fora da fala |
+| 15 | Data de início "15/12" | blogs dizem 15/12; a emenda conta 2 meses de 16/10 → 16/12 | EC 141 | usar "dezembro" / 16/12 |
+| 16 | Divisor da hora 220 → 200 no decreto | detalhe técnico de hora extra | Agência O Globo (via Tribuna do Sertão) | Conferir — fora da fala |
+
+## Ângulo (neutro)
+
+- O que é fato: a regra está na Constituição, ninguém revogou. O que está em jogo: o tamanho das exceções, que o próprio texto permite por lei, e que foram deixadas para depois da eleição.
+- Lado A: setor que não pode parar (plataforma no mar, avião, hospital) precisa de escala própria; empresas alertam para custo e inflação.
+- Lado B: promessa vendida inteira na campanha e "desidratada" depois do voto.

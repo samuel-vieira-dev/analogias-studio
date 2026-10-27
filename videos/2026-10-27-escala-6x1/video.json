@@ -1,0 +1,495 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-27-escala-6x1",
+ "duration": 95.3,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "às": "as",
+   "embaixo,": "embaixo:",
+   "circulam.": "circulam:",
+   "imagina,": "imagina:",
+   "diz,": "diz:"
+  }
+ },
+ "cuts": [
+  3.1,
+  12.15,
+  25.1,
+  30.3,
+  60.75,
+  69.6,
+  77.95,
+  85.5
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.1
+  },
+  {
+   "id": "feed_constituicao",
+   "from": 3.1,
+   "to": 12.15
+  },
+  {
+   "id": "regras",
+   "from": 12.15,
+   "to": 25.1
+  },
+  {
+   "id": "porta",
+   "from": 25.1,
+   "to": 30.3
+  },
+  {
+   "id": "placa",
+   "from": 30.3,
+   "to": 60.75
+  },
+  {
+   "id": "1988",
+   "from": 60.75,
+   "to": 69.6
+  },
+  {
+   "id": "mar",
+   "from": 69.6,
+   "to": 77.95
+  },
+  {
+   "id": "voto",
+   "from": 77.95,
+   "to": 85.5
+  },
+  {
+   "id": "escolha",
+   "from": 85.5,
+   "to": 95.3
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-hook",
+   "kind": "title",
+   "text": "ESCALA 6x1",
+   "from": 0.1,
+   "to": 3.05
+  },
+  {
+   "id": "ov-promul",
+   "kind": "text",
+   "text": "PROMULGADA EM 16/10",
+   "from": 8.8,
+   "to": 10.15
+  },
+  {
+   "id": "ov-src-ec",
+   "kind": "source",
+   "text": "Fonte: EC 141/2026, DOU de 16/10/2026",
+   "from": 8.8,
+   "to": 12.1
+  },
+  {
+   "id": "ov-recuo",
+   "kind": "title",
+   "text": "QUE RECUO\nÉ ESSE?",
+   "from": 10.2,
+   "to": 12.1
+  },
+  {
+   "id": "ov-r1",
+   "kind": "chip",
+   "style": "orange",
+   "text": "DEZ/26: 2 FOLGAS E 42 h",
+   "from": 14.84,
+   "to": 21.7
+  },
+  {
+   "id": "ov-r2",
+   "kind": "chip",
+   "style": "orange",
+   "text": "DEZ/27: 40 h",
+   "from": 18.44,
+   "to": 21.7
+  },
+  {
+   "id": "ov-r3",
+   "kind": "chip",
+   "style": "dark",
+   "text": "SALÁRIO NÃO PODE CAIR",
+   "from": 20.26,
+   "to": 21.7
+  },
+  {
+   "id": "ov-15",
+   "kind": "stat",
+   "big": "15 MILHÕES",
+   "label": "QUASE ISSO NA 6x1 HOJE",
+   "from": 21.82,
+   "to": 25.05
+  },
+  {
+   "id": "ov-src-mte",
+   "kind": "source",
+   "text": "Fonte: Ministério do Trabalho (eSocial), 2026",
+   "from": 21.82,
+   "to": 25.05
+  },
+  {
+   "id": "ov-emenda",
+   "kind": "text",
+   "text": "NOVA EMENDA\nCOM EXCEÇÕES",
+   "from": 43.66,
+   "to": 49.95
+  },
+  {
+   "id": "ov-src-jornais",
+   "kind": "source",
+   "text": "Fonte: Estadão e O Globo, out/2026",
+   "from": 43.66,
+   "to": 60.6
+  },
+  {
+   "id": "ov-reg",
+   "kind": "text",
+   "text": "REGULAMENTAÇÃO\nADIADA",
+   "from": 50.02,
+   "to": 53.3
+  },
+  {
+   "id": "ov-lista",
+   "kind": "title",
+   "text": "LISTA OFICIAL?\nNÃO EXISTE",
+   "from": 58.42,
+   "to": 60.65
+  },
+  {
+   "id": "ov-1988",
+   "kind": "stat",
+   "big": "48 → 44 h",
+   "label": "CONSTITUINTE DE 1988",
+   "from": 62.28,
+   "to": 69.5
+  },
+  {
+   "id": "ov-src-senado",
+   "kind": "source",
+   "text": "Fonte: Agência Senado",
+   "from": 62.28,
+   "to": 69.5
+  },
+  {
+   "id": "ov-q",
+   "kind": "question",
+   "text": "Quem decide\nas exceções?",
+   "sub": "@analogias.br",
+   "from": 85.62,
+   "to": 95.3
+  },
+  {
+   "id": "ov-cta",
+   "kind": "cta",
+   "html": "Comenta: <b>CONGRESSO</b> ou <b>ACORDO</b>",
+   "from": 93.35,
+   "to": 95.3
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   0.45,
+   "pop.mp3",
+   -14
+  ],
+  [
+   1.42,
+   "impact-bass-1.mp3",
+   -5
+  ],
+  [
+   1.44,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   3.07,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   3.4,
+   "notification.mp3",
+   -16
+  ],
+  [
+   5.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.86,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   10.22,
+   "impact-bass-2.mp3",
+   -13
+  ],
+  [
+   12.12,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   14.86,
+   "pop.mp3",
+   -12
+  ],
+  [
+   15.85,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   17.2,
+   "click.mp3",
+   -10
+  ],
+  [
+   19.58,
+   "click.mp3",
+   -10
+  ],
+  [
+   20.7,
+   "ping.mp3",
+   -16
+  ],
+  [
+   21.35,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   21.9,
+   "pop.mp3",
+   -19
+  ],
+  [
+   22.2,
+   "pop.mp3",
+   -19
+  ],
+  [
+   22.5,
+   "pop.mp3",
+   -19
+  ],
+  [
+   22.8,
+   "pop.mp3",
+   -19
+  ],
+  [
+   25.07,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   26.42,
+   "click.mp3",
+   -9
+  ],
+  [
+   26.5,
+   "sparkle.mp3",
+   -16
+  ],
+  [
+   30.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   30.45,
+   "pop.mp3",
+   -12
+  ],
+  [
+   33.72,
+   "pop.mp3",
+   -14
+  ],
+  [
+   34.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   38.7,
+   "pop.mp3",
+   -18
+  ],
+  [
+   39.4,
+   "pop.mp3",
+   -18
+  ],
+  [
+   40.1,
+   "pop.mp3",
+   -18
+  ],
+  [
+   40.8,
+   "pop.mp3",
+   -18
+  ],
+  [
+   42.1,
+   "whoosh.mp3",
+   -18
+  ],
+  [
+   42.65,
+   "pop.mp3",
+   -14
+  ],
+  [
+   43.05,
+   "pop.mp3",
+   -16
+  ],
+  [
+   45.8,
+   "pop.mp3",
+   -16
+  ],
+  [
+   47.25,
+   "click-soft.mp3",
+   -10
+  ],
+  [
+   48.0,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   51.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   52.1,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   55.0,
+   "key-press.mp3",
+   -12
+  ],
+  [
+   56.7,
+   "key-press.mp3",
+   -12
+  ],
+  [
+   57.4,
+   "key-press.mp3",
+   -12
+  ],
+  [
+   58.42,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   60.72,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   60.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   65.1,
+   "pop.mp3",
+   -14
+  ],
+  [
+   66.5,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   67.5,
+   "pop.mp3",
+   -12
+  ],
+  [
+   69.57,
+   "whoosh-cinematic.mp3",
+   -16
+  ],
+  [
+   74.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   77.3,
+   "ping.mp3",
+   -16
+  ],
+  [
+   77.92,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   80.0,
+   "click-soft.mp3",
+   -10
+  ],
+  [
+   84.12,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   85.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   88.92,
+   "click.mp3",
+   -6
+  ],
+  [
+   92.34,
+   "click.mp3",
+   -6
+  ],
+  [
+   93.35,
+   "ping.mp3",
+   -15
+  ]
+ ]
+}
