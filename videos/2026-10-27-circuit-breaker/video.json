@@ -1,6 +1,10 @@
 {
  "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
  "slug": "2026-10-27-circuit-breaker",
+ "post": {
+  "title": "APERTARAM O\nBOTÃO DO PÂNICO",
+  "hashtags": ["#circuitbreaker", "#bolsadevalores", "#ibovespa", "#b3", "#investimentos", "#mercadofinanceiro", "#dolar"]
+ },
  "duration": 92.0,
  "audio": {
   "narration": "audio/narration.wav",

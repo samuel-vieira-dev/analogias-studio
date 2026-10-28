@@ -16,7 +16,7 @@ Tom: thriller/sensacionalista na forma, rigoroso no conteúdo. Todo número tem 
 
 - Buscar o tema na web; para assunto do dia, buscar notícias de hoje.
 - Cada número que vai para a fala ou para a tela precisa de fonte; preferir fonte primária (B3, BCB, IBGE, documento oficial) e confirmar em uma segunda fonte independente.
-- Registrar tudo em `videos/<slug>/fatos.md` (tabela: fato · dado · fonte com link · status). Status `OK` ou `Conferir — fora da fala`. O que não fecha não entra na narração.
+- Registrar tudo em `videos/<slug>/fatos.md` (tabela: fato · dado · fonte com link · status). Status `OK` ou `Conferir — fora da fala`. O que não fecha não entra na narração. Fato confirmado que acabou fora do roteiro aprovado: `OK — fora da fala`. A lista **Fontes** da legenda do post (`tools/post.py`) sai só das linhas `OK` sem "fora da fala".
 - Fontes na tela: "Fonte: <veículo/órgão>, <data>" na zona `source` (canto superior direito), uma linha.
 
 ## Etapa 2 — opções para o Samuel escolher (uma única mensagem)

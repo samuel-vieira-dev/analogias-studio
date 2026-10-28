@@ -1,6 +1,9 @@
 {
  "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
  "slug": "2026-10-28-trajetoria-lula",
+ "post": {
+  "hashtags": ["#lula", "#politicabrasileira", "#historiadobrasil", "#lavajato", "#stf", "#eleicoes2026"]
+ },
  "duration": 119.3,
  "audio": {
   "narration": "audio/narration.wav",

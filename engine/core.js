@@ -356,6 +356,18 @@ window.__qa = {
     });
     return { t: LAST_T, scene: s.name, zone: CAM.last && CAM.last.zone, heroes, labels, solids, scenery, onscreen, texts3d, photos, motion: o.lag ? worldMotion(o.lag) : null };
   },
+  // Cover (tools/capa.cjs): the same shot with the camera moved along its own angle until the heroes
+  // and 3D labels on screen fit `zone` (the headline band is left free for the cover title).
+  // Renders and returns the new frame; the next __seek() goes back to the video's own camera.
+  reframe(zone, pull = 1.06) {
+    const s = ACTIVE, p = CAM.last; if (!s || !p) return null;
+    const active = (x) => !x.when || x.when(LAST_T);
+    const objs = s.heroes.concat(s.labels).filter((x) => active(x) && shown(x.obj)).map((x) => x.obj);
+    if (!objs.length) return null;
+    CAM.apply(CAM.pose(boxOf(objs, false), { zone, from: p.pos.clone().sub(p.look).toArray(), fov: p.fov, pull }));
+    renderer.render(scene, camera);
+    return window.__qa.frame();
+  },
 };
 
 function renderAt(t) {

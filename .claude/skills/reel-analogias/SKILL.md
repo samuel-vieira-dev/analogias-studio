@@ -1,6 +1,6 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega e MP4.
+description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega, MP4, capa e legenda do post.
 ---
 
 # Reel 3D narrado — @analogias.br
@@ -26,7 +26,7 @@ Ele escolhe depois, na etapa 3: o **hook** (5 opções + "Outro") e a **pergunta
 
 ## 1. Pesquisa e checagem de fatos
 
-Buscar o tema na web (para assunto do dia, notícias de hoje). Cada número que for para a fala ou para a tela precisa de fonte, de preferência primária e confirmada por uma segunda. Salvar `fatos.md` (fato · dado · fonte com link · status). O que não fechar fica fora da narração. Na mesma busca, juntar as **fotos candidatas** (seção "Fotos" do `fatos.md`: id · o que mostra · página de origem · autor/veículo · licença): rosto de cada pessoa citada e o que der vontade de ver ("como é esse avião?"). Oficiais e livres primeiro, imprensa com crédito quando não houver equivalente; nunca imagem gerada por IA ou editada de pessoa ou fato real (`docs/fotos.md`). Se houver referências visuais, olhar cada uma agora e anotar o que aproveitar (forma, composição, cor de destaque) — sem copiar personagem, logo ou marca.
+Buscar o tema na web (para assunto do dia, notícias de hoje). Cada número que for para a fala ou para a tela precisa de fonte, de preferência primária e confirmada por uma segunda. Salvar `fatos.md` (fato · dado · fonte com link · status). O que não fechar fica fora da narração. Depois do roteiro aprovado, o fato confirmado que não entrou na fala ganha o status `OK — fora da fala` (a lista Fontes do post sai das outras linhas). Na mesma busca, juntar as **fotos candidatas** (seção "Fotos" do `fatos.md`: id · o que mostra · página de origem · autor/veículo · licença): rosto de cada pessoa citada e o que der vontade de ver ("como é esse avião?"). Oficiais e livres primeiro, imprensa com crédito quando não houver equivalente; nunca imagem gerada por IA ou editada de pessoa ou fato real (`docs/fotos.md`). Se houver referências visuais, olhar cada uma agora e anotar o que aproveitar (forma, composição, cor de destaque) — sem copiar personagem, logo ou marca.
 
 ## 2. Ângulo da história
 
@@ -89,19 +89,32 @@ node tools/preview.cjs videos/<slug>     # um quadro por plano + folha de objeto
 
 Mudou só efeito sonoro? `mix.py` + `build.py` bastam (o QA continua valendo).
 
-## 10. Render e entrega
+## 10. Render, capa, legenda e entrega
+
+Antes do `finalize`, completar `video.json → post`:
+
+```json
+"post": { "title": "APERTARAM O\nBOTÃO DO PÂNICO", "hashtags": ["#circuitbreaker", "#bolsadevalores", "#ibovespa", "#b3", "#investimentos"] }
+```
+
+- `hashtags` (obrigatório): 5–8 do tema, que alguém buscaria; em tema político, só nomes e assuntos (nada de hashtag de torcida).
+- `title` (opcional): título da capa, 2–4 palavras em até 2 linhas (`\n`), que repete a tensão do gancho. Sem ele, vale o título que aparece no gancho (ou o primeiro título do vídeo).
+- `t` (opcional): segundo do quadro da capa; `media` (opcional): id da foto de pessoa, ou `false` para capa sem foto.
 
 ```bash
 bash tools/render.sh videos/<slug>            # nuvem: bash tools/render.sh videos/<slug> looks --detach  (~36 min)
-python3 tools/finalize.py videos/<slug>       # out/<slug>.mp4, confere tamanho, duração e volume
+python3 tools/finalize.py videos/<slug>       # MP4 (confere tamanho, duração e volume) + capa + legenda do post
 ```
 
-- Mac: o `finalize` já copia para `~/Movies/reels`.
-- Nuvem: enviar o arquivo com SendUserFile e, se o computador estiver ligado ao chat, gravar em `~/Movies/reels` (limite de 30 MB por arquivo: recomprimir com `ffmpeg -c:v libx264 -crf 23 -preset veryfast -c:a copy` se passar).
+- `out/<slug>-capa.jpg` (1080×1920): um quadro do gancho, sem a legenda do vídeo, com o título na faixa `headline`; a câmera mantém o ângulo e enquadra os objetos do gancho no palco abaixo do título. Se o vídeo tem cartão de pessoa (overlay `photo` com `name`), a foto entra na capa num cartão com nome e crédito. O título precisa caber no recorte 3:4 do perfil (o `capa.cjs` reprova se não couber).
+- `out/<slug>-post.md`: legenda pronta — gancho e pergunta final do `brief.yaml`, o CTA do vídeo, avisos da tela ("Não é recomendação de investimento."), as hashtags, **Fontes** (só as linhas do `fatos.md` que entraram na fala: status `OK` sem "fora da fala") e **Fotos** (crédito e link de `video.json → media`). Se passar de 2.200 caracteres (Instagram), as fontes vão por nome na legenda e os links em comentários para fixar.
+- **Olhar a capa** (Read) antes de entregar: título legível, objeto inteiro, quadro que conta o gancho sem som. Não gostou? Ajustar `post.title`/`post.t` e refazer só capa e legenda: `python3 tools/finalize.py videos/<slug> --post-only`.
+- Mac: o `finalize` copia MP4, capa e post para `~/Movies/reels`.
+- Nuvem: enviar os três com SendUserFile e, se o computador estiver ligado ao chat, gravar em `~/Movies/reels` (limite de 30 MB por arquivo: recomprimir o MP4 com `ffmpeg -c:v libx264 -crf 23 -preset veryfast -c:a copy` se passar).
 
 ## 11. Guardar no kit
 
-Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.js, words.json — o resto é ignorado pelo git, inclusive `midia/`: o link e o crédito de cada foto ficam no `video.json`) e qualquer objeto novo em `engine/props/`; push.
+Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.js, words.json — o resto é ignorado pelo git, inclusive `midia/` e `out/`: o link e o crédito de cada foto e o título e as hashtags do post ficam no `video.json`) e qualquer objeto novo em `engine/props/`; push.
 
 ## Regras que não se quebram
 
@@ -116,4 +129,4 @@ Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.
 
 ## Fechamento
 
-Responder curto: o arquivo (com uma linha de contexto), onde ficou salvo, e um próximo passo se houver. Sem recapitular as etapas.
+Responder curto: os arquivos (MP4, capa e post, com uma linha de contexto), onde ficaram salvos, e um próximo passo se houver. Sem recapitular as etapas.
