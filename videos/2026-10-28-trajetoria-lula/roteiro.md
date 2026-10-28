@@ -1,11 +1,11 @@
 # Roteiro para aprovação — a trajetória de Lula (90 s, voz Sandro Dutra)
 
-Hook: opção 5 · Pergunta final: opção 1 · 250 palavras · Fatos e fontes: `fatos.md`.
+Hook: opção 5 · Pergunta final: opção 1 · 254 palavras · Fatos e fontes: `fatos.md`.
 
 | # | Narração | Cena 3D | Texto na tela (zona) |
 | --- | --- | --- | --- |
 | 1 | "Como um engraxate de Pernambuco virou o político mais polêmico do Brasil?" | Caixinha de engraxate de madeira no chão de terra; a câmera sobe e a caixa vira sombra de um púlpito com microfones | ENGRAXATE → ? (headline) |
-| 2 | "Imagina: 1964, madrugada. Você opera uma prensa numa metalúrgica. A máquina desce... e o seu dedo mínimo fica lá." | Galpão escuro, relógio de parede 3h; prensa genérica desce com tranco e luz vermelha pisca (nada de mão mostrada: só a luva com quatro dedos sobre a bancada) | 1964 (headline) |
+| 2 | "Imagina: 1964, madrugada. Você tem dezenove anos e opera uma prensa numa metalúrgica. A máquina desce... e o seu dedo mínimo fica lá." | Galpão escuro, relógio de parede 3h; prensa genérica desce com tranco e luz vermelha pisca (nada de mão mostrada: só a luva com quatro dedos sobre a bancada) | 1964 · 19 ANOS (headline) · Fonte: Instituto Lula (canto) |
 | 3 | "Esse é Luiz Inácio Lula da Silva. Chegou de pau de arara em 1952. Em 1975, já presidia o sindicato dos metalúrgicos. Em 1978, as greves do ABC levam o rosto dele pro país inteiro." | Linha do tempo em trilho: caminhão pau de arara 1952 → placa SINDICATO 1975 → estádio com multidão de bonequinhos e faixa GREVE 1978 | 1952 · 1975 · 1978 (chips) · Fonte: Planalto / InfoMoney (canto) |
 | 4 | "Em 1980, a ditadura o prende por trinta e um dias. No mesmo ano, ele ajuda a fundar o PT." | Porta de cela com grade e plaquinha DOPS; ao abrir, sai uma estrela vermelha genérica escrita PT 1980 | PRESO: 31 DIAS · PT FUNDADO EM 1980 · Fonte: DGABC (canto) |
 | 5 | "Depois de três derrotas, vira presidente em 2002. E é reeleito." | Três urnas com X cinza (1989, 1994, 1998); a quarta acende verde 2002 e a quinta 2006 | 3 DERROTAS → 2002 · 2006 (headline) · Fonte: TSE via InfoMoney (canto) |
@@ -31,4 +31,4 @@ Hook: opção 5 · Pergunta final: opção 1 · 250 palavras · Fatos e fontes: 
 
 - Cada escândalo vem com o desfecho: mensalão (aliados condenados, Lula não foi réu), triplex (condenado, preso, anulado por foro e parcialidade, sem novo julgamento).
 - Relações citadas como fatos com data, sem adjetivo; nada de "ditador" ou "perseguição" na fala.
-- Idade no acidente fora (fontes divergem: 18 ou 19). Cena do acidente sem mão ferida.
+- Idade no acidente: 19 anos, como o próprio Lula conta (o dia exato não é registrado, então alguns veículos dizem "18 ou 19"). Cena do acidente sem mão ferida.
