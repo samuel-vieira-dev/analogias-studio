@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-28-trajetoria-lula
+tema: "Quem foi e quem é Lula: do acidente na prensa ao quarto mandato, com acertos, escândalos e desfechos judiciais (tom neutro, expositivo)"
+referencias_visuais: []
+
+hook:
+  origem: 5
+  texto: "Como um engraxate de Pernambuco virou o político mais polêmico do Brasil?"
+
+pergunta_final:
+  origem: 2
+  texto: "O que pesa mais na história dele: os programas sociais ou os escândalos?"
+
+duracao_alvo_s: 100
+aprovado_em: 2026-10-28

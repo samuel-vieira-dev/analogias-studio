@@ -1,0 +1,721 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-28-trajetoria-lula",
+ "duration": 119.3,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "Imagina:": "Imagina:"
+  }
+ },
+ "cuts": [
+  5.04,
+  16.28,
+  33.56,
+  39.73,
+  44.61,
+  56.33,
+  66.65,
+  73.12,
+  79.59,
+  95.92,
+  103.27,
+  111.78
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.04
+  },
+  {
+   "id": "prensa",
+   "from": 5.04,
+   "to": 16.28
+  },
+  {
+   "id": "trajetoria",
+   "from": 16.28,
+   "to": 33.56
+  },
+  {
+   "id": "prisao",
+   "from": 33.56,
+   "to": 39.73
+  },
+  {
+   "id": "eleicoes",
+   "from": 39.73,
+   "to": 44.61
+  },
+  {
+   "id": "governo",
+   "from": 44.61,
+   "to": 56.33
+  },
+  {
+   "id": "populismo",
+   "from": 56.33,
+   "to": 66.65
+  },
+  {
+   "id": "mensalao",
+   "from": 66.65,
+   "to": 73.12
+  },
+  {
+   "id": "lavajato",
+   "from": 73.12,
+   "to": 79.59
+  },
+  {
+   "id": "anulacao",
+   "from": 79.59,
+   "to": 95.92
+  },
+  {
+   "id": "relacoes",
+   "from": 95.92,
+   "to": 103.27
+  },
+  {
+   "id": "hoje",
+   "from": 103.27,
+   "to": 111.78
+  },
+  {
+   "id": "escolha",
+   "from": 111.78,
+   "to": 119.3
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-hook",
+   "kind": "title",
+   "from": 0.1,
+   "to": 5.0,
+   "text": "ENGRAXATE\n→ PRESIDENTE?"
+  },
+  {
+   "id": "ov-1964",
+   "kind": "title",
+   "from": 5.87,
+   "to": 16.2,
+   "text": "1964 · 19 ANOS"
+  },
+  {
+   "id": "ov-src-dedo",
+   "kind": "source",
+   "from": 8.78,
+   "to": 16.2,
+   "text": "Fonte: Instituto Lula; Aos Fatos"
+  },
+  {
+   "id": "ov-nome",
+   "kind": "title",
+   "from": 17.0,
+   "to": 20.6,
+   "text": "LUIZ INÁCIO\nLULA DA SILVA"
+  },
+  {
+   "id": "ov-1952",
+   "kind": "chip",
+   "from": 20.65,
+   "to": 22.6,
+   "style": "orange",
+   "text": "1952 · PAU DE ARARA"
+  },
+  {
+   "id": "ov-1975",
+   "kind": "chip",
+   "from": 22.86,
+   "to": 27.5,
+   "style": "orange",
+   "text": "1975 · PRESIDE O SINDICATO"
+  },
+  {
+   "id": "ov-1978",
+   "kind": "chip",
+   "from": 27.71,
+   "to": 33.5,
+   "style": "red",
+   "text": "1978 · GREVES DO ABC"
+  },
+  {
+   "id": "ov-src-traj",
+   "kind": "source",
+   "from": 20.65,
+   "to": 33.5,
+   "text": "Fonte: Planalto; InfoMoney"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 35.18,
+   "to": 37.85,
+   "big": "31 DIAS",
+   "label": "PRESO PELO DOPS EM 1980"
+  },
+  {
+   "id": "ov-pt",
+   "kind": "chip",
+   "from": 38.22,
+   "to": 39.7,
+   "style": "red",
+   "text": "AJUDA A FUNDAR O PT · 1980"
+  },
+  {
+   "id": "ov-src-dops",
+   "kind": "source",
+   "from": 35.18,
+   "to": 39.7,
+   "text": "Fonte: DGABC; InfoMoney"
+  },
+  {
+   "id": "ov-derrotas",
+   "kind": "chip",
+   "from": 40.33,
+   "to": 44.55,
+   "style": "dark",
+   "text": "1989 · 1994 · 1998: DERROTAS"
+  },
+  {
+   "id": "ov-eleito",
+   "kind": "chip",
+   "from": 42.44,
+   "to": 44.55,
+   "style": "orange",
+   "text": "2002 E 2006: ELEITO"
+  },
+  {
+   "id": "ov-src-tse",
+   "kind": "source",
+   "from": 40.33,
+   "to": 44.55,
+   "text": "Fonte: TSE via InfoMoney"
+  },
+  {
+   "id": "ov-bf",
+   "kind": "title",
+   "from": 45.48,
+   "to": 46.5,
+   "text": "BOLSA FAMÍLIA"
+  },
+  {
+   "id": "ov-mcmv",
+   "kind": "title",
+   "from": 46.54,
+   "to": 47.9,
+   "text": "MINHA CASA\nMINHA VIDA"
+  },
+  {
+   "id": "ov-sm",
+   "kind": "title",
+   "from": 47.97,
+   "to": 50.1,
+   "text": "SALÁRIO MÍNIMO\nACIMA DA INFLAÇÃO"
+  },
+  {
+   "id": "ov-fmi",
+   "kind": "title",
+   "from": 50.24,
+   "to": 53.1,
+   "text": "DÍVIDA COM O FMI\nPAGA ANTES DO PRAZO"
+  },
+  {
+   "id": "ov-src-gov",
+   "kind": "source",
+   "from": 45.48,
+   "to": 53.1,
+   "text": "Fonte: InfoMoney; Congresso em Foco"
+  },
+  {
+   "id": "ov-83",
+   "kind": "stat",
+   "from": 53.75,
+   "to": 56.25,
+   "big": "83%",
+   "label": "APROVAÇÃO NO FIM DO GOVERNO (2010)"
+  },
+  {
+   "id": "ov-src-df",
+   "kind": "source",
+   "from": 53.75,
+   "to": 56.25,
+   "text": "Fonte: Datafolha, out/2010"
+  },
+  {
+   "id": "ov-pop",
+   "kind": "title",
+   "from": 57.46,
+   "to": 63.7,
+   "text": "CRÍTICOS:\nPOPULISMO"
+  },
+  {
+   "id": "ov-inc",
+   "kind": "title",
+   "from": 63.77,
+   "to": 66.55,
+   "text": "APOIADORES:\nINCLUSÃO SOCIAL"
+  },
+  {
+   "id": "ov-src-pop",
+   "kind": "source",
+   "from": 57.46,
+   "to": 66.55,
+   "text": "Fonte: Politize; André Singer"
+  },
+  {
+   "id": "ov-mens",
+   "kind": "title",
+   "from": 66.8,
+   "to": 69.3,
+   "text": "MENSALÃO · 2005"
+  },
+  {
+   "id": "ov-aliados",
+   "kind": "chip",
+   "from": 69.36,
+   "to": 73.05,
+   "style": "red",
+   "text": "ALIADOS CONDENADOS PELO STF (2012)"
+  },
+  {
+   "id": "ov-reu",
+   "kind": "chip",
+   "from": 71.94,
+   "to": 73.05,
+   "style": "dark",
+   "text": "LULA NÃO FOI RÉU"
+  },
+  {
+   "id": "ov-src-mens",
+   "kind": "source",
+   "from": 69.36,
+   "to": 73.05,
+   "text": "Fonte: STF via InfoMoney"
+  },
+  {
+   "id": "ov-lj",
+   "kind": "title",
+   "from": 73.95,
+   "to": 76.8,
+   "text": "LAVA JATO\nCASO TRIPLEX"
+  },
+  {
+   "id": "ov-580",
+   "kind": "stat",
+   "from": 77.46,
+   "to": 79.5,
+   "big": "580 DIAS",
+   "label": "PRESO (2018–2019)"
+  },
+  {
+   "id": "ov-src-lj",
+   "kind": "source",
+   "from": 73.95,
+   "to": 79.5,
+   "text": "Fonte: InfoMoney"
+  },
+  {
+   "id": "ov-anula",
+   "kind": "title",
+   "from": 80.88,
+   "to": 83.0,
+   "text": "STF ANULA\nAS CONDENAÇÕES"
+  },
+  {
+   "id": "ov-trib",
+   "kind": "chip",
+   "from": 83.22,
+   "to": 87.5,
+   "style": "dark",
+   "text": "TRIBUNAL ERRADO"
+  },
+  {
+   "id": "ov-moro",
+   "kind": "chip",
+   "from": 85.32,
+   "to": 87.5,
+   "style": "red",
+   "text": "MORO CONSIDERADO PARCIAL"
+  },
+  {
+   "id": "ov-src-stf",
+   "kind": "source",
+   "from": 80.88,
+   "to": 87.5,
+   "text": "Fonte: STF, mar–abr/2021"
+  },
+  {
+   "id": "ov-absolver",
+   "kind": "title",
+   "from": 87.98,
+   "to": 95.85,
+   "text": "ANULAR ≠\nABSOLVER"
+  },
+  {
+   "id": "ov-rel",
+   "kind": "title",
+   "from": 96.68,
+   "to": 98.3,
+   "text": "RELAÇÕES\nCRITICADAS"
+  },
+  {
+   "id": "ov-r1",
+   "kind": "chip",
+   "from": 98.34,
+   "to": 103.2,
+   "style": "dark",
+   "text": "PAULO MALUF · 2012"
+  },
+  {
+   "id": "ov-r2",
+   "kind": "chip",
+   "from": 99.96,
+   "to": 103.2,
+   "style": "dark",
+   "text": "AHMADINEJAD (IRÃ) · 2010"
+  },
+  {
+   "id": "ov-r3",
+   "kind": "chip",
+   "from": 102.0,
+   "to": 103.2,
+   "style": "dark",
+   "text": "NICOLÁS MADURO · 2023"
+  },
+  {
+   "id": "ov-src-rel",
+   "kind": "source",
+   "from": 98.34,
+   "to": 103.2,
+   "text": "Fonte: Estado de Minas; Congresso em Foco; CNN Brasil"
+  },
+  {
+   "id": "ov-4",
+   "kind": "stat",
+   "from": 105.24,
+   "to": 107.3,
+   "big": "4º MANDATO",
+   "label": "81 ANOS · 51,79% EM 2026"
+  },
+  {
+   "id": "ov-src-tre",
+   "kind": "source",
+   "from": 105.24,
+   "to": 107.3,
+   "text": "Fonte: TRE-SP, 25/10/2026"
+  },
+  {
+   "id": "ov-fome",
+   "kind": "title",
+   "from": 108.61,
+   "to": 111.7,
+   "text": "FORA DO MAPA\nDA FOME (2025)"
+  },
+  {
+   "id": "ov-src-fao",
+   "kind": "source",
+   "from": 108.61,
+   "to": 111.7,
+   "text": "Fonte: ONU/FAO, jul/2025"
+  },
+  {
+   "id": "ov-q",
+   "kind": "question",
+   "from": 111.9,
+   "to": 119.3,
+   "text": "O que pesa\nmais?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-cta",
+   "kind": "cta",
+   "from": 117.35,
+   "to": 119.3,
+   "html": "Comenta: <b>PROGRAMAS</b> ou <b>ESCÂNDALOS</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   2.06,
+   "pop.mp3",
+   -14
+  ],
+  [
+   3.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   5.01,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   13.3,
+   "impact-bass-1.mp3",
+   -5
+  ],
+  [
+   13.32,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   14.45,
+   "pop.mp3",
+   -16
+  ],
+  [
+   16.25,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   20.65,
+   "pop.mp3",
+   -16
+  ],
+  [
+   22.88,
+   "pop.mp3",
+   -14
+  ],
+  [
+   29.76,
+   "pop.mp3",
+   -14
+  ],
+  [
+   33.53,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   35.97,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   38.24,
+   "pop.mp3",
+   -12
+  ],
+  [
+   39.7,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   40.35,
+   "click.mp3",
+   -12
+  ],
+  [
+   40.47,
+   "click.mp3",
+   -12
+  ],
+  [
+   40.59,
+   "click.mp3",
+   -12
+  ],
+  [
+   42.46,
+   "ping.mp3",
+   -15
+  ],
+  [
+   43.9,
+   "ping.mp3",
+   -16
+  ],
+  [
+   44.58,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   45.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   46.56,
+   "pop.mp3",
+   -16
+  ],
+  [
+   47.99,
+   "pop.mp3",
+   -16
+  ],
+  [
+   51.7,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   53.8,
+   "riser.mp3",
+   -20
+  ],
+  [
+   56.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   57.48,
+   "click-soft.mp3",
+   -10
+  ],
+  [
+   65.38,
+   "click-soft.mp3",
+   -10
+  ],
+  [
+   66.62,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   67.92,
+   "pop.mp3",
+   -14
+  ],
+  [
+   69.38,
+   "pop.mp3",
+   -16
+  ],
+  [
+   70.44,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   71.96,
+   "pop.mp3",
+   -16
+  ],
+  [
+   73.09,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   73.22,
+   "pop.mp3",
+   -14
+  ],
+  [
+   76.05,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   76.84,
+   "pop.mp3",
+   -16
+  ],
+  [
+   79.56,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   81.7,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   90.3,
+   "click-soft.mp3",
+   -12
+  ],
+  [
+   92.42,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   94.48,
+   "pop.mp3",
+   -14
+  ],
+  [
+   95.89,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   98.36,
+   "pop.mp3",
+   -14
+  ],
+  [
+   99.98,
+   "pop.mp3",
+   -14
+  ],
+  [
+   102.02,
+   "pop.mp3",
+   -14
+  ],
+  [
+   103.24,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   103.3,
+   "pop.mp3",
+   -18
+  ],
+  [
+   106.15,
+   "ping.mp3",
+   -15
+  ],
+  [
+   109.15,
+   "sparkle.mp3",
+   -14
+  ],
+  [
+   111.75,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   114.8,
+   "click.mp3",
+   -6
+  ],
+  [
+   116.42,
+   "click.mp3",
+   -6
+  ],
+  [
+   117.35,
+   "ping.mp3",
+   -15
+  ]
+ ]
+}

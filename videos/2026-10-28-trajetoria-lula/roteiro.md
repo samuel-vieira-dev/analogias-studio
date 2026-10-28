@@ -1,4 +1,4 @@
-# Roteiro para aprovação — quem foi e quem é Lula (voz Sandro Dutra)
+# Roteiro aprovado — quem foi e quem é Lula (voz Sandro Dutra)
 
 Vídeo expositivo: trajetória, acertos e escândalos, cada um com fonte e desfecho. Hook: opção 5 · Pergunta final: opção 2 · 279 palavras (~100 s) · Fatos e fontes: `fatos.md`.
 
