@@ -32,6 +32,9 @@ Checagem feita em 28/10/2026. `OK` = confirmado em duas fontes. `Conferir — fo
 | 25 | Programas do governo | Bolsa Família (1º mandato); Minha Casa Minha Vida (2009); salário mínimo com aumento real (+25% acima da inflação de 2003 a 2006) | InfoMoney · [Congresso em Foco, 28/12/2006](https://www.congressoemfoco.com.br/noticia/103639/em-busca-do-circulo-virtuoso) | OK |
 | 26 | Aprovação no fim do 2º mandato | 83% ótimo ou bom (Datafolha, divulgada 26/10/2010); recorde também na CNT/Sensus, dez/2010 | [Congresso em Foco](https://www.congressoemfoco.com.br/noticia/70755/datafolha-lula-e-aprovado-por-83-dos-entrevistados) · [IstoÉ Dinheiro](https://istoedinheiro.com.br/cntsensus-indice-de-aprovacao-de-lula-e-recorde) | OK |
 | 27 | Leitura populista x conciliadora | parte da ciência política lê o lulismo como populismo (políticas compensatórias, relação direta com as massas, lógica "nós x eles" de Laclau); outros o veem como conciliador; André Singer: "reformismo fraco" | [Politize — Lulismo](https://www.politize.com.br/lulismo/) · [IHU Unisinos (Singer)](https://ihu.unisinos.br/noticias/512602-e-a-esquerda-encontrou-os-pobres) | OK, sempre atribuído ("críticos chamam") |
+| 28 | Dívida com o FMI | quitada antecipadamente em 2005 | InfoMoney · Planalto | OK |
+| 29 | Mapa da Fome | Brasil sai de novo do Mapa da Fome da ONU (relatório SOFI/FAO, jul/2025) | [O Povo, 28/07/2025](https://www.opovo.com.br/noticias/brasil/2025/07/28/brasil-sai-do-mapa-da-fome-anuncia-onu.html) · [JB](https://www.jb.com.br/brasil/direitos-humanos/2025/07/1056350-brasil-sai-do-mapa-da-fome-indica-relatorio-da-onu.html) | OK |
+| 30 | Idade hoje | 81 anos (fez em 27/10/2026) | fato 1 | OK |
 
 ## Ângulo (neutro)
 
