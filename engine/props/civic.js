@@ -1,6 +1,6 @@
 // ============================================================================
 // props/civic.js · week strip, street sign + sub-plate, law book + stamp, hour column,
-//                  folder, crowd, offshore platform, sea
+//                  folder, crowd, offshore platform, sea, house
 // ============================================================================
 
 // A week as 7 day blocks on a rail. Work days are orange, days off green with a FOLGA plate.
@@ -228,4 +228,36 @@ function makeSea({ size = 70, seg = 80, color = "#173a45" } = {}) {
   }
   update(0);
   return { mesh, update };
+}
+
+// Small house: walls, gable walls in the wall colour, two roof slabs meeting at the ridge (apex up,
+// ridge running front to back, so the front shows the classic house outline), chimney, door, lit
+// windows. Origin: floor, centre. Optional `label` is printed on the front gable.
+function makeHouse({ w = 1.1, h = 0.8, d = 0.9, roofH = 0.5, wall = "#f4e8da", roof = RED, label = null } = {}) {
+  const g = new THREE.Group(), wm = mat(wall, { roughness: 0.85 }), rm = mat(roof, { roughness: 0.7 });
+  const body = new THREE.Mesh(rbox(w, h, d, 0.03), wm); body.position.y = h / 2; g.add(body);
+  const tri = new THREE.Shape(); tri.moveTo(-w / 2, 0); tri.lineTo(w / 2, 0); tri.lineTo(0, roofH); tri.closePath();
+  const gableGeo = new THREE.ExtrudeGeometry(tri, { depth: d, bevelEnabled: false }); gableGeo.translate(0, 0, -d / 2);
+  const gable = new THREE.Mesh(gableGeo, wm); gable.position.y = h; g.add(gable);
+  const over = 0.1, th = 0.07, a = Math.atan2(roofH, w / 2), L = Math.hypot(w / 2, roofH);
+  for (const s of [-1, 1]) {
+    // s = -1 left slab, +1 right slab; dir runs from the eave up to the ridge, n is the outward normal
+    const dir = new V3(-s * Math.cos(a), Math.sin(a), 0), n = new V3(s * Math.sin(a), Math.cos(a), 0);
+    const slab = new THREE.Mesh(rbox(L + over, th, d + 2 * over, 0.02), rm);
+    slab.position.set(s * w / 4, h + roofH / 2, 0).addScaledVector(dir, -over / 2).addScaledVector(n, th / 2);
+    slab.rotation.z = -s * a; g.add(slab);
+  }
+  const ridge = new THREE.Mesh(new THREE.CylinderGeometry(th * 0.75, th * 0.75, d + 2 * over, 12), rm);
+  ridge.rotation.x = Math.PI / 2; ridge.position.set(0, h + roofH + th * 0.55, 0); g.add(ridge);
+  const cx = w * 0.22, roofAt = h + roofH * (1 - cx / (w / 2));
+  const chimney = new THREE.Mesh(rbox(0.16, 0.34, 0.16, 0.02), mat("#b5603f", { roughness: 0.8 })); chimney.position.set(cx, roofAt + 0.12, -d * 0.15); g.add(chimney);
+  const door = new THREE.Mesh(rbox(0.26, 0.42, 0.04, 0.015), mat("#7a4a2e")); door.position.set(0, 0.21, d / 2 + 0.01); g.add(door);
+  const glass = mat("#ffcf8a", { emissive: "#ffb860", emissiveIntensity: 0.55, roughness: 0.3 });
+  for (const x of [-0.34, 0.34]) {
+    const frame = new THREE.Mesh(rbox(0.24, 0.24, 0.03, 0.01), mat("#5a3a26")); frame.position.set(x * w / 1.1, h * 0.58, d / 2 + 0.008); g.add(frame);
+    const pane = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.18, 0.02), glass); pane.position.set(x * w / 1.1, h * 0.58, d / 2 + 0.018); g.add(pane);
+  }
+  if (label) { const p = makePlate(label, w * 0.5, roofH * 0.26, { bg: "#141414", fg: "#ffffff" }); p.position.set(0, h + roofH * 0.3, d / 2 + 0.016); g.add(p); }
+  g.add(contactShadow(w + 0.7, d + 0.7));
+  return g;
 }

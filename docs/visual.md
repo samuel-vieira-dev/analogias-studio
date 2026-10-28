@@ -63,13 +63,17 @@ const P = CAM.pose(box, { zone: "stage", from: [0, 0.4, 1] }); // distância res
 | `S.solid(obj, nome, {restsOn})` | objeto físico | não atravessa outro sólido; pode encostar (sem afundar) no apoio |
 | `S.scenery(obj, nome, {when})` | cenário que passa da borda (multidão, horizonte) | nenhum texto em cima |
 
-`when: (t) => ...` limita a checagem aos momentos em que o objeto é o assunto do plano (ex.: depois de surgir).
+`when: (t) => ...` limita a checagem aos momentos em que o objeto é o assunto do plano (ex.: depois de surgir). Use o tempo **inteiro** em que ele é o assunto: a prévia escolhe o quadro de cada herói pelo `when`, e o QA confere tamanho e legibilidade nesse intervalo.
+
+## Movimento: nada parado
+
+O vídeo prende pelo movimento. Em todo plano alguma coisa anda: a câmera (`CAM.blend`/`CAM.track` do começo ao fim do plano, nem que seja um empurrão lento), um objeto entrando, uma foto aproximando. Mais de 2 s sem nada se mexer reprova (`plano_parado`). O assunto do plano ocupa pelo menos 45% da zona (`objeto_pequeno`) e o corte nunca cai num palco vazio (`quadro_vazio`): o objeto do plano seguinte já está na tela no corte, ou entra junto com ele.
 
 ## Objetos
 
 - Objeto apoiado fica **em cima** do apoio (base no topo do apoio), nunca afundado.
 - Porta, persiana, tampa: passam **atrás** ou **na frente** com folga — nunca através do objeto.
-- Texto que pertence a um objeto (etiqueta, placa, degrau) é **impresso nele** com `makePlate()`, não um sprite flutuando.
+- Texto que pertence a um objeto (etiqueta, placa, degrau) é **impresso nele** com `makePlate()`, não um sprite flutuando. Letra de pelo menos 16 px na tela enquanto o objeto é o assunto (`texto3d_ilegivel`): placa larga, texto curto (2–3 palavras). `detail: true` só para texto que é textura (o ano pequeno na porta de um caminhão).
 - Um herói por plano. Contato com o chão via `contactShadow`.
 
 ## Estilo do canal
@@ -78,8 +82,11 @@ const P = CAM.pose(box, { zone: "stage", from: [0, 0.4, 1] }); // distância res
 - Fonte Inter (600–900). Números grandes em branco ou laranja; rótulos em chip vermelho.
 - Luz: chave quente, contraluz fria, neblina adaptada à distância da câmera (`CAM.apply`).
 - 3D de verdade (Three.js), sem logos ou marcas reais; prédios e veículos genéricos.
+- Fotos reais (pessoas, o avião, o prédio, o documento) entram num quadro de investigação, num porta-retrato no palco ou num cartão 2D, sempre com crédito e zoom lento: ver [`fotos.md`](fotos.md).
 - Cortes com flash laranja curto e whoosh; impactos com grave; pops em contagens.
 
 ## Biblioteca de objetos (`engine/props/`)
 
-`basics.js`: makeButton, pressCurve, makeGlassLid, makeAlarmRings, makePerson, makeCoin, makeShutter, makeBallotBox, makeMoneyStack, makeFlame, makeSmoke, makeGridFloor · `devices.js`: makePhone, phoneScreenPoint, makeFinger, makePhoneCrowd, makeBedsideTable, paintTradingApp · `finance.js`: makeBreakerPanel, makeWire, makeBulb, makeChartScreen, makeStairs, makeTimeline, makeVChart · `civic.js`: makeWeekStrip, makeStreetSign (+ noParkingTex, ringTextTex), makeSubPlate, makeLawBook, makeStamp, makeHourColumn, makeFolder, makeCrowd, makeOilRig, makeSea. Objeto novo que pode servir a outros vídeos vai para `engine/props/` (e para o git).
+`basics.js`: makeButton, pressCurve, makeGlassLid, makeAlarmRings, makePerson, makeCoin, makeShutter, makeBallotBox, makeMoneyStack, makeFlame, makeSmoke, makeGridFloor · `devices.js`: makePhone, phoneScreenPoint, makeFinger, makePhoneCrowd, makeBedsideTable, paintTradingApp · `finance.js`: makeBreakerPanel, makeWire, makeBulb, makeChartScreen, makeStairs, makeTimeline, makeVChart · `civic.js`: makeWeekStrip, makeStreetSign (+ noParkingTex, ringTextTex), makeSubPlate, makeLawBook, makeStamp, makeHourColumn, makeFolder, makeCrowd, makeOilRig, makeSea, makeHouse · `media.js` (fotos reais): makePhotoPrint, makeCorkBoard, makeString, makePin, makePhotoFrame, makePhotoPlane, dropPrint. Objeto novo que pode servir a outros vídeos vai para `engine/props/` (e para o git).
+
+Objeto novo: montar com formas que já dizem o que são (a casa tem duas águas e a ponta para cima; um avião tem asa e cauda), conferir o recorte dele na folha de objetos (`preview/objetos-NN.jpg`) antes de seguir, e nunca girar uma primitiva em dois eixos "até parecer": calcular a posição de cada peça.

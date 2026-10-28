@@ -4,17 +4,23 @@
 usage: python3 tools/build.py videos/<slug>
 
 Reads   channel.yaml, config/layout.json, engine/core.js, engine/props/*.js,
-        videos/<slug>/video.json, videos/<slug>/scenes.js, videos/<slug>/audio/words.json
+        videos/<slug>/video.json, videos/<slug>/scenes.js, videos/<slug>/audio/words.json,
+        videos/<slug>/midia/* (the photos listed in video.json → media)
 Writes  videos/<slug>/build/            HyperFrames project (index.html + compositions/ + assets/)
         videos/<slug>/qa/harness.html   standalone page (world + overlays + captions) for tools/qa.cjs
                                         and tools/preview.cjs, kept outside the HyperFrames project
 If videos/<slug>/audio/mix.wav exists (tools/mix.py), it is mounted in index.html so the
 HyperFrames preview plays with sound; tools/finalize.py muxes the exact mix into the MP4 anyway.
 
+Photos are resized (longest side 1600 px, ffmpeg) into build/media/ and inlined as data URLs:
+3D props read them from MEDIA[id] (engine/props/media.js), photo cards (overlay kind "photo") from
+the markup. Same-origin data URLs keep WebGL textures untainted in the QA page and in the render.
+
 Text never gets pixel coordinates here: every overlay names a zone from
 config/layout.json, and the overlay script stacks concurrent items inside their
 zone at runtime (after fonts load). Captions sit on the bottom of the safe zone.
 """
+import base64
 import filecmp
 import html
 import json
@@ -57,8 +63,38 @@ def esc_lines(s):
     return "<br>".join(esc(x) for x in str(s).split("\n"))
 
 
+# ---------------------------------------------------------------- photos
+MEDIA_MAX_PX = 1600
+MEDIA_MIN_SHORT_PX = 900   # below this a photo can only be shown small (QA: foto_em_baixa_resolucao)
+
+
+def prepare_media(vdir, video, out):
+    """video.json → media: {id: {file, credit, url, focus}}. Returns {id: {src, w, h, focus}} and
+    the ids whose source is small."""
+    media, small = {}, []
+    (out / "media").mkdir(parents=True, exist_ok=True)
+    for mid, m in (video.get("media") or {}).items():
+        src = vdir / m["file"]
+        if not src.exists():
+            sys.exit(f"foto '{mid}' não encontrada: {src} (baixe para videos/<slug>/midia/ — ver docs/fotos.md)")
+        if not m.get("credit"):
+            sys.exit(f"foto '{mid}' sem 'credit' em video.json → media (o crédito vai para a tela)")
+        dst = out / "media" / f"{mid}.jpg"
+        if not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime:
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(src), "-vf",
+                            f"scale=w='min({MEDIA_MAX_PX},iw)':h='min({MEDIA_MAX_PX},ih)':force_original_aspect_ratio=decrease",
+                            "-q:v", "3", str(dst)], check=True)
+        w, h = (int(x) for x in subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height",
+                                                "-of", "csv=p=0", str(dst)], capture_output=True, text=True, check=True).stdout.strip().split(","))
+        if min(w, h) < MEDIA_MIN_SHORT_PX:
+            small.append(f"{mid} ({w}x{h})")
+        media[mid] = {"src": "data:image/jpeg;base64," + base64.b64encode(dst.read_bytes()).decode(), "w": w, "h": h,
+                      "focus": m.get("focus", [0.5, 0.5])}
+    return media, small
+
+
 # ---------------------------------------------------------------- world (3D)
-def build_world(vdir, layout, channel, video):
+def build_world(vdir, layout, channel, video, media):
     dur = video["duration"]
     core = (ROOT / "engine/core.js").read_text()
     props = "\n".join(p.read_text() for p in sorted((ROOT / "engine/props").glob("*.js")))
@@ -106,6 +142,7 @@ def build_world(vdir, layout, channel, video):
       const DUR = {dur};
       const LAYOUT = {json.dumps(layout)};
       const STYLE = {json.dumps(style)};
+      const MEDIA = {json.dumps(media)};
 {core}
 {props}
 // ============================================================ video scenes
@@ -121,7 +158,7 @@ def build_world(vdir, layout, channel, video):
 
 
 # ---------------------------------------------------------------- overlays (HTML text by zone)
-def overlay_markup(o):
+def overlay_markup(o, media):
     k = o["kind"]
     attrs = f'id="{esc(o["id"])}" class="ov ov-{k}" data-zone="{esc(o.get("zone", default_zone(k)))}" data-from="{o["from"]}" data-to="{o["to"]}"'
     q = 'data-qa="source"' if k == "source" else 'data-qa="text"'
@@ -143,17 +180,29 @@ def overlay_markup(o):
         return f'<div {attrs}><span class="src" {q}>{esc(o["text"])}</span></div>'
     if k == "cta":
         return f'<div {attrs}><span class="cta" {q}>{o["html"]}</span></div>'
+    if k == "photo":
+        m = media.get(o["media"])
+        if not m:
+            raise SystemExit(f"overlay {o['id']}: foto '{o['media']}' não está em video.json → media")
+        shape = o.get("shape") or ("paisagem" if m["w"] / m["h"] > 1.15 else "retrato" if m["w"] / m["h"] < 0.87 else "quadrado")
+        fx, fy = (round(v * 100, 1) for v in m["focus"])
+        cap = ""
+        if o.get("name") or o.get("role"):
+            cap = (f'<div class="pcap">{f"<b>{esc(o["name"])}</b>" if o.get("name") else ""}'
+                   f'{f"<span>{esc(o["role"])}</span>" if o.get("role") else ""}</div>')
+        return (f'<div {attrs} data-shape="{shape}"><div class="pcard" data-qa="photo" data-media="{esc(o["media"])}">'
+                f'<div class="pwin"><img src="{m["src"]}" style="object-position:{fx}% {fy}%;transform-origin:{fx}% {fy}%" /></div>{cap}</div></div>')
     raise SystemExit(f"unknown overlay kind: {k}")
 
 
 def default_zone(kind):
-    return {"source": "source", "cta": "caption"}.get(kind, "headline")
+    return {"source": "source", "cta": "caption", "photo": "stage"}.get(kind, "headline")
 
 
-def build_overlays(layout, channel, video):
+def build_overlays(layout, channel, video, media):
     dur = video["duration"]
     st = channel["estilo"]
-    items = "\n    ".join(overlay_markup(o) for o in video.get("overlays", []))
+    items = "\n    ".join(overlay_markup(o, media) for o in video.get("overlays", []))
     cuts = video.get("cuts", [])
     timers = [o for o in video.get("overlays", []) if o["kind"] == "timer"]
     return f"""<template>
@@ -175,6 +224,14 @@ def build_overlays(layout, channel, video):
     #root .src {{ display:inline-block; font-weight:600; font-size:28px; line-height:1.25; color:rgba(255,255,255,0.8); background:rgba(20,13,9,0.55); padding:6px 12px; border-radius:10px; white-space:nowrap; }}
     #root .cta {{ display:inline-block; background:rgba(20,13,9,0.92); font-weight:800; font-size:{layout['caption']['font_px']}px; padding:{layout['caption']['pad_y']}px {layout['caption']['pad_x']}px; border-radius:26px; white-space:nowrap; }}
     #root .cta b {{ color:{st['destaque_legenda']}; }}
+    #root .ov-photo {{ transform-origin:50% 50%; }}
+    #root .pcard {{ display:inline-block; background:#f4efe6; padding:16px 16px 0; border-radius:20px; box-shadow:0 30px 60px rgba(0,0,0,0.55), 0 0 0 2px rgba(0,0,0,0.15); text-align:left; }}
+    #root .pwin {{ overflow:hidden; border-radius:12px; background:#000; }}
+    #root .pwin img {{ display:block; width:100%; height:100%; object-fit:cover; }}
+    #root .pcap {{ padding:14px 6px 18px; border-left:8px solid {st['laranja']}; margin:12px 0 0; padding-left:16px; }}
+    #root .pcap b {{ display:block; font-weight:900; font-size:46px; line-height:1.05; color:{st['fundo']}; letter-spacing:-0.02em; white-space:nowrap; }}
+    #root .pcap span {{ display:block; font-weight:600; font-size:28px; line-height:1.3; color:#6b5a4e; white-space:nowrap; }}
+    #root .pcard:not(:has(.pcap)) {{ padding-bottom:16px; }}
     #ov-flash {{ position:absolute; inset:0; background:{st['laranja']}; opacity:0; }}
     #ov-prog-track {{ position:absolute; left:40px; top:1878px; width:1000px; height:6px; background:rgba(255,255,255,0.18); border-radius:3px; overflow:hidden; }}
     #ov-prog {{ width:100%; height:100%; background:{st['laranja']}; transform-origin:0% 50%; }}
@@ -198,11 +255,19 @@ def build_overlays(layout, channel, video):
           const z = Z[el.dataset.zone]; el.style.left = z.x + "px"; el.style.width = z.w + "px";
           el.querySelectorAll(".fit, .cta, .src").forEach((f) => {{ const min = f.classList.contains("src") ? 28 : 30; let s = parseFloat(getComputedStyle(f).fontSize); while (f.getBoundingClientRect().width > z.w && s > min) {{ s -= 2; f.style.fontSize = s + "px"; }} }});
         }}
+        // 1b) photo cards: the largest card that fits the zone with room to tilt and float
+        for (const el of items.filter((e) => e.classList.contains("ov-photo"))) {{
+          const z = Z[el.dataset.zone], a = {{ paisagem: 4 / 3, retrato: 3 / 4, quadrado: 1 }}[el.dataset.shape];
+          const card = el.querySelector(".pcard"), win = card.querySelector(".pwin"), cap = card.querySelector(".pcap");
+          const capH = cap ? 120 : 0, w = Math.min(z.w - 150, (z.h - 120 - capH - 32) * a);
+          win.style.width = Math.round(w) + "px"; win.style.height = Math.round(w / a) + "px";
+          if (cap) cap.querySelectorAll("b, span").forEach((f) => {{ let s = parseFloat(getComputedStyle(f).fontSize); while (f.getBoundingClientRect().width > w - 30 && s > 20) {{ s -= 2; f.style.fontSize = s + "px"; }} }});
+        }}
         // 2) stack items that share a zone at the same time; captions-zone items sit on the caption baseline
         const placed = [];
         for (const el of items) {{
           const zn = el.dataset.zone, z = Z[zn], from = +el.dataset.from, to = +el.dataset.to, h = el.getBoundingClientRect().height;
-          let y = zn === "caption" ? LAYOUT.caption.bottom - h : z.y;
+          let y = zn === "caption" ? LAYOUT.caption.bottom - h : el.classList.contains("ov-photo") ? z.y + (z.h - h) / 2 : z.y;
           if (zn !== "caption") for (const p of placed) if (p.zn === zn && p.from < to && from < p.to) y = Math.max(y, p.y + p.h + 12);
           el.style.top = Math.round(y) + "px"; placed.push({{ zn, from, to, y, h }});
         }}
@@ -215,6 +280,14 @@ def build_overlays(layout, channel, video):
           const s0 = kind === "stat" || kind === "timer" || kind === "cta" || kind === "title" ? 0.82 : 0.92;
           tl.fromTo(el, {{ opacity: 0, scale: s0 }}, {{ opacity: 1, scale: 1, duration: kind === "title" ? 0.22 : 0.3, ease: "power3.out" }}, from);
           if (to < DUR) tl.to(el, {{ opacity: 0, duration: 0.18 }}, to - 0.18);
+          if (kind === "photo") {{
+            // lands with a small tilt, floats, and the photo keeps pushing in (never a still frame)
+            const card = el.querySelector(".pcard"), img = el.querySelector(".pwin img"), rot = (Number(el.dataset.from) * 7) % 2 > 1 ? 2.2 : -2.2;
+            tl.fromTo(card, {{ rotation: rot * 2.6, y: 18 }}, {{ rotation: rot, y: 0, duration: 0.55, ease: "back.out(1.7)" }}, from);
+            tl.fromTo(img, {{ scale: 1 }}, {{ scale: 1.16, duration: Math.max(0.5, to - from), ease: "none" }}, from);
+            const n = Math.floor((to - from - 0.6) / 1.5);
+            if (n > 0) tl.to(card, {{ y: -10, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: n - 1 }}, from + 0.55);
+          }}
         }}
         TIMERS.forEach((o) => {{
           const el = document.querySelector("#" + o.id + " .num"); const [mm, ss] = o.start.split(":").map(Number); const s0 = mm * 60 + ss; const clk = {{ s: s0 }};
@@ -397,8 +470,9 @@ def main():
     layout, channel, video, words = load(vdir)
     out = vdir / "build"
     (out / "compositions").mkdir(parents=True, exist_ok=True)
-    world = build_world(vdir, layout, channel, video)
-    overlays = build_overlays(layout, channel, video)
+    media, small = prepare_media(vdir, video, out)
+    world = build_world(vdir, layout, channel, video, media)
+    overlays = build_overlays(layout, channel, video, media)
     captions, ncap = build_captions(layout, channel, video, words)
     write(out / "compositions/world.html", world)
     write(out / "compositions/overlays.html", overlays)
@@ -416,9 +490,9 @@ def main():
     write(out / "package.json", json.dumps({"name": video["slug"], "private": True, "type": "module", "scripts": {
         "check": f"npx --yes hyperframes@{HF_VERSION} check", "render": f"npx --yes hyperframes@{HF_VERSION} render"}}, indent=2))
     missing = sorted({s[1] for s in video.get("sfx", [])} - {p.name for p in (sfx_dir() or Path("/nonexistent")).glob("*.mp3")})
-    print(json.dumps({"build": str(out.relative_to(ROOT)), "duration": video["duration"], "caption_groups": ncap,
+    print(json.dumps({"build": str(out.relative_to(ROOT) if out.is_relative_to(ROOT) else out), "duration": video["duration"], "caption_groups": ncap,
                       "overlays": len(video.get("overlays", [])), "sfx": len(video.get("sfx", [])), "sfx_missing": missing,
-                      "audio_in_preview": mix.exists()}))
+                      "audio_in_preview": mix.exists(), "photos": len(media), "photos_small": small}))
 
 
 if __name__ == "__main__":

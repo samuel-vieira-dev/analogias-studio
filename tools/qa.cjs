@@ -20,7 +20,14 @@
  *   texto_sobre_texto           two HTML texts overlapping
  *   objetos_se_atravessando     two registered solids intersecting in 3D
  *   objeto_afundou_no_apoio     a solid sinking into the solid it rests on (restsOn)
- * Writes qa/report.json and one annotated PNG per problem group (old PNGs are removed first).
+ *   objeto_pequeno              the heroes of the shot fill too little of their zone (lost in the dark)
+ *   quadro_vazio                no registered object and no photo on screen
+ *   plano_parado                nothing moves on screen (3D picture and photo zooms) for too long
+ *   texto3d_ilegivel            text printed on a hero (makePlate) or a 3D label too small to read
+ *   foto_sem_credito            a photo on screen without its credit in a visible source text
+ *   foto_em_baixa_resolucao     a photo stretched beyond its real pixels (looks blurry)
+ * The last six only fail when they last (config/layout.json qa.*_s), so a pop-in or a cut is not a problem.
+ * Writes qa/report.json (problems + a per-frame trace) and one annotated PNG per problem group.
  * Exit code 0 = clean, 1 = violations, 2 = harness error.
  */
 const fs = require("fs");
@@ -47,7 +54,10 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const f of fs.readdirSync(outDir)) if (f.endsWith(".png")) fs.unlinkSync(path.join(outDir, f));
 if (!fs.existsSync(harness)) { console.error("rode antes: python3 tools/build.py " + args[0]); process.exit(2); }
 
-const SAFE = layout.safe, Z = layout.zones, GAP = layout.qa.text_hero_gap_px, TOL = 2, ZTOL = layout.qa.zone_tol_px ?? 4;
+const SAFE = layout.safe, Z = layout.zones, GAP = layout.qa.text_hero_gap_px, TOL = 2, ZTOL = layout.qa.zone_tol_px ?? 4, QA = layout.qa;
+const MEDIA = video.media || {};
+// minimum duration (s) before a rule fails; rules not listed fail on a single frame
+const MIN_S = { objeto_pequeno: QA.hero_min_cover_s, quadro_vazio: QA.empty_s, texto3d_ilegivel: QA.text3d_s, foto_sem_credito: QA.photo_credit_s, foto_em_baixa_resolucao: QA.photo_credit_s };
 const inside = (r, z, tol = TOL) => r.x >= z.x - tol && r.y >= z.y - tol && r.x + r.w <= z.x + z.w + tol && r.y + r.h <= z.y + z.h + tol;
 const overlap = (a, b, g = 0) => a.x < b.x + b.w + g && b.x < a.x + a.w + g && a.y < b.y + b.h + g && b.y < a.y + a.h + g;
 const r1 = (r) => ({ x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.w), h: Math.round(r.h) });
@@ -79,6 +89,24 @@ function rules(frame, texts) {
     if (s.kind === "afundou") v.push({ rule: "objeto_afundou_no_apoio", a: s.a, b: s.b, info: "afundou " + s.ratio + " unidades" });
     else v.push({ rule: "objetos_se_atravessando", a: s.a, b: s.b, info: "sobreposição 3D " + Math.round(s.ratio * 100) + "%" });
   }
+  // the shot's heroes must fill their zone
+  if (heroes.length) {
+    const u = heroes.reduce((a, h) => !a ? { ...h.rect } : (() => { const x0 = Math.min(a.x, h.rect.x), y0 = Math.min(a.y, h.rect.y); return { x: x0, y: y0, w: Math.max(a.x + a.w, h.rect.x + h.rect.w) - x0, h: Math.max(a.y + a.h, h.rect.y + h.rect.h) - y0 }; })(), null);
+    const z = (frame && frame.zone) || Z.stage, cover = Math.max(u.w / z.w, u.h / z.h);
+    if (cover < QA.hero_min_cover) v.push({ rule: "objeto_pequeno", a: heroes.map((h) => h.name).join(" + "), ra: u, info: `ocupa ${Math.round(cover * 100)}% da zona (mínimo ${Math.round(QA.hero_min_cover * 100)}%)` });
+  }
+  const cards = texts.filter((t) => t.kind === "photo");
+  if (frame && !frame.onscreen && !cards.length) v.push({ rule: "quadro_vazio", a: frame.scene, info: "nenhum objeto nem foto na tela" });
+  for (const x of (frame && frame.texts3d) || []) if (x.px < QA.text3d_min_cap_px) v.push({ rule: "texto3d_ilegivel", a: x.name, info: `"${x.text}" com ${x.px}px de altura (mínimo ${QA.text3d_min_cap_px}px)` });
+  // photos: credit on screen, no blur from stretching
+  const credits = texts.filter((t) => t.kind === "source").map((t) => t.full).join(" | ");
+  const shownPhotos = ((frame && frame.photos) || []).map((p) => ({ id: p.id, rect: p.rect, upscale: p.upscale })).concat(cards.map((c) => ({ id: c.media, rect: c.rect, upscale: c.upscale })));
+  for (const ph of shownPhotos) {
+    const m = MEDIA[ph.id];
+    if (!m) v.push({ rule: "foto_sem_credito", a: ph.id, ra: ph.rect, info: "foto fora de video.json → media" });
+    else if (!credits.includes(m.credit)) v.push({ rule: "foto_sem_credito", a: ph.id, ra: ph.rect, info: `falta "${m.credit}" numa fonte visível` });
+    if (ph.upscale > QA.photo_max_upscale) v.push({ rule: "foto_em_baixa_resolucao", a: ph.id, ra: ph.rect, info: `esticada ${ph.upscale}× (máximo ${QA.photo_max_upscale}×)` });
+  }
   return v;
 }
 
@@ -106,16 +134,33 @@ async function openHarness(browser) {
       return Array.from(document.querySelectorAll("[data-qa]")).map((el) => {
         if (vis(el) < 0.05) return null; const r = el.getBoundingClientRect(); if (r.width < 1 || r.height < 1) return null;
         const grp = el.closest(".ov, .cg"); const zone = grp ? (grp.dataset.zone || (grp.classList.contains("cg") ? "caption" : null)) : null;
-        return { id: (grp && grp.id) || el.id || "?", group: grp ? grp.id : null, zone, kind: el.dataset.qa, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, text: el.textContent.trim().slice(0, 48) };
+        const out = { id: (grp && grp.id) || el.id || "?", group: grp ? grp.id : null, zone, kind: el.dataset.qa, rect: { x: r.x, y: r.y, w: r.width, h: r.height }, text: el.textContent.trim().slice(0, 48), full: el.textContent.trim() };
+        if (el.dataset.qa === "photo") {
+          // photo card: its zoom (Ken Burns) counts as motion; upscale = screen px / source px shown
+          const img = el.querySelector("img"), ir = img.getBoundingClientRect();
+          out.media = el.dataset.media; out.img = { x: ir.x, y: ir.y, w: ir.width, h: ir.height };
+          out.upscale = +Math.max(ir.width / Math.max(1, img.naturalWidth), ir.height / Math.max(1, img.naturalHeight)).toFixed(2); // object-fit: cover
+        }
+        return out;
       }).filter(Boolean);
     };
   });
 
-  const groups = new Map();
+  const groups = new Map(), trace = [];
   const n = Math.floor((t1 - t0) / step + 1e-6);
+  const LAG = Math.max(1, Math.round(1 / step)), cardHist = [];
+  let still = null;
+  const addStill = (end) => { if (still && end - still.from >= QA.static_s - 1e-6) groups.set("plano_parado|" + still.from, { rule: "plano_parado", a: still.scene, from: still.from, to: end, frames: Math.round((end - still.from) / step) + 1, scene: still.scene, info: `${(end - still.from).toFixed(1)} s sem nada se mexer (máximo ${QA.static_s} s)` }); };
   for (let i = 0; i <= n; i++) {
     const t = +(t0 + i * step).toFixed(3);
-    const { frame, texts } = await page.evaluate((t) => { window.__seek(t); return { frame: window.__qa.frame(), texts: window.__collectTexts() }; }, t);
+    const { frame, texts } = await page.evaluate(({ t, lag }) => { window.__seek(t); return { frame: window.__qa.frame({ lag }), texts: window.__collectTexts() }; }, { t, lag: LAG });
+    // motion over the last second: the 3D picture changed, or a photo card zoomed/moved
+    const cards = {}; let cardMove = 0; const prevCards = cardHist[cardHist.length - LAG] || {};
+    for (const c of texts.filter((x) => x.kind === "photo")) { cards[c.media] = c.img; const p = prevCards[c.media]; cardMove = Math.max(cardMove, p ? Math.max(Math.abs(p.x - c.img.x), Math.abs(p.y - c.img.y), Math.abs(p.w - c.img.w)) : 99); }
+    cardHist.push(cards);
+    const moving = !frame || frame.motion === null || frame.motion >= QA.static_motion || cardMove >= 4;
+    if (moving) { addStill(+(t - step).toFixed(3)); still = null; } else if (!still) still = { from: +Math.max(t0, t - LAG * step).toFixed(3), scene: frame.scene };
+    trace.push({ t, scene: frame && frame.scene, motion: frame && frame.motion !== null ? +frame.motion.toFixed(2) : null, onscreen: frame && frame.onscreen, text3d: frame && frame.texts3d.length ? Math.min(...frame.texts3d.map((x) => x.px)) : null });
     for (const v of rules(frame, texts)) {
       const key = [v.rule, v.a, v.b || ""].join("|");
       const g = groups.get(key);
@@ -125,9 +170,10 @@ async function openHarness(browser) {
     }
     if (i % 50 === 0) process.stdout.write(`  qa ${t.toFixed(1)}s / ${t1.toFixed(1)}s\r`);
   }
+  addStill(t1);
   process.stdout.write("\n");
 
-  const list = [...groups.values()].sort((a, b) => a.from - b.from);
+  const list = [...groups.values()].filter((g) => !MIN_S[g.rule] || g.to - g.from + step >= MIN_S[g.rule] - 1e-6).sort((a, b) => a.from - b.from);
   // screenshots from a fresh page: after hundreds of seeks the GPU queue can stall page.screenshot
   if (list.length) { await page.close(); page = await openHarness(browser); }
   let shot = 0;
@@ -148,7 +194,7 @@ async function openHarness(browser) {
   }
   await browser.close();
 
-  const report = { video: video.slug, step, from: t0, to: t1, frames: n + 1, problems: list.length, errors, items: list };
+  const report = { video: video.slug, step, from: t0, to: t1, frames: n + 1, problems: list.length, errors, items: list, trace };
   fs.writeFileSync(path.join(outDir, "report.json"), JSON.stringify(report, null, 2));
   if (errors.length) console.log("erros de página:\n  " + errors.join("\n  "));
   if (!list.length) { console.log(`QA ok: ${n + 1} quadros verificados, nenhum problema.`); process.exit(0); }

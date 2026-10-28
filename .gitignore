@@ -15,3 +15,6 @@ tests/*/preview/
 # áudio pesado fica fora do git; os tempos das palavras ficam
 videos/*/audio/*
 !videos/*/audio/words.json
+
+# fotos baixadas (direito autoral, peso): o link e o crédito ficam em video.json → media
+videos/*/midia/*

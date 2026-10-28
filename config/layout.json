@@ -19,12 +19,17 @@
   "caption": { "bottom": 1476, "font_px": 58, "max_chars": 20, "max_words": 4, "pad_x": 30, "pad_y": 14 },
   "camera": { "_doc": "Padrões do CAM.pose (engine/core.js). pad = folga mínima em px entre o objeto e a borda da zona.", "pad_px": 28, "fov": 40, "from": [0, 0.35, 1] },
   "qa": {
-    "_doc": "Regras do tools/qa.cjs. Rodar antes de qualquer render.",
+    "_doc": "Regras do tools/qa.cjs. Rodar antes de qualquer render. *_s = quanto tempo seguido o problema precisa durar para reprovar (ignora o meio de um pop ou de um corte).",
     "step_s": 0.2,
     "zone_tol_px": 4,
     "text_hero_gap_px": 10,
     "solid_overlap_ratio": 0.03,
     "contact_tol": 0.04,
-    "decoration_selectors": ["#ov-flash", "#ov-prog-track", "#ov-prog"]
+    "decoration_selectors": ["#ov-flash", "#ov-prog-track", "#ov-prog"],
+    "hero_min_cover": 0.45, "hero_min_cover_s": 0.8,
+    "empty_s": 0.6,
+    "static_motion": 0.2, "static_s": 2.0,
+    "text3d_min_cap_px": 16, "text3d_s": 0.5,
+    "photo_max_upscale": 1.6, "photo_credit_s": 0.4
   }
 }

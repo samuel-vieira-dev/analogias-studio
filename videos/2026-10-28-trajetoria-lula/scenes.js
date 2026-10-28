@@ -148,15 +148,6 @@ function makeCard(text, color) {
   const p = makePlate(text, 1.1, 0.22, { bg: null, fg: "#ffffff" }); p.position.set(0, 0.24, 0.036); g.add(p);
   g.add(contactShadow(1.6, 0.8)); return g;
 }
-// Small house with a gable roof. Origin: floor.
-function makeHouse(text) {
-  const g = new THREE.Group();
-  const body = new THREE.Mesh(rbox(1.1, 0.8, 0.9, 0.03), mat("#f4e8da", { roughness: 0.85 })); body.position.y = 0.4; g.add(body);
-  const roof = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.62, 1.0, 3, 1), mat(RED, { roughness: 0.7 })); roof.rotation.set(0, 0, Math.PI / 2); roof.rotation.y = Math.PI / 2; roof.position.y = 0.98; roof.scale.set(1, 1, 0.75); g.add(roof);
-  const door = new THREE.Mesh(new THREE.BoxGeometry(0.26, 0.42, 0.03), mat("#5a3a26")); door.position.set(0, 0.21, 0.46); g.add(door);
-  const p = makePlate(text, 1.05, 0.2, { bg: "#141414", fg: "#ffffff" }); p.position.set(0, -0.0, 0); p.visible = false; g.add(p);
-  g.add(contactShadow(1.6, 1.4)); return g;
-}
 // Up arrow on a pedestal (salary above inflation). Origin: floor.
 function makeUpArrow(color = GREEN) {
   const g = new THREE.Group(), m = mat(color, { roughness: 0.45 });
@@ -387,7 +378,7 @@ addScene("eleicoes", 39.73, 44.61, (S) => {
 //  paga antes do prazo. Termina com oitenta e três por cento de aprovação."
 addScene("governo", 44.61, 56.33, (S) => {
   const card = makeCard("BOLSA FAMÍLIA", "#2f8a57"); card.position.set(-3.2, 0, 0); S.add(card);
-  const house = makeHouse("MINHA CASA"); house.position.set(0, 0, 0); S.add(house);
+  const house = makeHouse(); house.position.set(0, 0, 0); S.add(house);
   const money = makeMoneyStack("SALÁRIO"); money.position.set(3.2, 0, 0.1); S.add(money);
   const arrow = makeUpArrow(); arrow.position.set(3.2, 0.27, 0.1); S.add(arrow);
   const led = makeLedger("DÍVIDA COM O FMI"); led.group.position.set(7.5, 0, 0); S.add(led.group);

@@ -41,7 +41,7 @@ function chipTex(text, { bg = ORANGE, fg = "#fff", font = "900 120px Inter", pad
   const c = makeCanvas(tw + pad * 2, h); const x = c.getContext("2d");
   if (bg) { x.fillStyle = bg; roundRect(x, 0, 0, c.width, c.height, radius); x.fill(); }
   x.font = font; x.fillStyle = fg; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(text, c.width / 2, h / 2 + 6);
-  return texFrom(c);
+  const t = texFrom(c); t.userData.textFrac = parseFloat(font.match(/(\d+(?:\.\d+)?)px/)[1]) / h; return t;
 }
 // Text on a rounded plate. The font shrinks until the text fits 88% of the plate width.
 function plateTex(text, { bg = "#141414", fg = "#f5c400", w = 1024, h = 220, font = "900 120px Inter", radius = 24 } = {}) {
@@ -49,16 +49,20 @@ function plateTex(text, { bg = "#141414", fg = "#f5c400", w = 1024, h = 220, fon
   if (bg) { x.fillStyle = bg; roundRect(x, 0, 0, w, h, radius); x.fill(); }
   let px = parseFloat(font.match(/(\d+(?:\.\d+)?)px/)[1]); const f = (n) => font.replace(/\d+(?:\.\d+)?px/, n + "px");
   x.font = f(px); while (x.measureText(text).width > w * 0.88 && px > 8) { px -= 2; x.font = f(px); }
-  x.fillStyle = fg; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(text, w / 2, h / 2 + px * 0.05); return texFrom(c);
+  x.fillStyle = fg; x.textAlign = "center"; x.textBaseline = "middle"; x.fillText(text, w / 2, h / 2 + px * 0.05);
+  const t = texFrom(c); t.userData.textFrac = px / h; return t;
 }
 // A thin plate with printed text (w x h world units, 0.03 deep, text on the +z face).
 // Use it instead of a sprite when the text belongs to an object: it is part of that object.
-function makePlate(text, w, h, { bg = "#141414", fg = "#ffffff", font = "900 160px Inter", depth = 0.03 } = {}) {
+// The QA checks that the text is readable on screen while its hero is the subject (texto3d_ilegivel);
+// `detail: true` marks text that is texture, not meant to be read (a tiny year on a truck door).
+function makePlate(text, w, h, { bg = "#141414", fg = "#ffffff", font = "900 160px Inter", depth = 0.03, detail = false } = {}) {
   const ph = 256, pw = Math.max(64, Math.round(ph * w / h));
   const tex = plateTex(text, { bg, fg, w: pw, h: ph, font: font.replace(/\d+(?:\.\d+)?px/, Math.round(ph * 0.62) + "px"), radius: Math.round(ph * 0.12) });
   const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: !bg });
   const side = mat(bg || "#141414");
-  return new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), [side, side, side, side, face, side]);
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), [side, side, side, side, face, side]);
+  m.userData.plate = { text, w, h, depth, frac: tex.userData.textFrac, detail }; return m;
 }
 function stripesTex() {
   const c = makeCanvas(512, 64); const x = c.getContext("2d"); x.fillStyle = "#141414"; x.fillRect(0, 0, 512, 64);
@@ -206,11 +210,11 @@ const CAM = (() => {
     if (!fits(hi)) console.warn("CAM.pose: alvo não cabe na zona", o.zone);
     for (let i = 0; i < 40; i++) { const mid = (lo + hi) / 2; if (fits(mid)) hi = mid; else lo = mid; }
     const d = hi * Math.max(1, o.pull || 1);
-    return { pos: look.clone().addScaledVector(dir, d), look: look.clone(), cx, cy, fov, dist: d };
+    return { pos: look.clone().addScaledVector(dir, d), look: look.clone(), cx, cy, fov, dist: d, zone };
   }
   // A hand-placed shot (still optically centred on a zone). QA verifies it.
-  function at(pos, look, o = {}) { const z = zoneRect(o.zone || "stage"); return { pos: new V3(...pos), look: new V3(...look), cx: z.x + z.w / 2, cy: z.y + z.h / 2, fov: o.fov ?? DEF.fov, dist: new V3(...pos).distanceTo(new V3(...look)) }; }
-  function blend(a, b, k) { return { pos: a.pos.clone().lerp(b.pos, k), look: a.look.clone().lerp(b.look, k), cx: lerp(a.cx, b.cx, k), cy: lerp(a.cy, b.cy, k), fov: lerp(a.fov, b.fov, k), dist: lerp(a.dist, b.dist, k) }; }
+  function at(pos, look, o = {}) { const z = zoneRect(o.zone || "stage"); return { pos: new V3(...pos), look: new V3(...look), cx: z.x + z.w / 2, cy: z.y + z.h / 2, fov: o.fov ?? DEF.fov, dist: new V3(...pos).distanceTo(new V3(...look)), zone: z }; }
+  function blend(a, b, k) { return { pos: a.pos.clone().lerp(b.pos, k), look: a.look.clone().lerp(b.look, k), cx: lerp(a.cx, b.cx, k), cy: lerp(a.cy, b.cy, k), fov: lerp(a.fov, b.fov, k), dist: lerp(a.dist, b.dist, k), zone: k < 0.5 ? a.zone : b.zone }; }
   // Pick along a list of [time, pose] keys, easing between consecutive keys over `ease` seconds before each key.
   function track(t, keys, ease = 1.0) {
     let p = keys[0][1];
@@ -284,8 +288,31 @@ function spriteRect(spr) {
   return { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
 }
 function boxVolume(b) { const s = b.getSize(new V3()); return Math.max(0, s.x) * Math.max(0, s.y) * Math.max(0, s.z); }
+const _toPx = (v) => { const q = v.clone().project(camera); return { x: (q.x + 1) / 2 * W, y: (1 - q.y) / 2 * H, front: q.z < 1 }; };
+// On-screen height (px) of the capital letters printed on a plate, or null when the plate faces away.
+function plateCapPx(m) {
+  const pd = m.userData.plate; m.updateWorldMatrix(true, false);
+  const c = new V3(0, 0, pd.depth / 2).applyMatrix4(m.matrixWorld);
+  const nrm = new V3(0, 0, 1).transformDirection(m.matrixWorld), toCam = camera.position.clone().sub(c).normalize();
+  if (nrm.dot(toCam) < 0.35) return null;
+  const a = _toPx(new V3(0, -pd.h / 2, pd.depth / 2).applyMatrix4(m.matrixWorld)), b = _toPx(new V3(0, pd.h / 2, pd.depth / 2).applyMatrix4(m.matrixWorld));
+  if (!a.front || !b.front) return null;
+  return Math.hypot(a.x - b.x, a.y - b.y) * pd.frac * 0.72;
+}
+// Share (%) of the 3D picture that clearly changed (luminance step > 16) against the picture
+// `lag` calls ago, on a 108x192 thumbnail. The QA seeks in order and asks with lag = 1 s, so a
+// slow push-in counts as motion and a frozen shot does not. null until there is history.
+const _mo = makeCanvas(108, 192), _moCtx = _mo.getContext("2d", { willReadFrequently: true }), _moHist = [];
+function worldMotion(lag) {
+  _moCtx.drawImage(renderer.domElement, 0, 0, 108, 192); const d = _moCtx.getImageData(0, 0, 108, 192).data;
+  const cur = new Float32Array(108 * 192); for (let i = 0; i < cur.length; i++) cur[i] = d[i * 4] * 0.3 + d[i * 4 + 1] * 0.59 + d[i * 4 + 2] * 0.11;
+  _moHist.push(cur); if (_moHist.length > 64) _moHist.shift();
+  const prev = _moHist[_moHist.length - 1 - lag]; if (!prev) return null;
+  let n = 0; for (let i = 0; i < cur.length; i++) if (Math.abs(cur[i] - prev[i]) > 16) n++;
+  return (100 * n) / cur.length;
+}
 window.__qa = {
-  frame() {
+  frame(o = {}) {
     const s = ACTIVE; if (!s) return null;
     const active = (x) => !x.when || x.when(LAST_T);
     const heroes = s.heroes.filter((h) => active(h) && shown(h.obj)).map((h) => { const b = heroBox(h.obj); return b.isEmpty() ? null : { name: h.name, rect: CAM.projectBox(b) }; }).filter(Boolean);
@@ -306,7 +333,28 @@ window.__qa = {
       const ratio = boxVolume(inter) / Math.max(1e-9, Math.min(boxVolume(a.box), boxVolume(b.box)));
       if (ratio > LAYOUT.qa.solid_overlap_ratio) solids.push({ a: a.name, b: b.name, ratio: +ratio.toFixed(3), kind: "atravessou" });
     }
-    return { t: LAST_T, scene: s.name, heroes, labels, solids, scenery };
+    // every registered object on screen, `when` or not (QA: quadro_vazio)
+    const SAFE = LAYOUT.safe, safeArea = SAFE.w * SAFE.h;
+    const onArea = (r) => { const x0 = Math.max(SAFE.x, r.x), y0 = Math.max(SAFE.y, r.y), x1 = Math.min(SAFE.x + SAFE.w, r.x + r.w), y1 = Math.min(SAFE.y + SAFE.h, r.y + r.h); return Math.max(0, x1 - x0) * Math.max(0, y1 - y0) / safeArea; };
+    let onscreen = 0;
+    for (const x of s.heroes.concat(s.solids, s.scenery)) { if (!shown(x.obj)) continue; const b = heroBox(x.obj); if (b.isEmpty()) continue; const r = CAM.projectBox(b); if (!r.behind && onArea(r) > 0.01) onscreen++; }
+    // printed text of the heroes in the shot, and 3D labels (QA: texto3d_ilegivel)
+    const texts3d = [];
+    for (const h of s.heroes) if (active(h) && shown(h.obj)) h.obj.traverse((m) => {
+      if (!m.userData.plate || m.userData.plate.detail || !shown(m)) return;
+      const px = plateCapPx(m); if (px !== null) texts3d.push({ name: h.name, text: m.userData.plate.text, px: +px.toFixed(1) });
+    });
+    for (const l of labels) { const spr = s.labels.find((x) => x.name === l.name).obj, f = spr.material.map.userData.textFrac; if (f) texts3d.push({ name: l.name, text: l.name, px: +(l.rect.h * f * 0.72).toFixed(1) }); }
+    // photos on screen: size and how much the source image is stretched (QA: foto_sem_credito, foto_em_baixa_resolucao)
+    const photos = [];
+    s.group.traverse((m) => {
+      if (!m.userData.photo || !shown(m)) return;
+      const r = CAM.projectBox(heroBox(m)); if (r.behind || onArea(r) < 0.01) return;
+      const ph = m.userData.photo, tex = m.material.map;
+      const shownPx = ph.imgH * tex.repeat.y;
+      photos.push({ id: ph.id, rect: r, upscale: +(r.h / Math.max(1, shownPx)).toFixed(2) });
+    });
+    return { t: LAST_T, scene: s.name, zone: CAM.last && CAM.last.zone, heroes, labels, solids, scenery, onscreen, texts3d, photos, motion: o.lag ? worldMotion(o.lag) : null };
   },
 };
 

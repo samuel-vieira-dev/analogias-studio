@@ -37,3 +37,38 @@ addScene("numero_sobre_urna", 6, 8, (S) => {
   const P = CAM.pose(urn, { zone: "headline", pad: 0 });
   return () => CAM.apply(P);
 });
+
+// ---------------------------------------------------------------- defeitos achados nos vídeos de 27–28/10
+// 5) objeto pequeno — the hero lost in the dark (Lula 1:08, a mala a 18% do palco)
+addScene("objeto_pequeno", 8, 10, (S) => {
+  const urn = makeBallotBox(); S.add(urn); S.hero(urn, "urna");
+  const P = CAM.pose(urn, { zone: "stage", pull: 3.2 });
+  return (t) => CAM.apply(CAM.blend(P, CAM.pose(urn, { zone: "stage", pull: 3.4 }), lin(t, 8, 10)));
+});
+
+// 6) quadro vazio — the cut lands before anything pops in (Lula 0:45, palco vazio por 0,8 s)
+addScene("vazio", 10, 12, (S) => {
+  const urn = makeBallotBox(); urn.position.x = 40; S.add(urn); S.hero(urn, "urna longe", { when: () => false });
+  return (t) => CAM.apply(CAM.at([Math.sin(t) * 2, 2.5, 6], [0, 0.5, 0], { zone: "stage-tall" }));
+});
+
+// 7) plano parado — nothing moves for 3 s (Lula 0:05–0:11, a prensa)
+addScene("parado", 12, 15, (S) => {
+  const urn = makeBallotBox(); S.add(urn); S.hero(urn, "urna parada");
+  const P = CAM.pose(urn, { zone: "stage-tall" });
+  return () => CAM.apply(P);
+});
+
+// 8) texto 3D ilegível — a label printed too small to read (Lula 1:40, os anos nas urnas)
+addScene("texto_miudo", 15, 17, (S) => {
+  const box = new THREE.Mesh(rbox(2.4, 1.4, 1, 0.05), mat(ORANGE)); box.position.y = 0.7; S.add(box);
+  const p = makePlate("TEXTO MIÚDO DEMAIS PRA LER", 0.6, 0.06); p.position.set(0, 0.7, 0.516); box.add(p);
+  S.hero(box, "caixa");
+  return (t) => CAM.apply(CAM.pose(box, { zone: "stage-tall", from: [Math.sin(t) * 0.3, 0.3, 1] }));
+});
+
+// 9) foto sem crédito e esticada — a 160 px photo blown up to fill the stage, no "Foto:" on screen
+addScene("foto_ruim", 17, 19, (S) => {
+  const pr = makePhotoPrint("teste", { w: 2, pin: false }); pr.group.position.y = 0.2; S.add(pr.group); S.hero(pr.group, "foto");
+  return (t) => { pr.zoom(1 + 0.1 * lin(t, 17, 19)); CAM.apply(CAM.pose(pr.group, { zone: "stage-tall", from: [0, 0, 1] })); };
+});

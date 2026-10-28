@@ -1,7 +1,7 @@
 {
- "_doc": "Teste do QA: cada cena repete de propósito um defeito do circuit breaker V2. Ver tools/selftest.sh.",
+ "_doc": "Teste do QA: cada cena repete de propósito um defeito já visto (circuit breaker V2, Lula). Ver tools/selftest.sh.",
  "slug": "qa-pega-erros",
- "duration": 8.0,
+ "duration": 19.0,
  "audio": {
   "narration": "audio/narration.wav",
   "words": "audio/words.json"
@@ -12,7 +12,12 @@
  "cuts": [
   2,
   4,
-  6
+  6,
+  8,
+  10,
+  12,
+  15,
+  17
  ],
  "overlays": [
   {
@@ -31,5 +36,12 @@
    "to": 8.0
   }
  ],
- "sfx": []
+ "sfx": [],
+ "media": {
+  "teste": {
+   "file": "midia/teste.jpg",
+   "credit": "Teste do QA",
+   "url": "ffmpeg testsrc2 160x120"
+  }
+ }
 }

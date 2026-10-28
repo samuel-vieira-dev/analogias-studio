@@ -39,11 +39,12 @@ Se o Samuel escrever o próprio hook ou pergunta, usar o texto dele como está (
 
 - 90 s ≈ **240–250 palavras** na voz do Sandro Dutra (2,75 palavras/s depois do aperto de pausas; o ritmo máximo permitido é ×1,06).
 - Estrutura que funcionou: gancho → cena "imagina" com mistério → revelação do nome → analogia no ponto difícil → regras simples → contexto histórico curto → hoje → projeção no passado (os dois lados) → "mas hoje não é aquele dia" → pergunta de duas escolhas.
-- Entregar em tabela: **# · narração · cena 3D · texto na tela (zona)**, mais a tabela dos 5 critérios (onde está · atende?).
+- Entregar em tabela: **# · narração · visual · texto na tela (zona)**, mais a tabela dos 5 critérios (onde está · atende?). A coluna **visual** diz `3D: <o que>` ou `foto: <id> (quadro | porta-retrato | cartão)` — foto onde quem assiste se perguntaria "como é isso?" (pessoa citada, o avião, o prédio, o documento), 3D para o resto ([`fotos.md`](fotos.md)).
+- Abaixo do roteiro, a **lista de fotos**: id · o que mostra · onde aparece · fonte/autor · link · licença.
 - Texto para TTS (`narracao.txt`): números falados por extenso ("dezessete por cento"); anos em dígitos ("2008"); "pra" em vez de "para"; reticências para suspense, dois-pontos para pausa curta; nada de símbolos (%, R$) na narração.
 
 ## Etapa 4 — aprovação (portão obrigatório)
 
-Mostrar o roteiro **completo** (narração, cenas, texto na tela, critérios e fatos) e esperar o "aprovado". Só então gerar a narração. Gerar voz antes da aprovação gasta créditos à toa — já aconteceu e não pode se repetir.
+Mostrar o roteiro **completo** (narração, visual, texto na tela, critérios, fatos e lista de fotos) e esperar o "aprovado". Só então gerar a narração e baixar as fotos. Gerar voz antes da aprovação gasta créditos à toa — já aconteceu e não pode se repetir.
 
 Depois do "aprovado": salvar `brief.yaml` (hook e pergunta escolhidos, data da aprovação), `roteiro.md` e `narracao.txt` na pasta do vídeo.
