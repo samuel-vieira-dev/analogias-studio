@@ -1,6 +1,6 @@
 # Roteiro para aprovação — quem foi e quem é Lula (voz Sandro Dutra)
 
-Vídeo expositivo: trajetória, acertos e escândalos, cada um com fonte e desfecho. Hook: opção 5 · Pergunta final: opção 1 · 279 palavras (~100 s) · Fatos e fontes: `fatos.md`.
+Vídeo expositivo: trajetória, acertos e escândalos, cada um com fonte e desfecho. Hook: opção 5 · Pergunta final: opção 2 · 279 palavras (~100 s) · Fatos e fontes: `fatos.md`.
 
 | # | Narração | Cena 3D | Texto na tela (zona) |
 | --- | --- | --- | --- |
@@ -16,7 +16,7 @@ Vídeo expositivo: trajetória, acertos e escândalos, cada um com fonte e desfe
 | 10 | "Em 2021, o Supremo anula as condenações: o caso estava no tribunal errado, e o juiz Moro foi considerado parcial. Mas anular não é absolver. É como apagar a nota de uma prova corrigida pelo professor errado... sem dizer se a resposta estava certa." | Analogia (única): folha de prova com nota; carimbo PROFESSOR ERRADO; borracha apaga a nota; fica um "?" sobre a resposta | ANULADO ≠ ABSOLVIDO (headline) · Fonte: STF, mar–abr/2021 (canto) |
 | 11 | "No caminho, relações criticadas: Paulo Maluf, o iraniano Ahmadinejad e o venezuelano Nicolás Maduro." | Três porta-retratos neutros (sem rostos, só nomes impressos): MALUF 2012, IRÃ 2010, MADURO 2023 | MALUF 2012 · IRÃ 2010 · MADURO 2023 (chips) · Fonte: Estado de Minas, CNN Brasil (canto) |
 | 12 | "Hoje, aos oitenta e um anos, foi eleito pela quarta vez. E no terceiro mandato, o Brasil saiu de novo do Mapa da Fome da ONU." | Quatro urnas acesas (2002, 2006, 2022, 2026); um mapa-múndi genérico com o Brasil saindo da mancha vermelha | 4º MANDATO · 51,79% → FORA DO MAPA DA FOME (2025) (chips) · Fonte: TRE-SP, 25/10/2026; ONU/FAO, jul/2025 (canto) |
-| 13 | "Então me diz: a anulação corrigiu uma injustiça... ou deixou uma dúvida sem resposta?" | Dois botões neutros: INJUSTIÇA CORRIGIDA e DÚVIDA, afundando cada um na sua vez | Anulação: o que foi? @analogias.br (headline) · Comenta: INJUSTIÇA ou DÚVIDA (base, depois da fala) |
+| 13 | "Então me diz: o que pesa mais na história dele... os programas sociais ou os escândalos?" | Balança com dois pratos: num, cartão de benefício e casinha (PROGRAMAS SOCIAIS); no outro, mala e pasta (ESCÂNDALOS); cada prato desce na sua vez e a balança volta ao meio | O que pesa mais? @analogias.br (headline) · Comenta: PROGRAMAS ou ESCÂNDALOS (base, depois da fala) |
 
 ## Critérios
 
@@ -40,3 +40,4 @@ Vídeo expositivo: trajetória, acertos e escândalos, cada um com fonte e desfe
 - Idade no acidente (fala 2).
 - Vertente populista com as características da política (falas 6 e 7).
 - Vídeo expositivo de quem foi e quem é, com escândalos e boas práticas: entraram FMI, Mapa da Fome e a idade atual; saiu a projeção dupla do fim. Duração passa de 90 para ~100 s.
+- Pergunta final trocada pela opção 2 (programas sociais ou escândalos).
