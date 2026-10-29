@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-29-icms-combustiveis
+tema: "O que é o ICMS e o reajuste do ICMS sobre gasolina, diesel e gás de cozinha aprovado pelo Confaz (publicado em 28/10/2026, vale a partir de 1º/02/2027), com fontes na tela (tom neutro)"
+referencias_visuais: []
+
+hook:
+  origem: 2
+  texto: "Imagina pagar um pedágio invisível toda vez que você abastece."
+
+pergunta_final:
+  origem: 3
+  texto: "Combustível deve pagar mais imposto que comida ou menos?"
+
+duracao_alvo_s: 100
+aprovado_em: 2026-10-29

@@ -1,0 +1,592 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-29-icms-combustiveis",
+ "post": {
+  "title": "PEDÁGIO\nINVISÍVEL?",
+  "hashtags": [
+   "#icms",
+   "#combustivel",
+   "#gasolina",
+   "#diesel",
+   "#gasdecozinha",
+   "#impostos",
+   "#confaz"
+  ]
+ },
+ "duration": 100.2,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "cuts": [
+  4.3,
+  11.0,
+  21.85,
+  25.8,
+  33.95,
+  38.45,
+  41.35,
+  49.55,
+  63.7,
+  67.95,
+  77.3,
+  83.25,
+  93.05
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 4.3
+  },
+  {
+   "id": "nota",
+   "from": 4.3,
+   "to": 11.0
+  },
+  {
+   "id": "icms",
+   "from": 11.0,
+   "to": 21.85
+  },
+  {
+   "id": "pizza",
+   "from": 21.85,
+   "to": 25.8
+  },
+  {
+   "id": "regra",
+   "from": 25.8,
+   "to": 33.95
+  },
+  {
+   "id": "pedagio",
+   "from": 33.95,
+   "to": 38.45
+  },
+  {
+   "id": "reajuste",
+   "from": 38.45,
+   "to": 41.35
+  },
+  {
+   "id": "confaz",
+   "from": 41.35,
+   "to": 49.55
+  },
+  {
+   "id": "valores",
+   "from": 49.55,
+   "to": 63.7
+  },
+  {
+   "id": "calendario",
+   "from": 63.7,
+   "to": 67.95
+  },
+  {
+   "id": "porque",
+   "from": 67.95,
+   "to": 77.3
+  },
+  {
+   "id": "preco",
+   "from": 77.3,
+   "to": 83.25
+  },
+  {
+   "id": "caminhao",
+   "from": 83.25,
+   "to": 93.05
+  },
+  {
+   "id": "escolha",
+   "from": 93.05,
+   "to": 100.2
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 4.25,
+   "text": "PEDÁGIO\nINVISÍVEL?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 4.4,
+   "to": 9.6,
+   "text": "R$ 50 NA BOMBA"
+  },
+  {
+   "id": "ov-03",
+   "kind": "chip",
+   "from": 9.74,
+   "to": 10.95,
+   "style": "orange",
+   "text": "VAI PRO SEU ESTADO"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 12.4,
+   "to": 14.0,
+   "text": "ICMS"
+  },
+  {
+   "id": "ov-05",
+   "kind": "text",
+   "from": 14.07,
+   "to": 17.55,
+   "text": "Imposto sobre Circulação de\nMercadorias e Serviços"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 17.63,
+   "to": 21.8,
+   "text": "ESTÁ EM QUASE TUDO"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 21.93,
+   "to": 23.55,
+   "text": "CADA ESTADO\nCOBRA O SEU"
+  },
+  {
+   "id": "ov-08",
+   "kind": "stat",
+   "from": 23.62,
+   "to": 25.75,
+   "big": "1/4",
+   "label": "VAI PRAS PREFEITURAS"
+  },
+  {
+   "id": "ov-09",
+   "kind": "source",
+   "from": 21.93,
+   "to": 25.75,
+   "text": "Fonte: Constituição, arts. 155 e 158"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 25.9,
+   "to": 29.7,
+   "text": "LEI DE 2022"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 29.78,
+   "to": 33.9,
+   "text": "% DO PREÇO →\nVALOR FIXO POR LITRO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "source",
+   "from": 25.9,
+   "to": 33.9,
+   "text": "Fonte: Lei Complementar 192/2022"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 34.02,
+   "to": 38.4,
+   "text": "MESMA TARIFA\nPRA TODO CARRO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 38.51,
+   "to": 41.3,
+   "text": "REAJUSTE\n1 VEZ POR ANO"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 42.85,
+   "to": 47.6,
+   "text": "CONFAZ APROVA\nNOVA TABELA"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 47.68,
+   "to": 49.5,
+   "text": "PUBLICADA EM 28/10"
+  },
+  {
+   "id": "ov-17",
+   "kind": "source",
+   "from": 42.85,
+   "to": 49.5,
+   "text": "Fonte: Diário Oficial da União, 28/10/2026"
+  },
+  {
+   "id": "ov-18",
+   "kind": "stat",
+   "from": 49.64,
+   "to": 54.55,
+   "big": "R$ 1,57 → 1,64",
+   "label": "GASOLINA · POR LITRO"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 54.64,
+   "to": 60.1,
+   "big": "R$ 1,17 → 1,30",
+   "label": "DIESEL · +11% · POR LITRO"
+  },
+  {
+   "id": "ov-20",
+   "kind": "stat",
+   "from": 60.16,
+   "to": 63.65,
+   "big": "+R$ 0,91",
+   "label": "GÁS · POR BOTIJÃO DE 13 kg"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 49.64,
+   "to": 63.65,
+   "text": "Fonte: Confaz via Agência Brasil, 28/10/2026"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 63.78,
+   "to": 67.9,
+   "text": "SÓ VALE A PARTIR\nDE 1º/02/2027"
+  },
+  {
+   "id": "ov-23",
+   "kind": "source",
+   "from": 63.78,
+   "to": 67.9,
+   "text": "Fonte: Convênios ICMS 127 e 128/2026"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 68.98,
+   "to": 74.85,
+   "text": "REAJUSTE PELA\nMÉDIA DA ANP"
+  },
+  {
+   "id": "ov-25",
+   "kind": "chip",
+   "from": 74.92,
+   "to": 77.25,
+   "style": "dark",
+   "text": "ESTADOS: CUMPRIMOS A LEI"
+  },
+  {
+   "id": "ov-26",
+   "kind": "source",
+   "from": 68.98,
+   "to": 77.25,
+   "text": "Fonte: Comsefaz; Agência Brasil, 28/10/2026"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 77.37,
+   "to": 83.2,
+   "text": "REPASSE NÃO\nÉ AUTOMÁTICO"
+  },
+  {
+   "id": "ov-28",
+   "kind": "source",
+   "from": 77.37,
+   "to": 83.2,
+   "text": "Fonte: Metrópoles, 28/10/2026"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 83.32,
+   "to": 86.85,
+   "text": "E O CAMINHONEIRO?"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 86.93,
+   "to": 90.68,
+   "text": "+R$ 0,13 POR\nLITRO DE DIESEL"
+  },
+  {
+   "id": "ov-31",
+   "kind": "chip",
+   "from": 90.74,
+   "to": 93.0,
+   "style": "red",
+   "text": "PODE CHEGAR NO CARRINHO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 86.93,
+   "to": 93.0,
+   "text": "Fonte: Confaz, 2026"
+  },
+  {
+   "id": "ov-33",
+   "kind": "question",
+   "from": 93.11,
+   "to": 100.2,
+   "text": "Mais ou menos\nque comida?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-34",
+   "kind": "cta",
+   "from": 98.3,
+   "to": 100.2,
+   "html": "Comenta: <b>MAIS</b> ou <b>MENOS</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   1.6,
+   "riser.mp3",
+   -24
+  ],
+  [
+   3.4,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   4.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   9.8,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   10.97,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   12.5,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   18.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   19.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   19.8,
+   "pop.mp3",
+   -14
+  ],
+  [
+   21.1,
+   "pop.mp3",
+   -14
+  ],
+  [
+   21.82,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   24.0,
+   "ping.mp3",
+   -16
+  ],
+  [
+   25.77,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   31.0,
+   "glitch-1.mp3",
+   -20
+  ],
+  [
+   32.6,
+   "click.mp3",
+   -14
+  ],
+  [
+   33.92,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   35.3,
+   "ping.mp3",
+   -18
+  ],
+  [
+   37.0,
+   "ping.mp3",
+   -18
+  ],
+  [
+   38.42,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   40.3,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   41.32,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   46.0,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   47.8,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   49.52,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   52.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   56.6,
+   "pop.mp3",
+   -14
+  ],
+  [
+   59.0,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   61.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   63.67,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   65.8,
+   "click.mp3",
+   -14
+  ],
+  [
+   66.6,
+   "ping.mp3",
+   -16
+  ],
+  [
+   67.92,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   73.6,
+   "riser.mp3",
+   -24
+  ],
+  [
+   77.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   78.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   81.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   81.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   82.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   83.22,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   88.4,
+   "ping.mp3",
+   -16
+  ],
+  [
+   91.8,
+   "pop.mp3",
+   -14
+  ],
+  [
+   93.02,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   95.6,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   96.8,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   98.3,
+   "chime.mp3",
+   -18
+  ]
+ ],
+ "media": {}
+}
