@@ -1,0 +1,553 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-29-seguranca-urnas",
+ "post": {
+  "title": "QUEM PROTEGE\nSEU VOTO?",
+  "hashtags": [
+   "#urnaeletronica",
+   "#eleicoes",
+   "#tse",
+   "#votoimpresso",
+   "#politicabrasileira"
+  ]
+ },
+ "duration": 104.8,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "cuts": [
+  2.95,
+  16.3,
+  20.6,
+  32.1,
+  38.0,
+  47.5,
+  60.1,
+  69.0,
+  83.5,
+  91.3,
+  96.9
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 2.95
+  },
+  {
+   "id": "papel",
+   "from": 2.95,
+   "to": 16.3
+  },
+  {
+   "id": "fraudes",
+   "from": 16.3,
+   "to": 20.6
+  },
+  {
+   "id": "historia",
+   "from": 20.6,
+   "to": 32.1
+  },
+  {
+   "id": "internet",
+   "from": 32.1,
+   "to": 38.0
+  },
+  {
+   "id": "assinatura",
+   "from": 38.0,
+   "to": 47.5
+  },
+  {
+   "id": "boletim",
+   "from": 47.5,
+   "to": 60.1
+  },
+  {
+   "id": "integridade",
+   "from": 60.1,
+   "to": 69.0
+  },
+  {
+   "id": "hackers",
+   "from": 69.0,
+   "to": 83.5
+  },
+  {
+   "id": "forcas",
+   "from": 83.5,
+   "to": 91.3
+  },
+  {
+   "id": "impresso",
+   "from": 91.3,
+   "to": 96.9
+  },
+  {
+   "id": "escolha",
+   "from": 96.9,
+   "to": 104.8
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 2.9,
+   "text": "QUEM PROTEGE\nSEU VOTO?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 3.84,
+   "to": 10.1,
+   "text": "1994 · VOTO DE PAPEL"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 10.16,
+   "to": 16.25,
+   "text": "ELEIÇÃO ANULADA\nNO RIO (1994)"
+  },
+  {
+   "id": "ov-04",
+   "kind": "source",
+   "from": 10.16,
+   "to": 16.25,
+   "text": "Fonte: MPF; Aos Fatos"
+  },
+  {
+   "id": "ov-05",
+   "kind": "chip",
+   "from": 16.37,
+   "to": 18.2,
+   "style": "red",
+   "text": "URNA GRÁVIDA"
+  },
+  {
+   "id": "ov-06",
+   "kind": "chip",
+   "from": 18.25,
+   "to": 20.55,
+   "style": "red",
+   "text": "MAPISMO"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 16.37,
+   "to": 20.55,
+   "text": "Fonte: MPF"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 20.68,
+   "to": 24.2,
+   "text": "TSE + INPE + CTA"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 24.27,
+   "to": 29.7,
+   "text": "1996: 57 CIDADES"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 29.75,
+   "to": 32.05,
+   "text": "2000: BRASIL TODO"
+  },
+  {
+   "id": "ov-11",
+   "kind": "source",
+   "from": 20.68,
+   "to": 32.05,
+   "text": "Fonte: TSE, 2021"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 32.21,
+   "to": 37.95,
+   "text": "1 · SEM INTERNET"
+  },
+  {
+   "id": "ov-13",
+   "kind": "source",
+   "from": 33.21,
+   "to": 37.95,
+   "text": "Fonte: TSE; Senado, 2026"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 38.12,
+   "to": 47.45,
+   "text": "2 · ASSINATURA\nDIGITAL + LACRE"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 38.76,
+   "to": 47.45,
+   "text": "Fonte: TSE; Senado, 2026"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 47.59,
+   "to": 55.3,
+   "text": "3 · ZERÉSIMA →\nBOLETIM DE URNA"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 55.38,
+   "to": 60.05,
+   "text": "BOLETIM = EXTRATO"
+  },
+  {
+   "id": "ov-18",
+   "kind": "source",
+   "from": 48.31,
+   "to": 60.05,
+   "text": "Fonte: TSE; Câmara"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 60.23,
+   "to": 61.6,
+   "text": "TESTE DE\nINTEGRIDADE 2022"
+  },
+  {
+   "id": "ov-20",
+   "kind": "stat",
+   "from": 61.66,
+   "to": 68.95,
+   "big": "641 URNAS",
+   "label": "0 DIVERGÊNCIA"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 60.23,
+   "to": 68.95,
+   "text": "Fonte: TSE via Agência Brasil, out/2022"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 69.18,
+   "to": 73.55,
+   "text": "TESTE PÚBLICO\nDESDE 2009"
+  },
+  {
+   "id": "ov-23",
+   "kind": "chip",
+   "from": 73.63,
+   "to": 80.7,
+   "style": "orange",
+   "text": "FALHAS 2012/2017: CORRIGIDAS"
+  },
+  {
+   "id": "ov-24",
+   "kind": "chip",
+   "from": 76.01,
+   "to": 80.75,
+   "style": "dark",
+   "text": "DIEGO ARANHA · UNICAMP"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 80.8,
+   "to": 83.45,
+   "text": "ARANHA DEFENDE\nCOMPROVANTE IMPRESSO"
+  },
+  {
+   "id": "ov-26",
+   "kind": "source",
+   "from": 69.18,
+   "to": 83.45,
+   "text": "Fonte: TSE; Aranha (SBSeg/SBC)"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 83.69,
+   "to": 85.98,
+   "text": "FORÇAS ARMADAS\n2022"
+  },
+  {
+   "id": "ov-28",
+   "kind": "chip",
+   "from": 86.03,
+   "to": 91.25,
+   "style": "dark",
+   "text": "NÃO ACHARAM FRAUDE"
+  },
+  {
+   "id": "ov-29",
+   "kind": "chip",
+   "from": 87.31,
+   "to": 91.25,
+   "style": "orange",
+   "text": "RESSALVA: SEM GARANTIA TOTAL"
+  },
+  {
+   "id": "ov-30",
+   "kind": "source",
+   "from": 83.69,
+   "to": 91.25,
+   "text": "Fonte: Min. da Defesa, nov/2022"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 91.46,
+   "to": 93.0,
+   "text": "VOTO IMPRESSO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "chip",
+   "from": 93.08,
+   "to": 96.85,
+   "style": "red",
+   "text": "STF 2020: BARRADO"
+  },
+  {
+   "id": "ov-33",
+   "kind": "chip",
+   "from": 95.35,
+   "to": 96.85,
+   "style": "dark",
+   "text": "CÂMARA 2021: 229 x 218"
+  },
+  {
+   "id": "ov-34",
+   "kind": "source",
+   "from": 91.46,
+   "to": 96.85,
+   "text": "Fonte: STF via ConJur; Câmara"
+  },
+  {
+   "id": "ov-35",
+   "kind": "question",
+   "from": 97.11,
+   "to": 104.8,
+   "text": "Segura? Ou\nvoto impresso?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-36",
+   "kind": "cta",
+   "from": 102.85,
+   "to": 104.8,
+   "html": "Comenta: <b>SEGURA</b> ou <b>IMPRESSO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   2.9200000000000004,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   12.95,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   16.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   17.73,
+   "pop.mp3",
+   -14
+  ],
+  [
+   19.0,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   20.57,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   24.43,
+   "pop.mp3",
+   -14
+  ],
+  [
+   28.0,
+   "sparkle.mp3",
+   -18
+  ],
+  [
+   29.86,
+   "riser.mp3",
+   -20
+  ],
+  [
+   32.07,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   35.2,
+   "click.mp3",
+   -14
+  ],
+  [
+   35.9,
+   "click.mp3",
+   -14
+  ],
+  [
+   36.6,
+   "click.mp3",
+   -14
+  ],
+  [
+   37.97,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   41.13,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   46.86,
+   "glitch-1.mp3",
+   -14
+  ],
+  [
+   47.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   49.74,
+   "ping.mp3",
+   -16
+  ],
+  [
+   51.6,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   53.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   58.92,
+   "ping.mp3",
+   -14
+  ],
+  [
+   60.07,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   63.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   67.75,
+   "ping.mp3",
+   -12
+  ],
+  [
+   68.97,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   73.75,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   74.24,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   79.97,
+   "ping.mp3",
+   -14
+  ],
+  [
+   83.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   86.63,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   89.3,
+   "pop.mp3",
+   -16
+  ],
+  [
+   91.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   93.08,
+   "impact-bass-2.mp3",
+   -6
+  ],
+  [
+   95.35,
+   "pop.mp3",
+   -14
+  ],
+  [
+   96.87,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   99.89,
+   "pop.mp3",
+   -14
+  ],
+  [
+   102.01,
+   "pop.mp3",
+   -14
+  ]
+ ]
+}

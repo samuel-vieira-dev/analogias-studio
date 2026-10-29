@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-29-seguranca-urnas
+tema: "A segurança das urnas eletrônicas brasileiras: quando e por que foram adotadas, as camadas de segurança e as críticas conhecidas, sempre com fontes na tela (tom neutro)"
+referencias_visuais: []
+
+hook:
+  origem: 5
+  texto: "Você sabe o que impede alguém de mudar o seu voto?"
+
+pergunta_final:
+  origem: 2
+  texto: "Pra você, a urna já está segura ou ainda precisa do voto impresso?"
+
+duracao_alvo_s: 95
+aprovado_em: 2026-10-29

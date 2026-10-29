@@ -1,0 +1,12 @@
+Você sabe o que impede alguém de mudar o seu voto?
+Imagina: 1994. Você vota num papel, que cai numa urna de lona e é contado à mão. Naquele ano, a Justiça Eleitoral do Rio chegou a anular a eleição de deputados, por suspeita de fraude.
+Tinha urna que já chegava cheia e mapa de resultado adulterado.
+Então o TSE chama engenheiros do Inpe e do CTA. Em 1996, a urna eletrônica estreia em cinquenta e sete cidades. Em 2000, chega ao país inteiro.
+Primeira camada: ela não tem internet, Wi-Fi nem Bluetooth. Ninguém invade de longe.
+Segunda: o programa é assinado digitalmente e lacrado em cerimônia pública. Se trocarem uma vírgula, a assinatura não bate e a urna recusa.
+Terceira: ela começa provando que está vazia, e termina imprimindo o boletim de urna, que vai pra porta da seção e pra internet. É como o extrato do banco: qualquer um soma e confere com o total do TSE.
+Em 2022, seiscentas e quarenta e uma urnas sorteadas foram testadas com votos de papel, no dia da eleição: nenhuma divergência.
+E desde 2009 o TSE convida hackers pra atacar o sistema. Em 2012 e 2017, o professor Diego Aranha achou falhas sérias no teste, e o TSE corrigiu. Mesmo assim, ele defende um comprovante impresso.
+As Forças Armadas, em 2022, não acharam fraude, mas disseram que não dá pra garantir que não exista código malicioso.
+O voto impresso foi barrado pelo Supremo, por risco ao sigilo, e pela Câmara, em 2021.
+Então me diz: pra você, a urna já está segura... ou ainda precisa do voto impresso?
