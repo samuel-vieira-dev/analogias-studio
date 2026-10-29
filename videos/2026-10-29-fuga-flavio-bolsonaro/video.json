@@ -1,0 +1,548 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-29-fuga-flavio-bolsonaro",
+ "post": {
+  "title": "PROIBIDO\nDE SAIR",
+  "hashtags": [
+   "#flaviobolsonaro",
+   "#eleicoes2026",
+   "#stf",
+   "#policiafederal",
+   "#politicabrasileira"
+  ]
+ },
+ "duration": 104.2,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "cuts": [
+  5.15,
+  9.45,
+  20.25,
+  29.8,
+  40.25,
+  51.5,
+  58.4,
+  67.25,
+  72.55,
+  88.65,
+  97.25
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.15
+  },
+  {
+   "id": "eleicao",
+   "from": 5.15,
+   "to": 9.45
+  },
+  {
+   "id": "ordem",
+   "from": 9.45,
+   "to": 20.25
+  },
+  {
+   "id": "video",
+   "from": 20.25,
+   "to": 29.8
+  },
+  {
+   "id": "ponte",
+   "from": 29.8,
+   "to": 40.25
+  },
+  {
+   "id": "passaporte",
+   "from": 40.25,
+   "to": 51.5
+  },
+  {
+   "id": "investiga",
+   "from": 51.5,
+   "to": 58.4
+  },
+  {
+   "id": "voo",
+   "from": 58.4,
+   "to": 67.25
+  },
+  {
+   "id": "autorizacao",
+   "from": 67.25,
+   "to": 72.55
+  },
+  {
+   "id": "carta",
+   "from": 72.55,
+   "to": 88.65
+  },
+  {
+   "id": "frase",
+   "from": 88.65,
+   "to": 97.25
+  },
+  {
+   "id": "escolha",
+   "from": 97.25,
+   "to": 104.2
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 5.05,
+   "text": "PROIBIDO DE SAIR.\nESTÁ NOS EUA."
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 5.3,
+   "to": 9.35,
+   "text": "2º TURNO · 25/10"
+  },
+  {
+   "id": "ov-03",
+   "kind": "source",
+   "from": 5.3,
+   "to": 9.35,
+   "text": "Fonte: Euronews; Forças Terrestres"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 9.6,
+   "to": 12.1,
+   "text": "ORDEM DO STF"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 12.2,
+   "to": 20.15,
+   "text": "ENTREGAR PASSAPORTES\nEM 24 HORAS"
+  },
+  {
+   "id": "ov-06",
+   "kind": "chip",
+   "from": 15.85,
+   "to": 18.45,
+   "text": "INQUÉRITO: SUPOSTA LAVAGEM",
+   "style": "dark"
+  },
+  {
+   "id": "ov-07",
+   "kind": "chip",
+   "from": 18.55,
+   "to": 20.15,
+   "text": "ELE NEGA IRREGULARIDADES",
+   "style": "orange"
+  },
+  {
+   "id": "ov-08",
+   "kind": "source",
+   "from": 9.6,
+   "to": 20.15,
+   "text": "Fonte: CartaCapital; Brasil de Fato"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 20.4,
+   "to": 22.2,
+   "text": "SEGUNDA (26/10)"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 22.3,
+   "to": 24.35,
+   "text": "\"VOU ENTREGAR OS\nMEUS PASSAPORTES\""
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 24.6,
+   "to": 28.3,
+   "text": "TERÇA, 11H:\nO PRAZO VENCE"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 28.4,
+   "to": 29.7,
+   "text": "PF CANCELA OS\nPASSAPORTES"
+  },
+  {
+   "id": "ov-13",
+   "kind": "source",
+   "from": 20.4,
+   "to": 29.7,
+   "text": "Fonte: CartaCapital, 27/10"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 30.6,
+   "to": 33.6,
+   "text": "PONTE FOZ DO IGUAÇU\n→ PUERTO IGUAZÚ"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 33.7,
+   "to": 40.15,
+   "text": "22h50 · TERÇA (27/10)"
+  },
+  {
+   "id": "ov-16",
+   "kind": "chip",
+   "from": 35.3,
+   "to": 40.15,
+   "text": "SENADOR + ESPOSA + 2 FILHAS",
+   "style": "dark"
+  },
+  {
+   "id": "ov-17",
+   "kind": "source",
+   "from": 33.7,
+   "to": 40.15,
+   "text": "Fonte: Migraciones (Argentina)"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 40.4,
+   "to": 42.9,
+   "text": "MAS OS PASSAPORTES\nNÃO ESTAVAM CANCELADOS?"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 42.95,
+   "to": 47.65,
+   "text": "BR: CANCELADO\nITALIANO: VÁLIDO"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 42.95,
+   "to": 47.65,
+   "text": "Fonte: CNN Brasil"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 47.85,
+   "to": 51.4,
+   "text": "CARTÃO BLOQUEADO ≠\nCARTÃO DE OUTRO BANCO"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 51.7,
+   "to": 55.7,
+   "text": "COMO PASSOU SEM\nSER BARRADO?"
+  },
+  {
+   "id": "ov-23",
+   "kind": "chip",
+   "from": 54.8,
+   "to": 55.7,
+   "text": "NINGUÉM EXPLICOU",
+   "style": "red"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 55.85,
+   "to": 58.3,
+   "text": "PF INVESTIGA\nQUEM AJUDOU"
+  },
+  {
+   "id": "ov-25",
+   "kind": "source",
+   "from": 55.85,
+   "to": 58.3,
+   "text": "Fonte: Gazeta do Povo"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 58.6,
+   "to": 62.3,
+   "text": "23h30 · JATO DECOLA"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 62.4,
+   "to": 65.7,
+   "text": "ESCALA: GUAYAQUIL\n(EQUADOR)"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 65.8,
+   "to": 67.15,
+   "text": "MIAMI · 10h23 (28/10)"
+  },
+  {
+   "id": "ov-29",
+   "kind": "source",
+   "from": 58.6,
+   "to": 67.15,
+   "text": "Fonte: CNN Brasil; Hoje em Dia"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 67.5,
+   "to": 70.8,
+   "text": "EUA: AUTORIZAÇÃO\nDE 1 ANO"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 70.9,
+   "to": 72.45,
+   "text": "ASILO: NÃO\nCONFIRMADO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 67.5,
+   "to": 72.45,
+   "text": "Fonte: AFP; Jornal Grande Bahia"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 72.8,
+   "to": 76.3,
+   "text": "CARTA · 28/10"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 76.4,
+   "to": 79.6,
+   "text": "\"VERDADEIRO PRESIDENTE\nELEITO DO BRASIL\""
+  },
+  {
+   "id": "ov-35",
+   "kind": "chip",
+   "from": 79.7,
+   "to": 81.55,
+   "text": "FRAUDE: SEM PROVAS",
+   "style": "red"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 81.65,
+   "to": 85.5,
+   "text": "BRASÃO ANTIGO:\n\"ESTADOS UNIDOS DO BRAZIL\""
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 85.6,
+   "to": 88.55,
+   "text": "NOVA VERSÃO:\n\"LÍDER\""
+  },
+  {
+   "id": "ov-38",
+   "kind": "source",
+   "from": 72.8,
+   "to": 88.55,
+   "text": "Fonte: CNN Brasil; SBT News"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 89.7,
+   "to": 92.9,
+   "text": "\"SAÍ DO BRASIL, MAS NÃO\nABANDONEI OS BRASILEIROS\""
+  },
+  {
+   "id": "ov-40",
+   "kind": "title",
+   "from": 93.0,
+   "to": 97.15,
+   "text": "PF: POR ENQUANTO, NÃO\nCARACTERIZA FUGA"
+  },
+  {
+   "id": "ov-41",
+   "kind": "source",
+   "from": 89.7,
+   "to": 97.15,
+   "text": "Fonte: carta (28/10); Gazeta do Povo"
+  },
+  {
+   "id": "ov-42",
+   "kind": "question",
+   "from": 97.4,
+   "to": 104.2,
+   "text": "Perseguição?\nOu fuga?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-43",
+   "kind": "cta",
+   "from": 102.3,
+   "to": 104.2,
+   "html": "Comenta: <b>PERSEGUIÇÃO</b> ou <b>FUGA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   1.05,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   2.4,
+   "riser.mp3",
+   -20
+  ],
+  [
+   5.12,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   9.42,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   10.5,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   12.19,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   20.22,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   28.4,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   29.77,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   40.22,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   41.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   46.5,
+   "ping.mp3",
+   -14
+  ],
+  [
+   48.6,
+   "click-soft.mp3",
+   -12
+  ],
+  [
+   50.4,
+   "ping.mp3",
+   -14
+  ],
+  [
+   51.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   54.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   58.37,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   60.3,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   66.7,
+   "ping.mp3",
+   -14
+  ],
+  [
+   67.22,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   71.72,
+   "pop.mp3",
+   -14
+  ],
+  [
+   72.52,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   85.6,
+   "whoosh-short.mp3",
+   -16
+  ],
+  [
+   88.62,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   97.22,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   99.35,
+   "pop.mp3",
+   -14
+  ],
+  [
+   101.09,
+   "impact-bass-1.mp3",
+   -10
+  ]
+ ]
+}
