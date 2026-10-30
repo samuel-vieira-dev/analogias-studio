@@ -46,8 +46,9 @@ Entrada em `video.json → post`: `hashtags` (5–8 do tema, obrigatório), `tit
 **Capa** — `out/<slug>-capa.jpg`, 1080×1920, tirada do `qa/harness.html` com Playwright (o mesmo da prévia, sem renderizar o vídeo):
 
 - Quadro: dentro da primeira cena (o gancho), o trecho com mais objetos registrados (`S.hero`) na tela no maior tamanho; o meio dele. `post.t` escolhe outro.
-- Título: `post.title`; sem ele, o título que aparece no gancho, senão o primeiro `title` do vídeo. Inter 900 laranja, o maior que couber na zona `headline` (até 2 linhas).
-- 3D: sem os textos e a legenda do vídeo; a câmera mantém o ângulo do plano e enquadra os objetos no palco da capa abaixo do título (`config/layout.json → cover.stage`, y 580–1500; `window.__qa.reframe` no `engine/core.js`). Gancho filmado em `stage-tall` não fica atrás do título, e objeto pequeno cresce.
+- Título: `post.title`; sem ele, o título que aparece no gancho, senão o primeiro `title` do vídeo. Inter 900 laranja, o maior que couber em `config/layout.json → cover.title` (até 2 linhas).
+- **Centralizado**: título e 3D ficam no centro da largura da capa (`cover.title` e `cover.stage`, x 125–955; a capa não tem os botões do app). Se o 3D sair mais de 30 px do centro, o `capa.cjs` sai com erro: escolha outro `post.t`.
+- 3D: sem os textos e a legenda do vídeo; a câmera mantém o ângulo do plano e enquadra os objetos no palco da capa abaixo do título (`config/layout.json → cover.stage`, x 125–955, y 580–1500; `window.__qa.reframe` no `engine/core.js`). Gancho filmado em `stage-tall` não fica atrás do título, e objeto pequeno cresce.
 - Foto: se o vídeo tem cartão de pessoa (overlay `photo` com `name`) ou `post.media`, a foto entra num cartão com nome, cargo e "Foto: crédito"; o 3D fica desfocado atrás. Recorte e zoom só, como no vídeo ([`fotos.md`](fotos.md)).
 - Confere que título e cartão cabem no recorte central 3:4 (1080×1440, `cover.grid`) que o perfil mostra; senão sai com erro.
 - Harness gerado antes da capa existir não tem `__qa.reframe` (o `capa.cjs` avisa): rodar `python3 tools/build.py videos/<slug>` uma vez.

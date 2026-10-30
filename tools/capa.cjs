@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /*
- * Post cover: one frame of the hook (the video's "thumbnail") with a strong title in the headline
- * band, taken from qa/harness.html — no new render.
+ * Post cover: one frame of the hook (the video's "thumbnail") with a strong title in the cover title
+ * band (config/layout.json → cover.title, centred like cover.stage), taken from qa/harness.html — no new render.
  *
  * usage: node tools/capa.cjs videos/<slug> [--t 2.4] [--title "LINHA 1\nLINHA 2"]
  *
@@ -83,7 +83,7 @@ const COVER = layout.cover;
 
   const res = await page.evaluate(async ({ L, title, photo, st }) => {
     for (const id of ["ov-root", "cap-root"]) document.getElementById(id).style.display = "none"; // the video's own text
-    const H = L.zones.headline, Z = L.cover.stage;
+    const H = L.cover.title, Z = L.cover.stage;
     const el = (tag, css, parent) => { const e = document.createElement(tag); Object.assign(e.style, css); (parent || document.body).appendChild(e); return e; };
     await document.fonts.load("900 100px Inter"); await document.fonts.load("600 100px Inter");
     const root = el("div", { position: "absolute", left: "0", top: "0", width: "1080px", height: "1920px", zIndex: 100, fontFamily: "'Inter', sans-serif" });
@@ -122,6 +122,12 @@ const COVER = layout.cover;
   if (res.card && !inGrid(res.card)) problems.push("cartão da foto fora do recorte 3:4 do perfil");
   if (f && f.heroes.concat(f.labels).some((h) => h.rect.y < COVER.stage.y - tol)) problems.push("o 3D invade a faixa do título: escolha outro post.t");
   for (const h of (f ? f.heroes : [])) if (area(h.rect) < 0.9 * h.rect.w * h.rect.h) problems.push(`'${h.name}' cortado na capa: escolha outro post.t`);
+  // The 3D sits centred on the cover (Samuel, 30/10/2026): the heroes' box must share the stage's centre line.
+  const hs = f ? f.heroes.map((h) => h.rect) : [];
+  if (hs.length) {
+    const x0 = Math.min(...hs.map((r) => r.x)), x1 = Math.max(...hs.map((r) => r.x + r.w)), off = (x0 + x1) / 2 - (COVER.stage.x + COVER.stage.w / 2);
+    if (Math.abs(off) > 30) problems.push(`3D fora do centro da capa (${Math.round(off)} px): escolha outro post.t`);
+  }
 
   const out = path.join(vdir, "out", `${video.slug}-capa.jpg`);
   fs.mkdirSync(path.dirname(out), { recursive: true });

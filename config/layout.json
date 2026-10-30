@@ -17,8 +17,9 @@
     "caption":    { "x": 60,  "y": 1366, "w": 830, "h": 110,  "_doc": "Legenda: 1 linha, base em y=1476 (24 px acima do fim da área segura)." }
   },
   "cover": {
-    "_doc": "Capa do post (tools/capa.cjs): título na zona headline; o 3D do gancho reenquadrado em stage (o palco desce até o fim da área segura, a capa não tem legenda). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele.",
-    "stage": { "x": 60, "y": 580, "w": 830, "h": 920 },
+    "_doc": "Capa do post (tools/capa.cjs): título em title e o 3D do gancho reenquadrado em stage, os dois centralizados na largura (a capa não tem os botões do app à direita nem legenda; pedido do Samuel, 30/10/2026). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele.",
+    "title": { "x": 125, "y": 300, "w": 830, "h": 260 },
+    "stage": { "x": 125, "y": 580, "w": 830, "h": 920 },
     "grid":  { "x": 0,  "y": 240, "w": 1080, "h": 1440 }
   },
   "caption": { "bottom": 1476, "font_px": 58, "max_chars": 20, "max_words": 4, "pad_x": 30, "pad_y": 14 },
