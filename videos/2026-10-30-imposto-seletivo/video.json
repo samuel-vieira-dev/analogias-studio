@@ -1,0 +1,662 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-imposto-seletivo",
+ "post": {
+  "title": "SUAS COMPRAS\nVIRAM PECADO?",
+  "hashtags": [
+   "#impostoseletivo",
+   "#impostodopecado",
+   "#reformatributaria",
+   "#impostos",
+   "#refrigerante",
+   "#cigarro",
+   "#economia"
+  ],
+  "media": false
+ },
+ "duration": 89.8,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "imaginarVocê": "Imagina, você",
+   "Dorigan,": "Durigan,",
+   "para": "pra"
+  }
+ },
+ "media": {
+  "durigan": {
+   "file": "midia/durigan.jpg",
+   "credit": "Diogo Zacarias/MF",
+   "url": "https://commons.wikimedia.org/wiki/File:Dario_Durigan.jpg",
+   "focus": [
+    0.49,
+    0.3
+   ]
+  }
+ },
+ "cuts": [
+  5.55,
+  15.78,
+  21.85,
+  32.85,
+  37.4,
+  41.4,
+  45.88,
+  51.1,
+  56.7,
+  62.9,
+  72.33,
+  80.98
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.55
+  },
+  {
+   "id": "caixa",
+   "from": 5.55,
+   "to": 15.78
+  },
+  {
+   "id": "seletivo",
+   "from": 15.78,
+   "to": 21.85
+  },
+  {
+   "id": "pote",
+   "from": 21.85,
+   "to": 32.85
+  },
+  {
+   "id": "consumo",
+   "from": 32.85,
+   "to": 37.4
+  },
+  {
+   "id": "veiculos",
+   "from": 37.4,
+   "to": 41.4
+  },
+  {
+   "id": "luxo",
+   "from": 41.4,
+   "to": 45.88
+  },
+  {
+   "id": "custo",
+   "from": 45.88,
+   "to": 51.1
+  },
+  {
+   "id": "noventa",
+   "from": 51.1,
+   "to": 56.7
+  },
+  {
+   "id": "arrecada",
+   "from": 56.7,
+   "to": 62.9
+  },
+  {
+   "id": "divide",
+   "from": 62.9,
+   "to": 72.33
+  },
+  {
+   "id": "surpresa",
+   "from": 72.33,
+   "to": 80.98
+  },
+  {
+   "id": "escolha",
+   "from": 80.98,
+   "to": 89.8
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 5.45,
+   "text": "SUAS COMPRAS\nVIRAM PECADO?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 5.7,
+   "to": 10.5,
+   "text": "IMAGINA: VOCÊ\nNO CAIXA"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 10.6,
+   "to": 14.32,
+   "text": "ANO QUE VEM:\nIMPOSTO NOVO"
+  },
+  {
+   "id": "ov-04",
+   "kind": "chip",
+   "style": "red",
+   "from": 14.42,
+   "to": 15.72,
+   "text": "IMPOSTO DO PECADO"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 15.9,
+   "to": 18.85,
+   "text": "IMPOSTO\nSELETIVO"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 18.94,
+   "to": 21.8,
+   "text": "FAZ MAL À SAÚDE OU\nAO MEIO AMBIENTE"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 15.9,
+   "to": 21.8,
+   "text": "Fonte: Constituição, art. 153, VIII"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 21.95,
+   "to": 28.76,
+   "text": "POTE DO\nPALAVRÃO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 28.84,
+   "to": 32.8,
+   "text": "MAIS CARO →\nMENOS CONSUMO"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 32.94,
+   "to": 37.35,
+   "text": "O QUE ENTRA\nNA LISTA"
+  },
+  {
+   "id": "ov-11",
+   "kind": "chip",
+   "style": "orange",
+   "from": 37.46,
+   "to": 39.76,
+   "text": "CARRO NOVO, ATÉ ELÉTRICO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "style": "red",
+   "from": 39.84,
+   "to": 41.35,
+   "text": "CAMINHÃO: FORA"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 41.46,
+   "to": 44.74,
+   "text": "JATINHO, IATE,\nPETRÓLEO, MINÉRIO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 44.82,
+   "to": 45.84,
+   "text": "E ATÉ LOTERIA"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 32.94,
+   "to": 45.84,
+   "text": "Fonte: Lei Complementar 214/2025"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 45.96,
+   "to": 46.9,
+   "text": "QUANTO VAI\nCUSTAR?"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 46.96,
+   "to": 51.04,
+   "text": "ALÍQUOTAS:\nAINDA NÃO SAÍRAM"
+  },
+  {
+   "id": "ph-durigan",
+   "kind": "photo",
+   "media": "durigan",
+   "name": "Dario Durigan",
+   "role": "Ministro da Fazenda",
+   "from": 46.96,
+   "to": 51.04
+  },
+  {
+   "id": "ov-18",
+   "kind": "source",
+   "from": 46.96,
+   "to": 51.04,
+   "text": "Fonte: Agência Brasil · Foto: Diogo Zacarias/MF"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 51.22,
+   "to": 54.0,
+   "text": "LEI EXIGE\n90 DIAS"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 54.1,
+   "to": 56.65,
+   "text": "COBRANÇA DEVE\nFICAR PRA FEVEREIRO"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 51.22,
+   "to": 56.65,
+   "text": "Fonte: Agência Brasil, 08/10/2026"
+  },
+  {
+   "id": "ov-22",
+   "kind": "stat",
+   "from": 56.8,
+   "to": 61.2,
+   "big": "R$ 41,9 BI",
+   "label": "PREVISÃO PARA 2027"
+  },
+  {
+   "id": "ov-23",
+   "kind": "source",
+   "from": 56.8,
+   "to": 61.2,
+   "text": "Fonte: Orçamento 2027 (PLOA)"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 61.28,
+   "to": 62.85,
+   "text": "PRA ONDE\nVAI?"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 63.02,
+   "to": 66.7,
+   "text": "O POTE É\nDIVIDIDO"
+  },
+  {
+   "id": "ov-26",
+   "kind": "stat",
+   "from": 66.8,
+   "to": 70.2,
+   "big": "60%",
+   "label": "ESTADOS, PREFEITURAS E FUNDOS"
+  },
+  {
+   "id": "ov-27",
+   "kind": "stat",
+   "from": 70.28,
+   "to": 72.28,
+   "big": "40%",
+   "label": "GOVERNO FEDERAL"
+  },
+  {
+   "id": "ov-28",
+   "kind": "source",
+   "from": 63.02,
+   "to": 72.28,
+   "text": "Fonte: Constituição, art. 159"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 72.42,
+   "to": 79.6,
+   "text": "SEM CARIMBO\nPRA SAÚDE"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 79.68,
+   "to": 80.93,
+   "text": "CAI NO\nCAIXA GERAL"
+  },
+  {
+   "id": "ov-31",
+   "kind": "source",
+   "from": 72.42,
+   "to": 80.93,
+   "text": "Fonte: Constituição, art. 167, IV"
+  },
+  {
+   "id": "ov-32",
+   "kind": "question",
+   "from": 81.1,
+   "to": 89.8,
+   "text": "Compra menos ou\npaga mais?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-33",
+   "kind": "cta",
+   "from": 87.75,
+   "to": 89.8,
+   "html": "Comenta: <b>MENOS</b> ou <b>MAIS</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   2.4,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   3.15,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   3.75,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   5.53,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   7.75,
+   "click.mp3",
+   -14
+  ],
+  [
+   8.85,
+   "click.mp3",
+   -14
+  ],
+  [
+   9.7,
+   "click.mp3",
+   -14
+  ],
+  [
+   12.3,
+   "typing.mp3",
+   -20
+  ],
+  [
+   14.45,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   15.76,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   16.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   20.15,
+   "ping.mp3",
+   -14
+  ],
+  [
+   21.2,
+   "ping.mp3",
+   -14
+  ],
+  [
+   21.83,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   23.8,
+   "chime.mp3",
+   -18
+  ],
+  [
+   24.8,
+   "chime.mp3",
+   -18
+  ],
+  [
+   26.5,
+   "chime.mp3",
+   -20
+  ],
+  [
+   28.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   30.6,
+   "riser.mp3",
+   -22
+  ],
+  [
+   32.83,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   32.95,
+   "pop.mp3",
+   -14
+  ],
+  [
+   33.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   34.86,
+   "pop.mp3",
+   -14
+  ],
+  [
+   36.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   37.38,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   38.7,
+   "sparkle.mp3",
+   -18
+  ],
+  [
+   39.85,
+   "error.mp3",
+   -16
+  ],
+  [
+   41.38,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   41.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   42.4,
+   "pop.mp3",
+   -14
+  ],
+  [
+   43.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   43.95,
+   "pop.mp3",
+   -14
+  ],
+  [
+   45.15,
+   "ping.mp3",
+   -12
+  ],
+  [
+   45.86,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   46.95,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   51.08,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   53.0,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   54.0,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   55.0,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   55.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   56.2,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   56.68,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   57.0,
+   "riser.mp3",
+   -22
+  ],
+  [
+   58.8,
+   "chime.mp3",
+   -18
+  ],
+  [
+   61.4,
+   "pop.mp3",
+   -12
+  ],
+  [
+   62.88,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   64.5,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   66.85,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   70.3,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   72.31,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   74.75,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   75.0,
+   "error.mp3",
+   -18
+  ],
+  [
+   79.75,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   80.96,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   84.0,
+   "pop.mp3",
+   -16
+  ],
+  [
+   85.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   87.75,
+   "ping.mp3",
+   -12
+  ]
+ ]
+}

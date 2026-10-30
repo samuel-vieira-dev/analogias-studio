@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-imposto-seletivo
+tema: "O 'imposto do pecado' (Imposto Seletivo da reforma tributária) que começa em 2027: o que é, o que será tributado e para onde vai a arrecadação (tom neutro, fontes na tela)"
+referencias_visuais: []
+
+hook:
+  origem: 5
+  texto: "Você sabe quais compras suas viram pecado a partir de 2027?"
+
+pergunta_final:
+  origem: 2
+  texto: "Imposto mais caro faz você comprar menos, ou você só paga mais e continua igual?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-30
