@@ -1,0 +1,831 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-trajetoria-bolsonaro",
+ "post": {
+  "title": "57,8 MILHÕES\nE SEM VOTO",
+  "hashtags": [
+   "#bolsonaro",
+   "#jairbolsonaro",
+   "#stf",
+   "#tse",
+   "#politicabrasileira",
+   "#historiadobrasil",
+   "#eleicoes"
+  ],
+  "media": "presidente-2019"
+ },
+ "duration": 110.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "há": "a"
+  }
+ },
+ "media": {
+  "capitao-80s": {
+   "file": "midia/capitao-80s.jpg",
+   "credit": "Luiz Pinto/Agência O Globo",
+   "url": "https://commons.wikimedia.org/wiki/File:Bolsonaro_1986.jpg",
+   "focus": [
+    0.48,
+    0.36
+   ],
+   "crop": "recorte do original: x 10–78%, y 12–66% (busto)"
+  },
+  "deputado-2016": {
+   "file": "midia/deputado-2016.jpg",
+   "credit": "Fabio Rodrigues Pozzebom/Agência Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Jair_Messias_Bolsonaro_(rosto).jpg",
+   "focus": [
+    0.36,
+    0.5
+   ]
+  },
+  "presidente-2019": {
+   "file": "midia/presidente-2019.jpg",
+   "credit": "Isac Nóbrega/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Jair_Bolsonaro_em_24_de_abril_de_2019_(1).jpg",
+   "focus": [
+    0.64,
+    0.29
+   ]
+  },
+  "stf-2025": {
+   "file": "midia/stf-2025.jpg",
+   "credit": "Gustavo Moreno/STF",
+   "url": "https://commons.wikimedia.org/wiki/File:Decis%C3%A3o_para_tornar_Jair_Bolsonaro_r%C3%A9u_no_Supremo_Tribunal_Federal.jpg",
+   "focus": [
+    0.39,
+    0.19
+   ]
+  }
+ },
+ "cuts": [
+  5.2,
+  16.3,
+  25.85,
+  33.4,
+  40.15,
+  46.15,
+  50.95,
+  72.45,
+  85.85,
+  102.5
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.2
+  },
+  {
+   "id": "1986",
+   "from": 5.2,
+   "to": 16.3
+  },
+  {
+   "id": "bombas",
+   "from": 16.3,
+   "to": 25.85
+  },
+  {
+   "id": "vereador",
+   "from": 25.85,
+   "to": 33.4
+  },
+  {
+   "id": "ustra",
+   "from": 33.4,
+   "to": 40.15
+  },
+  {
+   "id": "eleito",
+   "from": 40.15,
+   "to": 46.15
+  },
+  {
+   "id": "governo",
+   "from": 46.15,
+   "to": 50.95
+  },
+  {
+   "id": "pandemia",
+   "from": 50.95,
+   "to": 72.45
+  },
+  {
+   "id": "derrota",
+   "from": 72.45,
+   "to": 85.85
+  },
+  {
+   "id": "condenacao",
+   "from": 85.85,
+   "to": 102.5
+  },
+  {
+   "id": "pergunta",
+   "from": 102.5,
+   "to": 110.0
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 3.3,
+   "text": "57,8 MILHÕES\nDE VOTOS"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 3.4,
+   "to": 5.15,
+   "text": "HOJE: SEM\nDIREITO A VOTO"
+  },
+  {
+   "id": "ov-03",
+   "kind": "source",
+   "from": 0.1,
+   "to": 5.15,
+   "text": "Fonte: TSE; Congresso em Foco"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 5.4,
+   "to": 12.4,
+   "text": "1986 · CAPITÃO\nPARAQUEDISTA"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 12.5,
+   "to": 14.1,
+   "text": "“O SALÁRIO\nESTÁ BAIXO”"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 14.2,
+   "to": 16.25,
+   "text": "15 DIAS\nDE PRISÃO"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 5.4,
+   "to": 16.25,
+   "text": "Fonte: Veja, 3/9/1986, via CPDOC/FGV"
+  },
+  {
+   "id": "ph-capitao",
+   "kind": "photo",
+   "from": 16.3,
+   "to": 19.0,
+   "media": "capitao-80s",
+   "name": "Jair Messias Bolsonaro",
+   "role": "Capitão do Exército"
+  },
+  {
+   "id": "src-capitao",
+   "kind": "source",
+   "from": 16.3,
+   "to": 19.0,
+   "text": "Foto: Luiz Pinto/Agência O Globo"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 19.05,
+   "to": 24.2,
+   "text": "1987: PLANO\nDE BOMBAS?"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 24.3,
+   "to": 25.8,
+   "text": "ELE NEGA.\nABSOLVIDO EM 1988"
+  },
+  {
+   "id": "ov-12",
+   "kind": "source",
+   "from": 19.05,
+   "to": 25.8,
+   "text": "Fonte: CPDOC/FGV; IstoÉ"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 26.0,
+   "to": 30.45,
+   "text": "1988: RESERVA E\nVEREADOR NO RIO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "source",
+   "from": 26.0,
+   "to": 30.45,
+   "text": "Fonte: CPDOC/FGV"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 30.6,
+   "to": 33.35,
+   "text": "7 MANDATOS DE\nDEPUTADO FEDERAL"
+  },
+  {
+   "id": "src-deputado",
+   "kind": "source",
+   "from": 30.6,
+   "to": 33.35,
+   "text": "Foto: Fabio Rodrigues Pozzebom/Agência Brasil"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 33.6,
+   "to": 36.9,
+   "text": "IMPEACHMENT\nDE DILMA · 2016"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 37.0,
+   "to": 40.1,
+   "text": "VOTO DEDICADO A\nBRILHANTE USTRA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "source",
+   "from": 33.6,
+   "to": 40.1,
+   "text": "Fonte: Exame; Agência Brasil"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 40.3,
+   "to": 43.4,
+   "text": "6/9/2018: FACADA\nNA CAMPANHA"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 40.3,
+   "to": 43.4,
+   "text": "Fonte: Tribuna de Minas"
+  },
+  {
+   "id": "ov-22",
+   "kind": "stat",
+   "from": 43.5,
+   "to": 46.1,
+   "big": "55%",
+   "label": "ELEITO EM 2018 · VOTOS VÁLIDOS"
+  },
+  {
+   "id": "src-presidente",
+   "kind": "source",
+   "from": 43.5,
+   "to": 46.1,
+   "text": "Fonte: TSE · Foto: Isac Nóbrega/PR"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 46.3,
+   "to": 48.0,
+   "text": "REFORMA DA\nPREVIDÊNCIA · 2019"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 48.05,
+   "to": 49.95,
+   "text": "AUTONOMIA DO\nBANCO CENTRAL · 2021"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 50.0,
+   "to": 50.9,
+   "text": "PIX · 2020"
+  },
+  {
+   "id": "ov-27",
+   "kind": "source",
+   "from": 46.3,
+   "to": 50.9,
+   "text": "Fonte: Agência Brasil; Gazeta do Povo"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 51.1,
+   "to": 54.3,
+   "text": "AUXÍLIO DE\nR$ 600"
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 54.4,
+   "to": 56.3,
+   "big": "68 MILHÕES",
+   "label": "DE PESSOAS RECEBERAM"
+  },
+  {
+   "id": "ov-30",
+   "kind": "source",
+   "from": 51.1,
+   "to": 56.3,
+   "text": "Fonte: Caixa; Senado"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 56.45,
+   "to": 61.45,
+   "text": "POBREZA EXTREMA:\nMENOR NÍVEL (2020)"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 56.45,
+   "to": 61.45,
+   "text": "Fonte: Banco Mundial"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 61.6,
+   "to": 67.3,
+   "text": "~10 MILHÕES COM\nJORNADA REDUZIDA"
+  },
+  {
+   "id": "ov-34",
+   "kind": "source",
+   "from": 61.6,
+   "to": 67.3,
+   "text": "Fonte: InfoMoney; Diário do Nordeste"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 67.45,
+   "to": 69.95,
+   "text": "CRÍTICOS: CONDUÇÃO\nDA PANDEMIA"
+  },
+  {
+   "id": "ov-36",
+   "kind": "stat",
+   "from": 70.0,
+   "to": 72.4,
+   "big": "~690 MIL",
+   "label": "MORTES POR COVID"
+  },
+  {
+   "id": "ov-37",
+   "kind": "source",
+   "from": 67.45,
+   "to": 72.4,
+   "text": "Fonte: Ministério da Saúde via Poder360"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 72.6,
+   "to": 77.0,
+   "big": "8,3%",
+   "label": "DESEMPREGO (OUT/2022)"
+  },
+  {
+   "id": "ov-39",
+   "kind": "source",
+   "from": 72.6,
+   "to": 77.0,
+   "text": "Fonte: IBGE, out/2022"
+  },
+  {
+   "id": "ov-40",
+   "kind": "title",
+   "from": 77.1,
+   "to": 79.5,
+   "text": "2022: 49,1%\n× 50,9%"
+  },
+  {
+   "id": "ov-41",
+   "kind": "source",
+   "from": 77.1,
+   "to": 79.5,
+   "text": "Fonte: TSE"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 79.65,
+   "to": 85.8,
+   "text": "2023: INELEGÍVEL\nATÉ 2030"
+  },
+  {
+   "id": "ov-43",
+   "kind": "source",
+   "from": 79.65,
+   "to": 85.8,
+   "text": "Fonte: TSE via Agência Brasil"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 86.0,
+   "to": 89.45,
+   "text": "2025: CONDENADO POR\nTENTATIVA DE GOLPE"
+  },
+  {
+   "id": "src-stf",
+   "kind": "source",
+   "from": 86.0,
+   "to": 89.45,
+   "text": "Foto: Gustavo Moreno/STF"
+  },
+  {
+   "id": "ov-46",
+   "kind": "stat",
+   "from": 89.6,
+   "to": 92.0,
+   "big": "27 ANOS E 3 MESES",
+   "label": "PLACAR: 4 × 1"
+  },
+  {
+   "id": "ov-47",
+   "kind": "title",
+   "from": 92.1,
+   "to": 95.0,
+   "text": "ELE NEGA. DEFESA:\nPENA EXCESSIVA"
+  },
+  {
+   "id": "ov-48",
+   "kind": "source",
+   "from": 89.6,
+   "to": 95.0,
+   "text": "Fonte: STF via Gazeta do Povo"
+  },
+  {
+   "id": "ov-49",
+   "kind": "chip",
+   "from": 95.2,
+   "to": 98.95,
+   "style": "orange",
+   "text": "INELEGÍVEL: NÃO CONCORRE"
+  },
+  {
+   "id": "ov-50",
+   "kind": "chip",
+   "from": 99.0,
+   "to": 102.4,
+   "style": "red",
+   "text": "CONDENADO: NÃO VOTA"
+  },
+  {
+   "id": "ov-51",
+   "kind": "source",
+   "from": 95.2,
+   "to": 102.4,
+   "text": "Fonte: Constituição, art. 15"
+  },
+  {
+   "id": "ov-52",
+   "kind": "question",
+   "from": 102.65,
+   "to": 110.0,
+   "text": "Justiça ou\nperseguição?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-53",
+   "kind": "cta",
+   "from": 108.1,
+   "to": 110.0,
+   "html": "Comenta: <b>JUSTIÇA</b> ou <b>PERSEGUIÇÃO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   0.4,
+   "riser.mp3",
+   -22
+  ],
+  [
+   3.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   4.28,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   5.17,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   8.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   8.6,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   10.4,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   12.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   14.6,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   16.27,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   16.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   18.6,
+   "pop.mp3",
+   -15
+  ],
+  [
+   25.15,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   25.82,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   29.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   29.5,
+   "pop.mp3",
+   -15
+  ],
+  [
+   30.6,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   31.4,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   32.0,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   32.6,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   33.37,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   35.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   36.3,
+   "ping.mp3",
+   -15
+  ],
+  [
+   40.12,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   41.9,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   43.4,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   44.1,
+   "sparkle.mp3",
+   -18
+  ],
+  [
+   46.12,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   46.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   47.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   49.85,
+   "pop.mp3",
+   -14
+  ],
+  [
+   50.3,
+   "chime.mp3",
+   -16
+  ],
+  [
+   50.92,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   52.0,
+   "pop.mp3",
+   -15
+  ],
+  [
+   54.4,
+   "riser.mp3",
+   -22
+  ],
+  [
+   56.45,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   57.8,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   61.6,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   64.0,
+   "click.mp3",
+   -15
+  ],
+  [
+   65.3,
+   "pop.mp3",
+   -15
+  ],
+  [
+   67.45,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   72.42,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   72.6,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   77.1,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   77.3,
+   "riser.mp3",
+   -22
+  ],
+  [
+   79.65,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   82.5,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   85.82,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   85.9,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   89.9,
+   "impact-bass-2.mp3",
+   -8
+  ],
+  [
+   91.1,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   95.2,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   96.3,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   99.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   100.1,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   100.6,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   102.47,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   102.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   105.5,
+   "ping.mp3",
+   -15
+  ],
+  [
+   106.7,
+   "ping.mp3",
+   -15
+  ],
+  [
+   108.1,
+   "pop.mp3",
+   -14
+  ]
+ ]
+}

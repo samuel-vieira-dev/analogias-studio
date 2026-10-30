@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-trajetoria-bolsonaro
+tema: "Trajetória de Jair Messias Bolsonaro: do artigo na Veja de 1986 defendendo aumento do salário dos militares até a condenação no STF (2025), com os pontos positivos do governo e tom neutro"
+referencias_visuais: []
+
+hook:
+  origem: 4
+  texto: "Teve quase cinquenta e oito milhões de votos. Hoje, nem pode votar."
+
+pergunta_final:
+  origem: 1
+  texto: "Pra você, a condenação dele foi justiça... ou perseguição política?"
+
+duracao_alvo_s: 110
+aprovado_em: 2026-10-30
