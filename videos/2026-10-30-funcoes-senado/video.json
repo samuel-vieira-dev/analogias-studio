@@ -1,0 +1,718 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-funcoes-senado",
+ "post": {
+  "title": "O QUE FAZ\nUM SENADOR?",
+  "hashtags": [
+   "#senado",
+   "#senadofederal",
+   "#senador",
+   "#congressonacional",
+   "#politicabrasileira",
+   "#stf",
+   "#impeachment",
+   "#eleicoes2026"
+  ],
+  "media": false
+ },
+ "duration": 94.1,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "media": {
+  "congresso": {
+   "file": "midia/congresso.jpg",
+   "credit": "Pedro França/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Imagens_de_Bras%C3%ADlia_-_Fachada_do_Pal%C3%A1cio_do_Congresso_Nacional_(53457492293).jpg",
+   "focus": [
+    0.36,
+    0.5
+   ]
+  },
+  "plenario": {
+   "file": "midia/plenario.jpg",
+   "credit": "Andressa Anholete/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Elei%C3%A7%C3%A3o_-_Presidente_do_Senado_Federal_(54299522707).jpg",
+   "focus": [
+    0.55,
+    0.62
+   ]
+  },
+  "messias": {
+   "file": "midia/messias.jpg",
+   "credit": "Geraldo Magela/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:2026-04-29_CCJ_-_Comiss%C3%A3o_de_Constitui%C3%A7%C3%A3o,_Justi%C3%A7a_e_Cidadania_-_Jorge_Rodrigo_Ara%C3%BAjo_Messias,_em_pronunciamento.jpg",
+   "focus": [
+    0.38,
+    0.55
+   ],
+   "_doc": "recorte do original (x 0–45%, y 0–75%) para enquadrar só o Messias e quem está atrás dele; sem outra edição"
+  },
+  "painel": {
+   "file": "midia/painel.jpg",
+   "credit": "Waldemir Barreto/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Plen%C3%A1rio_do_Senado_-_Painel_com_a_vota%C3%A7%C3%A3o_de_Jorge_Messias.jpg",
+   "focus": [
+    0.6,
+    0.35
+   ]
+  }
+ },
+ "cuts": [
+  3.9,
+  12.0,
+  20.6,
+  43.1,
+  49.6,
+  58.3,
+  69.2,
+  80.9,
+  85.8
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.9
+  },
+  {
+   "id": "plenario",
+   "from": 3.9,
+   "to": 12.0
+  },
+  {
+   "id": "misterio",
+   "from": 12.0,
+   "to": 20.6
+  },
+  {
+   "id": "condominio",
+   "from": 20.6,
+   "to": 43.1
+  },
+  {
+   "id": "leis",
+   "from": 43.1,
+   "to": 49.6
+  },
+  {
+   "id": "autoridades",
+   "from": 49.6,
+   "to": 58.3
+  },
+  {
+   "id": "messias",
+   "from": 58.3,
+   "to": 69.2
+  },
+  {
+   "id": "impeachment",
+   "from": 69.2,
+   "to": 80.9
+  },
+  {
+   "id": "mandato",
+   "from": 80.9,
+   "to": 85.8
+  },
+  {
+   "id": "pergunta",
+   "from": 85.8,
+   "to": 94.1
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 3.85,
+   "text": "O QUE FAZ\nUM SENADOR?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 4.0,
+   "to": 5.85,
+   "text": "IMAGINA: VOCÊ\nÉ SENADOR"
+  },
+  {
+   "id": "ov-02b",
+   "kind": "title",
+   "from": 5.95,
+   "to": 7.35,
+   "text": "PLENÁRIO AZUL"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 7.45,
+   "to": 9.3,
+   "text": "CÚPULA VIRADA\nPRA BAIXO = SENADO"
+  },
+  {
+   "id": "src-congresso",
+   "kind": "source",
+   "text": "Foto: Pedro França/Agência Senado",
+   "from": 3.95,
+   "to": 5.92
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 9.4,
+   "to": 11.95,
+   "big": "81",
+   "label": "CADEIRAS"
+  },
+  {
+   "id": "src-plenario",
+   "kind": "source",
+   "text": "Foto: Andressa Anholete/Agência Senado",
+   "from": 5.92,
+   "to": 7.38
+  },
+  {
+   "id": "src-congresso2",
+   "kind": "source",
+   "text": "Foto: Pedro França/Agência Senado",
+   "from": 7.38,
+   "to": 9.36
+  },
+  {
+   "id": "src-plenario2",
+   "kind": "source",
+   "text": "Foto: Andressa Anholete/Agência Senado",
+   "from": 9.36,
+   "to": 11.95
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 12.1,
+   "to": 13.35,
+   "text": "O MISTÉRIO"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 13.4,
+   "to": 18.85,
+   "text": "SÃO PAULO: 44 MI\nRORAIMA: 636 MIL"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 18.9,
+   "to": 20.55,
+   "text": "3 SENADORES\nCADA"
+  },
+  {
+   "id": "src-ibge",
+   "kind": "source",
+   "text": "Fonte: IBGE, Censo 2022",
+   "from": 13.4,
+   "to": 20.55
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 20.7,
+   "to": 23.15,
+   "text": "PENSA NUM\nCONDOMÍNIO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 23.25,
+   "to": 28.85,
+   "text": "CÂMARA: CONFORME\nOS MORADORES"
+  },
+  {
+   "id": "ov-10",
+   "kind": "stat",
+   "from": 28.9,
+   "to": 30.85,
+   "big": "70",
+   "label": "DEPUTADOS"
+  },
+  {
+   "id": "ov-10b",
+   "kind": "stat",
+   "from": 30.9,
+   "to": 31.45,
+   "big": "70 E 8",
+   "label": "DEPUTADOS"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 31.55,
+   "to": 35.5,
+   "text": "SENADO: 3 DE CADA\nSEJA QUAL FOR O TAMANHO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 35.55,
+   "to": 39.15,
+   "text": "O GRANDE NÃO\nDECIDE SOZINHO"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 39.25,
+   "to": 41.1,
+   "text": "CÂMARA = POVO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 41.15,
+   "to": 43.05,
+   "text": "CÂMARA = POVO\nSENADO = ESTADOS"
+  },
+  {
+   "id": "src-const1",
+   "kind": "source",
+   "text": "Fonte: Constituição, arts. 45 e 46",
+   "from": 23.25,
+   "to": 43.05
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 43.2,
+   "to": 44.35,
+   "text": "O QUE VOCÊ FAZ LÁ?"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 44.4,
+   "to": 49.55,
+   "text": "1 · REVISA\nAS LEIS"
+  },
+  {
+   "id": "src-const2",
+   "kind": "source",
+   "text": "Fonte: Constituição, art. 65",
+   "from": 46.4,
+   "to": 49.55
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 49.7,
+   "to": 56.85,
+   "text": "2 · APROVA QUEM O\nPRESIDENTE ESCOLHE"
+  },
+  {
+   "id": "src-const3",
+   "kind": "source",
+   "text": "Fonte: Constituição, art. 52",
+   "from": 52.5,
+   "to": 56.85
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 56.95,
+   "to": 58.25,
+   "text": "NÃO É SÓ\nCARIMBO"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 58.4,
+   "to": 61.85,
+   "text": "ABRIL DE 2026"
+  },
+  {
+   "id": "ph-messias",
+   "kind": "photo",
+   "media": "messias",
+   "shape": "retrato",
+   "name": "Jorge Messias",
+   "role": "Indicado ao STF (abr/2026)",
+   "from": 58.4,
+   "to": 63.85
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 61.9,
+   "to": 63.85,
+   "text": "PRECISAVA\nDE 41 VOTOS"
+  },
+  {
+   "id": "src-messias",
+   "kind": "source",
+   "text": "Foto: Geraldo Magela/Agência Senado",
+   "from": 58.4,
+   "to": 63.85
+  },
+  {
+   "id": "ov-21",
+   "kind": "stat",
+   "from": 63.95,
+   "to": 65.3,
+   "big": "34",
+   "label": "VOTOS A FAVOR"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 65.35,
+   "to": 69.15,
+   "text": "1ª REJEIÇÃO\nEM 132 ANOS"
+  },
+  {
+   "id": "src-painel",
+   "kind": "source",
+   "text": "Fonte: O Povo · Foto: Waldemir Barreto/Agência Senado",
+   "from": 63.9,
+   "to": 69.15
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 69.35,
+   "to": 73.85,
+   "text": "3 · JULGA O\nPRESIDENTE"
+  },
+  {
+   "id": "src-const4",
+   "kind": "source",
+   "text": "Fonte: Constituição, arts. 51 e 52",
+   "from": 69.35,
+   "to": 77.65
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 73.9,
+   "to": 75.6,
+   "text": "PRA TIRAR\nDO CARGO"
+  },
+  {
+   "id": "ov-25",
+   "kind": "stat",
+   "from": 75.65,
+   "to": 77.65,
+   "big": "54 DE 81",
+   "label": "SENADORES"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 77.75,
+   "to": 80.85,
+   "text": "JÁ JULGOU\nDOIS"
+  },
+  {
+   "id": "src-radio",
+   "kind": "source",
+   "text": "Fonte: Rádio Senado",
+   "from": 77.75,
+   "to": 80.85
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 81.0,
+   "to": 83.4,
+   "text": "MANDATO:\n8 ANOS"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 83.45,
+   "to": 85.75,
+   "text": "ATRAVESSA\n2 GOVERNOS"
+  },
+  {
+   "id": "src-const5",
+   "kind": "source",
+   "text": "Fonte: Constituição, art. 46",
+   "from": 81.0,
+   "to": 85.75
+  },
+  {
+   "id": "ov-29",
+   "kind": "question",
+   "from": 86.0,
+   "to": 94.1,
+   "text": "8 anos: certo\nou demais?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-30",
+   "kind": "cta",
+   "from": 92.0,
+   "to": 94.1,
+   "html": "Comenta: <b>CERTO</b> ou <b>DEMAIS</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   1.3,
+   "click.mp3",
+   -14
+  ],
+  [
+   2.0,
+   "click.mp3",
+   -14
+  ],
+  [
+   2.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   3.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   3.87,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   5.9,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   7.4,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   9.35,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   10.38,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   11.97,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   13.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   16.4,
+   "pop.mp3",
+   -14
+  ],
+  [
+   18.94,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   20.57,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   21.3,
+   "pop.mp3",
+   -14
+  ],
+  [
+   21.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   25.9,
+   "riser.mp3",
+   -20
+  ],
+  [
+   29.16,
+   "ping.mp3",
+   -14
+  ],
+  [
+   30.96,
+   "ping.mp3",
+   -14
+  ],
+  [
+   31.6,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   33.6,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   39.2,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   40.4,
+   "ping.mp3",
+   -14
+  ],
+  [
+   42.6,
+   "ping.mp3",
+   -14
+  ],
+  [
+   43.07,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   45.92,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   48.0,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   49.57,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   52.58,
+   "pop.mp3",
+   -14
+  ],
+  [
+   53.32,
+   "pop.mp3",
+   -14
+  ],
+  [
+   54.7,
+   "pop.mp3",
+   -14
+  ],
+  [
+   56.08,
+   "pop.mp3",
+   -14
+  ],
+  [
+   57.68,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   58.38,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   63.9,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   64.38,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   67.44,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   69.17,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   73.34,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   75.7,
+   "riser.mp3",
+   -20
+  ],
+  [
+   76.94,
+   "ping.mp3",
+   -12
+  ],
+  [
+   79.74,
+   "pop.mp3",
+   -14
+  ],
+  [
+   80.46,
+   "pop.mp3",
+   -14
+  ],
+  [
+   80.87,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   81.1,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   83.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   84.64,
+   "pop.mp3",
+   -14
+  ],
+  [
+   85.77,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   87.82,
+   "pop.mp3",
+   -14
+  ],
+  [
+   90.42,
+   "pop.mp3",
+   -14
+  ]
+ ]
+}

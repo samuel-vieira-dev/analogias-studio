@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-funcoes-senado
+tema: "Quais as funções de um senador e como funciona o Senado brasileiro (tom neutro)"
+referencias_visuais: []
+
+hook:
+  origem: 5
+  texto: "Você votou em dois senadores este mês. Sabe o que eles fazem?"
+
+pergunta_final:
+  origem: 2
+  texto: "Oito anos de mandato: tempo certo pra trabalhar com calma, ou tempo demais sem prestar contas?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-30
