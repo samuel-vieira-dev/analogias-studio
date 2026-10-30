@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-voto-distrital
+tema: "Voto distrital misto: o que é, e como e quando a Câmara quer implantar no Brasil (plano de Hugo Motta de 28/10/2026; tom neutro, prós e contras)"
+referencias_visuais: []
+
+hook:
+  origem: 4
+  texto: "Você vota numa pessoa… mas o seu voto pode eleger outra."
+
+pergunta_final:
+  origem: 5
+  texto: "Na hora de votar, o que pesa mais pra você: a pessoa ou o partido?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-30
