@@ -292,8 +292,20 @@ addScene("gancho", 0, 4.45, (S) => {
   const box = makeBallotBox(); S.add(box); box.userData.ballot.visible = false;
   const voter = makePerson(BLUE); voter.position.set(-1.45, 0, 0.3); voter.scale.setScalar(1.6); S.add(voter);
   const pod = makePodium(0.5, 0.3); pod.group.position.set(1.5, 0, 0.3); S.add(pod.group);
+  const band = new THREE.Mesh(new THREE.CylinderGeometry(0.515, 0.525, 0.06, 40, 1, true), mat("#c9a45a", { metalness: 0.7, roughness: 0.3 })); band.position.y = 0.21; pod.group.add(band);
   const elected = makePerson(ORANGE); elected.position.set(1.5, pod.top, 0.3); S.add(elected);
   const card = makeVoteCard(BLUE); S.add(card);
+  // set dressing: round stage, a queue of voters, the Congress far behind, a votes trail, spotlight, confetti
+  const stage = new THREE.Mesh(new THREE.CylinderGeometry(2.75, 2.85, 0.03, 64), mat("#2c1e17", { roughness: 0.85 })); stage.position.y = -0.016; S.add(stage);
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(2.77, 0.014, 8, 96), mat(ORANGE, { emissive: ORANGE, emissiveIntensity: 0.25 })); rim.rotation.x = Math.PI / 2; rim.position.y = 0.005; S.add(rim);
+  const queue = [["#6f7f96", -2.05, -0.75], ["#8a7f74", -2.4, -1.5], ["#6d7d68", -1.75, -2.15], ["#7b6f86", -2.25, -2.85]].map(([c, x, z]) => { const q = makePerson(c); q.position.set(x, 0, z); q.scale.setScalar(1.35); q.rotation.y = 0.5; S.add(q); return q; });
+  const cg = makeCongress({ label: null }); cg.group.position.set(0.5, 0, -3.4); cg.group.scale.setScalar(0.5); S.add(cg.group);
+  const trail = []; for (let i = 0; i < 9; i++) { const k = makeToken(); k.scale.setScalar(0.8); S.add(k); trail.push(k); }
+  const coneM = new THREE.MeshBasicMaterial({ color: "#ffb36b", transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(0.85, 2.6, 40, 1, true), coneM); cone.position.set(1.5, pod.top + 1.3, 0.3); S.add(cone);
+  const rndC = mulberry32(7), confetti = [];
+  for (let i = 0; i < 46; i++) { const c = new THREE.Mesh(new THREE.PlaneGeometry(0.07, 0.11), new THREE.MeshBasicMaterial({ color: [ORANGE, "#ffd36b", CREAM, GREEN, "#ff5a8a"][i % 5], side: THREE.DoubleSide, toneMapped: false })); c.userData = { x: 1.5 + (rndC() - 0.5) * 2.0, z: 0.3 + (rndC() - 0.5) * 1.4, y0: 2.3 + rndC() * 0.6, v: 0.5 + rndC() * 0.5, a: rndC() * 6, at: 3.45 + rndC() * 0.35 }; S.add(c); confetti.push(c); }
+  S.scenery(cg.group, "Congresso ao fundo"); queue.forEach((q, i) => S.scenery(q, "fila " + i));
   S.hero(box, "urna de papel"); S.hero(voter, "eleitor azul"); S.hero(pod.group, "pódio");
   S.hero(elected, "eleito laranja", { when: (t) => t > 3.6 });
   S.solid(box, "urna"); S.solid(pod.group, "pódio"); S.solid(elected, "eleito", { restsOn: ["pódio"], when: (t) => t > 3.6 });
@@ -306,6 +318,11 @@ addScene("gancho", 0, 4.45, (S) => {
     voter.rotation.y = 0.25 * Math.sin(Math.min(t, 1.5) * 2);
     popIn(elected, t, 3.25, 0.45, 1.6);
     elected.position.y = pod.top + 0.08 * Math.abs(Math.sin(Math.max(0, t - 3.7) * 6)) * (t > 3.7 ? 1 : 0);
+    queue.forEach((q, i) => { q.position.y = 0.04 * Math.abs(Math.sin(t * 2.4 + i * 1.3)); });
+    // votes leave the box and arc to the podium ("o seu voto pode eleger outra")
+    trail.forEach((k, i) => { const u = (t - 2.1) / 1.1 + i / trail.length; const f = u - Math.floor(u); k.visible = t > 2.1 + i * 0.1; k.position.copy(hop(new V3(0.1, 1.15, 0), new V3(1.0, 0.05, 0.95), f, 0.9)); k.rotation.set(f * 7 + i, i, 0.4); });
+    coneM.opacity = 0.16 * sm(t, 3.3, 3.7);
+    confetti.forEach((c) => { const d = c.userData, k = t - d.at; c.visible = k > 0; const y = d.y0 - d.v * Math.max(0, k); c.position.set(d.x + 0.08 * Math.sin(k * 5 + d.a), Math.max(0.03, y), d.z); c.rotation.set(d.a + k * 4, d.a * 2 + k * 3, d.a); });
   };
   const shot = shotOf(anim);
   const A0 = shot([box, voter, pod.group, elected, card], 0, 4.45, { from: [0.25, 0.45, 1], pull: 1.08 });
