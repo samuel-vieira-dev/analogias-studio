@@ -20,6 +20,9 @@ Kit de produção dos Reels 3D narrados do @analogias.br (Samuel Vieira). Para c
 - Foto real só com crédito na tela; nunca imagem de IA ou editada de pessoa ou fato real (`docs/fotos.md`).
 - Não editar `videos/*/build/` (é gerado): editar `scenes.js`, `video.json`, `engine/` ou `tools/build.py`.
 - Texto só por zona (`headline`, `source`, `caption`); nunca coordenadas em pixel.
-- Câmera só por `CAM.pose(envelope(...))`; registrar todo objeto que importa.
+- Área segura centralizada (x 190–890); animação principal dentro dela; plano de fundo pode ocupar a tela inteira (`S.backdrop`). Acabamento realista e polido, não cartoon (`docs/visual.md`).
+- Câmera só por `CAM.pose(envelope(...))` ou `CAM.move(...)` (movimentos prontos); registrar todo objeto que importa.
+- Dinâmica, jogos de câmera, fundo que reage à história e ilustração bem definida: `docs/visual.md` → "Direção" (pedido do Samuel, 31/10/2026).
+- Motor, objetos e cena são um só módulo: nome de objeto do kit específico (`makeCoinJar`, `GOLD_METAL`); o `build.py` recusa nome repetido.
 - Mudou `engine/` ou `tools/`? Rodar `bash tools/selftest.sh` e o QA do vídeo de exemplo antes do commit.
 - Commits terminam com as linhas de atribuição pedidas na sessão.

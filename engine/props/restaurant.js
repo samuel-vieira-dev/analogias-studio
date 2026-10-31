@@ -12,8 +12,8 @@ const LINEN = noiseTex({ base: "#f3efe7", amount: 0.06, size: 1, seed: 31, weave
 LINEN.repeat.set(6, 6);
 const SUIT_WEAVE = noiseTex({ base: "#9a9a9a", amount: 0.22, size: 1, seed: 33, weave: true });
 SUIT_WEAVE.repeat.set(3, 3);
-const GOLD = "#c9a24e";
-const goldMat = () => pmat(GOLD, { metalness: 1, roughness: 0.28 });
+const GOLD_METAL = "#c9a24e";
+const goldMat = () => pmat(GOLD_METAL, { metalness: 1, roughness: 0.28 });
 const steelMat = (r = 0.22) => pmat("#c9ccd1", { metalness: 1, roughness: r });
 
 // ---------------------------------------------------------------- table and chair
@@ -41,7 +41,7 @@ function makeDiningTable({ w = 4.2, d = 1.25, cloth = true, clothColor = "#f3efe
 }
 
 // Upholstered dining chair, origin floor centre, the sitter faces +z. Seat top at 0.47.
-function makeChair({ fabric = "#5b1f22", wood = "#3a2214" } = {}) {
+function makeDiningChair({ fabric = "#5b1f22", wood = "#3a2214" } = {}) {
   const g = new THREE.Group(), seatY = 0.47;
   const wm = pmat(wood, { roughness: 0.45, clearcoat: 0.35 });
   const fm = pmat(fabric, { roughness: 0.85, sheen: 0.8, sheenColor: new THREE.Color("#c45a5a"), sheenRoughness: 0.5 });
@@ -216,7 +216,7 @@ function makeGoldCoin(r = 0.03, t = 0.006) {
 
 // Glass jar with a brushed steel lid, coins inside and a paper label printed with `label`.
 // Origin: table top, centre. fill(k): 0..1 coin level. API: { group, fill, glass, lid, label, rimY, count }
-function makeJar({ r = 0.26, h = 0.62, label = "FGC", n = 420, seed = 17 } = {}) {
+function makeCoinJar({ r = 0.26, h = 0.62, label = "FGC", n = 420, seed = 17 } = {}) {
   const g = new THREE.Group();
   const prof = [[0.0, 0.004], [r * 0.9, 0.0], [r, 0.04], [r, h * 0.82], [r * 0.9, h * 0.9], [r * 0.82, h * 0.93], [r * 0.82, h]].map(([x, y]) => new THREE.Vector2(x, y));
   const glass = new THREE.Mesh(new THREE.LatheGeometry(prof, 72), glassMat()); glass.renderOrder = 10; glass.userData.noShadow = true; g.add(glass);
@@ -246,7 +246,7 @@ function makeJar({ r = 0.26, h = 0.62, label = "FGC", n = 420, seed = 17 } = {})
 
 // Long receipt (thermal paper) that unrolls downward from its top edge. Lines: [left, right].
 // Origin: top centre; the paper hangs/lies along -y of its own frame. API: { group, set(k), mesh, h }
-function makeReceipt({ w = 0.42, h = 1.4, title = "CONTA", lines = [], total = "" } = {}) {
+function makeBillReceipt({ w = 0.42, h = 1.4, title = "CONTA", lines = [], total = "" } = {}) {
   const c = makeCanvas(420, Math.round(420 * h / w)), x = c.getContext("2d");
   x.fillStyle = "#fbf8f0"; x.fillRect(0, 0, c.width, c.height);
   for (let i = 0; i < 1800; i++) { x.fillStyle = `rgba(0,0,0,${Math.random() * 0.025})`; x.fillRect(Math.random() * c.width, Math.random() * c.height, 2, 2); }
@@ -283,7 +283,7 @@ function makePendantLamp({ drop = 1.1, r = 0.22, light = true } = {}) {
   const cord = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, drop, 8), pmat("#111", { roughness: 0.6 })); cord.position.y = -drop / 2; g.add(cord);
   const shade = new THREE.Mesh(new THREE.ConeGeometry(r, r * 0.8, 48, 1, true), [pmat("#151515", { metalness: 0.6, roughness: 0.35, side: THREE.DoubleSide })]);
   shade.position.y = -drop - r * 0.4; g.add(shade);
-  const inner = new THREE.Mesh(new THREE.ConeGeometry(r * 0.985, r * 0.79, 48, 1, true), pmat(GOLD, { metalness: 1, roughness: 0.3, side: THREE.BackSide })); inner.position.copy(shade.position); g.add(inner);
+  const inner = new THREE.Mesh(new THREE.ConeGeometry(r * 0.985, r * 0.79, 48, 1, true), pmat(GOLD_METAL, { metalness: 1, roughness: 0.3, side: THREE.BackSide })); inner.position.copy(shade.position); g.add(inner);
   const bulb = new THREE.Mesh(new THREE.SphereGeometry(r * 0.26, 20, 14), new THREE.MeshBasicMaterial({ color: "#ffd9a0", toneMapped: false })); bulb.position.y = -drop - r * 0.72; g.add(bulb);
   if (light) { const pl = new THREE.PointLight("#ffbf7a", 2.2, 5, 1.8); pl.position.copy(bulb.position); pl.position.y -= 0.05; g.add(pl); g.userData.light = pl; }
   return g;
@@ -302,7 +302,7 @@ function makePadlock({ s = 1 } = {}) {
 
 // Desk calendar with flip pages (one plate per page). Origin: bottom centre; faces +z.
 // API: { group, show(i, k) } — page i fully shown, k 0..1 flips it over the top.
-function makeDeskCalendar(pages, { w = 0.9, h = 0.8 } = {}) {
+function makeFlipCalendar(pages, { w = 0.9, h = 0.8 } = {}) {
   const g = new THREE.Group();
   const stand = new THREE.Mesh(rbox(w, 0.06, 0.5, 0.02), pmat("#2a2522", { roughness: 0.5 })); stand.position.y = 0.03; g.add(stand);
   const easel = new THREE.Mesh(rbox(w * 0.96, h, 0.03, 0.01), pmat("#2a2522", { roughness: 0.5 })); easel.position.set(0, 0.06 + h / 2, -0.12); easel.rotation.x = -0.18; g.add(easel);
@@ -383,7 +383,7 @@ function makeRestaurantRoom({ wallZ = -5.5, sideX = 7, lampsX = [-1.2, 1.2], lam
     const ped = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.22, 0.47, 16), pmat("#2a1810", { roughness: 0.5 })); ped.position.y = 0.235; t.add(ped);
     const candle = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.12, 12), pmat("#f5efe2", { roughness: 0.7 })); candle.position.y = 0.83; t.add(candle);
     const flame = sprite(BOKEH, 0.22); flame.material.color.set("#ffb04a"); flame.material.blending = THREE.AdditiveBlending; flame.position.y = 0.93; t.add(flame);
-    for (const a of [0.6, 2.2, 3.8, 5.3]) { const ch = makeChair({ fabric: "#4a1a1c" }); ch.group.position.set(Math.sin(a) * 0.85, 0, Math.cos(a) * 0.85); ch.group.rotation.y = a + Math.PI; t.add(ch.group); }
+    for (const a of [0.6, 2.2, 3.8, 5.3]) { const ch = makeDiningChair({ fabric: "#4a1a1c" }); ch.group.position.set(Math.sin(a) * 0.85, 0, Math.cos(a) * 0.85); ch.group.rotation.y = a + Math.PI; t.add(ch.group); }
   }
   // pendant lamps over the main table
   const lamps = lampsX.map((x) => { const l = makePendantLamp({ drop: 0.9 }); l.position.set(x, lampY + 0.9, 0); g.add(l); return l; });

@@ -36,7 +36,7 @@ function buildDinner(S, { master = "seated", jarFill = 1, cards = true, room = t
   const top = D.table.topY;
   for (const s of SEATS) {
     const x = s.side * 0.98, turn = s.side < 0 ? Math.PI / 2 : -Math.PI / 2;
-    const ch = makeChair(); ch.group.position.set(s.side * 1.04, 0, s.z); ch.group.rotation.y = turn; S.add(ch.group);
+    const ch = makeDiningChair(); ch.group.position.set(s.side * 1.04, 0, s.z); ch.group.rotation.y = turn; S.add(ch.group);
     const d = makeDiner({ suit: s.suit, tie: s.tie }); d.group.position.set(x, 0, s.z); d.setPose({ sit: 1, table: 1, turn }); S.add(d.group);
     let card = null;
     // cards sit inward of the resting hands; the middle row sits forward of the jar (nothing touches)
@@ -46,11 +46,11 @@ function buildDinner(S, { master = "seated", jarFill = 1, cards = true, room = t
     D.seats[s.name] = { diner: d, chair: ch, card, dish, x, z: s.z, side: s.side, turn };
   }
   // the Master, at the head of the table (far end), facing the camera
-  D.masterChair = makeChair({ fabric: "#2a1a10" }); D.masterChair.group.position.set(0, 0, MASTER_Z - 0.06); S.add(D.masterChair.group);
+  D.masterChair = makeDiningChair({ fabric: "#2a1a10" }); D.masterChair.group.position.set(0, 0, MASTER_Z - 0.06); S.add(D.masterChair.group);
   D.master = makeDiner({ suit: "#121212", tie: "#b8913f", shirt: "#f4f2ee" }); D.master.group.position.set(0, 0, MASTER_Z); S.add(D.master.group);
   D.master.setPose({ sit: 1, table: 1 }); D.master.group.visible = master === "seated";
   if (cards) { D.masterCard = makePlaceCard("MASTER", { w: 0.46, h: 0.16, bg: "#1c1410", fg: "#d9b66a" }); D.masterCard.group.position.set(0, top, -TABLE_D / 2 + 0.35); S.add(D.masterCard.group); }
-  D.jar = makeJar({ label: "FGC" }); D.jar.group.position.set(0, top, -0.05); D.jar.fill(jarFill); S.add(D.jar.group);
+  D.jar = makeCoinJar({ label: "FGC" }); D.jar.group.position.set(0, top, -0.05); D.jar.fill(jarFill); S.add(D.jar.group);
   D.top = top;
   // dinner lighting: a darker room, the table lit warm
   D.light = () => { key.intensity = 1.7; key.color.set("#ffc69a"); hemi.intensity = 0.32; scene.environmentIntensity = 0.3; };
@@ -89,7 +89,7 @@ function smallPhone(scale = 0.21) { const p = makePhone(); p.group.scale.setScal
 // Stack of big gold coins (instanced). Origin bottom centre. set(k) shows k·n coins. API { group, set, topAt(k) }
 function makeCoinStack(n, { r = 0.13, t = 0.03, seed = 3 } = {}) {
   const g = new THREE.Group(), rnd = mulberry32(seed);
-  const m = new THREE.InstancedMesh(new THREE.CylinderGeometry(r, r, t, 40), pmat(GOLD, { metalness: 1, roughness: 0.26 }), n);
+  const m = new THREE.InstancedMesh(new THREE.CylinderGeometry(r, r, t, 40), pmat(GOLD_METAL, { metalness: 1, roughness: 0.26 }), n);
   const d = new THREE.Object3D();
   for (let i = 0; i < n; i++) { d.position.set((rnd() - 0.5) * 0.012, t / 2 + i * t * 1.02, (rnd() - 0.5) * 0.012); d.rotation.set(0, rnd() * 6, 0); d.updateMatrix(); m.setMatrixAt(i, d.matrix); }
   g.add(m); g.add(contactShadow(r * 3, r * 3));
@@ -111,7 +111,7 @@ function makeShield(label = "FGC", { w = 1.0, h = 1.2 } = {}) {
   const g = new THREE.Group();
   g.add(new THREE.Mesh(geo, pmat("#cdd2d8", { metalness: 1, roughness: 0.18, clearcoat: 0.5 })));
   const rimS = new THREE.Shape(s.getPoints(48)); const inner = s.getPoints(48).map((p) => p.clone().multiplyScalar(0.86)); rimS.holes.push(new THREE.Path(inner.reverse()));
-  const rim = new THREE.Mesh(new THREE.ExtrudeGeometry(rimS, { depth: 0.03, bevelEnabled: false }), pmat(GOLD, { metalness: 1, roughness: 0.25 })); rim.position.z = 0.07; g.add(rim);
+  const rim = new THREE.Mesh(new THREE.ExtrudeGeometry(rimS, { depth: 0.03, bevelEnabled: false }), pmat(GOLD_METAL, { metalness: 1, roughness: 0.25 })); rim.position.z = 0.07; g.add(rim);
   const p = makePlate(label, w * 0.72, h * 0.3, { bg: "#14171c", fg: "#f4e3b5", depth: 0.01 }); p.position.set(0, h * 0.08, 0.1); g.add(p);
   return g;
 }
@@ -193,7 +193,7 @@ addScene("aconteceu", 3.46, 8.12, (S) => {
   const D = buildDinner(S, { master: "empty" }); emptyMaster(S, D);
   const it = D.seats["ITAÚ"];
   const bill = makeBillFolder(BILL); bill.group.position.copy(billEnd(it).setY(D.top)); bill.group.rotation.y = -0.3; S.add(bill.group);
-  const rc = makeReceipt({ w: 0.4, h: 0.72, lines: [["Mesa", "Master"], ["Pratos", "muitos"], ["Pago?", "não"]], total: "R$ 50 BI" });
+  const rc = makeBillReceipt({ w: 0.4, h: 0.72, lines: [["Mesa", "Master"], ["Pratos", "muitos"], ["Pago?", "não"]], total: "R$ 50 BI" });
   rc.group.position.set(it.side * 0.3, D.top + 0.03, it.z - 0.32); rc.group.rotation.y = 0.35; S.add(rc.group);
   const phone = smallPhone(0.2); phone.group.position.set(0.05, D.top + 0.012, TABLE_D / 2 - 0.25); phone.group.rotation.order = "YXZ"; phone.group.rotation.set(-Math.PI / 2, Math.PI, 0); S.add(phone.group);
   const strip = makePlate("SUA PARTE", 0.3, 0.1, { bg: "#fbf8f0", fg: "#b3241a", depth: 0.004 }); S.add(strip);
@@ -309,7 +309,7 @@ addScene("trava", 25.16, 31.5, (S) => {
   const phone = makePhone(); phone.group.scale.setScalar(0.62); phone.body.material = pmat("#0f1013", { metalness: 0.6, roughness: 0.25, clearcoat: 1 }); phone.group.position.set(-0.55, 0.53, 0); phone.group.rotation.x = -0.12; S.add(phone.group);
   paintBankApp(phone.ctx, { title: "Banco Master", sub: "Saldo investido", balance: "R$ 80.000", locked: true, lines: [["Resgate", "bloqueado", RED]], banner: "BANCO EM LIQUIDAÇÃO" }); phone.tex.needsUpdate = true;
   const lock = makePadlock({ s: 0.75 }); S.add(lock.group);
-  const cal = makeDeskCalendar(["NOV", "DEZ", "JAN"], { w: 0.85, h: 0.75 }); cal.group.position.set(0.75, 0, 0.1); cal.group.rotation.y = -0.25; S.add(cal.group);
+  const cal = makeFlipCalendar(["NOV", "DEZ", "JAN"], { w: 0.85, h: 0.75 }); cal.group.position.set(0.75, 0, 0.1); cal.group.rotation.y = -0.25; S.add(cal.group);
   // cash column with the R$ 250 mil line
   const bundles = [];
   for (let i = 0; i < 16; i++) { const b = makeCashBundle({ w: 0.62, d: 0.3, h: 0.1 }); b.position.set(Math.sin(i * 2.3) * 0.015, 0, Math.cos(i * 1.7) * 0.015); b.rotation.y = Math.sin(i * 1.1) * 0.06; b.userData.y = i * 0.102; S.add(b); bundles.push(b); }
@@ -469,10 +469,10 @@ addScene("pote-paga", 52.64, 62.06, (S) => {
   const bk = makeBokeh({ n: 40, center: [0, 9, -22], spread: [40, 10, 4], seed: 93 }); S.add(bk.group);
   const PH = 1.5, PW = 3.0, JS = 5;
   const ped = makePlinth(PW, PH, PW); ped.position.set(0, 0, -2); S.add(ped);
-  const jar = makeJar({ r: 0.26, h: 0.62, label: "FGC" }); jar.group.scale.setScalar(JS); S.add(jar.group);
+  const jar = makeCoinJar({ r: 0.26, h: 0.62, label: "FGC" }); jar.group.scale.setScalar(JS); S.add(jar.group);
   // pivot on the jar's right bottom edge: it tips sideways to the right, pouring over the crowd
   const pivot = new THREE.Group(); pivot.position.set(0.26 * JS, PH, -2); S.add(pivot); pivot.add(jar.group); jar.group.position.set(-0.26 * JS, 0, 0);
-  const N = 160, stream = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.1, 0.1, 0.022, 20), pmat(GOLD, { metalness: 1, roughness: 0.3 }), N); stream.userData.decor = true; S.add(stream);
+  const N = 160, stream = new THREE.InstancedMesh(new THREE.CylinderGeometry(0.1, 0.1, 0.022, 20), pmat(GOLD_METAL, { metalness: 1, roughness: 0.3 }), N); stream.userData.decor = true; S.add(stream);
   const rnd = mulberry32(5), seeds = Array.from({ length: N }, () => [rnd(), rnd(), rnd(), rnd()]); const d = new THREE.Object3D();
   const anim = (t) => {
     crowd.update(t); bk.update(t); key.intensity = 2.0; scene.environmentIntensity = 0.45;
@@ -662,7 +662,7 @@ addScene("pergunta", 85.78, 93.3, (S) => {
   const bankers = SPOTS.map(([x, z], i) => { const d = makeDiner({ suit: SEATS[i].suit, tie: SEATS[i].tie }); d.group.position.set(-PX + x, 0.3, z); S.add(d.group); return d; });
   const people = SPOTS.map(([x, z], i) => { const [c1, c2] = [["#5b6b7a", "#3a4a3a"], ["#7a5a3a", "#4a2a2a"], ["#3d5a4a", "#2a3a5a"]][i]; const d = makeDiner({ suit: c1, shirt: "#e6e1d8", tie: c2 }); d.group.position.set(PX + x, 0.3, z); S.add(d.group); return d; });
   const pivot = new THREE.Group(); pivot.position.set(0, 3.3, 0.1); S.add(pivot);
-  const rc = makeReceipt({ w: 0.46, h: 0.72, lines: [["Mesa", "Master"], ["Pago por", "?"]], total: "R$ 50 BI" }); pivot.add(rc.group); rc.group.position.set(0, -0.3, 0);
+  const rc = makeBillReceipt({ w: 0.46, h: 0.72, lines: [["Mesa", "Master"], ["Pago por", "?"]], total: "R$ 50 BI" }); pivot.add(rc.group); rc.group.position.set(0, -0.3, 0);
   const anim = (t) => {
     room.update(t); key.intensity = 1.9; hemi.intensity = 0.35;
     const sw = Math.sin((t - 86) * 2.2) * 0.42 * (0.7 + 0.3 * Math.sin(t)); pivot.rotation.z = sw;

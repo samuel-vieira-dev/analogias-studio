@@ -66,13 +66,19 @@ Se o take escolhido trocou ou pulou palavras importantes, avisar antes de seguir
 
 Escrever `video.json` (duração = fala + 2 s; `cuts`; `overlays` por **zona**, nunca por pixel; `sfx`; `captions.fix`) e `scenes.js` usando `engine/` (ver `docs/visual.md` e o exemplo `videos/2026-10-27-circuit-breaker/`). Regras:
 
+- Área segura **centralizada** (x 190–890, centro da tela x = 540; `config/layout.json`): título, palco, legenda e capa alinhados ao meio.
+- **Animação principal dentro da área segura** (no palco); **plano de fundo na tela inteira** para contextualizar o take (a estrada até o horizonte, a mesa e a parede, o escritório, a cidade): mais escuro e mais longe que o herói, sem texto nem informação da fala, se mexendo (paralaxe, partículas, luz, coisas entrando pelas bordas). Registrar com `S.backdrop` (`docs/visual.md` → "Plano de fundo").
+- **Acabamento realista, menos cartoon, e gráfico polido sem falha**: proporções reais, materiais com textura e detalhe (papelão com fita e etiqueta, asfalto com faixa, tecido, metal), bordas chanfradas; o motor dá sombra real e reflexo. Nada atravessando, piscando ou serrilhado.
 - Cada cena: `anim(t)` só dos objetos → `CAM.pose(envelope(objs, anim, t0, t1), { zone })`; `stage` quando a headline tem texto, `stage-tall` quando não tem.
-- Registrar `S.hero`, `S.label` (com `on`), `S.solid` (com `restsOn`), `S.scenery`.
+- Registrar `S.hero`, `S.label` (com `on`), `S.solid` (com `restsOn`), `S.scenery`, `S.backdrop`.
 - Números, títulos e regras na `headline`; fontes e avisos em `source` (canto superior direito); CTA na base, depois da fala.
 - Texto de objeto impresso nele (`makePlate`); objetos apoiados sem afundar; portas e tampas nunca atravessam nada.
 - Reaproveitar `engine/props/`; objeto novo reutilizável vai para lá. Objeto novo é montado com peças calculadas (nunca uma primitiva girada "até parecer") e conferido no recorte da folha de objetos.
 - Fotos: quadro de investigação (várias pessoas/fatos ligados), porta-retrato no palco (uma foto que é o assunto) ou cartão 2D (rosto + nome + cargo); exemplos em `docs/fotos.md`. Crédito "Foto: ..." na zona `source` durante todo o tempo em que a foto aparece.
 - Nada parado: câmera andando no plano inteiro, fotos aproximando devagar, assunto ocupando ao menos 45% da zona, corte nunca num palco vazio.
+- **Dinâmica e jogos de câmera** (`docs/visual.md` → "Direção"): cada plano com um movimento de intenção (`CAM.move`: `push` na revelação, `reveal` na consequência, `orbit` no objeto-assunto, `crane`/`drop` na mudança de escala, `truck` numa fila, `CAM.shake` no impacto); dois planos seguidos não repetem o movimento; tamanho do quadro muda a cada 2–4 s (geral → médio → detalhe); a câmera segue o que viaja, por um caminho que não atravessa nada.
+- **Fundo interativo com a história**: o plano de fundo reage às batidas da fala (`beat(t, at, d)`: a cidade apaga em "liquida", a multidão pula quando o pote derrama, o salão esvazia quando o Master sai), sem virar herói nem ter texto.
+- **Ilustração bem definida**: silhueta que se lê sem som (a peça que diz o que o objeto é), título nunca sobre superfície clara (toalha, papel, parede), texto impresso de pé para a câmera, nada flutuando nem atravessando (nem vidro), escala de destaque verdadeira.
 
 ## 9. Mixagem, build, QA e prévia (antes de renderizar)
 
@@ -84,8 +90,8 @@ node tools/preview.cjs videos/<slug>     # um quadro por plano + folha de objeto
 ```
 
 1. **QA automático**: além de cortes e sobreposições, reprova objeto pequeno, palco vazio, plano parado por 2 s, texto 3D ilegível, foto sem crédito e foto esticada (`docs/qa.md`). Corrigir na origem (`scenes.js`, `video.json`, `engine/`) até "QA ok". Nunca afrouxar um limite do `config/layout.json` ou encurtar um `when` para passar.
-2. **Revisão cega** (obrigatória): abrir um subagente novo (ferramenta Agent) sem o roteiro nem o gabarito, só com os caminhos de `preview/objetos-NN.jpg` e `preview/sheet-NN.jpg` e o pedido de `docs/qa.md` → "Revisão cega". Comparar o que ele nomeou com `preview/objetos.json`: nome errado ou vago = objeto mal feito. Corrigir tudo o que ele apontar (ou justificar por escrito) e repetir QA + prévia.
-3. **Sua leitura**: olhar cada folha com o roteiro do lado — o plano mostra o que a fala diz naquele instante? Composição, tamanho, leitura dos textos.
+2. **Revisão cega** (obrigatória): copiar `preview/*.jpg` para uma pasta à parte e abrir um subagente novo (ferramenta Agent) sem o roteiro nem o gabarito, só com os caminhos dessas cópias de `objetos-NN.jpg` e `sheet-NN.jpg` e o pedido de `docs/qa.md` → "Revisão cega". Comparar o que ele nomeou com `preview/objetos.json`: nome errado ou vago = objeto mal feito. Corrigir tudo o que ele apontar (ou justificar por escrito) e repetir QA + prévia.
+3. **Sua leitura**: olhar cada folha com o roteiro do lado — o plano mostra o que a fala diz naquele instante? Composição, tamanho, leitura dos textos, movimento de câmera variado, fundo reagindo à fala. Para conferir uma correção, `node tools/preview.cjs videos/<slug> 12.4 42.0` (só esses tempos) e `node tools/qa.cjs videos/<slug> --from 40 --to 52`; antes do render, QA do vídeo inteiro.
 
 Mudou só efeito sonoro? `mix.py` + `build.py` bastam (o QA continua valendo).
 
@@ -122,12 +128,15 @@ Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.
 
 1. Nada de voz antes do roteiro aprovado.
 2. Nada de render sem `QA ok` (o `render.sh` bloqueia).
-3. Texto nunca em cima da animação; fonte sempre no canto superior direito; legenda na base da área segura.
+3. Texto nunca em cima da animação principal (o plano de fundo pode ficar por baixo); fonte sempre no canto superior direito; legenda na base da área segura, que é centralizada na tela.
 4. Nenhum objeto principal cortado; nada atravessando nada.
 5. Todo número com fonte em `fatos.md`; tema político contado sem tomar lado; "Não é recomendação de investimento" em tema de dinheiro.
 6. Analogia só no ponto difícil — uma boa vale mais que cinco.
 7. Foto real sempre com crédito na tela; nunca imagem de IA ou editada de pessoa ou fato real.
 8. Nada parado por 2 s; nada de render sem revisão cega.
+9. Visual realista e polido: animação principal na área segura, plano de fundo de tela inteira contextualizando o take.
+10. Dinâmica: cada plano com movimento de câmera de intenção, sem repetir o anterior; fundo reagindo às batidas da fala.
+11. Ilustração que se lê sem som: título nunca sobre fundo claro, texto impresso de pé, nada flutuando nem atravessando.
 
 ## Fechamento
 

@@ -1,6 +1,6 @@
 # QA automático (antes de todo render)
 
-`node tools/qa.cjs videos/<slug>` abre `qa/harness.html` (3D + textos + legendas numa página), avança de 0,2 em 0,2 s e mede, em pixels do quadro, cada texto e cada objeto registrado. Sai com código 0 (limpo), 1 (problemas) ou 2 (erro). Problemas viram `qa/report.json` e prints marcados em `qa/` (rosa = item A, amarelo = item B, azul = área segura).
+`node tools/qa.cjs videos/<slug>` (no Mac usa a GPU pelo Metal: ~30 s para 90 s de vídeo; sem GPU, em software, chega a 30 min) abre `qa/harness.html` (3D + textos + legendas numa página), avança de 0,2 em 0,2 s e mede, em pixels do quadro, cada texto e cada objeto registrado. Sai com código 0 (limpo), 1 (problemas) ou 2 (erro). Problemas viram `qa/report.json` e prints marcados em `qa/` (rosa = item A, amarelo = item B, azul = área segura).
 
 `tools/render.sh` se recusa a renderizar sem um relatório completo, limpo e mais novo que o build.
 
@@ -59,6 +59,14 @@ O QA mede geometria; ele não sabe que um telhado de lado está errado. Quem esc
 
 3. Comparar o que o revisor nomeou com `objetos.json`. Nome errado ou vago ("triângulo vermelho em cima de uma caixa" no lugar de "casa") = objeto mal modelado: corrigir. Todo problema apontado é corrigido ou justificado por escrito antes do render.
 4. Depois, olhar as folhas com o roteiro do lado: cada plano mostra o que a fala está dizendo naquele instante?
+
+### O que a revisão cega do Banco Master pegou (31/10/2026)
+
+Duas revisões cegas acharam o que o QA não mede, e tudo virou regra em `visual.md` → "Direção": placas atravessando o vidro do pote, mão em cima da placa, recibo atravessando o prato, "R$" e "CONTA" de cabeça para baixo, prato caindo do teto, tampa flutuando, moedas atravessando o pedestal, escudo parecendo espetado na pilha, título laranja sobre toalha branca, pote "gigante" pequeno na multidão. Para iterar rápido:
+
+- `node tools/preview.cjs videos/<slug> 12.4 30.8 42.0` gera só os quadros desses tempos (segundos);
+- `node tools/qa.cjs videos/<slug> --from 40 --to 52` confere só um trecho; antes do render, sempre o vídeo inteiro;
+- a revisão cega lê cópias fixas das folhas (copie `preview/*.jpg` para uma pasta à parte antes de abrir o subagente): se a prévia for refeita no meio, ela não vê folhas misturadas.
 
 ## Limites (por isso também olhamos)
 

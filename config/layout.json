@@ -58,7 +58,7 @@
       "y": 580,
       "w": 700,
       "h": 750,
-      "_doc": "Palco 3D quando a faixa headline tem texto."
+      "_doc": "Palco 3D quando a faixa headline tem texto. A animação principal do plano fica aqui; o plano de fundo pode ocupar a tela inteira (docs/visual.md)."
     },
     "stage-tall": {
       "x": 190,
@@ -122,6 +122,7 @@
     "solid_overlap_ratio": 0.03,
     "contact_tol": 0.04,
     "decoration_selectors": [
+      "#ov-scrim",
       "#ov-flash",
       "#ov-prog-track",
       "#ov-prog"

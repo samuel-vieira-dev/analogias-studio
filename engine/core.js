@@ -28,6 +28,8 @@ const eOut = (x) => 1 - Math.pow(1 - x, 3);
 const eBack = (x) => { const c1 = 1.9, c3 = c1 + 1; return x <= 0 ? 0 : 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
 const lerp = (a, b, x) => a + (b - a) * x;
 const pop = (t, at, d = 0.4) => eBack(lin(t, at, at + d));
+// 0 → 1 → 0 over [at, at + d]: a beat for the backdrop (a light flares, the crowd jumps, the city dims)
+const beat = (t, at, d = 0.6) => Math.sin(Math.PI * lin(t, at, at + d));
 function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 
 // ---------------------------------------------------------------- materials, geometry, textures
@@ -59,7 +61,8 @@ function plateTex(text, { bg = "#141414", fg = "#f5c400", w = 1024, h = 220, fon
 function makePlate(text, w, h, { bg = "#141414", fg = "#ffffff", font = "900 160px Inter", depth = 0.03, detail = false } = {}) {
   const ph = 256, pw = Math.max(64, Math.round(ph * w / h));
   const tex = plateTex(text, { bg, fg, w: pw, h: ph, font: font.replace(/\d+(?:\.\d+)?px/, Math.round(ph * 0.62) + "px"), radius: Math.round(ph * 0.12) });
-  const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: !bg });
+  // rounded corners are cut out (alphaTest), never painted black
+  const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: !bg, alphaTest: bg ? 0.5 : 0 });
   const side = mat(bg || "#141414");
   const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), [side, side, side, side, face, side]);
   m.userData.plate = { text, w, h, depth, frac: tex.userData.textFrac, detail }; return m;
@@ -92,18 +95,26 @@ await document.fonts.load("900 100px Inter"); await document.fonts.load("800 100
 await document.fonts.load("700 100px Inter"); await document.fonts.load("600 100px Inter");
 
 // ---------------------------------------------------------------- renderer and world
+// Look (31/10/2026: "menos cartoon, mais polido"): soft real shadows from the key light that follow the
+// shot, a studio environment map for reflections, a graded backdrop instead of a flat colour, a textured
+// floor, and 1.5x internal resolution (the page downsamples it: smooth edges, no stair-stepping).
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("w-canvas"), antialias: true, preserveDrawingBuffer: true, alpha: false });
-renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.setPixelRatio(1.5); renderer.setSize(W, H, false);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
 // Realism (31/10/2026): soft shadows from the key light and a studio environment map, so metal,
 // glass, ceramics and lacquer get real reflections instead of flat plastic shading.
 renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(BG);
+function backdropTex() {
+  const c = makeCanvas(64, 1024), x = c.getContext("2d"), g = x.createLinearGradient(0, 0, 0, 1024);
+  g.addColorStop(0, "#22160f"); g.addColorStop(0.55, BG); g.addColorStop(1, "#0d0806");
+  x.fillStyle = g; x.fillRect(0, 0, 64, 1024); return texFrom(c);
+}
+const BACKDROP = backdropTex(); scene.background = BACKDROP;
 scene.fog = new THREE.Fog(BG, 12, 40);
-const ENV = (() => { const pm = new THREE.PMREMGenerator(renderer); const t = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); return t; })();
-scene.environment = ENV; scene.environmentIntensity = 0.42;
+const STUDIO_ENV = (() => { const pm = new THREE.PMREMGenerator(renderer); const t = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); return t; })();
+scene.environment = STUDIO_ENV; scene.environmentIntensity = 0.42;
 const camera = new THREE.PerspectiveCamera(40, W / H, 0.05, 300);
 const hemi = new THREE.HemisphereLight("#ffd9b8", "#1a0f0a", 0.5); scene.add(hemi);
 const key = new THREE.DirectionalLight("#ffb98a", 2.4); key.position.set(4, 9, 6); scene.add(key); scene.add(key.target);
@@ -111,9 +122,21 @@ key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 4
 const KEY_DIR = new V3(4, 9, 6).normalize();
 const rim = new THREE.DirectionalLight("#86a8ff", 1.1); rim.position.set(-6, 5, -7); scene.add(rim);
 const fill = new THREE.PointLight(ORANGE, 0, 12, 1.6); scene.add(fill);
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat("#23160f", { roughness: 0.95 }));
+function floorTex() {
+  const c = makeCanvas(512, 512), x = c.getContext("2d"), r = mulberry32(21);
+  x.fillStyle = "#2a1b13"; x.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 2600; i++) { const v = r(); x.fillStyle = v < 0.5 ? `rgba(0,0,0,${0.05 + r() * 0.08})` : `rgba(255,214,180,${0.02 + r() * 0.04})`; const s = 1 + r() * 3; x.fillRect(r() * 512, r() * 512, s, s); }
+  const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(60, 60); return t;
+}
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat("#ffffff", { map: floorTex(), roughness: 0.92, envMapIntensity: 0.25 }));
 floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
-function resetLights() { fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.4; hemi.intensity = 0.5; scene.environmentIntensity = 0.42; floor.visible = true; }
+// Called before every scene update: a scene may change the lights, swap the ground, sky and fog for its
+// own backdrop (S.backdrop) and gets the defaults back on the next cut.
+function resetLights() {
+  fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.4;
+  hemi.intensity = 0.5; hemi.color.set("#ffd9b8"); hemi.groundColor.set("#1a0f0a"); scene.environmentIntensity = 0.42;
+  floor.visible = true; scene.background = BACKDROP; scene.fog.color.set(BG);
+}
 // Shadow camera follows the shot: centred on what the camera looks at, sized to the shot.
 function fitShadow(look, dist) {
   const s = Math.max(2, dist * 0.75);
@@ -128,7 +151,10 @@ const pmat = (color, o = {}) => new THREE.MeshPhysicalMaterial(Object.assign({ c
 // Glass that reads as glass without a transmission pass: thin, transparent, reflective edges.
 const glassMat = (o = {}) => new THREE.MeshPhysicalMaterial(Object.assign({ color: "#dfeef0", roughness: 0.04, metalness: 0, transparent: true, opacity: 0.22, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 2.2, depthWrite: false, side: THREE.DoubleSide }, o));
 // Procedural wood (planks or a single board): grain lines + knots, seeded.
-function woodTex({ base = "#6b4128", dark = "#3e2214", light = "#8a5a3a", planks = 1, w = 1024, h = 1024, seed = 5 } = {}) {
+// woodTex("#5a3a28") (a colour string) is the fine cached grain of props/materials.js (woodGrainTex).
+function woodTex(opts = {}) {
+  if (typeof opts === "string") return woodGrainTex(opts);
+  const { base = "#6b4128", light = "#8a5a3a", planks = 1, w = 1024, h = 1024, seed = 5 } = opts;
   const c = makeCanvas(w, h), x = c.getContext("2d"), r = mulberry32(seed);
   x.fillStyle = base; x.fillRect(0, 0, w, h);
   const ph = h / planks;
@@ -294,6 +320,27 @@ const CAM = (() => {
     const o = { ...p, pos: p.pos.clone(), look: p.look.clone() }; const a = amp * k * p.dist * 0.1;
     o.pos.x += Math.sin(t * 61) * a; o.pos.y += Math.cos(t * 47) * a; return o;
   }
+  // Camera moves ("jogos de câmera", docs/visual.md → Direção). move(target, kind, k, o) is the pose at
+  // progress k (0..1, eased) of one named move around `target` (a box from envelope(), or objects);
+  // every pose is still solved by pose(), so the subject fits the zone through the whole move.
+  //   push   dolly in: starts o.pull0 (1.35) farther, ends at o.pull (1)
+  //   reveal dolly out: the reverse (starts close, opens up)
+  //   orbit  swing around the subject by o.deg degrees (40), centred on o.from
+  //   crane  rise: the direction's height goes from o.from[1] - o.rise to + o.rise (0.4)
+  //   drop   the crane in reverse (from above down to the subject's level)
+  //   truck  slide sideways by o.side (0.4) in the direction's x
+  // Usage: CAM.apply(CAM.move(box, "orbit", lin(t, t0, t1), { zone: "stage", from: [0.2, 0.4, 1], deg: 30 }))
+  function move(target, kind, k, o = {}) {
+    const e = sm(clamp(k), 0, 1), f = new V3(...(o.from || DEF.from)), pull = o.pull ?? 1, pull0 = o.pull0 ?? 1.35;
+    let pl = pull;
+    if (kind === "push") pl = lerp(pull0, pull, e);
+    else if (kind === "reveal") pl = lerp(pull, pull0, e);
+    else if (kind === "orbit") { const a = THREE.MathUtils.degToRad(o.deg ?? 40) * (e - 0.5); f.applyAxisAngle(new V3(0, 1, 0), a); }
+    else if (kind === "crane" || kind === "drop") { const r = o.rise ?? 0.4; f.y += kind === "crane" ? lerp(-r, r, e) : lerp(r, -r, e); }
+    else if (kind === "truck") { const d = o.side ?? 0.4; f.x += lerp(-d, d, e); }
+    else throw new Error("CAM.move: movimento desconhecido " + kind);
+    return pose(target, { ...o, from: [f.x, f.y, f.z], pull: pl });
+  }
   let last = null;
   function apply(p) {
     last = p; setPrincipal(p.cx, p.cy, p.fov);
@@ -301,7 +348,7 @@ const CAM = (() => {
     scene.fog.near = p.dist * 1.15 + 1.5; scene.fog.far = p.dist * 3.2 + 12;
     fitShadow(p.look, p.dist);
   }
-  return { pose, at, blend, track, shake, apply, projectBox, toBox, setPrincipal, get last() { return last; } };
+  return { pose, at, blend, track, shake, move, apply, projectBox, toBox, setPrincipal, get last() { return last; } };
 })();
 
 // sparks: seeded burst, pure function of time
@@ -328,6 +375,7 @@ let ACTIVE = null, LAST_T = 0;
 //   S.solid(obj, name, {restsOn})     must not pass through other solids; may touch (not sink into) restsOn
 //   S.scenery(obj, name, {when})      environment that may run past the frame (a crowd, a skyline),
 //                                     but no text may sit on it
+//   S.backdrop(obj)                   full-screen context behind everything (may sit under text); not checked
 //   `when: (t) => bool` limits a check to the moments the object is the subject of the shot.
 function addScene(name, t0, t1, build) {
   const s = { name, t0, t1, group: new THREE.Group(), heroes: [], labels: [], solids: [], scenery: [], update: null };
@@ -339,6 +387,9 @@ function addScene(name, t0, t1, build) {
     label: (spr, name, o = {}) => { s.labels.push({ obj: spr, name, on: o.on || null, when: o.when || null }); return spr; },
     solid: (obj, name, o = {}) => { s.solids.push({ obj, name, restsOn: o.restsOn || [], when: o.when || null }); return obj; },
     scenery: (obj, name, o = {}) => { s.scenery.push({ obj, name, when: o.when || null }); return obj; },
+    // backdrop: full-screen context behind the main animation (road to the horizon, wall, city). It may run
+    // under the text bands and the app UI; it is never checked and never a hero (docs/visual.md).
+    backdrop: (...objs) => { s.group.add(...objs); return objs[0]; },
   };
   s.update = build(S);
   // shadows: every lit, opaque mesh casts and receives (glass, text faces and sprites do not cast)
