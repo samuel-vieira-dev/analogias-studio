@@ -1,0 +1,684 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-terras-raras",
+ "post": {
+  "title": "NÃO É TERRA.\nNEM É RARA.",
+  "hashtags": [
+   "#terrasraras",
+   "#mineraiscriticos",
+   "#mineracao",
+   "#china",
+   "#goias",
+   "#eleicoes2026",
+   "#geopolitica"
+  ],
+  "media": false,
+  "t": 3.4
+ },
+ "duration": 100.4,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "Imagina...": "Imagina:"
+  }
+ },
+ "media": {
+  "oxidos": {
+   "file": "midia/oxidos.jpg",
+   "credit": "Peggy Greb/USDA",
+   "url": "https://commons.wikimedia.org/wiki/File:Rareearthoxides.jpg",
+   "focus": [
+    0.55,
+    0.55
+   ]
+  },
+  "lula": {
+   "file": "midia/lula.jpg",
+   "credit": "Ricardo Stuckert/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva.jpg",
+   "focus": [
+    0.49,
+    0.41
+   ],
+   "_doc": "Recorte (só recorte, sem edição) do retrato oficial: x 12–88%, y 4–58% do original, para o rosto caber no cartão."
+  },
+  "flavio": {
+   "file": "midia/flavio.jpg",
+   "credit": "Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_senador_Fl%C3%A1vio_Bolsonaro_(v._AgSen).jpg",
+   "focus": [
+    0.54,
+    0.34
+   ]
+  }
+ },
+ "cuts": [
+  3.85,
+  10.35,
+  17.32,
+  21.38,
+  34.62,
+  45.6,
+  56.62,
+  62.3,
+  74.5,
+  90.32
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.85
+  },
+  {
+   "id": "celular",
+   "from": 3.85,
+   "to": 10.35
+  },
+  {
+   "id": "elementos",
+   "from": 10.35,
+   "to": 17.32
+  },
+  {
+   "id": "briga",
+   "from": 17.32,
+   "to": 21.38
+  },
+  {
+   "id": "pote",
+   "from": 21.38,
+   "to": 34.62
+  },
+  {
+   "id": "china",
+   "from": 34.62,
+   "to": 45.6
+  },
+  {
+   "id": "torneira",
+   "from": 45.6,
+   "to": 56.62
+  },
+  {
+   "id": "brasil",
+   "from": 56.62,
+   "to": 62.3
+  },
+  {
+   "id": "mina",
+   "from": 62.3,
+   "to": 74.5
+  },
+  {
+   "id": "debate",
+   "from": 74.5,
+   "to": 90.32
+  },
+  {
+   "id": "escolha",
+   "from": 90.32,
+   "to": 100.4
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 1.48,
+   "text": "TERRAS\nRARAS"
+  },
+  {
+   "id": "ov-02",
+   "kind": "chip",
+   "from": 1.54,
+   "to": 2.96,
+   "style": "red",
+   "text": "NÃO É TERRA."
+  },
+  {
+   "id": "ov-03",
+   "kind": "chip",
+   "from": 3.0,
+   "to": 3.8,
+   "style": "red",
+   "text": "NEM É RARA."
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 3.95,
+   "to": 7.5,
+   "text": "IMAGINA:\nSUA MÚSICA"
+  },
+  {
+   "id": "ov-05",
+   "kind": "chip",
+   "from": 7.55,
+   "to": 10.3,
+   "style": "orange",
+   "text": "ÍMÃ DE TERRA RARA"
+  },
+  {
+   "id": "ov-06",
+   "kind": "stat",
+   "from": 10.45,
+   "to": 12.6,
+   "big": "17",
+   "label": "ELEMENTOS QUÍMICOS"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 10.42,
+   "to": 12.62,
+   "text": "Foto: Peggy Greb/USDA"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 12.7,
+   "to": 14.6,
+   "style": "orange",
+   "text": "MOTOR DE CARRO ELÉTRICO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "chip",
+   "from": 14.66,
+   "to": 16.2,
+   "style": "orange",
+   "text": "TURBINA DE VENTO"
+  },
+  {
+   "id": "ov-10",
+   "kind": "chip",
+   "from": 16.26,
+   "to": 17.28,
+   "style": "red",
+   "text": "ATÉ MÍSSIL"
+  },
+  {
+   "id": "ov-11",
+   "kind": "source",
+   "from": 12.7,
+   "to": 17.28,
+   "text": "Fonte: Agência Senado, 06/2026"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 17.42,
+   "to": 21.32,
+   "text": "SE NÃO SÃO RARAS...\nPOR QUE A BRIGA?"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 21.5,
+   "to": 26.3,
+   "text": "AREIA DE\n17 CORES"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 26.4,
+   "to": 34.55,
+   "text": "+100 ETAPAS\nPRA SEPARAR"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 26.4,
+   "to": 34.55,
+   "text": "Fonte: ANM, via Agência Senado"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 34.7,
+   "to": 36.15,
+   "text": "QUEM SABE\nSEPARAR?"
+  },
+  {
+   "id": "ov-17",
+   "kind": "stat",
+   "from": 36.22,
+   "to": 40.25,
+   "big": "7 EM 10",
+   "label": "TIRADAS DO CHÃO NA CHINA"
+  },
+  {
+   "id": "ov-18",
+   "kind": "source",
+   "from": 36.22,
+   "to": 40.25,
+   "text": "Fonte: USGS, 2026"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 40.32,
+   "to": 45.52,
+   "big": "8 EM 10",
+   "label": "SEPARADAS NA CHINA"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 40.32,
+   "to": 45.52,
+   "text": "Fonte: AIE, 2026"
+  },
+  {
+   "id": "ov-21",
+   "kind": "chip",
+   "from": 45.7,
+   "to": 51.1,
+   "style": "red",
+   "text": "2025: CHINA DIFICULTA A VENDA"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 45.7,
+   "to": 51.1,
+   "text": "Fonte: USGS, 2026"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 51.18,
+   "to": 56.55,
+   "text": "FALTOU ÍMÃ:\nFÁBRICA PARADA"
+  },
+  {
+   "id": "ov-24",
+   "kind": "source",
+   "from": 51.18,
+   "to": 56.55,
+   "text": "Fonte: Reuters, 06/2025"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 56.7,
+   "to": 57.76,
+   "text": "E O\nBRASIL?"
+  },
+  {
+   "id": "ov-26",
+   "kind": "stat",
+   "from": 57.82,
+   "to": 60.1,
+   "big": "2º",
+   "label": "MAIOR RESERVA DO MUNDO"
+  },
+  {
+   "id": "ov-27",
+   "kind": "stat",
+   "from": 60.16,
+   "to": 62.25,
+   "big": "< 1%",
+   "label": "DA PRODUÇÃO MUNDIAL"
+  },
+  {
+   "id": "ov-28",
+   "kind": "source",
+   "from": 56.7,
+   "to": 62.25,
+   "text": "Fonte: USGS, 2026"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 62.4,
+   "to": 66.02,
+   "text": "ÚNICA MINA\nEM PRODUÇÃO"
+  },
+  {
+   "id": "ov-30",
+   "kind": "stat",
+   "from": 66.1,
+   "to": 72.25,
+   "big": "US$ 2,8 BI",
+   "label": "COMPRADA POR EMPRESA DOS EUA"
+  },
+  {
+   "id": "ov-31",
+   "kind": "source",
+   "from": 62.4,
+   "to": 69.95,
+   "text": "Fonte: Poder360, 20/04/2026"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 72.32,
+   "to": 74.45,
+   "text": "GOVERNO ESTUDA\nCONTESTAR"
+  },
+  {
+   "id": "ov-33",
+   "kind": "source",
+   "from": 70.0,
+   "to": 74.45,
+   "text": "Fonte: ClimaInfo, 09/09/2026"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 74.6,
+   "to": 78.18,
+   "text": "DEBATE DA\nELEIÇÃO"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 78.24,
+   "to": 80.8,
+   "text": "ENTREGAR\nAOS EUA?"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 80.86,
+   "to": 82.7,
+   "text": "“FAKE\nNEWS”"
+  },
+  {
+   "id": "ph-lula",
+   "kind": "photo",
+   "media": "lula",
+   "name": "Lula",
+   "role": "Presidente (PT)",
+   "from": 74.6,
+   "to": 76.96
+  },
+  {
+   "id": "ph-flavio",
+   "kind": "photo",
+   "media": "flavio",
+   "name": "Flávio Bolsonaro",
+   "role": "Senador (PL-RJ)",
+   "from": 77.0,
+   "to": 82.72
+  },
+  {
+   "id": "ov-39",
+   "kind": "source",
+   "from": 74.6,
+   "to": 76.96,
+   "text": "Fonte: Band, 18/10/2026 · Foto: Ricardo Stuckert/PR"
+  },
+  {
+   "id": "ov-40",
+   "kind": "source",
+   "from": 77.0,
+   "to": 82.72,
+   "text": "Fonte: Band, 18/10/2026 · Foto: Agência Senado"
+  },
+  {
+   "id": "ov-41",
+   "kind": "title",
+   "from": 82.82,
+   "to": 85.45,
+   "text": "LULA: INDÚSTRIA E\nCONTROLE NACIONAL"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 85.52,
+   "to": 90.25,
+   "text": "FLÁVIO: PARCERIA\nCOM OS EUA"
+  },
+  {
+   "id": "ov-43",
+   "kind": "source",
+   "from": 82.82,
+   "to": 90.25,
+   "text": "Fonte: Brasil de Fato, 15/10/2026"
+  },
+  {
+   "id": "ov-44",
+   "kind": "question",
+   "from": 90.42,
+   "to": 100.4,
+   "text": "Estrangeira ou\nbrasileira?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-45",
+   "kind": "cta",
+   "from": 98.5,
+   "to": 100.4,
+   "html": "Comenta: <b>ESTRANGEIRA</b> ou <b>BRASILEIRA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   1.56,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   3.0,
+   "sparkle.mp3",
+   -14
+  ],
+  [
+   3.83,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   4.86,
+   "click.mp3",
+   -14
+  ],
+  [
+   5.1,
+   "ping.mp3",
+   -22
+  ],
+  [
+   5.55,
+   "ping.mp3",
+   -24
+  ],
+  [
+   6.0,
+   "ping.mp3",
+   -22
+  ],
+  [
+   6.45,
+   "ping.mp3",
+   -24
+  ],
+  [
+   6.6,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   8.75,
+   "pop.mp3",
+   -14
+  ],
+  [
+   10.33,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   10.5,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   12.63,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   14.66,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   16.26,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   17.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   19.5,
+   "impact-bass-1.mp3",
+   -14
+  ],
+  [
+   21.36,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   26.45,
+   "typing.mp3",
+   -20
+  ],
+  [
+   29.6,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   34.6,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   39.04,
+   "pop.mp3",
+   -14
+  ],
+  [
+   43.6,
+   "pop.mp3",
+   -14
+  ],
+  [
+   45.58,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   47.5,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   51.84,
+   "error.mp3",
+   -14
+  ],
+  [
+   52.4,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   56.6,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   57.82,
+   "ping.mp3",
+   -16
+  ],
+  [
+   60.2,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   62.28,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   66.15,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   70.1,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   73.78,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   74.48,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   77.0,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   80.9,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   82.76,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   85.5,
+   "click.mp3",
+   -16
+  ],
+  [
+   90.3,
+   "whoosh.mp3",
+   -18
+  ],
+  [
+   93.0,
+   "ping.mp3",
+   -18
+  ],
+  [
+   95.9,
+   "ping.mp3",
+   -18
+  ],
+  [
+   98.5,
+   "chime.mp3",
+   -14
+  ]
+ ]
+}

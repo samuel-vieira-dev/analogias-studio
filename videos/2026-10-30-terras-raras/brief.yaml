@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-terras-raras
+tema: "O que são as terras raras, tão citadas nas eleições de 2026: o que são, por que valem tanto, o domínio da China, a reserva e a única mina do Brasil, e a briga no debate (tom neutro, fontes na tela)"
+referencias_visuais: []
+
+hook:
+  origem: 4
+  texto: "Terras raras não são terra… e nem são raras."
+
+pergunta_final:
+  origem: 2
+  texto: "Quem deve explorar: empresa estrangeira, com dinheiro e tecnologia, ou só empresa brasileira, mesmo que demore mais?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-30

@@ -62,6 +62,7 @@ const COVER = layout.cover;
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
   await page.goto("file://" + harness);
   await page.waitForFunction(() => !!(window.__qaReady && window.__qaReady()), null, { timeout: 180000, polling: 250 });
+  await page.evaluate(() => window.__hf.buildReady.world); // the 3D scenes are built (as in qa.cjs); before that __qa.frame() sees no heroes
 
   // The hook's best moment: most heroes on screen, at (almost) their biggest; the middle of that stretch.
   let t = opt("t") !== undefined ? parseFloat(opt("t")) : post.t;
