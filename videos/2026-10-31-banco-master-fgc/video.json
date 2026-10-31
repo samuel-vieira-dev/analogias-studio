@@ -40,6 +40,7 @@
   27.95,
   31.5,
   43.54,
+  50.68,
   52.64,
   62.06,
   65.0,
@@ -227,7 +228,7 @@
    "kind": "chip",
    "from": 48.4,
    "to": 50.6,
-   "text": "PROMESSA: JUROS ALTOS",
+   "text": "COM JUROS ALTOS",
    "style": "orange"
   },
   {
@@ -539,6 +540,11 @@
    91.45,
    "ping.mp3",
    -14
+  ],
+  [
+   50.68,
+   "whoosh.mp3",
+   -22
   ]
  ],
  "scenes": [

@@ -26,13 +26,11 @@
 
 Observação: o repasse ao cliente (#14) é avaliação de especialistas, não um aumento medido de tarifa ou juro. Na fala: "especialistas avaliam que essa conta tende a chegar em você".
 
-## Fotos (candidatas — arquivo exato a confirmar depois da aprovação)
+## Fotos (aprovadas com o roteiro)
 
-| id | O que mostra | Onde procurar | Autor/veículo | Licença |
+| id | O que mostra | Página de origem | Autor/veículo | Licença |
 | --- | --- | --- | --- | --- |
-| vorcaro | Rosto de Daniel Vorcaro (cartão na 1ª menção) | Wikimedia Commons (foto "Vorcaro in 2024" da Wikipedia) ou Agência Brasil/Senado | a confirmar | livre/oficial; senão imprensa com crédito |
-| sede-bc | Sede do Banco Central em Brasília (porta-retrato) | Agência Brasil / Wikimedia Commons | a confirmar | CC BY |
-| jato | Jato apreendido pela PF na operação | fotos de divulgação da PF ([SBT News](https://sbtnews.sbt.com.br/noticia/brasil/veja-imagens-de-jatinho-de-r-200-milhoes-apreendido-em-operacao-da-pf-contra-o-banco-master)) | Polícia Federal | oficial |
-| sede-master | Fachada do Banco Master na Faria Lima | Agência Brasil ou imprensa | a confirmar | imprensa com crédito |
+| sede-bc | Edifício-sede do Banco Central, Brasília (porta-retrato, fala 4) | [Agência Brasil, nov/2025](https://agenciabrasil.ebc.com.br/economia/noticia/2025-11/banco-central-oficializa-liquidacao-da-master-corretora) (arquivo 1600×800 do CDN da EBC) | Marcello Casal Jr./Agência Brasil | CC BY 3.0 BR |
+| vorcaro | Daniel Vorcaro, 2024 (cartão, fala 4) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Daniel_Vorcaro_-_2024.jpg) (642×703, maior disponível) | Márcio Gustavo Vasconcelos | CC0 |
 
-Fallback: se uma foto livre/oficial não fechar, o plano vira 3D (sem foto de banco de imagem nem IA).
+Candidatas descartadas: jato da PF e fachada do Master (o plano virou 3D genérico).

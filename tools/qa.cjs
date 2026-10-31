@@ -125,7 +125,9 @@ async function openHarness(browser) {
 }
 
 (async () => {
-  const launchArgs = process.platform === "darwin" ? [] : ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"];
+  // Mac: the GPU through Metal (headless Chromium falls back to SwiftShader on the CPU without these flags,
+  // 10x+ slower with shadows and physical materials); Linux/cloud: SwiftShader.
+  const launchArgs = process.platform === "darwin" ? ["--use-angle=metal", "--ignore-gpu-blocklist"] : ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"];
   const browser = await chromium.launch({ args: launchArgs });
   let page = await openHarness(browser);
   await page.evaluate(() => {

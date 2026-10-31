@@ -17,9 +17,9 @@ const goldMat = () => pmat(GOLD, { metalness: 1, roughness: 0.28 });
 const steelMat = (r = 0.22) => pmat("#c9ccd1", { metalness: 1, roughness: r });
 
 // ---------------------------------------------------------------- table and chair
-// Dining table, origin floor centre, long side along x. Linen tablecloth with a short drop.
+// Dining table, origin floor centre, long side along x. Linen tablecloth (clothColor) with a short drop.
 // API: { group, topY, w, d }
-function makeDiningTable({ w = 4.2, d = 1.25, cloth = true } = {}) {
+function makeDiningTable({ w = 4.2, d = 1.25, cloth = true, clothColor = "#f3efe7" } = {}) {
   const g = new THREE.Group(), topY = 0.77;
   const wt = woodTex({ base: "#5a3420", seed: 12 }); wt.repeat.set(2, 1);
   const top = new THREE.Mesh(rbox(w, 0.05, d, 0.02), pmat("#ffffff", { map: wt, roughness: 0.42, clearcoat: 0.5, clearcoatRoughness: 0.25 }));
@@ -30,7 +30,7 @@ function makeDiningTable({ w = 4.2, d = 1.25, cloth = true } = {}) {
     leg.position.set(sx * (w / 2 - 0.18), (topY - 0.05) / 2, sz * (d / 2 - 0.14)); g.add(leg);
   }
   if (cloth) {
-    const cm = pmat("#f3efe7", { map: LINEN, roughness: 0.92, sheen: 0.5, sheenColor: new THREE.Color("#ffffff"), sheenRoughness: 0.6 });
+    const cm = pmat(clothColor, { map: LINEN, roughness: 0.92, sheen: 0.5, sheenColor: new THREE.Color(clothColor).lerp(new THREE.Color("#ffffff"), 0.35), sheenRoughness: 0.6 });
     const sheet = new THREE.Mesh(rbox(w + 0.06, 0.008, d + 0.06, 0.004), cm); sheet.position.y = topY + 0.004; g.add(sheet);
     const drop = 0.2;
     for (const sz of [-1, 1]) { const f = new THREE.Mesh(rbox(w + 0.07, drop, 0.008, 0.003), cm); f.position.set(0, topY - drop / 2 + 0.008, sz * (d / 2 + 0.034)); g.add(f); }
@@ -93,7 +93,11 @@ function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin 
   const jaw = new THREE.Mesh(new THREE.SphereGeometry(0.07, 24, 16), skm); jaw.position.set(0, -0.055, 0.025); jaw.scale.set(1, 0.8, 1); head.add(jaw);
   const nose = new THREE.Mesh(new THREE.ConeGeometry(0.016, 0.04, 10), skm); nose.rotation.x = Math.PI / 2; nose.position.set(0, -0.005, 0.1); head.add(nose);
   for (const sx of [-1, 1]) { const ear = new THREE.Mesh(new THREE.SphereGeometry(0.022, 12, 10), skm); ear.scale.set(0.5, 1, 0.8); ear.position.set(sx * 0.09, 0, -0.005); head.add(ear); }
-  const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.103, 32, 20, 0, Math.PI * 2, 0, Math.PI * 0.58), hm); hairCap.scale.set(0.95, 1.17, 1.04); hairCap.position.set(0, 0.004, -0.006); hairCap.rotation.x = -0.55; head.add(hairCap);
+  // hair: the skull's top grown 6% (covers it everywhere, nothing pokes through), tilted back so the
+  // hairline sits high on the forehead, above the ears at the temples and low at the nape (+ a nape strip).
+  const HS = [0.92 * 1.06, 1.18 * 1.06, 1.0 * 1.06];
+  const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.1, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.42), hm); hairCap.scale.set(...HS); hairCap.position.y = 0.006; hairCap.rotation.x = -0.4; head.add(hairCap);
+  const nape = new THREE.Mesh(new THREE.SphereGeometry(0.1, 24, 8, Math.PI * 1.15, Math.PI * 0.7, Math.PI * 0.45, Math.PI * 0.17), hm); nape.scale.set(...HS); nape.position.y = 0.006; head.add(nape);
 
   // arms: shoulder pivot → upper arm (down -y) → elbow pivot → forearm → hand
   const arms = [];
@@ -218,7 +222,8 @@ function makeJar({ r = 0.26, h = 0.62, label = "FGC", n = 420, seed = 17 } = {})
   const glass = new THREE.Mesh(new THREE.LatheGeometry(prof, 72), glassMat()); glass.renderOrder = 10; glass.userData.noShadow = true; g.add(glass);
   const base = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.92, r * 0.92, 0.012, 48), glassMat({ opacity: 0.35 })); base.position.y = 0.006; base.renderOrder = 9; g.add(base);
   const lid = new THREE.Group(); lid.position.y = h; g.add(lid);
-  const lm = pmat("#b9bcc2", { metalness: 1, roughness: 0.35 });
+  // brushed steel, rough enough that the studio reflections do not tint it differently from shot to shot
+  const lm = pmat("#9a9da3", { metalness: 0.85, roughness: 0.55 });
   const ring = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.86, r * 0.86, 0.05, 48), lm); ring.position.y = 0.025; lid.add(ring);
   const slot = new THREE.Mesh(new THREE.BoxGeometry(r * 0.9, 0.006, 0.03), pmat("#18181a", { roughness: 0.6 })); slot.position.y = 0.0505; lid.add(slot);
   // coins: instanced, packed in layers from the bottom; fill(k) shows the first k·n
@@ -343,7 +348,7 @@ function makePriceTag(text, { w = 0.95, h = 0.42, color = RED, fg = "#ffffff", s
 function makeRestaurantRoom({ wallZ = -5.5, sideX = 7, lampsX = [-1.2, 1.2], lampY = 2.75, tables = true, seed = 3 } = {}) {
   const g = new THREE.Group();
   const ft = woodTex({ base: "#4a2c1a", planks: 8, seed: 4, w: 1024, h: 1024 }); ft.repeat.set(5, 5);
-  const fl = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), pmat("#ffffff", { map: ft, roughness: 0.38, clearcoat: 0.6, clearcoatRoughness: 0.2 })); fl.rotation.x = -Math.PI / 2; fl.position.y = 0.002; fl.receiveShadow = true; g.add(fl);
+  const fl = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), pmat("#ffffff", { map: ft, roughness: 0.72, envMapIntensity: 0.25 })); fl.rotation.x = -Math.PI / 2; fl.position.y = 0.002; fl.receiveShadow = true; g.add(fl);
   const plaster = noiseTex({ base: "#26302b", amount: 0.05, size: 1, seed: 8 }); plaster.repeat.set(6, 3);
   const wall = pmat("#ffffff", { map: plaster, roughness: 0.85 });
   const panelT = woodTex({ base: "#3b2216", seed: 6 }); panelT.repeat.set(6, 1);
