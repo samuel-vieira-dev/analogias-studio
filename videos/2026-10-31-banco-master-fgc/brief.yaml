@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-31-banco-master-fgc
+tema: "Banco Master: como o caso impactou o FGC e o bolso de quem tem conta em bancos nacionais — ninguém saiu ileso"
+referencias_visuais: []
+
+hook:
+  origem: 6   # escrito pelo Samuel
+  texto: "Já imaginou o Itaú pagando a conta que o Master deixou?"
+
+pergunta_final:
+  origem: 1   # adaptada para fechar a analogia do restaurante
+  texto: "Quem deveria pagar a conta: todos os bancos, como hoje… ou só quem investiu no Master?"
+
+analogia: "Restaurante (pedido do Samuel): todos os bancos jantam na mesma mesa; o pote no meio é o FGC; cada prato é dinheiro de um cliente; o Master saiu sem pagar e a mesa paga."
+
+pedidos_visuais:
+  - "Objetos com traços mais realistas, menos cartoon"
+  - "Gráficos polidos e sem falhas"
+  - "Animação usando a tela inteira, não só o centro"
+  - "Área segura centralizada na tela"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-31

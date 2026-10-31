@@ -95,18 +95,85 @@ await document.fonts.load("700 100px Inter"); await document.fonts.load("600 100
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("w-canvas"), antialias: true, preserveDrawingBuffer: true, alpha: false });
 renderer.setPixelRatio(1); renderer.setSize(W, H, false);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+// Realism (31/10/2026): soft shadows from the key light and a studio environment map, so metal,
+// glass, ceramics and lacquer get real reflections instead of flat plastic shading.
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFShadowMap;
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(BG);
 scene.fog = new THREE.Fog(BG, 12, 40);
+const ENV = (() => { const pm = new THREE.PMREMGenerator(renderer); const t = pm.fromScene(new RoomEnvironment(), 0.04).texture; pm.dispose(); return t; })();
+scene.environment = ENV; scene.environmentIntensity = 0.42;
 const camera = new THREE.PerspectiveCamera(40, W / H, 0.05, 300);
-const hemi = new THREE.HemisphereLight("#ffd9b8", "#1a0f0a", 0.75); scene.add(hemi);
-const key = new THREE.DirectionalLight("#ffb98a", 2.4); key.position.set(4, 9, 6); scene.add(key);
+const hemi = new THREE.HemisphereLight("#ffd9b8", "#1a0f0a", 0.5); scene.add(hemi);
+const key = new THREE.DirectionalLight("#ffb98a", 2.4); key.position.set(4, 9, 6); scene.add(key); scene.add(key.target);
+key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.radius = 4; key.shadow.bias = -0.0004; key.shadow.normalBias = 0.025;
+const KEY_DIR = new V3(4, 9, 6).normalize();
 const rim = new THREE.DirectionalLight("#86a8ff", 1.1); rim.position.set(-6, 5, -7); scene.add(rim);
 const fill = new THREE.PointLight(ORANGE, 0, 12, 1.6); scene.add(fill);
 const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat("#23160f", { roughness: 0.95 }));
-floor.rotation.x = -Math.PI / 2; scene.add(floor);
-function resetLights() { fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.4; hemi.intensity = 0.75; }
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+function resetLights() { fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.4; hemi.intensity = 0.5; scene.environmentIntensity = 0.42; floor.visible = true; }
+// Shadow camera follows the shot: centred on what the camera looks at, sized to the shot.
+function fitShadow(look, dist) {
+  const s = Math.max(2, dist * 0.75);
+  key.target.position.copy(look); key.position.copy(look).addScaledVector(KEY_DIR, s * 2.2);
+  const c = key.shadow.camera; c.left = -s; c.right = s; c.top = s; c.bottom = -s; c.near = 0.1; c.far = s * 5;
+  c.updateProjectionMatrix(); key.target.updateMatrixWorld();
+}
+
+// ---------------------------------------------------------------- realistic materials and textures
+// Physical material: clearcoat for lacquer/ceramics, transmission-free glass (cheap, no extra pass).
+const pmat = (color, o = {}) => new THREE.MeshPhysicalMaterial(Object.assign({ color, roughness: 0.4, metalness: 0.0 }, o));
+// Glass that reads as glass without a transmission pass: thin, transparent, reflective edges.
+const glassMat = (o = {}) => new THREE.MeshPhysicalMaterial(Object.assign({ color: "#dfeef0", roughness: 0.04, metalness: 0, transparent: true, opacity: 0.22, clearcoat: 1, clearcoatRoughness: 0.03, envMapIntensity: 2.2, depthWrite: false, side: THREE.DoubleSide }, o));
+// Procedural wood (planks or a single board): grain lines + knots, seeded.
+function woodTex({ base = "#6b4128", dark = "#3e2214", light = "#8a5a3a", planks = 1, w = 1024, h = 1024, seed = 5 } = {}) {
+  const c = makeCanvas(w, h), x = c.getContext("2d"), r = mulberry32(seed);
+  x.fillStyle = base; x.fillRect(0, 0, w, h);
+  const ph = h / planks;
+  for (let p = 0; p < planks; p++) {
+    const y0 = p * ph, tone = (r() - 0.5) * 0.18;
+    x.fillStyle = tone > 0 ? `rgba(255,220,180,${tone})` : `rgba(0,0,0,${-tone})`; x.fillRect(0, y0, w, ph);
+    for (let i = 0; i < ph * 0.9; i++) {
+      const yy = y0 + r() * ph, amp = 2 + r() * 6, f = 0.004 + r() * 0.01, ph0 = r() * 6.28;
+      x.strokeStyle = r() < 0.5 ? `rgba(30,14,6,${0.05 + r() * 0.12})` : `rgba(${light === "#8a5a3a" ? "160,110,70" : "200,170,130"},${0.04 + r() * 0.08})`;
+      x.lineWidth = 0.6 + r() * 1.6; x.beginPath();
+      for (let xx = 0; xx <= w; xx += 16) { const yv = yy + Math.sin(xx * f + ph0) * amp; xx ? x.lineTo(xx, yv) : x.moveTo(xx, yv); }
+      x.stroke();
+    }
+    for (let k = 0; k < 2; k++) { const kx = r() * w, ky = y0 + ph * (0.2 + r() * 0.6), g = x.createRadialGradient(kx, ky, 1, kx, ky, 14 + r() * 14); g.addColorStop(0, "rgba(25,10,4,0.6)"); g.addColorStop(1, "rgba(25,10,4,0)"); x.fillStyle = g; x.beginPath(); x.ellipse(kx, ky, 40, 12, 0, 0, Math.PI * 2); x.fill(); }
+    if (planks > 1) { x.fillStyle = "rgba(10,4,2,0.75)"; x.fillRect(0, y0, w, 3); }
+  }
+  const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.anisotropy = 8; return t;
+}
+// Fine noise (fabric, paper, plaster). Use as roughnessMap/bumpMap or a light colour map.
+function noiseTex({ w = 512, h = 512, base = "#808080", amount = 0.18, size = 1.5, seed = 9, weave = false } = {}) {
+  const c = makeCanvas(w, h), x = c.getContext("2d"), r = mulberry32(seed);
+  x.fillStyle = base; x.fillRect(0, 0, w, h);
+  for (let i = 0; i < w * h * 0.12; i++) { const v = r(); x.fillStyle = v < 0.5 ? `rgba(0,0,0,${amount * r()})` : `rgba(255,255,255,${amount * r()})`; x.fillRect(r() * w, r() * h, size, size); }
+  if (weave) { x.strokeStyle = "rgba(0,0,0,0.05)"; x.lineWidth = 1; for (let i = 0; i < w; i += 4) { x.beginPath(); x.moveTo(i, 0); x.lineTo(i, h); x.stroke(); } for (let j = 0; j < h; j += 4) { x.beginPath(); x.moveTo(0, j); x.lineTo(w, j); x.stroke(); } }
+  const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+}
+// Soft round light (bokeh) texture.
+const BOKEH = (() => { const c = makeCanvas(128, 128), x = c.getContext("2d"), g = x.createRadialGradient(64, 64, 4, 64, 64, 62); g.addColorStop(0, "rgba(255,255,255,0.95)"); g.addColorStop(0.55, "rgba(255,255,255,0.55)"); g.addColorStop(0.8, "rgba(255,255,255,0.18)"); g.addColorStop(1, "rgba(255,255,255,0)"); x.fillStyle = g; x.fillRect(0, 0, 128, 128); return texFrom(c); })();
+// Out-of-focus lights spread over a wide area behind the subject (backdrop: fills the whole frame,
+// never checked by the QA, never framed). They drift slowly so a wide shot is never frozen.
+// API: { group, update(t) } — call update(t) from the scene's anim.
+function makeBokeh({ n = 60, center = [0, 3, -14], spread = [36, 18, 8], size = [0.5, 1.6], colors = ["#ffb35c", "#ffd08a", "#ff8a3c", "#fff1d6"], seed = 21, opacity = 0.55, drift = 0.25 } = {}) {
+  const r = mulberry32(seed), group = new THREE.Group(), items = [];
+  for (let i = 0; i < n; i++) {
+    const m = new THREE.SpriteMaterial({ map: BOKEH, color: colors[Math.floor(r() * colors.length)], transparent: true, opacity: opacity * (0.35 + r() * 0.65), depthWrite: false, blending: THREE.AdditiveBlending, fog: false, toneMapped: false });
+    const s = new THREE.Sprite(m); const k = size[0] + r() * (size[1] - size[0]); s.scale.set(k, k, 1);
+    const p = new V3(center[0] + (r() - 0.5) * spread[0], center[1] + (r() - 0.5) * spread[1], center[2] + (r() - 0.5) * spread[2]);
+    s.position.copy(p); s.userData.decor = true; group.add(s); items.push({ s, p, ph: r() * 6.28, sp: 0.2 + r() * 0.5, o: m.opacity });
+  }
+  group.userData.decor = true;
+  return { group, update(t) { for (const it of items) { it.s.position.set(it.p.x + Math.sin(t * it.sp * 0.6 + it.ph) * drift * 2, it.p.y + Math.cos(t * it.sp * 0.5 + it.ph) * drift, it.p.z); it.s.material.opacity = it.o * (0.75 + 0.25 * Math.sin(t * it.sp * 2 + it.ph)); } } };
+}
+// Marks a whole subtree as backdrop: context scenery that may fill the frame, is never framed by
+// CAM.pose/envelope and never checked by the QA. The subject of the shot stays a registered hero.
+function asBackdrop(obj) { obj.traverse((n) => { n.userData.decor = true; }); return obj; }
 
 // ---------------------------------------------------------------- boxes (shared by framing and QA)
 // Exact world-space box of an object's visible meshes (vertex-precise), skipping decoration
@@ -232,6 +299,7 @@ const CAM = (() => {
     last = p; setPrincipal(p.cx, p.cy, p.fov);
     camera.position.copy(p.pos); camera.up.set(0, 1, 0); camera.lookAt(p.look); camera.updateMatrixWorld();
     scene.fog.near = p.dist * 1.15 + 1.5; scene.fog.far = p.dist * 3.2 + 12;
+    fitShadow(p.look, p.dist);
   }
   return { pose, at, blend, track, shake, apply, projectBox, toBox, setPrincipal, get last() { return last; } };
 })();
@@ -273,6 +341,14 @@ function addScene(name, t0, t1, build) {
     scenery: (obj, name, o = {}) => { s.scenery.push({ obj, name, when: o.when || null }); return obj; },
   };
   s.update = build(S);
+  // shadows: every lit, opaque mesh casts and receives (glass, text faces and sprites do not cast)
+  s.group.traverse((n) => {
+    if (!n.isMesh || n.userData.noShadow) return;
+    const ms = Array.isArray(n.material) ? n.material : [n.material];
+    const lit = ms.some((m) => m && (m.isMeshStandardMaterial || m.isMeshPhysicalMaterial || m.isMeshLambertMaterial || m.isMeshPhongMaterial));
+    const opaque = ms.every((m) => m && !m.transparent);
+    n.receiveShadow = lit; n.castShadow = lit && opaque;
+  });
   SCENES.push(s);
 }
 

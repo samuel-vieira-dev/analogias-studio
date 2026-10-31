@@ -111,6 +111,7 @@ def build_world(vdir, layout, channel, video, media):
       html, body {{ margin: 0; width: 1080px; height: 1920px; overflow: hidden; background: {style['fundo']}; }}
       #w-root {{ position: relative; width: 1080px; height: 1920px; overflow: hidden; background: {style['fundo']}; }}
       #w-canvas {{ position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }}
+      #w-vignette {{ position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 78% 62% at 50% 46%, rgba(0,0,0,0) 55%, rgba(8,4,2,0.42) 100%); }}
       #w-fonts {{ position: absolute; left: 0; top: 0; opacity: 0; font-family: 'Inter', sans-serif; pointer-events: none; }}
       #w-fonts .a {{ font-weight: 600; }} #w-fonts .b {{ font-weight: 700; }} #w-fonts .c {{ font-weight: 800; }} #w-fonts .d {{ font-weight: 900; }}
     </style>
@@ -118,6 +119,7 @@ def build_world(vdir, layout, channel, video, media):
   <body>
     <div id="w-root" data-composition-id="world" data-start="0" data-duration="{dur}" data-width="1080" data-height="1920">
       <canvas id="w-canvas" class="clip" data-start="0" data-duration="{dur}" data-track-index="1" width="1080" height="1920"></canvas>
+      <div id="w-vignette"></div>
       <div id="w-fonts"><span class="a">Aa</span><span class="b">Aa</span><span class="c">Aa</span><span class="d">Aa</span></div>
     </div>
     <script>
@@ -138,6 +140,7 @@ def build_world(vdir, layout, channel, video, media):
     <script type="module">
       import * as THREE from "https://cdn.jsdelivr.net/npm/three@{THREE_VERSION}/+esm";
       import {{ RoundedBoxGeometry }} from "https://cdn.jsdelivr.net/npm/three@{THREE_VERSION}/examples/jsm/geometries/RoundedBoxGeometry.js/+esm";
+      import {{ RoomEnvironment }} from "https://cdn.jsdelivr.net/npm/three@{THREE_VERSION}/examples/jsm/environments/RoomEnvironment.js/+esm";
       const host = window.__cbWorld;
       const DUR = {dur};
       const LAYOUT = {json.dumps(layout)};

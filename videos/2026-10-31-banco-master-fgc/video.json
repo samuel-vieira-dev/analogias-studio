@@ -1,0 +1,640 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-31-banco-master-fgc",
+ "duration": 93.3,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "site.": "Citi."
+  }
+ },
+ "media": {
+  "sede-bc": {
+   "file": "midia/sede-bc.jpg",
+   "credit": "Marcello Casal Jr./Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2025-11/banco-central-oficializa-liquidacao-da-master-corretora",
+   "focus": [
+    0.5,
+    0.62
+   ]
+  },
+  "vorcaro": {
+   "file": "midia/vorcaro.jpg",
+   "credit": "Márcio Gustavo Vasconcelos",
+   "url": "https://commons.wikimedia.org/wiki/File:Daniel_Vorcaro_-_2024.jpg",
+   "focus": [
+    0.5,
+    0.42
+   ]
+  }
+ },
+ "cuts": [
+  8.12,
+  16.58,
+  18.9,
+  21.0,
+  25.16,
+  27.95,
+  31.5,
+  43.54,
+  52.64,
+  62.06,
+  65.0,
+  71.3,
+  75.16,
+  82.3,
+  85.78
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 3.4,
+   "text": "ITAÚ PAGANDO A CONTA\nDO MASTER?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 3.5,
+   "to": 4.75,
+   "text": "POIS ACONTECEU."
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 4.8,
+   "to": 8.05,
+   "text": "E PODE CHEGAR\nEM VOCÊ"
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 8.3,
+   "to": 13.2,
+   "big": "ATÉ 140%",
+   "label": "DO CDI NO MASTER"
+  },
+  {
+   "id": "src-04",
+   "kind": "source",
+   "from": 8.3,
+   "to": 13.2,
+   "text": "Fonte: Bloomberg Línea; CNN Brasil"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 13.3,
+   "to": 16.5,
+   "text": "PROMESSA: SE QUEBRAR,\nO FGC DEVOLVE"
+  },
+  {
+   "id": "src-05",
+   "kind": "source",
+   "from": 13.3,
+   "to": 16.5,
+   "text": "Fonte: CNN Brasil, 20/02/2026"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 16.65,
+   "to": 18.85,
+   "text": "NOVEMBRO DE 2025"
+  },
+  {
+   "id": "src-06",
+   "kind": "source",
+   "from": 16.65,
+   "to": 18.85,
+   "text": "Foto: Marcello Casal Jr./Agência Brasil"
+  },
+  {
+   "id": "ov-07",
+   "kind": "chip",
+   "from": 18.95,
+   "to": 20.95,
+   "text": "BC LIQUIDA O MASTER",
+   "style": "red"
+  },
+  {
+   "id": "src-07",
+   "kind": "source",
+   "from": 18.95,
+   "to": 20.95,
+   "text": "Fonte: Banco Central, 18/11/2025"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 21.05,
+   "to": 23.95,
+   "text": "PRESO PELA PF"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 24.0,
+   "to": 25.1,
+   "text": "ELE NEGA OS CRIMES"
+  },
+  {
+   "id": "ph-vorcaro",
+   "kind": "photo",
+   "from": 21.05,
+   "to": 25.1,
+   "media": "vorcaro",
+   "name": "Daniel Vorcaro",
+   "role": "Dono do Banco Master"
+  },
+  {
+   "id": "src-08",
+   "kind": "source",
+   "from": 21.05,
+   "to": 25.1,
+   "text": "Foto: Márcio Gustavo Vasconcelos"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 25.25,
+   "to": 27.9,
+   "text": "TRAVADO POR\n2 MESES"
+  },
+  {
+   "id": "ov-11",
+   "kind": "stat",
+   "from": 28.05,
+   "to": 31.45,
+   "big": "R$ 250 MIL",
+   "label": "LIMITE DA GARANTIA DO FGC"
+  },
+  {
+   "id": "src-11",
+   "kind": "source",
+   "from": 25.25,
+   "to": 31.45,
+   "text": "Fonte: FGC"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 31.6,
+   "to": 35.15,
+   "text": "PENSA NUM\nRESTAURANTE"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 35.25,
+   "to": 38.1,
+   "text": "TODO MÊS, CADA BANCO\nPÕE UM POUCO NO POTE"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 38.2,
+   "to": 40.0,
+   "text": "O POTE = FGC"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 40.1,
+   "to": 43.45,
+   "text": "SE UM NÃO PAGA,\nO POTE PAGA"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 43.6,
+   "to": 46.05,
+   "text": "PRATO ATRÁS\nDE PRATO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 46.1,
+   "to": 50.6,
+   "text": "CADA PRATO = DINHEIRO\nDE UM CLIENTE"
+  },
+  {
+   "id": "ov-18",
+   "kind": "chip",
+   "from": 48.4,
+   "to": 50.6,
+   "text": "PROMESSA: JUROS ALTOS",
+   "style": "orange"
+  },
+  {
+   "id": "ov-19",
+   "kind": "chip",
+   "from": 50.75,
+   "to": 52.55,
+   "text": "SAIU SEM PAGAR",
+   "style": "red"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 52.7,
+   "to": 54.0,
+   "text": "QUEM PAGOU?\nO POTE."
+  },
+  {
+   "id": "ov-21",
+   "kind": "stat",
+   "from": 54.05,
+   "to": 57.05,
+   "big": "R$ 50 BI",
+   "label": "DEVOLVIDOS PELO FGC"
+  },
+  {
+   "id": "ov-22",
+   "kind": "stat",
+   "from": 57.1,
+   "to": 60.0,
+   "big": "2,4 MILHÕES",
+   "label": "DE PESSOAS"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 60.05,
+   "to": 62.0,
+   "text": "A MAIOR CONTA DA\nHISTÓRIA DO FGC"
+  },
+  {
+   "id": "src-21",
+   "kind": "source",
+   "from": 54.05,
+   "to": 62.0,
+   "text": "Fonte: FGC, 11/09/2026 · Master, Will e Pleno"
+  },
+  {
+   "id": "ov-24",
+   "kind": "stat",
+   "from": 62.15,
+   "to": 64.95,
+   "big": "4 DE CADA 10",
+   "label": "REAIS SAÍRAM DO POTE"
+  },
+  {
+   "id": "src-24",
+   "kind": "source",
+   "from": 62.15,
+   "to": 64.95,
+   "text": "Fonte: Banco Central (REF, mai/2026)"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 65.05,
+   "to": 67.85,
+   "text": "QUEM ENCHEU\nDE NOVO?"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 67.95,
+   "to": 71.25,
+   "text": "5 ANOS DE CONTRIBUIÇÃO\nDE UMA VEZ"
+  },
+  {
+   "id": "src-26",
+   "kind": "source",
+   "from": 67.95,
+   "to": 71.25,
+   "text": "Fonte: FGC"
+  },
+  {
+   "id": "ov-27",
+   "kind": "stat",
+   "from": 71.35,
+   "to": 75.1,
+   "big": "+ DE R$ 8 BI",
+   "label": "SÓ O ITAÚ"
+  },
+  {
+   "id": "src-27",
+   "kind": "source",
+   "from": 71.35,
+   "to": 75.1,
+   "text": "Estimativa: Citi (via Estadão)"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 75.2,
+   "to": 76.6,
+   "text": "E AQUI ENTRA VOCÊ"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 76.7,
+   "to": 82.25,
+   "text": "TENDE A VOLTAR\nPRA VOCÊ"
+  },
+  {
+   "id": "src-29",
+   "kind": "source",
+   "from": 76.7,
+   "to": 82.25,
+   "text": "Fonte: Gazeta do Povo; CNN Brasil"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 82.35,
+   "to": 83.7,
+   "text": "O POTE SEGUE DE PÉ"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 83.75,
+   "to": 85.7,
+   "text": "NINGUÉM SAIU\nILESO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "question",
+   "from": 85.85,
+   "to": 93.3,
+   "text": "BANCOS OU\nINVESTIDORES?",
+   "sub": "QUEM DEVERIA PAGAR A CONTA?"
+  },
+  {
+   "id": "src-32",
+   "kind": "source",
+   "from": 85.85,
+   "to": 93.3,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 91.45,
+   "to": 93.3,
+   "html": "Comenta: <b>BANCOS</b> ou <b>INVESTIDORES</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.25,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   2.3,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   8.12,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   16.58,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   18.9,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   21.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   25.16,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   27.95,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   31.5,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   43.54,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   52.64,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   62.06,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   65.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   71.3,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   75.16,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   82.3,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   85.78,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   19.95,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   26.35,
+   "click.mp3",
+   -14
+  ],
+  [
+   29.6,
+   "glitch-1.mp3",
+   -20
+  ],
+  [
+   42.55,
+   "pop.mp3",
+   -14
+  ],
+  [
+   50.8,
+   "riser.mp3",
+   -22
+  ],
+  [
+   53.6,
+   "sparkle.mp3",
+   -18
+  ],
+  [
+   63.1,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   68.1,
+   "pop.mp3",
+   -14
+  ],
+  [
+   72.4,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   79.9,
+   "pop.mp3",
+   -14
+  ],
+  [
+   80.6,
+   "pop.mp3",
+   -14
+  ],
+  [
+   81.4,
+   "pop.mp3",
+   -14
+  ],
+  [
+   83.75,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   91.45,
+   "ping.mp3",
+   -14
+  ]
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.46
+  },
+  {
+   "id": "aconteceu",
+   "from": 3.46,
+   "to": 8.12
+  },
+  {
+   "id": "investimento",
+   "from": 8.12,
+   "to": 16.58
+  },
+  {
+   "id": "bc",
+   "from": 16.58,
+   "to": 18.9
+  },
+  {
+   "id": "fecha",
+   "from": 18.9,
+   "to": 21.0
+  },
+  {
+   "id": "vorcaro",
+   "from": 21.0,
+   "to": 25.16
+  },
+  {
+   "id": "trava",
+   "from": 25.16,
+   "to": 31.5
+  },
+  {
+   "id": "restaurante",
+   "from": 31.5,
+   "to": 43.54
+  },
+  {
+   "id": "master",
+   "from": 43.54,
+   "to": 52.64
+  },
+  {
+   "id": "pote-paga",
+   "from": 52.64,
+   "to": 62.06
+  },
+  {
+   "id": "perdeu",
+   "from": 62.06,
+   "to": 65.0
+  },
+  {
+   "id": "enchem",
+   "from": 65.0,
+   "to": 71.3
+  },
+  {
+   "id": "itau",
+   "from": 71.3,
+   "to": 75.16
+  },
+  {
+   "id": "voce",
+   "from": 75.16,
+   "to": 82.3
+  },
+  {
+   "id": "ileso",
+   "from": 82.3,
+   "to": 85.78
+  },
+  {
+   "id": "pergunta",
+   "from": 85.78,
+   "to": 93.3
+  }
+ ],
+ "post": {
+  "title": "O MASTER SAIU\nSEM PAGAR",
+  "hashtags": [
+   "#bancomaster",
+   "#fgc",
+   "#vorcaro",
+   "#bancos",
+   "#investimentos",
+   "#educacaofinanceira",
+   "#cdb"
+  ],
+  "descricao": "O caso Banco Master explicado: o FGC devolveu mais de R$ 50 bilhões e os outros bancos adiantaram 5 anos de contribuição. Especialistas avaliam que essa conta tende a chegar ao cliente.",
+  "media": false
+ }
+}

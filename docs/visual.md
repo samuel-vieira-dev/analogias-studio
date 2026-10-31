@@ -9,9 +9,9 @@ Reels, TikTok e Shorts cobrem partes do vídeo com a própria interface (barra d
 | Reels | 220 | 420 | 35 | 170 |
 | TikTok | 108 | 322 | 40 | 190 |
 | Shorts | 120 | 360 | 0 | 96 |
-| **Kit (único)** | **220** | **420** | **60** | **190** |
+| **Kit (único, centralizado)** | **220** | **420** | **190** | **190** |
 
-Área segura: x 60–890, y 220–1500 (830 × 1280 px num quadro de 1080 × 1920). O centro dela é x = 475, não 540: tudo fica levemente à esquerda, longe da coluna de botões.
+Área segura: x 190–890, y 220–1500 (700 × 1280 px num quadro de 1080 × 1920), **centralizada** (centro x = 540): a margem da esquerda espelha a coluna de botões da direita (pedido do Samuel, 31/10/2026). O objeto principal e todo texto ficam dentro dela; **planos de fundo** de contexto (salão, cidade, multidão) ocupam a tela inteira (`asBackdrop`, `makeBokeh` no `engine/core.js`) e não são checados pelo QA.
 
 ```
 y=0     ┌──────────────────────────────┐
@@ -26,7 +26,7 @@ y=1366  │  │ [ caption ]  base 1476  │ │  legenda: 1 linha, 24 px acima 
 y=1500  │  └─────────────────────────┘ │
         │ (interface do app)     botões│
 y=1920  └──────────────────────────────┘
-       x=60                     x=890  1080
+       x=190                    x=890  1080
 ```
 
 ## Texto
@@ -80,7 +80,8 @@ O vídeo prende pelo movimento. Em todo plano alguma coisa anda: a câmera (`CAM
 
 - Fundo escuro e quente `#160e0a`; laranja `#ff6a2b`; vermelho `#e0261b`; verde `#2fae66`; creme `#f4e8da`.
 - Fonte Inter (600–900). Números grandes em branco ou laranja; rótulos em chip vermelho.
-- Luz: chave quente, contraluz fria, neblina adaptada à distância da câmera (`CAM.apply`).
+- Luz: chave quente com sombra suave (acompanha o plano), contraluz fria, mapa de ambiente de estúdio (reflexo real em metal, vidro, louça e verniz), neblina adaptada à distância da câmera (`CAM.apply`).
+- Materiais realistas, não cartoon: `pmat` (físico, com verniz), `glassMat`, `woodTex`, `noiseTex` (tecido, papel, reboco); biblioteca do restaurante em `engine/props/restaurant.js` (mesa com toalha, cadeira estofada, pessoa de terno articulada, placa de nome, louça, cloche, maço de dinheiro, pote de vidro com moedas, conta, cadeado, calendário, etiqueta de preço, salão, cidade à noite, multidão).
 - 3D de verdade (Three.js), sem logos ou marcas reais; prédios e veículos genéricos.
 - Fotos reais (pessoas, o avião, o prédio, o documento) entram num quadro de investigação, num porta-retrato no palco ou num cartão 2D, sempre com crédito e zoom lento: ver [`fotos.md`](fotos.md).
 - Cortes com flash laranja curto e whoosh; impactos com grave; pops em contagens.
