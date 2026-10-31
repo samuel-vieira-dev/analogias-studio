@@ -24,5 +24,6 @@ Kit de produção dos Reels 3D narrados do @analogias.br (Samuel Vieira). Para c
 - Câmera só por `CAM.pose(envelope(...))` ou `CAM.move(...)` (movimentos prontos); registrar todo objeto que importa.
 - Dinâmica, jogos de câmera, fundo que reage à história e ilustração bem definida: `docs/visual.md` → "Direção" (pedido do Samuel, 31/10/2026).
 - Motor, objetos e cena são um só módulo: nome de objeto do kit específico (`makeCoinJar`, `GOLD_METAL`); o `build.py` recusa nome repetido.
-- Mudou `engine/` ou `tools/`? Rodar `bash tools/selftest.sh` e o QA do vídeo de exemplo antes do commit.
+- Mudou `engine/` ou `tools/`? Rodar `bash tools/selftest.sh` e o QA do vídeo em produção (se houver) antes do commit.
+- QA só nos vídeos em produção. Vídeo já entregue fica como está: não rodar QA nem corrigir por causa de regra nova (pedido do Samuel, 31/10/2026).
 - Commits terminam com as linhas de atribuição pedidas na sessão.

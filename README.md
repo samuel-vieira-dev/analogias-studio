@@ -37,7 +37,7 @@ tests/qa-pega-erros/    os defeitos do V2 feitos de propósito
 docs/                   roteiro, visual, fotos, ferramentas, QA
 ```
 
-Exemplo completo: [`videos/2026-10-27-circuit-breaker/`](videos/2026-10-27-circuit-breaker/) (o vídeo do circuit breaker refeito no kit; QA limpo pelas regras de 27/10 — as regras novas de 28/10, de movimento, tamanho e texto 3D, apontam 7 pendências nele).
+Exemplo completo: [`videos/2026-10-31-banco-master-fgc/`](videos/2026-10-31-banco-master-fgc/) (QA limpo pelas regras de 31/10). O QA só roda nos vídeos em produção; os já entregues ficam como foram publicados, mesmo que uma regra nova aponte algo neles.
 
 ## Comandos
 

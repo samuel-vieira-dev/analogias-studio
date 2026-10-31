@@ -64,7 +64,7 @@ Se o take escolhido trocou ou pulou palavras importantes, avisar antes de seguir
 
 ## 8. Cenas
 
-Escrever `video.json` (duração = fala + 2 s; `cuts`; `overlays` por **zona**, nunca por pixel; `sfx`; `captions.fix`) e `scenes.js` usando `engine/` (ver `docs/visual.md` e o exemplo `videos/2026-10-27-circuit-breaker/`). Regras:
+Escrever `video.json` (duração = fala + 2 s; `cuts`; `overlays` por **zona**, nunca por pixel; `sfx`; `captions.fix`) e `scenes.js` usando `engine/` (ver `docs/visual.md` e, como modelo, o vídeo mais recente que passou no QA atual, hoje `videos/2026-10-31-banco-master-fgc/`; vídeo já entregue não passa por QA de novo, as regras novas valem só para os próximos). Regras:
 
 - Área segura **centralizada** (x 190–890, centro da tela x = 540; `config/layout.json`): título, palco, legenda e capa alinhados ao meio.
 - **Animação principal dentro da área segura** (no palco); **plano de fundo na tela inteira** para contextualizar o take (a estrada até o horizonte, a mesa e a parede, o escritório, a cidade): mais escuro e mais longe que o herói, sem texto nem informação da fala, se mexendo (paralaxe, partículas, luz, coisas entrando pelas bordas). Registrar com `S.backdrop` (`docs/visual.md` → "Plano de fundo").
