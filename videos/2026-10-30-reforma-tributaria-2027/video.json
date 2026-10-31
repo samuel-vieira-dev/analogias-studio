@@ -1,0 +1,807 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-reforma-tributaria-2027",
+ "post": {
+  "title": "IMPOSTO ZERO…\nMESMO PREÇO?",
+  "hashtags": [
+   "#reformatributaria",
+   "#cbs",
+   "#impostos",
+   "#cestabasica",
+   "#cashback",
+   "#economia",
+   "#seubolso"
+  ],
+  "media": false
+ },
+ "duration": 93.45,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "cadastro": "Cadastro",
+   "único.": "Único."
+  }
+ },
+ "media": {
+  "tcu": {
+   "file": "midia/tcu.jpg",
+   "credit": "Borowskki/Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Tribunal_de_contas_da_uniao_sede.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  "senado": {
+   "file": "midia/senado.jpg",
+   "credit": "Jefferson Rudy/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:2025-10-29,_Plen%C3%A1rio_do_Senado_(54889070300).jpg",
+   "focus": [
+    0.47,
+    0.55
+   ]
+  }
+ },
+ "cuts": [
+  4.8,
+  12.58,
+  15.42,
+  17.72,
+  20.66,
+  22.3,
+  31.95,
+  37.62,
+  47.3,
+  55.8,
+  64.2,
+  71.9,
+  77.2,
+  85.1
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 4.8
+  },
+  {
+   "id": "virada",
+   "from": 4.8,
+   "to": 12.58
+  },
+  {
+   "id": "cbs",
+   "from": 12.58,
+   "to": 15.42
+  },
+  {
+   "id": "tcu",
+   "from": 15.42,
+   "to": 17.72
+  },
+  {
+   "id": "cem",
+   "from": 17.72,
+   "to": 20.66
+  },
+  {
+   "id": "senado",
+   "from": 20.66,
+   "to": 22.3
+  },
+  {
+   "id": "arroz",
+   "from": 22.3,
+   "to": 31.95
+  },
+  {
+   "id": "peso",
+   "from": 31.95,
+   "to": 37.62
+  },
+  {
+   "id": "pizza",
+   "from": 37.62,
+   "to": 47.3
+  },
+  {
+   "id": "prateleira",
+   "from": 47.3,
+   "to": 55.8
+  },
+  {
+   "id": "familia",
+   "from": 55.8,
+   "to": 64.2
+  },
+  {
+   "id": "cofrinho",
+   "from": 64.2,
+   "to": 71.9
+  },
+  {
+   "id": "federal",
+   "from": 71.9,
+   "to": 77.2
+  },
+  {
+   "id": "estimativa",
+   "from": 77.2,
+   "to": 85.1
+  },
+  {
+   "id": "escolha",
+   "from": 85.1,
+   "to": 93.45
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 4.72,
+   "text": "IMPOSTO ZERO…\nMESMO PREÇO?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 4.9,
+   "to": 7.98,
+   "text": "IMAGINA: VIRADA\nDO ANO"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 8.04,
+   "to": 12.52,
+   "text": "2 IMPOSTOS\nSOMEM"
+  },
+  {
+   "id": "ov-04",
+   "kind": "source",
+   "from": 8.04,
+   "to": 12.52,
+   "text": "Fonte: Receita Federal"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 12.64,
+   "to": 15.38,
+   "text": "NO LUGAR\nENTRA A CBS"
+  },
+  {
+   "id": "ov-06",
+   "kind": "source",
+   "from": 12.64,
+   "to": 15.38,
+   "text": "Fonte: Receita Federal"
+  },
+  {
+   "id": "ov-07",
+   "kind": "stat",
+   "from": 15.48,
+   "to": 17.68,
+   "big": "11,3%",
+   "label": "IMPOSTO NOVO EM 2027"
+  },
+  {
+   "id": "ov-08",
+   "kind": "source",
+   "from": 15.48,
+   "to": 17.68,
+   "text": "Fonte: TCU · Foto: Borowskki/Wikimedia Commons"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 17.78,
+   "to": 19.24,
+   "text": "A CADA R$ 100\nDE PRODUTO"
+  },
+  {
+   "id": "ov-09b",
+   "kind": "stat",
+   "from": 19.3,
+   "to": 20.6,
+   "big": "+ R$ 11",
+   "label": "DE IMPOSTO NOVO"
+  },
+  {
+   "id": "ov-10",
+   "kind": "source",
+   "from": 17.78,
+   "to": 20.6,
+   "text": "Fonte: TCU · LC 214/2025, art. 12"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 20.72,
+   "to": 22.24,
+   "text": "FALTA O SENADO\nCONFIRMAR"
+  },
+  {
+   "id": "ov-12",
+   "kind": "source",
+   "from": 20.72,
+   "to": 22.24,
+   "text": "Foto: Jefferson Rudy/Agência Senado"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 22.36,
+   "to": 25.28,
+   "text": "E O ARROZ?"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 25.34,
+   "to": 31.9,
+   "text": "ZERO ANTES\nE ZERO DEPOIS"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 25.34,
+   "to": 31.9,
+   "text": "Fonte: LC 214/2025 · Lei 10.925/2004"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 32.0,
+   "to": 35.78,
+   "text": "A CONTA ARRECADA\nO MESMO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 35.84,
+   "to": 37.56,
+   "text": "MAS O PESO\nMUDA DE LUGAR"
+  },
+  {
+   "id": "ov-18",
+   "kind": "source",
+   "from": 32.0,
+   "to": 37.56,
+   "text": "Fonte: TCU"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 37.7,
+   "to": 40.06,
+   "text": "PIZZA RACHADA"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 40.12,
+   "to": 43.08,
+   "text": "SE 3 NÃO PAGAM\nA FATIA CRESCE"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 43.14,
+   "to": 47.24,
+   "text": "DESCONTO PESA EM\nQUEM PAGA CHEIO"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 43.14,
+   "to": 47.24,
+   "text": "Fonte: TCU, cálculo da CBS 2027"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 47.4,
+   "to": 51.68,
+   "text": "A CADA R$ 100:\nMENOS DE R$ 5"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 51.74,
+   "to": 55.74,
+   "text": "A CADA R$ 100:\nR$ 11 CHEIOS"
+  },
+  {
+   "id": "ov-25",
+   "kind": "source",
+   "from": 47.4,
+   "to": 55.74,
+   "text": "Fonte: LC 214/2025, art. 128"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 55.9,
+   "to": 59.36,
+   "text": "CADASTRO ÚNICO"
+  },
+  {
+   "id": "ov-27",
+   "kind": "chip",
+   "from": 55.9,
+   "to": 59.36,
+   "style": "dark",
+   "text": "ATÉ ½ SALÁRIO MÍNIMO POR PESSOA"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 59.42,
+   "to": 62.86,
+   "text": "LUZ E ÁGUA\nTELEFONE E BOTIJÃO"
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 62.92,
+   "to": 64.18,
+   "big": "100%",
+   "label": "DO IMPOSTO NOVO VOLTA"
+  },
+  {
+   "id": "ov-30",
+   "kind": "source",
+   "from": 55.9,
+   "to": 64.18,
+   "text": "Fonte: LC 214/2025, arts. 113 e 118"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 64.3,
+   "to": 68.44,
+   "big": "20%",
+   "label": "VOLTA COM CPF NA NOTA"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 64.3,
+   "to": 68.44,
+   "text": "Fonte: LC 214/2025, arts. 117 e 118"
+  },
+  {
+   "id": "ov-33",
+   "kind": "stat",
+   "from": 68.5,
+   "to": 71.84,
+   "big": "≈ R$ 350",
+   "label": "POR ANO · ESTIMATIVA DO GOVERNO"
+  },
+  {
+   "id": "ov-34",
+   "kind": "source",
+   "from": 68.5,
+   "to": 71.84,
+   "text": "Fonte: governo, via Folhapress"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 72.0,
+   "to": 74.34,
+   "text": "SÓ A PARTE\nFEDERAL"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 74.4,
+   "to": 77.14,
+   "text": "+ ESTADOS\nE CIDADES: 2033"
+  },
+  {
+   "id": "ov-37",
+   "kind": "source",
+   "from": 72.0,
+   "to": 77.14,
+   "text": "Fonte: Receita Federal"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 77.26,
+   "to": 80.4,
+   "big": "≈ R$ 28",
+   "label": "A CADA R$ 100 · ESTIMATIVA 2033"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 80.46,
+   "to": 82.86,
+   "text": "NO LUGAR DOS\nIMPOSTOS DE HOJE"
+  },
+  {
+   "id": "ov-40",
+   "kind": "title",
+   "from": 82.92,
+   "to": 85.04,
+   "text": "ATENÇÃO: É SÓ\nUMA ESTIMATIVA"
+  },
+  {
+   "id": "ov-41",
+   "kind": "source",
+   "from": 77.26,
+   "to": 85.04,
+   "text": "Fonte: Comitê Gestor do IBS e Fazenda (estimativas)"
+  },
+  {
+   "id": "ov-42",
+   "kind": "question",
+   "from": 85.2,
+   "to": 93.45,
+   "text": "Mais caras ou\nmais baratas?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-43",
+   "kind": "cta",
+   "from": 91.4,
+   "to": 93.45,
+   "html": "Comenta: <b>CARAS</b> ou <b>BARATAS</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   2.42,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   3.4,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   3.95,
+   "pop.mp3",
+   -14
+  ],
+  [
+   4.25,
+   "error.mp3",
+   -16
+  ],
+  [
+   4.8,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   5.9,
+   "click.mp3",
+   -14
+  ],
+  [
+   6.3,
+   "chime.mp3",
+   -18
+  ],
+  [
+   8.1,
+   "pop.mp3",
+   -14
+  ],
+  [
+   8.5,
+   "pop.mp3",
+   -14
+  ],
+  [
+   12.2,
+   "sparkle.mp3",
+   -14
+  ],
+  [
+   12.58,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   14.45,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   15.42,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   15.55,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   17.72,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   18.3,
+   "pop.mp3",
+   -16
+  ],
+  [
+   19.3,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   19.6,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   19.95,
+   "pop.mp3",
+   -14
+  ],
+  [
+   20.66,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   20.8,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   22.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   24.4,
+   "pop.mp3",
+   -15
+  ],
+  [
+   24.75,
+   "pop.mp3",
+   -15
+  ],
+  [
+   25.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   28.65,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   29.3,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   31.95,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   35.6,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   36.4,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   37.62,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   38.35,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   40.3,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   41.6,
+   "ping.mp3",
+   -16
+  ],
+  [
+   45.1,
+   "ping.mp3",
+   -16
+  ],
+  [
+   45.1,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   47.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   47.5,
+   "pop.mp3",
+   -15
+  ],
+  [
+   48.22,
+   "pop.mp3",
+   -15
+  ],
+  [
+   48.8,
+   "pop.mp3",
+   -15
+  ],
+  [
+   50.5,
+   "ping.mp3",
+   -16
+  ],
+  [
+   52.26,
+   "pop.mp3",
+   -15
+  ],
+  [
+   52.9,
+   "pop.mp3",
+   -15
+  ],
+  [
+   53.46,
+   "pop.mp3",
+   -15
+  ],
+  [
+   54.72,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   55.8,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   60.12,
+   "pop.mp3",
+   -15
+  ],
+  [
+   60.92,
+   "pop.mp3",
+   -15
+  ],
+  [
+   61.46,
+   "pop.mp3",
+   -15
+  ],
+  [
+   62.3,
+   "pop.mp3",
+   -15
+  ],
+  [
+   62.95,
+   "chime.mp3",
+   -14
+  ],
+  [
+   64.2,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   64.4,
+   "typing.mp3",
+   -18
+  ],
+  [
+   67.3,
+   "ping.mp3",
+   -14
+  ],
+  [
+   68.6,
+   "sparkle.mp3",
+   -16
+  ],
+  [
+   70.4,
+   "chime.mp3",
+   -16
+  ],
+  [
+   71.9,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   74.75,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   75.3,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   76.1,
+   "pop.mp3",
+   -14
+  ],
+  [
+   77.2,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   78.55,
+   "riser.mp3",
+   -20
+  ],
+  [
+   79.2,
+   "pop.mp3",
+   -14
+  ],
+  [
+   83.2,
+   "impact-bass-1.mp3",
+   -8
+  ],
+  [
+   85.1,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   89.7,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   90.75,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   91.4,
+   "pop.mp3",
+   -14
+  ]
+ ]
+}

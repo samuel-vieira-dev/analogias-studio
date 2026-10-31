@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-reforma-tributaria-2027
+tema: "Reforma tributária em 2027 e como ela impacta no bolso do povo: CBS no lugar de PIS/Cofins, cesta básica, quem paga cheio, cashback e a estimativa de ~28% em 2033 (tom neutro, fontes na tela)"
+referencias_visuais: []
+
+hook:
+  origem: 4
+  texto: "Em janeiro, o arroz fica com imposto zero... e não fica mais barato."
+
+pergunta_final:
+  origem: 2
+  texto: "Em 2027, você acha que suas compras ficam mais caras... ou mais baratas?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-30
