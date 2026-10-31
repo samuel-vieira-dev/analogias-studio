@@ -1,6 +1,6 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega, MP4, capa e legenda do post.
+description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega, MP4, capa e legenda do post, e no fim pede o feedback do Samuel e melhora a skill sozinho.
 ---
 
 # Reel 3D narrado — @analogias.br
@@ -16,10 +16,21 @@ Só duas coisas vêm do Samuel no pedido:
 
 Ele escolhe depois, na etapa 3: o **hook** (5 opções + "Outro") e a **pergunta final** (3 opções + "Outra"). Área segura, estilo, voz, legendas e regras de roteiro **não são perguntados**: são requisitos do kit (`config/layout.json`, `channel.yaml`, `docs/`).
 
+## Fluxo com o Samuel
+
+Ele só fala com você em cinco pontos; o resto você faz sozinho:
+
+1. Ele abre a sessão e manda o **tema** (etapa 0).
+2. Ele escolhe o **hook** e a **pergunta final** (etapa 3).
+3. Ele **aprova o roteiro** (etapa 5).
+4. Ele **vê o vídeo** (etapa 10).
+5. Ele diz o que **gostou e não gostou**, e você melhora o kit (etapa 12).
+
 ## 0. Preparar o kit
 
 - **No Mac (Claude Code local)**: `cd` para o clone do kit (ex.: `~/analogias-studio`); `git pull`. Se não existir: `git clone https://github.com/samuel-vieira-dev/analogias-studio.git`.
 - **Sessão na nuvem**: anexar o repositório (`add_repo`, owner `samuel-vieira-dev`, repo `analogias-studio`, acesso `push`) e clonar como a ferramenta indicar.
+- O `git pull` traz as melhorias dos feedbacks anteriores: é por ele que a próxima sessão já começa melhor.
 - Primeira vez na máquina: `bash tools/setup.sh` (instala dependências e roda o autoteste do QA).
 - Ler `CLAUDE.md`, `docs/roteiro.md`, `docs/visual.md`, `docs/fotos.md` e `docs/qa.md` do kit. Criar a lista de tarefas com as etapas abaixo.
 - Pasta do vídeo: `videos/<AAAA-MM-DD>-<tema-curto>/` (data de hoje).
@@ -124,6 +135,31 @@ python3 tools/finalize.py videos/<slug>       # MP4 (confere tamanho, duração 
 
 Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.js, words.json — o resto é ignorado pelo git, inclusive `midia/` e `out/`: o link e o crédito de cada foto e o título e as hashtags do post ficam no `video.json`) e qualquer objeto novo em `engine/props/`; push.
 
+## 12. Feedback e melhoria da skill — sempre, depois de entregar
+
+Logo depois de mandar MP4, capa e post, perguntar numa mensagem curta (e esperar):
+
+> **O que você gostou e o que não gostou neste vídeo?** Pode ser qualquer coisa: hook, roteiro, voz, ritmo, visual, câmera, fotos, legenda, capa, post.
+
+Com a resposta:
+
+1. **Separar** cada ponto em: *gostou* (manter) e *não gostou* (mudar). Se um ponto estiver vago ("ficou estranho"), perguntar uma vez onde (segundo do vídeo ou plano) antes de mexer.
+2. **Generalizar**: transformar cada ponto numa regra que vale para os próximos vídeos, não só para este ("a câmera girou rápido demais aos 32 s" → "órbita no máximo 30° por plano"). Ponto que só vale para este tema fica só no registro.
+3. **Escrever a regra no lugar onde ela é lida**, integrada ao texto que já existe (ajustar a regra antiga em vez de empilhar outra parecida; se a nova contradiz uma antiga, a nova vale e a antiga sai):
+   - roteiro, hook, pergunta, tom, analogia → `docs/roteiro.md`
+   - visual, câmera, fundo, objetos, cores → `docs/visual.md` (e `engine/` se der para virar padrão no código)
+   - fotos → `docs/fotos.md`; voz, áudio, música → `channel.yaml` e `tools/mix.py`
+   - capa, legenda, hashtags, post → etapa 10 desta skill e `tools/finalize.py`
+   - etapas e ordem do trabalho → esta `SKILL.md`; erro que o QA devia ter pegado → `tools/qa.cjs` + um caso em `tests/qa-pega-erros/`
+   - O que ele **gostou** também vira regra ("manter: ..."), para não se perder numa mudança futura.
+4. **Registrar** em `docs/feedback.md` (formato lá): o que ele disse e o que mudou em qual arquivo.
+5. **Testar** se mexeu em `engine/` ou `tools/`: `bash tools/selftest.sh` e QA deste vídeo.
+6. **Commitar e enviar sem pedir licença** (o Samuel já autorizou): `git pull --rebase` e `git push` no `main`, mensagem "Feedback <slug>: ...". Assim a próxima sessão já começa com a melhoria.
+7. **Este vídeo**: perguntar se ele quer o vídeo refeito com as mudanças ou se fica como está. Só refazer se ele pedir.
+8. Responder em poucas linhas: o que mudou e onde, e o que **não** mudou e por quê.
+
+Não vira regra (explicar ao Samuel em vez de aplicar): pedido que quebra uma das "Regras que não se quebram" abaixo (crédito de foto, imagem de IA de pessoa real, fato sem fonte, tomar lado em política). Nesse caso, propor um jeito de chegar no que ele quer sem quebrar a regra.
+
 ## Regras que não se quebram
 
 1. Nada de voz antes do roteiro aprovado.
@@ -140,4 +176,4 @@ Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.
 
 ## Fechamento
 
-Responder curto: os arquivos (MP4, capa e post, com uma linha de contexto), onde ficaram salvos, e um próximo passo se houver. Sem recapitular as etapas.
+Responder curto: os arquivos (MP4, capa e post, com uma linha de contexto), onde ficaram salvos e, em seguida, a pergunta de feedback da etapa 12. Sem recapitular as etapas. A sessão só termina depois do feedback aplicado e enviado ao GitHub (ou de o Samuel dizer que não tem nada a comentar).

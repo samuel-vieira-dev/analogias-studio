@@ -10,7 +10,7 @@ tema ─► pesquisa + fatos ─► 5 hooks / 3 perguntas ─► roteiro ─► 
 
 ## Como usar
 
-Peça ao Claude (com a skill **reel-analogias**): *"Faz um vídeo sobre &lt;tema&gt;"*. A skill está em [`.claude/skills/reel-analogias/SKILL.md`](.claude/skills/reel-analogias/SKILL.md).
+Peça ao Claude (com a skill **reel-analogias**): *"Faz um vídeo sobre &lt;tema&gt;"*. A skill está em [`.claude/skills/reel-analogias/SKILL.md`](.claude/skills/reel-analogias/SKILL.md). No claude.ai fica só a porta de entrada [`claude-ai-skill/reel-analogias/`](claude-ai-skill/reel-analogias/SKILL.md), que manda ler esta; ela não precisa ser reenviada quando a skill muda. Depois de cada vídeo o Claude pede feedback e melhora o kit sozinho ([`docs/feedback.md`](docs/feedback.md)).
 
 Primeira vez numa máquina: `bash tools/setup.sh`.
 

@@ -11,7 +11,7 @@ Kit de produção dos Reels 3D narrados do @analogias.br (Samuel Vieira). Para c
 - `tools/` — build, QA, prévia, áudio, render, entrega, setup, autoteste.
 - `videos/<slug>/` — um vídeo: `brief.yaml`, `fatos.md`, `roteiro.md`, `narracao.txt`, `video.json`, `scenes.js`, `audio/words.json`, `midia/` (fotos baixadas, fora do git; link e crédito em `video.json → media`). O resto é gerado.
 - `tests/qa-pega-erros/` — os defeitos do V2 e do vídeo do Lula feitos de propósito; `tools/selftest.sh` prova que o QA pega todos.
-- `docs/` — roteiro, visual, fotos, ferramentas, QA.
+- `docs/` — roteiro, visual, fotos, ferramentas, QA e `feedback.md` (histórico do que o Samuel gostou e não gostou, e o que mudou por isso).
 
 ## Regras de trabalho
 
@@ -26,4 +26,6 @@ Kit de produção dos Reels 3D narrados do @analogias.br (Samuel Vieira). Para c
 - Motor, objetos e cena são um só módulo: nome de objeto do kit específico (`makeCoinJar`, `GOLD_METAL`); o `build.py` recusa nome repetido.
 - Mudou `engine/` ou `tools/`? Rodar `bash tools/selftest.sh` e o QA do vídeo em produção (se houver) antes do commit.
 - QA só nos vídeos em produção. Vídeo já entregue fica como está: não rodar QA nem corrigir por causa de regra nova (pedido do Samuel, 31/10/2026).
+- Depois de entregar um vídeo, sempre perguntar ao Samuel o que ele gostou e não gostou e aplicar no kit sozinho (`SKILL.md` → etapa 12, registro em `docs/feedback.md`), com commit e push no `main` sem pedir licença.
+- `claude-ai-skill/` é só a porta de entrada da skill no claude.ai (manda ler a skill do kit). Não copiar regras para lá.
 - Commits terminam com as linhas de atribuição pedidas na sessão.
