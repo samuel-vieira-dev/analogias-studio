@@ -399,6 +399,9 @@ function addScene(name, t0, t1, build) {
     const lit = ms.some((m) => m && (m.isMeshStandardMaterial || m.isMeshPhysicalMaterial || m.isMeshLambertMaterial || m.isMeshPhongMaterial));
     const opaque = ms.every((m) => m && !m.transparent);
     n.receiveShadow = lit; n.castShadow = lit && opaque;
+    // flat planes (ground, walls) only receive (cloth sheets, userData.cloth, still cast); solids cast from their back faces: no self-shadow stains on thin walls
+    if (n.geometry && !n.userData.cloth && (n.geometry.type === "PlaneGeometry" || n.geometry.type === "CircleGeometry")) n.castShadow = false;
+    else if (n.castShadow) for (const m of ms) if (m.side !== THREE.DoubleSide) m.shadowSide = THREE.BackSide;
   });
   SCENES.push(s);
 }

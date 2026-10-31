@@ -5,38 +5,39 @@
 // edges, the details that say what the object is (tape, label, kerbs, reflective boom stripes).
 // ============================================================================
 
-// Polka-dot woven fabric: tiles once per world unit (ExtrudeGeometry caps use the shape's x, y as UVs).
-function dotsTex(bg, dot) {
-  const c = makeCanvas(256, 256), x = c.getContext("2d"); x.fillStyle = bg; x.fillRect(0, 0, 256, 256);
-  for (let i = 0; i < 256; i += 3) { x.fillStyle = "rgba(0,0,0,0.07)"; x.fillRect(i, 0, 1, 256); x.fillStyle = "rgba(255,255,255,0.05)"; x.fillRect(0, i, 256, 1); }
-  x.fillStyle = dot;
-  for (let j = 0; j < 4; j++) for (let i = 0; i < 4; i++) {
-    const cx = 32 + 64 * i + (j % 2) * 32, cy = 32 + 64 * j;
-    for (const ox of [0, -256]) { x.beginPath(); x.arc(cx + ox, cy, 8, 0, Math.PI * 2); x.fill(); }
-  }
-  const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+// Blouse fabric texture: the cut shape (transparent outside), polka dots, weave, soft vertical folds,
+// darker seams at the neck, sleeves and hem. Canvas spans x -0.62..0.62, y -0.04..0.86 (world units).
+function blouseTex(color, dots) {
+  const c = makeCanvas(640, 464), x = c.getContext("2d"), sx = 640 / 1.24, sy = 464 / 0.9;
+  x.save(); x.translate(0.62 * sx, 0.86 * sy); x.scale(sx, -sy);
+  x.beginPath(); x.moveTo(-0.27, 0); x.quadraticCurveTo(0, -0.04, 0.27, 0); x.lineTo(0.25, 0.3); x.lineTo(0.29, 0.55); x.lineTo(0.5, 0.47); x.lineTo(0.58, 0.6); x.lineTo(0.33, 0.8);
+  x.lineTo(0.14, 0.82); x.quadraticCurveTo(0, 0.66, -0.14, 0.82); x.lineTo(-0.33, 0.8); x.lineTo(-0.58, 0.6); x.lineTo(-0.5, 0.47); x.lineTo(-0.29, 0.55); x.lineTo(-0.25, 0.3); x.closePath();
+  x.fillStyle = color; x.fill(); x.clip();
+  x.fillStyle = dots; for (let j = -1; j < 10; j++) for (let i = -7; i <= 7; i++) { x.beginPath(); x.arc(i * 0.085 + (j % 2) * 0.0425, j * 0.085, 0.017, 0, Math.PI * 2); x.fill(); }
+  for (let i = -62; i < 62; i++) { x.fillStyle = "rgba(0,0,0,0.05)"; x.fillRect(i * 0.01, -0.1, 0.003, 1.0); }
+  const folds = x.createLinearGradient(-0.3, 0, 0.3, 0); folds.addColorStop(0, "rgba(0,0,0,0.22)"); folds.addColorStop(0.2, "rgba(0,0,0,0)"); folds.addColorStop(0.45, "rgba(255,255,255,0.06)"); folds.addColorStop(0.62, "rgba(0,0,0,0.08)"); folds.addColorStop(0.8, "rgba(0,0,0,0)"); folds.addColorStop(1, "rgba(0,0,0,0.22)");
+  x.fillStyle = folds; x.fillRect(-0.62, -0.05, 1.24, 0.95);
+  x.strokeStyle = "rgba(0,0,0,0.28)"; x.lineWidth = 0.012;
+  x.beginPath(); x.moveTo(0.14, 0.81); x.quadraticCurveTo(0, 0.67, -0.14, 0.81); x.stroke();
+  x.beginPath(); x.moveTo(-0.27, 0.015); x.quadraticCurveTo(0, -0.025, 0.27, 0.015); x.stroke();
+  for (const s of [-1, 1]) { x.beginPath(); x.moveTo(s * 0.5, 0.485); x.lineTo(s * 0.575, 0.6); x.stroke(); x.beginPath(); x.moveTo(s * 0.3, 0.55); x.lineTo(s * 0.335, 0.79); x.stroke(); }
+  x.restore();
+  const t = texFrom(c); t.anisotropy = 8; return t;
 }
 
-// Blouse ("blusinha"): fitted waist, short sleeves, scoop neck, polka-dot woven fabric. The body is
-// curved like a torso (not a flat cut-out) and the sleeves come forward a little.
-// Origin: bottom centre (hem); faces +z; height 0.84.
+// Blouse ("blusinha"): fitted waist, short sleeves, scoop neck, polka-dot fabric. Thin cloth: a finely
+// subdivided sheet cut to shape, curved around the torso with the sleeves coming forward, so it shades
+// smoothly. Origin: bottom centre (hem); faces +z; height 0.84.
 function makeBlouse(color = "#e85aa6", { dots = "#ffffff" } = {}) {
-  const g = new THREE.Group(), s = new THREE.Shape();
-  s.moveTo(-0.27, 0); s.quadraticCurveTo(0, -0.04, 0.27, 0);           // hem, slightly curved
-  s.lineTo(0.25, 0.3); s.lineTo(0.29, 0.55);                            // waist → underarm
-  s.lineTo(0.5, 0.47); s.lineTo(0.58, 0.6); s.lineTo(0.33, 0.8);        // sleeve → shoulder
-  s.lineTo(0.14, 0.82); s.quadraticCurveTo(0, 0.66, -0.14, 0.82);       // scoop neck
-  s.lineTo(-0.33, 0.8); s.lineTo(-0.58, 0.6); s.lineTo(-0.5, 0.47); s.lineTo(-0.29, 0.55); s.lineTo(-0.25, 0.3); s.closePath();
-  const geo = new THREE.ExtrudeGeometry(s, { depth: 0.1, bevelEnabled: true, bevelSize: 0.02, bevelThickness: 0.025, bevelSegments: 3, curveSegments: 20 }).translate(0, 0.02, -0.05);
-  // torso curve around the vertical axis, sleeve ends forward, a soft ripple near the hem
+  const g = new THREE.Group(), geo = new THREE.PlaneGeometry(1.24, 0.9, 56, 40).translate(0, 0.41, 0);
   const pos = geo.attributes.position, v = new V3();
   for (let i = 0; i < pos.count; i++) {
     v.fromBufferAttribute(pos, i); const ax = Math.abs(v.x);
-    pos.setZ(i, v.z - 0.42 * v.x * v.x + (ax > 0.32 ? 0.14 * (ax - 0.32) : 0) + 0.025 * Math.sin(v.x * 18) * Math.max(0, 0.3 - v.y));
+    pos.setZ(i, -0.42 * v.x * v.x + (ax > 0.32 ? 0.16 * (ax - 0.32) : 0) + 0.02 * Math.sin(v.x * 16) * Math.max(0, 0.3 - v.y) + 0.012 * Math.sin(v.y * 11 + v.x * 3));
   }
   geo.computeVertexNormals();
-  const tex = dotsTex(color, dots); tex.repeat.set(4, 4);
-  const body = new THREE.Mesh(geo, [mat("#ffffff", { map: tex, roughness: 0.92 }), mat("#ffffff", { map: fabricTex(color), roughness: 0.92 })]); g.add(body);
+  const cloth = new THREE.MeshStandardMaterial({ map: blouseTex(color, dots), alphaTest: 0.5, side: THREE.DoubleSide, roughness: 0.95 });
+  const m = new THREE.Mesh(geo, cloth); m.userData.cloth = true; g.add(m);
   return g;
 }
 

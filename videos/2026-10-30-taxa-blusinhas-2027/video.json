@@ -1,0 +1,617 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-30-taxa-blusinhas-2027",
+ "post": {
+  "title": "A TAXA VOLTA\nEM 2027?",
+  "descricao": "Taxa das blusinhas volta em 2027? Os 20% foram zerados em maio e viraram lei, e o governo diz que é falso que voltam. Mas, em janeiro de 2027, entra o imposto novo da reforma tributária (CBS) pra loja brasileira e pra site de fora: numa blusinha de R$ 100, uns R$ 11 (o número final sai até dezembro).",
+  "hashtags": [
+   "#taxadasblusinhas",
+   "#reformatributaria",
+   "#comprasinternacionais",
+   "#impostos",
+   "#cbs"
+  ],
+  "media": false,
+  "t": 3.0
+ },
+ "duration": 94.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra"
+  }
+ },
+ "media": {
+  "mp": {
+   "file": "midia/mp.jpg",
+   "credit": "Wallison Breno/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:12.05.2026_-_Assinatura_da_MP_para_zerar_imposto_federal_da_Taxa_das_Blusinhas_(55266700574).jpg",
+   "focus": [
+    0.53,
+    0.42
+   ]
+  },
+  "sancao": {
+   "file": "midia/sancao.jpg",
+   "credit": "Ricardo Stuckert/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:10.09.26_-_San%C3%A7%C3%A3o_do_PLV_13_2026,_que_trata_das_regras_de_tributa%C3%A7%C3%A3o_de_remessas_postais_internacionais_(taxa_das_blusinhas)_(55520593375).jpg",
+   "focus": [
+    0.485,
+    0.45
+   ]
+  }
+ },
+ "cuts": [
+  10.8,
+  21.8,
+  28.5,
+  64.2,
+  74.0,
+  78.3,
+  86.3
+ ],
+ "scenes": [
+  {
+   "id": "boato",
+   "from": 0,
+   "to": 10.8
+  },
+  {
+   "id": "carrinho",
+   "from": 10.8,
+   "to": 21.8
+  },
+  {
+   "id": "quadro",
+   "from": 21.8,
+   "to": 28.5
+  },
+  {
+   "id": "estrada",
+   "from": 28.5,
+   "to": 64.2
+  },
+  {
+   "id": "quanto",
+   "from": 64.2,
+   "to": 74.0
+  },
+  {
+   "id": "estado",
+   "from": 74.0,
+   "to": 78.3
+  },
+  {
+   "id": "resumo",
+   "from": 78.3,
+   "to": 86.3
+  },
+  {
+   "id": "pergunta",
+   "from": 86.3,
+   "to": 94.0
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 4.3,
+   "text": "VOLTA EM\n2027?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 4.4,
+   "to": 6.05,
+   "text": "O GOVERNO DIZ:\nÉ FALSO"
+  },
+  {
+   "id": "ov-03",
+   "kind": "source",
+   "from": 4.4,
+   "to": 10.75,
+   "text": "Fonte: Secom, 29/10/2026"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 6.1,
+   "to": 10.75,
+   "text": "SÓ QUE TEM UMA\n2ª PARTE…"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 10.9,
+   "to": 14.8,
+   "text": "IMAGINA: BLUSINHA\nDE R$ 100"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 14.9,
+   "to": 19.55,
+   "text": "ATÉ MAIO:\n+ R$ 20 DE TAXA"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 14.9,
+   "to": 19.55,
+   "text": "Fonte: Lei 14.902/2024"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 19.65,
+   "to": 21.75,
+   "text": "AÍ, A TAXA\nFOI ZERADA"
+  },
+  {
+   "id": "ov-09",
+   "kind": "source",
+   "from": 19.65,
+   "to": 21.75,
+   "text": "Fonte: MP 1.357/2026"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 21.9,
+   "to": 22.9,
+   "text": "MAIO:\nTAXA ZERADA"
+  },
+  {
+   "id": "ov-10b",
+   "kind": "title",
+   "from": 22.95,
+   "to": 24.15,
+   "text": "SETEMBRO:\nVIROU LEI"
+  },
+  {
+   "id": "ov-11",
+   "kind": "source",
+   "from": 21.85,
+   "to": 28.45,
+   "text": "Fotos: Wallison Breno/PR; Ricardo Stuckert/PR"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 24.2,
+   "to": 26.95,
+   "text": "GOVERNO GARANTE:\nA TAXA NÃO VOLTA"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 27.0,
+   "to": 28.45,
+   "text": "ESSA É A\n1ª PARTE"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 28.6,
+   "to": 30.65,
+   "text": "AGORA, A\n2ª PARTE"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 30.75,
+   "to": 33.0,
+   "text": "UMA ESTRADA,\nDUAS PISTAS"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 33.1,
+   "to": 35.4,
+   "text": "PISTA DA LOJA\nBRASILEIRA"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 35.45,
+   "to": 38.85,
+   "text": "PEDÁGIO = IMPOSTO\nNO PREÇO"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 38.9,
+   "to": 40.8,
+   "text": "PISTA DOS\nSITES DE FORA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 40.85,
+   "to": 44.3,
+   "big": "20%",
+   "label": "TAXA DAS BLUSINHAS"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 40.85,
+   "to": 44.3,
+   "text": "Fonte: Lei 14.902/2024"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 44.4,
+   "to": 45.85,
+   "text": "EM MAIO,\nO PEDÁGIO SAIU"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 45.9,
+   "to": 48.95,
+   "text": "SITE DE FORA\nHOJE: R$ 0"
+  },
+  {
+   "id": "ov-23",
+   "kind": "source",
+   "from": 44.4,
+   "to": 48.95,
+   "text": "Fonte: Lei 15.502/2026"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 49.05,
+   "to": 51.95,
+   "text": "JANEIRO\nDE 2027"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 52.05,
+   "to": 54.5,
+   "text": "O PEDÁGIO ANTIGO\nSAI…"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 54.6,
+   "to": 57.6,
+   "text": "…E ENTRA UM NOVO\nNAS DUAS PISTAS"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 57.7,
+   "to": 60.45,
+   "text": "IMPOSTO NOVO\nDA REFORMA"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 60.5,
+   "to": 64.15,
+   "text": "2027: O MESMO\nIMPOSTO PROS DOIS"
+  },
+  {
+   "id": "ov-29",
+   "kind": "source",
+   "from": 54.6,
+   "to": 64.15,
+   "text": "Fonte: LC 214/2025; Secom, 29/10/2026"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 64.25,
+   "to": 67.0,
+   "text": "QUANTO?"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 67.05,
+   "to": 71.9,
+   "big": "≈ R$ 11",
+   "label": "A CADA R$ 100, EM 2027"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 71.95,
+   "to": 73.95,
+   "text": "NÚMERO FINAL\nATÉ DEZEMBRO"
+  },
+  {
+   "id": "ov-33",
+   "kind": "source",
+   "from": 64.25,
+   "to": 73.95,
+   "text": "Fonte: TCU, 28/10/2026; LC 214/2025"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 74.1,
+   "to": 78.25,
+   "text": "IMPOSTO DO ESTADO:\nCONTINUA IGUAL"
+  },
+  {
+   "id": "ov-35",
+   "kind": "source",
+   "from": 74.1,
+   "to": 78.25,
+   "text": "Fonte: Agência Senado, 03/09/2026"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 78.4,
+   "to": 82.6,
+   "text": "OS 20%\nNÃO VOLTAM"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 82.7,
+   "to": 86.25,
+   "text": "MAS O IMPOSTO\nNOVO VEM"
+  },
+  {
+   "id": "ov-38",
+   "kind": "source",
+   "from": 78.4,
+   "to": 86.25,
+   "text": "Fonte: Secom, 29/10/2026; LC 214/2025"
+  },
+  {
+   "id": "ov-39",
+   "kind": "question",
+   "from": 86.4,
+   "to": 94.0,
+   "text": "Volta ou\nnão volta?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-40",
+   "kind": "cta",
+   "from": 92.05,
+   "to": 94.0,
+   "html": "Comenta: <b>VOLTA</b> ou <b>NÃO VOLTA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   0.2,
+   "pop.mp3",
+   -16
+  ],
+  [
+   0.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   1.6,
+   "pop.mp3",
+   -16
+  ],
+  [
+   2.35,
+   "pop.mp3",
+   -16
+  ],
+  [
+   5.5,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   6.15,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   10.8,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   12.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   17.2,
+   "error.mp3",
+   -16
+  ],
+  [
+   20.6,
+   "sparkle.mp3",
+   -14
+  ],
+  [
+   21.8,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   22.35,
+   "click.mp3",
+   -14
+  ],
+  [
+   23.45,
+   "click.mp3",
+   -14
+  ],
+  [
+   24.65,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   28.5,
+   "whoosh-cinematic.mp3",
+   -20
+  ],
+  [
+   33.95,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   39.65,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   40.95,
+   "ping.mp3",
+   -18
+  ],
+  [
+   44.45,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   44.85,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   45.95,
+   "chime.mp3",
+   -18
+  ],
+  [
+   49.05,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   53.9,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   54.3,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   54.75,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   56.25,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   58.4,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   64.2,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   66.95,
+   "pop.mp3",
+   -14
+  ],
+  [
+   67.3,
+   "ping.mp3",
+   -18
+  ],
+  [
+   68.45,
+   "pop.mp3",
+   -14
+  ],
+  [
+   68.8,
+   "ping.mp3",
+   -18
+  ],
+  [
+   70.55,
+   "pop.mp3",
+   -14
+  ],
+  [
+   72.0,
+   "click.mp3",
+   -16
+  ],
+  [
+   74.0,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   74.95,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   77.6,
+   "pop.mp3",
+   -14
+  ],
+  [
+   78.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   79.25,
+   "click.mp3",
+   -16
+  ],
+  [
+   82.75,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   86.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   86.45,
+   "pop.mp3",
+   -14
+  ],
+  [
+   86.75,
+   "pop.mp3",
+   -14
+  ],
+  [
+   92.05,
+   "chime.mp3",
+   -16
+  ]
+ ]
+}

@@ -1,0 +1,15 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-30-taxa-blusinhas-2027
+tema: "Taxa das blusinhas: o boato de que ela volta em 2027 (os 20% não voltam; em 2027 a compra de fora passa a pagar o imposto novo da reforma, igual à loja brasileira). Linguagem para leigos, tom neutro, fontes na tela"
+referencias_visuais: []
+
+hook:
+  origem: 1
+  texto: "Estão dizendo que a taxa das blusinhas volta em 2027."
+
+pergunta_final:
+  origem: 1
+  texto: "Então me diz: em 2027, a taxa das blusinhas volta... ou não volta?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-31
