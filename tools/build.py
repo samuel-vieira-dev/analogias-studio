@@ -232,11 +232,13 @@ def build_overlays(layout, channel, video, media):
     #root .pcap b {{ display:block; font-weight:900; font-size:46px; line-height:1.05; color:{st['fundo']}; letter-spacing:-0.02em; white-space:nowrap; }}
     #root .pcap span {{ display:block; font-weight:600; font-size:28px; line-height:1.3; color:#6b5a4e; white-space:nowrap; }}
     #root .pcard:not(:has(.pcap)) {{ padding-bottom:16px; }}
+    #ov-scrim {{ position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(10,6,4,0.66) 0px, rgba(10,6,4,0.5) 520px, rgba(10,6,4,0) 760px, rgba(10,6,4,0) 1240px, rgba(10,6,4,0.5) 1560px, rgba(10,6,4,0.62) 1920px); }}
     #ov-flash {{ position:absolute; inset:0; background:{st['laranja']}; opacity:0; }}
     #ov-prog-track {{ position:absolute; left:40px; top:1878px; width:1000px; height:6px; background:rgba(255,255,255,0.18); border-radius:3px; overflow:hidden; }}
     #ov-prog {{ width:100%; height:100%; background:{st['laranja']}; transform-origin:0% 50%; }}
   </style>
   <div id="root" data-composition-id="overlays" data-width="1080" data-height="1920">
+    <div id="ov-scrim"></div>
     <div id="ov-flash"></div>
     {items}
     <div id="ov-prog-track"><div id="ov-prog"></div></div>

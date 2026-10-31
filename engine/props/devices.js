@@ -8,7 +8,13 @@ function makePhone() {
   const group = new THREE.Group();
   const canvas = makeCanvas(720, 1500); const ctx = canvas.getContext("2d"); const tex = texFrom(canvas);
   const body = new THREE.Mesh(rbox(0.8, 1.64, 0.09, 0.09, 6), mat("#121212", { metalness: 0.4, roughness: 0.3 })); group.add(body);
+  // brushed metal frame around the edge, side buttons, glass over the screen (env reflections)
+  const metal = mat("#8d9096", { metalness: 0.85, roughness: 0.28 });
+  const frame = new THREE.Mesh(rbox(0.815, 1.655, 0.06, 0.095, 6), metal); group.add(frame);
+  for (const [y, h] of [[0.36, 0.2], [0.1, 0.14]]) { const b = new THREE.Mesh(rbox(0.02, h, 0.035, 0.008), metal); b.position.set(0.414, y, 0); group.add(b); }
   const screen = new THREE.Mesh(new THREE.PlaneGeometry(0.74, 1.56), new THREE.MeshBasicMaterial({ map: tex, toneMapped: false })); screen.position.z = 0.047; group.add(screen);
+  const glass = new THREE.Mesh(new THREE.PlaneGeometry(0.76, 1.58), new THREE.MeshStandardMaterial({ color: "#000000", roughness: 0.06, metalness: 0.0, transparent: true, opacity: 0.1, depthWrite: false }));
+  glass.position.z = 0.0475; glass.userData.decor = true; group.add(glass);
   return { group, canvas, ctx, tex, body, screen };
 }
 // Screen pixel (sx, sy) on a 720x1500 phone canvas → local position on the phone.

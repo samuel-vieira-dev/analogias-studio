@@ -59,7 +59,8 @@ function plateTex(text, { bg = "#141414", fg = "#f5c400", w = 1024, h = 220, fon
 function makePlate(text, w, h, { bg = "#141414", fg = "#ffffff", font = "900 160px Inter", depth = 0.03, detail = false } = {}) {
   const ph = 256, pw = Math.max(64, Math.round(ph * w / h));
   const tex = plateTex(text, { bg, fg, w: pw, h: ph, font: font.replace(/\d+(?:\.\d+)?px/, Math.round(ph * 0.62) + "px"), radius: Math.round(ph * 0.12) });
-  const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: !bg });
+  // rounded corners are cut out (alphaTest), never painted black
+  const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: !bg, alphaTest: bg ? 0.5 : 0 });
   const side = mat(bg || "#141414");
   const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, depth), [side, side, side, side, face, side]);
   m.userData.plate = { text, w, h, depth, frac: tex.userData.textFrac, detail }; return m;
@@ -92,21 +93,54 @@ await document.fonts.load("900 100px Inter"); await document.fonts.load("800 100
 await document.fonts.load("700 100px Inter"); await document.fonts.load("600 100px Inter");
 
 // ---------------------------------------------------------------- renderer and world
+// Look (31/10/2026: "menos cartoon, mais polido"): soft real shadows from the key light that follow the
+// shot, a studio environment map for reflections, a graded backdrop instead of a flat colour, a textured
+// floor, and 1.5x internal resolution (the page downsamples it: smooth edges, no stair-stepping).
 const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("w-canvas"), antialias: true, preserveDrawingBuffer: true, alpha: false });
-renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.setPixelRatio(1.5); renderer.setSize(W, H, false);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(BG);
+function backdropTex() {
+  const c = makeCanvas(64, 1024), x = c.getContext("2d"), g = x.createLinearGradient(0, 0, 0, 1024);
+  g.addColorStop(0, "#22160f"); g.addColorStop(0.55, BG); g.addColorStop(1, "#0d0806");
+  x.fillStyle = g; x.fillRect(0, 0, 64, 1024); return texFrom(c);
+}
+const BACKDROP = backdropTex(); scene.background = BACKDROP;
 scene.fog = new THREE.Fog(BG, 12, 40);
+// Studio environment (procedural, no extra download): dark warm room, a big warm softbox up front-right,
+// a cool strip behind-left, a soft top light. Metals and varnish pick up believable highlights.
+function studioEnv() {
+  const env = new THREE.Scene();
+  env.add(new THREE.Mesh(new THREE.BoxGeometry(24, 14, 24), new THREE.MeshBasicMaterial({ color: "#2a1c14", side: THREE.BackSide })));
+  const panel = (color, k, w, h, pos) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(color).multiplyScalar(k), side: THREE.DoubleSide })); m.position.set(...pos); m.lookAt(0, 0, 0); env.add(m); };
+  panel("#ffd2a8", 7, 9, 5, [6, 6, 7]); panel("#9fb8ff", 3.5, 3, 9, [-9, 3, -6]); panel("#fff4ea", 2.2, 10, 10, [0, 6.9, 0]);
+  const pm = new THREE.PMREMGenerator(renderer), tex = pm.fromScene(env, 0.04).texture; pm.dispose(); return tex;
+}
+scene.environment = studioEnv(); scene.environmentIntensity = 0.55;
 const camera = new THREE.PerspectiveCamera(40, W / H, 0.05, 300);
-const hemi = new THREE.HemisphereLight("#ffd9b8", "#1a0f0a", 0.75); scene.add(hemi);
-const key = new THREE.DirectionalLight("#ffb98a", 2.4); key.position.set(4, 9, 6); scene.add(key);
+const hemi = new THREE.HemisphereLight("#ffd9b8", "#1a0f0a", 0.5); scene.add(hemi);
+const KEY_DIR = new V3(4, 9, 6).normalize();
+const key = new THREE.DirectionalLight("#ffb98a", 2.6); key.position.set(4, 9, 6); scene.add(key, key.target);
+key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -0.0008; key.shadow.normalBias = 0.04; key.shadow.radius = 4;
 const rim = new THREE.DirectionalLight("#86a8ff", 1.1); rim.position.set(-6, 5, -7); scene.add(rim);
 const fill = new THREE.PointLight(ORANGE, 0, 12, 1.6); scene.add(fill);
-const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat("#23160f", { roughness: 0.95 }));
-floor.rotation.x = -Math.PI / 2; scene.add(floor);
-function resetLights() { fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.4; hemi.intensity = 0.75; }
+function floorTex() {
+  const c = makeCanvas(512, 512), x = c.getContext("2d"), r = mulberry32(21);
+  x.fillStyle = "#2a1b13"; x.fillRect(0, 0, 512, 512);
+  for (let i = 0; i < 2600; i++) { const v = r(); x.fillStyle = v < 0.5 ? `rgba(0,0,0,${0.05 + r() * 0.08})` : `rgba(255,214,180,${0.02 + r() * 0.04})`; const s = 1 + r() * 3; x.fillRect(r() * 512, r() * 512, s, s); }
+  const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(60, 60); return t;
+}
+const floor = new THREE.Mesh(new THREE.PlaneGeometry(400, 400), mat("#ffffff", { map: floorTex(), roughness: 0.92, envMapIntensity: 0.25 }));
+floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+// Called before every scene update: a scene may swap the ground, sky and fog for its own backdrop
+// (S.backdrop) and gets the defaults back on the next cut.
+function resetLights() { fill.intensity = 0; fill.color.set(ORANGE); key.color.set("#ffb98a"); key.intensity = 2.6; hemi.intensity = 0.5; hemi.color.set("#ffd9b8"); hemi.groundColor.set("#1a0f0a"); floor.visible = true; scene.background = BACKDROP; scene.fog.color.set(BG); }
+// Every solid mesh of a scene casts and receives shadows (decoration, sprites and transparent glass do not).
+function enableShadows(root) {
+  root.traverse((m) => { if (!m.isMesh || m.userData.decor || m.isSprite) return; const mm = Array.isArray(m.material) ? m.material[0] : m.material; if (mm && mm.transparent && !mm.depthWrite) return; m.castShadow = true; m.receiveShadow = true; });
+}
 
 // ---------------------------------------------------------------- boxes (shared by framing and QA)
 // Exact world-space box of an object's visible meshes (vertex-precise), skipping decoration
@@ -232,6 +266,10 @@ const CAM = (() => {
     last = p; setPrincipal(p.cx, p.cy, p.fov);
     camera.position.copy(p.pos); camera.up.set(0, 1, 0); camera.lookAt(p.look); camera.updateMatrixWorld();
     scene.fog.near = p.dist * 1.15 + 1.5; scene.fog.far = p.dist * 3.2 + 12;
+    // the key light (and its shadow box) follows the subject of the shot
+    const s = p.dist * 0.75 + 2.5, sc = key.shadow.camera;
+    key.target.position.copy(p.look); key.position.copy(p.look).addScaledVector(KEY_DIR, p.dist + 12);
+    sc.left = -s; sc.right = s; sc.top = s; sc.bottom = -s; sc.near = 0.5; sc.far = p.dist * 2 + 40; sc.updateProjectionMatrix();
   }
   return { pose, at, blend, track, shake, apply, projectBox, toBox, setPrincipal, get last() { return last; } };
 })();
@@ -260,6 +298,7 @@ let ACTIVE = null, LAST_T = 0;
 //   S.solid(obj, name, {restsOn})     must not pass through other solids; may touch (not sink into) restsOn
 //   S.scenery(obj, name, {when})      environment that may run past the frame (a crowd, a skyline),
 //                                     but no text may sit on it
+//   S.backdrop(obj)                   full-screen context behind everything (may sit under text); not checked
 //   `when: (t) => bool` limits a check to the moments the object is the subject of the shot.
 function addScene(name, t0, t1, build) {
   const s = { name, t0, t1, group: new THREE.Group(), heroes: [], labels: [], solids: [], scenery: [], update: null };
@@ -271,8 +310,12 @@ function addScene(name, t0, t1, build) {
     label: (spr, name, o = {}) => { s.labels.push({ obj: spr, name, on: o.on || null, when: o.when || null }); return spr; },
     solid: (obj, name, o = {}) => { s.solids.push({ obj, name, restsOn: o.restsOn || [], when: o.when || null }); return obj; },
     scenery: (obj, name, o = {}) => { s.scenery.push({ obj, name, when: o.when || null }); return obj; },
+    // backdrop: full-screen context behind the main animation (road to the horizon, wall, city). It may run
+    // under the text bands and the app UI; it is never checked and never a hero (docs/visual.md).
+    backdrop: (...objs) => { s.group.add(...objs); return objs[0]; },
   };
   s.update = build(S);
+  enableShadows(s.group);
   SCENES.push(s);
 }
 

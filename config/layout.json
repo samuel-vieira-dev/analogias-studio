@@ -1,29 +1,119 @@
 {
-  "_doc": "Área segura única para Reels, TikTok e Shorts (1080x1920). É requisito do kit, não input do vídeo: build, câmera 3D e QA leem daqui.",
-  "canvas": { "w": 1080, "h": 1920, "fps": 30 },
-  "platform_margins": {
-    "_doc": "Faixas (px) que cada app cobre com a própria interface. A área única usa o pior caso de cada lado.",
-    "reels":   { "top": 220, "bottom": 420, "left": 35, "right": 170 },
-    "tiktok":  { "top": 108, "bottom": 322, "left": 40, "right": 190 },
-    "shorts":  { "top": 120, "bottom": 360, "left": 0,  "right": 96 },
-    "unified": { "top": 220, "bottom": 420, "left": 60, "right": 190 }
+  "_doc": "Área segura única para Reels, TikTok e Shorts (1080x1920), centralizada na tela (pedido do Samuel, 31/10/2026). É requisito do kit, não input do vídeo: build, câmera 3D e QA leem daqui.",
+  "canvas": {
+    "w": 1080,
+    "h": 1920,
+    "fps": 30
   },
-  "safe": { "x": 60, "y": 220, "w": 830, "h": 1280 },
+  "platform_margins": {
+    "_doc": "Faixas (px) que cada app cobre com a própria interface. A área única usa o pior caso de cada lado e é simétrica: a margem lateral é a maior das duas (190, a coluna de botões do TikTok), dos dois lados.",
+    "reels": {
+      "top": 220,
+      "bottom": 420,
+      "left": 35,
+      "right": 170
+    },
+    "tiktok": {
+      "top": 108,
+      "bottom": 322,
+      "left": 40,
+      "right": 190
+    },
+    "shorts": {
+      "top": 120,
+      "bottom": 360,
+      "left": 0,
+      "right": 96
+    },
+    "unified": {
+      "top": 220,
+      "bottom": 420,
+      "left": 190,
+      "right": 190
+    }
+  },
+  "safe": {
+    "x": 190,
+    "y": 220,
+    "w": 700,
+    "h": 1280
+  },
   "zones": {
-    "source":     { "x": 60,  "y": 220,  "w": 830, "h": 66,   "_doc": "Fontes, referências e avisos: alinhados à direita no topo da área segura (canto superior direito), 1 linha, 28 px." },
-    "headline":   { "x": 60,  "y": 300,  "w": 830, "h": 260,  "_doc": "Títulos, números grandes, regras, pergunta final. Nunca em cima do 3D." },
-    "stage":      { "x": 60,  "y": 580,  "w": 830, "h": 750,  "_doc": "Palco 3D quando a faixa headline tem texto." },
-    "stage-tall": { "x": 60,  "y": 300,  "w": 830, "h": 1030, "_doc": "Palco 3D quando a faixa headline está vazia." },
-    "caption":    { "x": 60,  "y": 1366, "w": 830, "h": 110,  "_doc": "Legenda: 1 linha, base em y=1476 (24 px acima do fim da área segura)." }
+    "source": {
+      "x": 190,
+      "y": 220,
+      "w": 700,
+      "h": 66,
+      "_doc": "Fontes, referências e avisos: alinhados à direita no topo da área segura (canto superior direito), 1 linha, 28 px."
+    },
+    "headline": {
+      "x": 190,
+      "y": 300,
+      "w": 700,
+      "h": 260,
+      "_doc": "Títulos, números grandes, regras, pergunta final. Nunca em cima do 3D."
+    },
+    "stage": {
+      "x": 190,
+      "y": 580,
+      "w": 700,
+      "h": 750,
+      "_doc": "Palco 3D quando a faixa headline tem texto. A animação principal do plano fica aqui; o plano de fundo pode ocupar a tela inteira (docs/visual.md)."
+    },
+    "stage-tall": {
+      "x": 190,
+      "y": 300,
+      "w": 700,
+      "h": 1030,
+      "_doc": "Palco 3D quando a faixa headline está vazia."
+    },
+    "caption": {
+      "x": 190,
+      "y": 1366,
+      "w": 700,
+      "h": 110,
+      "_doc": "Legenda: 1 linha, base em y=1476 (24 px acima do fim da área segura)."
+    }
   },
   "cover": {
     "_doc": "Capa do post (tools/capa.cjs): título em title e o 3D do gancho reenquadrado em stage, os dois centralizados na largura (a capa não tem os botões do app à direita nem legenda; pedido do Samuel, 30/10/2026). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele.",
-    "title": { "x": 125, "y": 300, "w": 830, "h": 260 },
-    "stage": { "x": 125, "y": 580, "w": 830, "h": 920 },
-    "grid":  { "x": 0,  "y": 240, "w": 1080, "h": 1440 }
+    "title": {
+      "x": 125,
+      "y": 300,
+      "w": 830,
+      "h": 260
+    },
+    "stage": {
+      "x": 125,
+      "y": 580,
+      "w": 830,
+      "h": 920
+    },
+    "grid": {
+      "x": 0,
+      "y": 240,
+      "w": 1080,
+      "h": 1440
+    }
   },
-  "caption": { "bottom": 1476, "font_px": 58, "max_chars": 20, "max_words": 4, "pad_x": 30, "pad_y": 14 },
-  "camera": { "_doc": "Padrões do CAM.pose (engine/core.js). pad = folga mínima em px entre o objeto e a borda da zona.", "pad_px": 28, "fov": 40, "from": [0, 0.35, 1] },
+  "caption": {
+    "bottom": 1476,
+    "font_px": 58,
+    "max_chars": 20,
+    "max_words": 4,
+    "pad_x": 30,
+    "pad_y": 14
+  },
+  "camera": {
+    "_doc": "Padrões do CAM.pose (engine/core.js). pad = folga mínima em px entre o objeto e a borda da zona.",
+    "pad_px": 28,
+    "fov": 40,
+    "from": [
+      0,
+      0.35,
+      1
+    ]
+  },
   "qa": {
     "_doc": "Regras do tools/qa.cjs. Rodar antes de qualquer render. *_s = quanto tempo seguido o problema precisa durar para reprovar (ignora o meio de um pop ou de um corte).",
     "step_s": 0.2,
@@ -31,11 +121,20 @@
     "text_hero_gap_px": 10,
     "solid_overlap_ratio": 0.03,
     "contact_tol": 0.04,
-    "decoration_selectors": ["#ov-flash", "#ov-prog-track", "#ov-prog"],
-    "hero_min_cover": 0.45, "hero_min_cover_s": 0.8,
+    "decoration_selectors": [
+      "#ov-scrim",
+      "#ov-flash",
+      "#ov-prog-track",
+      "#ov-prog"
+    ],
+    "hero_min_cover": 0.45,
+    "hero_min_cover_s": 0.8,
     "empty_s": 0.6,
-    "static_motion": 0.2, "static_s": 2.0,
-    "text3d_min_cap_px": 16, "text3d_s": 0.5,
-    "photo_max_upscale": 1.6, "photo_credit_s": 0.4
+    "static_motion": 0.2,
+    "static_s": 2.0,
+    "text3d_min_cap_px": 16,
+    "text3d_s": 0.5,
+    "photo_max_upscale": 1.6,
+    "photo_credit_s": 0.4
   }
 }

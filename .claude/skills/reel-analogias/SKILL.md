@@ -66,8 +66,11 @@ Se o take escolhido trocou ou pulou palavras importantes, avisar antes de seguir
 
 Escrever `video.json` (duração = fala + 2 s; `cuts`; `overlays` por **zona**, nunca por pixel; `sfx`; `captions.fix`) e `scenes.js` usando `engine/` (ver `docs/visual.md` e o exemplo `videos/2026-10-27-circuit-breaker/`). Regras:
 
+- Área segura **centralizada** (x 190–890, centro da tela x = 540; `config/layout.json`): título, palco, legenda e capa alinhados ao meio.
+- **Animação principal dentro da área segura** (no palco); **plano de fundo na tela inteira** para contextualizar o take (a estrada até o horizonte, a mesa e a parede, o escritório, a cidade): mais escuro e mais longe que o herói, sem texto nem informação da fala, se mexendo (paralaxe, partículas, luz, coisas entrando pelas bordas). Registrar com `S.backdrop` (`docs/visual.md` → "Plano de fundo").
+- **Acabamento realista, menos cartoon, e gráfico polido sem falha**: proporções reais, materiais com textura e detalhe (papelão com fita e etiqueta, asfalto com faixa, tecido, metal), bordas chanfradas; o motor dá sombra real e reflexo. Nada atravessando, piscando ou serrilhado.
 - Cada cena: `anim(t)` só dos objetos → `CAM.pose(envelope(objs, anim, t0, t1), { zone })`; `stage` quando a headline tem texto, `stage-tall` quando não tem.
-- Registrar `S.hero`, `S.label` (com `on`), `S.solid` (com `restsOn`), `S.scenery`.
+- Registrar `S.hero`, `S.label` (com `on`), `S.solid` (com `restsOn`), `S.scenery`, `S.backdrop`.
 - Números, títulos e regras na `headline`; fontes e avisos em `source` (canto superior direito); CTA na base, depois da fala.
 - Texto de objeto impresso nele (`makePlate`); objetos apoiados sem afundar; portas e tampas nunca atravessam nada.
 - Reaproveitar `engine/props/`; objeto novo reutilizável vai para lá. Objeto novo é montado com peças calculadas (nunca uma primitiva girada "até parecer") e conferido no recorte da folha de objetos.
@@ -122,12 +125,13 @@ Commitar a pasta do vídeo (brief, fatos, roteiro, narracao, video.json, scenes.
 
 1. Nada de voz antes do roteiro aprovado.
 2. Nada de render sem `QA ok` (o `render.sh` bloqueia).
-3. Texto nunca em cima da animação; fonte sempre no canto superior direito; legenda na base da área segura.
+3. Texto nunca em cima da animação principal (o plano de fundo pode ficar por baixo); fonte sempre no canto superior direito; legenda na base da área segura, que é centralizada na tela.
 4. Nenhum objeto principal cortado; nada atravessando nada.
 5. Todo número com fonte em `fatos.md`; tema político contado sem tomar lado; "Não é recomendação de investimento" em tema de dinheiro.
 6. Analogia só no ponto difícil — uma boa vale mais que cinco.
 7. Foto real sempre com crédito na tela; nunca imagem de IA ou editada de pessoa ou fato real.
 8. Nada parado por 2 s; nada de render sem revisão cega.
+9. Visual realista e polido: animação principal na área segura, plano de fundo de tela inteira contextualizando o take.
 
 ## Fechamento
 
