@@ -41,7 +41,7 @@
 
 O `finalize.py` entrega o MP4 e chama `tools/post.py`, que escreve a legenda e roda `tools/capa.cjs`. Os três vão juntos para Filmes/reels. Para refazer só capa e legenda (sem render, sem tocar no MP4): `python3 tools/finalize.py videos/<slug> --post-only` (ou `python3 tools/post.py videos/<slug>`, que não copia).
 
-Entrada em `video.json → post`: `hashtags` (5–8 do tema, obrigatório), `title` (título da capa, `\n` para 2 linhas), `t` (segundo do quadro) e `media` (id da foto de pessoa, ou `false`); só `hashtags` é obrigatório.
+Entrada em `video.json → post`: `hashtags` (3–5 do tema, obrigatório; se tiver mais, só as 5 primeiras entram), `descricao` (1–2 frases para a busca do TikTok, obrigatório), `title` (título da capa, `\n` para 2 linhas), `t` (segundo do quadro) e `media` (id da foto de pessoa, ou `false`).
 
 **Capa** — `out/<slug>-capa.jpg`, 1080×1920, tirada do `qa/harness.html` com Playwright (o mesmo da prévia, sem renderizar o vídeo):
 
@@ -53,15 +53,15 @@ Entrada em `video.json → post`: `hashtags` (5–8 do tema, obrigatório), `tit
 - Confere que título e cartão cabem no recorte central 3:4 (1080×1440, `cover.grid`) que o perfil mostra; senão sai com erro.
 - Harness gerado antes da capa existir não tem `__qa.reframe` (o `capa.cjs` avisa): rodar `python3 tools/build.py videos/<slug>` uma vez.
 
-**Legenda** — `out/<slug>-post.md`, um bloco pronto para colar:
+**Legenda** — `out/<slug>-post.md`, sempre escrita para o **TikTok**, um bloco pronto para colar:
 
-1. Gancho e pergunta final (`brief.yaml`) e o CTA do vídeo ("Comenta: VENDO ou COMPRO.").
-2. Avisos que estão na tela e não são fonte ("Não é recomendação de investimento.").
-3. As hashtags.
-4. **Fontes**: os links das linhas do `fatos.md` com status `OK` que não dizem "fora da fala" — marque assim o fato confirmado que ficou fora da narração. Fonte citada sem link numa linha ("InfoMoney · CUT") pega o link que ela tem em outra linha.
-5. **Fotos**: crédito e link de cada foto de `video.json → media`.
+1. O gancho (`brief.yaml`) e, logo abaixo, `post.descricao`: 1–2 frases com as palavras que o público busca (a busca do TikTok lê a legenda). Só fatos da fala, com as mesmas ressalvas ("falta o Senado confirmar", "é estimativa").
+2. A pergunta final (`brief.yaml`) e o CTA do vídeo ("Comenta: VENDO ou COMPRO.").
+3. Avisos que estão na tela e não são fonte ("Não é recomendação de investimento.").
+4. As 5 primeiras hashtags.
+5. **Fontes** em uma linha, só os nomes ("TCU · Agência Senado · LC 214/2025"): as linhas do `fatos.md` com status `OK` que não dizem "fora da fala" — marque assim o fato confirmado que ficou fora da narração. **Fotos**: o crédito de cada foto de `video.json → media`.
 
-O Instagram corta a legenda em 2.200 caracteres: se a lista com links não couber, a legenda cita as fontes pelo nome e o arquivo traz os links em um ou mais comentários para fixar (cada um até 2.200). Links não são clicáveis em Reels e TikTok; no YouTube Shorts, use a lista com links na descrição.
+No TikTok link não é clicável, a legenda vai até 4.000 caracteres (2.200 pela API de postagem) e comentário até 150. Por isso os links das fontes e das fotos ficam abaixo da legenda, no mesmo arquivo, para conferir e responder comentários. Fonte citada sem link numa linha ("InfoMoney · CUT") pega o link que ela tem em outra linha.
 
 ## Onde rodar
 

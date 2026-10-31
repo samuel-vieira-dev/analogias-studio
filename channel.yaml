@@ -5,6 +5,7 @@ canal:
   idioma: pt-BR
   publico: "brasileiro leigo, 20 a 45 anos, rolando o feed"
   plataformas: [reels, tiktok, shorts]
+  legenda: tiktok                 # a legenda do post (tools/post.py) é sempre escrita para o TikTok
 
 voz:
   provedor: elevenlabs            # conector ElevenLabs (creative_generate_speech)

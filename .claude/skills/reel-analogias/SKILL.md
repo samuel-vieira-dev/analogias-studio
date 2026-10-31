@@ -94,10 +94,12 @@ Mudou só efeito sonoro? `mix.py` + `build.py` bastam (o QA continua valendo).
 Antes do `finalize`, completar `video.json → post`:
 
 ```json
-"post": { "title": "APERTARAM O\nBOTÃO DO PÂNICO", "hashtags": ["#circuitbreaker", "#bolsadevalores", "#ibovespa", "#b3", "#investimentos"] }
+"post": { "title": "APERTARAM O\nBOTÃO DO PÂNICO", "descricao": "Circuit breaker na B3: quando o Ibovespa cai 10%, a bolsa para por 30 minutos. Entenda por que existe o botão do pânico e quantas vezes ele já foi apertado.", "hashtags": ["#circuitbreaker", "#bolsadevalores", "#ibovespa", "#b3", "#investimentos"] }
 ```
 
-- `hashtags` (obrigatório): 5–8 do tema, que alguém buscaria; em tema político, só nomes e assuntos (nada de hashtag de torcida).
+- A legenda é sempre para o **TikTok**.
+- `descricao` (obrigatório): 1–2 frases logo abaixo do gancho, com as palavras que alguém digitaria na busca do TikTok (o tema pelo nome, os números e os termos da fala). Só fatos que estão na fala, com as mesmas ressalvas ("falta o Senado confirmar", "é estimativa"); em tema político, neutro.
+- `hashtags` (obrigatório): 3–5 do tema, que alguém buscaria, a mais importante primeiro (se tiver mais, só as 5 primeiras entram); em tema político, só nomes e assuntos (nada de hashtag de torcida).
 - `title` (opcional): título da capa, 2–4 palavras em até 2 linhas (`\n`), que repete a tensão do gancho. Sem ele, vale o título que aparece no gancho (ou o primeiro título do vídeo).
 - `t` (opcional): segundo do quadro da capa; `media` (opcional): id da foto de pessoa, ou `false` para capa sem foto.
 
@@ -107,9 +109,9 @@ python3 tools/finalize.py videos/<slug>       # MP4 (confere tamanho, duração 
 ```
 
 - `out/<slug>-capa.jpg` (1080×1920): um quadro do gancho, sem a legenda do vídeo, com o título na faixa `headline`; a câmera mantém o ângulo e enquadra os objetos do gancho no palco abaixo do título. Se o vídeo tem cartão de pessoa (overlay `photo` com `name`), a foto entra na capa num cartão com nome e crédito. O título precisa caber no recorte 3:4 do perfil (o `capa.cjs` reprova se não couber).
-- `out/<slug>-post.md`: legenda pronta — gancho e pergunta final do `brief.yaml`, o CTA do vídeo, avisos da tela ("Não é recomendação de investimento."), as hashtags, **Fontes** (só as linhas do `fatos.md` que entraram na fala: status `OK` sem "fora da fala") e **Fotos** (crédito e link de `video.json → media`). Se passar de 2.200 caracteres (Instagram), as fontes vão por nome na legenda e os links em comentários para fixar.
-- **Olhar a capa** (Read) antes de entregar: título legível, objeto inteiro, quadro que conta o gancho sem som. Não gostou? Ajustar `post.title`/`post.t` e refazer só capa e legenda: `python3 tools/finalize.py videos/<slug> --post-only`.
-- Mac: o `finalize` copia MP4, capa e post para `~/Movies/reels`.
+- `out/<slug>-post.md`: legenda pronta para o TikTok — gancho, `descricao`, pergunta final, o CTA do vídeo, avisos da tela ("Não é recomendação de investimento."), as hashtags, **Fontes** pelo nome (só as linhas do `fatos.md` que entraram na fala: status `OK` sem "fora da fala") e **Fotos** (crédito). No TikTok link não é clicável e comentário vai até 150 caracteres: os links das fontes e fotos ficam abaixo da legenda, no arquivo, para conferir e responder comentários.
+- **Olhar a capa** (Read) antes de entregar: título legível, objeto inteiro, quadro que conta o gancho sem som. Não gostou? Ajustar `post.title`/`post.t`/`post.descricao` e refazer só capa e legenda: `python3 tools/finalize.py videos/<slug> --post-only`.
+- Mac: o `finalize` copia MP4, capa e post para `~/Movies/reels`; enviar também os três no chat com SendUserFile, para o Samuel ver por ali.
 - Nuvem: enviar os três com SendUserFile e, se o computador estiver ligado ao chat, gravar em `~/Movies/reels` (limite de 30 MB por arquivo: recomprimir o MP4 com `ffmpeg -c:v libx264 -crf 23 -preset veryfast -c:a copy` se passar).
 
 ## 11. Guardar no kit
