@@ -1,0 +1,16 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-31-master-lula-bolsonaro
+tema: "Quem realmente está atrelado ao caso Banco Master? As ligações de Lula e de Bolsonaro com Daniel Vorcaro, da compra do Banco Máxima (2017) à liquidação e às delações recusadas (tom neutro, os dois lados com as negativas, fontes na tela)"
+referencias_visuais: []
+
+hook:
+  origem: 6
+  texto: "E se eu te dissesse que tanto Lula quanto Bolsonaro estão ligados ao Vorcaro?"
+  nota: "texto do Samuel; 'disse' corrigido para 'dissesse'; 14 palavras (acima das 8–12), mantido a pedido"
+
+pergunta_final:
+  origem: 2
+  texto: "Vorcaro deveria ganhar delação pra contar tudo, ou ficar preso sem acordo nenhum?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-31
