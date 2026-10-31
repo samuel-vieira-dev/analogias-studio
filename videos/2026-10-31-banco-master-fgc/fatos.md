@@ -1,6 +1,6 @@
 # Fatos — Banco Master, FGC e o bolso de quem nunca foi cliente (31/10/2026)
 
-| # | Fato | Dado | Fonte (link) | Status |
+| # | Fato | Dado | Fonte | Status |
 | --- | --- | --- | --- | --- |
 | 1 | Liquidação do Banco Master pelo BC | 18/11/2025, decreto assinado por Gabriel Galípolo | [Migalhas, 18/11/2025](https://www.migalhas.com.br/quentes/444659/banco-central-decreta-liquidacao-extrajudicial-do-banco-master) · [Metrópoles, 27/05/2026](https://www.metropoles.com/brasil/master-baixou-liquidez-fgc-44-bilhoes) | OK |
 | 2 | Prisão do dono | Daniel Vorcaro preso pela PF em 17/11/2025 no aeroporto de Guarulhos, prestes a embarcar num jato particular (Falcon 7X) | [Wikipedia (en)](https://en.wikipedia.org/wiki/Daniel_Vorcaro) · [Forbes Brasil](https://forbes.com.br/forbes-money/2025/11/banco-central-liquida-banco-master-e-policia-federal-prende-daniel-vorcaro/) · [Trademap/PF](https://trademap.com.br/noticias/news-8291972) | OK |
