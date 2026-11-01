@@ -190,7 +190,7 @@ function makeCloche({ r = 0.15 } = {}) {
 function banknoteTex(value = "100", tint = "#4f7f9a") {
   const c = makeCanvas(512, 240), x = c.getContext("2d");
   const gr = x.createLinearGradient(0, 0, 512, 240); gr.addColorStop(0, "#e9eee6"); gr.addColorStop(1, "#d5e0da"); x.fillStyle = gr; x.fillRect(0, 0, 512, 240);
-  x.fillStyle = tint; x.globalAlpha = 0.55; x.fillRect(0, 0, 512, 240); x.globalAlpha = 1;
+  x.fillStyle = tint; x.globalAlpha = 0.72; x.fillRect(0, 0, 512, 240); x.globalAlpha = 1;
   x.strokeStyle = "rgba(255,255,255,0.35)"; x.lineWidth = 1.2;
   for (let i = 0; i < 26; i++) { x.beginPath(); x.ellipse(150, 120, 20 + i * 5, 12 + i * 4, i * 0.12, 0, Math.PI * 2); x.stroke(); }
   x.strokeStyle = "rgba(0,0,0,0.25)"; x.lineWidth = 6; x.strokeRect(10, 10, 492, 220);
@@ -200,12 +200,18 @@ function banknoteTex(value = "100", tint = "#4f7f9a") {
 }
 const NOTE100 = banknoteTex("100", "#3f6f86");
 // Bundle of banknotes with a paper band. Origin: bottom centre (lies flat).
+// Edge of a stack of notes: thin sheets in the note's tint, lighter and darker, slightly uneven.
+const NOTE_EDGE = (() => {
+  const c = makeCanvas(64, 128), x = c.getContext("2d"), r = mulberry32(41);
+  for (let y = 0; y < 128; y += 3) { const v = r(); x.fillStyle = v < 0.45 ? "#7fa3ae" : v < 0.85 ? "#a9c4c6" : "#e4ece6"; x.fillRect(0, y, 64, 3); x.fillStyle = "rgba(20,40,50,0.25)"; x.fillRect(0, y + 2, 64, 1); }
+  return texFrom(c);
+})();
+// Bundle of banknotes with a paper band: the top note's face, the sheets showing on the edges.
 function makeCashBundle({ w = 0.17, d = 0.078, h = 0.035 } = {}) {
   const g = new THREE.Group();
-  const edge = noiseTex({ w: 64, h: 64, base: "#dde4dc", amount: 0.4, size: 1, seed: 41 });
-  const side = pmat("#dfe6de", { map: edge, roughness: 0.9 }), face = pmat("#ffffff", { map: NOTE100, roughness: 0.75 });
+  const side = pmat("#ffffff", { map: NOTE_EDGE, roughness: 0.85 }), face = pmat("#ffffff", { map: NOTE100, roughness: 0.75 });
   const stack = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), [side, side, face, side, side, side]); stack.position.y = h / 2; g.add(stack);
-  const band = new THREE.Mesh(new THREE.BoxGeometry(0.03, h + 0.003, d + 0.003), pmat("#efe2b8", { roughness: 0.7 })); band.position.y = h / 2; g.add(band);
+  const band = new THREE.Mesh(new THREE.BoxGeometry(Math.max(0.03, w * 0.16), h + 0.003, d + 0.003), pmat("#c99a4a", { roughness: 0.6 })); band.position.y = h / 2; g.add(band);
   return g;
 }
 // Gold coin lying flat (realistic: metal with a reeded edge). Origin: bottom centre.

@@ -18,7 +18,7 @@ Misturar é o melhor dos dois: a foto mostra **o quê**, o 3D explica **como** (
 | Estilo | Quando | Como (`engine/props/media.js`, overlay `photo`) |
 | --- | --- | --- |
 | **Quadro de investigação** | várias pessoas ou fatos ligados: quem é quem, quem levou a quem, cronologia | `makeCorkBoard` + `makePhotoPrint` (polaroid com legenda e alfinete) + `dropPrint` + `makeString` (fio vermelho) |
-| **Porta-retrato no palco** | uma foto que é o assunto do momento (o avião, um lugar, um documento) | `makePhotoFrame` (moldura sobre um pedestal com plaquinha de nome) |
+| **Porta-retrato no palco** | uma foto que é o assunto do momento (o avião, um lugar, um documento) | `makePhotoFrame` (moldura sobre um pedestal com plaquinha de nome; `shape: 1.9` mantém uma foto larga inteira quando o que importa está nas bordas, como a faixa de um evento) |
 | **Cartão 2D** | rosto + nome + cargo na primeira menção de uma pessoa; trocas rápidas entre pessoas | overlay `{ "kind": "photo", "media": "<id>", "name": "...", "role": "..." }` na zona `stage` |
 
 Nada fica parado: a polaroid cai girando e é presa, o fio vermelho se desenha, a moldura gira e pousa, o cartão entra inclinado e flutua, e **toda foto aproxima devagar** (zoom de 10–16% no plano inteiro: `zoom(k)` nos objetos 3D, automático no cartão). A câmera nunca para. O QA reprova 2 s sem nada se mexer (`plano_parado`).

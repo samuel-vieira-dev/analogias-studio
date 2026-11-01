@@ -1,6 +1,6 @@
 // ============================================================================
 // props/civic.js · week strip, street sign + sub-plate, law book + stamp, hour column,
-//                  folder, crowd, offshore platform, sea, house
+//                  folder, crowd, offshore platform, sea, house, hourglass, certificate, ink mark
 // ============================================================================
 
 // A week as 7 day blocks on a rail. Work days are orange, days off green with a FOLGA plate.
@@ -260,4 +260,84 @@ function makeHouse({ w = 1.1, h = 0.8, d = 0.9, roofH = 0.5, wall = "#f4e8da", r
   if (label) { const p = makePlate(label, w * 0.5, roofH * 0.26, { bg: "#141414", fg: "#ffffff" }); p.position.set(0, h + roofH * 0.3, d / 2 + 0.016); g.add(p); }
   g.add(contactShadow(w + 0.7, d + 0.7));
   return g;
+}
+
+// Hourglass: two blown-glass bulbs between turned wooden caps on three posts; the sand drains from
+// the top bulb through the neck into a growing cone below. Origin: bottom centre.
+// API { group, set(k), h, r } — k 0 = all the sand on top, 1 = all of it below.
+function makeHourglass({ h = 0.7 } = {}) {
+  const g = new THREE.Group(), cap = h * 0.075, bh = (h - 2 * cap) / 2, R = h * 0.2, neck = h * 0.016, mid = h / 2;
+  const wood = pmat("#ffffff", { map: woodTex("#5a3520"), roughness: 0.42, clearcoat: 0.5 });
+  for (const y of [cap / 2, h - cap / 2]) { const c = new THREE.Mesh(new THREE.CylinderGeometry(R * 1.28, R * 1.28, cap, 48), wood); c.position.y = y; g.add(c); }
+  for (let i = 0; i < 3; i++) { const a = i * 2 * Math.PI / 3 + 0.5; const p = new THREE.Mesh(new THREE.CylinderGeometry(R * 0.075, R * 0.075, h - 2 * cap, 14), wood); p.position.set(Math.cos(a) * R * 1.12, mid, Math.sin(a) * R * 1.12); g.add(p); }
+  // bulb radius at s (0 = neck, 1 = cap)
+  const rad = (s) => neck + (R - neck) * Math.pow(Math.sin(Math.PI / 2 * Math.min(1, s / 0.62)), 0.75) * (s > 0.86 ? lerp(1, 0.82, (s - 0.86) / 0.14) : 1);
+  const prof = []; for (let i = 0; i <= 24; i++) { const s = i / 24; prof.push(new THREE.Vector2(rad(s), -bh * s)); }
+  const half = new THREE.LatheGeometry(prof, 48);
+  const gm = glassMat({ opacity: 0.18 });
+  const lower = new THREE.Mesh(half, gm); lower.position.y = mid; g.add(lower);
+  const upper = new THREE.Mesh(half, gm); upper.position.y = mid; upper.rotation.x = Math.PI; g.add(upper);
+  const sandM = pmat("#d9b26c", { roughness: 0.95, map: noiseTex({ base: "#d9b26c", amount: 0.12, size: 1.2, seed: 19 }) });
+  // top sand: a funnel resting on the neck (radius follows the bulb); bottom sand: a cone on the cap
+  const topSand = new THREE.Mesh(new THREE.CylinderGeometry(1, 0.04, 1, 40, 1), sandM); g.add(topSand);
+  const botSand = new THREE.Mesh(new THREE.ConeGeometry(1, 1, 40, 1), sandM); g.add(botSand);
+  const stream = new THREE.Mesh(new THREE.CylinderGeometry(neck * 0.5, neck * 0.5, 1, 8), sandM); g.add(stream);
+  const set = (k) => {
+    k = clamp(k);
+    const ft = Math.pow(1 - k, 0.7) * 0.72, fb = Math.pow(k, 0.7) * 0.62;   // fraction of each bulb's height
+    topSand.visible = ft > 0.01; topSand.scale.set(rad(ft) * 0.9, bh * ft, rad(ft) * 0.9); topSand.position.y = mid + bh * ft / 2 + 0.004;
+    botSand.visible = fb > 0.01; botSand.scale.set(R * 0.76, bh * fb, R * 0.76); botSand.position.y = cap + bh * fb / 2;
+    const top = cap + bh * fb, run = k > 0.01 && k < 0.99; stream.visible = run;
+    stream.scale.y = Math.max(0.001, mid - top); stream.position.y = (mid + top) / 2;
+  };
+  set(0);
+  g.add(contactShadow(R * 4, R * 4));
+  return { group: g, set, h, r: R * 1.28 };
+}
+
+// Official sheet lying flat: paper with ruled body text, a double border, a printed title plate and a
+// gold seal with two ribbon tails. Origin: centre of the paper's underside; the face is +y.
+// API { group, top, title }
+function makeCertificate(title = "LICENÇA", { w = 1.3, d = 1.7, paper = "#f2ece0", seal = true } = {}) {
+  const g = new THREE.Group(), T = 0.012;
+  const c = makeCanvas(512, Math.round(512 * d / w)), x = c.getContext("2d"), H = c.height;
+  x.fillStyle = paper; x.fillRect(0, 0, 512, H);
+  x.strokeStyle = "#8a6a3a"; x.lineWidth = 6; x.strokeRect(18, 18, 476, H - 36); x.lineWidth = 2; x.strokeRect(30, 30, 452, H - 60);
+  x.fillStyle = "rgba(60,50,40,0.28)"; for (let y = H * 0.3; y < H * 0.78; y += 26) x.fillRect(64, y, 384 - ((y * 7) % 90), 7);
+  x.strokeStyle = "rgba(30,30,60,0.55)"; x.lineWidth = 3; x.beginPath(); x.moveTo(90, H * 0.88); x.bezierCurveTo(130, H * 0.84, 150, H * 0.92, 190, H * 0.87); x.bezierCurveTo(215, H * 0.84, 230, H * 0.9, 260, H * 0.86); x.stroke();
+  const tex = texFrom(c), pm = pmat(paper, { roughness: 0.92 }), face = pmat("#ffffff", { map: tex, roughness: 0.9 });
+  const sheet = new THREE.Mesh(new THREE.BoxGeometry(w, T, d), [pm, pm, face, pm, pm, pm]); sheet.position.y = T / 2; g.add(sheet);
+  const tp = makePlate(title, w * 0.8, d * 0.16, { bg: paper, fg: "#2a1d12", depth: 0.002 }); tp.rotation.x = -Math.PI / 2; tp.position.set(0, T + 0.001, -d * 0.32); g.add(tp);
+  if (seal) {
+    const sx = w * 0.27, sz = d * 0.3;
+    for (const s of [-1, 1]) { const rb = new THREE.Mesh(rbox(0.07, 0.006, 0.26, 0.003), pmat("#9b1c1c", { roughness: 0.6 })); rb.position.set(sx + s * 0.05, T + 0.004, sz + 0.14); rb.rotation.y = s * 0.3; g.add(rb); }
+    const disc = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.025, 40), pmat(GOLD_METAL, { metalness: 1, roughness: 0.28 })); disc.position.set(sx, T + 0.0125, sz); g.add(disc);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(0.12, 0.012, 8, 40), pmat(GOLD_METAL, { metalness: 1, roughness: 0.35 })); rim.rotation.x = -Math.PI / 2; rim.position.set(sx, T + 0.027, sz); g.add(rim);
+  }
+  g.add(contactShadow(w + 0.3, d + 0.3));
+  return { group: g, top: T, title: tp };
+}
+
+// Rubber-stamp mark printed on a surface: worn ink inside a double border; one line or two (\n). The plane faces +z (lay it
+// flat with rotation.x = -PI/2). Registered as printed text for the QA (userData.plate).
+// API: the mesh; fade it with mesh.material.opacity.
+function makeInkMark(text, w, h, { ink = "#c8231a", seed = 7 } = {}) {
+  const ph = 256, pw = Math.max(64, Math.round(ph * w / h)), c = makeCanvas(pw, ph), x = c.getContext("2d");
+  x.strokeStyle = ink; x.fillStyle = ink;
+  x.lineWidth = ph * 0.07; roundRect(x, ph * 0.05, ph * 0.05, pw - ph * 0.1, ph * 0.9, ph * 0.1); x.stroke();
+  x.lineWidth = ph * 0.025; roundRect(x, ph * 0.15, ph * 0.15, pw - ph * 0.3, ph * 0.7, ph * 0.06); x.stroke();
+  // one or two lines ("PRAZO\nVENCIDO"): the font shrinks until every line fits the inner border
+  const lines = text.split("\n"), lh = 1.08;
+  let px = Math.round(ph * (lines.length > 1 ? 0.3 : 0.46)); x.font = `900 ${px}px Inter`;
+  while ((Math.max(...lines.map((l) => x.measureText(l).width)) > pw - ph * 0.5 || px * lh * lines.length > ph * 0.62) && px > 8) { px -= 2; x.font = `900 ${px}px Inter`; }
+  x.textAlign = "center"; x.textBaseline = "middle";
+  lines.forEach((l, i) => x.fillText(l, pw / 2, ph / 2 + px * 0.05 + (i - (lines.length - 1) / 2) * px * lh));
+  // worn ink: specks and streaks lifted out of the print
+  x.globalCompositeOperation = "destination-out"; const r = mulberry32(seed);
+  for (let i = 0; i < pw * 3; i++) { x.fillStyle = `rgba(0,0,0,${0.35 + r() * 0.65})`; x.fillRect(r() * pw, r() * ph, 1 + r() * 4, 1 + r() * 3); }
+  for (let i = 0; i < 6; i++) { x.fillStyle = "rgba(0,0,0,0.25)"; x.fillRect(r() * pw, 0, 3 + r() * 10, ph); }
+  const tex = texFrom(c);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ map: tex, transparent: true, depthWrite: false, toneMapped: false, polygonOffset: true, polygonOffsetFactor: -2 }));
+  m.userData.plate = { text, w, h, depth: 0, frac: px / ph, detail: false };
+  return m;
 }

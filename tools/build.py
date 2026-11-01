@@ -265,7 +265,7 @@ def build_overlays(layout, channel, video, media):
     #root .num {{ color:{st['laranja']}; font-variant-numeric:tabular-nums; }}
     #root .lbl span, #root .chip {{ display:inline-block; font-weight:800; font-size:34px; padding:10px 22px; border-radius:16px; letter-spacing:0.05em; }}
     #root .lbl {{ margin-top:10px; }} #root .lbl span {{ background:{st['vermelho']}; }}
-    #root .chip-dark {{ background:rgba(20,13,9,0.9); }} #root .chip-orange {{ background:{st['laranja']}; color:{st['fundo']}; font-weight:900; font-size:48px; }} #root .chip-red {{ background:{st['vermelho']}; }}
+    #root .chip-dark {{ background:rgba(20,13,9,0.9); }} #root .chip-orange {{ background:{st['laranja']}; color:{st['fundo']}; font-weight:900; font-size:48px; }} #root .chip-red {{ background:{st['vermelho']}; }} #root .chip-green {{ background:{st['verde']}; }}
     #root .q {{ font-weight:900; font-size:92px; line-height:1.0; letter-spacing:-0.03em; text-shadow:0 8px 30px rgba(0,0,0,0.6); }}
     #root .sub {{ margin-top:14px; }} #root .sub span {{ display:inline-block; background:rgba(20,13,9,0.9); color:{st['laranja']}; font-weight:800; font-size:36px; padding:10px 22px; border-radius:16px; }}
     #root .src {{ display:inline-block; font-weight:600; font-size:28px; line-height:1.25; color:rgba(255,255,255,0.8); background:rgba(20,13,9,0.55); padding:6px 12px; border-radius:10px; white-space:nowrap; }}

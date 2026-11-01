@@ -31,8 +31,10 @@ function makePhotoPlane(id, w, h) {
   zoom(1);
   return { mesh, zoom };
 }
-// Aspect for a photo: "retrato" 3:4, "paisagem" 4:3, "quadrado" 1:1, or from the image itself.
+// Aspect for a photo: "retrato" 3:4, "paisagem" 4:3, "quadrado" 1:1, a number (w/h, e.g. 1.9 for a wide
+// photo whose edges matter), or from the image itself.
 function photoAspect(id, shape) {
+  if (typeof shape === "number") return shape;
   if (shape === "retrato") return 3 / 4; if (shape === "paisagem") return 4 / 3; if (shape === "quadrado") return 1;
   const ph = PHOTO[id]; return ph.w / ph.h > 1.15 ? 4 / 3 : ph.w / ph.h < 0.87 ? 3 / 4 : 1;
 }

@@ -1,0 +1,24 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-31-proibicao-bets
+tema: "A liberação e a posterior proibição das bets no Brasil"
+referencias_visuais: []
+
+hook:
+  origem: 4   # contradição
+  texto: "O mesmo governo que regulamentou as bets mandou fechar todas elas."
+
+pergunta_final:
+  origem: 1
+  texto: "E pra você: proibir as bets protege as famílias… ou só empurra o apostador pro site ilegal?"
+
+analogia: "Medida provisória = pênalti marcado esperando o VAR: já vale, mas o VAR (o Congresso) confirma ou anula; se não decidir a tempo, a proibição cai. E o VAR nem foi ligado (a comissão mista não começou)."
+
+pedidos_roteiro:
+  - "#7: dizer 'as casas de bets ficaram com trinta e sete bilhões de reais'"
+  - "Trocar a analogia do síndico/piscina por uma mais clara (virou o VAR)"
+  - "#15 mais lúcido: o que o governo espera × o risco"
+
+cuidado_de_data: "Comissão mista 'aguardando instalação' (29/10) e audiência do Fux (3/11) valem até 31/10/2026; se postar depois de 3/11, conferir."
+
+duracao_alvo_s: 90
+aprovado_em: 2026-10-31
