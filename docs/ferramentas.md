@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 1 | Pesquisa e checagem | busca na web (WebSearch/WebFetch) | `fatos.md` |
 | 2 | Hooks, pergunta, roteiro, aprovação | Claude + `docs/roteiro.md` | `brief.yaml`, `roteiro.md`, `narracao.txt` |
-| 3 | Narração | conector **ElevenLabs** | `audio/takes/*.mp3` |
+| 3 | Narração (ou trilha, no vídeo sem narração) | conector **ElevenLabs** (voz; ElevenLabs Music) | `audio/takes/*.mp3` (`audio/music.mp3`) |
 | 4 | Escolha do take | `tools/transcribe.py` (faster-whisper, local) | take escolhido |
 | 5 | Aperto de pausas e ritmo | `tools/tighten.py` | `audio/narration.wav` |
 | 6 | Tempo de cada palavra | `tools/transcribe.py --out` | `audio/words.json` |
@@ -29,7 +29,7 @@
 
 - `tools/transcribe.py`: faster-whisper `medium` (int8, CPU). Com `--ref narracao.txt` dá a nota de cada take (0–1) e as palavras que mudaram; escolhe o melhor.
 - `tools/tighten.py`: corta pausas longas (mantém 0,22 s entre frases curtas e 0,36 s nas pausas longas) e acelera até ×1,06 se precisar caber no alvo (duração − 2 s de cauda).
-- `tools/mix.py`: voz + efeitos do pacote do HyperFrames (`whoosh`, `impact-bass`, `pop`, `click`, `riser`, `ping`…) nos tempos do `video.json`; normaliza em duas passadas para −14 LUFS e pico −1,5 dBTP (padrão de Reels/TikTok/Shorts). Sem música: a trilha entra no app, na hora de postar.
+- `tools/mix.py`: voz + efeitos do pacote do HyperFrames (`whoosh`, `impact-bass`, `pop`, `click`, `riser`, `ping`…) nos tempos do `video.json`; normaliza em duas passadas para −14 LUFS e pico −1,5 dBTP (padrão de Reels/TikTok/Shorts). Vídeo narrado: sem música (a trilha entra no app, na hora de postar). Vídeo sem narração: `audio.music` (trilha do ElevenLabs Music, `music_db`, `music_fade`) no lugar da voz; sem `audio.words`, o `build.py` não faz legenda (SKILL.md → Variante sem narração).
 
 ## HyperFrames e 3D
 

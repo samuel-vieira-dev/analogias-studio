@@ -13,7 +13,8 @@ Caption (TikTok), in order:
   - notices shown on screen that are not sources ("Não é recomendação de investimento.")
   - the first 5 hashtags of video.json → post.hashtags (TikTok: 3–5)
   - Fontes: the names of the sources of the fatos.md rows that made it into the narration
-    (status starting with OK and without "fora da fala"); Fotos: the credit of every photo
+    (status starting with OK and without "fora da fala"; in a video without narration, "fora da
+    tela"); Fotos: the credit of every photo
 TikTok links are not clickable and comments stop at 150 characters, so the links of the sources
 and photos go below the caption in the file, for checking and for answering comments.
 """
@@ -68,7 +69,7 @@ def fontes(md):
             out.append((name, url))
 
     for src, status in rows:
-        if not status.upper().startswith("OK") or "fora da fala" in status.lower():
+        if not status.upper().startswith("OK") or "fora da fala" in status.lower() or "fora da tela" in status.lower():
             continue
         for n, u in LINK.findall(src):
             add(n, u)

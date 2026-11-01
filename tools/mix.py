@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
-"""Mix narration + sound effects and normalise for Reels/TikTok/Shorts.
+"""Mix narration + music + sound effects and normalise for Reels/TikTok/Shorts.
 
 usage: python3 tools/mix.py videos/<slug>
 
-Reads   videos/<slug>/audio/narration.wav, videos/<slug>/video.json ("sfx": [[t, file, gain_db], ...])
+Reads   videos/<slug>/video.json → audio.narration (optional: a video without narration has none),
+        audio.music (optional: a music bed; audio.music_db its gain, default 0 with no narration and
+        -18 under a voice; audio.music_fade the fade-out at the end in s, default 2.5),
+        "sfx": [[t, file, gain_db], ...]
         sound files from the HyperFrames CLI bundle (free; see CREDITS.md next to them)
 Writes  videos/<slug>/audio/mix.wav  48 kHz stereo, two-pass loudnorm to channel.yaml audio.lufs
         (default -14 LUFS) and audio.true_peak (default -1.5 dBTP), padded to video.duration.
@@ -40,13 +43,23 @@ def main():
     audio_cfg = yaml.safe_load((ROOT / "channel.yaml").read_text()).get("audio", {})
     lufs, tp = audio_cfg.get("lufs", -14), audio_cfg.get("true_peak", -1.5)
     dur = float(video["duration"])
-    narration = vdir / video["audio"]["narration"]
+    acfg = video.get("audio") or {}
     sdir = sfx_dir()
     if not sdir:
         sys.exit("sound effects not found: run tools/setup.sh (npm install puts hyperframes in node_modules)")
 
+    n = int(dur * SR)
+    mix = np.zeros((n, 2), dtype=np.float32)
     # 1) voice: even level, padded to the video length
-    mix = decode(narration, f"loudnorm=I={lufs - 1}:TP=-2:LRA=7,apad=whole_dur={dur}")[: int(dur * SR)]
+    if acfg.get("narration"):
+        v = decode(vdir / acfg["narration"], f"loudnorm=I={lufs - 1}:TP=-2:LRA=7,apad=whole_dur={dur}")[:n]
+        mix[: len(v)] += v
+    # 1b) music bed: fitted to the video length, faded out at the end
+    if acfg.get("music"):
+        fade = float(acfg.get("music_fade", 2.5))
+        db = float(acfg.get("music_db", -18 if acfg.get("narration") else 0))
+        m = decode(vdir / acfg["music"], f"loudnorm=I={lufs - 1}:TP=-2:LRA=11,apad=whole_dur={dur},afade=t=in:d=0.05,afade=t=out:st={max(0, dur - fade)}:d={fade}")[:n]
+        mix[: len(m)] += m * (10 ** (db / 20))
     # 2) sound effects at their times
     cache = {}
     for t, f, db in video.get("sfx", []):
@@ -74,7 +87,7 @@ def main():
     raw.unlink(missing_ok=True)
     if r.returncode:
         sys.exit(r.stderr[-800:])
-    print(f"mix: {len(video.get('sfx', []))} efeitos, {js['input_i']} LUFS → {lufs} LUFS, pico {tp} dBTP → {out.relative_to(ROOT)}")
+    print(f"mix: {'voz + ' if acfg.get('narration') else ''}{'música + ' if acfg.get('music') else ''}{len(video.get('sfx', []))} efeitos, {js['input_i']} LUFS → {lufs} LUFS, pico {tp} dBTP → {out.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

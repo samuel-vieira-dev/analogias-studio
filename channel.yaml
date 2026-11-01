@@ -32,7 +32,7 @@ estilo:
 audio:
   lufs: -14
   true_peak: -1.5
-  musica: false                   # sem trilha: o Instagram permite adicionar na postagem
+  musica: false                   # vídeo narrado: sem trilha (o app adiciona na postagem); vídeo sem narração: trilha do ElevenLabs Music (video.json → audio.music)
 
 entrega:
   mac: "~/Movies/reels"           # pasta Filmes/reels

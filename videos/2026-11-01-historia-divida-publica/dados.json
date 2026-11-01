@@ -1,0 +1,755 @@
+{
+ "_doc": "Dívida pública bruta do Brasil em % do PIB. 1880–2023: FMI, Public Finances in Modern History Database (dez/2025, indicador 'd'); 2024–2028: FMI, World Economic Outlook (out/2026, GGXWDG_NGDP; 2026+ é projeção). 1914–1922 sem dados na série. Baixado em 01/11/2026 da API do FMI DataMapper.",
+ "anos": [
+  {
+   "ano": 1880,
+   "pib": 99.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1881,
+   "pib": 105.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1882,
+   "pib": 107.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1883,
+   "pib": 93.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1884,
+   "pib": 120.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1885,
+   "pib": 107.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1886,
+   "pib": 99.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1887,
+   "pib": 107.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1888,
+   "pib": 103.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1889,
+   "pib": 105,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1890,
+   "pib": 101.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1891,
+   "pib": 69.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1892,
+   "pib": 86.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1893,
+   "pib": 64.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1894,
+   "pib": 63.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1895,
+   "pib": 75.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1896,
+   "pib": 72.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1897,
+   "pib": 68.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1898,
+   "pib": 60.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1899,
+   "pib": 62.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1900,
+   "pib": 54.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1901,
+   "pib": 66.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1902,
+   "pib": 62.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1903,
+   "pib": 66.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1904,
+   "pib": 59,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1905,
+   "pib": 60.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1906,
+   "pib": 50.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1907,
+   "pib": 45.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1908,
+   "pib": 47.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1909,
+   "pib": 42.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1910,
+   "pib": 39.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1911,
+   "pib": 35.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1912,
+   "pib": 34.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1913,
+   "pib": 37.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1914,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1915,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1916,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1917,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1918,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1919,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1920,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1921,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1922,
+   "pib": null,
+   "fonte": null
+  },
+  {
+   "ano": 1923,
+   "pib": 56.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1924,
+   "pib": 48.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1925,
+   "pib": 39.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1926,
+   "pib": 45.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1927,
+   "pib": 52.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1928,
+   "pib": 40.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1929,
+   "pib": 46.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1930,
+   "pib": 59.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1931,
+   "pib": 75.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1932,
+   "pib": 73.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1933,
+   "pib": 93.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1934,
+   "pib": 81.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1935,
+   "pib": 85.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1936,
+   "pib": 71.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1937,
+   "pib": 61.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1938,
+   "pib": 60.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1939,
+   "pib": 55.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1940,
+   "pib": 56.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1941,
+   "pib": 50.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1942,
+   "pib": 42.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1943,
+   "pib": 37.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1944,
+   "pib": 29.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1945,
+   "pib": 26.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1946,
+   "pib": 18.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1947,
+   "pib": 13.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1948,
+   "pib": 10.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1949,
+   "pib": 9.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1950,
+   "pib": 9.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1951,
+   "pib": 6.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1952,
+   "pib": 5.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1953,
+   "pib": 14.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1954,
+   "pib": 14.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1955,
+   "pib": 17.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1956,
+   "pib": 34.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1957,
+   "pib": 22.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1958,
+   "pib": 30.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1959,
+   "pib": 24.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1960,
+   "pib": 22.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1961,
+   "pib": 25.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1962,
+   "pib": 23.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1963,
+   "pib": 20.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1964,
+   "pib": 22.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1965,
+   "pib": 17.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1966,
+   "pib": 19.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1967,
+   "pib": 13.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1968,
+   "pib": 15.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1969,
+   "pib": 16.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1970,
+   "pib": 17.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1971,
+   "pib": 17.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1972,
+   "pib": 22.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1973,
+   "pib": 22.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1974,
+   "pib": 25.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1975,
+   "pib": 27.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1976,
+   "pib": 31.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1977,
+   "pib": 31.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1978,
+   "pib": 37.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1979,
+   "pib": 36.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1980,
+   "pib": 39.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1981,
+   "pib": 34.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1982,
+   "pib": 32.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1983,
+   "pib": 51.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1984,
+   "pib": 55.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1985,
+   "pib": 52.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1986,
+   "pib": 49.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1987,
+   "pib": 50.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1988,
+   "pib": 46.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1989,
+   "pib": 40.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1990,
+   "pib": 40.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1991,
+   "pib": 38.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1992,
+   "pib": 37.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1993,
+   "pib": 32.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1994,
+   "pib": 30,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1995,
+   "pib": 28,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1996,
+   "pib": 30.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1997,
+   "pib": 31.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1998,
+   "pib": 38.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 1999,
+   "pib": 44.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2000,
+   "pib": 62.2,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2001,
+   "pib": 67.3,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2002,
+   "pib": 76.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2003,
+   "pib": 71.5,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2004,
+   "pib": 68.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2005,
+   "pib": 67.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2006,
+   "pib": 64.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2007,
+   "pib": 63.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2008,
+   "pib": 61.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2009,
+   "pib": 64.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2010,
+   "pib": 62.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2011,
+   "pib": 60.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2012,
+   "pib": 61.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2013,
+   "pib": 59.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2014,
+   "pib": 61.6,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2015,
+   "pib": 71.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2016,
+   "pib": 77.4,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2017,
+   "pib": 82.7,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2018,
+   "pib": 84.8,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2019,
+   "pib": 87.1,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2020,
+   "pib": 96.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2021,
+   "pib": 88.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2022,
+   "pib": 83.9,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2023,
+   "pib": 84.0,
+   "fonte": "FMI-PFMH"
+  },
+  {
+   "ano": 2024,
+   "pib": 87,
+   "fonte": "FMI-WEO",
+   "projecao": false
+  },
+  {
+   "ano": 2025,
+   "pib": 93.3,
+   "fonte": "FMI-WEO",
+   "projecao": false
+  },
+  {
+   "ano": 2026,
+   "pib": 97,
+   "fonte": "FMI-WEO",
+   "projecao": true
+  },
+  {
+   "ano": 2027,
+   "pib": 99.3,
+   "fonte": "FMI-WEO",
+   "projecao": true
+  },
+  {
+   "ano": 2028,
+   "pib": 101.3,
+   "fonte": "FMI-WEO",
+   "projecao": true
+  }
+ ]
+}

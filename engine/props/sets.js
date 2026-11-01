@@ -184,3 +184,140 @@ function makeOfficeSet({ wallZ = -1.3, clear = 10, ceil = 6.4, depth = 40, wall 
     lights(k) { panelMat.color.copy(panelBase).multiplyScalar(k); pools.forEach((p) => { p.material.opacity = 0.07 * k; }); },
   };
 }
+
+// Brick wall texture (warm red-brown bricks, dark mortar, a little soot). Repeat 1 tile ≈ 1.2 × 0.6 m.
+function setBrickTex() {
+  return cachedTex("set-brick", () => {
+    const c = makeCanvas(256, 128), x = c.getContext("2d"), r = mulberry32(41); x.fillStyle = "#2a1c16"; x.fillRect(0, 0, 256, 128);
+    for (let row = 0; row < 8; row++) for (let col = -1; col < 5; col++) {
+      const bx = col * 64 + (row % 2) * 32 + 2, by = row * 16 + 2, v = 0.75 + r() * 0.35;
+      x.fillStyle = `rgb(${Math.round(120 * v)},${Math.round(62 * v)},${Math.round(44 * v)})`; x.fillRect(bx, by, 60, 12);
+    }
+    speckle(x, 256, 128, 43, 1800, 0.12, 0.05, 1.5);
+    const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+  });
+}
+// Tall wooden bookcase full of leather-bound ledgers with gold bands on the spines (the "Grande Livro"
+// of an old treasury archive). Origin: floor centre, back against the wall; faces +z. Instanced books.
+function makeLedgerShelf({ w = 2.2, h = 4.4, d = 0.5, levels = 6, seed = 8 } = {}) {
+  const g = new THREE.Group(), r = mulberry32(seed);
+  const wood = pmat("#ffffff", { map: woodTex("#3a2416"), roughness: 0.5, clearcoat: 0.25 });
+  for (const sx of [-1, 1]) { const s = new THREE.Mesh(rbox(0.07, h, d, 0.012), wood); s.position.set(sx * (w / 2 - 0.035), h / 2, 0); g.add(s); }
+  const top = new THREE.Mesh(rbox(w + 0.14, 0.12, d + 0.08, 0.02), wood); top.position.set(0, h + 0.06, 0.01); g.add(top);
+  const back = new THREE.Mesh(new THREE.PlaneGeometry(w - 0.1, h), mat("#1f140d", { roughness: 0.85 })); back.position.set(0, h / 2, -d / 2 + 0.01); g.add(back);
+  const gap = (h - 0.1) / levels, leathers = ["#5a1d18", "#2c3a26", "#3b2414", "#6b4a22", "#22283a", "#4a1f2c", "#5b3a1a"];
+  const books = [], bands = [];
+  for (let l = 0; l < levels; l++) {
+    const y = 0.05 + l * gap, sh = new THREE.Mesh(rbox(w - 0.1, 0.035, d - 0.04, 0.008), wood); sh.position.set(0, y, 0.01); g.add(sh);
+    for (let x = -w / 2 + 0.09; x < w / 2 - 0.16;) {
+      const bw = 0.07 + r() * 0.05, bh = gap * (0.68 + r() * 0.22);
+      if (r() > 0.05) { books.push([x + bw / 2, y + 0.0175 + bh / 2, bw - 0.008, bh, leathers[Math.floor(r() * leathers.length)]]); for (const f of [0.18, 0.78]) bands.push([x + bw / 2, y + 0.0175 + bh * f, bw - 0.006]); }
+      x += bw;
+    }
+  }
+  const leatherT = cachedTex("ledger-leather", () => noiseTex({ base: "#bdbdbd", amount: 0.22, size: 1.5, seed: 47 }));
+  const bm = new THREE.InstancedMesh(rbox(1, 1, 1, 0.08), pmat("#ffffff", { map: leatherT, roughness: 0.62, clearcoat: 0.15 }), books.length);
+  const o = new THREE.Object3D(), col = new THREE.Color();
+  books.forEach(([x, y, bw, bh, c], i) => { o.position.set(x, y, 0.02); o.scale.set(bw, bh, d * 0.74); o.updateMatrix(); bm.setMatrixAt(i, o.matrix); bm.setColorAt(i, col.set(c)); });
+  g.add(bm);
+  const gm = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 0.012, 0.01), pmat("#c9a24e", { metalness: 1, roughness: 0.3 }), bands.length);
+  bands.forEach(([x, y, bw], i) => { o.position.set(x, y, 0.02 + d * 0.37 + 0.004); o.scale.set(bw, 1, 1); o.updateMatrix(); gm.setMatrixAt(i, o.matrix); });
+  g.add(gm);
+  asBackdrop(g); return g;
+}
+// High window pane that glows (dusk sky, or the blue of a factory yard at night) with mullions.
+// Origin: centre; faces +z. API { group, mat } (tint mat.color for beats)
+function makeGlowWindow(w, h, { cols = 3, rows = 4, color = "#ffcf94", frame = "#1b1511", arch = false } = {}) {
+  const g = new THREE.Group();
+  const c = makeCanvas(64, 256), x = c.getContext("2d"), gr = x.createLinearGradient(0, 0, 0, 256);
+  gr.addColorStop(0, "#ffffff"); gr.addColorStop(1, "#8a8a8a"); x.fillStyle = gr; x.fillRect(0, 0, 64, 256);
+  const m = new THREE.MeshBasicMaterial({ map: texFrom(c), color, toneMapped: false, fog: true });
+  const pane = new THREE.Mesh(arch ? new THREE.ShapeGeometry((() => { const s = new THREE.Shape(); s.moveTo(-w / 2, -h / 2); s.lineTo(w / 2, -h / 2); s.lineTo(w / 2, h / 2 - w / 2); s.absarc(0, h / 2 - w / 2, w / 2, 0, Math.PI, false); s.lineTo(-w / 2, -h / 2); return s; })()) : new THREE.PlaneGeometry(w, h), m);
+  if (arch) { const uv = pane.geometry.attributes.uv, pos = pane.geometry.attributes.position; for (let i = 0; i < uv.count; i++) uv.setXY(i, pos.getX(i) / w + 0.5, pos.getY(i) / h + 0.5); }
+  g.add(pane);
+  const fm = mat(frame, { roughness: 0.45, metalness: 0.4 }), top = arch ? h / 2 - w / 2 : h / 2;
+  for (let i = 0; i <= cols; i++) { const b = new THREE.Mesh(new THREE.BoxGeometry(0.06, top + h / 2, 0.06), fm); b.position.set(-w / 2 + i * w / cols, (top - h / 2) / 2, 0.03); g.add(b); }
+  for (let j = 0; j <= rows; j++) { const yy = -h / 2 + j * (top + h / 2) / rows, b = new THREE.Mesh(new THREE.BoxGeometry(w, 0.06, 0.06), fm); b.position.set(0, yy, 0.03); g.add(b); }
+  asBackdrop(g); return { group: g, mat: m };
+}
+// A long hall that changes era along x, behind a timeline (charts.js → makeCoinTimeline):
+//   archive    plaster and wainscot, tall bookcases of ledgers, high arched windows of dusk light,
+//              pendant lamps (warm)
+//   industrial brick, tall steel factory windows of blue night light with beams and dust, iron
+//              columns, big enamel lamps
+//   modern     a glass curtain wall with the city at night behind it, blue LED lines on the ceiling,
+//              a polished black floor
+// eras: [{ x0, x1, kind }]. In 9:16 the wall shows above the subject and the floor below it.
+// API { group, update(t), tint(k, color) } — tint: every light of the hall (lamps, windows, LEDs) goes
+// towards `color` by k (a crisis turns the hall red; call it every frame of the beat).
+function makeEraHall(eras, { wallZ = -3.6, ceil = 10, front = 16, seed = 6 } = {}) {
+  const g = new THREE.Group(), lights = [], motes = [], extra = [];
+  const addLight = (m, base) => { lights.push({ m, base: new THREE.Color(base || m.color) }); return m; };
+  const span = (e) => e.x1 - e.x0, mid = (e) => (e.x0 + e.x1) / 2, depth = front - wallZ;
+  for (const e of eras) {
+    const L = span(e), cx = mid(e);
+    // floor
+    const floorMat = e.kind === "archive" ? mat("#ffffff", { map: tileTex(cachedTex("hall-planks", () => woodTex({ base: "#3a2618", planks: 6, w: 512, h: 512 })), L / 3, depth / 3), roughness: 0.38, envMapIntensity: 0.7 })
+      : e.kind === "industrial" ? mat("#ffffff", { map: tileTex(cachedTex("concrete", () => noiseTex({ base: "#4a4440", amount: 0.16, size: 2.5, seed: 52 })), L / 4, depth / 4), roughness: 0.7, envMapIntensity: 0.5 })
+      : pmat("#0d0e12", { roughness: 0.32, metalness: 0.15, clearcoat: 0.5, clearcoatRoughness: 0.28, envMapIntensity: 0.9 });
+    const fl = new THREE.Mesh(new THREE.PlaneGeometry(L, depth), floorMat); fl.rotation.x = -Math.PI / 2; fl.position.set(cx, 0.001, wallZ + depth / 2); g.add(fl);
+    // ceiling (seen from low shots)
+    const cl = new THREE.Mesh(new THREE.PlaneGeometry(L, depth), mat(e.kind === "modern" ? "#0d1016" : "#1c1410", { roughness: 0.95 })); cl.rotation.x = Math.PI / 2; cl.position.set(cx, ceil, wallZ + depth / 2); g.add(cl);
+    if (e.kind === "archive") {
+      const wall = new THREE.Mesh(new THREE.PlaneGeometry(L, ceil), mat("#ffffff", { map: tileTex(plasterTex("#5d4637"), L / 5, ceil / 5), roughness: 0.92 })); wall.position.set(cx, ceil / 2, wallZ); g.add(wall);
+      const wain = new THREE.Mesh(new THREE.BoxGeometry(L, 1.1, 0.06), mat("#ffffff", { map: tileTex(woodTex("#4a2f1f"), L / 3, 1), roughness: 0.5 })); wain.position.set(cx, 0.55, wallZ + 0.03); g.add(wain);
+      const cornice = new THREE.Mesh(new THREE.BoxGeometry(L, 0.25, 0.3), mat("#3a2a20", { roughness: 0.6 })); cornice.position.set(cx, ceil - 0.6, wallZ + 0.15); g.add(cornice);
+      const beamMat = mat("#ffffff", { map: woodTex("#3a2416"), roughness: 0.6 });
+      // beams over the back of the room only: near the lens they would cross the frame
+      for (let x = e.x0 + 1.3; x < e.x1; x += 2.6) { const bm = new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.42, 7), beamMat); bm.position.set(x, ceil - 0.21, wallZ + 3.5); g.add(bm); }
+      for (let x = e.x0 + 1.3, k = 0; x < e.x1 - 1.0; x += 2.6, k++) {
+        const sh = makeLedgerShelf({ seed: seed + k }); sh.position.set(x, 0, wallZ + 0.27); g.add(sh);
+        if (k % 2 === 0) {
+          const wn = makeGlowWindow(1.5, 2.6, { cols: 3, rows: 4, color: "#ffc98a", arch: true }); wn.group.position.set(x + 1.3, 6.7, wallZ + 0.01); g.add(wn.group); addLight(wn.mat);
+          const bm = makeLightShaft([x + 1.3, 6.4, wallZ + 0.1], [x + 2.2, 0.05, wallZ + 5.5], { w0: 1.4, w1: 2.6, color: "#ffcf94", opacity: 0.09 }); g.add(bm.group); extra.push(bm);
+        }
+        const lamp = makePendantLamp({ drop: 2.4, r: 0.26, light: false }); lamp.position.set(x, ceil, wallZ + 1.8); g.add(lamp);
+        lamp.traverse((n) => { if (n.isMesh && n.material.isMeshBasicMaterial) addLight(n.material); });
+        const pool = makeFloorGlow(3.4, 2.6, { color: "#ffcc8a", opacity: 0.1 }); pool.position.set(x, 0.006, wallZ + 2.2); g.add(pool);
+      }
+      const m = makeSetMotes(160, [[e.x0, 0.3, wallZ + 0.4], [e.x1, 6.5, wallZ + 6]], { color: "#ffe2c0", seed: seed + 3 }); g.add(m.points); motes.push(m);
+    } else if (e.kind === "industrial") {
+      const wall = new THREE.Mesh(new THREE.PlaneGeometry(L, ceil), mat("#ffffff", { map: tileTex(setBrickTex(), L / 1.2, ceil / 0.6), roughness: 0.88 })); wall.position.set(cx, ceil / 2, wallZ); g.add(wall);
+      const iron = pmat("#23262a", { metalness: 0.7, roughness: 0.45 });
+      for (let x = e.x0 + 2, k = 0; x < e.x1 - 1; x += 4, k++) {
+        const colm = new THREE.Mesh(new THREE.BoxGeometry(0.3, ceil, 0.3), iron); colm.position.set(x, ceil / 2, wallZ + 0.16); g.add(colm);
+        const wn = makeGlowWindow(2.6, 4.6, { cols: 4, rows: 6, color: "#7fb3e0", frame: "#16191c" }); wn.group.position.set(x + 2, 5.2, wallZ + 0.01); g.add(wn.group); addLight(wn.mat);
+        const bm = makeLightShaft([x + 2, 5.0, wallZ + 0.1], [x + 3.4, 0.05, wallZ + 6.5], { w0: 2.4, w1: 3.6, color: "#8fbbe8", opacity: 0.1 }); g.add(bm.group); extra.push(bm);
+        const lamp = makePendantLamp({ drop: 3.2, r: 0.45, light: false }); lamp.position.set(x + 2, ceil, wallZ + 2.6); g.add(lamp);
+        lamp.traverse((n) => { if (n.isMesh && n.material.isMeshBasicMaterial) addLight(n.material); });
+        const pool = makeFloorGlow(4, 3, { color: "#ffd08f", opacity: 0.09 }); pool.position.set(x + 2, 0.006, wallZ + 3); g.add(pool);
+      }
+      const truss = new THREE.Mesh(new THREE.BoxGeometry(L, 0.35, 0.35), iron); truss.position.set(cx, ceil - 0.8, wallZ + 2.6); g.add(truss);
+      const m = makeSetMotes(180, [[e.x0, 0.3, wallZ + 0.4], [e.x1, 6, wallZ + 7]], { color: "#cfe0ff", seed: seed + 5 }); g.add(m.points); motes.push(m);
+    } else {
+      // glass curtain wall and the city behind it
+      const city = makeSkyline({ n: Math.round(L / 2.2), z: wallZ - 10, spread: L + 10, seed: seed + 11, hMin: 6, hMax: 22 }); city.group.position.x = cx; g.add(city.group); extra.push(city);
+      const sky = new THREE.Mesh(new THREE.PlaneGeometry(L + 30, 40), new THREE.MeshBasicMaterial({ map: nightCityTex(seed + 2), toneMapped: false, fog: false })); sky.position.set(cx, 14, wallZ - 22); g.add(sky); addLight(sky.material, "#ffffff");
+      const glassP = new THREE.Mesh(new THREE.PlaneGeometry(L, ceil), new THREE.MeshPhysicalMaterial({ color: "#3a5a7a", roughness: 0.05, metalness: 0.1, transparent: true, opacity: 0.16, envMapIntensity: 1.5, depthWrite: false })); glassP.position.set(cx, ceil / 2, wallZ); g.add(glassP);
+      const mull = pmat("#1a1d22", { metalness: 0.8, roughness: 0.3 });
+      for (let x = e.x0; x <= e.x1 + 0.01; x += 1.8) { const b = new THREE.Mesh(new THREE.BoxGeometry(0.06, ceil, 0.12), mull); b.position.set(x, ceil / 2, wallZ); g.add(b); }
+      for (const y of [0.05, 3.3, 6.6, ceil - 0.05]) { const b = new THREE.Mesh(new THREE.BoxGeometry(L, 0.08, 0.12), mull); b.position.set(cx, y, wallZ); g.add(b); }
+      const led = new THREE.MeshBasicMaterial({ color: "#6fa8ff", toneMapped: false }); addLight(led);
+      for (let z = wallZ + 1.2; z < front - 2; z += 2.4) { const s = new THREE.Mesh(new THREE.BoxGeometry(L, 0.04, 0.08), led); s.position.set(cx, ceil - 0.05, z); g.add(s); }
+      for (let x = e.x0 + 1.5; x < e.x1; x += 4.5) { const pool = makeFloorGlow(3, 5, { color: "#6fa8ff", opacity: 0.08 }); pool.position.set(x, 0.006, wallZ + 3); g.add(pool); }
+      const m = makeSetMotes(120, [[e.x0, 0.3, wallZ + 0.4], [e.x1, 6, wallZ + 6]], { color: "#b9d4ff", seed: seed + 9, opacity: 0.4 }); g.add(m.points); motes.push(m);
+    }
+  }
+  // where one era meets the next: a pilaster on the wall and a stone threshold across the floor
+  for (let i = 1; i < eras.length; i++) {
+    const p = new THREE.Mesh(rbox(0.7, ceil, 0.6, 0.04), mat("#2b211b", { roughness: 0.7 })); p.position.set(eras[i].x0, ceil / 2, wallZ + 0.3); g.add(p);
+    const th = new THREE.Mesh(rbox(0.9, 0.03, depth, 0.01), pmat("#3a332d", { roughness: 0.4, clearcoat: 0.4 })); th.position.set(eras[i].x0, 0.012, wallZ + depth / 2); g.add(th);
+    for (const s of [-1, 1]) { const b = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.032, depth), pmat("#b8924a", { metalness: 1, roughness: 0.3 })); b.position.set(eras[i].x0 + s * 0.45, 0.014, wallZ + depth / 2); g.add(b); }
+  }
+  asBackdrop(g);
+  return {
+    group: g,
+    update(t) { motes.forEach((m) => m.update(t)); extra.forEach((x) => x.update && x.update(t)); },
+    tint(k, color = "#ff2a1a") { const c = new THREE.Color(color); lights.forEach(({ m, base }) => m.color.copy(base).lerp(c, clamp(k))); },
+  };
+}

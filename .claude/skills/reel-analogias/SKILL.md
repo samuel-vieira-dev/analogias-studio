@@ -160,6 +160,16 @@ Com a resposta:
 
 Não vira regra (explicar ao Samuel em vez de aplicar): pedido que quebra uma das "Regras que não se quebram" abaixo (crédito de foto, imagem de IA de pessoa real, fato sem fonte, tomar lado em política). Nesse caso, propor um jeito de chegar no que ele quer sem quebrar a regra.
 
+## Variante sem narração (só música)
+
+Quando o Samuel pede um vídeo **sem narração** (ex.: "só música de fundo e o gráfico evoluindo"), o fluxo é o mesmo, com estas trocas (primeiro: `videos/2026-11-01-historia-divida-publica/`):
+
+- **Etapa 3**: os 5 hooks e as 3 perguntas viram **texto na tela** (curtos, lidos em 3 s). Junto vai o **storyboard** (# · tempo · visual e câmera · texto na tela) no lugar do roteiro; a escolha + "ok" é a aprovação da etapa 5. O gancho não pode entregar a resposta que ele pergunta (ex.: "em que ano?" → nada de ano no gancho).
+- **Etapa 6 → trilha**: ElevenLabs Music pelo conector, só depois do ok (cobra créditos, ~900 por 60 s): `creative_add_flow_node` (`node_type` `music`, `model_id` `eleven_music_v2_5`, `model_parameters` `{duration_seconds, instrumental: true, lyrics_type: "instrumental"}`, prompt descrevendo o som e a energia por trecho, com os segundos), `creative_run_flow_nodes` com `estimate_only` antes e depois 2 versões; baixar para `audio/takes/`. Escolher pela curva de energia e pelas batidas (`ffmpeg` + numpy: RMS por 0,25 s e picos de fluxo espectral): versão com silêncio no começo sai. A escolhida vira `audio/music.mp3`. Música gerada não cai em bloqueio de direitos autorais no TikTok.
+- **Etapa 7**: não existe. Os tempos do vídeo seguem as **batidas da música** (cortes, marcos, revelação nas batidas fortes; a pausa da música é a hora da virada).
+- **Etapa 8**: `video.json → audio` = `{ "music": "audio/music.mp3", "music_db": 0, "music_fade": 2 }`, sem `narration` nem `words` (sem legenda). Dado que muda com o tempo (ano, valor) vai num overlay `counter` na `headline` (`docs/visual.md` → Texto). Dados e tempos do 3D e do contador saem do **mesmo** gerador, para não descolarem.
+- **Etapa 9**: `tools/mix.py` mistura música + efeitos e normaliza (−14 LUFS). O resto (QA, prévia, revisão cega, render, capa, post) é igual. No `fatos.md`, fato confirmado que não aparece na tela leva `OK — fora da tela`.
+
 ## Regras que não se quebram
 
 1. Nada de voz antes do roteiro aprovado.

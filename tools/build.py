@@ -4,7 +4,8 @@
 usage: python3 tools/build.py videos/<slug>
 
 Reads   channel.yaml, config/layout.json, engine/core.js, engine/props/*.js,
-        videos/<slug>/video.json, videos/<slug>/scenes.js, videos/<slug>/audio/words.json,
+        videos/<slug>/video.json, videos/<slug>/scenes.js, videos/<slug>/audio/words.json (none for a
+        video without narration: no captions),
         videos/<slug>/midia/* (the photos listed in video.json → media)
 Writes  videos/<slug>/build/            HyperFrames project (index.html + compositions/ + assets/)
         videos/<slug>/qa/harness.html   standalone page (world + overlays + captions) for tools/qa.cjs
@@ -42,7 +43,9 @@ def load(vdir: Path):
     layout = json.loads((ROOT / "config/layout.json").read_text())
     channel = yaml.safe_load((ROOT / "channel.yaml").read_text())
     video = json.loads((vdir / "video.json").read_text())
-    words = json.loads((vdir / video["audio"]["words"]).read_text())
+    # a video without narration (music only) has no words.json and no captions
+    wpath = (video.get("audio") or {}).get("words")
+    words = json.loads((vdir / wpath).read_text()) if wpath else []
     return layout, channel, video, words
 
 
@@ -218,6 +221,11 @@ def overlay_markup(o, media):
         return f'<div {attrs}><div class="fit big" {q}>{esc(o["big"])}</div>{lbl}</div>'
     if k == "timer":
         return f'<div {attrs}><div class="fit big num" {q}>{esc(o["start"])}</div><div class="lbl"><span {q}>{esc(o["label"])}</span></div></div>'
+    if k == "counter":
+        st0 = o["steps"][0]
+        return (f'<div {attrs} data-steps="{esc(json.dumps(o["steps"], ensure_ascii=False))}" data-label="{esc(o.get("label", ""))}">'
+                f'<div class="fit cnt" {q}><span class="cy">{esc(st0[1])}</span> <span class="cv">{esc(st0[2])}</span></div>'
+                f'<div class="clbl"><span class="chip chip-{esc(st0[4] if len(st0) > 4 else "dark")}" {q}>{esc(st0[3] if len(st0) > 3 and st0[3] else o.get("label", ""))}</span></div></div>')
     if k == "chip":
         return f'<div {attrs}><span class="chip chip-{esc(o.get("style", "dark"))}" {q}>{esc(o["text"])}</span></div>'
     if k == "question":
@@ -252,6 +260,7 @@ def build_overlays(layout, channel, video, media):
     items = "\n    ".join(overlay_markup(o, media) for o in video.get("overlays", []))
     cuts = video.get("cuts", [])
     timers = [o for o in video.get("overlays", []) if o["kind"] == "timer"]
+    counters = [o for o in video.get("overlays", []) if o["kind"] == "counter"]
     return f"""<template>
   <style>
     #root {{ position:absolute; inset:0; font-family:'Inter', sans-serif; color:#fff; }}
@@ -266,6 +275,9 @@ def build_overlays(layout, channel, video, media):
     #root .lbl span, #root .chip {{ display:inline-block; font-weight:800; font-size:34px; padding:10px 22px; border-radius:16px; letter-spacing:0.05em; }}
     #root .lbl {{ margin-top:10px; }} #root .lbl span {{ background:{st['vermelho']}; }}
     #root .chip-dark {{ background:rgba(20,13,9,0.9); }} #root .chip-orange {{ background:{st['laranja']}; color:{st['fundo']}; font-weight:900; font-size:48px; }} #root .chip-red {{ background:{st['vermelho']}; }} #root .chip-green {{ background:{st['verde']}; }}
+    #root .cnt {{ font-weight:900; font-size:150px; line-height:1.0; letter-spacing:-0.04em; font-variant-numeric:tabular-nums; text-shadow:0 10px 40px rgba(0,0,0,0.6); }}
+    #root .cnt .cy {{ color:{st['laranja']}; }} #root .cnt .cv {{ color:#fff; }}
+    #root .clbl {{ margin-top:12px; }} #root .clbl .chip {{ font-size:40px; white-space:nowrap; }}
     #root .q {{ font-weight:900; font-size:92px; line-height:1.0; letter-spacing:-0.03em; text-shadow:0 8px 30px rgba(0,0,0,0.6); }}
     #root .sub {{ margin-top:14px; }} #root .sub span {{ display:inline-block; background:rgba(20,13,9,0.9); color:{st['laranja']}; font-weight:800; font-size:36px; padding:10px 22px; border-radius:16px; }}
     #root .src {{ display:inline-block; font-weight:600; font-size:28px; line-height:1.25; color:rgba(255,255,255,0.8); background:rgba(20,13,9,0.55); padding:6px 12px; border-radius:10px; white-space:nowrap; }}
@@ -295,6 +307,7 @@ def build_overlays(layout, channel, video, media):
       const LAYOUT = {json.dumps(layout)};
       const CUTS = {json.dumps(cuts)};
       const TIMERS = {json.dumps(timers)};
+      const COUNTERS = {json.dumps(counters)};
       const DUR = {dur};
       function build() {{
         const Z = LAYOUT.zones;
@@ -302,6 +315,16 @@ def build_overlays(layout, channel, video, media):
         // 1) fit each line to its zone width (measured once, deterministic)
         for (const el of items) {{
           const z = Z[el.dataset.zone]; el.style.left = z.x + "px"; el.style.width = z.w + "px";
+          if (el.classList.contains("ov-counter")) {{
+            const steps = JSON.parse(el.dataset.steps), f = el.querySelector(".cnt"), cy = f.querySelector(".cy"), cv = f.querySelector(".cv"), chip = el.querySelector(".clbl .chip");
+            const widest = (sel, get) => {{ let w = 0; for (const st of steps) {{ sel(st); w = Math.max(w, get()); }} return w; }};
+            let s = parseFloat(getComputedStyle(f).fontSize);
+            while (widest((st) => {{ cy.textContent = st[1]; cv.textContent = st[2]; }}, () => f.getBoundingClientRect().width) > z.w && s > 30) {{ s -= 2; f.style.fontSize = s + "px"; }}
+            let c = parseFloat(getComputedStyle(chip).fontSize);
+            while (widest((st) => {{ chip.textContent = st[3] || el.dataset.label; }}, () => chip.getBoundingClientRect().width) > z.w && c > 24) {{ c -= 2; chip.style.fontSize = c + "px"; }}
+            cy.textContent = steps[0][1]; cv.textContent = steps[0][2]; chip.textContent = steps[0][3] || el.dataset.label;
+            continue;
+          }}
           el.querySelectorAll(".fit, .cta, .src").forEach((f) => {{ const min = f.classList.contains("src") ? 28 : 30; let s = parseFloat(getComputedStyle(f).fontSize); while (f.getBoundingClientRect().width > z.w && s > min) {{ s -= 2; f.style.fontSize = s + "px"; }} }});
         }}
         // 1b) photo cards: the largest card that fits the zone with room to tilt and float
@@ -341,6 +364,14 @@ def build_overlays(layout, channel, video, media):
         TIMERS.forEach((o) => {{
           const el = document.querySelector("#" + o.id + " .num"); const [mm, ss] = o.start.split(":").map(Number); const s0 = mm * 60 + ss; const clk = {{ s: s0 }};
           tl.fromTo(clk, {{ s: s0 }}, {{ s: s0 - o.count_s, duration: Math.max(0.1, o.to - o.from - 0.2), ease: "none", onUpdate: () => {{ const s = Math.ceil(clk.s); el.textContent = String(Math.floor(s / 60)).padStart(2, "0") + ":" + String(s % 60).padStart(2, "0"); }} }}, o.from);
+        }});
+        // counters: the step shown is a pure function of time (seek-safe), set on every update
+        COUNTERS.forEach((o) => {{
+          const el = document.getElementById(o.id), cy = el.querySelector(".cy"), cv = el.querySelector(".cv"), chip = el.querySelector(".clbl .chip");
+          let shown = -1; const clk = {{ t: o.from }};
+          const show = () => {{ let i = 0; while (i + 1 < o.steps.length && o.steps[i + 1][0] <= clk.t + 1e-6) i++; if (i === shown) return; shown = i; const st = o.steps[i];
+            cy.textContent = st[1]; cv.textContent = st[2]; chip.textContent = st[3] || o.label || ""; chip.className = "chip chip-" + (st[4] || "dark"); }};
+          tl.fromTo(clk, {{ t: o.from }}, {{ t: o.to, duration: Math.max(0.1, o.to - o.from), ease: "none", immediateRender: false, onUpdate: show, onStart: show }}, o.from);
         }});
         tl.fromTo("#ov-prog", {{ scaleX: 0 }}, {{ scaleX: 1, duration: DUR, ease: "none" }}, 0);
         window.__timelines["overlays"] = tl;

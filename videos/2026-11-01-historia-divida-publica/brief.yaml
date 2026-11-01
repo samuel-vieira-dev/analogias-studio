@@ -1,0 +1,19 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, regras) vem do kit.
+slug: 2026-11-01-historia-divida-publica
+tema: "A evolução da dívida pública ao longo dos anos, desde os primeiros registros"
+referencias_visuais: []
+formato: sem-narracao   # pedido do Samuel: sem narração, só música sem direitos autorais; gráfico 3D ano a ano com jogo de câmera
+
+hook:
+  origem: 5   # adaptado pelo Samuel ("adivinhe" no lugar de "chuta")
+  texto: "Em que ano o Brasil mais deveu? Adivinhe antes de ver."
+
+pergunta_final:
+  origem: 2
+  texto: "Você acertou o ano do recorde?"
+
+musica: "ElevenLabs Music v2.5, instrumental, 60 s: orquestral documental que cresce do piano e cordas graves até o clímax na projeção"
+
+duracao_alvo_s: 60
+aprovado_em: 2026-11-01
+musica_fonte: "ElevenLabs flow DW43UJ5n2bAWka7H4BB2, geração FMdkCe7uf1XquBcpqFaR (versão A; a B começava com 20 s de silêncio). audio/ fica fora do git."

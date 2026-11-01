@@ -1,0 +1,2264 @@
+{
+ "_doc": "Vídeo sem narração (só música): sem words.json, sem legenda. Tempos em segundos do audio/music.mp3. Overlays só por zona. DEBT/YEARMAP do scenes.js e os passos do contador (ov-ano) saem do mesmo gerador.",
+ "slug": "2026-11-01-historia-divida-publica",
+ "duration": 60.0,
+ "audio": {
+  "music": "audio/music.mp3",
+  "music_db": 0,
+  "music_fade": 2.0
+ },
+ "media": {},
+ "cuts": [
+  5.5,
+  10.5,
+  28.6,
+  34.3,
+  51.3,
+  55.5
+ ],
+ "overlays": [
+  {
+   "id": "ov-hook1",
+   "kind": "title",
+   "from": 0.4,
+   "to": 3.15,
+   "text": "EM QUE ANO O BRASIL\nMAIS DEVEU?"
+  },
+  {
+   "id": "ov-hook2",
+   "kind": "title",
+   "from": 3.25,
+   "to": 5.45,
+   "text": "ADIVINHE\nANTES DE VER."
+  },
+  {
+   "id": "ov-1824",
+   "kind": "stat",
+   "from": 5.6,
+   "to": 10.4,
+   "big": "£ 3 MILHÕES",
+   "label": "1º EMPRÉSTIMO · LONDRES, 1824"
+  },
+  {
+   "id": "src-1824",
+   "kind": "source",
+   "from": 5.6,
+   "to": 10.4,
+   "text": "Fonte: Tesouro Nacional"
+  },
+  {
+   "id": "ov-ano",
+   "kind": "counter",
+   "from": 10.5,
+   "to": 51.25,
+   "label": "DÍVIDA PÚBLICA / PIB",
+   "steps": [
+    [
+     10.5,
+     "1880",
+     "99,0%",
+     "CADA MOEDA = 1% DO PIB",
+     "orange"
+    ],
+    [
+     11.15,
+     "1881",
+     "105,3%",
+     "CADA MOEDA = 1% DO PIB",
+     "orange"
+    ],
+    [
+     11.8,
+     "1882",
+     "107,9%",
+     "CADA MOEDA = 1% DO PIB",
+     "orange"
+    ],
+    [
+     12.45,
+     "1883",
+     "93,8%",
+     "LINHA VERMELHA = 100% DO PIB",
+     "red"
+    ],
+    [
+     13.1,
+     "1884",
+     "120,7%",
+     "LINHA VERMELHA = 100% DO PIB",
+     "red"
+    ],
+    [
+     13.583,
+     "1885",
+     "107,6%",
+     "LINHA VERMELHA = 100% DO PIB",
+     "red"
+    ],
+    [
+     14.067,
+     "1886",
+     "99,4%",
+     "LINHA VERMELHA = 100% DO PIB",
+     "red"
+    ],
+    [
+     14.55,
+     "1887",
+     "107,3%",
+     "IMPÉRIO",
+     "dark"
+    ],
+    [
+     15.033,
+     "1888",
+     "103,4%",
+     "IMPÉRIO",
+     "dark"
+    ],
+    [
+     15.517,
+     "1889",
+     "105,0%",
+     "IMPÉRIO",
+     "dark"
+    ],
+    [
+     16.0,
+     "1890",
+     "101,0%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.158,
+     "1891",
+     "69,2%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.317,
+     "1892",
+     "86,8%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.475,
+     "1893",
+     "64,4%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.633,
+     "1894",
+     "63,6%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.792,
+     "1895",
+     "75,4%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     16.95,
+     "1896",
+     "72,2%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.108,
+     "1897",
+     "68,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.267,
+     "1898",
+     "60,6%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.425,
+     "1899",
+     "62,5%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.583,
+     "1900",
+     "54,9%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.742,
+     "1901",
+     "66,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     17.9,
+     "1902",
+     "62,8%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.058,
+     "1903",
+     "66,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.217,
+     "1904",
+     "59,0%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.375,
+     "1905",
+     "60,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.533,
+     "1906",
+     "50,3%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.692,
+     "1907",
+     "45,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     18.85,
+     "1908",
+     "47,8%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.008,
+     "1909",
+     "42,9%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.167,
+     "1910",
+     "39,9%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.325,
+     "1911",
+     "35,8%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.483,
+     "1912",
+     "34,2%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.642,
+     "1913",
+     "37,7%",
+     "REPÚBLICA",
+     "dark"
+    ],
+    [
+     19.8,
+     "1914",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     19.967,
+     "1915",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.133,
+     "1916",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.3,
+     "1917",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.467,
+     "1918",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.633,
+     "1919",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.8,
+     "1920",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     20.967,
+     "1921",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     21.133,
+     "1922",
+     "—",
+     "SEM DADOS: 1ª GUERRA",
+     "dark"
+    ],
+    [
+     21.3,
+     "1923",
+     "56,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     21.605,
+     "1924",
+     "48,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     21.91,
+     "1925",
+     "39,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     22.215,
+     "1926",
+     "45,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     22.52,
+     "1927",
+     "52,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     22.825,
+     "1928",
+     "40,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     23.13,
+     "1929",
+     "46,2%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     23.435,
+     "1930",
+     "59,2%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     23.74,
+     "1931",
+     "75,6%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     24.045,
+     "1932",
+     "73,8%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     24.35,
+     "1933",
+     "93,7%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     24.521,
+     "1934",
+     "81,0%",
+     "CRISE DE 1929",
+     "red"
+    ],
+    [
+     24.692,
+     "1935",
+     "85,3%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     24.863,
+     "1936",
+     "71,9%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.034,
+     "1937",
+     "61,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.205,
+     "1938",
+     "60,2%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.376,
+     "1939",
+     "55,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.547,
+     "1940",
+     "56,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.718,
+     "1941",
+     "50,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     25.889,
+     "1942",
+     "42,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.061,
+     "1943",
+     "37,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.232,
+     "1944",
+     "29,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.403,
+     "1945",
+     "26,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.574,
+     "1946",
+     "18,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.745,
+     "1947",
+     "13,9%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     26.916,
+     "1948",
+     "10,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     27.087,
+     "1949",
+     "9,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     27.258,
+     "1950",
+     "9,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     27.429,
+     "1951",
+     "6,9%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     27.6,
+     "1952",
+     "5,5%",
+     "O MENOR DA SÉRIE",
+     "green"
+    ],
+    [
+     28.6,
+     "1953",
+     "14,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     28.667,
+     "1954",
+     "14,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     28.733,
+     "1955",
+     "17,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     28.8,
+     "1956",
+     "34,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     28.867,
+     "1957",
+     "22,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     28.933,
+     "1958",
+     "30,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.0,
+     "1959",
+     "24,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.067,
+     "1960",
+     "22,3%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.133,
+     "1961",
+     "25,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.2,
+     "1962",
+     "23,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.267,
+     "1963",
+     "20,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.333,
+     "1964",
+     "22,2%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.4,
+     "1965",
+     "17,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.467,
+     "1966",
+     "19,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.533,
+     "1967",
+     "13,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.6,
+     "1968",
+     "15,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.667,
+     "1969",
+     "16,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.733,
+     "1970",
+     "17,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.8,
+     "1971",
+     "17,9%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.867,
+     "1972",
+     "22,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     29.933,
+     "1973",
+     "22,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.0,
+     "1974",
+     "25,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.067,
+     "1975",
+     "27,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.133,
+     "1976",
+     "31,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.2,
+     "1977",
+     "31,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.267,
+     "1978",
+     "37,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.333,
+     "1979",
+     "36,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.4,
+     "1980",
+     "39,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.467,
+     "1981",
+     "34,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     30.533,
+     "1982",
+     "32,8%",
+     "CRISE DA DÍVIDA EXTERNA",
+     "red"
+    ],
+    [
+     30.6,
+     "1983",
+     "51,5%",
+     "CRISE DA DÍVIDA EXTERNA",
+     "red"
+    ],
+    [
+     30.936,
+     "1984",
+     "55,8%",
+     "CRISE DA DÍVIDA EXTERNA",
+     "red"
+    ],
+    [
+     31.273,
+     "1985",
+     "52,6%",
+     "CRISE DA DÍVIDA EXTERNA",
+     "red"
+    ],
+    [
+     31.609,
+     "1986",
+     "49,4%",
+     "CRISE DA DÍVIDA EXTERNA",
+     "red"
+    ],
+    [
+     31.945,
+     "1987",
+     "50,3%",
+     "MORATÓRIA DE 1987",
+     "red"
+    ],
+    [
+     32.282,
+     "1988",
+     "46,9%",
+     "MORATÓRIA DE 1987",
+     "red"
+    ],
+    [
+     32.618,
+     "1989",
+     "40,2%",
+     "MORATÓRIA DE 1987",
+     "red"
+    ],
+    [
+     32.955,
+     "1990",
+     "40,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     33.291,
+     "1991",
+     "38,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     33.627,
+     "1992",
+     "37,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     33.964,
+     "1993",
+     "32,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     34.3,
+     "1994",
+     "30,0%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     34.542,
+     "1995",
+     "28,0%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     34.785,
+     "1996",
+     "30,7%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     35.027,
+     "1997",
+     "31,8%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     35.269,
+     "1998",
+     "38,9%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     35.512,
+     "1999",
+     "44,5%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     35.754,
+     "2000",
+     "62,2%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     35.996,
+     "2001",
+     "67,3%",
+     "PLANO REAL",
+     "orange"
+    ],
+    [
+     36.238,
+     "2002",
+     "76,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     36.481,
+     "2003",
+     "71,5%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     36.723,
+     "2004",
+     "68,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     36.965,
+     "2005",
+     "67,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     37.208,
+     "2006",
+     "64,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     37.45,
+     "2007",
+     "63,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     37.692,
+     "2008",
+     "61,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     37.935,
+     "2009",
+     "64,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     38.177,
+     "2010",
+     "62,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     38.419,
+     "2011",
+     "60,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     38.662,
+     "2012",
+     "61,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     38.904,
+     "2013",
+     "59,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     39.146,
+     "2014",
+     "61,6%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     39.388,
+     "2015",
+     "71,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     39.631,
+     "2016",
+     "77,4%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     39.873,
+     "2017",
+     "82,7%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     40.115,
+     "2018",
+     "84,8%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     40.358,
+     "2019",
+     "87,1%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     40.6,
+     "2020",
+     "96,0%",
+     "PANDEMIA",
+     "red"
+    ],
+    [
+     41.48,
+     "2021",
+     "88,9%",
+     "PANDEMIA",
+     "red"
+    ],
+    [
+     42.36,
+     "2022",
+     "83,9%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     43.24,
+     "2023",
+     "84,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     44.12,
+     "2024",
+     "87,0%",
+     "DÍVIDA PÚBLICA / PIB",
+     "dark"
+    ],
+    [
+     45.0,
+     "2025",
+     "93,3%",
+     "HOJE: R$ 11,1 TRILHÕES",
+     "orange"
+    ],
+    [
+     46.9,
+     "2026",
+     "97,0%",
+     "PROJEÇÃO DO FMI",
+     "orange"
+    ],
+    [
+     48.35,
+     "2027",
+     "99,3%",
+     "PROJEÇÃO DO FMI",
+     "orange"
+    ],
+    [
+     49.8,
+     "2028",
+     "101,3%",
+     "PROJEÇÃO DO FMI",
+     "orange"
+    ]
+   ]
+  },
+  {
+   "id": "src-fmi",
+   "kind": "source",
+   "from": 10.5,
+   "to": 44.95,
+   "text": "Fonte: FMI · dívida bruta em % do PIB"
+  },
+  {
+   "id": "src-hoje",
+   "kind": "source",
+   "from": 45.0,
+   "to": 46.85,
+   "text": "Fonte: FMI · R$: Banco Central, set/2026"
+  },
+  {
+   "id": "src-proj",
+   "kind": "source",
+   "from": 46.9,
+   "to": 51.25,
+   "text": "Fonte: FMI, projeção de out/2026"
+  },
+  {
+   "id": "ov-volta",
+   "kind": "counter",
+   "from": 51.35,
+   "to": 55.4,
+   "label": "VOLTANDO NO TEMPO",
+   "steps": [
+    [
+     51.35,
+     "2028",
+     "101,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     51.615,
+     "2027",
+     "99,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     51.755,
+     "2026",
+     "97,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     51.839,
+     "2025",
+     "93,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     51.903,
+     "2024",
+     "87,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     51.955,
+     "2023",
+     "84,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.001,
+     "2022",
+     "83,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.041,
+     "2021",
+     "88,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.077,
+     "2020",
+     "96,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.11,
+     "2019",
+     "87,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.141,
+     "2018",
+     "84,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.169,
+     "2017",
+     "82,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.196,
+     "2016",
+     "77,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.221,
+     "2015",
+     "71,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.245,
+     "2014",
+     "61,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.268,
+     "2013",
+     "59,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.289,
+     "2012",
+     "61,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.31,
+     "2011",
+     "60,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.33,
+     "2010",
+     "62,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.349,
+     "2009",
+     "64,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.368,
+     "2008",
+     "61,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.386,
+     "2007",
+     "63,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.403,
+     "2006",
+     "64,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.42,
+     "2005",
+     "67,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.437,
+     "2004",
+     "68,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.452,
+     "2003",
+     "71,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.468,
+     "2002",
+     "76,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.483,
+     "2001",
+     "67,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.498,
+     "2000",
+     "62,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.512,
+     "1999",
+     "44,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.526,
+     "1998",
+     "38,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.54,
+     "1997",
+     "31,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.553,
+     "1996",
+     "30,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.566,
+     "1995",
+     "28,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.579,
+     "1994",
+     "30,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.592,
+     "1993",
+     "32,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.604,
+     "1992",
+     "37,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.616,
+     "1991",
+     "38,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.628,
+     "1990",
+     "40,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.64,
+     "1989",
+     "40,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.651,
+     "1988",
+     "46,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.663,
+     "1987",
+     "50,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.674,
+     "1986",
+     "49,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.685,
+     "1985",
+     "52,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.695,
+     "1984",
+     "55,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.706,
+     "1983",
+     "51,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.716,
+     "1982",
+     "32,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.727,
+     "1981",
+     "34,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.737,
+     "1980",
+     "39,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.747,
+     "1979",
+     "36,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.757,
+     "1978",
+     "37,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.767,
+     "1977",
+     "31,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.776,
+     "1976",
+     "31,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.786,
+     "1975",
+     "27,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.795,
+     "1974",
+     "25,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.804,
+     "1973",
+     "22,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.813,
+     "1972",
+     "22,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.822,
+     "1971",
+     "17,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.831,
+     "1970",
+     "17,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.84,
+     "1969",
+     "16,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.849,
+     "1968",
+     "15,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.858,
+     "1967",
+     "13,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.866,
+     "1966",
+     "19,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.874,
+     "1965",
+     "17,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.883,
+     "1964",
+     "22,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.891,
+     "1963",
+     "20,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.899,
+     "1962",
+     "23,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.907,
+     "1961",
+     "25,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.915,
+     "1960",
+     "22,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.923,
+     "1959",
+     "24,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.931,
+     "1958",
+     "30,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.939,
+     "1957",
+     "22,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.947,
+     "1956",
+     "34,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.954,
+     "1955",
+     "17,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.962,
+     "1954",
+     "14,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.97,
+     "1953",
+     "14,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.978,
+     "1952",
+     "5,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.986,
+     "1951",
+     "6,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     52.994,
+     "1950",
+     "9,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.002,
+     "1949",
+     "9,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.01,
+     "1948",
+     "10,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.018,
+     "1947",
+     "13,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.027,
+     "1946",
+     "18,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.035,
+     "1945",
+     "26,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.043,
+     "1944",
+     "29,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.052,
+     "1943",
+     "37,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.061,
+     "1942",
+     "42,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.07,
+     "1941",
+     "50,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.079,
+     "1940",
+     "56,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.088,
+     "1939",
+     "55,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.097,
+     "1938",
+     "60,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.106,
+     "1937",
+     "61,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.115,
+     "1936",
+     "71,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.125,
+     "1935",
+     "85,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.134,
+     "1934",
+     "81,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.144,
+     "1933",
+     "93,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.154,
+     "1932",
+     "73,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.164,
+     "1931",
+     "75,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.174,
+     "1930",
+     "59,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.185,
+     "1929",
+     "46,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.195,
+     "1928",
+     "40,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.206,
+     "1927",
+     "52,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.216,
+     "1926",
+     "45,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.227,
+     "1925",
+     "39,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.238,
+     "1924",
+     "48,1%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.25,
+     "1923",
+     "56,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.261,
+     "1922",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.273,
+     "1921",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.285,
+     "1920",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.297,
+     "1919",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.309,
+     "1918",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.322,
+     "1917",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.335,
+     "1916",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.348,
+     "1915",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.361,
+     "1914",
+     "—",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.375,
+     "1913",
+     "37,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.389,
+     "1912",
+     "34,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.403,
+     "1911",
+     "35,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.418,
+     "1910",
+     "39,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.433,
+     "1909",
+     "42,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.449,
+     "1908",
+     "47,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.464,
+     "1907",
+     "45,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.481,
+     "1906",
+     "50,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.498,
+     "1905",
+     "60,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.515,
+     "1904",
+     "59,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.533,
+     "1903",
+     "66,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.552,
+     "1902",
+     "62,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.571,
+     "1901",
+     "66,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.591,
+     "1900",
+     "54,9%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.612,
+     "1899",
+     "62,5%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.633,
+     "1898",
+     "60,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.656,
+     "1897",
+     "68,7%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.68,
+     "1896",
+     "72,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.705,
+     "1895",
+     "75,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.732,
+     "1894",
+     "63,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.76,
+     "1893",
+     "64,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.791,
+     "1892",
+     "86,8%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.824,
+     "1891",
+     "69,2%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.86,
+     "1890",
+     "101,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.9,
+     "1889",
+     "105,0%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.946,
+     "1888",
+     "103,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.998,
+     "1887",
+     "107,3%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     54.062,
+     "1886",
+     "99,4%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     54.146,
+     "1885",
+     "107,6%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     54.286,
+     "1884",
+     "120,7%",
+     "O RECORDE",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "src-fim",
+   "kind": "source",
+   "from": 51.35,
+   "to": 60.0,
+   "text": "Fonte: FMI"
+  },
+  {
+   "id": "ov-pergunta",
+   "kind": "question",
+   "from": 55.55,
+   "to": 60.0,
+   "text": "VOCÊ ACERTOU O\nANO DO RECORDE?"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 56.6,
+   "to": 60.0,
+   "html": "Comenta: <b>ACERTEI</b> ou <b>ERREI</b>"
+  }
+ ],
+ "sfx": [
+  [
+   5.5,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   10.5,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   28.6,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   34.3,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   51.3,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   55.5,
+   "whoosh.mp3",
+   -24
+  ],
+  [
+   3.35,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   3.85,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   4.35,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   4.85,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   55.9,
+   "click-soft.mp3",
+   -14
+  ]
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.5
+  },
+  {
+   "id": "1824",
+   "from": 5.5,
+   "to": 10.5
+  },
+  {
+   "id": "corrida",
+   "from": 10.5,
+   "to": 51.3
+  },
+  {
+   "id": "recorde",
+   "from": 51.3,
+   "to": 55.5
+  },
+  {
+   "id": "pergunta",
+   "from": 55.5,
+   "to": 60.0
+  }
+ ],
+ "post": {
+  "title": "EM QUE ANO O BRASIL\nMAIS DEVEU?",
+  "descricao": "A dívida pública do Brasil ano a ano, de 1880 a 2025, em % do PIB (dados do FMI): do Império à pandemia, do primeiro empréstimo de 1824 à projeção do FMI para 2028.",
+  "hashtags": [
+   "#dividapublica",
+   "#economia",
+   "#historiadobrasil",
+   "#fmi",
+   "#educacaofinanceira"
+  ],
+  "media": false
+ }
+}
