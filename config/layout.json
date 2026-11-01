@@ -69,10 +69,10 @@
     },
     "caption": {
       "x": 190,
-      "y": 1366,
+      "y": 1346,
       "w": 700,
-      "h": 110,
-      "_doc": "Legenda: 1 linha, base em y=1476 (24 px acima do fim da área segura)."
+      "h": 130,
+      "_doc": "Legenda: 1 linha de 72 px, base em y=1476 (24 px acima do fim da área segura). Era 58 px até 31/10/2026: o Samuel achou pequena."
     }
   },
   "cover": {
@@ -98,8 +98,8 @@
   },
   "caption": {
     "bottom": 1476,
-    "font_px": 58,
-    "max_chars": 17,
+    "font_px": 72,
+    "max_chars": 14,
     "max_words": 4,
     "pad_x": 30,
     "pad_y": 14

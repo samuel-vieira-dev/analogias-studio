@@ -22,7 +22,7 @@ y=580   │    │ ┌────────────────┐ │   
         │    │ │ stage (3D)     │ │        │  animação principal; quando a headline tem texto
         │    │ │                │ │        │  (stage-tall = 300–1330 quando não tem)
 y=1330  │    │ └────────────────┘ │        │
-y=1366  │    │ [ caption ]        │        │  legenda: 1 linha, base 1476
+y=1346  │    │ [ caption ]        │        │  legenda: 1 linha, base 1476
 y=1500  │    └────────────────────┘        │
         │ (interface do app)        botões │
 y=1920  └──────────────────────────────────┘
@@ -36,7 +36,7 @@ y=1920  └───────────────────────
 - `source`: `source` (fontes, referências, avisos como "Não é recomendação de investimento."). Uma linha de 28 px alinhada à direita no topo da área segura; se não couber, o QA reprova — encurte o texto.
 - `caption`: legendas automáticas (das palavras da narração) e o `cta` no fim, depois que a fala acaba.
 - Entradas só com escala/opacidade a partir da borda ancorada da zona: o texto nunca sai da zona, nem por um quadro.
-- Legenda: Inter 800, 58 px, caixa escura, 1 linha (até 4 palavras / 20 caracteres), palavra falada em laranja `#ff5a1f`.
+- Legenda: Inter 800, **72 px**, caixa escura, 1 linha (até 4 palavras / 14 caracteres), palavra falada em laranja `#ff5a1f`. Era 58 px: o Samuel achou pequena (31/10/2026). Não diminuir.
 
 ## Câmera 3D (a causa raiz dos cortes)
 
@@ -72,7 +72,10 @@ const P = CAM.pose(box, { zone: "stage", from: [0, 0.4, 1] }); // distância res
 A **animação principal** do plano (os heróis, o que a fala explica naquele instante) fica **dentro da área segura**, no palco. O **plano de fundo** pode ocupar **a tela inteira** (1080 × 1920, até sob a interface do app) para **contextualizar o take**: a estrada que segue até o horizonte com campo dos lados, a mesa e a parede atrás do celular, a parede do escritório atrás do quadro de cortiça, a cidade, o céu, o plenário desfocado.
 
 - Fundo é contexto, não informação: nada de texto, número ou objeto que a fala cite no fundo (isso é herói, vai no palco).
-- Mais escuro, menos contraste e mais longe que o herói (a neblina do motor ajuda): o título e a legenda continuam legíveis por cima dele.
+- **Fundo interessante** (pedido do Samuel, 31/10/2026: parede escura e degradê marrom não são fundo). Todo plano mostra um **lugar** que se reconhece em 1 s, ligado à história, com: três camadas (frente, herói, fundo); **uma luz que se vê** no quadro (janela, luminária, letreiro, tela, com feixe ou poeira); **uma segunda cor** além do marrom (azul da noite e das telas, vermelho e azul da viatura, verde do dinheiro); e um lugar por ato, não o vídeo inteiro na mesma sala.
+- No 9:16 o fundo aparece **acima e abaixo** do herói, quase nada dos lados: ponha o interesse no teto, no alto da parede e no chão (janela a 7 m do centro fica fora do quadro). Confira na prévia o que está atrás do herói em cada plano.
+- Pronto no kit: `makeOfficeSet` (`engine/props/sets.js`: sala da PF com teto de luminárias, janelas com persiana e a cidade à noite, estantes de arquivo, relógio, feixes de luz com poeira; `windows(k, cor)` e `lights(k)` para as batidas), `makeLightShaft`, `makeFloorGlow`, `makeSetMotes`, `makeSetWindow`, `makeArchiveShelf`, `makeWallClock`. Lugar novo que sirva a outros vídeos vai para esse arquivo.
+- O herói se separa do fundo por nitidez e luz (luz de recorte, `fillAt`), não apagando o fundo; a faixa `#ov-scrim` garante a leitura do título e da legenda.
 - Fundo também se mexe: paralaxe com a câmera, partículas, luz passando, elementos entrando pelas bordas. É o que dá a sensação de tela viva sem tirar o herói do palco.
 - Registro: `S.backdrop(obj)` (não entra nas checagens de texto em cima, de corte ou de tamanho; a folha de objetos o ignora). Herói nunca é fundo.
 

@@ -21,3 +21,9 @@ As regras de 27 a 31/10/2026 (área segura centralizada, realismo, fotos com cr�
 ## Registro
 
 <!-- entradas novas aqui, a mais recente primeiro -->
+
+### 2026-10-31 · 2026-10-31-master-lula-bolsonaro
+- Gostou: o vídeo no geral ("ficou ótimo").
+- Não gostou: planos de fundo pouco interessantes; legendas um pouco pequenas.
+- Mudou no kit: `config/layout.json` — legenda de 58 para 72 px, até 14 caracteres, faixa `caption` y 1346–1476 (QA deste vídeo com a legenda nova: ok) · `docs/visual.md` → "Plano de fundo" — todo plano mostra um lugar com luz visível, segunda cor e três camadas, interesse acima e abaixo do herói (a regra antiga "fundo mais escuro e com menos contraste" saiu) · `engine/props/sets.js` — `makeOfficeSet` e peças de cenário · `docs/qa.md` — a revisão cega dá nota ao fundo de cada quadro.
+- Neste vídeo: ficou como está (pedido do Samuel).
