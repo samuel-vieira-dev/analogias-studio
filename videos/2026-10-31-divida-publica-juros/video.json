@@ -1,0 +1,697 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-10-31-divida-publica-juros",
+ "duration": 94.8,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {}
+ },
+ "cuts": [
+  4.65,
+  7.95,
+  12.35,
+  21.5,
+  27.1,
+  31.65,
+  45.95,
+  47.8,
+  59.1,
+  69.5,
+  73.0,
+  81.7,
+  86.6
+ ],
+ "media": {
+  "planalto": {
+   "file": "midia/planalto.jpg",
+   "credit": "Senado Federal",
+   "url": "https://commons.wikimedia.org/wiki/File:Fachada_do_Pal%C3%A1cio_do_Planalto_-_49727227028.jpg",
+   "focus": [
+    0.4,
+    0.62
+   ]
+  },
+  "congresso": {
+   "file": "midia/congresso.jpg",
+   "credit": "Pedro França/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Imagens_de_Bras%C3%ADlia_-_Fachada_do_Pal%C3%A1cio_do_Congresso_Nacional_(53457492293).jpg",
+   "focus": [
+    0.36,
+    0.5
+   ]
+  },
+  "sede-bc": {
+   "file": "midia/sede-bc.jpg",
+   "credit": "Marcello Casal Jr./Agência Brasil",
+   "url": "https://agenciabrasil.ebc.com.br/economia/noticia/2025-11/banco-central-oficializa-liquidacao-da-master-corretora",
+   "focus": [
+    0.5,
+    0.62
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 4.65
+  },
+  {
+   "id": "ano",
+   "from": 4.65,
+   "to": 7.95
+  },
+  {
+   "id": "divida",
+   "from": 7.95,
+   "to": 12.35
+  },
+  {
+   "id": "caixa",
+   "from": 12.35,
+   "to": 21.5
+  },
+  {
+   "id": "titulo",
+   "from": 21.5,
+   "to": 27.1
+  },
+  {
+   "id": "credores",
+   "from": 27.1,
+   "to": 31.65
+  },
+  {
+   "id": "historia",
+   "from": 31.65,
+   "to": 45.95
+  },
+  {
+   "id": "naodiminui",
+   "from": 45.95,
+   "to": 47.8
+  },
+  {
+   "id": "cartao",
+   "from": 47.8,
+   "to": 59.1
+  },
+  {
+   "id": "brasil",
+   "from": 59.1,
+   "to": 69.5
+  },
+  {
+   "id": "juros2026",
+   "from": 69.5,
+   "to": 73.0
+  },
+  {
+   "id": "culpa",
+   "from": 73.0,
+   "to": 81.7
+  },
+  {
+   "id": "saidas",
+   "from": 81.7,
+   "to": 86.6
+  },
+  {
+   "id": "pergunta",
+   "from": 86.6,
+   "to": 94.8
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "stat",
+   "from": 0.1,
+   "to": 4.6,
+   "big": "R$ 3 MILHÕES",
+   "label": "EM JUROS, ENQUANTO VOCÊ ASSISTE"
+  },
+  {
+   "id": "src-02",
+   "kind": "source",
+   "from": 0.1,
+   "to": 4.6,
+   "text": "Cálculo: Banco Central, set/2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "stat",
+   "from": 4.75,
+   "to": 7.9,
+   "big": "R$ 1,2 TRI",
+   "label": "DE JUROS EM 12 MESES"
+  },
+  {
+   "id": "src-04",
+   "kind": "source",
+   "from": 4.75,
+   "to": 7.9,
+   "text": "Fonte: Banco Central, set/2026"
+  },
+  {
+   "id": "ov-05",
+   "kind": "stat",
+   "from": 8.05,
+   "to": 10.9,
+   "big": "R$ 11,1 TRI",
+   "label": "A DÍVIDA DO GOVERNO"
+  },
+  {
+   "id": "src-06",
+   "kind": "source",
+   "from": 8.05,
+   "to": 10.9,
+   "text": "Fonte: Banco Central, set/2026"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 10.95,
+   "to": 12.3,
+   "text": "DE ONDE\nELA VEIO?"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 12.45,
+   "to": 15.25,
+   "text": "ENTRA: IMPOSTOS",
+   "style": "green"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 15.3,
+   "to": 18.45,
+   "text": "SAI: APOSENTADORIA,\nSAÚDE, ESCOLA, SALÁRIO"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 18.55,
+   "to": 20.55,
+   "text": "GASTOU MAIS DO\nQUE ARRECADOU?"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 20.6,
+   "to": 21.45,
+   "text": "PEGA\nEMPRESTADO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 21.6,
+   "to": 24.25,
+   "text": "IMAGINA",
+   "style": "orange"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 24.3,
+   "to": 27.05,
+   "text": "VOCÊ EMPRESTA\nPRO GOVERNO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 27.2,
+   "to": 31.6,
+   "text": "QUEM MAIS EMPRESTA\nPRO GOVERNO"
+  },
+  {
+   "id": "src-15",
+   "kind": "source",
+   "from": 27.2,
+   "to": 31.6,
+   "text": "Fonte: Tesouro Nacional, set/2026"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 31.75,
+   "to": 36.1,
+   "text": "ATÉ 2013:\nSOBRAVA DINHEIRO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 36.2,
+   "to": 41.0,
+   "text": "DESDE 2014:\nNO VERMELHO"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 41.1,
+   "to": 43.45,
+   "text": "RECESSÃO,\nPANDEMIA…"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 43.5,
+   "to": 45.9,
+   "big": "82,9%",
+   "label": "DO PIB: A DÍVIDA HOJE"
+  },
+  {
+   "id": "src-20",
+   "kind": "source",
+   "from": 31.75,
+   "to": 45.9,
+   "text": "Fonte: Banco Central (dívida bruta, % do PIB)"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 46.0,
+   "to": 47.75,
+   "text": "POR QUE NÃO\nDIMINUI?"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 47.9,
+   "to": 48.85,
+   "text": "PENSA NO\nCARTÃO"
+  },
+  {
+   "id": "ov-23",
+   "kind": "stat",
+   "from": 48.9,
+   "to": 51.1,
+   "big": "R$ 1.000",
+   "label": "DE DÍVIDA · JURO DE R$ 100"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 51.15,
+   "to": 52.0,
+   "text": "NÃO TEM\nOS R$ 100?"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 52.05,
+   "to": 53.3,
+   "text": "VIRAM\nDÍVIDA"
+  },
+  {
+   "id": "ov-26",
+   "kind": "stat",
+   "from": 53.35,
+   "to": 57.05,
+   "big": "R$ 1.100",
+   "label": "E O JURO VEM SOBRE ELES"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 57.1,
+   "to": 59.05,
+   "text": "CRESCE\nSOZINHA"
+  },
+  {
+   "id": "src-28",
+   "kind": "source",
+   "from": 48.9,
+   "to": 59.05,
+   "text": "Exemplo com números redondos"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 59.25,
+   "to": 60.45,
+   "text": "COM O BRASIL\nÉ IGUAL"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 60.5,
+   "to": 63.6,
+   "text": "OS JUROS\nVIRAM DÍVIDA"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 63.7,
+   "to": 69.4,
+   "big": "+ R$ 70 BI",
+   "label": "GASTOS ALÉM DO QUE ARRECADA"
+  },
+  {
+   "id": "src-32",
+   "kind": "source",
+   "from": 60.5,
+   "to": 69.4,
+   "text": "Fonte: Banco Central, 12 meses até set/2026"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 69.6,
+   "to": 71.0,
+   "text": "O QUE MAIS\nEMPURROU A DÍVIDA?"
+  },
+  {
+   "id": "ov-34",
+   "kind": "stat",
+   "from": 71.05,
+   "to": 72.95,
+   "big": "OS JUROS",
+   "label": "+7,2 PONTOS DO PIB EM 2026"
+  },
+  {
+   "id": "src-35",
+   "kind": "source",
+   "from": 69.6,
+   "to": 72.95,
+   "text": "Fonte: Banco Central, set/2026"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 73.1,
+   "to": 74.65,
+   "text": "DE QUEM É\nA CULPA?"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 74.7,
+   "to": 76.1,
+   "text": "NÃO É DE UM\nGOVERNO SÓ"
+  },
+  {
+   "id": "ov-38",
+   "kind": "chip",
+   "from": 76.15,
+   "to": 77.75,
+   "text": "GOVERNO: GASTA",
+   "style": "orange"
+  },
+  {
+   "id": "src-39",
+   "kind": "source",
+   "from": 76.0,
+   "to": 77.8,
+   "text": "Foto: Senado Federal"
+  },
+  {
+   "id": "ov-40",
+   "kind": "chip",
+   "from": 77.8,
+   "to": 79.55,
+   "text": "CONGRESSO: APROVA",
+   "style": "orange"
+  },
+  {
+   "id": "src-41",
+   "kind": "source",
+   "from": 77.8,
+   "to": 79.6,
+   "text": "Foto: Pedro França/Agência Senado"
+  },
+  {
+   "id": "ov-42",
+   "kind": "chip",
+   "from": 79.6,
+   "to": 81.65,
+   "text": "BANCO CENTRAL: DEFINE O JURO",
+   "style": "orange"
+  },
+  {
+   "id": "src-43",
+   "kind": "source",
+   "from": 79.6,
+   "to": 81.7,
+   "text": "Foto: Marcello Casal Jr./Agência Brasil"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 81.85,
+   "to": 83.3,
+   "text": "AS SAÍDAS\nSÃO TRÊS"
+  },
+  {
+   "id": "ov-45",
+   "kind": "chip",
+   "from": 83.35,
+   "to": 84.6,
+   "text": "GASTAR MENOS",
+   "style": "green"
+  },
+  {
+   "id": "ov-46",
+   "kind": "chip",
+   "from": 84.65,
+   "to": 85.8,
+   "text": "CRESCER MAIS",
+   "style": "green"
+  },
+  {
+   "id": "ov-47",
+   "kind": "chip",
+   "from": 85.85,
+   "to": 86.55,
+   "text": "OU O JURO CAIR",
+   "style": "green"
+  },
+  {
+   "id": "ov-48",
+   "kind": "question",
+   "from": 86.7,
+   "to": 94.8,
+   "text": "JURO ALTO OU\nJURO BAIXO?",
+   "sub": "RENDE MAIS × CRÉDITO BARATO"
+  },
+  {
+   "id": "src-49",
+   "kind": "source",
+   "from": 86.7,
+   "to": 94.8,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 92.9,
+   "to": 94.8,
+   "html": "Comenta: <b>ALTO</b> ou <b>BAIXO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.25,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   0.6,
+   "riser.mp3",
+   -24
+  ],
+  [
+   3.9,
+   "impact-bass-1.mp3",
+   -18
+  ],
+  [
+   4.65,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.95,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   8.4,
+   "pop.mp3",
+   -26
+  ],
+  [
+   12.35,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   19.7,
+   "error.mp3",
+   -24
+  ],
+  [
+   21.5,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   26.15,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   27.1,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   31.65,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   42.35,
+   "impact-bass-1.mp3",
+   -20
+  ],
+  [
+   44.3,
+   "ping.mp3",
+   -22
+  ],
+  [
+   45.95,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   47.8,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   52.4,
+   "pop.mp3",
+   -20
+  ],
+  [
+   56.7,
+   "pop.mp3",
+   -20
+  ],
+  [
+   57.6,
+   "pop.mp3",
+   -24
+  ],
+  [
+   57.95,
+   "pop.mp3",
+   -24
+  ],
+  [
+   58.3,
+   "pop.mp3",
+   -24
+  ],
+  [
+   58.6,
+   "pop.mp3",
+   -24
+  ],
+  [
+   58.9,
+   "pop.mp3",
+   -24
+  ],
+  [
+   59.1,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   62.8,
+   "impact-bass-1.mp3",
+   -16
+  ],
+  [
+   67.5,
+   "impact-bass-2.mp3",
+   -20
+  ],
+  [
+   69.5,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   73.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   76.2,
+   "whoosh-short.mp3",
+   -24
+  ],
+  [
+   77.6,
+   "whoosh-short.mp3",
+   -24
+  ],
+  [
+   79.4,
+   "whoosh-short.mp3",
+   -24
+  ],
+  [
+   81.7,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   83.4,
+   "click.mp3",
+   -18
+  ],
+  [
+   84.7,
+   "click.mp3",
+   -18
+  ],
+  [
+   85.9,
+   "click.mp3",
+   -18
+  ],
+  [
+   86.0,
+   "chime.mp3",
+   -24
+  ],
+  [
+   86.6,
+   "whoosh.mp3",
+   -22
+  ]
+ ],
+ "post": {
+  "title": "R$ 3 MILHÕES\nEM JUROS",
+  "descricao": "Dívida pública do Brasil explicada: R$ 11,1 trilhões, 82,9% do PIB, e R$ 1,2 trilhão de juros em 12 meses (Banco Central, set/2026). De onde vem a dívida, por que ela não diminui e de quem é a culpa.",
+  "hashtags": [
+   "#dividapublica",
+   "#juros",
+   "#economia",
+   "#bancocentral",
+   "#educacaofinanceira"
+  ],
+  "media": false,
+  "t": 4.3
+ }
+}

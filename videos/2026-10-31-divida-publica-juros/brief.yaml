@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-10-31-divida-publica-juros
+tema: "Dívida pública do Brasil hoje: de onde ela vem, por que não diminui e de quem é a culpa"
+referencias_visuais: []
+
+hook:
+  origem: 3   # número chocante
+  texto: "Enquanto você assiste isso, o Brasil gasta três milhões em juros."
+
+pergunta_final:
+  origem: 3
+  texto: "E você: prefere juro alto rendendo seu dinheiro, ou juro baixo deixando o crédito mais barato?"
+
+analogia: "Fatura do cartão (só no ponto difícil): você deve mil, o juro é cem; sem os cem, eles viram dívida e o próximo juro vem sobre mil e cem. A dívida cresce sozinha."
+
+pedidos_do_samuel:
+  - "Explicar claramente de onde vem a dívida pública hoje e por que ela não diminui (roteiro refeito a partir da fala 3)"
+  - "Deixar claro de quem é a culpa (sem tomar lado: não é de um governo só; governo gasta, Congresso aprova, BC define o juro)"
+  - "Sem rostos de presidentes: a linha do tempo mostra só os anos"
+  - "Empréstimo/juros explicado com exemplo de números redondos (mil e cem), sem jargão"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-01
