@@ -65,8 +65,10 @@ function makeDiningChair({ fabric = "#5b1f22", wood = "#3a2214" } = {}) {
 //   table 0..1: forearms resting on a table top in front (seated)
 //   reach 0..1: right arm reaching forward/up (to drop a coin, take a plate)
 //   turn: yaw of the whole body; lean: torso pitch forward (+)
+// Options for a woman in a skirt suit: tie: null (no tie), longHair: true (hair down to the shoulders),
+// skirt: colour (a skirt over the thighs; the shins in dark tights). Standing poses only for the skirt.
 // API: { group, setPose, hand: right hand Object3D (world position via getWorldPosition), parts }
-function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin = "#c8977a", hair = "#2a1d16", shoes = "#141210" } = {}) {
+function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin = "#c8977a", hair = "#2a1d16", shoes = "#141210", longHair = false, skirt = null } = {}) {
   const g = new THREE.Group();
   const sm = pmat(suit, { roughness: 0.78, sheen: 0.4, sheenColor: new THREE.Color("#8b8f99"), sheenRoughness: 0.7, bumpMap: SUIT_WEAVE, bumpScale: 0.6 });
   const skm = pmat(skin, { roughness: 0.55, sheen: 0.25, sheenColor: new THREE.Color("#ffd2b8") });
@@ -83,8 +85,10 @@ function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin 
   const torso = new THREE.Group(); pelvis.add(torso);
   const chest = cap(0.16, 0.3, sm, 20); chest.scale.set(1.18, 1, 0.74); chest.position.y = 0.3; torso.add(chest);
   const shirtV = new THREE.Mesh(new THREE.CircleGeometry(0.075, 3), shm); shirtV.rotation.z = -Math.PI / 2; shirtV.scale.set(1.6, 1, 1); shirtV.position.set(0, 0.5, 0.128); shirtV.rotation.x = -0.08; torso.add(shirtV);
-  const tieMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.012, 0.22, 4), tieM); tieMesh.rotation.y = Math.PI / 4; tieMesh.scale.set(1, 1, 0.25); tieMesh.position.set(0, 0.42, 0.13); torso.add(tieMesh);
-  const knot = new THREE.Mesh(new THREE.SphereGeometry(0.018, 10, 8), tieM); knot.position.set(0, 0.535, 0.12); torso.add(knot);
+  if (tie) {
+    const tieMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.012, 0.22, 4), tieM); tieMesh.rotation.y = Math.PI / 4; tieMesh.scale.set(1, 1, 0.25); tieMesh.position.set(0, 0.42, 0.13); torso.add(tieMesh);
+    const knot = new THREE.Mesh(new THREE.SphereGeometry(0.018, 10, 8), tieM); knot.position.set(0, 0.535, 0.12); torso.add(knot);
+  }
   const shoulders = cap(0.075, 0.27, sm); shoulders.rotation.z = Math.PI / 2; shoulders.position.y = 0.5; shoulders.scale.set(1, 1, 0.85); torso.add(shoulders);
   const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.044, 0.05, 0.13, 16), skm); neck.position.y = 0.615; torso.add(neck);
   const collar = new THREE.Mesh(new THREE.CylinderGeometry(0.062, 0.07, 0.05, 20, 1, true), shm); collar.position.y = 0.575; torso.add(collar);
@@ -98,6 +102,7 @@ function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin 
   const HS = [0.92 * 1.06, 1.18 * 1.06, 1.0 * 1.06];
   const hairCap = new THREE.Mesh(new THREE.SphereGeometry(0.1, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.42), hm); hairCap.scale.set(...HS); hairCap.position.y = 0.006; hairCap.rotation.x = -0.4; head.add(hairCap);
   const nape = new THREE.Mesh(new THREE.SphereGeometry(0.1, 24, 8, Math.PI * 1.15, Math.PI * 0.7, Math.PI * 0.45, Math.PI * 0.17), hm); nape.scale.set(...HS); nape.position.y = 0.006; head.add(nape);
+  if (longHair) { const fall = new THREE.Mesh(new THREE.CapsuleGeometry(0.1, 0.16, 8, 20), hm); fall.scale.set(1.12, 1, 0.7); fall.position.set(0, -0.1, -0.05); head.add(fall); }
 
   // arms: shoulder pivot → upper arm (down -y) → elbow pivot → forearm → hand
   const arms = [];
@@ -118,10 +123,11 @@ function makeDiner({ suit = "#22252b", shirt = "#ecebe7", tie = "#5b1b1b", skin 
     const hip = new THREE.Group(); hip.position.set(sx * 0.095, 0, 0); pelvis.add(hip);
     const th = cap(0.068, THIGH - 0.1, sm); th.position.y = -THIGH / 2; hip.add(th);
     const kn = new THREE.Group(); kn.position.y = -THIGH; hip.add(kn);
-    const shn = cap(0.055, SHIN - 0.09, sm); shn.position.y = -SHIN / 2; kn.add(shn);
+    const shn = cap(0.055, SHIN - 0.09, skirt ? pmat("#2a2224", { roughness: 0.5, sheen: 0.5, sheenColor: new THREE.Color("#6a5a5a") }) : sm); shn.position.y = -SHIN / 2; kn.add(shn);
     const foot = new THREE.Mesh(rbox(0.095, 0.06, 0.26, 0.025), shoeM); foot.position.set(0, -SHIN - 0.02, 0.06); kn.add(foot);
     legs.push({ hip, kn });
   }
+  if (skirt) { const sk = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.2, 0.46, 28), pmat(skirt, { roughness: 0.78, sheen: 0.4, sheenColor: new THREE.Color("#8b8f99"), bumpMap: SUIT_WEAVE, bumpScale: 0.6 })); sk.scale.z = 0.82; sk.position.y = -0.2; pelvis.add(sk); }
   g.add(contactShadow(0.9, 0.9));
   const STAND = THIGH + SHIN + 0.05;
 

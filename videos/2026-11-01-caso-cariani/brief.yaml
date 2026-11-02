@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-01-caso-cariani
+tema: "O caso Renato Cariani e a PF — vídeo informativo sobre o que aconteceu"
+referencias_visuais: []
+
+hook:
+  origem: 5
+  texto: "Por que a Polícia Federal bateu na porta do Renato Cariani?"
+
+pergunta_final:
+  origem: 1
+  texto: "Dono de empresa responde por tudo o que acontece nela, ou só pelo que sabia?"
+
+analogia: "Remédio tarja preta só sai da farmácia com receita; químico controlado só sai com licença da PF e nota dizendo pra quem foi."
+
+pedidos:
+  - "Tom neutro, sem acusar: apenas apontar os fatos (Samuel)"
+  - "Sem fotos do Renato Cariani: retratá-lo em 3D (figura estilizada, sem imitar o rosto)"
+  - "Início mais impactante: logo depois do hook, responder com o que levantou a suspeita (químicos que viram droga, notas no nome da empresa dele, 12 t)"
+  - "Marcas de fala na narração para segurar a pessoa (re-gancho: 'fica até o final')"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-01

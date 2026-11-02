@@ -1,0 +1,873 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-11-01-caso-cariani",
+ "duration": 97.9,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "Tarja": "tarja",
+   "Preta.": "preta.",
+   "receita": "Receita",
+   "justiça": "Justiça"
+  }
+ },
+ "media": {},
+ "cuts": [
+  3.55,
+  7.05,
+  9.75,
+  14.66,
+  18.05,
+  21.85,
+  24.45,
+  27.14,
+  31.6,
+  34.6,
+  40.05,
+  46.8,
+  48.33,
+  53.02,
+  58.75,
+  62.95,
+  65.7,
+  68.08,
+  75.28,
+  79.0,
+  81.56,
+  85.4,
+  87.95,
+  89.55,
+  91.25
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 3.5,
+   "text": "POR QUE A PF BATEU\nNA PORTA DE CARIANI?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 3.62,
+   "to": 7.0,
+   "text": "QUÍMICOS QUE PODEM\nVIRAR DROGA"
+  },
+  {
+   "id": "src-03",
+   "kind": "source",
+   "from": 3.62,
+   "to": 9.7,
+   "text": "Fonte: Agência Brasil, 12/12/2023"
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 7.1,
+   "to": 9.7,
+   "big": "60 NOTAS",
+   "label": "NO NOME DA EMPRESA DELE"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 9.8,
+   "to": 11.75,
+   "text": "SEGUNDO A ACUSAÇÃO…"
+  },
+  {
+   "id": "ov-06",
+   "kind": "stat",
+   "from": 11.8,
+   "to": 14.6,
+   "big": "12 TONELADAS",
+   "label": "PRO TRÁFICO, DIZ A ACUSAÇÃO"
+  },
+  {
+   "id": "src-07",
+   "kind": "source",
+   "from": 9.8,
+   "to": 14.6,
+   "text": "Fonte: Agência Brasil; Poder360"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 14.72,
+   "to": 17.98,
+   "text": "ESSE CASO DIVIDE\nTODO MUNDO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 18.1,
+   "to": 21.8,
+   "text": "ANIDROL"
+  },
+  {
+   "id": "ov-10",
+   "kind": "chip",
+   "from": 18.1,
+   "to": 21.8,
+   "text": "QUÍMICA · DIADEMA (SP)",
+   "style": "dark"
+  },
+  {
+   "id": "src-11",
+   "kind": "source",
+   "from": 18.1,
+   "to": 21.8,
+   "text": "Fonte: CNN Brasil, 28/10/2026"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 21.9,
+   "to": 24.4,
+   "text": "UM DOS DONOS:\nRENATO CARIANI"
+  },
+  {
+   "id": "src-13",
+   "kind": "source",
+   "from": 21.9,
+   "to": 24.4,
+   "text": "Ilustração 3D genérica, não é foto"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 24.5,
+   "to": 27.08,
+   "text": "INFLUENCIADOR\nFITNESS"
+  },
+  {
+   "id": "src-15",
+   "kind": "source",
+   "from": 24.5,
+   "to": 27.08,
+   "text": "Fonte: Estado de Minas; O Tempo"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 27.2,
+   "to": 31.55,
+   "text": "TARJA PRETA:\nSÓ COM RECEITA"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 31.65,
+   "to": 34.55,
+   "text": "ALGUNS QUÍMICOS\nSÃO IGUAIS"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 34.7,
+   "to": 37.0,
+   "text": "A PF CONTROLA\nQUEM VENDE"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 37.1,
+   "to": 40.0,
+   "text": "CADA VENDA: NOTA\nDIZENDO PRA QUEM"
+  },
+  {
+   "id": "src-20",
+   "kind": "source",
+   "from": 34.7,
+   "to": 40.0,
+   "text": "Fonte: PF; Lei 10.357/2001"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 40.15,
+   "to": 43.3,
+   "text": "IMAGINA…"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 43.4,
+   "to": 46.75,
+   "text": "“POR QUE VOCÊS\nCOMPRARAM?”"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 46.85,
+   "to": 48.28,
+   "text": "VOCÊS NUNCA\nCOMPRARAM"
+  },
+  {
+   "id": "src-24",
+   "kind": "source",
+   "from": 40.15,
+   "to": 48.28,
+   "text": "Fonte: CNN Brasil, 14/12/2023"
+  },
+  {
+   "id": "ov-25",
+   "kind": "chip",
+   "from": 48.4,
+   "to": 52.98,
+   "text": "PRA ACUSAÇÃO",
+   "style": "red"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 48.4,
+   "to": 50.85,
+   "text": "NOTAS DE FACHADA"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 50.9,
+   "to": 52.98,
+   "text": "PAGO EM DINHEIRO VIVO"
+  },
+  {
+   "id": "src-28",
+   "kind": "source",
+   "from": 48.4,
+   "to": 52.98,
+   "text": "Fonte: Agência Brasil, 16/02/2024 · 2014–2020"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 53.1,
+   "to": 55.3,
+   "text": "PELA CONTA DA PF…"
+  },
+  {
+   "id": "ov-30",
+   "kind": "stat",
+   "from": 55.35,
+   "to": 58.7,
+   "big": "+ DE 19 T",
+   "label": "COCAÍNA E CRACK (ESTIMATIVA)"
+  },
+  {
+   "id": "src-31",
+   "kind": "source",
+   "from": 53.1,
+   "to": 58.7,
+   "text": "Fonte: Agência Brasil, 12/12/2023"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 58.85,
+   "to": 61.0,
+   "text": "12/12/2023"
+  },
+  {
+   "id": "ov-33",
+   "kind": "chip",
+   "from": 58.85,
+   "to": 61.0,
+   "text": "BUSCAS DA POLÍCIA FEDERAL",
+   "style": "dark"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 61.05,
+   "to": 62.9,
+   "text": "OPERAÇÃO HINSBERG"
+  },
+  {
+   "id": "src-35",
+   "kind": "source",
+   "from": 58.85,
+   "to": 62.9,
+   "text": "Fonte: Agência Brasil; Poder360"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 63.05,
+   "to": 64.85,
+   "text": "PRISÃO PEDIDA…"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 64.9,
+   "to": 65.65,
+   "text": "…E NEGADA"
+  },
+  {
+   "id": "src-38",
+   "kind": "source",
+   "from": 63.05,
+   "to": 65.65,
+   "text": "Fonte: Correio Braziliense; CNN Brasil"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 65.8,
+   "to": 68.02,
+   "text": "FEV/2024: VIRA RÉU"
+  },
+  {
+   "id": "ov-40",
+   "kind": "chip",
+   "from": 66.5,
+   "to": 68.02,
+   "text": "TRÁFICO · ASSOCIAÇÃO · LAVAGEM",
+   "style": "dark"
+  },
+  {
+   "id": "src-41",
+   "kind": "source",
+   "from": 65.8,
+   "to": 68.02,
+   "text": "Fonte: Agência Brasil, 16/02/2024"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 68.15,
+   "to": 71.4,
+   "text": "OUT/2026: MP PEDE\nCONDENAÇÃO"
+  },
+  {
+   "id": "ov-43",
+   "kind": "stat",
+   "from": 71.45,
+   "to": 75.22,
+   "big": "16 A 51 ANOS",
+   "label": "PENAS SOMADAS PEDIDAS"
+  },
+  {
+   "id": "src-44",
+   "kind": "source",
+   "from": 68.15,
+   "to": 75.22,
+   "text": "Fonte: Estado de Minas, 29/10/2026"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 75.38,
+   "to": 76.55,
+   "text": "SÓ QUE TEM\nUM DETALHE"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 76.6,
+   "to": 79.9,
+   "text": "SÓCIA: MP PEDE\nABSOLVIÇÃO"
+  },
+  {
+   "id": "ov-47",
+   "kind": "title",
+   "from": 79.95,
+   "to": 81.5,
+   "text": "SEM PROVA DE\nQUE ELA SABIA"
+  },
+  {
+   "id": "src-48",
+   "kind": "source",
+   "from": 76.6,
+   "to": 81.5,
+   "text": "Fonte: Estado de Minas, 29/10/2026"
+  },
+  {
+   "id": "ov-49",
+   "kind": "title",
+   "from": 81.65,
+   "to": 85.4,
+   "text": "“A EMPRESA FOI\nVÍTIMA DE FRAUDE”"
+  },
+  {
+   "id": "ov-50",
+   "kind": "title",
+   "from": 85.45,
+   "to": 87.9,
+   "text": "ELE NEGA E RESPONDE\nEM LIBERDADE"
+  },
+  {
+   "id": "src-51",
+   "kind": "source",
+   "from": 81.65,
+   "to": 87.9,
+   "text": "Fonte: Metrópoles, 30/10/2026"
+  },
+  {
+   "id": "ov-52",
+   "kind": "title",
+   "from": 88.02,
+   "to": 89.5,
+   "text": "AINDA SEM\nSENTENÇA"
+  },
+  {
+   "id": "ov-53",
+   "kind": "title",
+   "from": 89.62,
+   "to": 91.2,
+   "text": "E SE FOSSE\nA SUA?"
+  },
+  {
+   "id": "ov-54",
+   "kind": "question",
+   "from": 91.35,
+   "to": 97.9,
+   "text": "TUDO OU SÓ\nO QUE SABIA?",
+   "sub": "DONO RESPONDE POR…"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 95.9,
+   "to": 97.9,
+   "html": "Comenta: <b>TUDO</b> ou <b>SÓ O QUE SABIA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.25,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   3.55,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   9.75,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   14.66,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   18.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   21.85,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   24.45,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   27.14,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   31.6,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   34.6,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   40.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   46.8,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   48.33,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   53.02,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   58.75,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   62.95,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   65.7,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   68.08,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   75.28,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   81.56,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   87.95,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   89.55,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   91.25,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   0.6,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   1.02,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   1.44,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   7.15,
+   "pop.mp3",
+   -20
+  ],
+  [
+   7.37,
+   "pop.mp3",
+   -20
+  ],
+  [
+   7.590000000000001,
+   "pop.mp3",
+   -20
+  ],
+  [
+   7.8100000000000005,
+   "pop.mp3",
+   -20
+  ],
+  [
+   8.030000000000001,
+   "pop.mp3",
+   -20
+  ],
+  [
+   14.8,
+   "riser.mp3",
+   -22
+  ],
+  [
+   25.0,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   29.35,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   32.0,
+   "pop.mp3",
+   -14
+  ],
+  [
+   35.2,
+   "click.mp3",
+   -14
+  ],
+  [
+   36.08,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   37.0,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   40.3,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   43.5,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   53.4,
+   "pop.mp3",
+   -16
+  ],
+  [
+   54.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   55.6,
+   "pop.mp3",
+   -16
+  ],
+  [
+   56.7,
+   "pop.mp3",
+   -16
+  ],
+  [
+   64.92,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   71.5,
+   "riser.mp3",
+   -22
+  ],
+  [
+   73.6,
+   "riser.mp3",
+   -20
+  ],
+  [
+   79.3,
+   "sparkle.mp3",
+   -16
+  ],
+  [
+   91.4,
+   "pop.mp3",
+   -16
+  ],
+  [
+   91.65,
+   "pop.mp3",
+   -16
+  ],
+  [
+   95.9,
+   "ping.mp3",
+   -14
+  ],
+  [
+   85.4,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   85.85,
+   "click.mp3",
+   -12
+  ],
+  [
+   3.89,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   4.13,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   4.37,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   79.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   47.15,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   66.1,
+   "click.mp3",
+   -12
+  ]
+ ],
+ "post": {
+  "title": "POR QUE A PF BATEU\nNA PORTA DELE?",
+  "descricao": "Caso Renato Cariani explicado: a Operação Hinsberg da Polícia Federal, as notas fiscais da Anidrol e os químicos que podem virar droga. O MP-SP pediu a condenação (penas somadas de 16 a 51 anos); ele nega e ainda não há sentença.",
+  "hashtags": [
+   "#renatocariani",
+   "#cariani",
+   "#policiafederal",
+   "#anidrol",
+   "#noticias"
+  ],
+  "media": false,
+  "t": 1.2
+ },
+ "scenes": [
+  {
+   "id": "porta",
+   "from": 0.0,
+   "to": 3.55
+  },
+  {
+   "id": "quimicos",
+   "from": 3.55,
+   "to": 7.05
+  },
+  {
+   "id": "notas",
+   "from": 7.05,
+   "to": 9.75
+  },
+  {
+   "id": "desvio",
+   "from": 9.75,
+   "to": 14.66
+  },
+  {
+   "id": "divide",
+   "from": 14.66,
+   "to": 18.05
+  },
+  {
+   "id": "anidrol",
+   "from": 18.05,
+   "to": 21.85
+  },
+  {
+   "id": "socio",
+   "from": 21.85,
+   "to": 27.14
+  },
+  {
+   "id": "tarja",
+   "from": 27.14,
+   "to": 31.6
+  },
+  {
+   "id": "igual",
+   "from": 31.6,
+   "to": 34.6
+  },
+  {
+   "id": "licenca",
+   "from": 34.6,
+   "to": 40.05
+  },
+  {
+   "id": "receita",
+   "from": 40.05,
+   "to": 46.8
+  },
+  {
+   "id": "nunca",
+   "from": 46.8,
+   "to": 48.33
+  },
+  {
+   "id": "fachada",
+   "from": 48.33,
+   "to": 53.02
+  },
+  {
+   "id": "dezenove",
+   "from": 53.02,
+   "to": 58.75
+  },
+  {
+   "id": "busca",
+   "from": 58.75,
+   "to": 62.95
+  },
+  {
+   "id": "negada",
+   "from": 62.95,
+   "to": 65.7
+  },
+  {
+   "id": "reu",
+   "from": 65.7,
+   "to": 68.08
+  },
+  {
+   "id": "pena",
+   "from": 68.08,
+   "to": 75.28
+  },
+  {
+   "id": "socia",
+   "from": 75.28,
+   "to": 81.56
+  },
+  {
+   "id": "defesa",
+   "from": 81.56,
+   "to": 87.95
+  },
+  {
+   "id": "sentenca",
+   "from": 87.95,
+   "to": 89.55
+  },
+  {
+   "id": "sua",
+   "from": 89.55,
+   "to": 91.25
+  },
+  {
+   "id": "pergunta",
+   "from": 91.25,
+   "to": 97.9
+  }
+ ]
+}
