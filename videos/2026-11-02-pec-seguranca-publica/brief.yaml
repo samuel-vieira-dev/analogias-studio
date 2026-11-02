@@ -1,0 +1,19 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-pec-seguranca-publica
+estilo: explicando-direito
+tema: "PEC da Segurança Pública vai a voto no Senado na terça (03/11), com a maioridade penal travando o acordo"
+referencias_visuais: []
+
+hook:
+  origem: 1
+  texto: "Nesta terça, o Senado vota a PEC que muda a segurança pública."
+
+pergunta_final:
+  origem: 2   # vai só na legenda do post (estilo Explicando Direito)
+  texto: "Reduzir a maioridade penal para 16 anos nos crimes hediondos: a favor ou contra?"
+
+pedidos:
+  - "Vídeo para TikTok, publicar antes da sessão de terça (03/11, 16h)"
+
+duracao_alvo_s: 70
+aprovado_em: 2026-11-02
