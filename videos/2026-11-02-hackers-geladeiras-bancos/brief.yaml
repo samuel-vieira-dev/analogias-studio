@@ -1,0 +1,24 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-hackers-geladeiras-bancos
+estilo: analogias-v1
+tema: "A temporada de hacks: hackers invadindo supermercados e estragando alimentos, e a tensão crescente de hackers entrarem em bancos"
+referencias_visuais: []
+
+hook:
+  origem: 6
+  texto: "Hackers invadiram setecentos supermercados em uma noite."
+
+pergunta_final:
+  origem: 1
+  texto: "Isso foi só bagunça de hacker… ou um teste pra algo maior?"
+
+analogia: "Chave-mestra do hotel: um cartão abre todos os quartos, ninguém arromba porta. No mercado, é a central das geladeiras ligada na internet; no Pix, a empresa que liga bancos ao sistema (acesso vendido por R$ 15 mil no caso C&M)."
+
+pedidos:
+  - "Hook do Samuel: 'hackers invadiram 700 supermercados em uma noite' (na aprovação)"
+  - "Não gostou da analogia porta blindada / janela da lavanderia; escolheu a chave-mestra"
+  - "Gostou do 'imagina': ser mais direto (freezer seco e direto; segundo 'imagina' no app do banco, com caso real)"
+  - "Tom sensacionalista e de urgência no texto, sem mudar o tom de voz nem a empolgação da narração"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-02

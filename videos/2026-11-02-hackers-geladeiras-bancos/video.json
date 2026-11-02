@@ -1,0 +1,782 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-11-02-hackers-geladeiras-bancos",
+ "estilo": "analogias-v1",
+ "duration": 100.6,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "PIX": "Pix"
+  }
+ },
+ "media": {
+  "intermarche": {
+   "file": "midia/intermarche.jpg",
+   "credit": "Marcel Roblin/Wikimedia",
+   "url": "https://commons.wikimedia.org/wiki/File:Intermarch%C3%A9_Serres-Castet.jpg",
+   "focus": [
+    0.36,
+    0.45
+   ],
+   "author": "Marcel Roblin",
+   "license": "CC BY-SA 4.0"
+  },
+  "delhaize": {
+   "file": "midia/delhaize.jpg",
+   "credit": "Le Sharkoïste/Wikimedia",
+   "url": "https://commons.wikimedia.org/wiki/File:Delhaize_%C3%89pinois_-_2024-11-19.jpg",
+   "focus": [
+    0.42,
+    0.5
+   ],
+   "author": "Le Sharkoïste",
+   "license": "CC BY 4.0"
+  }
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 4.45
+  },
+  {
+   "id": "freezer",
+   "from": 4.45,
+   "to": 9.55
+  },
+  {
+   "id": "franca",
+   "from": 9.55,
+   "to": 14.9
+  },
+  {
+   "id": "resgate",
+   "from": 14.9,
+   "to": 19.42
+  },
+  {
+   "id": "longe",
+   "from": 19.42,
+   "to": 22.7
+  },
+  {
+   "id": "hotel",
+   "from": 22.7,
+   "to": 28.9
+  },
+  {
+   "id": "central",
+   "from": 28.9,
+   "to": 35.3
+  },
+  {
+   "id": "senha",
+   "from": 35.3,
+   "to": 41.55
+  },
+  {
+   "id": "degelo",
+   "from": 41.55,
+   "to": 46.25
+  },
+  {
+   "id": "segunda",
+   "from": 46.25,
+   "to": 52.35
+  },
+  {
+   "id": "cofre",
+   "from": 52.35,
+   "to": 54.05
+  },
+  {
+   "id": "binance",
+   "from": 54.05,
+   "to": 64.45
+  },
+  {
+   "id": "brasil",
+   "from": 64.45,
+   "to": 67.42
+  },
+  {
+   "id": "venda",
+   "from": 67.42,
+   "to": 76.5
+  },
+  {
+   "id": "pix",
+   "from": 76.5,
+   "to": 84.45
+  },
+  {
+   "id": "padrao",
+   "from": 84.45,
+   "to": 91.85
+  },
+  {
+   "id": "pergunta",
+   "from": 91.85,
+   "to": 100.6
+  }
+ ],
+ "cuts": [
+  4.45,
+  9.55,
+  12.22,
+  14.9,
+  19.42,
+  22.7,
+  28.9,
+  35.3,
+  37.71,
+  41.55,
+  46.25,
+  52.35,
+  54.05,
+  64.45,
+  67.42,
+  73.89,
+  76.5,
+  84.45,
+  91.85
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "stat",
+   "from": 0.1,
+   "to": 4.4,
+   "big": "700",
+   "label": "SUPERMERCADOS EM 1 NOITE"
+  },
+  {
+   "id": "src-02",
+   "kind": "source",
+   "from": 0.1,
+   "to": 4.4,
+   "text": "Fonte: Reuters, 14/10/2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 4.55,
+   "to": 8.2,
+   "text": "ABRE O FREEZER…"
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 8.25,
+   "to": 9.5,
+   "big": "50 °C",
+   "label": "DENTRO DO FREEZER"
+  },
+  {
+   "id": "src-05",
+   "kind": "source",
+   "from": 8.25,
+   "to": 9.5,
+   "text": "Fonte: Reuters, 14/10/2026"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 9.6,
+   "to": 12.17,
+   "text": "FRANÇA,\nOUTUBRO"
+  },
+  {
+   "id": "src-07",
+   "kind": "source",
+   "from": 9.6,
+   "to": 12.17,
+   "text": "Foto: Marcel Roblin/Wikimedia"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 12.27,
+   "to": 13.4,
+   "text": "COMIDA NO LIXO",
+   "style": "red"
+  },
+  {
+   "id": "ov-09",
+   "kind": "chip",
+   "from": 13.45,
+   "to": 14.85,
+   "text": "FREEZER PEGANDO FOGO",
+   "style": "red"
+  },
+  {
+   "id": "src-10",
+   "kind": "source",
+   "from": 12.27,
+   "to": 14.85,
+   "text": "Fonte: Reuters/CNN Brasil, 14/10/2026"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 14.95,
+   "to": 16.6,
+   "text": "O MAIS\nASSUSTADOR"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 16.65,
+   "to": 18.2,
+   "text": "NINGUÉM PEDIU RESGATE",
+   "style": "red"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 18.25,
+   "to": 19.37,
+   "text": "QUEM FOI?"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 19.47,
+   "to": 22.65,
+   "text": "COMO, DE LONGE?"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 22.75,
+   "to": 25.5,
+   "text": "CHAVE-MESTRA"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 25.55,
+   "to": 28.85,
+   "text": "ABRE TODAS\nAS PORTAS"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 28.95,
+   "to": 32.4,
+   "text": "NO MERCADO:\nA CENTRAL"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 32.45,
+   "to": 33.9,
+   "text": "COMANDA TODAS\nAS GELADEIRAS"
+  },
+  {
+   "id": "ov-19",
+   "kind": "chip",
+   "from": 33.95,
+   "to": 35.25,
+   "text": "LIGADA NA INTERNET",
+   "style": "orange"
+  },
+  {
+   "id": "ov-20",
+   "kind": "chip",
+   "from": 35.35,
+   "to": 37.66,
+   "text": "SEM ATUALIZAÇÃO",
+   "style": "red"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 37.76,
+   "to": 41.5,
+   "text": "SENHA =\nDATA DO DIA"
+  },
+  {
+   "id": "src-22",
+   "kind": "source",
+   "from": 37.76,
+   "to": 41.5,
+   "text": "Fonte: Claroty, ago/2026"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 41.6,
+   "to": 43.1,
+   "text": "OS HACKERS\nENTRARAM"
+  },
+  {
+   "id": "ov-24",
+   "kind": "chip",
+   "from": 43.15,
+   "to": 46.2,
+   "text": "DEGELO: LIGADO",
+   "style": "orange"
+  },
+  {
+   "id": "ov-25",
+   "kind": "chip",
+   "from": 44.9,
+   "to": 46.2,
+   "text": "LIMITE: DESLIGADO",
+   "style": "red"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 46.3,
+   "to": 47.45,
+   "text": "E NÃO PAROU"
+  },
+  {
+   "id": "ov-27",
+   "kind": "chip",
+   "from": 47.5,
+   "to": 52.3,
+   "text": "NESTA SEGUNDA, 02/11",
+   "style": "orange"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 49.3,
+   "to": 52.3,
+   "text": "BÉLGICA · LUXEMBURGO\nSUÉCIA · ESTÔNIA"
+  },
+  {
+   "id": "src-29",
+   "kind": "source",
+   "from": 46.3,
+   "to": 52.3,
+   "text": "Foto: Le Sharkoïste/Wikimedia · Reuters"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 52.4,
+   "to": 54.0,
+   "text": "COM DINHEIRO,\nFUNCIONA IGUAL"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 54.1,
+   "to": 55.45,
+   "text": "SEMANA PASSADA"
+  },
+  {
+   "id": "ov-32",
+   "kind": "stat",
+   "from": 55.5,
+   "to": 60.55,
+   "big": "US$ 6,3 BI",
+   "label": "LEVADOS DA BINANCE (CRIPTO)"
+  },
+  {
+   "id": "src-33",
+   "kind": "source",
+   "from": 55.5,
+   "to": 60.55,
+   "text": "Fonte: Elliptic; NBC News"
+  },
+  {
+   "id": "ov-34",
+   "kind": "stat",
+   "from": 60.6,
+   "to": 62.4,
+   "big": "≈ 20 MIN",
+   "label": "DURAÇÃO DO ATAQUE"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 62.45,
+   "to": 64.4,
+   "text": "FBI CULPA A\nCOREIA DO NORTE"
+  },
+  {
+   "id": "src-36",
+   "kind": "source",
+   "from": 60.6,
+   "to": 64.4,
+   "text": "Fonte: FBI, 31/10/2026"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 64.5,
+   "to": 65.45,
+   "text": "E NO BRASIL?"
+  },
+  {
+   "id": "ov-38",
+   "kind": "title",
+   "from": 65.5,
+   "to": 67.37,
+   "text": "JÁ VENDERAM UMA\nCHAVE-MESTRA"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 67.47,
+   "to": 72.6,
+   "text": "FUNCIONÁRIO VENDEU\nO ACESSO AO PIX"
+  },
+  {
+   "id": "ov-40",
+   "kind": "stat",
+   "from": 72.65,
+   "to": 73.84,
+   "big": "R$ 15 MIL",
+   "label": "PREÇO DO ACESSO"
+  },
+  {
+   "id": "ov-41",
+   "kind": "stat",
+   "from": 73.94,
+   "to": 76.45,
+   "big": "+ R$ 500 MI",
+   "label": "SUMIRAM"
+  },
+  {
+   "id": "src-42",
+   "kind": "source",
+   "from": 67.47,
+   "to": 76.45,
+   "text": "Fonte: Polícia Civil-SP, jul/2025"
+  },
+  {
+   "id": "ov-43",
+   "kind": "title",
+   "from": 76.55,
+   "to": 80.5,
+   "text": "AGORA IMAGINA…"
+  },
+  {
+   "id": "ov-44",
+   "kind": "chip",
+   "from": 80.55,
+   "to": 84.4,
+   "text": "JAN/2026",
+   "style": "orange"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 80.55,
+   "to": 84.4,
+   "text": "BANCO DO NORDESTE\nSUSPENDEU O PIX"
+  },
+  {
+   "id": "src-46",
+   "kind": "source",
+   "from": 80.55,
+   "to": 84.4,
+   "text": "Fonte: Movimento Econômico, 27/01/2026"
+  },
+  {
+   "id": "ov-47",
+   "kind": "title",
+   "from": 84.5,
+   "to": 87.35,
+   "text": "ATÉ AGORA, QUEM PAGOU:\nAS EMPRESAS"
+  },
+  {
+   "id": "ov-48",
+   "kind": "title",
+   "from": 87.4,
+   "to": 89.05,
+   "text": "O MESMO PADRÃO"
+  },
+  {
+   "id": "ov-49",
+   "kind": "title",
+   "from": 89.1,
+   "to": 90.5,
+   "text": "NINGUÉM ARROMBA\nO COFRE"
+  },
+  {
+   "id": "ov-50",
+   "kind": "title",
+   "from": 90.55,
+   "to": 91.8,
+   "text": "PEGA A\nCHAVE-MESTRA"
+  },
+  {
+   "id": "ov-51",
+   "kind": "title",
+   "from": 91.9,
+   "to": 94.4,
+   "text": "OS DOS MERCADOS\nNÃO LEVARAM NADA"
+  },
+  {
+   "id": "ov-52",
+   "kind": "question",
+   "from": 94.45,
+   "to": 100.6,
+   "text": "SÓ BAGUNÇA…\nOU UM TESTE?",
+   "sub": "PRA ALGO MAIOR"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 98.62,
+   "to": 100.6,
+   "html": "Comenta: <b>BAGUNÇA</b> ou <b>TESTE</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.2,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   1.14,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   4.39,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   8.32,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   9.49,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   12.16,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   14.38,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   14.84,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   16.68,
+   "glitch-1.mp3",
+   -18
+  ],
+  [
+   18.28,
+   "glitch-2.mp3",
+   -18
+  ],
+  [
+   19.36,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   21.4,
+   "riser.mp3",
+   -24
+  ],
+  [
+   22.64,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   25.14,
+   "click.mp3",
+   -12
+  ],
+  [
+   25.6,
+   "ping.mp3",
+   -18
+  ],
+  [
+   28.84,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   32.0,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   34.54,
+   "notification.mp3",
+   -20
+  ],
+  [
+   35.24,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   37.65,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   39.0,
+   "typing.mp3",
+   -20
+  ],
+  [
+   41.2,
+   "chime.mp3",
+   -16
+  ],
+  [
+   41.49,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   43.7,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   45.12,
+   "error.mp3",
+   -18
+  ],
+  [
+   46.19,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   46.9,
+   "riser.mp3",
+   -24
+  ],
+  [
+   52.29,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   52.76,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   53.99,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   56.32,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   61.38,
+   "ping.mp3",
+   -16
+  ],
+  [
+   62.46,
+   "glitch-3.mp3",
+   -18
+  ],
+  [
+   64.39,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   67.36,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   71.3,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   73.83,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   74.24,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   76.44,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   79.6,
+   "click.mp3",
+   -14
+  ],
+  [
+   79.78,
+   "error.mp3",
+   -14
+  ],
+  [
+   84.39,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   88.2,
+   "click.mp3",
+   -12
+  ],
+  [
+   90.06,
+   "impact-bass-1.mp3",
+   -10
+  ],
+  [
+   91.79,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   98.62,
+   "ping.mp3",
+   -14
+  ]
+ ],
+ "post": {
+  "title": "HACKERS\nINVADIRAM\n700 MERCADOS",
+  "descricao": "Ataque hacker a geladeiras de supermercado: freezers a 50 °C em cerca de 700 lojas na França e de novo nesta segunda na Bélgica, Luxemburgo, Suécia e Estônia, sem pedido de resgate. E com dinheiro é igual: Binance, o acesso ao Pix vendido por R$ 15 mil e o Pix fora do ar no Banco do Nordeste.",
+  "hashtags": [
+   "#ataquehacker",
+   "#hackers",
+   "#ciberseguranca",
+   "#pix",
+   "#binance"
+  ],
+  "media": false
+ }
+}
