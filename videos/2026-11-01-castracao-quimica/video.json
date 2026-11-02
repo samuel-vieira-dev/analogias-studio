@@ -1,0 +1,649 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-11-01-castracao-quimica",
+ "duration": 101.08,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "câmara": "Câmara",
+   "estado.": "Estado.",
+   "sempre.": "Sempre."
+  }
+ },
+ "media": {
+  "senado": {
+   "file": "midia/senado.jpg",
+   "credit": "Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Senado_Federal_do_Brasil_Fotos_produzidas_pelo_Senado_(16419054302).jpg",
+   "focus": [
+    0.55,
+    0.4
+   ],
+   "author": "Waldemir Barreto/Agência Senado",
+   "license": "CC BY 2.0"
+  }
+ },
+ "cuts": [
+  4.53,
+  10.4,
+  11.61,
+  17.53,
+  22.96,
+  33.38,
+  37.18,
+  42.4,
+  51.76,
+  59.76,
+  63.46,
+  71.08,
+  79.26,
+  85.37,
+  92.7
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 4.47,
+   "text": "NÃO CORTA\nNADA"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 4.63,
+   "to": 8.16,
+   "text": "VOLTOU AO\nDEBATE"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 8.22,
+   "to": 10.34,
+   "text": "PRA CONDENADO\nPOR CRIME SEXUAL"
+  },
+  {
+   "id": "src-04",
+   "kind": "source",
+   "from": 4.63,
+   "to": 10.34,
+   "text": "Fonte: CNN Brasil, 19/06/2026"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 10.45,
+   "to": 11.55,
+   "text": "E DEPOIS?"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 11.71,
+   "to": 14.7,
+   "text": "CÉREBRO MANDA\nO RECADO"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 14.76,
+   "to": 17.47,
+   "text": "PRODUZ\nTESTOSTERONA"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 17.63,
+   "to": 19.69,
+   "text": "O REMÉDIO CORTA\nO RECADO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 19.8,
+   "to": 22.9,
+   "text": "INJEÇÃO: TODO MÊS\nOU A CADA 3 MESES"
+  },
+  {
+   "id": "src-10",
+   "kind": "source",
+   "from": 17.63,
+   "to": 22.9,
+   "text": "Fonte: Diretriz WFSBP 2020"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 23.06,
+   "to": 26.22,
+   "text": "PENSA NA LUZ\nDA SUA CASA"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 26.28,
+   "to": 27.94,
+   "text": "CIRÚRGICA:\nARRANCA A FIAÇÃO"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 28.0,
+   "to": 33.32,
+   "text": "QUÍMICA:\nINTERRUPTOR COM TIMER"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 33.48,
+   "to": 36.72,
+   "text": "TEM QUE APERTAR\nDE NOVO"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 36.78,
+   "to": 37.12,
+   "text": "SEMPRE"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 37.28,
+   "to": 39.18,
+   "text": "PAROU O\nREMÉDIO…"
+  },
+  {
+   "id": "ov-17",
+   "kind": "stat",
+   "from": 39.24,
+   "to": 42.34,
+   "big": "60% A 90%",
+   "label": "DOS CASOS, AS FANTASIAS VOLTARAM"
+  },
+  {
+   "id": "src-18",
+   "kind": "source",
+   "from": 37.28,
+   "to": 42.34,
+   "text": "Fonte: Diretriz WFSBP 2020"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 42.5,
+   "to": 46.48,
+   "text": "UMA AGENDA\nMÉDICA"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 46.54,
+   "to": 47.64,
+   "text": "CONSULTA:\n3º MÊS"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 47.7,
+   "to": 48.4,
+   "text": "CONSULTA:\n6º MÊS"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 48.46,
+   "to": 49.38,
+   "text": "CONSULTA:\n1 ANO"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 49.44,
+   "to": 50.36,
+   "text": "CONSULTA:\n2 ANOS"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 50.42,
+   "to": 51.7,
+   "text": "CONSULTA:\nTODO ANO"
+  },
+  {
+   "id": "src-25",
+   "kind": "source",
+   "from": 42.5,
+   "to": 51.7,
+   "text": "Fonte: Diretriz WFSBP 2020"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 51.86,
+   "to": 54.84,
+   "text": "DESLIGAR TEM\nPREÇO"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 54.9,
+   "to": 56.38,
+   "text": "OSSO FRACO"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 56.44,
+   "to": 57.88,
+   "text": "RISCO DE\nDIABETES"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 57.94,
+   "to": 58.76,
+   "text": "DOENÇA NO\nCORAÇÃO"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 58.82,
+   "to": 59.7,
+   "text": "DEPRESSÃO"
+  },
+  {
+   "id": "src-31",
+   "kind": "source",
+   "from": 51.86,
+   "to": 59.7,
+   "text": "Fonte: WFSBP 2020; Cleveland Clinic"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 59.86,
+   "to": 61.97,
+   "text": "EXAME DE SANGUE\nE DE OSSO"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 62.08,
+   "to": 63.4,
+   "text": "+ PSICOTERAPIA"
+  },
+  {
+   "id": "src-34",
+   "kind": "source",
+   "from": 59.86,
+   "to": 63.4,
+   "text": "Fonte: Diretriz WFSBP 2020"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 63.56,
+   "to": 66.9,
+   "text": "POR QUANTO\nTEMPO?"
+  },
+  {
+   "id": "ov-36",
+   "kind": "stat",
+   "from": 66.96,
+   "to": 69.86,
+   "big": "5 ANOS",
+   "label": "NO MÍNIMO, NOS CASOS GRAVES"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 69.92,
+   "to": 71.02,
+   "text": "PRA ALGUNS,\nA VIDA TODA"
+  },
+  {
+   "id": "src-38",
+   "kind": "source",
+   "from": 63.56,
+   "to": 71.02,
+   "text": "Fonte: Diretriz WFSBP 2020"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 71.18,
+   "to": 74.34,
+   "text": "O CONDENADO\nVIRA PACIENTE"
+  },
+  {
+   "id": "ov-40",
+   "kind": "title",
+   "from": 74.45,
+   "to": 79.2,
+   "text": "A CONTA É DA\nSAÚDE PÚBLICA"
+  },
+  {
+   "id": "src-41",
+   "kind": "source",
+   "from": 74.45,
+   "to": 79.2,
+   "text": "Fonte: Agência Câmara, 12/12/2024"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 79.36,
+   "to": 83.92,
+   "text": "E FUNCIONA?"
+  },
+  {
+   "id": "ov-43",
+   "kind": "title",
+   "from": 83.98,
+   "to": 85.31,
+   "text": "FALTA ESTUDO\nFORTE"
+  },
+  {
+   "id": "src-44",
+   "kind": "source",
+   "from": 79.36,
+   "to": 85.31,
+   "text": "Fonte: WFSBP 2020; CFF"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 85.47,
+   "to": 86.18,
+   "text": "NO BRASIL"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 86.24,
+   "to": 90.36,
+   "text": "CÂMARA APROVOU\nEM 2024"
+  },
+  {
+   "id": "ov-47",
+   "kind": "title",
+   "from": 90.42,
+   "to": 92.64,
+   "text": "PARADO NO\nSENADO"
+  },
+  {
+   "id": "src-48",
+   "kind": "source",
+   "from": 85.42,
+   "to": 92.64,
+   "text": "Fonte: Câmara; Senado · Foto: Agência Senado"
+  },
+  {
+   "id": "ov-49",
+   "kind": "question",
+   "from": 92.8,
+   "to": 101.08,
+   "text": "VOCÊ\nAPROVARIA?",
+   "sub": "MÉDICO POR ANOS"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 99.08,
+   "to": 101.08,
+   "html": "Comenta: <b>SIM</b> ou <b>NÃO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.25,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   1.62,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   2.47,
+   "impact-bass-1.mp3",
+   -16
+  ],
+  [
+   4.53,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   5.63,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   8.56,
+   "pop.mp3",
+   -18
+  ],
+  [
+   10.4,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   11.61,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   17.53,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   18.42,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   22.96,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   26.72,
+   "impact-bass-2.mp3",
+   -17
+  ],
+  [
+   29.86,
+   "click.mp3",
+   -14
+  ],
+  [
+   32.44,
+   "click-soft.mp3",
+   -14
+  ],
+  [
+   33.38,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   35.3,
+   "click.mp3",
+   -14
+  ],
+  [
+   36.67,
+   "click.mp3",
+   -14
+  ],
+  [
+   37.18,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   39.38,
+   "riser.mp3",
+   -20
+  ],
+  [
+   42.4,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   51.76,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   59.76,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   63.46,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   67.0,
+   "pop.mp3",
+   -18
+  ],
+  [
+   71.08,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   78.3,
+   "impact-bass-1.mp3",
+   -16
+  ],
+  [
+   79.26,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   85.37,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   90.56,
+   "impact-bass-2.mp3",
+   -17
+  ],
+  [
+   92.7,
+   "whoosh.mp3",
+   -22
+  ]
+ ],
+ "post": {
+  "title": "CASTRAÇÃO QUÍMICA\nNÃO CORTA NADA",
+  "descricao": "Castração química explicada: é uma injeção hormonal, todo mês ou a cada 3 meses, que corta a testosterona. Se o remédio para, o efeito passa. Por isso exige consultas e exames por pelo menos 5 anos nos casos graves (pra alguns, a vida toda), pagos pela saúde pública. A Câmara aprovou em 2024 e o projeto está parado no Senado.",
+  "hashtags": [
+   "#castracaoquimica",
+   "#saudepublica",
+   "#direitopenal",
+   "#leis",
+   "#noticias"
+  ],
+  "media": false
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0.0,
+   "to": 4.53
+  },
+  {
+   "id": "debate",
+   "from": 4.53,
+   "to": 10.4
+  },
+  {
+   "id": "portao",
+   "from": 10.4,
+   "to": 11.61
+  },
+  {
+   "id": "recado",
+   "from": 11.61,
+   "to": 17.53
+  },
+  {
+   "id": "injecao",
+   "from": 17.53,
+   "to": 22.96
+  },
+  {
+   "id": "analogia",
+   "from": 22.96,
+   "to": 33.38
+  },
+  {
+   "id": "apertar",
+   "from": 33.38,
+   "to": 37.18
+  },
+  {
+   "id": "lampadas",
+   "from": 37.18,
+   "to": 42.4
+  },
+  {
+   "id": "agenda",
+   "from": 42.4,
+   "to": 51.76
+  },
+  {
+   "id": "preco",
+   "from": 51.76,
+   "to": 59.76
+  },
+  {
+   "id": "exames",
+   "from": 59.76,
+   "to": 63.46
+  },
+  {
+   "id": "anos",
+   "from": 63.46,
+   "to": 71.08
+  },
+  {
+   "id": "paciente",
+   "from": 71.08,
+   "to": 79.26
+  },
+  {
+   "id": "funciona",
+   "from": 79.26,
+   "to": 85.37
+  },
+  {
+   "id": "senado",
+   "from": 85.37,
+   "to": 92.7
+  },
+  {
+   "id": "pergunta",
+   "from": 92.7,
+   "to": 101.08
+  }
+ ]
+}

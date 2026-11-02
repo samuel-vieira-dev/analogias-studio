@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-01-castracao-quimica
+tema: "Castração química: o que é, como funciona e o acompanhamento médico que ela exige — vídeo informativo"
+referencias_visuais: []
+
+hook:
+  origem: 4
+  texto: "A castração química não corta nada… e o efeito passa sozinho."
+
+pergunta_final:
+  origem: 2
+  texto: "Sabendo que ela exige médico por anos, talvez pra vida toda: você aprovaria no Brasil? Sim ou não?"
+
+analogia: "Castração cirúrgica arranca a fiação da casa; a química é um interruptor com timer: desliga, mas religa sozinho quando o tempo acaba, e alguém tem que voltar pra apertar de novo."
+
+pedidos:
+  - "Explicar bem o que é e como é feita, com uma analogia clara (Samuel)"
+  - "Mostrar que exige acompanhamento médico praticamente pela vida toda: o condenado vira paciente, com consultas recorrentes"
+  - "Sem citar o Flávio Bolsonaro nem nenhum político: sem viés, só caráter informativo"
+  - "Reforçar que o condenado virar paciente do Estado gera gastos de saúde pública"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-01
