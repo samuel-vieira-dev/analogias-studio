@@ -76,18 +76,21 @@
     }
   },
   "cover": {
-    "_doc": "Capa do post (tools/capa.cjs): título em title e o 3D do gancho reenquadrado em stage, os dois centralizados na largura (a capa não tem os botões do app à direita nem legenda; pedido do Samuel, 30/10/2026). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele.",
+    "_doc": "Capa do post (tools/capa.cjs): título em title e o 3D do gancho reenquadrado em stage, os dois centralizados na largura (a capa não tem os botões do app à direita nem legenda; pedido do Samuel, 30/10/2026). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele. Título grande para ler na grade do perfil (pedido do Samuel, 02/11/2026): faixa de 1000 × 600 px, até 4 linhas, letra de no mínimo min_font_px (era 830 × 260 px, 2 linhas, ~70 px).",
     "title": {
-      "x": 125,
+      "x": 40,
       "y": 300,
-      "w": 830,
-      "h": 260
+      "w": 1000,
+      "h": 600,
+      "min_font_px": 130,
+      "max_font_px": 220,
+      "max_lines": 4
     },
     "stage": {
       "x": 125,
-      "y": 580,
+      "y": 920,
       "w": 830,
-      "h": 920
+      "h": 680
     },
     "grid": {
       "x": 0,

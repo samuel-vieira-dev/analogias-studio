@@ -22,6 +22,12 @@ As regras de 27 a 31/10/2026 (área segura centralizada, realismo, fotos com cr�
 
 <!-- entradas novas aqui, a mais recente primeiro -->
 
+### 2026-11-01 · 2026-11-01-castracao-quimica
+- Gostou: —
+- Não gostou: o texto da capa pequeno; difícil de ler na grade do perfil.
+- Mudou no kit: `config/layout.json → cover` — faixa do título de 830 × 260 para 1000 × 600 px (y 300–900), palco da capa em y 920–1600, letra de 130 a 220 px · `tools/capa.cjs` — quebra o título em até 4 linhas, fica com a quebra de letra maior e reprova abaixo de 130 px (a capa deste vídeo saiu com ~70 px) · `SKILL.md` (etapa 10) e `docs/ferramentas.md` → "Capa" — a regra nova.
+- Neste vídeo: ficou como está (capa pode ser refeita com `--post-only` se o Samuel pedir).
+
 ### 2026-10-31 · 2026-10-31-master-lula-bolsonaro
 - Gostou: o vídeo no geral ("ficou ótimo").
 - Não gostou: planos de fundo pouco interessantes; legendas um pouco pequenas.

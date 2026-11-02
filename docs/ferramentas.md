@@ -41,14 +41,14 @@
 
 O `finalize.py` entrega o MP4 e chama `tools/post.py`, que escreve a legenda e roda `tools/capa.cjs`. Os três vão juntos para Filmes/reels. Para refazer só capa e legenda (sem render, sem tocar no MP4): `python3 tools/finalize.py videos/<slug> --post-only` (ou `python3 tools/post.py videos/<slug>`, que não copia).
 
-Entrada em `video.json → post`: `hashtags` (3–5 do tema, obrigatório; se tiver mais, só as 5 primeiras entram), `descricao` (1–2 frases para a busca do TikTok, obrigatório), `title` (título da capa, `\n` para 2 linhas), `t` (segundo do quadro) e `media` (id da foto de pessoa, ou `false`).
+Entrada em `video.json → post`: `hashtags` (3–5 do tema, obrigatório; se tiver mais, só as 5 primeiras entram), `descricao` (1–2 frases para a busca do TikTok, obrigatório), `title` (título da capa; `\n` força uma quebra de linha), `t` (segundo do quadro) e `media` (id da foto de pessoa, ou `false`).
 
 **Capa** — `out/<slug>-capa.jpg`, 1080×1920, tirada do `qa/harness.html` com Playwright (o mesmo da prévia, sem renderizar o vídeo):
 
 - Quadro: dentro da primeira cena (o gancho), o trecho com mais objetos registrados (`S.hero`) na tela no maior tamanho; o meio dele. `post.t` escolhe outro.
-- Título: `post.title`; sem ele, o título que aparece no gancho, senão o primeiro `title` do vídeo. Inter 900 laranja, o maior que couber em `config/layout.json → cover.title` (até 2 linhas).
-- **Centralizado**: título e 3D ficam no centro da largura da capa (`cover.title` e `cover.stage`, x 125–955; a capa não tem os botões do app). Se o 3D sair mais de 30 px do centro, o `capa.cjs` sai com erro: escolha outro `post.t`.
-- 3D: sem os textos e a legenda do vídeo; a câmera mantém o ângulo do plano e enquadra os objetos no palco da capa abaixo do título (`config/layout.json → cover.stage`, x 125–955, y 580–1500; `window.__qa.reframe` no `engine/core.js`). Gancho filmado em `stage-tall` não fica atrás do título, e objeto pequeno cresce.
+- Título: `post.title`; sem ele, o título que aparece no gancho, senão o primeiro `title` do vídeo. Inter 900 laranja, **grande para ler na grade do perfil** (pedido do Samuel, 02/11/2026): faixa `config/layout.json → cover.title` de 1000 × 600 px (x 40–1040, y 300–900). Cada linha do `post.title` pode quebrar de novo nos espaços, até 4 linhas no total; fica a quebra com a maior letra (até 220 px; entre as que ficam a 5% dela, a de menos linhas e mais equilibrada). Abaixo de 130 px (`min_font_px`) o `capa.cjs` sai com erro: encurtar o `post.title`.
+- **Centralizado**: título e 3D ficam no centro da largura da capa (`cover.title` x 40–1040 e `cover.stage` x 125–955; a capa não tem os botões do app). Se o 3D sair mais de 30 px do centro, o `capa.cjs` sai com erro: escolha outro `post.t`.
+- 3D: sem os textos e a legenda do vídeo; a câmera mantém o ângulo do plano e enquadra os objetos no palco da capa abaixo do título (`config/layout.json → cover.stage`, x 125–955, y 920–1600; `window.__qa.reframe` no `engine/core.js`). Gancho filmado em `stage-tall` não fica atrás do título, e objeto pequeno cresce.
 - Foto: se o vídeo tem cartão de pessoa (overlay `photo` com `name`) ou `post.media`, a foto entra num cartão com nome, cargo e "Foto: crédito"; o 3D fica desfocado atrás. Recorte e zoom só, como no vídeo ([`fotos.md`](fotos.md)).
 - Confere que título e cartão cabem no recorte central 3:4 (1080×1440, `cover.grid`) que o perfil mostra; senão sai com erro.
 - Harness gerado antes da capa existir não tem `__qa.reframe` (o `capa.cjs` avisa): rodar `python3 tools/build.py videos/<slug>` uma vez.

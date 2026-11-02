@@ -1,12 +1,15 @@
 #!/usr/bin/env node
 /*
- * Post cover: one frame of the hook (the video's "thumbnail") with a strong title in the cover title
+ * Post cover: one frame of the hook (the video's "thumbnail") with a big title in the cover title
  * band (config/layout.json → cover.title, centred like cover.stage), taken from qa/harness.html — no new render.
+ * The title must read in the profile grid (Samuel, 02/11/2026): each line of post.title may break again at
+ * its spaces, up to cover.title.max_lines in all, and the layout with the biggest font wins (fewer lines
+ * when they come within 5%). Below cover.title.min_font_px the cover fails: shorten post.title.
  *
  * usage: node tools/capa.cjs videos/<slug> [--t 2.4] [--title "LINHA 1\nLINHA 2"]
  *
  * video.json → post (all optional):
- *   title   cover title (\n for 2 lines). Default: the title shown during the hook scene, else the
+ *   title   cover title (\n forces a line break; the tool may break more). Default: the title shown during the hook scene, else the
  *           first title of the video.
  *   t       time of the frame. Default: inside the first scene (the hook), the stretch where the most
  *           heroes are on screen at their biggest; the middle of it.
@@ -40,6 +43,15 @@ const TITLE_KINDS = ["title", "text", "question"];
 const overlays = video.overlays || [];
 const title = (opt("title") || post.title || (overlays.find((o) => TITLE_KINDS.includes(o.kind) && o.from < hook.to) || overlays.find((o) => o.kind === "title") || {}).text || "").replace(/\\n/g, "\n");
 if (!title) { console.error("sem título para a capa: defina video.json → post.title"); process.exit(2); }
+
+// Every way to lay the title out: the author's lines, each cut again at spaces, up to max_lines in all.
+function layouts(title, max) {
+  const cut = (w, k) => k === 1 ? [[w.join(" ")]] : w.slice(0, w.length - k + 1).flatMap((_, i) => cut(w.slice(i + 1), k - 1).map((r) => [w.slice(0, i + 1).join(" "), ...r]));
+  let acc = [[]];
+  for (const w of title.split("\n").map((l) => l.trim().split(/\s+/).filter(Boolean)).filter((w) => w.length))
+    acc = acc.flatMap((a) => Array.from({ length: Math.max(0, Math.min(w.length, max - a.length)) }, (_, k) => cut(w, k + 1).map((s) => [...a, ...s])).flat());
+  return acc.length ? acc.map((a) => a.join("\n")) : [title];
+}
 
 // Person photo: explicit id, false, or the first named photo card.
 let photo = null;
@@ -84,7 +96,7 @@ const COVER = layout.cover;
   if (!(await page.evaluate(() => typeof window.__qa.reframe === "function"))) { console.error(`harness anterior à capa (sem __qa.reframe): rode python3 tools/build.py ${args[0]} e repita`); process.exit(2); }
   const f = await page.evaluate((z) => window.__qa.reframe(z) || window.__qa.frame(), COVER.stage);
 
-  const res = await page.evaluate(async ({ L, title, photo, st }) => {
+  const res = await page.evaluate(async ({ L, options, photo, st }) => {
     for (const id of ["ov-root", "cap-root"]) document.getElementById(id).style.display = "none"; // the video's own text
     const H = L.cover.title, Z = L.cover.stage;
     const el = (tag, css, parent) => { const e = document.createElement(tag); Object.assign(e.style, css); (parent || document.body).appendChild(e); return e; };
@@ -111,16 +123,20 @@ const COVER = layout.cover;
     }
     const band = el("div", { position: "absolute", left: H.x + "px", top: H.y + "px", width: H.w + "px", height: H.h + "px", display: "flex", alignItems: "center", justifyContent: "center" }, root);
     const txt = el("div", { fontWeight: 900, lineHeight: 1.0, color: st.laranja, letterSpacing: "-0.03em", textAlign: "center", whiteSpace: "pre", textShadow: "0 10px 40px rgba(0,0,0,0.85), 0 3px 10px rgba(0,0,0,0.6)" }, band);
-    txt.textContent = title;
     await document.fonts.ready;
-    let s = 160; txt.style.fontSize = s + "px";
-    while (s > 60) { const r = txt.getBoundingClientRect(); if (r.width <= H.w && r.height <= H.h) break; s -= 2; txt.style.fontSize = s + "px"; }
+    const fits = (s) => { txt.style.fontSize = s + "px"; const r = txt.getBoundingClientRect(); return r.width <= H.w && r.height <= H.h; };
+    const fit = (text) => { txt.textContent = text; let lo = 40, hi = H.max_font_px; while (lo < hi) { const m = Math.ceil((lo + hi) / 2); if (fits(m)) lo = m; else hi = m - 1; } return lo; };
+    const tried = options.map((text) => ({ text, s: fit(text), n: text.split("\n").length, long: Math.max(...text.split("\n").map((l) => l.length)) }));
+    const top = Math.max(...tried.map((c) => c.s));
+    const best = tried.filter((c) => c.s >= 0.95 * top).sort((a, b) => a.n - b.n || b.s - a.s || a.long - b.long)[0]; // then the most even lines
+    txt.textContent = best.text; txt.style.fontSize = best.s + "px";
     const rect = (e) => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; };
-    return { title: rect(txt), font: s, card: cardEl && rect(cardEl) };
-  }, { L: layout, title, photo, st: { laranja: style("laranja"), fundo: style("fundo") } });
+    return { title: rect(txt), text: best.text, font: best.s, card: cardEl && rect(cardEl) };
+  }, { L: layout, options: layouts(title, COVER.title.max_lines), photo, st: { laranja: style("laranja"), fundo: style("fundo") } });
 
   const problems = [], G = COVER.grid, tol = layout.qa.zone_tol_px;
   const inGrid = (r) => r.x >= G.x && r.x + r.w <= G.x + G.w && r.y >= G.y + 8 && r.y + r.h <= G.y + G.h - 8;
+  if (res.font < COVER.title.min_font_px) problems.push(`título pequeno para a grade do perfil (${res.font} px, mínimo ${COVER.title.min_font_px}): encurte post.title`);
   if (!inGrid(res.title)) problems.push(`título fora do recorte 3:4 do perfil (y ${Math.round(res.title.y)}–${Math.round(res.title.y + res.title.h)}; cabe em ${G.y}–${G.y + G.h})`);
   if (res.card && !inGrid(res.card)) problems.push("cartão da foto fora do recorte 3:4 do perfil");
   if (f && f.heroes.concat(f.labels).some((h) => h.rect.y < COVER.stage.y - tol)) problems.push("o 3D invade a faixa do título: escolha outro post.t");
@@ -136,6 +152,6 @@ const COVER = layout.cover;
   fs.mkdirSync(path.dirname(out), { recursive: true });
   await page.screenshot({ path: out, type: "jpeg", quality: 90, timeout: 90000 });
   await browser.close();
-  console.log(JSON.stringify({ capa: out.startsWith(ROOT + path.sep) ? path.relative(ROOT, out) : out, t, titulo: title, fonte_px: res.font, foto: photo && photo.id, heroes: f ? f.heroes.map((h) => h.name) : [] }));
+  console.log(JSON.stringify({ capa: out.startsWith(ROOT + path.sep) ? path.relative(ROOT, out) : out, t, titulo: res.text, fonte_px: res.font, foto: photo && photo.id, heroes: f ? f.heroes.map((h) => h.name) : [] }));
   if (problems.length) { console.error("ATENÇÃO: " + problems.join("; ")); process.exit(1); }
 })();
