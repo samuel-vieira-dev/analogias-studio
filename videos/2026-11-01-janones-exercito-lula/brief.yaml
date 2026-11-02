@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-01-janones-exercito-lula
+tema: "André Janones: quem é o deputado (trajetória, prós, escândalos) e o 'Exército do Lula', a mobilização no WhatsApp que ele liderou na campanha de Lula"
+referencias_visuais: []
+
+hook:
+  origem: 6   # escrito pelo Samuel
+  texto: "Esse homem ajudou a definir as eleições."
+
+pergunta_final:
+  origem: 4   # escrita pelo Samuel ("candidatura" trocada por "vitória", aprovado)
+  texto: "E você, acha que o Janones e o exército dele foram essenciais pra vitória do Lula?"
+  cta: "Comenta: SIM ou NÃO"
+
+analogia: "Canal de WhatsApp = rádio: só ele fala, milhões ouvem, e cada ouvinte vira antena (repassa nos grupos da família)."
+
+pedidos:
+  - "Vídeo expositivo: quem é Janones, dos prós aos escândalos, e o Exército do Lula"
+  - "Gancho apresenta o homem e então começa a apresentar Janones"
+  - "Pergunta final mais aberta (sim ou não)"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-02

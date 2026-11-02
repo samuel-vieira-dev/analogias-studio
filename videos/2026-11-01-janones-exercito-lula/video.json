@@ -1,0 +1,850 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-11-01-janones-exercito-lula",
+ "duration": 102.6,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "atirar": "tirar",
+   "os": "o",
+   "janones": "Janones",
+   "Exército.": "exército."
+  }
+ },
+ "media": {
+  "janones": {
+   "file": "midia/janones.jpg",
+   "credit": "Douglas Guimarães/Wikimedia",
+   "url": "https://commons.wikimedia.org/wiki/File:AndreJAnones.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ],
+   "author": "Guimaraesdouglas (Wikimedia Commons)",
+   "license": "CC BY-SA 4.0"
+  },
+  "alianca2022": {
+   "file": "midia/alianca2022.jpg",
+   "credit": "Ricardo Stuckert",
+   "url": "https://www.flickr.com/photos/157736962@N05/52283564165/",
+   "focus": [
+    0.5,
+    0.35
+   ],
+   "license": "CC BY-SA 4.0",
+   "author": "Ricardo Stuckert/Lula Oficial (Flickr)"
+  },
+  "continencia": {
+   "file": "midia/continencia.jpg",
+   "credit": "Ricardo Stuckert",
+   "url": "https://www.flickr.com/photos/157736962@N05/55606479348/",
+   "focus": [
+    0.45,
+    0.35
+   ],
+   "license": "CC BY-SA 4.0",
+   "author": "Ricardo Stuckert/Lula Oficial (Flickr)"
+  }
+ },
+ "cuts": [
+  2.92,
+  10.9,
+  13.45,
+  15.25,
+  21.65,
+  22.84,
+  26.92,
+  29.78,
+  30.88,
+  37.52,
+  43.48,
+  49.5,
+  56.4,
+  60.0,
+  63.56,
+  72.56,
+  77.94,
+  82.39,
+  84.66,
+  87.6,
+  92.36,
+  95.74
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.05,
+   "to": 1.5,
+   "text": "ESSE HOMEM"
+  },
+  {
+   "id": "ov-00b",
+   "kind": "title",
+   "from": 1.56,
+   "to": 2.88,
+   "text": "AJUDOU A DEFINIR\nAS ELEIÇÕES"
+  },
+  {
+   "id": "ov-02",
+   "kind": "source",
+   "from": 0.0,
+   "to": 2.92,
+   "text": "Foto: Douglas Guimarães/Wikimedia"
+  },
+  {
+   "id": "ov-03",
+   "kind": "photo",
+   "from": 3.0,
+   "to": 5.85,
+   "media": "janones",
+   "name": "André Janones",
+   "role": "Deputado federal (Rede-MG)"
+  },
+  {
+   "id": "ov-04",
+   "kind": "source",
+   "from": 2.96,
+   "to": 5.85,
+   "text": "Foto: Douglas Guimarães/Wikimedia"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 3.0,
+   "to": 5.85,
+   "text": "QUEM É ELE?"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 5.9,
+   "to": 8.1,
+   "text": "CRIADOR DO\n\"EXÉRCITO DO LULA\""
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 8.15,
+   "to": 10.85,
+   "text": "CANAL DE WHATSAPP\nCOM MILHÕES"
+  },
+  {
+   "id": "ov-08",
+   "kind": "source",
+   "from": 5.9,
+   "to": 10.85,
+   "text": "Fonte: Congresso em Foco, 26/10/2026"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 10.98,
+   "to": 13.4,
+   "text": "A HISTÓRIA TEM\nDOIS LADOS"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 13.5,
+   "to": 15.2,
+   "text": "EX-COBRADOR\nDE ÔNIBUS"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 15.3,
+   "to": 19.25,
+   "text": "2018: GREVE DOS\nCAMINHONEIROS"
+  },
+  {
+   "id": "ov-12",
+   "kind": "stat",
+   "from": 19.3,
+   "to": 21.6,
+   "big": "15 MILHÕES",
+   "label": "DE VISUALIZAÇÕES"
+  },
+  {
+   "id": "ov-13",
+   "kind": "source",
+   "from": 13.5,
+   "to": 21.6,
+   "text": "Fonte: O Povo, 01/11/2026"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 21.7,
+   "to": 22.8,
+   "text": "DEPUTADO:\n178 MIL VOTOS"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 22.86,
+   "to": 26.85,
+   "text": "DEFENDE O AUXÍLIO\nDE R$ 600"
+  },
+  {
+   "id": "ov-16",
+   "kind": "source",
+   "from": 21.7,
+   "to": 26.85,
+   "text": "Fonte: Congresso em Foco, 26/10/2026"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 26.95,
+   "to": 29.72,
+   "text": "2022: DESISTE\nE APOIA LULA"
+  },
+  {
+   "id": "ov-18",
+   "kind": "source",
+   "from": 26.9,
+   "to": 29.74,
+   "text": "Fonte: Poder360 · Foto: Ricardo Stuckert"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 29.84,
+   "to": 30.82,
+   "text": "O OUTRO LADO"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 30.9,
+   "to": 33.9,
+   "text": "2023: VAZA\nUM ÁUDIO"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 33.95,
+   "to": 37.45,
+   "text": "SALÁRIO MAIOR PRA\nPAGAR DÍVIDA"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 30.9,
+   "to": 37.45,
+   "text": "Fonte: Metrópoles via Gazeta do Povo"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 37.6,
+   "to": 40.18,
+   "text": "PRA PF:\nRACHADINHA"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 40.24,
+   "to": 42.36,
+   "text": "ASSESSOR PAGANDO\nCONTA DO CHEFE"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 42.42,
+   "to": 43.42,
+   "text": "INDICIADO\nEM 2024"
+  },
+  {
+   "id": "ov-26",
+   "kind": "source",
+   "from": 37.6,
+   "to": 43.42,
+   "text": "Fonte: CNN Brasil, 12/09/2024"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 43.55,
+   "to": 45.14,
+   "text": "ELE NEGA"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 45.2,
+   "to": 46.1,
+   "text": "ACORDO\nCOM A PGR"
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 46.15,
+   "to": 48.6,
+   "big": "R$ 157,8 MIL",
+   "label": "DEVOLUÇÃO + MULTA"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 48.65,
+   "to": 49.45,
+   "text": "NÃO VIROU RÉU"
+  },
+  {
+   "id": "ov-31",
+   "kind": "source",
+   "from": 43.55,
+   "to": 49.45,
+   "text": "Fonte: CNN Brasil; STF"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 49.56,
+   "to": 53.84,
+   "text": "2025: MEDIDA\nPROTETIVA"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 53.9,
+   "to": 55.6,
+   "text": "ACUSAÇÃO:\nCHANTAGEM"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 55.66,
+   "to": 56.35,
+   "text": "ELE NEGA · SEM\nCONDENAÇÃO"
+  },
+  {
+   "id": "ov-35",
+   "kind": "source",
+   "from": 49.56,
+   "to": 56.35,
+   "text": "Fonte: Estado de Minas, 16/04/2025"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 56.45,
+   "to": 59.95,
+   "text": "2026: PERDE DOIS\nTERÇOS DOS VOTOS"
+  },
+  {
+   "id": "ov-37",
+   "kind": "source",
+   "from": 56.45,
+   "to": 59.95,
+   "text": "Fonte: TSE via Termômetro da Política"
+  },
+  {
+   "id": "ov-38",
+   "kind": "title",
+   "from": 60.05,
+   "to": 63.5,
+   "text": "1º TURNO:\nFLÁVIO NA FRENTE"
+  },
+  {
+   "id": "ov-39",
+   "kind": "source",
+   "from": 60.05,
+   "to": 63.5,
+   "text": "Fonte: TSE via Brasil de Fato"
+  },
+  {
+   "id": "ov-40",
+   "kind": "title",
+   "from": 63.62,
+   "to": 65.4,
+   "text": "AÍ ENTRA O\nEXÉRCITO"
+  },
+  {
+   "id": "ov-41",
+   "kind": "title",
+   "from": 65.45,
+   "to": 68.22,
+   "text": "IMAGINA:\n7H DA MANHÃ"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 68.28,
+   "to": 69.74,
+   "text": "\"PESSOAL,\nURGENTE!\""
+  },
+  {
+   "id": "ov-43",
+   "kind": "title",
+   "from": 69.8,
+   "to": 72.5,
+   "text": "MISSÃO DO DIA"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 72.62,
+   "to": 73.78,
+   "text": "CANAL = RÁDIO"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 73.82,
+   "to": 76.2,
+   "text": "SÓ ELE FALA"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 76.26,
+   "to": 77.9,
+   "text": "CADA OUVINTE\nVIRA ANTENA"
+  },
+  {
+   "id": "ov-47",
+   "kind": "title",
+   "from": 78.0,
+   "to": 79.4,
+   "text": "EM 3 SEMANAS"
+  },
+  {
+   "id": "ov-48",
+   "kind": "stat",
+   "from": 79.45,
+   "to": 82.3,
+   "big": "50 MIL → 10,9 MI",
+   "label": "SEGUIDORES NO CANAL"
+  },
+  {
+   "id": "ov-49",
+   "kind": "source",
+   "from": 78.0,
+   "to": 82.3,
+   "text": "Fonte: Congresso em Foco; CNN Brasil"
+  },
+  {
+   "id": "ov-50",
+   "kind": "title",
+   "from": 82.4,
+   "to": 84.55,
+   "text": "TSE SUSPENDE\nO CANAL"
+  },
+  {
+   "id": "ov-51",
+   "kind": "title",
+   "from": 84.6,
+   "to": 87.55,
+   "text": "TÉCNICOS NÃO ACHAM\nAS FAKE NEWS"
+  },
+  {
+   "id": "ov-52",
+   "kind": "source",
+   "from": 82.4,
+   "to": 87.55,
+   "text": "Fonte: Congresso em Foco; Estadão Conteúdo"
+  },
+  {
+   "id": "ov-53",
+   "kind": "stat",
+   "from": 87.65,
+   "to": 89.3,
+   "big": "51,8% × 48,2%",
+   "label": "LULA VENCE O 2º TURNO"
+  },
+  {
+   "id": "ov-54",
+   "kind": "title",
+   "from": 89.35,
+   "to": 92.3,
+   "text": "\"NOSSO GENERAL\""
+  },
+  {
+   "id": "ov-55",
+   "kind": "source",
+   "from": 87.6,
+   "to": 92.36,
+   "text": "Fontes: TSE; SBT · Foto: Ricardo Stuckert"
+  },
+  {
+   "id": "ov-56",
+   "kind": "title",
+   "from": 92.42,
+   "to": 94.3,
+   "text": "QUANTOS VOTOS\nO CANAL MUDOU?"
+  },
+  {
+   "id": "ov-57",
+   "kind": "title",
+   "from": 94.36,
+   "to": 95.7,
+   "text": "NINGUÉM\nCONSEGUE MEDIR"
+  },
+  {
+   "id": "ov-58",
+   "kind": "source",
+   "from": 92.42,
+   "to": 95.7,
+   "text": "Fonte: BBC News Mundo, 26/10/2026"
+  },
+  {
+   "id": "ov-59",
+   "kind": "question",
+   "from": 95.8,
+   "to": 102.6,
+   "text": "FOI\nESSENCIAL?",
+   "sub": "PRA VITÓRIA DO LULA"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 100.6,
+   "to": 102.6,
+   "html": "Comenta: <b>SIM</b> ou <b>NÃO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.2,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   2.2,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   2.84,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   6.0,
+   "pop.mp3",
+   -18
+  ],
+  [
+   9.5,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   10.82,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   13.37,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   15.17,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   19.4,
+   "pop.mp3",
+   -18
+  ],
+  [
+   21.57,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   22.76,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   24.2,
+   "pop.mp3",
+   -19
+  ],
+  [
+   26.84,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   27.0,
+   "pop.mp3",
+   -19
+  ],
+  [
+   29.7,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   30.8,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   32.0,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   37.44,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   40.0,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   42.82,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   43.4,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   46.2,
+   "pop.mp3",
+   -19
+  ],
+  [
+   47.3,
+   "pop.mp3",
+   -19
+  ],
+  [
+   49.42,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   52.9,
+   "impact-bass-1.mp3",
+   -15
+  ],
+  [
+   56.32,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   58.1,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   59.92,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   60.6,
+   "pop.mp3",
+   -19
+  ],
+  [
+   63.48,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   66.3,
+   "click.mp3",
+   -18
+  ],
+  [
+   67.7,
+   "notification.mp3",
+   -16
+  ],
+  [
+   69.9,
+   "pop.mp3",
+   -19
+  ],
+  [
+   72.48,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   73.9,
+   "riser.mp3",
+   -24
+  ],
+  [
+   76.3,
+   "ping.mp3",
+   -21
+  ],
+  [
+   77.86,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   79.5,
+   "riser.mp3",
+   -23
+  ],
+  [
+   82.31,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   83.5,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   84.5,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   84.58,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   87.52,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   87.7,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   91.6,
+   "sparkle.mp3",
+   -19
+  ],
+  [
+   92.28,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   95.66,
+   "whoosh.mp3",
+   -23
+  ],
+  [
+   95.9,
+   "whoosh-short.mp3",
+   -20
+  ]
+ ],
+ "post": {
+  "title": "O GENERAL DO\nEXÉRCITO DO LULA",
+  "descricao": "Quem é André Janones: de cobrador de ônibus a deputado, a acusação de rachadinha (que ele nega) e o acordo de R$ 157,8 mil com a PGR, e o Exército do Lula, o canal de WhatsApp que foi de 50 mil a quase 11 milhões de seguidores na eleição de 2026.",
+  "hashtags": [
+   "#janones",
+   "#exercitodolula",
+   "#lula",
+   "#eleicoes2026",
+   "#politica"
+  ],
+  "media": "janones"
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 2.92
+  },
+  {
+   "id": "quem",
+   "from": 2.92,
+   "to": 10.9
+  },
+  {
+   "id": "lados",
+   "from": 10.9,
+   "to": 13.45
+  },
+  {
+   "id": "origem",
+   "from": 13.45,
+   "to": 21.65
+  },
+  {
+   "id": "deputado",
+   "from": 21.65,
+   "to": 29.78
+  },
+  {
+   "id": "audio",
+   "from": 29.78,
+   "to": 37.52
+  },
+  {
+   "id": "rachadinha",
+   "from": 37.52,
+   "to": 43.48
+  },
+  {
+   "id": "acordo",
+   "from": 43.48,
+   "to": 49.5
+  },
+  {
+   "id": "medida",
+   "from": 49.5,
+   "to": 56.4
+  },
+  {
+   "id": "votos",
+   "from": 56.4,
+   "to": 63.56
+  },
+  {
+   "id": "imagina",
+   "from": 63.56,
+   "to": 72.56
+  },
+  {
+   "id": "radio",
+   "from": 72.56,
+   "to": 77.94
+  },
+  {
+   "id": "crescimento",
+   "from": 77.94,
+   "to": 87.6
+  },
+  {
+   "id": "general",
+   "from": 87.6,
+   "to": 92.36
+  },
+  {
+   "id": "medir",
+   "from": 92.36,
+   "to": 95.74
+  },
+  {
+   "id": "pergunta",
+   "from": 95.74,
+   "to": 102.6
+  }
+ ]
+}
