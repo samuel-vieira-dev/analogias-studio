@@ -35,6 +35,8 @@ const layout = JSON.parse(fs.readFileSync(path.join(ROOT, "config/layout.json"),
 const channel = fs.readFileSync(path.join(ROOT, "channel.yaml"), "utf8");
 const style = (k) => channel.match(new RegExp(`^\\s+${k}:\\s*"([^"]+)"`, "m"))[1];
 const post = video.post || {};
+// Estilo Explicando Direito (2D): capa própria (tools/capa_direito.cjs)
+if (video.estilo === "explicando-direito") return require("./capa_direito.cjs")({ vdir, video, layout, opt });
 const hook = video.scenes[0];
 const harness = path.join(vdir, "qa/harness.html");
 if (!fs.existsSync(harness)) { console.error(`faltando ${path.relative(ROOT, harness)}: rode python3 tools/build.py ${args[0]}`); process.exit(2); }

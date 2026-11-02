@@ -31,3 +31,24 @@ for name, (rule, a, b) in expected.items():
     if not ok: miss.append(name)
 sys.exit(1 if miss else 0)
 PY
+
+# Estilo Explicando Direito (2D): tests/qa-pega-erros-direito tem um defeito de cada regra do tools/qa_direito.cjs
+# (foto sem crédito não entra: o motor 2D sempre põe o crédito de toda foto do plano).
+python3 tools/build.py tests/qa-pega-erros-direito >/dev/null
+set +e; node tools/qa.cjs tests/qa-pega-erros-direito --shots 0 >/dev/null; code=$?; set -e
+[ "$code" = 1 ] || { echo "✗ QA 2D deveria ter reprovado o teste (código $code)"; exit 1; }
+python3 - <<'PY'
+import json, sys
+rep = json.load(open("tests/qa-pega-erros-direito/qa/report.json"))
+found = {(i["rule"], i["a"], i.get("b") or "") for i in rep["items"]}
+expected = {
+    "2D texto que não cabe": ("texto_fora_da_area_segura", "texto grande demais para caber na zona de jeito nenhum mesmo encolhendo a letra toda vez", ""),
+    "2D palavra larga demais no palco": ("visual_fora_da_area_segura", "v0:palavras", ""),
+    "2D palco vazio esperando a foto": ("quadro_vazio", "v1", ""),
+    "2D foto esticada": ("foto_em_baixa_resolucao", "teste", ""),
+    "2D documento em cima do texto": ("texto_sobre_visual", "documento em cima", "v2:documento"),
+}
+miss = [n for n, k in expected.items() if k not in found]
+for n in expected: print(("✗ " if n in miss else "✓ ") + n)
+sys.exit(1 if miss else 0)
+PY

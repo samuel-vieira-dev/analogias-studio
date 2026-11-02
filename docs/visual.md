@@ -1,4 +1,6 @@
-# Visual: área segura, zonas, câmera 3D e estilo
+# Visual: área segura, zonas, câmera 3D e estilo — Estilo Analogias v1
+
+A área segura vale para todos os estilos; o resto deste arquivo é do v1 (3D). O 2D do Estilo Explicando Direito está em [`explicando-direito/visual.md`](explicando-direito/visual.md).
 
 ## Área segura (requisito do kit, não é input)
 

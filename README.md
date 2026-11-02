@@ -1,16 +1,21 @@
 # analogias-studio
 
-Kit de produção dos Reels/TikToks/Shorts 3D narrados do **@analogias.br**: do tema ao MP4, com as regras do canal embutidas. Você entra com o **tema** (e, se quiser, referências visuais), escolhe o **hook** e a **pergunta final** entre as opções propostas e aprova o roteiro. O resto é do kit.
+Kit de produção dos Reels/TikToks/Shorts narrados do **@analogias.br**: do tema ao MP4, com as regras do canal embutidas. Você entra com o **tema** e o **estilo de edição** (e, se quiser, referências visuais), escolhe o **hook** e a **pergunta final** entre as opções propostas e aprova o roteiro. O resto é do kit.
+
+Estilos ([`docs/estilos.md`](docs/estilos.md)):
+
+- **Estilo Analogias v1** — 3D realista narrado, uma analogia no ponto difícil, ~90 s.
+- **Estilo Explicando Direito** — 2D sobre papel, texto cinético que escreve a fala, polaroids, cartões, documentos e gráficos, ~60 s ([referência e regras](docs/explicando-direito/)).
 
 ```
-tema ─► pesquisa + fatos ─► 5 hooks / 3 perguntas ─► roteiro ─► APROVAÇÃO ─► voz (ElevenLabs, 2 takes)
-     ─► melhor take + aperto ─► tempos das palavras ─► cenas 3D + textos por zona
+tema + estilo ─► pesquisa + fatos ─► 5 hooks / 3 perguntas ─► roteiro ─► APROVAÇÃO ─► voz (ElevenLabs, 2 takes)
+     ─► melhor take + aperto ─► tempos das palavras ─► cenas (3D + textos por zona | 2D: texto + visuais)
      ─► mix ─► build ─► QA (bloqueia) + prévia ─► render ─► MP4 + capa + legenda do post em Filmes/reels
 ```
 
 ## Como usar
 
-Peça ao Claude (com a skill **reel-analogias**): *"Faz um vídeo sobre &lt;tema&gt;"*. A skill está em [`.claude/skills/reel-analogias/SKILL.md`](.claude/skills/reel-analogias/SKILL.md). No claude.ai fica só a porta de entrada [`claude-ai-skill/reel-analogias/`](claude-ai-skill/reel-analogias/SKILL.md), que manda ler esta; ela não precisa ser reenviada quando a skill muda. Depois de cada vídeo o Claude pede feedback e melhora o kit sozinho ([`docs/feedback.md`](docs/feedback.md)).
+Peça ao Claude (com a skill **reel-analogias**): *"Faz um vídeo novo"* (ou já com o tema). Ele pergunta o tema e o estilo. A skill está em [`.claude/skills/reel-analogias/SKILL.md`](.claude/skills/reel-analogias/SKILL.md). No claude.ai fica só a porta de entrada [`claude-ai-skill/reel-analogias/`](claude-ai-skill/reel-analogias/SKILL.md), que manda ler esta; ela não precisa ser reenviada quando a skill muda. Depois de cada vídeo o Claude pede feedback e melhora o kit sozinho ([`docs/feedback.md`](docs/feedback.md)).
 
 Primeira vez numa máquina: `bash tools/setup.sh`.
 

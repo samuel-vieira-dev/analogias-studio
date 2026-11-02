@@ -12,6 +12,9 @@ tests/*/build/
 tests/*/qa/
 tests/*/preview/
 
+# fundo de papel do 2D (gerado pelo tools/build_direito.py)
+engine2d/.cache/
+
 # áudio pesado fica fora do git; os tempos das palavras ficam
 videos/*/audio/*
 !videos/*/audio/words.json

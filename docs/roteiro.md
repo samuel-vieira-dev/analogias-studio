@@ -1,4 +1,6 @@
-# Roteiro: regras do @analogias.br
+# Roteiro: regras do @analogias.br — Estilo Analogias v1
+
+Vale para os vídeos com `estilo: analogias-v1`. O Estilo Explicando Direito tem as regras dele em [`explicando-direito/roteiro.md`](explicando-direito/roteiro.md) (a etapa 1, pesquisa e checagem, vale para os dois). Estilos: [`estilos.md`](estilos.md).
 
 O roteiro é escrito pela skill a partir do tema. O Samuel escolhe o hook e a pergunta final e aprova o texto inteiro antes de qualquer crédito do ElevenLabs ser gasto.
 

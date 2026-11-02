@@ -1,38 +1,55 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega, MP4, capa e legenda do post, e no fim pede o feedback do Samuel e melhora a skill sozinho.
+description: Cria um Reel/TikTok/Short narrado do @analogias.br — pergunta o tema e o estilo de edição (Estilo Analogias v1, 3D com analogia; ou Estilo Explicando Direito, 2D com texto cinético), checa os fatos, propõe 5 hooks, aprova o roteiro, gera a voz no ElevenLabs, monta as cenas com fotos reais creditadas, roda QA automático + revisão cega e entrega MP4, capa e legenda do post; no fim pede o feedback do Samuel e melhora a skill sozinho.
 ---
 
-# Reel 3D narrado — @analogias.br
+# Reel narrado — @analogias.br
 
-Produz um vídeo vertical de ~90 s no estilo do canal: narração (voz Sandro Dutra), cenas 3D com fotos reais onde elas ajudam a entender, legendas palavra a palavra, textos e fontes dentro da área segura. Tudo roda no kit **analogias-studio** (GitHub `samuel-vieira-dev/analogias-studio`); os detalhes de cada etapa estão nos `docs/` do kit.
+Produz um vídeo vertical narrado (voz Sandro Dutra) num dos **estilos de edição** do canal ([`docs/estilos.md`](../../../docs/estilos.md)):
+
+- **Estilo Analogias v1** (`analogias-v1`): ~90 s, cenas 3D realistas com fotos reais onde elas ajudam a entender, uma analogia no ponto difícil, legendas palavra a palavra, pergunta final na tela.
+- **Estilo Explicando Direito** (`explicando-direito`): 55–75 s, 2D sobre papel cinza, texto cinético que escreve a fala, polaroids, cartões, documentos e gráficos, impacto no gancho, trilha grave constante, fim seco.
+
+Tudo roda no kit **analogias-studio** (GitHub `samuel-vieira-dev/analogias-studio`); os detalhes de cada etapa estão nos `docs/` do kit. As etapas abaixo descrevem o v1; no Explicando Direito, aplicar as trocas da seção **"Estilo Explicando Direito"**.
 
 ## Entrada
 
-Só duas coisas vêm do Samuel no pedido:
+Três coisas vêm do Samuel, no começo:
 
 - **Tema do vídeo** (obrigatório)
+- **Estilo de edição** (obrigatório): Estilo Analogias v1 ou Estilo Explicando Direito
 - **Referências visuais** (opcional: links, prints, arquivos)
 
-Ele escolhe depois, na etapa 3: o **hook** (5 opções + "Outro") e a **pergunta final** (3 opções + "Outra"). Área segura, estilo, voz, legendas e regras de roteiro **não são perguntados**: são requisitos do kit (`config/layout.json`, `channel.yaml`, `docs/`).
+Ele escolhe depois, na etapa 3: o **hook** (5 opções + "Outro") e a **pergunta final** (3 opções + "Outra"). Área segura, voz, legendas e regras de roteiro **não são perguntados**: são requisitos do kit e do estilo (`config/layout.json`, `channel.yaml`, `docs/`).
 
 ## Fluxo com o Samuel
 
 Ele só fala com você em cinco pontos; o resto você faz sozinho:
 
-1. Ele abre a sessão e manda o **tema** (etapa 0).
+1. Você pergunta o **tema** e o **estilo de edição** (etapa 0).
 2. Ele escolhe o **hook** e a **pergunta final** (etapa 3).
 3. Ele **aprova o roteiro** (etapa 5).
 4. Ele **vê o vídeo** (etapa 10).
 5. Ele diz o que **gostou e não gostou**, e você melhora o kit (etapa 12).
 
-## 0. Preparar o kit
+## 0. Tema e estilo — sempre a primeira coisa
+
+Antes de pesquisar qualquer coisa, numa pergunta só:
+
+- **Tema**: se o pedido ("faz um vídeo novo", "bora gravar") não trouxe o tema, perguntar.
+- **Estilo de edição**: perguntar sempre, mesmo que o tema já tenha vindo; só não pergunta se o Samuel já disse o estilo no pedido. Opções (no Claude Code, `AskUserQuestion`; no claude.ai, a ferramenta de perguntas se houver, senão uma mensagem curta numerada):
+  - **Estilo Analogias v1** — 3D narrado com analogia, ~90 s, pergunta final na tela.
+  - **Estilo Explicando Direito** — 2D com texto cinético sobre papel, notícia de política/justiça, ~60 s, fim seco.
+  - Com o tema na mão, pôr primeiro (e marcar "Recomendado") o que combina: lei, decisão, prisão, eleição, "o que muda agora" → Explicando Direito; mecanismo que pede uma analogia (bolsa, juros, tecnologia, corpo humano) → v1. A escolha é do Samuel.
+- Faltando os dois, tema e estilo vão na mesma pergunta. A resposta vai para `brief.yaml → estilo` (`analogias-v1` ou `explicando-direito`) e, na etapa 8, para `video.json → estilo`.
+
+## 0b. Preparar o kit
 
 - **No Mac (Claude Code local)**: `cd` para o clone do kit (ex.: `~/analogias-studio`); `git pull`. Se não existir: `git clone https://github.com/samuel-vieira-dev/analogias-studio.git`.
 - **Sessão na nuvem**: anexar o repositório (`add_repo`, owner `samuel-vieira-dev`, repo `analogias-studio`, acesso `push`) e clonar como a ferramenta indicar.
 - O `git pull` traz as melhorias dos feedbacks anteriores: é por ele que a próxima sessão já começa melhor.
 - Primeira vez na máquina: `bash tools/setup.sh` (instala dependências e roda o autoteste do QA).
-- Ler `CLAUDE.md`, `docs/roteiro.md`, `docs/visual.md`, `docs/fotos.md` e `docs/qa.md` do kit. Criar a lista de tarefas com as etapas abaixo.
+- Ler `CLAUDE.md`, `docs/estilos.md` e os docs do estilo escolhido (`channel.yaml → estilos.<id>.docs`): no v1, `docs/roteiro.md`, `docs/visual.md`, `docs/fotos.md` e `docs/qa.md`; no Explicando Direito, `docs/explicando-direito/roteiro.md`, `docs/explicando-direito/visual.md` e `docs/fotos.md`. Criar a lista de tarefas com as etapas abaixo.
 - Pasta do vídeo: `videos/<AAAA-MM-DD>-<tema-curto>/` (data de hoje).
 
 ## 1. Pesquisa e checagem de fatos
@@ -146,8 +163,8 @@ Com a resposta:
 1. **Separar** cada ponto em: *gostou* (manter) e *não gostou* (mudar). Se um ponto estiver vago ("ficou estranho"), perguntar uma vez onde (segundo do vídeo ou plano) antes de mexer.
 2. **Generalizar**: transformar cada ponto numa regra que vale para os próximos vídeos, não só para este ("a câmera girou rápido demais aos 32 s" → "órbita no máximo 30° por plano"). Ponto que só vale para este tema fica só no registro.
 3. **Escrever a regra no lugar onde ela é lida**, integrada ao texto que já existe (ajustar a regra antiga em vez de empilhar outra parecida; se a nova contradiz uma antiga, a nova vale e a antiga sai):
-   - roteiro, hook, pergunta, tom, analogia → `docs/roteiro.md`
-   - visual, câmera, fundo, objetos, cores → `docs/visual.md` (e `engine/` se der para virar padrão no código)
+   - roteiro, hook, pergunta, tom, analogia → `docs/roteiro.md` (Explicando Direito: `docs/explicando-direito/roteiro.md`)
+   - visual, câmera, fundo, objetos, cores → `docs/visual.md` (e `engine/` se der para virar padrão no código; Explicando Direito: `docs/explicando-direito/visual.md` e `engine2d/`)
    - fotos → `docs/fotos.md`; voz, áudio, música → `channel.yaml` e `tools/mix.py`
    - capa, legenda, hashtags, post → etapa 10 desta skill e `tools/finalize.py`
    - etapas e ordem do trabalho → esta `SKILL.md`; erro que o QA devia ter pegado → `tools/qa.cjs` + um caso em `tests/qa-pega-erros/`
@@ -159,6 +176,22 @@ Com a resposta:
 8. Responder em poucas linhas: o que mudou e onde, e o que **não** mudou e por quê.
 
 Não vira regra (explicar ao Samuel em vez de aplicar): pedido que quebra uma das "Regras que não se quebram" abaixo (crédito de foto, imagem de IA de pessoa real, fato sem fonte, tomar lado em política). Nesse caso, propor um jeito de chegar no que ele quer sem quebrar a regra.
+
+## Estilo Explicando Direito
+
+Quando o estilo é `explicando-direito`, o fluxo é o mesmo (pesquisa, opções, aprovação, voz, QA, revisão cega, render, entrega, feedback), com estas trocas. Regras: `docs/explicando-direito/roteiro.md` e `docs/explicando-direito/visual.md`; modelo: `videos/exemplo-explicando-direito/`.
+
+- **Etapa 1**: além do rosto de cada pessoa citada (vira polaroid), anotar no `fatos.md` o número de cada lei, artigo, decisão ou processo que entra na fala: ele vai para a tela num documento ou cartão.
+- **Etapa 2**: o ângulo é a notícia + a virada ("o discurso oficial é X, porém o motivo é Y", ou o número que surpreende) + o instituto jurídico explicado numa frase. Sem analogia, sem "imagina".
+- **Etapa 3**: 5 hooks dos tipos do `docs/explicando-direito/roteiro.md` (notícia direta, número, afirmação que o vídeo prova, contradição, consequência) + "Outro"; as **3 perguntas são para a legenda do post** (o vídeo termina seco) + "Outra".
+- **Etapa 4**: 180–230 palavras (55–75 s a 3,2 palavras/s), 3ª pessoa. Tabela **# · narração · texto na tela · visual**: o texto na tela é a própria fala em blocos de 5–9 palavras com a linha grande (`#`) e a palavra-chave (`[ ]`); o visual diz o elemento e em que trecho da fala ele entra.
+- **Etapa 5**: `brief.yaml` com `estilo: explicando-direito`.
+- **Etapa 6**: a voz é a mesma. **Trilha-assinatura**: se `assets/trilhas/explicando-direito.mp3` ainda não existe no kit, ela é feita uma vez só, no primeiro vídeo do estilo, depois do roteiro aprovado e com o ok do Samuel para o gasto (ElevenLabs Music, ~1.000 créditos por versão de 75 s): `creative_add_flow_node` (`node_type` `music`, `model_id` `eleven_music_v2_5`, `model_parameters` `{duration_seconds: 75, instrumental: true, lyrics_type: "instrumental"}`), prompt: *"Dark, tense instrumental bed for a fast political news explainer. Minimal trap beat, half-time feel around 77 BPM (154 double-time hi-hats), heavy sub-bass and 808, sparse ticking hi-hats, low muted synth pulse, no melody in the vocal range, no drops, no intro: full energy from the first second to the last, constant level, seamless loop."*; `estimate_only` antes, 2 versões, escolher a de energia constante desde 0 s (RMS por 0,25 s), salvar em `assets/trilhas/explicando-direito.mp3` e commitar. Daí em diante todo vídeo do estilo usa a mesma.
+- **Etapa 7**: `python3 tools/tighten.py <take> videos/<slug>/audio/narration.wav --target <s> --gap 0.06 --sentence-gap 0.14 --max-tempo 1.12`; conferir 3,0–3,3 palavras/s em `words.json`.
+- **Etapa 8**: sem `scenes.js`. O `video.json` tem `estilo`, `duration` (fim da última palavra + 0,3 s), `audio` (voz + trilha: `docs/explicando-direito/visual.md` → "Áudio"), `media`, `icone`, `texto` (os blocos aprovados), `visuais` (com `"em": "trecho da fala"`), `sfx` e `post`. O `tools/build.py` imprime avisos de ritmo (visual parado > 4,5 s, bloco > 4 s, gancho sem impacto) e o `sfx_sugerido`: copiar para `sfx`, `tools/mix.py`, build de novo.
+- **Etapa 9**: mesmos comandos; o QA é o do 2D (`tools/qa_direito.cjs`). A revisão cega usa as mesmas folhas (`preview/objetos-NN.jpg` = cada elemento do palco recortado).
+- **Etapa 10**: igual. `post.title` aceita `[palavra]` para a caixa mostarda da capa. A legenda do post leva a pergunta escolhida na etapa 3.
+- **Etapa 12**: feedback deste estilo vai para `docs/explicando-direito/*.md`, `channel.yaml → estilos.explicando-direito` e `engine2d/`; o que valer para os dois estilos, nos docs comuns.
 
 ## Variante sem narração (só música)
 
@@ -174,15 +207,16 @@ Quando o Samuel pede um vídeo **sem narração** (ex.: "só música de fundo e 
 
 1. Nada de voz antes do roteiro aprovado.
 2. Nada de render sem `QA ok` (o `render.sh` bloqueia).
-3. Texto nunca em cima da animação principal (o plano de fundo pode ficar por baixo); fonte sempre no canto superior direito; legenda na base da área segura, que é centralizada na tela.
+3. Texto nunca em cima da animação principal (o plano de fundo pode ficar por baixo); fonte sempre no canto superior direito; legenda na base da área segura, que é centralizada na tela (no Explicando Direito o texto cinético no alto é a legenda).
 4. Nenhum objeto principal cortado; nada atravessando nada.
 5. Todo número com fonte em `fatos.md`; tema político contado sem tomar lado; "Não é recomendação de investimento" em tema de dinheiro.
 6. Analogia só no ponto difícil — uma boa vale mais que cinco.
 7. Foto real sempre com crédito na tela; nunca imagem de IA ou editada de pessoa ou fato real.
 8. Nada parado por 2 s; nada de render sem revisão cega.
-9. Visual realista e polido: animação principal na área segura, plano de fundo de tela inteira contextualizando o take.
-10. Dinâmica: cada plano com movimento de câmera de intenção, sem repetir o anterior; fundo reagindo às batidas da fala.
-11. Ilustração que se lê sem som: título nunca sobre fundo claro, texto impresso de pé, nada flutuando nem atravessando.
+9. (v1) Visual realista e polido: animação principal na área segura, plano de fundo de tela inteira contextualizando o take.
+10. (v1) Dinâmica: cada plano com movimento de câmera de intenção, sem repetir o anterior; fundo reagindo às batidas da fala.
+11. (v1) Ilustração que se lê sem som: título nunca sobre fundo claro, texto impresso de pé, nada flutuando nem atravessando.
+12. O estilo é escolhido pelo Samuel no começo de cada vídeo; nunca misturar dois estilos no mesmo vídeo. (Explicando Direito) Visual novo a cada ~2 s e impacto no gancho.
 
 ## Fechamento
 

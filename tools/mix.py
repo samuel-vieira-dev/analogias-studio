@@ -4,8 +4,9 @@
 usage: python3 tools/mix.py videos/<slug>
 
 Reads   videos/<slug>/video.json → audio.narration (optional: a video without narration has none),
-        audio.music (optional: a music bed; audio.music_db its gain, default 0 with no narration and
-        -18 under a voice; audio.music_fade the fade-out at the end in s, default 2.5),
+        audio.music (optional: a music bed, in the video folder or "assets/trilhas/..." in the kit;
+        audio.music_db its gain, default 0 with no narration and -18 under a voice; audio.music_fade the
+        fade-out at the end in s, default 2.5; audio.music_loop true repeats a bed shorter than the video),
         "sfx": [[t, file, gain_db], ...]
         sound files from the HyperFrames CLI bundle (free; see CREDITS.md next to them)
 Writes  videos/<slug>/audio/mix.wav  48 kHz stereo, two-pass loudnorm to channel.yaml audio.lufs
@@ -26,8 +27,9 @@ from build import sfx_dir  # noqa: E402
 SR = 48000
 
 
-def decode(path, filters=None):
-    cmd = ["ffmpeg", "-v", "error", "-i", str(path)]
+def decode(path, filters=None, loop_to=None):
+    """loop_to: repeat the input until this many seconds (a music bed shorter than the video)."""
+    cmd = ["ffmpeg", "-v", "error"] + (["-stream_loop", "-1", "-t", str(loop_to)] if loop_to else []) + ["-i", str(path)]
     if filters:
         cmd += ["-af", filters]
     cmd += ["-ac", "2", "-ar", str(SR), "-f", "f32le", "-"]
@@ -58,7 +60,9 @@ def main():
     if acfg.get("music"):
         fade = float(acfg.get("music_fade", 2.5))
         db = float(acfg.get("music_db", -18 if acfg.get("narration") else 0))
-        m = decode(vdir / acfg["music"], f"loudnorm=I={lufs - 1}:TP=-2:LRA=11,apad=whole_dur={dur},afade=t=in:d=0.05,afade=t=out:st={max(0, dur - fade)}:d={fade}")[:n]
+        # "assets/..." is the kit's own signature track (channel.yaml → estilos.*.musica); anything else lives in the video folder
+        src = ROOT / acfg["music"] if acfg["music"].startswith("assets/") else vdir / acfg["music"]
+        m = decode(src, f"loudnorm=I={lufs - 1}:TP=-2:LRA=11,apad=whole_dur={dur},afade=t=in:d=0.05,afade=t=out:st={max(0, dur - fade)}:d={fade}", loop_to=dur if acfg.get("music_loop") else None)[:n]
         mix[: len(m)] += m * (10 ** (db / 20))
     # 2) sound effects at their times
     cache = {}

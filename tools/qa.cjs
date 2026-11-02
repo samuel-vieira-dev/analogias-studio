@@ -53,6 +53,8 @@ const outDir = path.join(vdir, "qa");
 fs.mkdirSync(outDir, { recursive: true });
 for (const f of fs.readdirSync(outDir)) if (f.endsWith(".png")) fs.unlinkSync(path.join(outDir, f));
 if (!fs.existsSync(harness)) { console.error("rode antes: python3 tools/build.py " + args[0]); process.exit(2); }
+// Estilo Explicando Direito (2D): regras próprias, mesmo relatório (tools/qa_direito.cjs)
+if (video.estilo === "explicando-direito") return require("./qa_direito.cjs")({ vdir, video, layout, step, t0, t1, maxShots, outDir });
 
 const SAFE = layout.safe, Z = layout.zones, GAP = layout.qa.text_hero_gap_px, TOL = 2, ZTOL = layout.qa.zone_tol_px ?? 4, QA = layout.qa;
 const MEDIA = video.media || {};

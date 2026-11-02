@@ -1,9 +1,9 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short 3D narrado do @analogias.br a partir de um tema — fatos checados, 5 hooks, 3 perguntas finais, roteiro aprovado, voz ElevenLabs, cenas 3D com fotos reais creditadas, QA automático + revisão cega, MP4, capa e legenda do post, e no fim pede o feedback do Samuel e melhora a skill sozinho.
+description: Cria um Reel/TikTok/Short narrado do @analogias.br — pergunta o tema e o estilo de edição (Estilo Analogias v1, 3D com analogia; ou Estilo Explicando Direito, 2D com texto cinético), checa os fatos, propõe 5 hooks, aprova o roteiro, gera a voz no ElevenLabs, monta as cenas com fotos reais creditadas, roda QA automático + revisão cega e entrega MP4, capa e legenda do post; no fim pede o feedback do Samuel e melhora a skill sozinho.
 ---
 
-# Reel 3D narrado — @analogias.br (porta de entrada)
+# Reel narrado — @analogias.br (porta de entrada)
 
 Esta skill só abre a porta. As instruções de verdade ficam no kit **analogias-studio** (GitHub `samuel-vieira-dev/analogias-studio`) e mudam a cada feedback do Samuel, por isso nunca copiar regras para cá: sempre ler a versão do repositório, atualizada no momento.
 

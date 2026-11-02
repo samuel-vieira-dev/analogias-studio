@@ -1,5 +1,7 @@
 # QA automático (antes de todo render)
 
+Este é o QA do Estilo Analogias v1 (3D). No Estilo Explicando Direito o mesmo comando roda `tools/qa_direito.cjs` (regras em [`explicando-direito/visual.md`](explicando-direito/visual.md) → "QA"); a revisão cega é igual.
+
 `node tools/qa.cjs videos/<slug>` (no Mac usa a GPU pelo Metal: ~30 s para 90 s de vídeo; sem GPU, em software, chega a 30 min) abre `qa/harness.html` (3D + textos + legendas numa página), avança de 0,2 em 0,2 s e mede, em pixels do quadro, cada texto e cada objeto registrado. Sai com código 0 (limpo), 1 (problemas) ou 2 (erro). Problemas viram `qa/report.json` e prints marcados em `qa/` (rosa = item A, amarelo = item B, azul = área segura).
 
 `tools/render.sh` se recusa a renderizar sem um relatório completo, limpo e mais novo que o build.

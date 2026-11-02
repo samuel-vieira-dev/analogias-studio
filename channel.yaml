@@ -1,4 +1,5 @@
 # Perfil fixo do canal. Tudo aqui vale para todos os vídeos; o input por vídeo fica em videos/<slug>/brief.yaml.
+# voz, video, estilo e audio abaixo são do Estilo Analogias v1 (3D). Outros estilos de edição: seção estilos (docs/estilos.md).
 canal:
   handle: "@analogias.br"
   nome: "Samuel Vieira"
@@ -37,3 +38,40 @@ audio:
 entrega:
   mac: "~/Movies/reels"           # pasta Filmes/reels
   nome_arquivo: "{slug}.mp4"
+
+# Estilos de edição (docs/estilos.md). O Samuel escolhe um por vídeo, no começo (brief.yaml → estilo; video.json → estilo).
+estilos:
+  analogias-v1:
+    nome: "Estilo Analogias v1"
+    docs: [docs/roteiro.md, docs/visual.md, docs/fotos.md, docs/qa.md]
+  explicando-direito:
+    nome: "Estilo Explicando Direito"
+    docs: [docs/explicando-direito/roteiro.md, docs/explicando-direito/visual.md, docs/fotos.md, docs/explicando-direito/referencia.md]
+    duracao_alvo_s: [55, 75]       # referência: 59, 59 e 72 s
+    palavras_por_s: 3.2            # referência: 3,11–3,26 (o v1 fala 2,6–2,75)
+    voz:                           # mesma voz do canal, mais rápida: pausas quase zeradas + ritmo até x1,12
+      voice_id: qPfM2laM0pRL4rrZtBGl
+      modelo: eleven_v4
+      takes: 2
+      pausa_s: 0.06
+      pausa_frase_s: 0.14
+      ritmo_max: 1.12
+    musica:                        # trilha grave constante embaixo da voz (a referência usa a mesma em todo vídeo)
+      arquivo: assets/trilhas/explicando-direito.mp3
+      db: -15
+    papel_rgb: [205, 213, 218]     # fundo de papel cinza-azulado (medido: #c2cbd0 nas bordas, #d3dddf no meio)
+    icone_padrao: balanca          # figurinha do canto; por vídeo: video.json → icone
+    texto: { grande_px: 120, pequeno_px: 54 }
+    ritmo: { visual_max_s: 4.5, bloco_max_s: 4.0 }
+    cores:
+      papel: "#cbd4d9"
+      tinta: "#12171b"
+      fantasma: "#9ba4ab"
+      amarelo: "#c99412"
+      amarelo-escuro: "#a87b0c"
+      creme: "#f3ecd9"
+      vermelho: "#7e1a1d"
+      petroleo: "#1d434a"
+      verde: "#2e7d4f"
+      azul: "#1f3f66"
+      cartao: "#f6f4ec"

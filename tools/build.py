@@ -3,6 +3,9 @@
 
 usage: python3 tools/build.py videos/<slug>
 
+Estilo Analogias v1 (3D, this file). A video.json with "estilo": "explicando-direito" is built by
+tools/build_direito.py instead (2D; same command).
+
 Reads   channel.yaml, config/layout.json, engine/core.js, engine/props/*.js,
         videos/<slug>/video.json, videos/<slug>/scenes.js, videos/<slug>/audio/words.json (none for a
         video without narration: no captions),
@@ -547,6 +550,9 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
     vdir = (ROOT / sys.argv[1]).resolve() if not Path(sys.argv[1]).is_absolute() else Path(sys.argv[1])
+    if json.loads((vdir / "video.json").read_text()).get("estilo") == "explicando-direito":
+        from build_direito import main as build_direito  # 2D: docs/explicando-direito/visual.md
+        return build_direito(vdir)
     layout, channel, video, words = load(vdir)
     out = vdir / "build"
     (out / "compositions").mkdir(parents=True, exist_ok=True)

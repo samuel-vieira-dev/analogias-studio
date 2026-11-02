@@ -22,6 +22,10 @@ As regras de 27 a 31/10/2026 (área segura centralizada, realismo, fotos com cr�
 
 <!-- entradas novas aqui, a mais recente primeiro -->
 
+### 2026-11-02 · estilos de edição (pedido do Samuel, sem vídeo)
+- Pediu: perguntar o tema e o estilo de edição ao criar cada vídeo; chamar a edição atual de "Estilo Analogias v1"; criar o "Estilo Explicando Direito" a partir de 3 vídeos do @descomplicaodireito_.
+- Mudou no kit: `SKILL.md` — etapa 0 pergunta tema e estilo, seção "Estilo Explicando Direito" · `docs/estilos.md` — os dois estilos lado a lado · `docs/explicando-direito/` — engenharia reversa, roteiro e visual · `channel.yaml → estilos` · `engine2d/` + `tools/build_direito.py`, `qa_direito.cjs`, `capa_direito.cjs` (build, QA e capa reconhecem `video.json → estilo`) · `tools/mix.py` — trilha do kit em loop · `tests/qa-pega-erros-direito/` no autoteste · `videos/exemplo-explicando-direito/` (40 s da narração das bets montados no 2D, só para testar).
+
 ### 2026-11-01 · 2026-11-01-castracao-quimica
 - Gostou: —
 - Não gostou: o texto da capa pequeno; difícil de ler na grade do perfil.

@@ -10,8 +10,8 @@
 | 4 | Escolha do take | `tools/transcribe.py` (faster-whisper, local) | take escolhido |
 | 5 | Aperto de pausas e ritmo | `tools/tighten.py` | `audio/narration.wav` |
 | 6 | Tempo de cada palavra | `tools/transcribe.py --out` | `audio/words.json` |
-| 7 | Fotos e cenas | `midia/` + `video.json → media` ([`fotos.md`](fotos.md)), `scenes.js` + `video.json` (engine Three.js) | — |
-| 8 | Projeto HyperFrames | `tools/build.py` | `build/`, `qa/harness.html` |
+| 7 | Fotos e cenas | `midia/` + `video.json → media` ([`fotos.md`](fotos.md)), `scenes.js` + `video.json` (engine Three.js); no Explicando Direito, só `video.json → texto/visuais` (`engine2d/`) | — |
+| 8 | Projeto HyperFrames | `tools/build.py` (2D: `tools/build_direito.py`, chamado por ele) | `build/`, `qa/harness.html` |
 | 9 | QA + prévia + revisão cega | `tools/qa.cjs`, `tools/preview.cjs` (Playwright), subagente revisor | `qa/report.json`, `preview/sheet-NN.jpg`, `preview/objetos-NN.jpg` + `objetos.json` |
 | 10 | Mixagem | `tools/mix.py` (ffmpeg) | `audio/mix.wav` (−14 LUFS) |
 | 11 | Render | `tools/render.sh` (HyperFrames 0.8.206) | `out/render.mp4` |

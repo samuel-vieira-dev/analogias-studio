@@ -1,0 +1,101 @@
+{
+  "slug": "qa-pega-erros-direito",
+  "estilo": "explicando-direito",
+  "_doc": "Defeitos feitos de propósito para o QA do Estilo Explicando Direito (tools/selftest.sh). Não renderizar.",
+  "duration": 11.0,
+  "audio": {
+    "words": "audio/words.json"
+  },
+  "icone": "lupa",
+  "media": {
+    "teste": {
+      "file": "midia/teste.jpg",
+      "credit": "Teste do QA",
+      "url": "ffmpeg testsrc2 160x120"
+    }
+  },
+  "texto": [
+    "texto grande demais para caber na zona de jeito nenhum mesmo encolhendo a letra toda vez",
+    "# palco [vazio] agora",
+    "# foto pequena [esticada].",
+    "# documento em cima | do texto."
+  ],
+  "visuais": [
+    {
+      "tipo": "palavras",
+      "t": 0,
+      "itens": [
+        {
+          "texto": "INCONSTITUCIONALISSIMAMENTE"
+        }
+      ]
+    },
+    {
+      "tipo": "fotos",
+      "em": "palco vazio",
+      "itens": [
+        {
+          "media": "teste",
+          "nome": "Teste",
+          "em": "foto pequena"
+        }
+      ]
+    },
+    {
+      "tipo": "documento",
+      "em": "documento em cima",
+      "etiqueta": "Teste",
+      "titulo": "Documento alto",
+      "linhas": [
+        {
+          "texto": "linha 1"
+        },
+        {
+          "texto": "linha 2"
+        },
+        {
+          "texto": "linha 3"
+        },
+        {
+          "texto": "linha 4"
+        },
+        {
+          "texto": "linha 5"
+        },
+        {
+          "texto": "linha 6"
+        },
+        {
+          "texto": "linha 7"
+        },
+        {
+          "texto": "linha 8"
+        },
+        {
+          "texto": "linha 9"
+        },
+        {
+          "texto": "linha 10"
+        },
+        {
+          "texto": "linha 11"
+        },
+        {
+          "texto": "linha 12"
+        },
+        {
+          "texto": "linha 13"
+        },
+        {
+          "texto": "linha 14"
+        },
+        {
+          "texto": "linha 15"
+        },
+        {
+          "texto": "linha 16"
+        }
+      ]
+    }
+  ]
+}
