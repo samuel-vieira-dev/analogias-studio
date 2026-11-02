@@ -1,0 +1,16 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-maior-iva-do-mundo
+tema: "O que é o IVA e como será o IVA no Brasil a partir de 2027; pontuar que será o maior IVA do mundo (estimativa de 28% a 30%, contra 27% da Hungria)"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 1
+  texto: "Começa em janeiro: o Brasil vai ter o maior IVA do mundo."
+
+pergunta_final:
+  origem: 3
+  texto: "O maior IVA do mundo é imposto a mais... ou é o imposto de sempre, só que agora aparecendo?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-02

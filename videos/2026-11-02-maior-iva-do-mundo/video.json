@@ -1,0 +1,649 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+ "slug": "2026-11-02-maior-iva-do-mundo",
+ "estilo": "analogias-v1",
+ "post": {
+  "title": "O MAIOR IVA\nDO MUNDO",
+  "descricao": "IVA no Brasil: em janeiro de 2027 PIS e Cofins acabam e entra a CBS, de 11,3% pela conta do TCU (falta o Senado confirmar). Com estados e cidades, até 2033, as estimativas do IVA vão de 28% a 30%, acima dos 27% da Hungria, hoje o maior IVA do mundo.",
+  "hashtags": [
+   "#iva",
+   "#reformatributaria",
+   "#impostos",
+   "#cbs",
+   "#economia"
+  ]
+ },
+ "duration": 95.1,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "pensa": "Pensa",
+   "pis": "PIS",
+   "cofins": "Cofins"
+  }
+ },
+ "media": {
+  "tcu": {
+   "file": "midia/tcu.jpg",
+   "credit": "Borowskki/Wikimedia",
+   "url": "https://commons.wikimedia.org/wiki/File:Tribunal_de_contas_da_uniao_sede.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  "senado": {
+   "file": "midia/senado.jpg",
+   "credit": "Jefferson Rudy/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:2025-10-29,_Plen%C3%A1rio_do_Senado_(54889070300).jpg",
+   "focus": [
+    0.47,
+    0.55
+   ]
+  },
+  "hungria": {
+   "file": "midia/hungria.jpg",
+   "credit": "Andrew Shiva/Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:HUN-2015-Budapest-Hungarian_Parliament_(Budapest)_2015-02.jpg",
+   "focus": [
+    0.495,
+    0.42
+   ],
+   "author": "Andrew Shiva / Wikimedia Commons",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ "cuts": [
+  3.9,
+  14.5,
+  21.55,
+  29.9,
+  35.66,
+  39.28,
+  45.02,
+  48.28,
+  50.06,
+  54.84,
+  59.58,
+  61.02,
+  63.12,
+  72.84,
+  77.24,
+  79.88,
+  86.66
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0.0,
+   "to": 3.9
+  },
+  {
+   "id": "camiseta",
+   "from": 3.9,
+   "to": 14.5
+  },
+  {
+   "id": "iva",
+   "from": 14.5,
+   "to": 21.55
+  },
+  {
+   "id": "pedagio",
+   "from": 21.55,
+   "to": 29.9
+  },
+  {
+   "id": "cadeia",
+   "from": 29.9,
+   "to": 35.66
+  },
+  {
+   "id": "nota",
+   "from": 35.66,
+   "to": 39.28
+  },
+  {
+   "id": "virada",
+   "from": 39.28,
+   "to": 45.02
+  },
+  {
+   "id": "tcu",
+   "from": 45.02,
+   "to": 48.28
+  },
+  {
+   "id": "senado",
+   "from": 48.28,
+   "to": 50.06
+  },
+  {
+   "id": "estados",
+   "from": 50.06,
+   "to": 54.84
+  },
+  {
+   "id": "soma",
+   "from": 54.84,
+   "to": 59.58
+  },
+  {
+   "id": "hungria",
+   "from": 59.58,
+   "to": 61.02
+  },
+  {
+   "id": "ranking",
+   "from": 61.02,
+   "to": 63.12
+  },
+  {
+   "id": "excecoes",
+   "from": 63.12,
+   "to": 72.84
+  },
+  {
+   "id": "neutra",
+   "from": 72.84,
+   "to": 77.24
+  },
+  {
+   "id": "preco",
+   "from": 77.24,
+   "to": 79.88
+  },
+  {
+   "id": "nota2033",
+   "from": 79.88,
+   "to": 86.66
+  },
+  {
+   "id": "pergunta",
+   "from": 86.66,
+   "to": 95.1
+  }
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.08,
+   "to": 1.24,
+   "text": "COMEÇA EM\nJANEIRO"
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 1.3,
+   "to": 3.84,
+   "text": "O MAIOR IVA\nDO MUNDO"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 4.0,
+   "to": 10.0,
+   "text": "IMPOSTO ESCONDIDO\nNO PREÇO"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 10.08,
+   "to": 12.4,
+   "text": "IMPOSTO EM CIMA\nDE IMPOSTO"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 12.48,
+   "to": 14.44,
+   "text": "QUANTO?"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 14.6,
+   "to": 18.98,
+   "text": "IVA = IMPOSTO SOBRE\nVALOR AGREGADO"
+  },
+  {
+   "id": "ov-07",
+   "kind": "stat",
+   "from": 19.05,
+   "to": 21.5,
+   "big": "+170",
+   "label": "PAÍSES USAM IVA"
+  },
+  {
+   "id": "src-07",
+   "kind": "source",
+   "from": 19.05,
+   "to": 21.5,
+   "text": "Fonte: OCDE"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 21.65,
+   "to": 22.8,
+   "text": "PENSA NUM\nPEDÁGIO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 22.88,
+   "to": 26.62,
+   "text": "HOJE: ALGUMAS\nCOBRAM DE NOVO"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 26.72,
+   "to": 29.84,
+   "text": "IVA: CADA UMA\nSÓ O SEU TRECHO"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 30.0,
+   "to": 35.6,
+   "text": "CADA UM PAGA SÓ\nO QUE ACRESCENTOU"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 35.76,
+   "to": 39.22,
+   "text": "IMPOSTO UMA VEZ SÓ:\nNA SUA NOTA"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 39.38,
+   "to": 42.36,
+   "text": "JANEIRO: PIS E\nCOFINS ACABAM"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 42.44,
+   "to": 44.96,
+   "text": "ENTRA A CBS:\nA PARTE FEDERAL"
+  },
+  {
+   "id": "src-13",
+   "kind": "source",
+   "from": 39.38,
+   "to": 44.96,
+   "text": "Fonte: Constituição, EC 132/2023"
+  },
+  {
+   "id": "ov-15",
+   "kind": "stat",
+   "from": 45.12,
+   "to": 48.22,
+   "big": "11,3%",
+   "label": "CBS EM 2027 · CONTA DO TCU"
+  },
+  {
+   "id": "src-15",
+   "kind": "source",
+   "from": 45.12,
+   "to": 48.22,
+   "text": "Fonte: TCU · Foto: Borowskki/Wikimedia"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 48.38,
+   "to": 50.0,
+   "text": "FALTA O SENADO\nCONFIRMAR"
+  },
+  {
+   "id": "src-16",
+   "kind": "source",
+   "from": 48.38,
+   "to": 50.0,
+   "text": "Foto: Jefferson Rudy/Agência Senado"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 50.16,
+   "to": 54.78,
+   "text": "ESTADOS E CIDADES:\n2029 → 2033"
+  },
+  {
+   "id": "src-17",
+   "kind": "source",
+   "from": 50.16,
+   "to": 54.78,
+   "text": "Fonte: Constituição, EC 132/2023"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 54.94,
+   "to": 56.4,
+   "text": "SOMANDO TUDO"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 56.5,
+   "to": 59.52,
+   "big": "28% A 30%",
+   "label": "ESTIMATIVA DO IVA COMPLETO"
+  },
+  {
+   "id": "src-18",
+   "kind": "source",
+   "from": 54.94,
+   "to": 59.52,
+   "text": "Fonte: TCU; Comitê Gestor do IBS (estimativas)"
+  },
+  {
+   "id": "ov-20",
+   "kind": "stat",
+   "from": 59.68,
+   "to": 63.06,
+   "big": "27%",
+   "label": "HUNGRIA, RECORDE ATUAL"
+  },
+  {
+   "id": "src-20",
+   "kind": "source",
+   "from": 59.68,
+   "to": 60.98,
+   "text": "Foto: Andrew Shiva/Wikimedia Commons"
+  },
+  {
+   "id": "src-20b",
+   "kind": "source",
+   "from": 61.08,
+   "to": 63.06,
+   "text": "Fonte: Tax Foundation"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 63.22,
+   "to": 64.3,
+   "text": "POR QUE\nTÃO ALTO?"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 64.38,
+   "to": 67.4,
+   "text": "EXCEÇÕES"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 67.48,
+   "to": 70.72,
+   "text": "CESTA BÁSICA 0%:\n+QUASE 3 PONTOS"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 70.8,
+   "to": 72.78,
+   "text": "QUEM PAGA CHEIO\nCOBRE A DIFERENÇA"
+  },
+  {
+   "id": "src-21",
+   "kind": "source",
+   "from": 65.3,
+   "to": 72.78,
+   "text": "Fonte: TCU, via Poder360"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 72.94,
+   "to": 77.18,
+   "text": "FEITO PRA\nARRECADAR O MESMO"
+  },
+  {
+   "id": "src-25",
+   "kind": "source",
+   "from": 72.94,
+   "to": 77.18,
+   "text": "Fonte: TCU, cálculo da CBS 2027"
+  },
+  {
+   "id": "ov-26",
+   "kind": "chip",
+   "from": 77.32,
+   "to": 79.82,
+   "style": "red",
+   "text": "HÁ QUEM PREVEJA PREÇO SUBINDO"
+  },
+  {
+   "id": "src-26",
+   "kind": "source",
+   "from": 77.32,
+   "to": 79.82,
+   "text": "Fonte: Brazil Journal; Gazeta do Povo"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 80.0,
+   "to": 86.6,
+   "text": "2033: O IMPOSTO\nNA NOTA"
+  },
+  {
+   "id": "src-27",
+   "kind": "source",
+   "from": 82.1,
+   "to": 86.6,
+   "text": "Fonte: LC 214/2025, art. 12"
+  },
+  {
+   "id": "ov-28",
+   "kind": "question",
+   "from": 86.76,
+   "to": 95.1,
+   "text": "Imposto a mais ou\no de sempre?",
+   "sub": "@analogias.br"
+  },
+  {
+   "id": "ov-29",
+   "kind": "cta",
+   "from": 93.2,
+   "to": 95.1,
+   "html": "Comenta: <b>A MAIS</b> ou <b>DE SEMPRE</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   2.72,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   3.9,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   7.6,
+   "pop.mp3",
+   -18
+  ],
+  [
+   8.3,
+   "pop.mp3",
+   -18
+  ],
+  [
+   9.2,
+   "pop.mp3",
+   -18
+  ],
+  [
+   10.9,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   12.45,
+   "click.mp3",
+   -16
+  ],
+  [
+   14.5,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   14.98,
+   "impact-bass-1.mp3",
+   -14
+  ],
+  [
+   21.55,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   26.72,
+   "ping.mp3",
+   -18
+  ],
+  [
+   29.9,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   32.0,
+   "pop.mp3",
+   -18
+  ],
+  [
+   35.1,
+   "pop.mp3",
+   -18
+  ],
+  [
+   35.66,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   39.28,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   41.0,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   42.75,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   45.02,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   48.28,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   50.06,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   53.98,
+   "pop.mp3",
+   -18
+  ],
+  [
+   54.84,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   57.4,
+   "riser.mp3",
+   -20
+  ],
+  [
+   58.6,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   59.58,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   61.02,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   63.12,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   67.08,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   70.8,
+   "pop.mp3",
+   -18
+  ],
+  [
+   72.84,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   77.24,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   79.88,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   86.66,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   89.9,
+   "pop.mp3",
+   -18
+  ]
+ ]
+}
