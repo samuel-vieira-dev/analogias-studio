@@ -211,7 +211,7 @@ function buildDireito(root, SPEC) {
       return el;
     },
     fluxo(v, inner) {
-      const W = 700, H = 460, nodes = v.nos.map((n, i) => { const d = h("div", "d-node", `<b>${esc(n.texto)}</b>${n.sub ? `<small>${esc(n.sub)}</small>` : ""}`); d.style.background = cor(n.cor, i ? COR.azul : COR.preto); return d; });
+      const W = 640, H = 460, nodes = v.nos.map((n, i) => { const d = h("div", "d-node", `<b>${esc(n.texto)}</b>${n.sub ? `<small>${esc(n.sub)}</small>` : ""}`); d.style.background = cor(n.cor, i ? COR.azul : COR.preto); return d; });
       const el = svgEl(W, H, ""); const s = el.querySelector("svg"), ns = "http://www.w3.org/2000/svg";
       nodes.forEach((d, i) => { Object.assign(d.style, { position: "absolute", top: "120px", left: (i ? W - 210 : 0) + "px" }); el.appendChild(d); pop(d, v.nos[i].t ?? v.t + i * 0.15, { s0: 0.4 }); });
       (v.setas || []).forEach((a, i) => {
@@ -288,7 +288,9 @@ function buildDireito(root, SPEC) {
     palavras(v, inner) {
       const el = h("div", "d-words");
       v.itens.forEach((it, i) => { const w = h("div", "pw", `${esc(it.texto)}<span class="st" style="position:absolute;left:-4%;right:-4%;top:48%;height:14px;background:var(--vermelho);transform:scaleX(0) rotate(-3deg);transform-origin:0 50%"></span>`);
-        if (it.cor) w.style.color = cor(it.cor); el.appendChild(w); pop(w, it.t ?? v.t + i * 0.25, { s0: 1.4 });
+        if (it.cor) w.style.color = cor(it.cor);
+        w.style.fontSize = Math.max(72, Math.min(132, Math.floor(1150 / Math.max(1, it.texto.length)))) + "px";   // palavra longa encolhe até 72 px para caber nos 700 px; mais longa que isso o QA reprova
+        el.appendChild(w); pop(w, it.t ?? v.t + i * 0.25, { s0: 1.4 });
         if (it.riscar != null) tl.fromTo(w.querySelector(".st"), { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, it.riscar); });
       inner.appendChild(el); return el;
     },

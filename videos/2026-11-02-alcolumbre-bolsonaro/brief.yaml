@@ -1,0 +1,22 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-alcolumbre-bolsonaro
+estilo: explicando-direito
+tema: "Quem é Davi Alcolumbre e por que Bolsonaro e o PL recusam se aliar a ele, mesmo com a saída da prisão em jogo"
+referencias_visuais: []
+
+hook:
+  origem: 6   # escrito pelo Samuel
+  texto: "Bolsonaro prefere continuar preso que se aliar a ele…"
+
+pergunta_final:
+  origem: 2   # vai só na legenda do post (estilo Explicando Direito)
+  texto: "Pra você, recusar Alcolumbre foi coerência ou erro de estratégia?"
+
+pedidos:
+  - "No 5 (v1): deixar claro onde ele quer se reeleger (presidência do Senado, fevereiro)"
+  - "Analogia mais clara (v1) → no Explicando Direito saiu: regra explicada direto, com o Regimento na tela"
+  - "Indulto explicado com clareza"
+  - "Virada: 'o preço de soltar Bolsonaro seria abrir mão do impeachment contra Moraes' (texto do Samuel)"
+
+duracao_alvo_s: 68
+aprovado_em: 2026-11-02

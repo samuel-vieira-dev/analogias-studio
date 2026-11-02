@@ -1,0 +1,446 @@
+{
+ "slug": "2026-11-02-alcolumbre-bolsonaro",
+ "estilo": "explicando-direito",
+ "duration": 68.24,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json",
+  "music": "assets/trilhas/explicando-direito.mp3",
+  "music_db": -15,
+  "music_loop": true,
+  "music_fade": 0.4
+ },
+ "icone": "balanca",
+ "media": {
+  "bolsonaro": {
+   "file": "midia/bolsonaro.jpg",
+   "credit": "Isac Nóbrega/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Jair_Bolsonaro_em_24_de_abril_de_2019_(1)_(cropped).jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  "alcolumbre": {
+   "file": "midia/alcolumbre.jpg",
+   "credit": "Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_de_Davi_Alcolumbre_(v._Flickr).jpg",
+   "focus": [
+    0.5,
+    0.35
+   ]
+  },
+  "moraes": {
+   "file": "midia/moraes.jpg",
+   "credit": "Isac Nóbrega/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Ministro_Alexandre_de_Moraes_como_presidente_do_TSE.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  "abraco": {
+   "file": "midia/abraco.jpg",
+   "credit": "Waldemir Barreto/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Inaugura%C3%A7%C3%A3o_da_3%C2%AA_Sess%C3%A3o_Legislativa_Ordin%C3%A1ria_da_57%C2%AA_Legislatura_(54305449334).jpg",
+   "focus": [
+    0.42,
+    0.35
+   ]
+  },
+  "lula": {
+   "file": "midia/lula.jpg",
+   "credit": "Ricardo Stuckert/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva.jpg",
+   "focus": [
+    0.5,
+    0.28
+   ]
+  },
+  "marinho": {
+   "file": "midia/marinho.jpg",
+   "credit": "Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Senador_Rogerio_Marinho_(PL-RN)_(52795763830).jpg",
+   "focus": [
+    0.5,
+    0.25
+   ]
+  }
+ },
+ "texto": [
+  "bolsonaro prefere continuar | # [preso]",
+  "que se aliar | # a [ele…|preto]",
+  "ele é | # davi [alcolumbre],",
+  "comerciante de macapá, | # que já comandou o [senado] | duas vezes,",
+  "na última, com | # [73] de 81 votos,",
+  "# inclusive do [pl|verde].",
+  "agora, ele quer ser | # [reeleito] presidente | do senado em fevereiro,",
+  "e, segundo a imprensa, | # estuda um jeito | de [soltar] bolsonaro,",
+  "condenado a | # [27 anos|vermelho],",
+  "para ganhar | # os [votos] do pl.",
+  "o discurso é de | # [pacificação],",
+  "porém, o | # [preço|vermelho] | de soltar bolsonaro",
+  "seria abrir mão do | # [impeachment]",
+  "de alexandre | # de [moraes],",
+  "a maior | # [bandeira] do pl.",
+  "é que o presidente do senado | # [decide] o que | vai à votação,",
+  "e alcolumbre é | # [amigo|preto] de moraes",
+  "# e [contra|vermelho] | o impeachment.",
+  "além disso, | # tem [histórico].",
+  "em 2021, ele segurou | # por [quatro meses]",
+  "o indicado de | # bolsonaro ao [supremo].",
+  "em 2025, | # o pl votou [nele],",
+  "esperando a anistia, | # e ela [não veio|vermelho].",
+  "e os dois caminhos | # são [incertos].",
+  "o indulto é | # um [perdão] da pena",
+  "que só o | # [presidente] | da república dá,",
+  "ou seja, | # depende do [lula].",
+  "a anistia apaga | # o [próprio crime],",
+  "mas precisa passar pelo | # [congresso],",
+  "e nos dois casos, | # o [supremo] pode barrar.",
+  "por isso, bolsonaro quer | # candidato [próprio],",
+  "# rogério [marinho].",
+  "só que o pl tem | # [29] senadores,",
+  "precisa de | # [41],",
+  "# e o voto é [secreto|preto]."
+ ],
+ "visuais": [
+  {
+   "tipo": "fotos",
+   "t": 0,
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "bolsonaro",
+     "nome": "Jair Bolsonaro"
+    }
+   ]
+  },
+  {
+   "tipo": "foto-cheia",
+   "em": "aliar a ele",
+   "media": "alcolumbre",
+   "pb": true,
+   "transicao": "impacto"
+  },
+  {
+   "tipo": "fotos",
+   "em": "davi alcolumbre",
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "alcolumbre",
+     "nome": "Davi Alcolumbre"
+    }
+   ],
+   "cartao": {
+    "icone": "predio",
+    "grande": "2 VEZES",
+    "pequeno": "presidente do Senado",
+    "em": "duas vezes"
+   }
+  },
+  {
+   "tipo": "hemiciclo",
+   "em": "na última",
+   "total": 81,
+   "rotulo": "Senado · fev/2025",
+   "grupos": [
+    {
+     "nome": "votos em Alcolumbre",
+     "n": 73,
+     "cor": "verde",
+     "em": "73"
+    }
+   ],
+   "centro": {
+    "grande": "73/81",
+    "pequeno": "votos, inclusive do PL",
+    "em": "inclusive"
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "agora, ele quer",
+   "icone": "calendario",
+   "grande": "FEV/2027",
+   "pequeno": "eleição pra presidente do Senado"
+  },
+  {
+   "tipo": "cartao",
+   "em": "segundo a imprensa",
+   "icone": "lupa",
+   "grande": "LIBERDADE",
+   "pequeno": "pra Bolsonaro · segundo a imprensa"
+  },
+  {
+   "tipo": "cartao",
+   "em": "condenado",
+   "icone": "grade",
+   "grande": "27 ANOS",
+   "pequeno": "hoje em prisão domiciliar"
+  },
+  {
+   "tipo": "fluxo",
+   "em": "para ganhar",
+   "nos": [
+    {
+     "texto": "DAVI"
+    },
+    {
+     "texto": "PL"
+    }
+   ],
+   "setas": [
+    {
+     "de": 0,
+     "para": 1,
+     "texto": "solta Bolsonaro"
+    }
+   ],
+   "nota": {
+    "rotulo": "FONTE",
+    "texto": "Poder360, 01/11/2026",
+    "sub": "negociação não confirmada"
+   }
+  },
+  {
+   "tipo": "palavras",
+   "em": "o discurso",
+   "itens": [
+    {
+     "texto": "PACIFICAÇÃO",
+     "cor": "petroleo"
+    }
+   ]
+  },
+  {
+   "tipo": "palavras",
+   "em": "porém",
+   "transicao": "impacto",
+   "itens": [
+    {
+     "texto": "SOLTURA",
+     "cor": "verde"
+    },
+    {
+     "texto": "IMPEACHMENT",
+     "cor": "vermelho",
+     "em": "impeachment",
+     "riscar": "de alexandre"
+    }
+   ]
+  },
+  {
+   "tipo": "fotos",
+   "em": "de moraes",
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "moraes",
+     "nome": "Alexandre de Moraes"
+    }
+   ],
+   "cartao": {
+    "icone": "alerta",
+    "grande": "BANDEIRA Nº 1",
+    "pequeno": "do PL",
+    "em": "bandeira"
+   }
+  },
+  {
+   "tipo": "documento",
+   "em": "é que o presidente",
+   "etiqueta": "Regimento Interno do Senado",
+   "titulo": "Art. 163",
+   "texto": "As matérias entram na Ordem do Dia a juízo do Presidente",
+   "clipe": true
+  },
+  {
+   "tipo": "foto-cheia",
+   "em": "amigo de moraes",
+   "media": "abraco",
+   "carimbo": {
+    "texto": "Contra o impeachment",
+    "em": "contra",
+    "pos": [
+     72,
+     82
+    ]
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "além disso",
+   "transicao": "chicote",
+   "icone": "calendario",
+   "grande": "2021",
+   "pequeno": "Bolsonaro indica Mendonça ao STF"
+  },
+  {
+   "tipo": "cartao",
+   "em": "por quatro meses",
+   "icone": "ampulheta",
+   "grande": "4 MESES",
+   "pequeno": "sabatina parada na CCJ"
+  },
+  {
+   "tipo": "cartao",
+   "em": "em 2025",
+   "icone": "urna",
+   "grande": "2025",
+   "pequeno": "PL vota em Alcolumbre"
+  },
+  {
+   "tipo": "cartao",
+   "em": "esperando a anistia",
+   "icone": "documento",
+   "grande": "ANISTIA",
+   "pequeno": "não veio"
+  },
+  {
+   "tipo": "bifurcacao",
+   "em": "e os dois caminhos",
+   "esquerda": {
+    "texto": "INDULTO",
+    "sub": "perdoa a pena"
+   },
+   "direita": {
+    "texto": "ANISTIA",
+    "sub": "apaga o crime"
+   },
+   "destaques": [
+    {
+     "lado": "esquerda",
+     "em": "o indulto"
+    }
+   ]
+  },
+  {
+   "tipo": "documento",
+   "em": "que só o presidente",
+   "etiqueta": "Constituição Federal",
+   "titulo": "Art. 84, XII",
+   "texto": "Compete ao Presidente da República conceder indulto",
+   "clipe": true
+  },
+  {
+   "tipo": "fotos",
+   "em": "ou seja",
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "lula",
+     "nome": "Lula"
+    }
+   ]
+  },
+  {
+   "tipo": "documento",
+   "em": "a anistia",
+   "etiqueta": "Constituição Federal",
+   "titulo": "Art. 48, VIII",
+   "texto": "Cabe ao Congresso Nacional conceder anistia",
+   "clipe": true
+  },
+  {
+   "tipo": "icone",
+   "em": "e nos dois casos",
+   "nome": "predio_stf",
+   "rotulo": "STF",
+   "carimbo": {
+    "texto": "Pode barrar",
+    "em": "barrar"
+   }
+  },
+  {
+   "tipo": "fotos",
+   "em": "por isso",
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "marinho",
+     "nome": "Rogério Marinho"
+    }
+   ],
+   "cartao": {
+    "icone": "pessoa",
+    "grande": "PL",
+    "pequeno": "candidato ao Senado",
+    "em": "marinho"
+   }
+  },
+  {
+   "tipo": "hemiciclo",
+   "em": "o pl tem",
+   "total": 81,
+   "rotulo": "Senado a partir de 2027",
+   "grupos": [
+    {
+     "nome": "PL",
+     "n": 29,
+     "cor": "azul",
+     "em": "o pl tem"
+    }
+   ],
+   "centro": {
+    "grande": "41",
+    "pequeno": "votos pra vencer",
+    "em": "precisa de"
+   }
+  },
+  {
+   "tipo": "icone",
+   "em": "e o voto",
+   "nome": "urna",
+   "rotulo": "VOTO SECRETO",
+   "carimbo": {
+    "texto": "Secreto",
+    "em": "secreto"
+   }
+  }
+ ],
+ "sfx": [
+  [
+   2.41,
+   "whoosh-cinematic.mp3",
+   -8
+  ],
+  [
+   24.27,
+   "whoosh-cinematic.mp3",
+   -8
+  ],
+  [
+   35.93,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   36.85,
+   "whoosh-short.mp3",
+   -10
+  ],
+  [
+   59.79,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   67.67,
+   "impact-bass-1.mp3",
+   -6
+  ]
+ ],
+ "post": {
+  "title": "PREFERE [PRESO]\nA SE ALIAR",
+  "descricao": "Quem é Davi Alcolumbre, presidente do Senado, e por que Bolsonaro e o PL recusam apoiar a reeleição dele em fevereiro de 2027, mesmo com a imprensa dizendo que ele estuda indulto ou anistia pra soltar Bolsonaro. O preço seria abrir mão do impeachment de Alexandre de Moraes.",
+  "hashtags": [
+   "#alcolumbre",
+   "#bolsonaro",
+   "#senado",
+   "#anistia",
+   "#moraes"
+  ]
+ }
+}
