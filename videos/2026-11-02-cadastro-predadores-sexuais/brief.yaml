@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-cadastro-predadores-sexuais
+estilo: analogias-v1
+tema: "Cadastro Nacional de Pedófilos e Predadores Sexuais, aprovado na Câmara: como seria aplicado e quem foi contra a implementação"
+referencias_visuais: []
+
+hook:
+  origem: 2
+  texto: "Imagina digitar o CPF da babá… e aparecer uma condenação."
+
+pergunta_final:
+  origem: 3
+  texto: "Cadastro público: protege as crianças… ou condena a pessoa pra sempre?"
+
+analogia: "VAR: o juiz marca o pênalti e o lance já vai pro telão (o nome aparece na primeira condenação); se o VAR anular (absolvição no recurso), o lance sai, mas o estádio inteiro já viu."
+
+pedidos:
+  - "Falar como seria aplicado o projeto (Samuel)"
+  - "Falar quem foi contra a implementação (Samuel)"
+  - "Explicar o que é o CNJ: o espectador não sabe (Samuel, na aprovação do roteiro)"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-02
