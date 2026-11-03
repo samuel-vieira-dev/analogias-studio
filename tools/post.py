@@ -73,11 +73,27 @@ def fontes(md):
             continue
         for n, u in LINK.findall(src):
             add(n, u)
-        for n in re.split(r"[·,;]", re.sub(r"\([^)]*\)", "", LINK.sub("", src))):
+        for n in split_names(re.sub(r"\([^)]*\)", "", LINK.sub("", src))):
             n = n.strip(" .")
             if not n or re.fullmatch(r"fatos? [\d, e]+", n, re.I):  # "fato 1": a row of the same table
                 continue
             add(n, known.get(n) or next((u for k, u in known.items() if k.startswith(n + " ")), None))
+    return out
+
+
+DATE = r"\d{1,2}/\d{1,2}(/\d{2,4})?|\d{1,2}/\d{4}|[a-zç]{3,4}\.?/\d{2,4}"
+
+
+def split_names(text):
+    """'ND Mais, 31/10 · IstoÉ, 01/11; CUT' → ['ND Mais, 31/10', 'IstoÉ, 01/11', 'CUT']: a date after a comma
+    belongs to the name before it (it is how a source without link is written again in the table)."""
+    out = []
+    for part in re.split(r"[·;]", text):
+        for x in (y.strip() for y in part.split(",")):
+            if out and re.fullmatch(DATE, x, re.I) and not out[-1].endswith("·"):
+                out[-1] += ", " + x
+            elif x:
+                out.append(x)
     return out
 
 
@@ -93,7 +109,7 @@ def short_name(n):
     """'TCU — visão CBS 2027', 'O Povo, 28/07/2025', 'Exame dez./2024', 'LC 214/2025 (lei da reforma)'
     → 'TCU', 'O Povo', 'Exame', 'LC 214/2025'."""
     n = re.sub(r"\s*\([^)]*\)", "", n.split(" — ")[0])
-    return re.sub(r"[\s,]+(\d{1,2}/\d{1,2}(/\d{2,4})?|[a-zç]{3,4}\.?/\d{2,4}|\d{4})$", "", n).strip()
+    return re.sub(r"[\s,]+(\d{1,2}/\d{1,2}(/\d{2,4})?|\d{1,2}/\d{4}|[a-zç]{3,4}\.?/\d{2,4}|\d{4})$", "", n).strip()
 
 
 def caption(vdir, video):
@@ -112,7 +128,7 @@ def caption(vdir, video):
     names = [n for n in dict.fromkeys(short_name(n) for n, _ in src)  # a bare date or "idem" is not a name
              if not re.fullmatch(r"[\d/.\s]*|[a-zç]{3,4}\.?/\d{2,4}|idem", n, re.I)]
     text = "\n\n".join(["\n\n".join(head)] + (["\n".join(ask)] if ask else []) + (["\n".join(notes)] if notes else []) + [" ".join(tags(video))])
-    text += ("\n\nFontes: " + " · ".join(names) if names else "") + ("\nFotos: " + " · ".join(n for n, _ in photos) if photos else "")
+    text += ("\n\nFontes: " + " · ".join(names) if names else "") + ("\nFotos: " + " · ".join(dict.fromkeys(n for n, _ in photos)) if photos else "")
     bullet = lambda n, u: f"• {n}: {u}" if u else f"• {n}"
     links = "\n".join(["Fontes:"] + [bullet(n, u) for n, u in src] + (["", "Fotos:"] + [bullet(n, u) for n, u in photos] if photos else []))
     return text, links, src, photos

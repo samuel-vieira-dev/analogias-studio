@@ -1,0 +1,555 @@
+{
+  "slug": "2026-11-03-greve-caminhoneiros-dia-5",
+  "estilo": "explicando-direito",
+  "duration": 72.3,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json",
+    "music": "assets/trilhas/explicando-direito.mp3",
+    "music_db": -15,
+    "music_loop": true,
+    "music_fade": 0.4
+  },
+  "icone": "caminhao",
+  "media": {
+    "caminhoes": {
+      "file": "midia/caminhoes.jpg",
+      "credit": "PRF Paraná, greve de 2018",
+      "url": "https://commons.wikimedia.org/wiki/File:PRF_monitora_protestos_de_caminhoneiros_no_Paran%C3%A1_(27409156387).jpg",
+      "focus": [
+        0.5,
+        0.52
+      ]
+    },
+    "prf": {
+      "file": "midia/prf.jpg",
+      "credit": "PRF Paraná, greve de 2018",
+      "url": "https://commons.wikimedia.org/wiki/File:PRF_monitora_manifesta%C3%A7%C3%A3o_de_caminhoneiros_no_Paran%C3%A1_(40472594680).jpg",
+      "focus": [
+        0.42,
+        0.5
+      ]
+    },
+    "chorao": {
+      "file": "midia/chorao.jpg",
+      "credit": "Roque de Sá/Agência Senado",
+      "url": "https://commons.wikimedia.org/wiki/File:CMMPV_-_Comiss%C3%B5es_Mistas_Medidas_Provis%C3%B3rias_%2842304544634%29.jpg",
+      "focus": [
+        0.55,
+        0.4
+      ]
+    },
+    "placa": {
+      "file": "midia/placa.jpg",
+      "credit": "PRF Paraná, greve de 2018",
+      "url": "https://commons.wikimedia.org/wiki/File:PRF_monitora_protestos_de_caminhoneiros_no_Paran%C3%A1_(27459619737).jpg",
+      "focus": [
+        0.66,
+        0.55
+      ]
+    }
+  },
+  "texto": [
+    "a greve de quinta | # tem [motivo],",
+    "mas não tem | # [organizador|vermelho].",
+    "mensagens nas redes | # [convocam] os caminhoneiros",
+    "a parar o país nesta quinta, | # por tempo [indeterminado].",
+    "porém, | # [nenhuma|preto] | das principais entidades",
+    "da categoria | # [assina] essa convocação.",
+    "# wallace landim, | o [chorão],",
+    "um dos líderes | da greve de 2018, | # [desmente|vermelho].",
+    "e a confederação | # dos [trabalhadores]",
+    "em transporte fala em | # [desinformação].",
+    "já o motivo é real: | # o [diesel|preto].",
+    "na tabela do frete, | # o litro [subiu]",
+    "# [44 centavos] | em 6 meses.",
+    "o governo paga | # [R$ 2,12] por litro",
+    "# pra segurar o [preço],",
+    "mas só por | # mais [30 dias].",
+    "por isso, | # a categoria [negocia]",
+    "com o governo | # a conta do [frete].",
+    "é aí que entra | # a [lei|preto].",
+    "cruzar os braços | # [não é|verde] infração.",
+    "fechar a estrada | # com o caminhão [é|vermelho].",
+    "o código de trânsito | # pune esse [bloqueio]",
+    "com multa de quase | # [R$ 6 mil]",
+    "e um ano | # sem [dirigir|riscado].",
+    "pra quem organiza, | # a multa [triplica]:",
+    "mais de | # [R$ 17 mil|preto]",
+    "e as multas dos | # bloqueios de [2022] | seguem valendo:",
+    "# a [anistia] | que apagaria essas multas",
+    "foi | # [vetada|vermelho] em agosto.",
+    "em 2018, a greve | # durou [10 dias],",
+    "e faltou | # [combustível], | comida e remédio.",
+    "o acordo que encerrou | # aquela [greve]",
+    "criou o | # [piso do frete],",
+    "# o [mínimo] | que se paga por viagem.",
+    "chorão não descarta | # parar no [futuro].",
+    "mas não | # nesta [quinta|vermelho]."
+  ],
+  "visuais": [
+    {
+      "tipo": "fotos",
+      "t": 0,
+      "formato": "paisagem",
+      "itens": [
+        {
+          "media": "caminhoes",
+          "nome": "Caminhões parados · 2018"
+        }
+      ],
+      "cartao": {
+        "icone": "calendario",
+        "grande": "5/11",
+        "pequeno": "quinta · convocação nas redes",
+        "em": "quinta"
+      }
+    },
+    {
+      "tipo": "foto-cheia",
+      "em": "mas não tem",
+      "media": "prf",
+      "pb": true,
+      "transicao": "impacto",
+      "cartao": {
+        "icone": "alerta",
+        "grande": "NINGUÉM",
+        "pequeno": "assumiu a organização",
+        "em": "organizador"
+      }
+    },
+    {
+      "tipo": "celular",
+      "em": "mensagens nas redes",
+      "titulo": "PARALISAÇÃO",
+      "sub": "grupos de mensagens",
+      "mensagens": [
+        {
+          "lado": "e",
+          "em": "redes"
+        },
+        {
+          "lado": "d",
+          "em": "convocam"
+        },
+        {
+          "lado": "e",
+          "em": "caminhoneiros"
+        },
+        {
+          "lado": "e",
+          "em": "parar"
+        },
+        {
+          "lado": "d",
+          "em": "nesta quinta"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "por tempo",
+      "icone": "ampulheta",
+      "grande": "SEM PRAZO",
+      "pequeno": "por tempo indeterminado"
+    },
+    {
+      "tipo": "documento",
+      "em": "porém",
+      "transicao": "impacto",
+      "etiqueta": "Convocação · redes sociais",
+      "titulo": "Greve · 5/11",
+      "linhas": [
+        {
+          "texto": "Entidade que convoca",
+          "tag": "nenhuma",
+          "em": "nenhuma"
+        }
+      ],
+      "carimbo": {
+        "texto": "Sem assinatura",
+        "em": "assina",
+        "pos": [
+          60,
+          104
+        ]
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "o alas",
+      "formato": "paisagem",
+      "itens": [
+        {
+          "media": "chorao",
+          "nome": "Wallace Landim, o Chorão",
+          "marca": {
+            "tipo": "no",
+            "em": "desmente"
+          }
+        }
+      ],
+      "nota": {
+        "rotulo": "ABRAVA",
+        "texto": "Presidente da associação",
+        "sub": "um dos líderes da greve de 2018",
+        "em": "chorão"
+      }
+    },
+    {
+      "tipo": "nota",
+      "em": "e a confederação",
+      "rotulo": "CNTTL · 02/11",
+      "texto": "“Não existe nenhuma movimentação para uma paralisação de caminhoneiros”",
+      "sub": "Confederação Nacional dos Trabalhadores em Transportes e Logística",
+      "carimbo": {
+        "texto": "Desinformação",
+        "em": "desinformação",
+        "pos": [
+          56,
+          104
+        ]
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "já o motivo",
+      "icone": "combustivel",
+      "grande": "DIESEL",
+      "pequeno": "a pauta da categoria"
+    },
+    {
+      "tipo": "barras",
+      "em": "na tabela",
+      "barras": [
+        {
+          "grupo": "MARÇO",
+          "valor": 6.89,
+          "rotulo": "R$ 6,89",
+          "cor": "cinza"
+        },
+        {
+          "grupo": "SETEMBRO",
+          "valor": 7.33,
+          "rotulo": "R$ 7,33",
+          "cor": "vermelho",
+          "em": "subiu"
+        }
+      ],
+      "delta": {
+        "de": 0,
+        "para": 1,
+        "texto": "+44 CENTAVOS",
+        "em": "44 centavos"
+      },
+      "nota": {
+        "rotulo": "FONTE",
+        "texto": "Diesel na tabela do frete da ANTT",
+        "em": "frete"
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "o governo paga",
+      "icone": "dinheiro",
+      "grande": "R$ 2,12/L",
+      "pequeno": "subsídio do governo ao diesel"
+    },
+    {
+      "tipo": "cartao",
+      "em": "mas só",
+      "icone": "ampulheta",
+      "grande": "+30 DIAS",
+      "pequeno": "prorrogado em 27/10"
+    },
+    {
+      "tipo": "fluxo",
+      "em": "por isso",
+      "nos": [
+        {
+          "texto": "CATEGORIA",
+          "sub": "caminhoneiros"
+        },
+        {
+          "texto": "GOVERNO",
+          "sub": "Min. dos Transportes"
+        }
+      ],
+      "setas": [
+        {
+          "de": 0,
+          "para": 1,
+          "texto": "planilha do frete",
+          "em": "negocia"
+        },
+        {
+          "de": 1,
+          "para": 0,
+          "texto": "custos e eixos",
+          "em": "a conta"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "é aí que entra",
+      "icone": "balanca",
+      "grande": "A LEI",
+      "pequeno": "parar × bloquear"
+    },
+    {
+      "tipo": "bifurcacao",
+      "em": "cruzar",
+      "esquerda": {
+        "texto": "PARAR",
+        "sub": "cruzar os braços"
+      },
+      "direita": {
+        "texto": "BLOQUEAR",
+        "sub": "fechar a estrada"
+      },
+      "destaques": [
+        {
+          "lado": "direita",
+          "em": "caminhão é"
+        }
+      ],
+      "carimbo": {
+        "texto": "Infração",
+        "em": "caminhão é",
+        "pos": [
+          66,
+          50
+        ]
+      }
+    },
+    {
+      "tipo": "documento",
+      "em": "o código de trânsito",
+      "cor": "vermelho",
+      "etiqueta": "Código de Trânsito Brasileiro",
+      "titulo": "Art. 253-A",
+      "texto": "Usar o veículo para interromper, restringir ou perturbar a circulação na via",
+      "linhas": [
+        {
+          "texto": "Infração gravíssima",
+          "em": "bloqueio"
+        },
+        {
+          "texto": "Multa 20 vezes maior",
+          "tag": "R$ 5.869",
+          "em": "seis mil",
+          "destaque": "seis mil"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "e um ano",
+      "icone": "relogio",
+      "grande": "12 MESES",
+      "pequeno": "sem dirigir",
+      "carimbo": {
+        "texto": "CNH suspensa",
+        "em": "sem dirigir",
+        "pos": [
+          60,
+          92
+        ]
+      }
+    },
+    {
+      "tipo": "numeros",
+      "em": "pra quem organiza",
+      "itens": [
+        {
+          "texto": "×20",
+          "rotulo": "multa de quem bloqueia"
+        },
+        {
+          "op": "→"
+        },
+        {
+          "texto": "×60",
+          "rotulo": "multa de quem organiza",
+          "cor": "vermelho",
+          "em": "triplica"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "mais de",
+      "icone": "dinheiro",
+      "grande": "R$ 17.608",
+      "pequeno": "multa de quem organiza"
+    },
+    {
+      "tipo": "cartao",
+      "em": "e as multas",
+      "transicao": "chicote",
+      "icone": "caminhao",
+      "grande": "2022",
+      "pequeno": "multas seguem valendo"
+    },
+    {
+      "tipo": "documento",
+      "em": "a anistia",
+      "etiqueta": "Lei 15.485/2026 · lei do frete",
+      "titulo": "Anistia às multas de 2022",
+      "texto": "Apagaria as multas dos bloqueios de rodovias",
+      "carimbo": {
+        "texto": "Vetada",
+        "em": "vetada",
+        "pos": [
+          62,
+          100
+        ]
+      }
+    },
+    {
+      "tipo": "foto-cheia",
+      "em": "em 2018",
+      "media": "placa",
+      "pb": true,
+      "transicao": "chicote",
+      "cartao": {
+        "icone": "calendario",
+        "grande": "10 DIAS",
+        "pequeno": "maio de 2018",
+        "em": "10 dias"
+      }
+    },
+    {
+      "tipo": "palavras",
+      "em": "e faltou",
+      "itens": [
+        {
+          "texto": "COMBUSTÍVEL"
+        },
+        {
+          "texto": "COMIDA",
+          "em": "comida"
+        },
+        {
+          "texto": "REMÉDIO",
+          "em": "remédio",
+          "cor": "vermelho"
+        }
+      ],
+      "carimbo": {
+        "texto": "Em falta",
+        "em": "remédio",
+        "pos": [
+          62,
+          70
+        ]
+      }
+    },
+    {
+      "tipo": "documento",
+      "em": "o acordo",
+      "etiqueta": "Lei 13.703/2018",
+      "titulo": "Piso mínimo do frete",
+      "texto": "Nasceu da MP 832, parte do acordo que encerrou a greve de 2018",
+      "clipe": true
+    },
+    {
+      "tipo": "cartao",
+      "em": "o mínimo",
+      "icone": "caminhao",
+      "grande": "PISO",
+      "pequeno": "o mínimo que se paga por viagem"
+    },
+    {
+      "tipo": "fotos",
+      "em": "chorão não descarta",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "chorao",
+          "nome": "Wallace Landim, o Chorão"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "mas não",
+      "icone": "calendario",
+      "grande": "5/11",
+      "pequeno": "quinta-feira",
+      "carimbo": {
+        "texto": "Sem convocação",
+        "em": "nesta quinta"
+      }
+    }
+  ],
+  "sfx": [
+    [
+      1.69,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      9.07,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      12.17,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      21.13,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      41.95,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      47.35,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      51.97,
+      "whoosh-short.mp3",
+      -10
+    ],
+    [
+      57.57,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      58.57,
+      "whoosh-short.mp3",
+      -10
+    ],
+    [
+      63.29,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      71.47,
+      "impact-bass-1.mp3",
+      -6
+    ]
+  ],
+  "post": {
+    "title": "GREVE SEM\n[ORGANIZADOR]",
+    "descricao": "Greve dos caminhoneiros de 5 de novembro: mensagens nas redes convocam uma paralisação nacional nesta quinta, mas nenhuma das principais entidades da categoria assina a convocação; Wallace Landim, o Chorão (Abrava), e a CNTTL negam. A pauta do diesel e do frete é real, e bloquear estrada dá multa de quase R$ 6 mil e um ano sem dirigir (Código de Trânsito, art. 253-A).",
+    "hashtags": [
+      "#grevedoscaminhoneiros",
+      "#caminhoneiros",
+      "#greve",
+      "#diesel",
+      "#frete"
+    ]
+  }
+}

@@ -236,7 +236,8 @@ function buildDireito(root, SPEC) {
       const el = svgEl(W, H, road); inner.appendChild(el); pop(el, v.t, { s0: 0.92, y0: 30, d: 0.35, ease: "power3.out" });
       const signs = ["esquerda", "direita"].map((lado, i) => {
         const sg = v[lado]; const b = h("div", "", `<div style="font:400 44px/1 'Anton';text-transform:uppercase">${esc(sg.texto)}</div>${sg.sub ? `<div style="margin-top:6px;font:700 15px/1.1 'Inter';text-transform:uppercase">${esc(sg.sub)}</div>` : ""}`);
-        Object.assign(b.style, { position: "absolute", top: "60px", left: (i ? W - 270 : 0) + "px", width: "270px", padding: "16px 10px", textAlign: "center", background: "#fbfaf6", boxShadow: "0 8px 18px rgba(0,0,0,0.22)", clipPath: i ? "polygon(0 0,88% 0,100% 50%,88% 100%,0 100%)" : "polygon(12% 0,100% 0,100% 100%,12% 100%,0 50%)" });
+        Object.assign(b.style, { position: "absolute", top: "60px", left: (i ? W - 270 : 0) + "px", width: "270px", boxSizing: "border-box", padding: "16px 10px", textAlign: "center", background: "#fbfaf6", boxShadow: "0 8px 18px rgba(0,0,0,0.22)", clipPath: i ? "polygon(0 0,88% 0,100% 50%,88% 100%,0 100%)" : "polygon(12% 0,100% 0,100% 100%,12% 100%,0 50%)",
+          transformOrigin: i ? "100% 50%" : "0% 50%" });   // a placa em destaque cresce para dentro, nunca para fora da área segura
         const pole = h("div"); Object.assign(pole.style, { position: "absolute", top: "150px", left: (i ? W - 140 : 128) + "px", width: "10px", height: "70px", background: "#4a3a2a" });
         el.appendChild(pole); el.appendChild(b); pop(b, sg.t ?? v.t + 0.2 + i * 0.15, { s0: 0.5, r0: i ? 10 : -10 }); return b;
       });
