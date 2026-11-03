@@ -1,0 +1,830 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). O contador usa as mesmas séries e varreduras de scenes.js (BR, IN, SWEEP0..3).",
+ "slug": "2026-11-02-saneamento-india",
+ "estilo": "analogias-v1",
+ "duration": 94.7,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra"
+  }
+ },
+ "media": {
+  "tiete-espuma": {
+   "file": "midia/tiete-espuma.jpg",
+   "credit": "Eurico Zimbres/Wikimedia",
+   "url": "https://commons.wikimedia.org/wiki/File:Pollution_Tiet%C3%AA_river.JPG",
+   "focus": [
+    0.5,
+    0.6
+   ],
+   "author": "Eurico Zimbres",
+   "license": "CC BY-SA 2.5"
+  },
+  "modi-banheiro": {
+   "file": "midia/modi-banheiro.jpg",
+   "credit": "PMO Índia",
+   "url": "https://commons.wikimedia.org/wiki/File:The_Prime_Minister,_Shri_Narendra_Modi_doing_shramdan_for_the_construction_of_a_twin_pit_toilet,_at_Village_Shahanshahpur,_Varanasi,_Uttar_Pradesh_on_September_23,_2017.jpg",
+   "focus": [
+    0.5,
+    0.55
+   ],
+   "author": "Prime Minister's Office (Índia)",
+   "license": "GODL-India"
+  }
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.74
+  },
+  {
+   "id": "dados",
+   "from": 5.74,
+   "to": 12.76
+  },
+  {
+   "id": "descarga",
+   "from": 12.76,
+   "to": 16.98
+  },
+  {
+   "id": "rio",
+   "from": 16.98,
+   "to": 22.92
+  },
+  {
+   "id": "piscinas",
+   "from": 22.92,
+   "to": 27.2
+  },
+  {
+   "id": "corte",
+   "from": 27.2,
+   "to": 32.42
+  },
+  {
+   "id": "tapete",
+   "from": 32.42,
+   "to": 41.5
+  },
+  {
+   "id": "conta",
+   "from": 41.5,
+   "to": 46.56
+  },
+  {
+   "id": "india",
+   "from": 46.56,
+   "to": 52.92
+  },
+  {
+   "id": "ano2000",
+   "from": 52.92,
+   "to": 57.34
+  },
+  {
+   "id": "ritmo",
+   "from": 57.34,
+   "to": 64.06
+  },
+  {
+   "id": "mundo",
+   "from": 64.06,
+   "to": 68.48
+  },
+  {
+   "id": "multidao",
+   "from": 68.48,
+   "to": 72.44
+  },
+  {
+   "id": "lei",
+   "from": 72.44,
+   "to": 79.9
+  },
+  {
+   "id": "regua",
+   "from": 79.9,
+   "to": 84.86
+  },
+  {
+   "id": "pergunta",
+   "from": 84.86,
+   "to": 94.7
+  }
+ ],
+ "cuts": [
+  5.74,
+  12.76,
+  16.98,
+  20.4,
+  22.92,
+  27.2,
+  32.42,
+  41.5,
+  46.56,
+  52.92,
+  57.34,
+  64.06,
+  68.48,
+  72.44,
+  79.9,
+  84.86
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 1.4,
+   "to": 5.7,
+   "text": "A ÍNDIA PASSOU\nO BRASIL"
+  },
+  {
+   "id": "src-02",
+   "kind": "source",
+   "from": 1.4,
+   "to": 12.7,
+   "text": "Fonte: OMS/UNICEF, 2024"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 5.8,
+   "to": 7.05,
+   "text": "POIS ACREDITE"
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 7.1,
+   "to": 10.85,
+   "big": "63%",
+   "label": "DOS INDIANOS"
+  },
+  {
+   "id": "ov-05",
+   "kind": "stat",
+   "from": 10.9,
+   "to": 12.7,
+   "big": "55%",
+   "label": "DOS BRASILEIROS"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 12.86,
+   "to": 16.3,
+   "text": "VOCÊ DÁ\nDESCARGA…"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 16.35,
+   "to": 16.95,
+   "text": "PRA ONDE VAI?"
+  },
+  {
+   "id": "ov-08",
+   "kind": "stat",
+   "from": 17.08,
+   "to": 20.35,
+   "big": "48%",
+   "label": "DO ESGOTO SEM TRATAMENTO"
+  },
+  {
+   "id": "src-09",
+   "kind": "source",
+   "from": 17.08,
+   "to": 20.35,
+   "text": "Fonte: Trata Brasil/SINISA, 2024"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 20.45,
+   "to": 22.85,
+   "text": "CÓRREGO, RIO, MAR"
+  },
+  {
+   "id": "src-11",
+   "kind": "source",
+   "from": 20.45,
+   "to": 22.85,
+   "text": "Foto: Eurico Zimbres/Wikimedia"
+  },
+  {
+   "id": "ov-12",
+   "kind": "stat",
+   "from": 23.02,
+   "to": 27.15,
+   "big": "5.442",
+   "label": "PISCINAS OLÍMPICAS POR DIA"
+  },
+  {
+   "id": "src-13",
+   "kind": "source",
+   "from": 23.02,
+   "to": 27.15,
+   "text": "Fonte: Trata Brasil, jul/2026"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 27.3,
+   "to": 30.1,
+   "text": "NÃO É O\nBANHEIRO"
+  },
+  {
+   "id": "src-16",
+   "kind": "source",
+   "from": 27.3,
+   "to": 32.38,
+   "text": "Fonte: OMS/UNICEF (critério)"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 30.15,
+   "to": 32.38,
+   "text": "É PRA ONDE\nELE VAI"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 41.62,
+   "to": 43.8,
+   "text": "CANO PRO RIO"
+  },
+  {
+   "id": "ov-18",
+   "kind": "chip",
+   "from": 42.86,
+   "to": 43.8,
+   "text": "NÃO CONTA",
+   "style": "red"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 43.86,
+   "to": 46.5,
+   "text": "FOSSA BEM FEITA"
+  },
+  {
+   "id": "ov-20",
+   "kind": "chip",
+   "from": 46.1,
+   "to": 46.5,
+   "text": "CONTA",
+   "style": "green"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 46.62,
+   "to": 48.35,
+   "text": "A ÍNDIA CORREU"
+  },
+  {
+   "id": "src-23",
+   "kind": "source",
+   "from": 46.62,
+   "to": 52.88,
+   "text": "Fonte: gov. da Índia · Foto: PMO Índia"
+  },
+  {
+   "id": "ov-22",
+   "kind": "stat",
+   "from": 48.4,
+   "to": 52.88,
+   "big": "+100 MI",
+   "label": "DE BANHEIROS COM FOSSA"
+  },
+  {
+   "id": "ov-24",
+   "kind": "counter",
+   "from": 52.96,
+   "to": 67.05,
+   "label": "BRASIL × ÍNDIA",
+   "steps": [
+    [
+     52.96,
+     "2024",
+     "BR 55% · IN 63%",
+     "VOLTANDO NO TEMPO",
+     "dark"
+    ],
+    [
+     53.3,
+     "2000",
+     "BR 34% · IN 9%",
+     "BRASIL × ÍNDIA",
+     "dark"
+    ],
+    [
+     57.81,
+     "2001",
+     "BR 34% · IN 11%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     58.12,
+     "2002",
+     "BR 34% · IN 13%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     58.43,
+     "2003",
+     "BR 34% · IN 15%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     58.74,
+     "2004",
+     "BR 35% · IN 17%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     59.05,
+     "2005",
+     "BR 35% · IN 20%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     59.36,
+     "2006",
+     "BR 35% · IN 22%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     59.67,
+     "2007",
+     "BR 36% · IN 24%",
+     "BRASIL: +0,9 POR ANO",
+     "orange"
+    ],
+    [
+     59.98,
+     "2008",
+     "BR 37% · IN 26%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     60.29,
+     "2009",
+     "BR 38% · IN 28%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     60.61,
+     "2010",
+     "BR 39% · IN 31%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     60.92,
+     "2011",
+     "BR 40% · IN 33%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     61.23,
+     "2012",
+     "BR 42% · IN 35%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     61.54,
+     "2013",
+     "BR 44% · IN 38%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     61.85,
+     "2014",
+     "BR 45% · IN 40%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     62.16,
+     "2015",
+     "BR 47% · IN 42%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     62.47,
+     "2016",
+     "BR 48% · IN 45%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     62.78,
+     "2017",
+     "BR 49% · IN 47%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     63.09,
+     "2018",
+     "BR 50% · IN 50%",
+     "ÍNDIA: +2,3 POR ANO",
+     "green"
+    ],
+    [
+     63.4,
+     "2019",
+     "BR 51% · IN 52%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ],
+    [
+     64.48,
+     "2020",
+     "BR 52% · IN 54%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ],
+    [
+     64.76,
+     "2021",
+     "BR 52% · IN 56%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ],
+    [
+     65.04,
+     "2022",
+     "BR 53% · IN 59%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ],
+    [
+     65.32,
+     "2023",
+     "BR 54% · IN 61%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ],
+    [
+     65.6,
+     "2024",
+     "BR 55% · IN 63%",
+     "A ÍNDIA PASSOU",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "src-25",
+   "kind": "source",
+   "from": 52.96,
+   "to": 68.42,
+   "text": "Fonte: OMS/UNICEF, 2024"
+  },
+  {
+   "id": "ov-35",
+   "kind": "stat",
+   "from": 67.1,
+   "to": 68.42,
+   "big": "58%",
+   "label": "MÉDIA DO MUNDO"
+  },
+  {
+   "id": "ov-26",
+   "kind": "stat",
+   "from": 68.56,
+   "to": 72.4,
+   "big": "90 MI",
+   "label": "SEM COLETA DE ESGOTO"
+  },
+  {
+   "id": "src-27",
+   "kind": "source",
+   "from": 68.56,
+   "to": 72.4,
+   "text": "Fonte: Trata Brasil/SINISA, 2024"
+  },
+  {
+   "id": "ov-28",
+   "kind": "stat",
+   "from": 72.54,
+   "to": 77.2,
+   "big": "2033",
+   "label": "META DA LEI: 90% COM ESGOTO"
+  },
+  {
+   "id": "src-30",
+   "kind": "source",
+   "from": 72.54,
+   "to": 79.85,
+   "text": "Fonte: Lei 14.026/2020 · Trata Brasil"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 77.26,
+   "to": 78.8,
+   "text": "NO RITMO ATUAL…"
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 78.84,
+   "to": 79.85,
+   "big": "2070",
+   "label": "NO RITMO ATUAL"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 79.98,
+   "to": 82.4,
+   "text": "QUEM NASCE HOJE…"
+  },
+  {
+   "id": "ov-32",
+   "kind": "stat",
+   "from": 82.48,
+   "to": 84.8,
+   "big": "44 ANOS",
+   "label": "QUANDO O ESGOTO CHEGAR"
+  },
+  {
+   "id": "ov-33",
+   "kind": "question",
+   "from": 84.96,
+   "to": 94.7,
+   "text": "CONTA MAIS CARA E\nESGOTO EM 2033…",
+   "sub": "OU ESPERAR ATÉ 2070?"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 92.76,
+   "to": 94.7,
+   "html": "Comenta: <b>PAGO</b> ou <b>ESPERO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.2,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   1.68,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   5.68,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.16,
+   "pop.mp3",
+   -16
+  ],
+  [
+   11.06,
+   "pop.mp3",
+   -16
+  ],
+  [
+   12.7,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   14.08,
+   "click.mp3",
+   -12
+  ],
+  [
+   14.2,
+   "whoosh-cinematic.mp3",
+   -20
+  ],
+  [
+   16.92,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   17.4,
+   "impact-bass-2.mp3",
+   -11
+  ],
+  [
+   20.34,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   22.86,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   23.92,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   24.6,
+   "pop.mp3",
+   -18
+  ],
+  [
+   25.0,
+   "pop.mp3",
+   -18
+  ],
+  [
+   25.4,
+   "pop.mp3",
+   -18
+  ],
+  [
+   27.14,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   30.2,
+   "riser.mp3",
+   -24
+  ],
+  [
+   32.36,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   34.0,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   39.3,
+   "riser.mp3",
+   -22
+  ],
+  [
+   40.82,
+   "impact-bass-2.mp3",
+   -12
+  ],
+  [
+   41.44,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   42.86,
+   "error.mp3",
+   -16
+  ],
+  [
+   46.2,
+   "chime.mp3",
+   -16
+  ],
+  [
+   46.5,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   48.4,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   52.86,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   53.28,
+   "glitch-1.mp3",
+   -20
+  ],
+  [
+   57.28,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   58.0,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   63.5,
+   "impact-bass-2.mp3",
+   -9
+  ],
+  [
+   64.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   67.46,
+   "riser.mp3",
+   -24
+  ],
+  [
+   68.42,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   68.72,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   72.38,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   74.44,
+   "pop.mp3",
+   -16
+  ],
+  [
+   77.4,
+   "riser.mp3",
+   -24
+  ],
+  [
+   78.84,
+   "impact-bass-2.mp3",
+   -10
+  ],
+  [
+   79.84,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   82.48,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   84.8,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   85.22,
+   "pop.mp3",
+   -16
+  ],
+  [
+   91.32,
+   "pop.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "A ÍNDIA\nPASSOU\nO BRASIL",
+  "descricao": "Saneamento básico: a Índia passou o Brasil. Segundo a OMS e o UNICEF, 63% dos indianos têm saneamento seguro, contra 55% dos brasileiros; no Brasil, quase metade do esgoto não é tratada e cerca de 90 milhões de pessoas não têm coleta. A meta do Marco Legal é 2033; no ritmo atual, só em 2070.",
+  "hashtags": [
+   "#saneamentobasico",
+   "#esgoto",
+   "#india",
+   "#brasil",
+   "#marcolegaldosaneamento"
+  ],
+  "media": false
+ }
+}

@@ -1,0 +1,20 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-saneamento-india
+tema: "Saneamento básico no Brasil: como estamos ficando para trás e até a Índia nos passou em saneamento no ranking mundial"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 6   # escrito pelo Samuel (17 palavras; avisado da regra de 8–12, manteve)
+  texto: "Se eu te dissesse que a Índia passou o Brasil em acesso ao saneamento básico, você acreditaria?"
+
+pergunta_final:
+  origem: 1
+  texto: "Você pagaria uma conta de água mais cara pra ter esgoto até 2033… ou paga menos e espera até 2070?"
+
+analogia: "Sujeira debaixo do tapete (escolhida pelo Samuel; ele não gostou de baldes e torneiras): mandar esgoto pro rio é varrer a sujeira pra debaixo do tapete; some da vista, mas continua em casa, e a casa é a cidade."
+
+nota_de_fato: "'Estamos decaindo' só vale para a posição: em número absoluto o Brasil subiu de 34% para 55% (2000–2024); caiu para baixo da média do mundo e foi ultrapassado pela Índia em 2019."
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-03
