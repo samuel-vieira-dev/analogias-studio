@@ -108,6 +108,7 @@ function buildDireito(root, SPEC) {
     s.innerHTML = `<svg width="${w}" height="${hgt}" viewBox="0 0 ${w} ${hgt}" xmlns="http://www.w3.org/2000/svg" style="overflow:visible">${inner}</svg>`;
     return s;
   }
+  let mapSeq = 0;   // id único do recorte de cada mapa
   const draw = (path, t, d = 0.4) => tl.fromTo(path, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: d, ease: "power1.inOut" }, t);
 
   const KINDS = {
@@ -287,17 +288,84 @@ function buildDireito(root, SPEC) {
     },
     palavras(v, inner) {
       const el = h("div", "d-words");
-      v.itens.forEach((it, i) => { const w = h("div", "pw", `${esc(it.texto)}<span class="st" style="position:absolute;left:-4%;right:-4%;top:48%;height:14px;background:var(--vermelho);transform:scaleX(0) rotate(-3deg);transform-origin:0 50%"></span>`);
+      v.itens.forEach((it, i) => { const w = h("div", "pw", `${esc(it.texto)}<span class="st" style="position:absolute;left:-4%;right:-4%;top:48%;height:14px;background:var(--vermelho);transform:rotate(-3deg);transform-origin:0 50%"></span>`);   // largura pela timeline (ver .w .st no CSS)
         if (it.cor) w.style.color = cor(it.cor);
         w.style.fontSize = Math.max(72, Math.min(132, Math.floor(1150 / Math.max(1, it.texto.length)))) + "px";   // palavra longa encolhe até 72 px para caber nos 700 px; mais longa que isso o QA reprova
         el.appendChild(w); pop(w, it.t ?? v.t + i * 0.25, { s0: 1.4 });
-        if (it.riscar != null) tl.fromTo(w.querySelector(".st"), { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, it.riscar); });
+        const st = w.querySelector(".st"); if (it.riscar != null) tl.fromTo(st, { scaleX: 0 }, { scaleX: 1, duration: 0.3, ease: "power2.out" }, it.riscar); else st.remove(); });
       inner.appendChild(el); return el;
     },
     icone(v, inner) {
       const el = h("div", "", ICON(v.nome)); Object.assign(el.style, { width: (v.tamanho || 320) + "px", height: (v.tamanho || 320) + "px" });
       inner.appendChild(el); pop(el, v.t, { s0: 0.5, ease: "back.out(2)" });
       if (v.rotulo) { const r = h("span", "d-tag " + (v.corRotulo || ""), esc(v.rotulo)); r.style.fontSize = "44px"; inner.appendChild(r); pop(r, v.rotuloT ?? v.t + 0.3, { s0: 0.5 }); }
+      return el;
+    },
+    mapa(v, inner) {
+      // contornos em engine2d/geo.js, projeção equirretangular; `area` [lon0, lon1, lat0, lat1] é o mínimo que aparece
+      const W = 660, H = v.altura || 660, F = 10, ns = "http://www.w3.org/2000/svg", clip = "mapclip" + ++mapSeq;
+      const [lo0, lo1, la0, la1] = v.area, k = Math.cos((((la0 + la1) / 2) * Math.PI) / 180);
+      const iw = W - 2 * F, ih = H - 2 * F, s = Math.max(iw / ((lo1 - lo0) * k), ih / (la1 - la0));
+      const ox = F + (iw - (lo1 - lo0) * k * s) / 2, oy = F + (ih - (la1 - la0) * s) / 2;
+      const P = (lon, lat) => [ox + (lon - lo0) * k * s, oy + (la1 - lat) * s];
+      const poly = (pts) => "M" + pts.map((p) => P(p[0], p[1]).map((x) => x.toFixed(1)).join(" ")).join("L") + "Z";
+      let grid = "";
+      for (let lon = Math.ceil(lo0 / 10) * 10 - 10; lon <= lo1 + 10; lon += 10) { const [x] = P(lon, 0); grid += `M${x.toFixed(1)} 0V${H}`; }
+      for (let lat = Math.ceil(la0 / 10) * 10 - 10; lat <= la1 + 10; lat += 10) { const [, y] = P(0, lat); grid += `M0 ${y.toFixed(1)}H${W}`; }
+      const land = ["americas", "cuba", "hispaniola"].map((n) => poly(GEO[n])).join("");
+      let svg = `<defs><clipPath id="${clip}"><rect x="${F}" y="${F}" width="${iw}" height="${ih}"/></clipPath></defs>` +
+        `<rect x="0" y="0" width="${W}" height="${H}" fill="#f6f4ec"/><g clip-path="url(#${clip})"><rect x="0" y="0" width="${W}" height="${H}" fill="#1d434a"/>` +
+        `<path d="${grid}" stroke="rgba(243,236,217,0.13)" stroke-width="2" fill="none"/>` +
+        `<path d="${land}" fill="#ece4d0" stroke="#0f2a30" stroke-width="2.5" stroke-linejoin="round"/>` +
+        (v.paises || []).map((n) => `<path d="${poly(GEO[n])}" fill="#d8c9a3" stroke="#0f2a30" stroke-width="2.5" stroke-linejoin="round"/>`).join("") +   // vizinho citado, num tom mais escuro
+        `<path class="br" d="${poly(GEO.brasil)}" fill="#c99412" stroke="#0f2a30" stroke-width="2.5" stroke-linejoin="round"/>` +
+        (v.rotulos || []).map((r) => { const [x, y] = P(r.lon, r.lat); return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle" font-size="${r.tamanho || 34}" letter-spacing="3" fill="rgba(18,23,27,0.5)">${esc(r.texto)}</text>`; }).join("") +
+        `<g class="rotas"></g></g>`;
+      const el = svgEl(W, H, svg); el.classList.add("d-map"); const rotas = el.querySelector(".rotas");
+      inner.appendChild(el); pop(el, v.t, { s0: 0.92, y0: 30, d: 0.35, ease: "power3.out" });
+      const pts = Object.fromEntries(v.pontos.map((p) => [p.id, p]));
+      const pin = (id) => { const p = pts[id]; if (!p) throw new Error(`mapa: ponto '${id}' não existe em pontos`); return P(p.lon, p.lat); };
+      // trechos: curva quadrática; `curva` (fração do comprimento, + = para a esquerda de quem viaja); sem `t` já aparece desenhado; `fraco`: mais claro
+      const arrive = {};
+      v.trechos.forEach((r, i) => {
+        const [ax, ay] = pin(r.de), [bx, by] = pin(r.para), dx = bx - ax, dy = by - ay, len = Math.hypot(dx, dy), c = r.curva ?? 0.15;
+        const cx = (ax + bx) / 2 + (dy / len) * c * len, cy = (ay + by) / 2 - (dx / len) * c * len;
+        const d = `M${ax.toFixed(1)} ${ay.toFixed(1)}Q${cx.toFixed(1)} ${cy.toFixed(1)} ${bx.toFixed(1)} ${by.toFixed(1)}`, drawn = r.t == null, dur = r.dur ?? 1.1;
+        const path = (stroke, w) => { const p = document.createElementNS(ns, "path"); p.setAttribute("d", d); p.setAttribute("stroke", stroke); p.setAttribute("stroke-width", w); p.setAttribute("fill", "none"); p.setAttribute("stroke-linecap", "round");
+          p.setAttribute("pathLength", "1"); p.setAttribute("stroke-dasharray", "1 1"); p.setAttribute("stroke-dashoffset", drawn ? "0" : "1"); rotas.appendChild(p); return p; };
+        const casing = path("#f3ecd9", 12), line = path("#7e1a1d", 6);
+        if (r.fraco) { casing.setAttribute("opacity", "0.45"); line.setAttribute("opacity", "0.45"); }   // trecho anterior, já contado
+        if (drawn) return;
+        tl.fromTo([casing, line], { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: dur, ease: "power1.inOut" }, r.t);
+        arrive[r.para] = arrive[r.para] ?? r.t + dur;
+        // avião: amostras da curva no mesmo ritmo do traço (power1.inOut), um trecho de tween por amostra (sem onUpdate)
+        const plane = h("div", "d-plane", ICON("aviao").replace(`fill="${ICON_INK}"`, `fill="${ICON_INK}" stroke="#f3ecd9" stroke-width="3" paint-order="stroke"`));
+        el.appendChild(plane);
+        const N = 24, ease = gsap.parseEase("power1.inOut"), at = (u) => { const m = 1 - u;
+          return { x: m * m * ax + 2 * m * u * cx + u * u * bx, y: m * m * ay + 2 * m * u * cy + u * u * by,
+            rotation: (Math.atan2(2 * m * (cy - ay) + 2 * u * (by - cy), 2 * m * (cx - ax) + 2 * u * (bx - cx)) * 180) / Math.PI }; };
+        tl.set(plane, { opacity: 0, ...at(0) }, 0);
+        tl.set(plane, { opacity: 1 }, r.t);
+        for (let j = 0; j < N; j++) tl.fromTo(plane, at(ease(j / N)), { ...at(ease((j + 1) / N)), duration: dur / N, ease: "none", immediateRender: false }, r.t + (j * dur) / N);
+        if (!r.fica) tl.to(plane, { opacity: 0, scale: 0.6, duration: 0.2, immediateRender: false }, r.t + dur);
+      });
+      // pinos: nome ao lado (`lado`: d, e, c, b) e um destaque opcional embaixo (`tag: {texto, em, cor}`)
+      v.pontos.forEach((p) => {
+        const [x, y] = P(p.lon, p.lat), t = p.t ?? arrive[p.id] ?? v.t;
+        const dot = h("div", "d-pin"); Object.assign(dot.style, { left: x - 13 + "px", top: y - 13 + "px" }); el.appendChild(dot);
+        pop(dot, t, { s0: 0.2, ease: "back.out(3)", d: 0.3 });
+        const lado = p.lado || "d", off = { d: "translate(24px,-50%)", e: "translate(calc(-100% - 24px),-50%)", c: "translate(-50%,calc(-100% - 22px))", b: "translate(-50%,22px)" }[lado];
+        const anc = h("div", "d-pinlab " + lado); Object.assign(anc.style, { left: x + "px", top: y + "px", transform: off }); el.appendChild(anc);
+        const nm = h("span", "d-tag preto", esc(p.nome)); anc.appendChild(nm); pop(nm, t + 0.08, { s0: 0.5 });
+        if (p.tag) { const tg = h("span", "d-tag " + (p.tag.cor || "vermelho"), esc(p.tag.texto)); anc.appendChild(tg); pop(tg, p.tag.t ?? t + 0.3, { s0: 0.4 }); }
+      });
+      // Brasil em destaque (rota que desvia do país): o país muda de cor e ganha uma etiqueta
+      if (v.brasil) {
+        const t = v.brasil.t ?? v.t + 0.35;
+        tl.fromTo(el.querySelector(".br"), { attr: { fill: "#c99412" } }, { attr: { fill: v.brasil.cor || "#7e1a1d" }, duration: 0.3, ease: "power2.out", immediateRender: false }, t);
+        if (v.brasil.texto) { const [x, y] = P(v.brasil.lon ?? -50, v.brasil.lat ?? -10), anc = h("div", "d-pinlab"); Object.assign(anc.style, { left: x + "px", top: y + "px", transform: "translate(-50%,-50%)" });
+          const tg = h("span", "d-tag", esc(v.brasil.texto)); anc.appendChild(tg); el.appendChild(anc); pop(tg, t + 0.1, { s0: 0.4 }); }
+      }
       return el;
     },
     numeros(v, inner) {

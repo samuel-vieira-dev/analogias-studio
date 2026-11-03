@@ -1,0 +1,17 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-03-rota-flavio-bolsonaro
+estilo: explicando-direito
+tema: "A rota que Flávio Bolsonaro usou para sair do país e ir para os EUA"
+referencias_visuais: []
+
+hook:
+  origem: 4   # contradição
+  texto: "O registro diz que Flávio cruzou de van. A investigação diz que voou."
+
+# sem pergunta_final: o Samuel pediu "sem pergunta final" (nem no vídeo, nem na legenda do post)
+
+pedidos:
+  - "Sem pergunta final"
+
+duracao_alvo_s: 72
+aprovado_em: 2026-11-03

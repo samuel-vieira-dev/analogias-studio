@@ -30,7 +30,7 @@ from transcribe import norm  # noqa: E402
 
 ENGINE = ROOT / "engine2d"
 KINDS = {"fotos", "foto-cheia", "cartao", "nota", "documento", "barras", "rosca", "pessoas", "hemiciclo", "fluxo",
-         "bifurcacao", "balanca", "celular", "conexoes", "palavras", "icone", "numeros"}
+         "bifurcacao", "balanca", "celular", "conexoes", "palavras", "icone", "numeros", "mapa"}
 TRANSITIONS = {"suave", "corte", "impacto", "chicote"}
 HIGHLIGHTS = {"amarelo", "preto", "verde", "vermelho", "circulo", "sublinhado", "riscado"}
 FUNCTION_WORDS = {"a", "o", "as", "os", "de", "do", "da", "dos", "das", "e", "em", "no", "na", "nos", "nas", "um", "uma",
@@ -257,7 +257,7 @@ def board_parts(spec, cfg, root_id):
                     for f in ("Anton-latin.woff2", "Anton-latin-ext.woff2"))
     css = (ENGINE / "direito.css").read_text().replace("#ROOT", "#" + root_id)
     vars_ = "#%s { %s --big-px:%dpx; --small-px:%dpx; }" % (root_id, " ".join(f"--{k}:{v};" for k, v in cores.items()), cfg["texto"]["grande_px"], cfg["texto"]["pequeno_px"])
-    js = (ENGINE / "icones.js").read_text() + "\n" + (ENGINE / "direito.js").read_text()
+    js = "\n".join((ENGINE / f).read_text() for f in ("icones.js", "geo.js", "direito.js"))
     script = f"""(function () {{
 {js}
       const SPEC = {json.dumps(spec, ensure_ascii=False)};

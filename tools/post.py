@@ -103,13 +103,15 @@ def caption(vdir, video):
     cta = next((re.sub(r"<[^>]+>", "", html.unescape(o["html"])).strip() for o in ov if o["kind"] == "cta"), "Comenta aqui embaixo")
     desc = ((video.get("post") or {}).get("descricao") or "").strip()
     head = [brief["hook"]["texto"].strip()] + ([desc] if desc else [])
-    ask = [brief["pergunta_final"]["texto"].strip(), cta + ("" if cta[-1] in ".!?" else ".")]
+    # sem pergunta final no brief (o Samuel pode pedir "sem pergunta"), a legenda fica sem pergunta e sem CTA
+    q = ((brief.get("pergunta_final") or {}).get("texto") or "").strip()
+    ask = [q, cta + ("" if cta[-1] in ".!?" else ".")] if q else []
     notes = list(dict.fromkeys(o["text"] for o in ov if o["kind"] == "source" and not re.match(r"(fontes?|fotos?)\b", o["text"], re.I)))
     src = fontes((vdir / "fatos.md").read_text())
     photos = [(m["credit"], m.get("url")) for m in (video.get("media") or {}).values()]
     names = [n for n in dict.fromkeys(short_name(n) for n, _ in src)  # a bare date or "idem" is not a name
              if not re.fullmatch(r"[\d/.\s]*|[a-zç]{3,4}\.?/\d{2,4}|idem", n, re.I)]
-    text = "\n\n".join(["\n\n".join(head), "\n".join(ask)] + (["\n".join(notes)] if notes else []) + [" ".join(tags(video))])
+    text = "\n\n".join(["\n\n".join(head)] + (["\n".join(ask)] if ask else []) + (["\n".join(notes)] if notes else []) + [" ".join(tags(video))])
     text += ("\n\nFontes: " + " · ".join(names) if names else "") + ("\nFotos: " + " · ".join(n for n, _ in photos) if photos else "")
     bullet = lambda n, u: f"• {n}: {u}" if u else f"• {n}"
     links = "\n".join(["Fontes:"] + [bullet(n, u) for n, u in src] + (["", "Fotos:"] + [bullet(n, u) for n, u in photos] if photos else []))

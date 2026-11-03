@@ -190,7 +190,7 @@ Quando o estilo é `explicando-direito`, o fluxo é o mesmo (pesquisa, opções,
 - **Etapa 7**: `python3 tools/tighten.py <take> videos/<slug>/audio/narration.wav --target <s> --gap 0.06 --sentence-gap 0.14 --max-tempo 1.12`; conferir 3,0–3,3 palavras/s em `words.json`.
 - **Etapa 8**: sem `scenes.js`. O `video.json` tem `estilo`, `duration` (fim da última palavra + 0,3 s), `audio` (voz + trilha: `docs/explicando-direito/visual.md` → "Áudio"), `media`, `icone`, `texto` (os blocos aprovados), `visuais` (com `"em": "trecho da fala"`), `sfx` e `post`. O `tools/build.py` imprime avisos de ritmo (visual parado > 4,5 s, bloco > 4 s, gancho sem impacto) e o `sfx_sugerido`: copiar para `sfx`, `tools/mix.py`, build de novo.
 - **Etapa 9**: mesmos comandos; o QA é o do 2D (`tools/qa_direito.cjs`). A revisão cega usa as mesmas folhas (`preview/objetos-NN.jpg` = cada elemento do palco recortado).
-- **Etapa 10**: igual. `post.title` aceita `[palavra]` para a caixa mostarda da capa. A legenda do post leva a pergunta escolhida na etapa 3.
+- **Etapa 10**: igual. `post.title` aceita `[palavra]` para a caixa mostarda da capa. A legenda do post leva a pergunta escolhida na etapa 3; se o Samuel pediu "sem pergunta final", o `brief.yaml` fica sem `pergunta_final` e a legenda sai sem pergunta e sem CTA (`tools/post.py`).
 - **Etapa 12**: feedback deste estilo vai para `docs/explicando-direito/*.md`, `channel.yaml → estilos.explicando-direito` e `engine2d/`; o que valer para os dois estilos, nos docs comuns.
 
 ## Variante sem narração (só música)
