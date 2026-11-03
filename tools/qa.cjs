@@ -119,7 +119,12 @@ async function openHarness(browser) {
   await page.goto("file://" + harness);
   try {
     await page.waitForFunction(() => !!(window.__qaReady && window.__qaReady()), null, { timeout: 180000, polling: 250 });
-    await page.evaluate(() => window.__hf.buildReady.world);
+    // a scene that throws while being built leaves buildReady.world pending forever: stop at the error
+    // (02/11/2026: the QA sat 10 min silent on "room.light is not a function")
+    const built = page.evaluate(() => window.__hf.buildReady.world); built.catch(() => {});
+    const failed = new Promise((_, rej) => { const iv = setInterval(() => { if (errors.length) { clearInterval(iv); rej(new Error("erro na página")); } }, 250); built.then(() => clearInterval(iv), () => clearInterval(iv)); });
+    await Promise.race([built, failed, new Promise((_, rej) => setTimeout(() => rej(new Error("o 3D não terminou de montar em 180 s")), 180000))]);
+    if (errors.length) throw new Error("erro na página");
   } catch (e) {
     console.error("harness não carregou:", errors.join("\n") || e.message); await browser.close(); process.exit(2);
   }

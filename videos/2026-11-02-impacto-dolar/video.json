@@ -1,0 +1,746 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). O visor do câmbio vai de R$ 4,99 (início da semana: 5,444 / 1,0904) a R$ 5,44 (Exame/Economatica, 30/10/2026).",
+ "slug": "2026-11-02-impacto-dolar",
+ "estilo": "analogias-v1",
+ "duration": 89.8,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra"
+  }
+ },
+ "media": {
+  "bretton-woods": {
+   "file": "midia/bretton-woods.jpg",
+   "credit": "National Archives (EUA)",
+   "url": "https://commons.wikimedia.org/wiki/File:Morgenthau_Bretton_Woods_opening_1944.jpg",
+   "focus": [
+    0.6,
+    0.4
+   ],
+   "author": "National Archives and Records Administration, RG 208",
+   "license": "Domínio público"
+  },
+  "soja-colheita": {
+   "file": "midia/soja-colheita.jpg",
+   "credit": "Roosevelt Pinheiro/ABr",
+   "url": "https://commons.wikimedia.org/wiki/File:Ronodon%C3%B3polis_colheita_soja_(Roosevelt_Pinheiro)_28mar09.jpg",
+   "focus": [
+    0.68,
+    0.4
+   ],
+   "author": "Roosevelt Pinheiro/Agência Brasil",
+   "license": "CC BY 3.0 BR"
+  },
+  "sede-bc": {
+   "file": "midia/sede-bc.jpg",
+   "credit": "Banco Central do Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Edif%C3%ADcio_%22Sede%22_do_Banco_Central_do_Brasil_em_Bras%C3%ADlia_(cropped).jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "author": "Banco Central do Brasil",
+   "license": "CC BY 2.0"
+  }
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.7
+  },
+  {
+   "id": "cambio",
+   "from": 3.7,
+   "to": 11.4
+  },
+  {
+   "id": "padaria",
+   "from": 11.4,
+   "to": 19.5
+  },
+  {
+   "id": "trigo",
+   "from": 19.5,
+   "to": 26.8
+  },
+  {
+   "id": "insumos",
+   "from": 26.8,
+   "to": 34.3
+  },
+  {
+   "id": "ingles",
+   "from": 34.3,
+   "to": 45.15
+  },
+  {
+   "id": "pares",
+   "from": 45.15,
+   "to": 48.95
+  },
+  {
+   "id": "bretton",
+   "from": 48.95,
+   "to": 57.15
+  },
+  {
+   "id": "soja",
+   "from": 57.15,
+   "to": 66.25
+  },
+  {
+   "id": "bc",
+   "from": 66.25,
+   "to": 77.45
+  },
+  {
+   "id": "ano",
+   "from": 77.45,
+   "to": 80.75
+  },
+  {
+   "id": "pergunta",
+   "from": 80.75,
+   "to": 89.8
+  }
+ ],
+ "cuts": [
+  3.7,
+  11.4,
+  17.75,
+  19.5,
+  26.8,
+  30.85,
+  34.3,
+  45.15,
+  48.95,
+  52.0,
+  57.15,
+  63.6,
+  66.25,
+  69.85,
+  77.45,
+  80.75
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.15,
+   "to": 3.65,
+   "text": "POR QUE LIGAR\nPRO DÓLAR?"
+  },
+  {
+   "id": "src-02",
+   "kind": "source",
+   "from": 3.75,
+   "to": 11.35,
+   "text": "Fonte: Economatica/Exame, 30/10/2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 3.95,
+   "to": 7.0,
+   "text": "DEPOIS DO\n2º TURNO"
+  },
+  {
+   "id": "ov-04",
+   "kind": "stat",
+   "from": 7.08,
+   "to": 8.65,
+   "big": "+9%",
+   "label": "EM UMA SEMANA"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 8.74,
+   "to": 11.35,
+   "text": "MAIOR ALTA SEMANAL\nDESDE 2008"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 11.62,
+   "to": 15.1,
+   "text": "IMAGINA:\nO PÃO SUBIU"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 15.2,
+   "to": 17.75,
+   "text": "O PADEIRO NUNCA\nVIU UM DÓLAR"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 17.86,
+   "to": 19.45,
+   "text": "MAS A FARINHA\nVIU"
+  },
+  {
+   "id": "src-09",
+   "kind": "source",
+   "from": 19.55,
+   "to": 26.75,
+   "text": "Fonte: Abitrigo, 2025"
+  },
+  {
+   "id": "ov-10",
+   "kind": "stat",
+   "from": 19.7,
+   "to": 24.0,
+   "big": "+ DA METADE",
+   "label": "DO TRIGO VEM DE FORA"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 24.12,
+   "to": 25.9,
+   "text": "A MAIOR PARTE\nDA ARGENTINA"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 25.98,
+   "to": 26.75,
+   "text": "PREÇO EM DÓLAR",
+   "style": "green"
+  },
+  {
+   "id": "src-13",
+   "kind": "source",
+   "from": 26.85,
+   "to": 30.8,
+   "text": "Fonte: Plano Nacional de Fertilizantes"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 26.95,
+   "to": 28.95,
+   "text": "O ADUBO\nDA LAVOURA?"
+  },
+  {
+   "id": "ov-15",
+   "kind": "stat",
+   "from": 29.08,
+   "to": 30.8,
+   "big": "+ DE 80%",
+   "label": "É IMPORTADO"
+  },
+  {
+   "id": "src-16",
+   "kind": "source",
+   "from": 30.9,
+   "to": 34.25,
+   "text": "Fontes: Abiquifi; Ipea"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 31.0,
+   "to": 32.8,
+   "text": "A MATÉRIA-PRIMA\nDOS REMÉDIOS?"
+  },
+  {
+   "id": "ov-18",
+   "kind": "stat",
+   "from": 32.88,
+   "to": 34.25,
+   "big": "9 DE CADA 10",
+   "label": "VÊM DE FORA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 34.5,
+   "to": 38.9,
+   "text": "E POR QUE\nO DÓLAR?"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 39.0,
+   "to": 41.45,
+   "text": "UM NÃO FALA A\nLÍNGUA DO OUTRO"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 41.5,
+   "to": 42.9,
+   "text": "OS DOIS\nFALAM INGLÊS"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 42.96,
+   "to": 45.1,
+   "text": "O DÓLAR É O INGLÊS\nDO DINHEIRO"
+  },
+  {
+   "id": "src-22",
+   "kind": "source",
+   "from": 45.2,
+   "to": 48.9,
+   "text": "Fonte: BIS, abril/2025"
+  },
+  {
+   "id": "ov-23",
+   "kind": "stat",
+   "from": 45.32,
+   "to": 48.9,
+   "big": "89%",
+   "label": "DAS TROCAS DE MOEDA"
+  },
+  {
+   "id": "src-24",
+   "kind": "source",
+   "from": 49.0,
+   "to": 51.95,
+   "text": "Foto: National Archives (EUA)"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 49.94,
+   "to": 51.95,
+   "text": "1944"
+  },
+  {
+   "id": "src-26",
+   "kind": "source",
+   "from": 52.0,
+   "to": 57.1,
+   "text": "Fonte: Depto. de Estado dos EUA"
+  },
+  {
+   "id": "ov-27",
+   "kind": "stat",
+   "from": 52.22,
+   "to": 54.75,
+   "big": "44 PAÍSES",
+   "label": "O BRASIL JUNTO"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 54.84,
+   "to": 57.1,
+   "text": "MOEDAS PRESAS\nAO DÓLAR"
+  },
+  {
+   "id": "src-29",
+   "kind": "source",
+   "from": 57.2,
+   "to": 63.55,
+   "text": "Fonte: USDA · Foto: Roosevelt Pinheiro/ABr"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 57.4,
+   "to": 60.15,
+   "text": "DÓLAR ALTO NÃO É\nRUIM PRA TODOS"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 60.2,
+   "to": 63.55,
+   "text": "MAIOR EXPORTADOR\nDE SOJA DO MUNDO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "chip",
+   "from": 63.7,
+   "to": 66.2,
+   "text": "QUEM EXPORTA RECEBE + REAIS",
+   "style": "green"
+  },
+  {
+   "id": "src-33",
+   "kind": "source",
+   "from": 66.3,
+   "to": 69.8,
+   "text": "Foto: Banco Central do Brasil"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 66.45,
+   "to": 68.3,
+   "text": "O PROBLEMA\nÉ O RESTO"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 68.4,
+   "to": 69.8,
+   "text": "AS CONTAS DO\nBANCO CENTRAL"
+  },
+  {
+   "id": "src-36",
+   "kind": "source",
+   "from": 69.9,
+   "to": 77.4,
+   "text": "Fonte: Banco Central, mar/2026 (estimativa)"
+  },
+  {
+   "id": "ov-37",
+   "kind": "title",
+   "from": 69.95,
+   "to": 72.3,
+   "text": "+10% NO DÓLAR"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 72.34,
+   "to": 74.85,
+   "big": "+1 PONTO",
+   "label": "NA INFLAÇÃO EM 1 ANO"
+  },
+  {
+   "id": "ov-39",
+   "kind": "stat",
+   "from": 74.95,
+   "to": 77.4,
+   "big": "+ QUE O DOBRO",
+   "label": "NA COMIDA DO MERCADO"
+  },
+  {
+   "id": "src-40",
+   "kind": "source",
+   "from": 77.5,
+   "to": 80.7,
+   "text": "Fonte: Exame, 30/10/2026"
+  },
+  {
+   "id": "ov-41",
+   "kind": "title",
+   "from": 77.62,
+   "to": 78.15,
+   "text": "CALMA"
+  },
+  {
+   "id": "ov-42",
+   "kind": "stat",
+   "from": 78.22,
+   "to": 80.7,
+   "big": "−0,8%",
+   "label": "NO ANO: QUASE ZERO A ZERO"
+  },
+  {
+   "id": "src-43",
+   "kind": "source",
+   "from": 80.85,
+   "to": 89.8,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "ov-44",
+   "kind": "question",
+   "from": 80.9,
+   "to": 89.8,
+   "text": "DÓLAR ALTO É\nBOM OU RUIM?",
+   "sub": "PRO BRASIL"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 87.85,
+   "to": 89.8,
+   "html": "Comenta: <b>BOM</b> ou <b>RUIM</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.2,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   2.15,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   3.62,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   6.75,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   7.08,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   11.32,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   14.36,
+   "pop.mp3",
+   -16
+  ],
+  [
+   17.67,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   18.3,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   19.42,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   21.5,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   26.2,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   26.72,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   29.08,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.22,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.36,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.5,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.64,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.78,
+   "click.mp3",
+   -17
+  ],
+  [
+   29.92,
+   "click.mp3",
+   -17
+  ],
+  [
+   30.06,
+   "click.mp3",
+   -17
+  ],
+  [
+   30.77,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   32.88,
+   "pop.mp3",
+   -18
+  ],
+  [
+   33.3,
+   "pop.mp3",
+   -18
+  ],
+  [
+   33.7,
+   "pop.mp3",
+   -18
+  ],
+  [
+   34.22,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   39.16,
+   "pop.mp3",
+   -16
+  ],
+  [
+   41.8,
+   "pop.mp3",
+   -16
+  ],
+  [
+   43.4,
+   "chime.mp3",
+   -16
+  ],
+  [
+   45.07,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   46.0,
+   "sparkle.mp3",
+   -18
+  ],
+  [
+   47.4,
+   "error.mp3",
+   -20
+  ],
+  [
+   48.87,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   49.6,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   51.92,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   53.72,
+   "chime.mp3",
+   -16
+  ],
+  [
+   54.8,
+   "riser.mp3",
+   -20
+  ],
+  [
+   56.7,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   57.07,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   63.52,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   64.0,
+   "pop.mp3",
+   -16
+  ],
+  [
+   64.84,
+   "pop.mp3",
+   -18
+  ],
+  [
+   65.2,
+   "pop.mp3",
+   -18
+  ],
+  [
+   65.6,
+   "pop.mp3",
+   -18
+  ],
+  [
+   66.17,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   69.77,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   72.5,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   76.6,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   77.37,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   78.2,
+   "ping.mp3",
+   -18
+  ],
+  [
+   80.67,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   82.8,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   85.9,
+   "click-soft.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "POR QUE LIGAR\nPRO DÓLAR?",
+  "descricao": "Dólar alto mexe no seu bolso mesmo se você ganha e gasta em real: mais da metade do trigo, mais de 80% do adubo e 9 de cada 10 matérias-primas de remédio vêm de fora, pagos em dólar. Depois do 2º turno o dólar subiu 9% em uma semana, a maior alta semanal desde 2008, e pela estimativa do Banco Central cada 10% de alta põe 1 ponto a mais na inflação em um ano.",
+  "hashtags": [
+   "#dolar",
+   "#dolarhoje",
+   "#inflacao",
+   "#economia",
+   "#cambio"
+  ],
+  "media": false
+ }
+}

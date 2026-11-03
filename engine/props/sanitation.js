@@ -5,7 +5,7 @@
 // Primeiro uso: videos/2026-11-02-saneamento-india.
 // ============================================================================
 
-// National flag on canvas (600 × 420): "brasil" or "india". Cached.
+// National flag on canvas (600 × 420): "brasil", "india" or "argentina". Cached.
 function nationFlagTex(kind) {
   return cachedTex("flag-" + kind, () => {
     const c = makeCanvas(600, 420), x = c.getContext("2d");
@@ -18,6 +18,10 @@ function nationFlagTex(kind) {
       const r = mulberry32(5); x.fillStyle = "#ffffff";
       for (let i = 0; i < 27; i++) { const sx = 220 + r() * 160, sy = 205 + r() * 95; if (Math.hypot(sx - 300, sy - 210) < 96) { x.beginPath(); x.arc(sx, sy, 2 + r() * 3, 0, 6.3); x.fill(); } }
       x.restore();
+    } else if (kind === "argentina") {
+      x.fillStyle = "#74acdf"; x.fillRect(0, 0, 600, 420); x.fillStyle = "#ffffff"; x.fillRect(0, 140, 600, 140);
+      x.fillStyle = "#f6b40e"; for (let i = 0; i < 16; i++) { const a = (i / 16) * Math.PI * 2; x.beginPath(); x.moveTo(300 + Math.cos(a - 0.12) * 26, 210 + Math.sin(a - 0.12) * 26); x.lineTo(300 + Math.cos(a) * 56, 210 + Math.sin(a) * 56); x.lineTo(300 + Math.cos(a + 0.12) * 26, 210 + Math.sin(a + 0.12) * 26); x.fill(); }
+      x.beginPath(); x.arc(300, 210, 28, 0, Math.PI * 2); x.fill(); x.strokeStyle = "#85340a"; x.lineWidth = 2; x.stroke();
     } else {
       x.fillStyle = "#ff9933"; x.fillRect(0, 0, 600, 140);
       x.fillStyle = "#ffffff"; x.fillRect(0, 140, 600, 140);

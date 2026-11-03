@@ -88,8 +88,11 @@ async function sheet(browser, cells, { w, h, cols, rows, name }) {
   const launchArgs = process.platform === "darwin" ? ["--use-angle=metal", "--ignore-gpu-blocklist"] : ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--ignore-gpu-blocklist"];
   const browser = await chromium.launch({ args: launchArgs });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
+  const pageErrors = []; page.on("pageerror", (e) => pageErrors.push(String(e)));
   await page.goto("file://" + path.join(vdir, "qa/harness.html"));
   await page.waitForFunction(() => !!(window.__qaReady && window.__qaReady()), null, { timeout: 180000, polling: 250 });
+  await page.waitForTimeout(500);
+  if (pageErrors.length) { console.error("erro na página (rode o QA para ver onde):\n" + pageErrors.join("\n")); await browser.close(); process.exit(2); }
 
   let samples;
   if (given.length) samples = given.map((t) => ({ t, heroes: [] }));

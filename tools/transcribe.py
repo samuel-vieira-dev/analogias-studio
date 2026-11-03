@@ -59,6 +59,16 @@ def norm(s):
     return [SAME.get(w, w) for w in re.findall(r"[a-zà-úç0-9]+", s)]
 
 
+def vocab(text, limit=14):
+    """Names in the narration (capitalised words that do not open a sentence), as a recognition hint."""
+    out = []
+    for sent in re.split(r"[.!?…:\n]+", text):
+        for w in re.findall(r"[\wÀ-ÿ'-]+", sent)[1:]:
+            if w[0].isupper() and w not in out:
+                out.append(w)
+    return ", ".join(out[:limit]) + "." if out else None
+
+
 def pauses(words):
     gaps = [b[0] - a[1] for a, b in zip(words, words[1:])]
     return max(gaps) if gaps else 0.0
@@ -69,7 +79,7 @@ def main():
     ap.add_argument("audio", nargs="+")
     ap.add_argument("--out", help="output words.json (single input only)")
     ap.add_argument("--ref", help="approved narration text (narracao.txt)")
-    ap.add_argument("--prompt", default="", help="names and jargon that help recognition, e.g. 'Ibovespa, B3, circuit breaker'")
+    ap.add_argument("--prompt", default="", help="names and jargon that help recognition, e.g. 'Ibovespa, B3, circuit breaker' (default: the names in --ref)")
     ap.add_argument("--model", default="medium")
     a = ap.parse_args()
     if a.out and len(a.audio) > 1:
@@ -78,7 +88,9 @@ def main():
     from faster_whisper import WhisperModel
     model = WhisperModel(a.model, device="cpu", compute_type="int8")
     ref = norm(Path(a.ref).read_text()) if a.ref else None
-    prompt = a.prompt or (Path(a.ref).read_text()[:400] if a.ref else None)
+    # The hint is a list of names, never the script's text: with the opening sentences as initial_prompt
+    # Whisper copies them and loops ("Imagina, você vai na padaria…" five times over, 02/11/2026 dólar).
+    prompt = a.prompt or (vocab(Path(a.ref).read_text()) if a.ref else None)
 
     results = []
     for path in a.audio:

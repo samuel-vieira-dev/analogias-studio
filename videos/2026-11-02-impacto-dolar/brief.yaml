@@ -1,0 +1,18 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-02-impacto-dolar
+estilo: analogias-v1
+tema: "O impacto do dólar no Brasil e no mundo: por que se preocupar com o dólar se recebemos e gastamos em real?"
+referencias_visuais: []
+
+hook:
+  origem: 1   # escrito pelo Samuel ("pq se preocupar com o dólar se recebemos e gastamos em real?"), ajustado para 2ª pessoa e 12 palavras
+  texto: "Por que ligar pro dólar, se você ganha e gasta em real?"
+
+pergunta_final:
+  origem: 1
+  texto: "E aí: dólar alto é bom pro Brasil, porque quem exporta ganha mais… ou ruim, porque a comida fica mais cara?"
+
+analogia: "O dólar é o inglês do dinheiro: um brasileiro e um chinês não falam a língua um do outro, então negociam em inglês; com moeda é igual."
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-03

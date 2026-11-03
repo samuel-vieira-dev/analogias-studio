@@ -6,6 +6,8 @@ Este é o QA do Estilo Analogias v1 (3D). No Estilo Explicando Direito o mesmo c
 
 `tools/render.sh` se recusa a renderizar sem um relatório completo, limpo e mais novo que o build.
 
+Erro de JavaScript numa cena (uma função que não existe, um nome errado): o QA para na hora com o erro e sai com código 2; a prévia e a capa também. Antes, o QA ficava parado em silêncio até alguém matar o processo.
+
 ## Regras
 
 | Regra | O que pegou | Correção típica |

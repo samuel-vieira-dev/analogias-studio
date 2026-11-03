@@ -27,7 +27,7 @@
 
 ## Áudio local (grátis)
 
-- `tools/transcribe.py`: faster-whisper `medium` (int8, CPU). Com `--ref narracao.txt` dá a nota de cada take (0–1) e as palavras que mudaram; escolhe o melhor.
+- `tools/transcribe.py`: faster-whisper `medium` (int8, CPU). Com `--ref narracao.txt` dá a nota de cada take (0–1) e as palavras que mudaram; escolhe o melhor. A dica de reconhecimento é só uma lista de nomes (`--prompt "Ibovespa, B3"`; sem ele, os nomes próprios do `--ref`). Nunca o começo do roteiro: o Whisper copia e repete a frase, e um take bom sai com nota 0,45 (vídeo do dólar, 02/11/2026).
 - `tools/tighten.py`: corta pausas longas (mantém 0,22 s entre frases curtas e 0,36 s nas pausas longas) e acelera até ×1,06 se precisar caber no alvo (duração − 2 s de cauda).
 - `tools/mix.py`: voz + efeitos do pacote do HyperFrames (`whoosh`, `impact-bass`, `pop`, `click`, `riser`, `ping`…) nos tempos do `video.json`; normaliza em duas passadas para −14 LUFS e pico −1,5 dBTP (padrão de Reels/TikTok/Shorts). Vídeo narrado: sem música (a trilha entra no app, na hora de postar). Vídeo sem narração: `audio.music` (trilha do ElevenLabs Music, `music_db`, `music_fade`) no lugar da voz; sem `audio.words`, o `build.py` não faz legenda (SKILL.md → Variante sem narração).
 
