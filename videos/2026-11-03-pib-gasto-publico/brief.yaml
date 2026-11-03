@@ -1,0 +1,18 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-03-pib-gasto-publico
+estilo: analogias-v1
+tema: "O PIB brasileiro e como esse número que parece positivo pode ser mascarado com gastos públicos; com a fórmula do cálculo do PIB (C + I + G + (X − M))."
+referencias_visuais: []
+
+hook:
+  origem: 4   # contradição
+  texto: "Dá pra fazer o PIB crescer sem o país ficar mais rico."
+
+pergunta_final:
+  origem: 2
+  texto: "E aí: PIB puxado pelo gasto do governo é motor da economia… ou conta pro futuro?"
+
+analogia: "O vizinho visto da rua: carro novo e churrasco todo fim de semana parecem riqueza, mas podem ser aumento ou cartão; o PIB olha da rua, vê o churrasco e não vê a fatura."
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-03

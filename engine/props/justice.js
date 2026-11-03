@@ -130,7 +130,8 @@ function makeInvoiceSheet({ w = 0.62, d = 0.86, issuer = "EMITENTE: ANIDROL", to
   put("title", title, w * 0.84, d * 0.1, -d * 0.4);
   put("issuer", issuer, w * 0.9, d * 0.075, -d * 0.255, { fg: "#8a1a12" });
   if (to) put("to", to, w * 0.9, d * 0.075, -d * 0.1);
-  g.add(contactShadow(w + 0.2, d + 0.2));
+  // the soft shadow sits inside the paper (below its top face): above it, it stained the middle of the sheet grey
+  const sh = contactShadow(w + 0.2, d + 0.2); sh.position.y = T * 0.4; g.add(sh);
   return { group: g, top: T, w, d, plates };
 }
 

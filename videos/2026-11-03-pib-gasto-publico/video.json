@@ -1,0 +1,889 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Uma moeda = 2,5% do PIB nos pedestais (C 25, I 7, G 8; X − M uma moeda fina). Barras: 0,5 m por ponto percentual. Dívida: 33 de 40 blocos (82,9%).",
+ "slug": "2026-11-03-pib-gasto-publico",
+ "estilo": "analogias-v1",
+ "duration": 94.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra"
+  }
+ },
+ "media": {
+  "esplanada": {
+   "file": "midia/esplanada.jpg",
+   "credit": "Arquivo/Agência Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Arquivo_da_Ag%C3%AAncia_Brasil_-_Bras%C3%ADlia_15.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ],
+   "author": "Arquivo/Agência Brasil",
+   "license": "CC BY 3.0 BR"
+  }
+ },
+ "scenes": [
+  {
+   "id": "conta",
+   "from": 0,
+   "to": 6.8
+  },
+  {
+   "id": "imagina",
+   "from": 6.8,
+   "to": 11.72
+  },
+  {
+   "id": "formula",
+   "from": 11.72,
+   "to": 17.4
+  },
+  {
+   "id": "letraC",
+   "from": 17.4,
+   "to": 20.8
+  },
+  {
+   "id": "letraI",
+   "from": 20.8,
+   "to": 26.3
+  },
+  {
+   "id": "letraG",
+   "from": 26.3,
+   "to": 28.65
+  },
+  {
+   "id": "letraXM",
+   "from": 28.65,
+   "to": 35.4
+  },
+  {
+   "id": "gasto",
+   "from": 35.4,
+   "to": 40.52
+  },
+  {
+   "id": "canos",
+   "from": 40.52,
+   "to": 47.8
+  },
+  {
+   "id": "vizinho",
+   "from": 47.8,
+   "to": 54.6
+  },
+  {
+   "id": "dentro",
+   "from": 54.6,
+   "to": 57.42
+  },
+  {
+   "id": "lupa",
+   "from": 57.42,
+   "to": 61.38
+  },
+  {
+   "id": "brasil",
+   "from": 61.38,
+   "to": 72.05
+  },
+  {
+   "id": "divida",
+   "from": 72.05,
+   "to": 76.95
+  },
+  {
+   "id": "vilao",
+   "from": 76.95,
+   "to": 86.4
+  },
+  {
+   "id": "pergunta",
+   "from": 86.4,
+   "to": 94.0
+  }
+ ],
+ "cuts": [
+  6.8,
+  11.72,
+  17.4,
+  20.8,
+  26.3,
+  28.65,
+  35.4,
+  40.52,
+  47.8,
+  54.6,
+  57.42,
+  61.38,
+  72.05,
+  76.95,
+  86.4
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.15,
+   "to": 1.85,
+   "text": "O PIB CRESCE..."
+  },
+  {
+   "id": "ov-02",
+   "kind": "title",
+   "from": 1.9,
+   "to": 3.45,
+   "text": "...E O PAÍS NÃO\nFICA MAIS RICO"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 3.6,
+   "to": 5.1,
+   "text": "SEM MENTIRA"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 5.18,
+   "to": 6.75,
+   "text": "ESTÁ NA\nPRÓPRIA CONTA"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 6.95,
+   "to": 10.3,
+   "text": "IMAGINA:\n\"O BRASIL CRESCEU\""
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 10.4,
+   "to": 11.65,
+   "text": "CRESCEU COMO?"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 11.8,
+   "to": 17.35,
+   "text": "Fonte: IBGE (Contas Nacionais)"
+  },
+  {
+   "id": "ov-08",
+   "kind": "title",
+   "from": 11.85,
+   "to": 14.5,
+   "text": "TUDO O QUE O PAÍS\nPRODUZ NUM ANO"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 14.58,
+   "to": 17.35,
+   "text": "PIB =\nC + I + G + (X − M)"
+  },
+  {
+   "id": "ov-10",
+   "kind": "source",
+   "from": 17.45,
+   "to": 26.25,
+   "text": "Fonte: IBGE, 2025"
+  },
+  {
+   "id": "ov-11",
+   "kind": "stat",
+   "from": 17.55,
+   "to": 20.75,
+   "big": "≈ 63%",
+   "label": "C · FAMÍLIAS"
+  },
+  {
+   "id": "ov-12",
+   "kind": "title",
+   "from": 20.9,
+   "to": 22.55,
+   "text": "I · INVESTIMENTO"
+  },
+  {
+   "id": "ov-13",
+   "kind": "chip",
+   "from": 22.6,
+   "to": 24.95,
+   "text": "MÁQUINAS · FÁBRICAS · OBRAS",
+   "style": "dark"
+  },
+  {
+   "id": "ov-14",
+   "kind": "stat",
+   "from": 25.0,
+   "to": 26.25,
+   "big": "≈ 17%",
+   "label": "I · INVESTIMENTO"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 26.35,
+   "to": 35.35,
+   "text": "Fonte: IBGE · Foto: Arquivo/Agência Brasil"
+  },
+  {
+   "id": "ov-16",
+   "kind": "stat",
+   "from": 26.4,
+   "to": 28.6,
+   "big": "≈ 19%",
+   "label": "G · GOVERNO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 28.75,
+   "to": 30.05,
+   "text": "X − M"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 30.1,
+   "to": 33.95,
+   "text": "X = VENDE LÁ FORA\nM = COMPRA DE FORA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 34.0,
+   "to": 35.35,
+   "big": "X − M ≈ 0",
+   "label": "UM QUASE CANCELA O OUTRO"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 35.45,
+   "to": 40.45,
+   "text": "Fonte: IBGE (metodologia)"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 35.55,
+   "to": 37.05,
+   "text": "REPARA NO G"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 37.12,
+   "to": 39.3,
+   "text": "O G MEDE\nO GASTO"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 39.38,
+   "to": 40.45,
+   "text": "NÃO O QUE\nÉ ENTREGUE"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 40.6,
+   "to": 42.6,
+   "text": "GASTOU MAIS?\nPIB SOBE"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 42.7,
+   "to": 44.6,
+   "text": "MESMO SEM O\nSERVIÇO MELHORAR"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 44.7,
+   "to": 46.1,
+   "text": "IMPOSTO\nOU DÍVIDA?"
+  },
+  {
+   "id": "ov-27",
+   "kind": "chip",
+   "from": 46.15,
+   "to": 47.75,
+   "text": "A CONTA NÃO PERGUNTA",
+   "style": "red"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 47.9,
+   "to": 48.95,
+   "text": "PENSA NO VIZINHO"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 49.0,
+   "to": 49.9,
+   "text": "CARRO NOVO"
+  },
+  {
+   "id": "ov-51",
+   "kind": "title",
+   "from": 49.96,
+   "to": 51.6,
+   "text": "CHURRASCO TODO\nFIM DE SEMANA"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 51.7,
+   "to": 54.5,
+   "text": "DA RUA, PARECE\nCADA VEZ MAIS RICO"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 54.65,
+   "to": 57.37,
+   "text": "AUMENTO...\nOU CARTÃO?"
+  },
+  {
+   "id": "ov-32",
+   "kind": "title",
+   "from": 57.5,
+   "to": 59.1,
+   "text": "O PIB OLHA\nDA RUA"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 59.18,
+   "to": 61.33,
+   "text": "VÊ O CHURRASCO,\nNÃO VÊ A FATURA"
+  },
+  {
+   "id": "ov-34",
+   "kind": "source",
+   "from": 61.45,
+   "to": 72.0,
+   "text": "Fonte: IBGE, 12 meses até jun/2026"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 61.45,
+   "to": 64.2,
+   "text": "12 MESES"
+  },
+  {
+   "id": "ov-36",
+   "kind": "stat",
+   "from": 64.26,
+   "to": 66.4,
+   "big": "+1,9%",
+   "label": "PIB"
+  },
+  {
+   "id": "ov-37",
+   "kind": "stat",
+   "from": 66.48,
+   "to": 67.8,
+   "big": "+2,8%",
+   "label": "GASTO DO GOVERNO"
+  },
+  {
+   "id": "ov-38",
+   "kind": "title",
+   "from": 67.88,
+   "to": 69.38,
+   "text": "3 VEZES MAIS\nQUE AS FAMÍLIAS"
+  },
+  {
+   "id": "ov-39",
+   "kind": "stat",
+   "from": 69.44,
+   "to": 70.42,
+   "big": "+0,9%",
+   "label": "FAMÍLIAS"
+  },
+  {
+   "id": "ov-40",
+   "kind": "stat",
+   "from": 70.48,
+   "to": 72.0,
+   "big": "−0,2%",
+   "label": "INVESTIMENTO PARADO"
+  },
+  {
+   "id": "ov-41",
+   "kind": "source",
+   "from": 72.1,
+   "to": 76.9,
+   "text": "Fonte: Banco Central, set/2026"
+  },
+  {
+   "id": "ov-42",
+   "kind": "title",
+   "from": 72.15,
+   "to": 73.2,
+   "text": "E A FATURA?"
+  },
+  {
+   "id": "ov-43",
+   "kind": "stat",
+   "from": 73.28,
+   "to": 76.9,
+   "big": "82,9%",
+   "label": "DÍVIDA PÚBLICA / PIB"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 77.05,
+   "to": 78.58,
+   "text": "GASTO PÚBLICO\nNÃO É VILÃO"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 78.64,
+   "to": 82.8,
+   "text": "ESCOLA, HOSPITAL,\nESTRADA"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 82.88,
+   "to": 85.25,
+   "text": "DEPENDE DE PRA\nONDE VAI"
+  },
+  {
+   "id": "ov-47",
+   "kind": "chip",
+   "from": 85.3,
+   "to": 86.35,
+   "text": "EM QUALQUER GOVERNO",
+   "style": "dark"
+  },
+  {
+   "id": "ov-48",
+   "kind": "source",
+   "from": 86.45,
+   "to": 94.0,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "ov-49",
+   "kind": "question",
+   "from": 86.5,
+   "to": 94.0,
+   "text": "MOTOR OU CONTA\nPRO FUTURO?",
+   "sub": "PIB PUXADO PELO GOVERNO"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 92.0,
+   "to": 94.0,
+   "html": "Comenta: <b>MOTOR</b> ou <b>CONTA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.2,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   1.9,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   3.5,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   5.84,
+   "pop.mp3",
+   -15
+  ],
+  [
+   6.72,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   9.52,
+   "chime.mp3",
+   -17
+  ],
+  [
+   10.4,
+   "error.mp3",
+   -20
+  ],
+  [
+   11.64,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   16.3,
+   "click.mp3",
+   -17
+  ],
+  [
+   16.46,
+   "click.mp3",
+   -17
+  ],
+  [
+   16.62,
+   "click.mp3",
+   -17
+  ],
+  [
+   16.78,
+   "click.mp3",
+   -17
+  ],
+  [
+   17.32,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   17.58,
+   "pop.mp3",
+   -16
+  ],
+  [
+   18.3,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   18.58,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   18.86,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   19.14,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   19.42,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   19.7,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   19.98,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   20.26,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   20.72,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   21.2,
+   "pop.mp3",
+   -16
+  ],
+  [
+   24.1,
+   "pop.mp3",
+   -16
+  ],
+  [
+   26.22,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   26.32,
+   "pop.mp3",
+   -16
+  ],
+  [
+   27.1,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   27.5,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   27.9,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   28.57,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   28.94,
+   "pop.mp3",
+   -16
+  ],
+  [
+   31.3,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   33.3,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   34.04,
+   "ping.mp3",
+   -17
+  ],
+  [
+   34.3,
+   "riser.mp3",
+   -22
+  ],
+  [
+   35.32,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   37.2,
+   "click-soft.mp3",
+   -17
+  ],
+  [
+   39.4,
+   "error.mp3",
+   -19
+  ],
+  [
+   40.44,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   40.7,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   41.1,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   41.5,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   41.98,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   44.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   45.05,
+   "pop.mp3",
+   -16
+  ],
+  [
+   47.42,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   47.72,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   49.34,
+   "sparkle.mp3",
+   -17
+  ],
+  [
+   49.96,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   53.0,
+   "sparkle.mp3",
+   -19
+  ],
+  [
+   54.52,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   55.06,
+   "pop.mp3",
+   -16
+  ],
+  [
+   56.76,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   57.34,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   57.95,
+   "pop.mp3",
+   -17
+  ],
+  [
+   59.18,
+   "chime.mp3",
+   -18
+  ],
+  [
+   60.4,
+   "error.mp3",
+   -20
+  ],
+  [
+   61.3,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   64.26,
+   "ping.mp3",
+   -17
+  ],
+  [
+   66.6,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   67.88,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   69.5,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   70.5,
+   "error.mp3",
+   -19
+  ],
+  [
+   71.97,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   73.3,
+   "riser.mp3",
+   -21
+  ],
+  [
+   76.1,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   76.87,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   78.64,
+   "chime.mp3",
+   -18
+  ],
+  [
+   79.6,
+   "chime.mp3",
+   -18
+  ],
+  [
+   80.4,
+   "whoosh.mp3",
+   -21
+  ],
+  [
+   81.7,
+   "sparkle.mp3",
+   -19
+  ],
+  [
+   86.32,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   89.3,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   90.9,
+   "click-soft.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "PIB CRESCE,\nPAÍS NÃO?",
+  "descricao": "PIB = C + I + G + (X − M): a conta do IBGE soma o consumo das famílias, o investimento, o gasto do governo e as exportações menos as importações. O gasto do governo entra pelo custo, não pelo que entrega, e a conta não pergunta se o dinheiro veio de imposto ou de dívida. Em 12 meses, o PIB cresceu 1,9%, o gasto do governo 2,8% e o das famílias 0,9%; a dívida pública está em 82,9% do PIB.",
+  "hashtags": [
+   "#pib",
+   "#economia",
+   "#gastopublico",
+   "#dividapublica",
+   "#ibge"
+  ],
+  "media": false
+ }
+}
