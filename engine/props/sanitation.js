@@ -2,6 +2,7 @@
 // props/sanitation.js · saneamento: bandeiras de país, escada do ranking (1 degrau = 1 ponto), privada,
 // banheiro (fundo), piscina olímpica, corte do terreno com cano de esgoto e fossa, tapete persa que
 // estufa com a sujeira embaixo, vassoura, batente com régua de crescimento.
+// Também: globo de mesa (makeDeskGlobe), do vídeo dos homicídios (03/11/2026).
 // Primeiro uso: videos/2026-11-02-saneamento-india.
 // ============================================================================
 
@@ -346,4 +347,54 @@ function makeGrowthDoor({ w = 0.9, h = 2.1, marks = [], ruler = 2.0, tagW = 0.34
   function show(i, k) { tags.forEach((T, j) => { const v = j < i ? 1 : j === i ? clamp(k) : 0; T.group.visible = v > 0.01; T.group.position.x = T.x + 0.25 * (1 - eOut(v)); }); }
   show(-1, 0);
   return { group: g, tags, show, w, h };
+}
+
+// ---------------------------------------------------------------- the desk globe (vídeo dos homicídios)
+// Simplified continent outlines [lon, lat] for a generic globe (no real map data: a few points each).
+const GLOBE_LANDS = [
+  [[-168, 66], [-140, 70], [-95, 72], [-80, 63], [-60, 55], [-66, 45], [-75, 35], [-81, 25], [-97, 26], [-97, 20], [-87, 15], [-80, 8], [-90, 14], [-105, 20], [-112, 30], [-124, 40], [-125, 48], [-135, 58], [-150, 60], [-165, 60]],
+  [[-55, 60], [-42, 60], [-20, 70], [-25, 82], [-60, 82], [-70, 76]],
+  [[-80, 8], [-62, 10], [-50, 0], [-35, -6], [-39, -15], [-48, -25], [-58, -38], [-65, -55], [-72, -50], [-71, -30], [-76, -15], [-81, -5]],
+  [[-17, 21], [-10, 35], [10, 37], [32, 31], [43, 12], [51, 12], [40, -2], [40, -15], [33, -27], [20, -35], [12, -18], [9, -2], [5, 5], [-8, 5], [-17, 14]],
+  [[-10, 36], [-9, 44], [-2, 48], [5, 52], [10, 58], [5, 62], [15, 69], [30, 71], [60, 70], [80, 73], [110, 76], [140, 72], [170, 68], [180, 66], [160, 60], [140, 55], [135, 43], [122, 40], [121, 30], [110, 20], [106, 10], [100, 13], [98, 8], [92, 22], [80, 15], [77, 8], [72, 20], [60, 25], [57, 25], [50, 30], [48, 29], [55, 17], [44, 12], [35, 30], [28, 37], [26, 40], [20, 40], [15, 38], [12, 44], [5, 43], [-2, 37]],
+  [[114, -22], [122, -17], [131, -12], [137, -12], [142, -11], [146, -19], [153, -26], [150, -37], [141, -38], [131, -31], [116, -35], [113, -26]],
+  [[-8, 50], [-5, 58], [0, 57], [1, 51]], [[44, -16], [50, -14], [48, -25], [44, -22]], [[130, 31], [140, 35], [142, 43], [136, 37]],
+  [[95, 5], [105, -6], [115, -8], [118, 2], [108, 3]], [[131, -2], [141, -3], [150, -10], [140, -8]],
+];
+const GLOBE_BRAZIL = [[-73, -8], [-70, 2], [-60, 5], [-51, 4], [-35, -5], [-39, -14], [-41, -22], [-48, -26], [-53, -33], [-57, -30], [-58, -20], [-62, -12], [-70, -10]];
+// Equirectangular painting of the globe: ocean, a faint grid, beige land and (brazil) Brazil in green with a yellow rim.
+function globeTex(brazil) {
+  return cachedTex("globe-" + brazil, () => {
+    const W2 = 2048, H2 = 1024, c = makeCanvas(W2, H2), x = c.getContext("2d"), P = ([lo, la]) => [(lo + 180) / 360 * W2, (90 - la) / 180 * H2];
+    const sea = x.createLinearGradient(0, 0, 0, H2); sea.addColorStop(0, "#2a5f86"); sea.addColorStop(0.5, "#1f557e"); sea.addColorStop(1, "#2a5f86"); x.fillStyle = sea; x.fillRect(0, 0, W2, H2);
+    speckle(x, W2, H2, 31, 14000, 0.08, 0.05, 2);
+    x.strokeStyle = "rgba(230,240,250,0.18)"; x.lineWidth = 2;
+    for (let lo = -180; lo <= 180; lo += 30) { const [px] = P([lo, 0]); x.beginPath(); x.moveTo(px, 0); x.lineTo(px, H2); x.stroke(); }
+    for (let la = -60; la <= 60; la += 30) { const [, py] = P([0, la]); x.beginPath(); x.moveTo(0, py); x.lineTo(W2, py); x.stroke(); }
+    const poly = (pts, fill, stroke, lw) => { x.beginPath(); pts.forEach((p, i) => { const [px, py] = P(p); i ? x.lineTo(px, py) : x.moveTo(px, py); }); x.closePath(); x.fillStyle = fill; x.fill(); if (stroke) { x.strokeStyle = stroke; x.lineWidth = lw; x.stroke(); } };
+    GLOBE_LANDS.forEach((pts) => poly(pts, "#cdbb8c", "rgba(90,70,40,0.6)", 3));
+    x.fillStyle = "#e9eef2"; x.fillRect(0, P([0, -70])[1], W2, H2);
+    if (brazil) poly(GLOBE_BRAZIL, "#2fae66", "#f2c418", 8);
+    return texFrom(c);
+  });
+}
+// Desk globe: the sphere (oceans, simplified continents, Brazil in green and yellow when `brazil`) tilted
+// 23.5° inside a full brass meridian ring, on a stem and a turned wooden foot. spin(a) turns the sphere
+// about its axis (a = 0: Brazil faces +z). Origin: table top, centre. API { group, ball, spin(a), h, cy }
+function makeDeskGlobe({ r = 0.22, brazil = true } = {}) {
+  const g = new THREE.Group(), wood = pmat("#ffffff", { map: woodTex("#4a2c1a"), roughness: 0.35, clearcoat: 0.7 }), brass = pmat(GOLD_METAL, { metalness: 1, roughness: 0.28 });
+  const prof = [[0, 0], [r * 0.75, 0], [r * 0.78, 0.02], [r * 0.6, 0.045], [r * 0.18, 0.07], [r * 0.12, 0.09], [0, 0.09]].map(([a, b]) => new THREE.Vector2(a, b));
+  g.add(new THREE.Mesh(new THREE.LatheGeometry(prof, 40), wood));
+  const R2 = r * 1.08, cy = 0.09 + r * 0.45 + R2;
+  const stem = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.04, r * 0.06, cy - R2 - 0.09 + 0.01, 14), brass); stem.position.y = 0.09 + (cy - R2 - 0.09) / 2; g.add(stem);
+  const tilt = new THREE.Group(); tilt.position.y = cy; tilt.rotation.z = 0.41; g.add(tilt);
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(R2, r * 0.028, 10, 72), brass); tilt.add(ring);
+  for (const s of [-1, 1]) { const pin = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.02, r * 0.02, R2 - r + 0.01, 8), brass); pin.position.y = s * (r + (R2 - r) / 2); tilt.add(pin); }
+  const ball = new THREE.Mesh(new THREE.SphereGeometry(r, 64, 48), pmat("#ffffff", { map: globeTex(brazil), roughness: 0.35, clearcoat: 0.8, clearcoatRoughness: 0.12 })); tilt.add(ball);
+  // the stem meets the ring at its lowest point (straight under the centre)
+  const knob = new THREE.Mesh(new THREE.SphereGeometry(r * 0.06, 12, 8), brass); knob.position.y = cy - R2; g.add(knob);
+  g.add(contactShadow(r * 2.2, r * 2.2));
+  const spin = (a) => { ball.rotation.y = -0.664 + a; };
+  spin(0);
+  return { group: g, ball, spin, h: cy + R2 + r * 0.03, cy };
 }

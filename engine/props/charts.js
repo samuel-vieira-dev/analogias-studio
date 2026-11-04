@@ -2,7 +2,7 @@
 // props/charts.js · data charts built from real things, not flat bars:
 //   coin column (a stack of gold coins, one coin = one unit of the data), a row of coin columns over a
 //   timeline (one slot per year, year printed on a floor tag, gaps with no data taped off), a glowing
-//   reference line, and glass "projection" coins.
+//   reference line, glass "projection" coins, and the world as a disc cut like a pie (makeShareDisc).
 // Data and time drive everything: column(i).set(k) shows k of its coins (0..1), so a scene can grow the
 // chart year by year. Units: metres. Origin: floor; the timeline runs along +x; front = +z.
 // ============================================================================
@@ -149,4 +149,44 @@ function makeCoinTimeline(data, { step = 0.5, unit = 1, r = 0.19, t = 0.05, tags
     highlight(year, m) { const s = byYear.get(year); if (s && s.col) s.col.material(m || gold); },
     gold, glass,
   };
+}
+
+// The world as a round slab cut like a pie: a polished disc with the world map printed on top (seen from
+// above the North Pole) and, in `color`, the slice of one share, as a solid wedge standing proud of the disc. set(frac, lift): frac 0..1 of the circle; lift 0..1 slides the slice
+// out towards the viewer. Origin: floor (or plinth top) centre; the slice opens towards +z.
+// API { group, set(frac, lift), r, h }
+function shareDiscTex() {
+  return cachedTex("shareDisc", () => {
+    // the world map seen from above the North Pole (azimuthal: the pole in the centre, the far south on the rim),
+    // from the same simplified outlines as the desk globe (props/sanitation.js → GLOBE_LANDS)
+    const c = makeCanvas(1024, 1024), x = c.getContext("2d"), R = 500, P = ([lo, la]) => { const rr = (90 - la) / 180 * R, a = lo * Math.PI / 180; return [512 + Math.cos(a) * rr, 512 + Math.sin(a) * rr]; };
+    const sea = x.createRadialGradient(512, 512, 40, 512, 512, R); sea.addColorStop(0, "#2f6a94"); sea.addColorStop(1, "#1d4e74"); x.fillStyle = sea; x.fillRect(0, 0, 1024, 1024);
+    x.strokeStyle = "rgba(230,240,250,0.2)"; x.lineWidth = 2;
+    for (let k = 1; k <= 5; k++) { x.beginPath(); x.arc(512, 512, k * R / 6, 0, Math.PI * 2); x.stroke(); }
+    for (let k = 0; k < 12; k++) { const a = k / 12 * Math.PI * 2; x.beginPath(); x.moveTo(512, 512); x.lineTo(512 + Math.cos(a) * R, 512 + Math.sin(a) * R); x.stroke(); }
+    const fill = (pts) => { x.beginPath(); pts.forEach((p, i) => { const [px, py] = P(p); i ? x.lineTo(px, py) : x.moveTo(px, py); }); x.closePath(); x.fillStyle = "#d3c294"; x.fill(); x.strokeStyle = "rgba(90,70,40,0.6)"; x.lineWidth = 3; x.stroke(); };
+    GLOBE_LANDS.forEach(fill);
+    x.strokeStyle = "#e9eef2"; x.lineWidth = R * 0.12; x.beginPath(); x.arc(512, 512, R * 0.94, 0, Math.PI * 2); x.stroke();   // Antarctica on the rim
+    return texFrom(c);
+  });
+}
+function makeShareDisc({ r = 0.5, h = 0.08, color = RED } = {}) {
+  const g = new THREE.Group(), side = pmat("#1b1e25", { roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.1 });
+  const disc = new THREE.Mesh(new THREE.CylinderGeometry(r, r, h, 96), [side, pmat("#ffffff", { map: shareDiscTex(), roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.08 }), side]); disc.position.y = h / 2; g.add(disc);
+  const sliceM = pmat(color, { roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.06, emissive: color, emissiveIntensity: 0.18, side: THREE.DoubleSide });   // the extruded caps of a sector can come out wound inwards
+  const slice = new THREE.Mesh(new THREE.BufferGeometry(), sliceM); g.add(slice);
+  g.add(contactShadow(r * 2.6, r * 2.6));
+  let last = -1;
+  const set = (frac, lift = 0) => {
+    const q = Math.round(clamp(frac) * 400) / 400;
+    if (q !== last) {
+      last = q; slice.geometry.dispose(); slice.visible = q > 0.002;
+      const th = Math.max(0.004, q) * Math.PI * 2, sh = new THREE.Shape(); sh.moveTo(0, 0); sh.absarc(0, 0, r * 1.012, Math.PI / 2 - th / 2, Math.PI / 2 + th / 2, false); sh.lineTo(0, 0);   // a pie slice from the centre; shape +y becomes world +z below
+      slice.geometry = new THREE.ExtrudeGeometry(sh, { depth: h * 1.12, bevelEnabled: true, bevelThickness: 0.004, bevelSize: 0.004, bevelSegments: 2, curveSegments: 64 });
+      slice.geometry.rotateX(Math.PI / 2); slice.geometry.translate(0, h * 1.12 + 0.004, 0);   // just proud of the disc: a slice, not a standing wedge
+    }
+    const k = clamp(lift); slice.position.set(0, 0, r * 0.16 * k);
+  };
+  set(0);
+  return { group: g, set, r, h };
 }

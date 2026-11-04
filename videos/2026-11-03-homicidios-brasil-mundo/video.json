@@ -1,0 +1,932 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia: estádio de 100 mil pessoas; um feixe de luz vermelho = uma pessoa assassinada por ano (mundo 5, Brasil 19, 2017 31, SC/SP 8). Feixes cinza = estimativa do Atlas (+16,6% ≈ 3). Colunas de vidro: tubo cheio = 10% do mundo.",
+ "slug": "2026-11-03-homicidios-brasil-mundo",
+ "estilo": "analogias-v1",
+ "duration": 89.7,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "Imagina,": "Imagina:",
+   "estranha.": "estranha:",
+   "asterisco.": "asterisco:",
+   "sorteio.": "sorteio:",
+   "seguros,": "seguros:",
+   "diz,": "diz:"
+  }
+ },
+ "media": {},
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.9
+  },
+  {
+   "id": "mundo",
+   "from": 5.9,
+   "to": 8.25
+  },
+  {
+   "id": "estadio",
+   "from": 8.25,
+   "to": 20.22
+  },
+  {
+   "id": "feixes",
+   "from": 20.22,
+   "to": 26.0
+  },
+  {
+   "id": "comparar",
+   "from": 26.0,
+   "to": 31.42
+  },
+  {
+   "id": "boanoticia",
+   "from": 31.42,
+   "to": 35.48
+  },
+  {
+   "id": "telao",
+   "from": 35.48,
+   "to": 41.35
+  },
+  {
+   "id": "pior",
+   "from": 41.35,
+   "to": 45.85
+  },
+  {
+   "id": "planeta",
+   "from": 45.85,
+   "to": 53.74
+  },
+  {
+   "id": "estados",
+   "from": 53.74,
+   "to": 62.84
+  },
+  {
+   "id": "quem",
+   "from": 62.84,
+   "to": 68.92
+  },
+  {
+   "id": "asterisco",
+   "from": 68.92,
+   "to": 77.0
+  },
+  {
+   "id": "fora",
+   "from": 77.0,
+   "to": 80.12
+  },
+  {
+   "id": "pergunta",
+   "from": 80.12,
+   "to": 89.7
+  }
+ ],
+ "cuts": [
+  5.9,
+  8.25,
+  20.22,
+  26.0,
+  31.42,
+  35.48,
+  41.35,
+  45.85,
+  53.74,
+  62.84,
+  68.92,
+  77.0,
+  80.12
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "stat",
+   "from": 0.15,
+   "to": 4.1,
+   "big": "13 MIN",
+   "label": "1 ASSASSINATO NO BRASIL"
+  },
+  {
+   "id": "ov-02",
+   "kind": "source",
+   "from": 0.15,
+   "to": 5.85,
+   "text": "Fonte: FBSP, Anuário 2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "stat",
+   "from": 4.2,
+   "to": 5.85,
+   "big": "+100",
+   "label": "ASSASSINATOS POR DIA"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 6.0,
+   "to": 8.2,
+   "text": "E O RESTO\nDO MUNDO?"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 8.45,
+   "to": 11.95,
+   "text": "IMAGINA: UM\nESTÁDIO LOTADO"
+  },
+  {
+   "id": "ov-06",
+   "kind": "stat",
+   "from": 12.0,
+   "to": 13.38,
+   "big": "100 MIL",
+   "label": "PESSOAS"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 13.4,
+   "to": 17.7,
+   "text": "VIVENDO JUNTAS,\nCOMO UMA CIDADE"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 17.76,
+   "to": 18.65,
+   "text": "POR 1 ANO",
+   "style": "dark"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 18.72,
+   "to": 20.15,
+   "text": "QUANTAS SERIAM\nASSASSINADAS?"
+  },
+  {
+   "id": "ov-10",
+   "kind": "source",
+   "from": 20.3,
+   "to": 24.2,
+   "text": "Fonte: ONU (UNODC), 2023"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 20.4,
+   "to": 22.8,
+   "text": "COM A MÉDIA\nDO MUNDO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "stat",
+   "from": 22.86,
+   "to": 24.2,
+   "big": "5",
+   "label": "MÉDIA DO MUNDO"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 24.25,
+   "to": 25.05,
+   "text": "COM A MÉDIA\nDO BRASIL"
+  },
+  {
+   "id": "ov-14",
+   "kind": "source",
+   "from": 24.25,
+   "to": 25.95,
+   "text": "Fonte: FBSP, Anuário 2026"
+  },
+  {
+   "id": "ov-15",
+   "kind": "stat",
+   "from": 25.1,
+   "to": 25.95,
+   "big": "19",
+   "label": "MÉDIA DO BRASIL"
+  },
+  {
+   "id": "ov-16",
+   "kind": "source",
+   "from": 26.1,
+   "to": 31.35,
+   "text": "Fonte: ONU (UNODC), 2023; FBSP, 2025"
+  },
+  {
+   "id": "ov-17",
+   "kind": "stat",
+   "from": 26.12,
+   "to": 27.9,
+   "big": "3,7×",
+   "label": "QUASE 4 VEZES"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 28.0,
+   "to": 31.35,
+   "text": "TAXA POR 100 MIL\nHABITANTES"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 31.6,
+   "to": 33.05,
+   "text": "E AGORA A\nPARTE ESTRANHA"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 33.14,
+   "to": 35.42,
+   "text": "ESSE 19 É\nBOA NOTÍCIA"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 35.55,
+   "to": 41.3,
+   "text": "Fonte: FBSP, Anuário 2026; ONU (UNODC)"
+  },
+  {
+   "id": "ov-22",
+   "kind": "title",
+   "from": 35.6,
+   "to": 37.85,
+   "text": "BRASIL, 2025"
+  },
+  {
+   "id": "ov-23",
+   "kind": "stat",
+   "from": 37.92,
+   "to": 41.3,
+   "big": "19,1",
+   "label": "MENOR TAXA DESDE 2012"
+  },
+  {
+   "id": "ov-24",
+   "kind": "source",
+   "from": 41.4,
+   "to": 45.8,
+   "text": "Fonte: ONU (UNODC)"
+  },
+  {
+   "id": "ov-25",
+   "kind": "title",
+   "from": 41.5,
+   "to": 44.9,
+   "text": "2017,\nO PIOR ANO"
+  },
+  {
+   "id": "ov-26",
+   "kind": "stat",
+   "from": 44.96,
+   "to": 45.8,
+   "big": "31",
+   "label": "POR 100 MIL EM 2017"
+  },
+  {
+   "id": "ov-27",
+   "kind": "source",
+   "from": 45.9,
+   "to": 53.7,
+   "text": "Fonte: ONU (UNODC); IBGE"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 45.98,
+   "to": 48.15,
+   "text": "MESMO ASSIM..."
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 48.22,
+   "to": 50.35,
+   "big": "2,6%",
+   "label": "DAS PESSOAS DO MUNDO"
+  },
+  {
+   "id": "ov-30",
+   "kind": "stat",
+   "from": 50.4,
+   "to": 53.7,
+   "big": "1 EM 10",
+   "label": "ASSASSINATOS DO MUNDO"
+  },
+  {
+   "id": "ov-31",
+   "kind": "title",
+   "from": 53.84,
+   "to": 56.42,
+   "text": "DEPENDE DE ONDE\nVOCÊ MORA"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 56.48,
+   "to": 62.8,
+   "text": "Fonte: FBSP, Anuário 2026"
+  },
+  {
+   "id": "ov-33",
+   "kind": "stat",
+   "from": 56.48,
+   "to": 61.3,
+   "big": "7,6 · 7,8",
+   "label": "SC · SP, OS MAIS SEGUROS"
+  },
+  {
+   "id": "ov-34",
+   "kind": "title",
+   "from": 61.38,
+   "to": 62.8,
+   "text": "AINDA ACIMA\nDO MUNDO (5,2)"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 62.96,
+   "to": 64.1,
+   "text": "NÃO É SORTEIO"
+  },
+  {
+   "id": "ov-36",
+   "kind": "source",
+   "from": 63.0,
+   "to": 68.88,
+   "text": "Fonte: FBSP, Anuário 2026"
+  },
+  {
+   "id": "ov-37",
+   "kind": "stat",
+   "from": 64.16,
+   "to": 66.58,
+   "big": "9 EM 10",
+   "label": "SÃO HOMENS"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 66.64,
+   "to": 68.88,
+   "big": "8 EM 10",
+   "label": "SÃO NEGROS"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 68.98,
+   "to": 72.3,
+   "text": "SÓ QUE TEM\nUM ASTERISCO"
+  },
+  {
+   "id": "ov-40",
+   "kind": "source",
+   "from": 70.5,
+   "to": 76.95,
+   "text": "Fonte: Atlas da Violência 2026 (Ipea/FBSP)"
+  },
+  {
+   "id": "ov-41",
+   "kind": "title",
+   "from": 72.34,
+   "to": 75.85,
+   "text": "ASSASSINATOS\nESCONDIDOS"
+  },
+  {
+   "id": "ov-42",
+   "kind": "stat",
+   "from": 75.92,
+   "to": 76.95,
+   "big": "QUASE 2×",
+   "label": "MORTES SEM CAUSA DEFINIDA"
+  },
+  {
+   "id": "ov-43",
+   "kind": "title",
+   "from": 77.1,
+   "to": 79.2,
+   "text": "PARTE DA\nQUEDA..."
+  },
+  {
+   "id": "ov-44",
+   "kind": "source",
+   "from": 77.1,
+   "to": 80.05,
+   "text": "Fonte: Atlas da Violência 2026 (estimativa)"
+  },
+  {
+   "id": "ov-45",
+   "kind": "title",
+   "from": 79.24,
+   "to": 80.05,
+   "text": "FORA DA\nCONTA?"
+  },
+  {
+   "id": "ov-46",
+   "kind": "question",
+   "from": 80.25,
+   "to": 89.7,
+   "text": "MAIS POLÍCIA NA RUA\nOU ESCOLA E EMPREGO?",
+   "sub": "O QUE DERRUBA MAIS OS ASSASSINATOS?"
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 87.75,
+   "to": 89.7,
+   "html": "Comenta: <b>POLÍCIA</b> ou <b>ESCOLA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.15,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   1.2,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   1.8,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   2.4,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   2.98,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   4.1,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   5.02,
+   "pop.mp3",
+   -16
+  ],
+  [
+   5.82,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.82,
+   "chime.mp3",
+   -19
+  ],
+  [
+   8.17,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   9.6,
+   "riser.mp3",
+   -24
+  ],
+  [
+   12.0,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   13.6,
+   "whoosh-cinematic.mp3",
+   -24
+  ],
+  [
+   17.76,
+   "click.mp3",
+   -18
+  ],
+  [
+   18.72,
+   "error.mp3",
+   -21
+  ],
+  [
+   20.14,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   22.31,
+   "pop.mp3",
+   -18
+  ],
+  [
+   22.42,
+   "pop.mp3",
+   -18
+  ],
+  [
+   22.53,
+   "pop.mp3",
+   -18
+  ],
+  [
+   22.64,
+   "pop.mp3",
+   -18
+  ],
+  [
+   22.75,
+   "pop.mp3",
+   -18
+  ],
+  [
+   22.86,
+   "impact-bass-1.mp3",
+   -14
+  ],
+  [
+   24.2,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.27,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.33,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.39,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.46,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.52,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.59,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.65,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.72,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.79,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.85,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.91,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   24.98,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   25.04,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   25.1,
+   "impact-bass-2.mp3",
+   -13
+  ],
+  [
+   25.92,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   26.56,
+   "ping.mp3",
+   -17
+  ],
+  [
+   31.34,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   32.36,
+   "glitch-1.mp3",
+   -22
+  ],
+  [
+   34.6,
+   "sparkle.mp3",
+   -16
+  ],
+  [
+   35.4,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   37.92,
+   "chime.mp3",
+   -17
+  ],
+  [
+   41.27,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   41.9,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   41.9,
+   "riser.mp3",
+   -22
+  ],
+  [
+   42.15,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   42.4,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   42.65,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   42.9,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   43.15,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   43.4,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   43.65,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   43.9,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   44.15,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   44.4,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   44.65,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   44.96,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   45.77,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   48.22,
+   "pop.mp3",
+   -16
+  ],
+  [
+   50.7,
+   "riser.mp3",
+   -22
+  ],
+  [
+   51.94,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   53.66,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   56.8,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   57.75,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   60.58,
+   "ping.mp3",
+   -17
+  ],
+  [
+   61.4,
+   "error.mp3",
+   -20
+  ],
+  [
+   62.76,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   64.06,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   64.22,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   64.38,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   64.54,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   64.7,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   64.86,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   65.02,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   65.18,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   65.34,
+   "click-soft.mp3",
+   -21
+  ],
+  [
+   66.8,
+   "error.mp3",
+   -20
+  ],
+  [
+   68.84,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   69.6,
+   "notification.mp3",
+   -20
+  ],
+  [
+   71.14,
+   "pop.mp3",
+   -17
+  ],
+  [
+   75.06,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   75.95,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   76.3,
+   "click.mp3",
+   -19
+  ],
+  [
+   76.6,
+   "click.mp3",
+   -19
+  ],
+  [
+   76.92,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   79.24,
+   "glitch-2.mp3",
+   -21
+  ],
+  [
+   80.04,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   83.76,
+   "impact-bass-2.mp3",
+   -17
+  ],
+  [
+   85.46,
+   "chime.mp3",
+   -18
+  ],
+  [
+   87.48,
+   "pop.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "ASSASSINATO\nA CADA 13 MIN",
+  "descricao": "Taxa de homicídios no Brasil x média mundial: em 2025 o Brasil teve 19,1 mortes violentas por 100 mil habitantes (FBSP), quase 4 vezes a média do mundo, 5,2 (ONU). É a menor taxa desde 2012, mas o Atlas da Violência alerta que as mortes sem causa definida quase dobraram.",
+  "hashtags": [
+   "#homicidios",
+   "#violencia",
+   "#segurancapublica",
+   "#brasil",
+   "#dados"
+  ],
+  "t": 3.3,
+  "media": false
+ }
+}

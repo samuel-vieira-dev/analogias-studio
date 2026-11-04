@@ -1,0 +1,37 @@
+# Fatos — Homicídios: o Brasil × a média do mundo (03/11/2026)
+
+Duas medidas, cada uma com a fonte dela na tela:
+- **Brasil**: Mortes Violentas Intencionais (MVI) do Fórum Brasileiro de Segurança Pública (FBSP), dado de 2025 das secretarias estaduais (homicídio doloso + latrocínio + lesão corporal seguida de morte + morte por intervenção policial).
+- **Mundo**: homicídio intencional da ONU (UNODC), dado de 2023 (o mais recente publicado).
+- A comparação "quase quatro vezes" fecha nos dois jeitos: na mesma base da ONU (2023: Brasil 19,3 × mundo 5,2 = 3,7×) e com o dado brasileiro mais novo (2025: 19,1 × 5,2 = 3,7×).
+
+| # | Fato | Dado | Fonte | Status |
+| --- | --- | --- | --- | --- |
+| 1 | Brasil, 2025 | 40.775 mortes violentas intencionais; taxa de 19,1 por 100 mil habitantes | [FBSP, Anuário Brasileiro de Segurança Pública 2026 (infográfico), 23/07/2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) · [Agência Brasil, 23/07/2026](https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-07/mortes-violentas-caem-82-no-pais-em-2025-feminicidios-aumentam-4) | OK |
+| 2 | Menor taxa da série | 2025 é a menor taxa desde 2012 (início da série); 2024 foi 20,6 (44.127 mortes); queda de 8,2% | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) · [Agência Brasil](https://agenciabrasil.ebc.com.br/direitos-humanos/noticia/2026-07/mortes-violentas-caem-82-no-pais-em-2025-feminicidios-aumentam-4) · [Jornal do Brasil](https://www.jb.com.br/brasil/2026/07/1060384-brasil-tem-menor-taxa-de-mortes-violentas-intencionais-desde-2012.html) | OK |
+| 3 | Média do mundo | 5,2 homicídios por 100 mil habitantes em 2023 (5,9 em 2015) | [ONU, Relatório dos ODS 2025 — Objetivo 16 (dados UNODC)](https://unstats.un.org/sdgs/report/2025/Goal-16/) · [Our World in Data / UNODC (2023: 5,23; 2024: 5,14)](https://ourworldindata.org/grapher/homicide-rate-unodc) | OK |
+| 4 | Brasil × mundo | 19,1 ÷ 5,2 = 3,7 → "quase quatro vezes"; na base da ONU, 2023: Brasil 19,3 × mundo 5,2 | (cálculo sobre os fatos 1 e 3) [Our World in Data / UNODC](https://ourworldindata.org/grapher/homicide-rate-unodc) | OK |
+| 5 | Por dia / por minuto | 40.775 ÷ 365 = 111,7 por dia → "mais de cem por dia", "uma a cada treze minutos" (12,9 min) | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) (cálculo sobre o fato 1) | OK |
+| 6 | Fatia do mundo | 2021: o mundo teve ~458 mil homicídios; o Brasil, menos de 46 mil (≈ 10%); Brasil e Nigéria, com 6% da população do mundo, somaram 20% dos homicídios. Em 2023 (UNODC): Brasil ≈ 40,7 mil de ≈ 421 mil (9,7%) → "quase um em cada dez" | [UNODC, Global Study on Homicide 2023 — resumo executivo](https://www.unodc.org/documents/data-and-analysis/gsh/2023/GSH23_ExSum.pdf) · [IHU Unisinos/ONU News, 20/12/2023](https://ihu.unisinos.br/635418-brasil-e-nigeria-lideram-a-taxa-de-homicidios-em-2021-aponta-estudo-da-onu) · [Our World in Data / UNODC](https://ourworldindata.org/grapher/homicide-rate-unodc) (cálculo) | OK |
+| 7 | População | Brasil ≈ 213 milhões de 8,2 bilhões (2,6%) → "menos de três por cento das pessoas do planeta" | [IBGE, estimativa 2025](https://www.ibge.gov.br/estatisticas/sociais/populacao/9103-estimativas-de-populacao.html) · [ONU, World Population Prospects 2024](https://population.un.org/wpp/) | OK |
+| 8 | Estados com maior taxa (2025) | Amapá 42,5 · Bahia 36,8 · Ceará 34,7 (Amapá ≈ 8× o mundo) | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) · [Poder360, 23/07/2026](https://www.poder360.com.br/poder-seguranca-publica/veja-o-ranking-dos-estados-mais-violentos-do-brasil/) | OK — fora da fala |
+| 9 | Estados com menor taxa (2025) | Santa Catarina 7,6 · São Paulo 7,8 · Distrito Federal 9,6 (todos acima de 5,2: SC ≈ 1,5× o mundo) | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) · [Congresso em Foco](https://www.congressoemfoco.com.br/noticia/120720/mortes-violentas-chegam-ao-menor-patamar-em-14-anos-veja-mapa) | OK |
+| 10 | Quem morre (2025) | 90,8% homens · 79,7% negros · 41,6% jovens de 18 a 29 anos | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) | OK (na fala: homens e negros; os 41,6% de jovens não entram) |
+| 11 | 14 anos | 737.883 pessoas assassinadas no país de 2012 a 2025 | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) | OK — fora da fala |
+| 12 | O asterisco da queda | Atlas da Violência 2026: mortes violentas de causa indeterminada que podem esconder homicídios saltaram de 3.755 para 7.083 em 2024 (+88,6%); com elas, o total estimado de homicídios iria de 42.590 para 49.673 (+16,6%) | [Atlas da Violência 2026 (Ipea/FBSP) via O Hoje, 26/05/2026](https://ohoje.com/2026/05/26/atlas-da-violencia-aponta-menor-taxa-de-homicidios-do-brasil-em-11-anos-mas-alerta-para-avanco-dos-casos-ocultos/) · [FBSP, página do Atlas 2026](https://publicacoes.forumseguranca.org.br/items/e9c64cd8-f18c-4448-94e7-dc0190efa6ae) | OK |
+| 13 | Pico | Brasil passou de 63 mil homicídios em 2017 (pico) para menos de 46 mil em 2021 | [UNODC, Global Study on Homicide 2023](https://www.unodc.org/documents/data-and-analysis/gsh/2023/GSH23_ExSum.pdf) | OK — fora da fala |
+| 14 | Morte por intervenção policial | 6.602 vítimas em 2025 (18 por dia), +5,4% | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) | OK — fora da fala |
+| 15 | América Latina e Caribe | 19,7 por 100 mil em 2023, a região com a maior taxa do mundo; Leste e Sudeste da Ásia: 0,8 | [ONU, Relatório dos ODS 2025 — Objetivo 16](https://unstats.un.org/sdgs/report/2025/Goal-16/) | OK — fora da fala |
+| 16 | Outros países (UNODC, 2023) | EUA 5,8 · Argentina 4,5 · Chile 6,3 · México 24,9 · Colômbia 24,9 · Japão 0,2 | [Our World in Data / UNODC](https://ourworldindata.org/grapher/homicide-rate-unodc) | OK — fora da fala |
+| 17 | Cidade com maior taxa | Maranguape (CE): 100,3 por 100 mil em 2025 (cidades com mais de 100 mil habitantes) | [FBSP, Anuário 2026](https://forumseguranca.org.br/wp-content/uploads/2026/07/anuario-2026-infografico.pdf) | OK — fora da fala |
+| 18 | Brasil em 2017 (pior ano) | 31,2 homicídios por 100 mil (UNODC); série 2012–2025 da ONU: 28,6 (2012) → 31,2 (2017) → 19,3 (2023) → "trinta e um" | [Our World in Data / UNODC](https://ourworldindata.org/grapher/homicide-rate-unodc) · [UNODC, Global Study on Homicide 2023 (pico de mais de 63 mil em 2017)](https://www.unodc.org/documents/data-and-analysis/gsh/2023/GSH23_ExSum.pdf) | OK |
+
+Observações:
+- MVI (Brasil) inclui morte por intervenção policial; o homicídio da ONU também inclui as mortes por agente do Estado fora de conflito. Na fala: "assassinadas" / "mortas de forma violenta". Na tela, cada número com a fonte dele.
+- Tema de segurança pública é político: só números, nada de causa atribuída a governo ou partido.
+
+## Fotos (candidatas)
+
+Nenhuma pessoa é citada e o tema não tem objeto real específico ("como é isso?"). Foto de cena de crime, de vítima ou de ato com rostos de vítimas fica fora (`docs/fotos.md`: violência e criança identificável). Proposta: **vídeo todo em 3D**, sem fotos.
+
+Descartadas: atos da ONG Rio de Paz em Copacabana (Tomaz Silva/Agência Brasil) — mostram fotos de crianças vítimas; capa do Anuário — não acrescenta.

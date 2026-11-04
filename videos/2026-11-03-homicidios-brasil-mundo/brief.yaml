@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-03-homicidios-brasil-mundo
+tema: "Violência e taxa de homicídio no Brasil em comparação com a média mundial (TikTok)"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 3   # número chocante
+  texto: "No Brasil, uma pessoa é assassinada a cada treze minutos."
+
+pergunta_final:
+  origem: 1
+  texto: "O que derruba mais os assassinatos: mais polícia na rua ou mais escola e emprego pros jovens?"
+
+analogia: "Estádio de 100 mil pessoas: a taxa por 100 mil habitantes é quantas pessoas de um estádio lotado, vivendo juntas por um ano, seriam assassinadas. Mundo: 5 cadeiras acesas; Brasil: 19; 2017: 31."
+
+nota_de_fato: "Brasil = mortes violentas intencionais do FBSP (2025, 19,1); mundo = homicídio intencional da ONU/UNODC (2023, 5,2). Na mesma base da ONU (2023: 19,3 × 5,2) a razão também é 3,7. 'Menor desde 2012' porque a série do FBSP começa em 2012 (nada de 'da história'). A queda tem o asterisco do Atlas da Violência (mortes de causa indeterminada +88,6%)."
+
+pedidos_visuais:
+  - "Samuel cortou o trecho do Amapá e enxugou o perfil das vítimas (sem a fatia de jovens)"
+
+duracao_alvo_s: 88
+aprovado_em: 2026-11-03
