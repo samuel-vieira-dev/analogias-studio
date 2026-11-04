@@ -1,0 +1,19 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-stf-poderes-abuso
+estilo: explicando-direito
+tema: "Responsabilidades e poderes do STF e as acusações de abuso de autoridade"
+referencias_visuais: []
+
+hook:
+  origem: 3   # afirmação que o vídeo prova (CF art. 102, I, b)
+  texto: "Ministro do STF que comete crime é julgado pelo próprio STF."
+
+pergunta_final:
+  origem: 3   # vai só na legenda do post (estilo Explicando Direito)
+  texto: "Ministro do STF deve ficar até os 75 anos, ou ter mandato fixo?"
+
+pedidos:
+  - "Pontuar as questões de suposto abuso de autoridade do STF (atribuídas, com a resposta dos citados)"
+
+duracao_alvo_s: 74
+aprovado_em: 2026-11-04

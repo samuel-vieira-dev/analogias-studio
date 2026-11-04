@@ -5,6 +5,7 @@
 function buildDireito(root, SPEC) {
   const L = SPEC.layout, Z = L.zones, SAFE = L.safe, DUR = SPEC.dur, M = SPEC.media;
   const tl = gsap.timeline({ paused: true });
+  const BLOCK_EXIT_SCALE = 1.03;   // o bloco de texto cresce isso ao sair; a linha grande é ajustada para caber já crescida
   const COR = { vermelho: "var(--vermelho)", petroleo: "var(--petroleo)", verde: "var(--verde)", cinza: "#8a9299", preto: "var(--tinta)", amarelo: "var(--amarelo)", azul: "var(--azul)" };
   const cor = (c, d) => COR[c] || c || d;
   const h = (tag, cls, html) => { const e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; };
@@ -49,10 +50,10 @@ function buildDireito(root, SPEC) {
       el.appendChild(le); ln.el = le;
     }
     root.appendChild(el); b.el = el;
-    // cada linha cabe na largura da zona; o bloco inteiro cabe na altura (as fontes já carregaram)
+    // cada linha cabe na largura da zona, mesmo crescida na saída (BLOCK_EXIT_SCALE); o bloco inteiro cabe na altura (as fontes já carregaram)
     const width = (le) => { const rg = document.createRange(); rg.selectNodeContents(le); return rg.getBoundingClientRect().width; };
     for (const ln of b.lines) { let s = parseFloat(getComputedStyle(ln.el).fontSize); const min = ln.big ? 56 : 30;
-      while (width(ln.el) > HZ.w - 8 && s > min) { s -= 2; ln.el.style.fontSize = s + "px"; } }
+      while (width(ln.el) > HZ.w / BLOCK_EXIT_SCALE - 8 && s > min) { s -= 2; ln.el.style.fontSize = s + "px"; } }
     for (let k = 0; k < 12 && el.offsetHeight > HZ.h; k++) for (const ln of b.lines) ln.el.style.fontSize = parseFloat(getComputedStyle(ln.el).fontSize) * 0.94 + "px";
   }
 
@@ -452,7 +453,7 @@ function buildDireito(root, SPEC) {
       const ul = w.el.querySelector(".ul, .st"); if (ul) tl.fromTo(ul, { scaleX: 0 }, { scaleX: 1, duration: 0.24, ease: "power2.out" }, w.t0 + d);
       const ring = w.el.querySelector("svg.ring path"); if (ring) tl.fromTo(ring, { attr: { "stroke-dashoffset": 1 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.36, ease: "power1.inOut" }, w.t0 + d);
     }
-    if (b.end < DUR) tl.to(b.el, { opacity: 0, scale: 1.03, filter: "blur(6px)", duration: 0.14, ease: "power1.in" }, b.end - 0.14);
+    if (b.end < DUR) tl.to(b.el, { opacity: 0, scale: BLOCK_EXIT_SCALE, filter: "blur(6px)", duration: 0.14, ease: "power1.in" }, b.end - 0.14);
     if (bi > 0) tl.to(sticker, { rotation: bi % 2 ? 5 : -7, duration: 0.3, ease: "back.out(2)" }, b.start);
   });
 

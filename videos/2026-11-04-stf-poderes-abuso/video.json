@@ -1,0 +1,692 @@
+{
+  "slug": "2026-11-04-stf-poderes-abuso",
+  "estilo": "explicando-direito",
+  "duration": 80.6,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json",
+    "music": "assets/trilhas/explicando-direito.mp3",
+    "music_db": -15,
+    "music_loop": true,
+    "music_fade": 0.4
+  },
+  "icone": "predio_stf",
+  "media": {
+    "stf-plenario": {
+      "file": "midia/stf-plenario.jpg",
+      "credit": "Yuri Ikeda",
+      "url": "https://commons.wikimedia.org/wiki/File:Plen%C3%A1rio_STF.jpg",
+      "focus": [
+        0.5,
+        0.5
+      ]
+    },
+    "congresso": {
+      "file": "midia/congresso.jpg",
+      "credit": "Agência Senado",
+      "url": "https://commons.wikimedia.org/wiki/File:2025-03-13_Sess%C3%A3o_Conjunta_do_Congresso_Nacional_(54384618191).jpg",
+      "focus": [
+        0.5,
+        0.5
+      ]
+    },
+    "stf-fachada": {
+      "file": "midia/stf-fachada.jpg",
+      "credit": "Agência Senado",
+      "url": "https://commons.wikimedia.org/wiki/File:Fachada_do_Supremo_Tribunal_Federal_(STF)_(54333425092).jpg",
+      "focus": [
+        0.55,
+        0.5
+      ]
+    },
+    "moraes": {
+      "file": "midia/moraes.jpg",
+      "credit": "Isac Nóbrega/PR",
+      "url": "https://commons.wikimedia.org/wiki/File:Ministro_Alexandre_de_Moraes_como_presidente_do_TSE.jpg",
+      "focus": [
+        0.5,
+        0.3
+      ]
+    },
+    "vorcaro": {
+      "file": "midia/vorcaro.jpg",
+      "credit": "Márcio G. Vasconcelos",
+      "url": "https://commons.wikimedia.org/wiki/File:Daniel_Vorcaro_-_2024.jpg",
+      "focus": [
+        0.52,
+        0.33
+      ]
+    },
+    "fachin": {
+      "file": "midia/fachin.jpg",
+      "credit": "Antonio Cruz/ABr",
+      "url": "https://commons.wikimedia.org/wiki/File:Ministro_Edson_Fachin_(3x4).jpg",
+      "focus": [
+        0.48,
+        0.33
+      ]
+    }
+  },
+  "texto": [
+    "ministro do | # [stf] que comete crime",
+    "é julgado | # pelo [próprio|preto] stf.",
+    "o supremo tem | # [11] ministros,",
+    "indicados pelo | # [presidente] | aprovados pelo senado,",
+    "e ficam até | # os [75] anos.",
+    "na prática, o stf | # pode [derrubar] leis | do congresso,",
+    "julgar presidente, | # deputados e [senadores]",
+    "e dar a | # [última palavra] | sobre a constituição.",
+    "em 2025, | # [80%] das decisões",
+    "foram de | # um ministro [só|circulo].",
+    "é aí que entram as | # acusações de [abuso|vermelho].",
+    "em 2019, o stf | # abriu [sozinho]",
+    "o inquérito | # das [fake news]",
+    "e escolheu | # [alexandre de moraes] | como relator, sem sorteio.",
+    "o discurso oficial | # é [proteger] o tribunal | de ataques.",
+    "porém, | # [críticos] dizem | que o stf virou",
+    "vítima, | # [investigador|preto] e juiz.",
+    "o plenário validou | # o inquérito por [10 a 1].",
+    "moraes também tirou | # o [x] do ar",
+    "por mais de um mês, | # por [descumprimento] | de ordens.",
+    "em setembro, a pf | # mostrou [mensagens]",
+    "de daniel vorcaro, | # do [banco master]",
+    "para um contato chamado | # [alexandre de moraes].",
+    "# moraes [nega|verde] | qualquer irregularidade.",
+    "dias depois, | # [edson fachin] | presidente do stf,",
+    "tirou moraes | # do [inquérito|riscado].",
+    "então, | # quem [pune] | um ministro?",
+    "crime comum, como | # [abuso de autoridade],",
+    "é julgado | # pelo próprio [stf].",
+    "já crime de | # [responsabilidade] | como julgar sendo suspeito,",
+    "vai pro | # [senado], que só tira",
+    "o ministro com | # [dois terços] | dos votos.",
+    "hoje, são 109 pedidos | # de [impeachment]",
+    "contra ministros. | # metade contra [moraes].",
+    "nenhum ministro do stf | # [jamais|preto] perdeu o cargo | por impeachment."
+  ],
+  "visuais": [
+    {
+      "tipo": "foto-cheia",
+      "t": 0,
+      "media": "stf-plenario",
+      "pb": true
+    },
+    {
+      "tipo": "documento",
+      "em": "julgado",
+      "transicao": "impacto",
+      "etiqueta": "Constituição · art. 102, I, b",
+      "titulo": "O STF julga, em crime comum:",
+      "linhas": [
+        {
+          "texto": "Presidente e vice",
+          "tag": "Planalto"
+        },
+        {
+          "texto": "Deputados e senadores",
+          "tag": "Congresso"
+        },
+        {
+          "texto": "Seus próprios ministros",
+          "tag": "STF",
+          "destaque": "próprio"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "o supremo tem",
+      "icone": "predio_stf",
+      "grande": "11 MINISTROS",
+      "pequeno": "Supremo Tribunal Federal"
+    },
+    {
+      "tipo": "fluxo",
+      "em": "indicados",
+      "nos": [
+        {
+          "texto": "PRESIDENTE",
+          "sub": "indica"
+        },
+        {
+          "texto": "SENADO",
+          "sub": "aprova"
+        }
+      ],
+      "setas": [
+        {
+          "de": 0,
+          "para": 1,
+          "texto": "maioria absoluta",
+          "em": "presidente"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "e ficam até",
+      "icone": "ampulheta",
+      "grande": "ATÉ 75 ANOS",
+      "pequeno": "aposentadoria obrigatória",
+      "nota": {
+        "rotulo": "CF",
+        "texto": "Constituição, art. 101 e art. 40",
+        "em": "anos"
+      }
+    },
+    {
+      "tipo": "foto-cheia",
+      "em": "na prática",
+      "media": "congresso",
+      "carimbo": {
+        "texto": "INCONSTITUCIONAL",
+        "em": "derrubar",
+        "pos": [
+          50,
+          22
+        ]
+      },
+      "pb": true
+    },
+    {
+      "tipo": "pessoas",
+      "em": "julgar presidente",
+      "n": 3,
+      "destaque": {
+        "em": "deputados",
+        "cor": "vermelho",
+        "n": 3
+      },
+      "tag": {
+        "texto": "PRESIDENTE · DEPUTADOS · SENADORES",
+        "em": "senadores"
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "e dar a",
+      "nome": "balanca",
+      "rotulo": "ÚLTIMA PALAVRA",
+      "carimbo": {
+        "texto": "CONSTITUIÇÃO",
+        "em": "constituição",
+        "pos": [
+          50,
+          62
+        ]
+      }
+    },
+    {
+      "tipo": "rosca",
+      "em": "dois mil e vinte e cinco",
+      "valor": 80,
+      "rotulo": "das decisões de 2025",
+      "cor": "vermelho",
+      "nota": {
+        "rotulo": "BALANÇO",
+        "texto": "De um ministro sozinho",
+        "sub": "116.170 decisões no ano",
+        "em": "ministro"
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "é aí que entram",
+      "nome": "alerta",
+      "rotulo": "ABUSO DE AUTORIDADE?",
+      "corRotulo": "vermelho"
+    },
+    {
+      "tipo": "documento",
+      "em": "dois mil e dezenove",
+      "transicao": "chicote",
+      "etiqueta": "STF · Inquérito 4781 · 14/03/2019",
+      "titulo": "Inquérito das fake news",
+      "clipe": true,
+      "linhas": [
+        {
+          "texto": "Aberto pelo próprio STF",
+          "tag": "de ofício",
+          "destaque": "sozinho"
+        },
+        {
+          "texto": "Pedido da polícia ou do MP",
+          "tag": "nenhum",
+          "em": "sozinho"
+        }
+      ],
+      "nota": {
+        "rotulo": "QUEM ABRIU",
+        "texto": "Dias Toffoli, então presidente do STF",
+        "em": "fake"
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "e escolheu",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "moraes",
+          "nome": "Alexandre de Moraes"
+        }
+      ],
+      "carimbo": {
+        "texto": "SEM SORTEIO",
+        "em": "sorteio",
+        "pos": [
+          50,
+          10
+        ]
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "o discurso oficial",
+      "formato": "paisagem",
+      "itens": [
+        {
+          "media": "stf-fachada",
+          "nome": "STF · Brasília"
+        }
+      ],
+      "nota": {
+        "rotulo": "DEFESA",
+        "texto": "Investigar ofensas e ameaças a ministros",
+        "em": "proteger"
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "porém",
+      "transicao": "impacto",
+      "nome": "lupa",
+      "rotulo": "O QUE DIZEM OS CRÍTICOS"
+    },
+    {
+      "tipo": "palavras",
+      "em": "vítima",
+      "itens": [
+        {
+          "texto": "VÍTIMA",
+          "em": "vítima"
+        },
+        {
+          "texto": "INVESTIGADOR",
+          "em": "investigador"
+        },
+        {
+          "texto": "JUIZ",
+          "cor": "vermelho",
+          "em": "juiz"
+        }
+      ]
+    },
+    {
+      "tipo": "balanca",
+      "em": "o plenário",
+      "esquerda": "10 A FAVOR",
+      "direita": "1 CONTRA",
+      "corEsquerda": "petroleo",
+      "pesa": {
+        "lado": "esquerda",
+        "em": "validou"
+      },
+      "nota": {
+        "rotulo": "ADPF 572",
+        "texto": "STF valida o inquérito",
+        "sub": "junho de 2020",
+        "em": "inquérito"
+      }
+    },
+    {
+      "tipo": "celular",
+      "em": "moraes também",
+      "titulo": "X",
+      "sub": "suspenso no Brasil · 30/08/2024",
+      "mensagens": [
+        {
+          "lado": "e"
+        },
+        {
+          "lado": "d"
+        },
+        {
+          "lado": "e"
+        },
+        {
+          "lado": "d"
+        },
+        {
+          "lado": "e"
+        }
+      ],
+      "carimbo": {
+        "texto": "SUSPENSO",
+        "em": "tirou",
+        "pos": [
+          50,
+          55
+        ]
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "por mais de",
+      "icone": "calendario",
+      "grande": "AGO → OUT",
+      "pequeno": "2024 · X fora do ar",
+      "nota": {
+        "rotulo": "MOTIVO",
+        "texto": "Sem representante legal e multas não pagas",
+        "em": "descumprimento"
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "em setembro",
+      "transicao": "chicote",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "vorcaro",
+          "nome": "Daniel Vorcaro"
+        }
+      ],
+      "nota": {
+        "rotulo": "BANCO MASTER",
+        "texto": "Dono do banco",
+        "em": "banco master"
+      }
+    },
+    {
+      "tipo": "celular",
+      "em": "para um contato",
+      "titulo": "Min Alexandre de Moraes",
+      "sub": "contato no celular de Vorcaro",
+      "mensagens": [
+        {
+          "lado": "d",
+          "em": "para um"
+        },
+        {
+          "lado": "d",
+          "em": "contato"
+        },
+        {
+          "lado": "e",
+          "em": "chamado"
+        },
+        {
+          "lado": "d",
+          "em": "alexandre"
+        },
+        {
+          "lado": "d",
+          "em": "moraes"
+        }
+      ],
+      "nota": {
+        "rotulo": "PF · 01/09/2026",
+        "texto": "Sigilo retirado pelo ministro André Mendonça",
+        "em": "moraes"
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "moraes nega",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "moraes",
+          "nome": "Alexandre de Moraes"
+        }
+      ],
+      "nota": {
+        "rotulo": "DEFESA",
+        "texto": "Nega contato e irregularidades",
+        "sub": "diz que o texto era do bloco de notas de Vorcaro",
+        "em": "irregularidade"
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "dias depois",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "fachin",
+          "nome": "Edson Fachin"
+        }
+      ],
+      "nota": {
+        "rotulo": "PRESIDENTE",
+        "texto": "Presidente do STF desde setembro de 2025",
+        "em": "presidente"
+      }
+    },
+    {
+      "tipo": "documento",
+      "em": "tirou moraes",
+      "etiqueta": "STF · Portaria · 09/09/2026",
+      "titulo": "Inquérito 4781",
+      "texto": "Revoga a designação de Alexandre de Moraes como relator",
+      "clipe": true,
+      "carimbo": {
+        "texto": "REVOGADA",
+        "em": "moraes",
+        "pos": [
+          50,
+          88
+        ]
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "então",
+      "nome": "algemas",
+      "rotulo": "QUEM PUNE?"
+    },
+    {
+      "tipo": "documento",
+      "em": "crime comum",
+      "etiqueta": "Lei 13.869/2019 · art. 2º, IV",
+      "titulo": "Abuso de autoridade",
+      "linhas": [
+        {
+          "texto": "Vale para membros do Judiciário",
+          "tag": "juízes",
+          "destaque": "autoridade"
+        }
+      ],
+      "clipe": true
+    },
+    {
+      "tipo": "bifurcacao",
+      "em": "é julgado",
+      "esquerda": {
+        "texto": "STF",
+        "sub": "crime comum"
+      },
+      "direita": {
+        "texto": "SENADO",
+        "sub": "crime de responsabilidade"
+      },
+      "destaques": [
+        {
+          "lado": "esquerda",
+          "em": "próprio"
+        },
+        {
+          "lado": "direita",
+          "em": "responsabilidade"
+        }
+      ]
+    },
+    {
+      "tipo": "documento",
+      "em": "como julgar",
+      "etiqueta": "Lei 1.079/1950 · art. 39",
+      "titulo": "Crimes de responsabilidade",
+      "clipe": true,
+      "linhas": [
+        {
+          "texto": "Julgar sendo suspeito",
+          "destaque": "suspeito"
+        },
+        {
+          "texto": "Atividade político-partidária"
+        },
+        {
+          "texto": "Agir contra a honra e o decoro"
+        }
+      ]
+    },
+    {
+      "tipo": "hemiciclo",
+      "em": "senado que",
+      "total": 81,
+      "rotulo": "Senado Federal",
+      "grupos": [
+        {
+          "nome": "2/3 para condenar",
+          "n": 54,
+          "cor": "vermelho",
+          "em": "senado que"
+        }
+      ],
+      "centro": {
+        "grande": "54 DE 81",
+        "pequeno": "votos para tirar o ministro",
+        "em": "tira"
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "hoje",
+      "icone": "documento",
+      "grande": "109",
+      "pequeno": "pedidos no Senado",
+      "nota": {
+        "rotulo": "SENADO",
+        "texto": "Segundo Davi Alcolumbre, presidente do Senado",
+        "sub": "setembro de 2026",
+        "em": "impeachment"
+      }
+    },
+    {
+      "tipo": "barras",
+      "em": "metade",
+      "barras": [
+        {
+          "grupo": "MORAES",
+          "valor": 55,
+          "rotulo": "55",
+          "cor": "vermelho"
+        },
+        {
+          "grupo": "GILMAR",
+          "valor": 15,
+          "rotulo": "15",
+          "cor": "cinza"
+        },
+        {
+          "grupo": "TOFFOLI",
+          "valor": 12,
+          "rotulo": "12",
+          "cor": "cinza"
+        },
+        {
+          "grupo": "OUTROS",
+          "valor": 27,
+          "rotulo": "27",
+          "cor": "cinza"
+        }
+      ],
+      "nota": {
+        "rotulo": "POR MINISTRO",
+        "texto": "Pedidos de impeachment no Senado",
+        "sub": "levantamento de 02/09/2026"
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "nenhum",
+      "icone": "martelo",
+      "grande": "ZERO",
+      "pequeno": "afastados por impeachment",
+      "carimbo": {
+        "texto": "NA HISTÓRIA",
+        "em": "jamais",
+        "pos": [
+          50,
+          165
+        ]
+      }
+    }
+  ],
+  "sfx": [
+    [
+      2.39,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      12.65,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      18.37,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      25.35,
+      "whoosh-short.mp3",
+      -10
+    ],
+    [
+      32.11,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      35.25,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      43.05,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      46.49,
+      "whoosh-short.mp3",
+      -10
+    ],
+    [
+      58.57,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      78.43,
+      "impact-bass-1.mp3",
+      -6
+    ]
+  ],
+  "post": {
+    "title": "O STF JULGA\nO [PRÓPRIO] STF",
+    "descricao": "Os poderes do STF na Constituição: 11 ministros que derrubam leis, julgam presidente, deputados, senadores e os próprios ministros. E as acusações de abuso de autoridade: o inquérito das fake news, a suspensão do X, as mensagens de Daniel Vorcaro citando Alexandre de Moraes (ele nega) e os 109 pedidos de impeachment no Senado.",
+    "hashtags": [
+      "#stf",
+      "#alexandredemoraes",
+      "#abusodeautoridade",
+      "#impeachment",
+      "#supremotribunalfederal"
+    ],
+    "t": 3.6
+  }
+}
