@@ -1,0 +1,687 @@
+{
+ "slug": "2026-11-03-impeachments-brasil",
+ "estilo": "explicando-direito",
+ "duration": 77.4,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json",
+  "music": "assets/trilhas/explicando-direito.mp3",
+  "music_db": -15,
+  "music_loop": true,
+  "music_fade": 0.4
+ },
+ "icone": "martelo",
+ "media": {
+  "plenario": {
+   "file": "midia/plenario.jpg",
+   "credit": "Marcelo Camargo/Agência Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Come%C3%A7a_o_julgamento_de_Dilma_Rousseff_no_Senado_1040095-df_25.08.2016_mcag-2928.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  },
+  "collor": {
+   "file": "midia/collor.jpg",
+   "credit": "Ubirajara Dettimar/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_presidente_Fernando_Collor_de_Melo._(38405801411).jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  "dilma": {
+   "file": "midia/dilma.jpg",
+   "credit": "Roberto Stuckert Filho/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Dilma_Rousseff_-_foto_oficial_2011-01-09.jpg",
+   "focus": [
+    0.48,
+    0.25
+   ]
+  },
+  "senado-1992": {
+   "file": "midia/senado-1992.jpg",
+   "credit": "José Cruz/Agência Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Sidney_Sanches_anuncia_o_afastamento_dos_advogados_do_presidente_Collor_do_processo_de_impeachment.jpg",
+   "focus": [
+    0.5,
+    0.45
+   ]
+  }
+ },
+ "texto": [
+  "o que pode levar um presidente | # ao [impeachment]?",
+  "# [collor|preto] e [dilma|preto] | mostram.",
+  "impeachment não julga | # [crime comum|riscado].",
+  "julga crime de | # [responsabilidade]:",
+  "ato do presidente | # contra a [constituição|preto].",
+  "a câmara autoriza | # com [2/3],",
+  "e o | # [senado] julga.",
+  "condenado, perde o cargo | # e fica [inabilitado|vermelho]:",
+  "# [8 anos] | sem função pública.",
+  "em 92, | # o [irmão] de collor",
+  "acusou o tesoureiro | da campanha, | # [pc farias|preto],",
+  "de um | # esquema de [corrupção|vermelho].",
+  "a cpi achou | # contas [fantasmas|preto]",
+  "pagando despesas | # do [presidente],",
+  "até um | # [fiat elba|vermelho].",
+  "# [441] deputados | votaram pelo processo.",
+  "no dia do julgamento, | # collor [renunciou|vermelho].",
+  "porém, | # o senado [seguiu|preto],",
+  "e 76 votos | # o deixaram [8 anos] | inabilitado.",
+  "já no processo criminal, | # o supremo o [absolveu|verde]",
+  "por | # falta de [provas].",
+  "em 2016, | # foi a vez de [dilma|preto].",
+  "o pedido | # citava até a [petrobras].",
+  "porém, | # só a parte [fiscal|vermelho] | foi aceita:",
+  "# [decretos] | que abriram gastos | sem aval do congresso,",
+  "e as | # [pedaladas|preto].",
+  "o governo atrasou | # os repasses do [plano safra],",
+  "e o banco do brasil | # [cobriu] a conta.",
+  "pra acusação, era um | # [empréstimo] do banco | ao governo,",
+  "proibido pela lei de | # [responsabilidade|preto] | fiscal.",
+  "pra defesa, | # só um [atraso|verde].",
+  "o senado tirou o cargo | # por [61 a 20|preto].",
+  "mas a inabilitação | # foi votada [à parte|preto]",
+  "e teve | # [42 votos|vermelho]. | precisava de 54.",
+  "por isso, em 2018, | # dilma [pôde disputar|verde]",
+  "# uma vaga no [senado]."
+ ],
+ "visuais": [
+  {
+   "tipo": "foto-cheia",
+   "t": 0,
+   "media": "plenario",
+   "pb": true,
+   "cartao": {
+    "icone": "martelo",
+    "grande": "IMPEACHMENT",
+    "pequeno": "o que pode levar a um?",
+    "em": "impeachment"
+   }
+  },
+  {
+   "tipo": "fotos",
+   "em": "collor e dilma",
+   "transicao": "impacto",
+   "itens": [
+    {
+     "media": "collor",
+     "nome": "Fernando Collor · 1992"
+    },
+    {
+     "media": "dilma",
+     "nome": "Dilma Rousseff · 2016"
+    }
+   ]
+  },
+  {
+   "tipo": "palavras",
+   "em": "impeachment não julga",
+   "itens": [
+    {
+     "texto": "CRIME COMUM",
+     "cor": "preto",
+     "riscar": "comum"
+    },
+    {
+     "texto": "RESPONSABILIDADE",
+     "cor": "vermelho",
+     "em": "responsabilidade"
+    }
+   ]
+  },
+  {
+   "tipo": "documento",
+   "em": "ato do presidente",
+   "etiqueta": "Constituição Federal",
+   "titulo": "Art. 85",
+   "texto": "Crime de responsabilidade: ato do presidente que atenta contra a Constituição",
+   "linhas": [
+    {
+     "texto": "Definido na Lei 1.079/1950",
+     "em": "constituição"
+    }
+   ]
+  },
+  {
+   "tipo": "hemiciclo",
+   "em": "a câmara autoriza",
+   "total": 513,
+   "rotulo": "Câmara · 513 deputados",
+   "grupos": [
+    {
+     "nome": "2/3",
+     "n": 342,
+     "cor": "petroleo",
+     "em": "dois terços"
+    }
+   ],
+   "centro": {
+    "grande": "342",
+    "pequeno": "votos pra autorizar",
+    "em": "terços"
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "e o senado julga",
+   "icone": "predio",
+   "grande": "SENADO",
+   "pequeno": "julga · 54 de 81 votos pra condenar"
+  },
+  {
+   "tipo": "documento",
+   "em": "condenado",
+   "etiqueta": "Constituição Federal",
+   "titulo": "Art. 52 · § único",
+   "linhas": [
+    {
+     "texto": "Perda do cargo",
+     "em": "perde",
+     "destaque": "cargo"
+    },
+    {
+     "texto": "Inabilitação para função pública",
+     "tag": "8 anos",
+     "em": "inabilitado"
+    }
+   ]
+  },
+  {
+   "tipo": "cartao",
+   "em": "oito anos sem",
+   "icone": "relogio",
+   "grande": "8 ANOS",
+   "pequeno": "sem função pública"
+  },
+  {
+   "tipo": "cartao",
+   "em": "em 92",
+   "transicao": "chicote",
+   "icone": "calendario",
+   "grande": "1992",
+   "pequeno": "governo Collor"
+  },
+  {
+   "tipo": "fluxo",
+   "em": "o irmão",
+   "nos": [
+    {
+     "texto": "PEDRO COLLOR",
+     "sub": "irmão do presidente",
+     "cor": "preto"
+    },
+    {
+     "texto": "PC FARIAS",
+     "sub": "tesoureiro da campanha",
+     "cor": "vermelho"
+    }
+   ],
+   "setas": [
+    {
+     "de": 0,
+     "para": 1,
+     "texto": "acusou",
+     "em": "acusou"
+    }
+   ]
+  },
+  {
+   "tipo": "cartao",
+   "em": "de um esquema",
+   "icone": "alerta",
+   "grande": "ESQUEMA PC",
+   "pequeno": "segundo Pedro Collor",
+   "carimbo": {
+    "texto": "Corrupção",
+    "em": "corrupção",
+    "pos": [
+     60,
+     100
+    ]
+   }
+  },
+  {
+   "tipo": "documento",
+   "em": "a cpi achou",
+   "etiqueta": "CPI do PC · Congresso, 1992",
+   "titulo": "Relatório final",
+   "linhas": [
+    {
+     "texto": "Contas fantasmas do esquema",
+     "em": "fantasmas",
+     "destaque": "fantasmas"
+    },
+    {
+     "texto": "Despesas da família Collor",
+     "em": "despesas",
+     "destaque": "presidente"
+    }
+   ]
+  },
+  {
+   "tipo": "cartao",
+   "em": "até um",
+   "icone": "carro",
+   "grande": "FIAT ELBA",
+   "pequeno": "pago pelo esquema, segundo a CPI"
+  },
+  {
+   "tipo": "hemiciclo",
+   "em": "441 deputados",
+   "total": 503,
+   "rotulo": "Câmara · 29/09/1992",
+   "grupos": [
+    {
+     "nome": "SIM",
+     "n": 441,
+     "cor": "vermelho",
+     "em": "441"
+    },
+    {
+     "nome": "NÃO",
+     "n": 38,
+     "cor": "preto",
+     "em": "votaram"
+    }
+   ],
+   "centro": {
+    "grande": "441",
+    "pequeno": "a 38 · precisava de 336",
+    "em": "processo"
+   }
+  },
+  {
+   "tipo": "documento",
+   "em": "no dia do julgamento",
+   "cor": "vermelho",
+   "etiqueta": "Senado · 29/12/1992",
+   "titulo": "Carta de renúncia",
+   "texto": "Lida pelo advogado de Collor no início do julgamento",
+   "carimbo": {
+    "texto": "Renunciou",
+    "em": "renunciou",
+    "pos": [
+     60,
+     96
+    ]
+   }
+  },
+  {
+   "tipo": "fotos",
+   "em": "porém o senado seguiu",
+   "formato": "paisagem",
+   "itens": [
+    {
+     "media": "senado-1992",
+     "nome": "Julgamento de Collor no Senado · 1992"
+    }
+   ]
+  },
+  {
+   "tipo": "numeros",
+   "em": "e 76 votos",
+   "itens": [
+    {
+     "texto": "76",
+     "rotulo": "votos",
+     "cor": "vermelho"
+    },
+    {
+     "op": "→",
+     "em": "deixaram"
+    },
+    {
+     "texto": "8",
+     "rotulo": "anos inabilitado",
+     "cor": "preto",
+     "em": "oito anos"
+    }
+   ],
+   "carimbo": {
+    "texto": "Inabilitado",
+    "em": "inabilitado",
+    "pos": [
+     50,
+     86
+    ]
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "já no processo",
+   "icone": "predio_stf",
+   "grande": "ABSOLVIDO",
+   "pequeno": "STF · 1994 · corrupção passiva",
+   "carimbo": {
+    "texto": "Sem provas",
+    "em": "provas",
+    "pos": [
+     60,
+     104
+    ]
+   }
+  },
+  {
+   "tipo": "fotos",
+   "em": "em 2016",
+   "transicao": "chicote",
+   "formato": "retrato",
+   "itens": [
+    {
+     "media": "dilma",
+     "nome": "Dilma Rousseff"
+    }
+   ],
+   "cartao": {
+    "icone": "calendario",
+    "grande": "2016",
+    "pequeno": "o 2º impeachment",
+    "em": "vez de"
+   }
+  },
+  {
+   "tipo": "documento",
+   "em": "o pedido",
+   "etiqueta": "Pedido de impeachment · 2015",
+   "titulo": "Bicudo, Reale Jr. e Janaina",
+   "linhas": [
+    {
+     "texto": "Petrobras / Lava Jato",
+     "em": "petrobras",
+     "destaque": "petrobras"
+    },
+    {
+     "texto": "BNDES"
+    },
+    {
+     "texto": "Decretos de 2015"
+    },
+    {
+     "texto": "Pedaladas de 2015"
+    }
+   ]
+  },
+  {
+   "tipo": "palavras",
+   "em": "porém só",
+   "transicao": "impacto",
+   "itens": [
+    {
+     "texto": "PETROBRAS",
+     "cor": "preto",
+     "riscar": "fiscal"
+    },
+    {
+     "texto": "FISCAL",
+     "cor": "vermelho",
+     "em": "fiscal"
+    }
+   ],
+   "nota": {
+    "rotulo": "02/12/2015",
+    "texto": "Decisão de Eduardo Cunha",
+    "sub": "então presidente da Câmara",
+    "em": "parte"
+   },
+   "carimbo": {
+    "texto": "Aceito",
+    "em": "aceita",
+    "pos": [
+     64,
+     74
+    ]
+   }
+  },
+  {
+   "tipo": "documento",
+   "em": "decretos que",
+   "etiqueta": "Acusação 1",
+   "titulo": "Decretos de 2015",
+   "texto": "Abriram gastos extras no Orçamento",
+   "carimbo": {
+    "texto": "Sem aval",
+    "em": "sem aval",
+    "pos": [
+     62,
+     96
+    ]
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "e as pedaladas",
+   "icone": "ampulheta",
+   "grande": "PEDALADAS",
+   "pequeno": "acusação 2 · atrasos"
+  },
+  {
+   "tipo": "fluxo",
+   "em": "os repasses",
+   "nos": [
+    {
+     "texto": "GOVERNO",
+     "sub": "Tesouro Nacional",
+     "cor": "preto"
+    },
+    {
+     "texto": "BANCO DO BRASIL",
+     "sub": "banco público",
+     "cor": "azul"
+    }
+   ],
+   "setas": [
+    {
+     "de": 0,
+     "para": 1,
+     "texto": "repasse atrasado",
+     "em": "plano safra"
+    },
+    {
+     "de": 1,
+     "para": 0,
+     "texto": "cobriu o Plano Safra",
+     "em": "cobriu"
+    }
+   ]
+  },
+  {
+   "tipo": "cartao",
+   "em": "acusação era",
+   "icone": "dinheiro",
+   "grande": "EMPRÉSTIMO?",
+   "pequeno": "segundo a acusação"
+  },
+  {
+   "tipo": "documento",
+   "em": "proibido pela",
+   "etiqueta": "Lei de Responsabilidade Fiscal",
+   "titulo": "Art. 36",
+   "texto": "Proíbe operação de crédito entre um banco público e o governo que o controla"
+  },
+  {
+   "tipo": "bifurcacao",
+   "em": "defesa",
+   "esquerda": {
+    "texto": "ACUSAÇÃO",
+    "sub": "empréstimo proibido"
+   },
+   "direita": {
+    "texto": "DEFESA",
+    "sub": "só um atraso"
+   },
+   "destaques": [
+    {
+     "lado": "esquerda",
+     "em": "defesa"
+    },
+    {
+     "lado": "direita",
+     "em": "atraso"
+    }
+   ]
+  },
+  {
+   "tipo": "hemiciclo",
+   "em": "o senado tirou",
+   "total": 81,
+   "rotulo": "Senado · 31/08/2016",
+   "grupos": [
+    {
+     "nome": "SIM",
+     "n": 61,
+     "cor": "vermelho",
+     "em": "61"
+    },
+    {
+     "nome": "NÃO",
+     "n": 20,
+     "cor": "preto",
+     "em": "20"
+    }
+   ],
+   "centro": {
+    "grande": "61",
+    "pequeno": "a 20 · perda do cargo",
+    "em": "cargo"
+   }
+  },
+  {
+   "tipo": "palavras",
+   "em": "mas a inabilitação",
+   "itens": [
+    {
+     "texto": "CARGO",
+     "cor": "preto"
+    },
+    {
+     "texto": "INABILITAÇÃO",
+     "cor": "vermelho",
+     "em": "inabilitação"
+    }
+   ],
+   "carimbo": {
+    "texto": "Votada à parte",
+    "em": "à parte",
+    "pos": [
+     58,
+     84
+    ]
+   }
+  },
+  {
+   "tipo": "barras",
+   "em": "e teve",
+   "barras": [
+    {
+     "grupo": "PRECISAVA",
+     "valor": 54,
+     "rotulo": "54",
+     "cor": "cinza"
+    },
+    {
+     "grupo": "TEVE",
+     "valor": 42,
+     "rotulo": "42",
+     "cor": "vermelho",
+     "em": "42"
+    }
+   ],
+   "delta": {
+    "de": 0,
+    "para": 1,
+    "texto": "FALTARAM 12",
+    "em": "54"
+   }
+  },
+  {
+   "tipo": "cartao",
+   "em": "por isso",
+   "icone": "urna",
+   "grande": "SENADO 2018",
+   "pequeno": "Dilma, candidata por Minas Gerais",
+   "carimbo": {
+    "texto": "Elegível",
+    "em": "pôde",
+    "pos": [
+     66,
+     128
+    ]
+   }
+  }
+ ],
+ "sfx": [
+  [
+   2.49,
+   "whoosh-cinematic.mp3",
+   -8
+  ],
+  [
+   18.13,
+   "whoosh-short.mp3",
+   -10
+  ],
+  [
+   23.69,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   33.93,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   38.59,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   42.83,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   43.03,
+   "whoosh-short.mp3",
+   -10
+  ],
+  [
+   47.33,
+   "whoosh-cinematic.mp3",
+   -8
+  ],
+  [
+   49.31,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   51.37,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   69.31,
+   "impact-bass-1.mp3",
+   -6
+  ],
+  [
+   75.23,
+   "impact-bass-1.mp3",
+   -6
+  ]
+ ],
+ "post": {
+  "title": "O QUE LEVA AO\n[IMPEACHMENT?]",
+  "descricao": "Impeachment no Brasil: o que levou Collor (1992) e Dilma (2016) a sofrer impeachment. Collor foi acusado no esquema PC Farias, renunciou e mesmo assim ficou 8 anos inabilitado; Dilma perdeu o cargo por 61 a 20 por decretos e pedaladas fiscais, mas manteve os direitos políticos.",
+  "hashtags": [
+   "#impeachment",
+   "#collor",
+   "#dilmarousseff",
+   "#pedaladasfiscais",
+   "#historiadobrasil"
+  ]
+ }
+}
