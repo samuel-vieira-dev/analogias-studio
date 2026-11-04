@@ -22,6 +22,12 @@ As regras de 27 a 31/10/2026 (área segura centralizada, realismo, fotos com cr�
 
 <!-- entradas novas aqui, a mais recente primeiro -->
 
+### 2026-11-04 · 2026-11-03-impeachments-brasil
+- Gostou: — (só comentou a capa)
+- Não gostou: "essas capas não estão boas; preciso que as capas de vídeo sejam sempre centralizadas" — confirmado: título + foto/elemento como um bloco centralizado na altura (a capa tinha o título no alto e a foto descendo até o pé).
+- Mudou no kit: `config/layout.json → cover.block` (center_y 960, gap 40, tol 40, min_top 300; title/stage viram tamanhos máximos, sem y fixo) · `tools/capa_direito.cjs` — mede o título, encaixa o elemento do palco logo abaixo e centraliza o bloco (foto-cheia encolhe se não couber); reprova fora do centro · `tools/capa.cjs` — o mesmo no v1: título medido primeiro, a câmera enquadra o 3D duas vezes (mede, depois posiciona sob o título), cartão de foto no bloco; reprova fora do centro · `SKILL.md` (etapa 10), `docs/ferramentas.md` → "Capa", `docs/explicando-direito/visual.md` — a regra nova; `?` dentro dos colchetes do título 2D.
+- Neste vídeo: capa refeita com a regra nova (`finalize.py --post-only`).
+
 ### 2026-11-02 · estilos de edição (pedido do Samuel, sem vídeo)
 - Pediu: perguntar o tema e o estilo de edição ao criar cada vídeo; chamar a edição atual de "Estilo Analogias v1"; criar o "Estilo Explicando Direito" a partir de 3 vídeos do @descomplicaodireito_.
 - Mudou no kit: `SKILL.md` — etapa 0 pergunta tema e estilo, seção "Estilo Explicando Direito" · `docs/estilos.md` — os dois estilos lado a lado · `docs/explicando-direito/` — engenharia reversa, roteiro e visual · `channel.yaml → estilos` · `engine2d/` + `tools/build_direito.py`, `qa_direito.cjs`, `capa_direito.cjs` (build, QA e capa reconhecem `video.json → estilo`) · `tools/mix.py` — trilha do kit em loop · `tests/qa-pega-erros-direito/` no autoteste · `videos/exemplo-explicando-direito/` (40 s da narração das bets montados no 2D, só para testar).

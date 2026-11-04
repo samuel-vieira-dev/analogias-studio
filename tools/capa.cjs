@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /*
- * Post cover: one frame of the hook (the video's "thumbnail") with a big title in the cover title
- * band (config/layout.json → cover.title, centred like cover.stage), taken from qa/harness.html — no new render.
+ * Post cover: one frame of the hook (the video's "thumbnail") with a big title and, right under it, the hook's
+ * 3D (or the person photo card), taken from qa/harness.html — no new render. Title + element are one block,
+ * centred across and down the cover (config/layout.json → cover.block; Samuel, 30/10 and 04/11/2026).
  * The title must read in the profile grid (Samuel, 02/11/2026): each line of post.title may break again at
  * its spaces, up to cover.title.max_lines in all, and the layout with the biggest font wins (fewer lines
  * when they come within 5%). Below cover.title.min_font_px the cover fails: shorten post.title.
@@ -16,8 +17,9 @@
  *   media   id in video.json → media for the person photo card, or false for none. Default: the first
  *           photo overlay with a name (the kit's person card).
  * The video's own text is hidden. The camera keeps its angle and moves until the heroes fill the
- * cover stage under the title (config/layout.json → cover.stage; window.__qa.reframe, engine/core.js):
- * a hook shot on stage-tall no longer reaches into the title, a small subject gets big.
+ * cover stage (at most cover.stage.w × h) right under the title (window.__qa.reframe, engine/core.js):
+ * once to measure their height, once more at the block's place. A small subject gets big.
+ * Fails when the block's centre is more than cover.block.tol_px off the middle.
  * Checks that the title fits the centre crop the profile grid shows (cover.grid, 3:4).
  * Writes videos/<slug>/out/<slug>-capa.jpg (1080x1920) and prints a JSON summary.
  */
@@ -99,8 +101,7 @@ const COVER = layout.cover;
 
   await page.evaluate((t) => window.__seek(t), t);
   if (!(await page.evaluate(() => typeof window.__qa.reframe === "function"))) { console.error(`harness anterior à capa (sem __qa.reframe): rode python3 tools/build.py ${args[0]} e repita`); process.exit(2); }
-  const f = await page.evaluate((z) => window.__qa.reframe(z) || window.__qa.frame(), COVER.stage);
-
+  // 1) título e cartão da foto montados e medidos; a altura de cada um decide onde o bloco fica
   const res = await page.evaluate(async ({ L, options, photo, st }) => {
     for (const id of ["ov-root", "cap-root"]) document.getElementById(id).style.display = "none"; // the video's own text
     const H = L.cover.title, Z = L.cover.stage;
@@ -113,7 +114,7 @@ const COVER = layout.cover;
       const img = new Image(); img.src = photo.src; await img.decode();
       const a = img.naturalWidth / img.naturalHeight, shape = a > 1.15 ? 4 / 3 : a < 0.87 ? 3 / 4 : 1;
       const capH = (photo.name || photo.role ? 112 : 0) + 40, w = Math.round(Math.min(Z.w - 120, (Z.h - 40 - capH - 32) * shape)), h = Math.round(w / shape);
-      cardEl = el("div", { position: "absolute", left: Z.x + (Z.w - w - 32) / 2 + "px", top: Z.y + (Z.h - h - capH - 32) / 2 + "px", width: w + "px", padding: "16px 16px 0",
+      cardEl = el("div", { position: "absolute", left: Z.x + (Z.w - w - 32) / 2 + "px", top: "0px", width: w + "px", padding: "16px 16px 0",
         background: "#f4efe6", borderRadius: "20px", boxShadow: "0 30px 60px rgba(0,0,0,0.55), 0 0 0 2px rgba(0,0,0,0.15)", transform: "rotate(-2.2deg)" }, root);
       const win = el("div", { width: w + "px", height: h + "px", overflow: "hidden", borderRadius: "12px", background: "#000" }, cardEl);
       Object.assign(img.style, { display: "block", width: "100%", height: "100%", objectFit: "cover", objectPosition: `${photo.focus[0] * 100}% ${photo.focus[1] * 100}%`, transform: "scale(1.08)", transformOrigin: `${photo.focus[0] * 100}% ${photo.focus[1] * 100}%` });
@@ -126,7 +127,7 @@ const COVER = layout.cover;
       }
       el("div", { padding: "6px 4px 12px", textAlign: "right", fontWeight: 600, fontSize: "22px", color: "#6b5a4e", whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }, cardEl).textContent = "Foto: " + photo.credit;
     }
-    const band = el("div", { position: "absolute", left: H.x + "px", top: H.y + "px", width: H.w + "px", height: H.h + "px", display: "flex", alignItems: "center", justifyContent: "center" }, root);
+    const band = el("div", { position: "absolute", left: H.x + "px", top: "0px", width: H.w + "px", display: "flex", justifyContent: "center" }, root);
     const txt = el("div", { fontWeight: 900, lineHeight: 1.0, color: st.laranja, letterSpacing: "-0.03em", textAlign: "center", whiteSpace: "pre", textShadow: "0 10px 40px rgba(0,0,0,0.85), 0 3px 10px rgba(0,0,0,0.6)" }, band);
     await document.fonts.ready;
     const fits = (s) => { txt.style.fontSize = s + "px"; const r = txt.getBoundingClientRect(); return r.width <= H.w && r.height <= H.h; };
@@ -135,16 +136,47 @@ const COVER = layout.cover;
     const top = Math.max(...tried.map((c) => c.s));
     const best = tried.filter((c) => c.s >= 0.95 * top).sort((a, b) => a.n - b.n || b.s - a.s || a.long - b.long)[0]; // then the most even lines
     txt.textContent = best.text; txt.style.fontSize = best.s + "px";
-    const rect = (e) => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; };
-    return { title: rect(txt), text: best.text, font: best.s, card: cardEl && rect(cardEl) };
+    window.__capa = { band, card: cardEl };
+    return { titleH: band.getBoundingClientRect().height, cardH: cardEl ? cardEl.getBoundingClientRect().height : 0, text: best.text, font: best.s };
   }, { L: layout, options: layouts(title, COVER.title.max_lines), photo, st: { laranja: style("laranja"), fundo: style("fundo") } });
 
-  const problems = [], G = COVER.grid, tol = layout.qa.zone_tol_px;
+  // 2) título + elemento = um bloco centralizado na altura (cover.block; pedido do Samuel, 04/11/2026).
+  // Sem foto, o elemento é o 3D: a câmera enquadra os heróis no palco uma vez para medir a altura que eles
+  // ocupam e de novo já na posição do bloco, logo abaixo do título. Com foto, o elemento é o cartão (o 3D fica de fundo).
+  const B = COVER.block, Z = COVER.stage, G = COVER.grid;
+  const minTop = Math.max(B.min_top, G.y + 16);
+  const heroBox = (fr) => {
+    const rs = fr ? fr.heroes.concat(fr.labels).filter((h) => !h.rect.behind).map((h) => h.rect) : [];
+    return rs.length ? { y0: Math.min(...rs.map((r) => r.y)), y1: Math.max(...rs.map((r) => r.y + r.h)) } : null;
+  };
+  const reframe = (z) => page.evaluate((z) => window.__qa.reframe(z) || window.__qa.frame(), z);
+  let elemH = res.cardH;
+  if (!photo) {
+    const room = Math.min(Z.h, G.y + G.h - 16 - minTop - res.titleH - B.gap);
+    const hb = heroBox(await reframe({ x: Z.x, y: minTop + res.titleH + B.gap, w: Z.w, h: room }));
+    elemH = hb ? Math.min(room, hb.y1 - hb.y0) : room;
+  }
+  const top = Math.max(minTop, B.center_y - (res.titleH + B.gap + elemH) / 2), elemTop = top + res.titleH + B.gap;
+  const f = await reframe({ x: Z.x, y: elemTop, w: Z.w, h: photo ? Z.h : elemH });
+  const placed = await page.evaluate(({ top, elemTop }) => {
+    const { band, card } = window.__capa;
+    band.style.top = top + "px"; if (card) card.style.top = elemTop + "px";
+    const rect = (e) => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; };
+    return { title: rect(band.firstChild), card: card && rect(card) };
+  }, { top, elemTop });
+  res.title = placed.title; res.card = placed.card;
+  const hb = photo ? null : heroBox(f);
+  const blockTop = Math.min(res.title.y, res.card ? res.card.y : hb ? hb.y0 : res.title.y);
+  const blockBottom = Math.max(res.title.y + res.title.h, res.card ? res.card.y + res.card.h : hb ? hb.y1 : 0);
+  const blockOff = Math.round((blockTop + blockBottom) / 2 - B.center_y);
+
+  const problems = [], tol = layout.qa.zone_tol_px;
   const inGrid = (r) => r.x >= G.x && r.x + r.w <= G.x + G.w && r.y >= G.y + 8 && r.y + r.h <= G.y + G.h - 8;
   if (res.font < COVER.title.min_font_px) problems.push(`título pequeno para a grade do perfil (${res.font} px, mínimo ${COVER.title.min_font_px}): encurte post.title`);
   if (!inGrid(res.title)) problems.push(`título fora do recorte 3:4 do perfil (y ${Math.round(res.title.y)}–${Math.round(res.title.y + res.title.h)}; cabe em ${G.y}–${G.y + G.h})`);
   if (res.card && !inGrid(res.card)) problems.push("cartão da foto fora do recorte 3:4 do perfil");
-  if (f && f.heroes.concat(f.labels).some((h) => h.rect.y < COVER.stage.y - tol)) problems.push("o 3D invade a faixa do título: escolha outro post.t");
+  if (!photo && f && f.heroes.concat(f.labels).some((h) => h.rect.y < res.title.y + res.title.h - tol)) problems.push("o 3D invade o título: escolha outro post.t");
+  if (Math.abs(blockOff) > B.tol_px) problems.push(`bloco título + ${photo ? "cartão" : "3D"} fora do centro da capa na altura (${blockOff} px): encurte post.title ou escolha outro post.t`);
   for (const h of (f ? f.heroes : [])) if (area(h.rect) < 0.9 * h.rect.w * h.rect.h) problems.push(`'${h.name}' cortado na capa: escolha outro post.t`);
   // The 3D sits centred on the cover (Samuel, 30/10/2026): the heroes' box must share the stage's centre line.
   const hs = f ? f.heroes.map((h) => h.rect) : [];
@@ -157,6 +189,6 @@ const COVER = layout.cover;
   fs.mkdirSync(path.dirname(out), { recursive: true });
   await page.screenshot({ path: out, type: "jpeg", quality: 90, timeout: 90000 });
   await browser.close();
-  console.log(JSON.stringify({ capa: out.startsWith(ROOT + path.sep) ? path.relative(ROOT, out) : out, t, titulo: res.text, fonte_px: res.font, foto: photo && photo.id, heroes: f ? f.heroes.map((h) => h.name) : [] }));
+  console.log(JSON.stringify({ capa: out.startsWith(ROOT + path.sep) ? path.relative(ROOT, out) : out, t, titulo: res.text, fonte_px: res.font, bloco: { y: [Math.round(blockTop), Math.round(blockBottom)], centro_off_px: blockOff }, foto: photo && photo.id, heroes: f ? f.heroes.map((h) => h.name) : [] }));
   if (problems.length) { console.error("ATENÇÃO: " + problems.join("; ")); process.exit(1); }
 })();

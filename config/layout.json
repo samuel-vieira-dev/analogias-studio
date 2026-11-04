@@ -76,10 +76,15 @@
     }
   },
   "cover": {
-    "_doc": "Capa do post (tools/capa.cjs): título em title e o 3D do gancho reenquadrado em stage, os dois centralizados na largura (a capa não tem os botões do app à direita nem legenda; pedido do Samuel, 30/10/2026). grid = recorte central 3:4 que o perfil mostra: nada de texto fora dele. Título grande para ler na grade do perfil (pedido do Samuel, 02/11/2026): faixa de 1000 × 600 px, até 4 linhas, letra de no mínimo min_font_px (era 830 × 260 px, 2 linhas, ~70 px).",
+    "_doc": "Capa do post (tools/capa.cjs; 2D: tools/capa_direito.cjs). Título e elemento (o 3D do gancho, o cartão da foto ou o elemento do palco 2D) formam UM bloco, centralizado na largura e na altura da capa: o centro do bloco fica em block.center_y (o meio da tela e do recorte 3:4 do perfil), com block.gap px entre título e elemento; a capa reprova se o bloco sair mais de block.tol_px do centro (pedidos do Samuel: centralizado na largura, 30/10/2026; bloco centralizado na altura, 04/11/2026). title = largura e altura máximas do título (até max_lines linhas, letra de no mínimo min_font_px para ler na grade do perfil, 02/11/2026); stage = tamanho máximo do elemento; grid = recorte central 3:4 que o perfil mostra: nada fora dele.",
+    "block": {
+      "center_y": 960,
+      "gap": 40,
+      "tol_px": 40,
+      "min_top": 300
+    },
     "title": {
       "x": 40,
-      "y": 300,
       "w": 1000,
       "h": 600,
       "min_font_px": 130,
@@ -88,7 +93,6 @@
     },
     "stage": {
       "x": 125,
-      "y": 920,
       "w": 830,
       "h": 680
     },
