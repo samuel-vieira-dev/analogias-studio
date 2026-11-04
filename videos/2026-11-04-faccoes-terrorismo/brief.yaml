@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-faccoes-terrorismo
+tema: "Facções criminosas são terrorismo? (TikTok)"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 1   # notícia urgente + imagem forte
+  texto: "Os Estados Unidos puseram o PCC na mesma lista da al-Qaeda."
+
+pergunta_final:
+  origem: 3
+  texto: "Chamar facção de terrorismo sufoca o dinheiro do crime, ou abre a porta pra interferência de fora?"
+
+analogia: "Porta de duas fechaduras: pra lei brasileira (Lei 13.260/2016) chamar de terrorismo, precisa das duas chaves, o ATO (bomba, ataque, sabotagem) e o MOTIVO (preconceito de raça, cor, etnia, religião ou xenofobia). A facção tem a do ato; a chave dela pro motivo é LUCRO, que não entra."
+
+nota_de_fato: "Pros EUA: SDGT desde 28/05/2026 e FTO desde 05/06/2026 (Federal Register 2026-11323). Pra lei brasileira: não (motivo exigido pelo art. 2º da Lei 13.260). 'Pune mais' = domínio social estruturado da Lei 15.358/2026 (20–40 anos) × atos de terrorismo (12–30). Projetos do RJ (CCJ da Alerj, 21/10) e MT (22/10) não viraram lei: 'querem'. Pergunta 3 encurtada com o ok do Samuel."
+
+pedidos_visuais:
+  - "Samuel pediu do 12 em diante mais incisivo e menos cansativo: frases curtas, um número por vez"
+
+duracao_alvo_s: 84
+aprovado_em: 2026-11-04

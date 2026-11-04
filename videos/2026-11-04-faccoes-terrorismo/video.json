@@ -1,0 +1,892 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays só por zona. Analogia: porta de cofre com duas fechaduras, ATO e MOTIVO (Lei 13.260/2016, art. 2º); a facção tem a chave do ato; a chave dela pro motivo é LUCRO e não entra.",
+ "slug": "2026-11-04-faccoes-terrorismo",
+ "estilo": "analogias-v1",
+ "duration": 91.4,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "Imagina,": "Imagina:",
+   "está": "tá",
+   "ato.": "ato:",
+   "motivo.": "motivo:",
+   "outra.": "outra:",
+   "estranho.": "estranho:",
+   "Terrorismo.": "Terrorismo:",
+   "Então,": "Então:"
+  }
+ },
+ "media": {
+  "dept-estado": {
+   "file": "midia/dept-estado.jpg",
+   "credit": "Linda D. Epstein/Depto. de Estado",
+   "url": "https://commons.wikimedia.org/wiki/File:Exterior_of_the_United_States_Department_of_State_Harry_S._Truman_Building,_Washington,_D.C.,_spring_2024_-_15.jpg",
+   "focus": [
+    0.45,
+    0.47
+   ]
+  },
+  "gakiya": {
+   "file": "midia/gakiya.jpg",
+   "credit": "Edilson Rodrigues/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:CPICRIME_-_CPI_do_Crime_Organizado_-_54945999318.jpg",
+   "focus": [
+    0.5,
+    0.3
+   ]
+  },
+  "lula": {
+   "file": "midia/lula.jpg",
+   "credit": "Ricardo Stuckert/PR",
+   "url": "https://commons.wikimedia.org/wiki/File:Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva.jpg",
+   "focus": [
+    0.5,
+    0.28
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 5.95
+  },
+  {
+   "id": "junho",
+   "from": 5.95,
+   "to": 9.6
+  },
+  {
+   "id": "lei",
+   "from": 9.6,
+   "to": 12.3
+  },
+  {
+   "id": "rua",
+   "from": 12.3,
+   "to": 17.75
+  },
+  {
+   "id": "terror",
+   "from": 17.75,
+   "to": 21.75
+  },
+  {
+   "id": "porta",
+   "from": 21.75,
+   "to": 26.15
+  },
+  {
+   "id": "ato",
+   "from": 26.15,
+   "to": 29.65
+  },
+  {
+   "id": "motivo",
+   "from": 29.65,
+   "to": 36.35
+  },
+  {
+   "id": "lucro",
+   "from": 36.35,
+   "to": 41.15
+  },
+  {
+   "id": "recado",
+   "from": 41.15,
+   "to": 46.5
+  },
+  {
+   "id": "gakiya",
+   "from": 46.5,
+   "to": 51.7
+  },
+  {
+   "id": "estranho",
+   "from": 51.7,
+   "to": 56.7
+  },
+  {
+   "id": "pena",
+   "from": 56.7,
+   "to": 62.6
+  },
+  {
+   "id": "rotulo",
+   "from": 62.6,
+   "to": 65.15
+  },
+  {
+   "id": "congela",
+   "from": 65.15,
+   "to": 70.3
+  },
+  {
+   "id": "asfixia",
+   "from": 70.3,
+   "to": 73.0
+  },
+  {
+   "id": "soberania",
+   "from": 73.0,
+   "to": 75.7
+  },
+  {
+   "id": "estados",
+   "from": 75.7,
+   "to": 79.25
+  },
+  {
+   "id": "congresso",
+   "from": 79.25,
+   "to": 81.8
+  },
+  {
+   "id": "pergunta",
+   "from": 81.8,
+   "to": 91.4
+  }
+ ],
+ "cuts": [
+  5.95,
+  9.6,
+  12.3,
+  17.75,
+  21.75,
+  26.15,
+  29.65,
+  36.35,
+  41.15,
+  46.5,
+  51.7,
+  56.7,
+  62.6,
+  65.15,
+  70.3,
+  73.0,
+  75.7,
+  79.25,
+  81.8
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.15,
+   "to": 4.45,
+   "text": "PCC NA LISTA DE\nTERRORISTAS DOS EUA"
+  },
+  {
+   "id": "ov-02",
+   "kind": "source",
+   "from": 0.15,
+   "to": 5.9,
+   "text": "Fonte: Depto. de Estado dos EUA, 2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 4.5,
+   "to": 5.9,
+   "text": "E O COMANDO\nVERMELHO TAMBÉM"
+  },
+  {
+   "id": "ov-04",
+   "kind": "title",
+   "from": 6.05,
+   "to": 8.75,
+   "text": "DESDE JUNHO"
+  },
+  {
+   "id": "ov-05",
+   "kind": "source",
+   "from": 5.95,
+   "to": 9.55,
+   "text": "Foto: Linda D. Epstein/Depto. de Estado"
+  },
+  {
+   "id": "ov-06",
+   "kind": "chip",
+   "from": 8.8,
+   "to": 9.55,
+   "text": "TERRORISTAS PROS EUA",
+   "style": "red"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 9.75,
+   "to": 11.5,
+   "text": "PRA LEI\nBRASILEIRA..."
+  },
+  {
+   "id": "ov-08",
+   "kind": "source",
+   "from": 9.75,
+   "to": 12.25,
+   "text": "Fonte: Lei 13.260/2016"
+  },
+  {
+   "id": "ov-09",
+   "kind": "chip",
+   "from": 11.55,
+   "to": 12.25,
+   "text": "NÃO SÃO",
+   "style": "red"
+  },
+  {
+   "id": "ov-10",
+   "kind": "title",
+   "from": 19.0,
+   "to": 21.7,
+   "text": "TERROR ≠\nTERRORISMO"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 22.3,
+   "to": 25.3,
+   "text": "UMA PORTA,\nDUAS FECHADURAS"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 25.35,
+   "to": 26.1,
+   "text": "PRECISA DAS 2 CHAVES",
+   "style": "orange"
+  },
+  {
+   "id": "ov-13",
+   "kind": "source",
+   "from": 26.2,
+   "to": 36.3,
+   "text": "Fonte: Lei 13.260/2016, art. 2º"
+  },
+  {
+   "id": "ov-14",
+   "kind": "title",
+   "from": 26.8,
+   "to": 27.8,
+   "text": "CHAVE 1:\nO ATO"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 27.85,
+   "to": 29.6,
+   "text": "BOMBA, ATAQUE,\nSABOTAGEM"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 30.4,
+   "to": 31.6,
+   "text": "CHAVE 2:\nO MOTIVO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 31.65,
+   "to": 34.7,
+   "text": "PRECONCEITO DE RAÇA,\nCOR, ETNIA, RELIGIÃO"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 34.75,
+   "to": 36.3,
+   "text": "OU XENOFOBIA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "title",
+   "from": 36.5,
+   "to": 38.4,
+   "text": "A FACÇÃO TEM\nA CHAVE 1"
+  },
+  {
+   "id": "ov-20",
+   "kind": "title",
+   "from": 38.45,
+   "to": 40.45,
+   "text": "MAS A CHAVE 2\nDELA É OUTRA"
+  },
+  {
+   "id": "ov-21",
+   "kind": "stat",
+   "from": 40.5,
+   "to": 41.1,
+   "big": "LUCRO",
+   "label": "O MOTIVO DA FACÇÃO"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 36.4,
+   "to": 41.1,
+   "text": "Fonte: Planalto, 29/05/2026; CNN Brasil"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 41.3,
+   "to": 43.95,
+   "text": "TERRORISTA:\nMEDO É RECADO"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 44.0,
+   "to": 46.45,
+   "text": "FACÇÃO:\nMEDO É NEGÓCIO"
+  },
+  {
+   "id": "ov-25",
+   "kind": "source",
+   "from": 41.3,
+   "to": 46.45,
+   "text": "Fonte: CNN Brasil, 30/05/2026"
+  },
+  {
+   "id": "ov-26",
+   "kind": "photo",
+   "from": 46.55,
+   "to": 51.65,
+   "media": "gakiya",
+   "name": "Lincoln Gakiya",
+   "role": "Promotor de Justiça (MPSP)"
+  },
+  {
+   "id": "ov-27",
+   "kind": "source",
+   "from": 46.55,
+   "to": 51.65,
+   "text": "Foto: Edilson Rodrigues/Agência Senado"
+  },
+  {
+   "id": "ov-28",
+   "kind": "title",
+   "from": 48.75,
+   "to": 51.65,
+   "text": "INVESTIGA O PCC\nHÁ MAIS DE 20 ANOS"
+  },
+  {
+   "id": "ov-29",
+   "kind": "title",
+   "from": 51.85,
+   "to": 53.55,
+   "text": "AGORA, O\nMAIS ESTRANHO"
+  },
+  {
+   "id": "ov-30",
+   "kind": "title",
+   "from": 53.6,
+   "to": 56.65,
+   "text": "FACÇÃO JÁ PEGA\nMAIS QUE TERRORISMO"
+  },
+  {
+   "id": "ov-31",
+   "kind": "source",
+   "from": 53.65,
+   "to": 62.55,
+   "text": "Fonte: Leis 13.260/2016 e 15.358/2026"
+  },
+  {
+   "id": "ov-32",
+   "kind": "stat",
+   "from": 57.8,
+   "to": 59.1,
+   "big": "30 ANOS",
+   "label": "TERRORISMO: PENA MÁXIMA"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 59.15,
+   "to": 61.6,
+   "text": "FACÇÃO: LEI\nANTIFACÇÃO (MARÇO)"
+  },
+  {
+   "id": "ov-34",
+   "kind": "stat",
+   "from": 61.65,
+   "to": 62.55,
+   "big": "40 ANOS",
+   "label": "FACÇÃO: PENA MÁXIMA"
+  },
+  {
+   "id": "ov-35",
+   "kind": "title",
+   "from": 62.75,
+   "to": 64.45,
+   "text": "PRA QUE\nO RÓTULO?"
+  },
+  {
+   "id": "ov-36",
+   "kind": "title",
+   "from": 64.5,
+   "to": 65.1,
+   "text": "DINHEIRO"
+  },
+  {
+   "id": "ov-37",
+   "kind": "chip",
+   "from": 65.3,
+   "to": 66.55,
+   "text": "NOS EUA",
+   "style": "dark"
+  },
+  {
+   "id": "ov-38",
+   "kind": "title",
+   "from": 66.6,
+   "to": 68.4,
+   "text": "BENS\nCONGELADOS"
+  },
+  {
+   "id": "ov-39",
+   "kind": "title",
+   "from": 68.45,
+   "to": 70.25,
+   "text": "QUEM AJUDA\nVIRA CRIMINOSO"
+  },
+  {
+   "id": "ov-40",
+   "kind": "source",
+   "from": 65.3,
+   "to": 70.25,
+   "text": "Fonte: Federal Register, 05/06/2026"
+  },
+  {
+   "id": "ov-41",
+   "kind": "title",
+   "from": 70.45,
+   "to": 72.95,
+   "text": "QUEM DEFENDE:\nASFIXIA O CRIME"
+  },
+  {
+   "id": "ov-42",
+   "kind": "source",
+   "from": 70.45,
+   "to": 72.95,
+   "text": "Fonte: CNN Brasil, 30/05/2026"
+  },
+  {
+   "id": "ov-43",
+   "kind": "photo",
+   "from": 73.05,
+   "to": 75.65,
+   "media": "lula",
+   "name": "Lula",
+   "role": "Presidente da República"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 73.05,
+   "to": 75.65,
+   "text": "GOVERNO: RISCO\nÀ SOBERANIA"
+  },
+  {
+   "id": "ov-45",
+   "kind": "source",
+   "from": 73.05,
+   "to": 75.65,
+   "text": "Fonte: Planalto · Foto: Ricardo Stuckert/PR"
+  },
+  {
+   "id": "ov-46",
+   "kind": "title",
+   "from": 75.85,
+   "to": 79.2,
+   "text": "RJ E MT QUEREM\nO RÓTULO"
+  },
+  {
+   "id": "ov-47",
+   "kind": "source",
+   "from": 75.85,
+   "to": 79.2,
+   "text": "Fonte: SBT News; Isso é Notícia, out/2026"
+  },
+  {
+   "id": "ov-48",
+   "kind": "title",
+   "from": 79.4,
+   "to": 81.75,
+   "text": "CRIME? SÓ O\nCONGRESSO CRIA"
+  },
+  {
+   "id": "ov-49",
+   "kind": "source",
+   "from": 79.4,
+   "to": 81.75,
+   "text": "Fonte: Constituição, art. 22"
+  },
+  {
+   "id": "ov-50",
+   "kind": "question",
+   "from": 81.95,
+   "to": 91.4,
+   "text": "SUFOCA O DINHEIRO\nOU ABRE A PORTA?",
+   "sub": "CHAMAR FACÇÃO DE TERRORISMO..."
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 89.2,
+   "to": 91.4,
+   "html": "Comenta: <b>SUFOCA</b> ou <b>ABRE A PORTA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.12,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   2.08,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   3.84,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   3.86,
+   "click.mp3",
+   -17
+  ],
+  [
+   4.83,
+   "impact-bass-2.mp3",
+   -17
+  ],
+  [
+   5.32,
+   "click.mp3",
+   -17
+  ],
+  [
+   5.87,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   8.84,
+   "error.mp3",
+   -20
+  ],
+  [
+   9.52,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   11.58,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   12.22,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   12.42,
+   "whoosh-cinematic.mp3",
+   -23
+  ],
+  [
+   15.72,
+   "glitch-1.mp3",
+   -23
+  ],
+  [
+   16.38,
+   "impact-bass-2.mp3",
+   -17
+  ],
+  [
+   17.67,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   20.62,
+   "glitch-2.mp3",
+   -21
+  ],
+  [
+   21.34,
+   "ping.mp3",
+   -19
+  ],
+  [
+   21.67,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   23.42,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   23.67,
+   "click-soft.mp3",
+   -19
+  ],
+  [
+   25.64,
+   "chime.mp3",
+   -20
+  ],
+  [
+   26.07,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   27.05,
+   "key-press.mp3",
+   -15
+  ],
+  [
+   27.88,
+   "click.mp3",
+   -15
+  ],
+  [
+   28.25,
+   "ping.mp3",
+   -17
+  ],
+  [
+   29.57,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   30.96,
+   "notification.mp3",
+   -21
+  ],
+  [
+   36.27,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   38.4,
+   "riser.mp3",
+   -24
+  ],
+  [
+   40.54,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   40.56,
+   "error.mp3",
+   -17
+  ],
+  [
+   41.07,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   43.4,
+   "pop.mp3",
+   -17
+  ],
+  [
+   45.6,
+   "click.mp3",
+   -17
+  ],
+  [
+   45.92,
+   "chime.mp3",
+   -19
+  ],
+  [
+   46.42,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   51.62,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   52.9,
+   "glitch-1.mp3",
+   -22
+  ],
+  [
+   54.82,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   56.62,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   57.84,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   60.2,
+   "riser.mp3",
+   -24
+  ],
+  [
+   61.88,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   62.52,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   64.54,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   64.6,
+   "sparkle.mp3",
+   -19
+  ],
+  [
+   65.07,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   66.68,
+   "click.mp3",
+   -14
+  ],
+  [
+   67.44,
+   "sparkle.mp3",
+   -19
+  ],
+  [
+   69.62,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   70.22,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   71.7,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   72.92,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   75.62,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   76.14,
+   "pop.mp3",
+   -17
+  ],
+  [
+   76.4,
+   "pop.mp3",
+   -17
+  ],
+  [
+   78.6,
+   "click.mp3",
+   -17
+  ],
+  [
+   78.85,
+   "click.mp3",
+   -17
+  ],
+  [
+   79.17,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   80.92,
+   "chime.mp3",
+   -20
+  ],
+  [
+   81.72,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   83.62,
+   "ping.mp3",
+   -18
+  ],
+  [
+   84.0,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   86.5,
+   "riser.mp3",
+   -23
+  ],
+  [
+   87.58,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   89.2,
+   "pop.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "FACÇÃO É\nTERRORISMO?",
+  "descricao": "Facções criminosas são terrorismo? Desde junho de 2026, os EUA tratam PCC e Comando Vermelho como organizações terroristas. Pela Lei Antiterrorismo brasileira (13.260/2016), não: falta o motivo de preconceito ou xenofobia. E a Lei Antifacção já prevê até 40 anos, mais que os 30 do terrorismo.",
+  "hashtags": [
+   "#pcc",
+   "#comandovermelho",
+   "#terrorismo",
+   "#leiantifaccao",
+   "#segurancapublica"
+  ],
+  "t": 5.7,
+  "media": false
+ }
+}
