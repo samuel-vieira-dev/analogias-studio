@@ -1,0 +1,20 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-foro-de-sao-paulo
+estilo: explicando-direito
+tema: "Foro de São Paulo: o que é e a ligação com Fidel, Ortega e Maduro"
+referencias_visuais: []
+
+hook:
+  origem: 2   # número (2ª rodada de hooks: afirmações que deixam evidente a ligação com políticos polêmicos)
+  texto: "Em 36 anos, o Foro de São Paulo juntou Fidel, Ortega e Maduro."
+
+pergunta_final:
+  origem: 3   # vai só na legenda do post (estilo Explicando Direito)
+  texto: "O Foro ajudou a esquerda a ganhar pelo voto ou a proteger governos aliados?"
+
+pedidos:
+  - "Hooks em afirmação, não em pergunta"
+  - "Deixar evidente a relação do Foro com políticos controversos (pelos fatos, sem adjetivo)"
+
+duracao_alvo_s: 70
+aprovado_em: 2026-11-04

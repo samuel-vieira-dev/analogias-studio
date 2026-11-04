@@ -397,7 +397,15 @@ function buildDireito(root, SPEC) {
     // crédito das fotos do plano (zona source, canto superior direito)
     const creds = [...new Set(v.photos.map((p) => M[p.id].credit))];
     if (creds.length) {
-      const c = h("div", "d-credit", `<span data-qa="source">${esc((creds.length > 1 ? "Fotos: " : "Foto: ") + creds.join(" · "))}</span><i style="width:62%"></i><i style="width:38%"></i>`);
+      // muitos créditos não cabem numa linha de 24 px ao lado da figurinha: quebra em duas linhas de 20 px
+      const label = (creds.length > 1 ? "Fotos: " : "Foto: ") + creds.join(" · ");
+      let txt = esc(label), two = false;
+      if (creds.length > 1 && label.length * 24 * 0.58 > Z.source.w - 90) {
+        const cut = Math.ceil(creds.length / 2);
+        txt = `${esc("Fotos: " + creds.slice(0, cut).join(" · "))} ·<br>${esc(creds.slice(cut).join(" · "))}`;
+        two = true;
+      }
+      const c = h("div", "d-credit", `<span data-qa="source"${two ? ' style="font-size:20px;line-height:1.1"' : ""}>${txt}</span><i style="width:62%"></i><i style="width:38%"></i>`);
       Object.assign(c.style, { left: Z.source.x + "px", width: Z.source.w + "px", top: Z.source.y + "px" });
       root.appendChild(c); v.credit = c; qa.credits.push(c);
       tl.fromTo(c, { opacity: 0 }, { opacity: 1, duration: 0.15 }, Math.max(0, v.t - 0.05));
