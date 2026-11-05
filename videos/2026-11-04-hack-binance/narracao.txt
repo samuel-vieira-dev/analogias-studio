@@ -1,0 +1,17 @@
+Em vinte minutos, hackers levaram seis bilhões de dólares da Binance.
+A maior corretora de cripto do mundo. O maior roubo de cripto da história: quatro vezes o recorde anterior.
+E o mais estranho: segundo a Binance, nenhuma chave vazou.
+Tudo começou numa entrevista de emprego.
+Imagina: você é engenheiro da Binance. Um recrutador te chama pra vaga dos sonhos.
+Várias entrevistas. No fim, um teste de programação. Você abre o arquivo… e pronto.
+Dentro do teste tinha um vírus escondido. Seu computador virou a porta de entrada.
+Mas como um computador abre bilhões?
+Pensa num banco. Quase todo o dinheiro fica no cofre, trancado no subsolo. Só um pouco sobe pra gaveta do caixa, pra quem vai sacar.
+Na cripto é igual: o cofre é a carteira fria, fora da internet. A gaveta é a carteira quente, ligada.
+Os hackers nem tocaram no cofre. Foram atrás do carimbo do gerente: o sistema que autoriza os saques da gaveta.
+Do seu computador, passaram pelas ferramentas internas de inteligência artificial… até o carimbo. E carimbaram saque atrás de saque.
+E foi coisa de meses: em junho, outro engenheiro já tinha instalado uma ferramenta falsa.
+Quem foi? O FBI aponta a Coreia do Norte.
+Agora imagina o outro lado: você é cliente. Tenta sacar… e os saques travaram.
+A Binance congelou quase metade do dinheiro com parceiros e prometeu cobrir todas as perdas com o próprio caixa.
+Então: depois disso, você confia mais na Binance, que pagou tudo, ou foge de corretora de vez?

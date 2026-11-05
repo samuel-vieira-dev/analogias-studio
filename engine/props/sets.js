@@ -321,3 +321,76 @@ function makeEraHall(eras, { wallZ = -3.6, ceil = 10, front = 16, seed = 6 } = {
     tint(k, color = "#ff2a1a") { const c = new THREE.Color(color); lights.forEach(({ m, base }) => m.color.copy(base).lerp(c, clamp(k))); },
   };
 }
+
+// Data centre at night behind the hero (backdrop; first in the Binance hack video, 04/11/2026): a back row of
+// server racks (perforated black doors, hundreds of status LEDs that blink green, blue and amber), two side
+// rows facing the aisle, a yellow cable tray above the racks, a raised floor of perforated tiles that
+// reflects the LEDs, cold light strips in the ceiling running towards the camera with their beams and pools.
+// In 9:16 the tray and the ceiling show above the hero and the shiny floor below it.
+// API { group, update(t), alarm(k), lights(k) } — alarm(k): every LED goes red (the attack); lights dims the strips.
+function makeServerHall({ wallZ = -2.2, ceil = 3.4, seed = 5 } = {}) {
+  const g = new THREE.Group(), r = mulberry32(seed), W = 30;
+  const tile = cachedTex("server-tile", () => {
+    const c = makeCanvas(256, 256), x = c.getContext("2d"); x.fillStyle = "#3a424c"; x.fillRect(0, 0, 256, 256);
+    x.fillStyle = "#232931"; x.fillRect(0, 0, 256, 5); x.fillRect(0, 0, 5, 256);
+    x.fillStyle = "#262c34"; for (let i = 30; i < 236; i += 16) for (let j = 30; j < 236; j += 16) { x.beginPath(); x.arc(i, j, 3.2, 0, 6.3); x.fill(); }
+    speckle(x, 256, 256, 57, 900, 0.1, 0.04, 1.5);
+    const t = texFrom(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; return t;
+  });
+  const fl = new THREE.Mesh(new THREE.PlaneGeometry(W, 20), pmat("#ffffff", { map: tileTex(tile, W / 0.6, 20 / 0.6), roughness: 0.28, clearcoat: 0.5, clearcoatRoughness: 0.25, envMapIntensity: 0.9 }));
+  fl.rotation.x = -Math.PI / 2; fl.position.set(0, 0.004, wallZ + 9); g.add(fl);
+  const cl = new THREE.Mesh(new THREE.PlaneGeometry(W, 20), mat("#14181d", { roughness: 0.9 })); cl.rotation.x = Math.PI / 2; cl.position.set(0, ceil, wallZ + 9); g.add(cl);
+  const back = new THREE.Mesh(new THREE.PlaneGeometry(W, ceil), mat("#101317", { roughness: 0.9 })); back.position.set(0, ceil / 2, wallZ - 1.0); g.add(back);
+  // racks: perforated door on the front (+z) face, plain black body
+  const door = cachedTex("server-door", () => {
+    const c = makeCanvas(128, 512), x = c.getContext("2d"); x.fillStyle = "#171a1f"; x.fillRect(0, 0, 128, 512);
+    x.fillStyle = "#07080a"; for (let yy = 22; yy < 490; yy += 7) for (let xx = 12; xx < 112; xx += 7) x.fillRect(xx, yy, 3.4, 3.4);
+    x.strokeStyle = "#30363e"; x.lineWidth = 7; x.strokeRect(4, 4, 120, 504);
+    x.fillStyle = "#a9b0b8"; x.fillRect(110, 210, 6, 80);
+    return texFrom(c);
+  });
+  const rackW = 0.6, rackH = 2.2, rackD = 0.9, body = pmat("#1a1d22", { metalness: 0.6, roughness: 0.42 }), face = pmat("#ffffff", { map: door, metalness: 0.5, roughness: 0.5 });
+  const racks = [];
+  for (let i = -12; i <= 12; i++) racks.push([i * (rackW + 0.03), wallZ - rackD / 2, 0]);
+  for (const s of [-1, 1]) for (let j = 0; j < 8; j++) racks.push([s * 3.4, wallZ + 0.8 + j * (rackW + 0.03), -s * Math.PI / 2]);
+  const rm = new THREE.InstancedMesh(new THREE.BoxGeometry(rackW, rackH, rackD), [body, body, body, body, face, body], racks.length), o = new THREE.Object3D(), leds = [];
+  racks.forEach(([x, z, ry], i) => {
+    o.position.set(x, rackH / 2, z); o.rotation.set(0, ry, 0); o.updateMatrix(); rm.setMatrixAt(i, o.matrix);
+    for (let k = 0; k < 18; k++) {
+      const p = new V3(-0.2 + (k % 3) * 0.05, 0.3 + Math.floor(k / 3) * 0.3 + r() * 0.06 - rackH / 2, rackD / 2 + 0.006).applyMatrix4(o.matrix);
+      leds.push({ p, ry, ph: r() * 6.28, sp: 0.6 + r() * 4, c: r() < 0.62 ? 0 : r() < 0.6 ? 1 : 2 });
+    }
+  });
+  g.add(rm);
+  const lm = new THREE.InstancedMesh(new THREE.PlaneGeometry(0.022, 0.012), new THREE.MeshBasicMaterial({ color: "#ffffff", toneMapped: false }), leds.length);
+  leds.forEach((L, i) => { o.position.copy(L.p); o.rotation.set(0, L.ry, 0); o.updateMatrix(); lm.setMatrixAt(i, o.matrix); lm.setColorAt(i, new THREE.Color("#38e08a")); });
+  g.add(lm);
+  // cable tray above the back row, with bundles of cable in it
+  const yellow = pmat("#c9a227", { metalness: 0.6, roughness: 0.4 }), ty = rackH + 0.3, tz = wallZ - 0.35;
+  for (const dz of [-0.2, 0.2]) { const rail = new THREE.Mesh(new THREE.BoxGeometry(W, 0.05, 0.03), yellow); rail.position.set(0, ty, tz + dz); g.add(rail); }
+  const rung = new THREE.InstancedMesh(new THREE.BoxGeometry(0.03, 0.02, 0.4), yellow, 60);
+  for (let i = 0; i < 60; i++) { o.position.set(-W / 2 + i * (W / 60), ty - 0.02, tz); o.rotation.set(0, 0, 0); o.updateMatrix(); rung.setMatrixAt(i, o.matrix); }
+  g.add(rung);
+  for (const [dz, col] of [[-0.1, "#2a5a9a"], [0.0, "#1d1f24"], [0.1, "#3a7a4a"]]) { const cab = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.045, W, 12), mat(col, { roughness: 0.6 })); cab.rotation.z = Math.PI / 2; cab.position.set(0, ty + 0.04, tz + dz); g.add(cab); }
+  // cold light strips in the ceiling, towards the camera, with beams and pools on the floor
+  const stripM = new THREE.MeshBasicMaterial({ color: "#dbe8ff", toneMapped: false }), beams = [], pools = [];
+  for (const x of [-1.3, 1.3]) for (let z = wallZ + 0.6; z < wallZ + 14; z += 1.7) {
+    const st = new THREE.Mesh(new THREE.PlaneGeometry(0.14, 1.3), stripM); st.rotation.x = Math.PI / 2; st.position.set(x, ceil - 0.01, z); g.add(st);
+    const pool = makeFloorGlow(1.6, 1.9, { color: "#9fc4ff", opacity: 0.12 }); pool.position.set(x, 0.009, z); g.add(pool); pools.push(pool);
+  }
+  for (const x of [-1.3, 1.3]) { const b = makeLightShaft([x, ceil - 0.02, wallZ + 1.2], [x, 0.05, wallZ + 1.6], { w0: 0.25, w1: 1.4, color: "#9fc4ff", opacity: 0.1 }); g.add(b.group); beams.push(b); }
+  const bok = makeBokeh({ n: 40, center: [0, 1.4, wallZ + 0.2], spread: [12, 2.2, 0.4], size: [0.12, 0.35], colors: ["#38e08a", "#4fb3ff", "#9fd0ff"], seed: seed + 3, opacity: 0.35, drift: 0.05 }); g.add(bok.group);
+  const motes = makeSetMotes(140, [[-3, 0.2, wallZ + 0.2], [3, 3.0, wallZ + 5]], { color: "#cfe0ff", seed: seed + 7, opacity: 0.3 }); g.add(motes.points);
+  asBackdrop(g);
+  const LC = [new THREE.Color("#38e08a"), new THREE.Color("#4fb3ff"), new THREE.Color("#ffb347")], ALERT = new THREE.Color("#ff2a1a"), c = new THREE.Color();
+  let ak = 0;
+  return {
+    group: g,
+    update(t) {
+      leds.forEach((L, i) => { const on = Math.sin(t * L.sp + L.ph) > -0.35 ? 1 : 0.12; c.copy(LC[L.c]).lerp(ALERT, ak).multiplyScalar(on * (1 + 0.6 * ak)); lm.setColorAt(i, c); });
+      lm.instanceColor.needsUpdate = true; bok.update(t); motes.update(t);
+    },
+    alarm(k) { ak = clamp(k); },
+    lights(k) { stripM.color.set("#dbe8ff").multiplyScalar(0.1 + 0.9 * clamp(k)); beams.forEach((b) => b.set(clamp(k))); pools.forEach((p) => { p.material.opacity = 0.12 * clamp(k); }); },
+  };
+}

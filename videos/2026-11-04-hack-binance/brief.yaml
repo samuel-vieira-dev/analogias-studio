@@ -1,0 +1,20 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-hack-binance
+estilo: analogias-v1
+tema: "O ataque hacker que drenou bilhões de dólares da Binance"
+referencias_visuais: []
+
+hook:
+  origem: 1
+  texto: "Em vinte minutos, hackers levaram seis bilhões de dólares da Binance."
+
+pergunta_final:
+  origem: 3
+  texto: "Então: depois disso, você confia mais na Binance, que pagou tudo, ou foge de corretora de vez?"
+
+analogia: "Banco: o cofre do subsolo (carteira fria, fora da internet) e a gaveta do caixa (carteira quente, ligada); os hackers não abriram o cofre, pegaram o carimbo do gerente (o sistema que autoriza os saques)."
+
+pedidos: []
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-04

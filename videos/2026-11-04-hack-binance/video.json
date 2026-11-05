@@ -1,0 +1,777 @@
+{
+  "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json).",
+  "slug": "2026-11-04-hack-binance",
+  "estilo": "analogias-v1",
+  "duration": 98.2,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json"
+  },
+  "captions": {
+    "fix": {
+      "para": "pra",
+      "Para": "Pra"
+    }
+  },
+  "media": {
+    "fbi": {
+      "file": "midia/fbi.jpg",
+      "credit": "Ajay Suresh/Wikimedia",
+      "url": "https://commons.wikimedia.org/wiki/File:FBI_Headquarters_-_J._Edgar_Hoover_Building_(53840035941).jpg",
+      "focus": [
+        0.5,
+        0.55
+      ],
+      "author": "Ajay Suresh",
+      "license": "CC BY 2.0"
+    }
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "from": 0,
+      "to": 5.1
+    },
+    {
+      "id": "recorde",
+      "from": 5.1,
+      "to": 12.3
+    },
+    {
+      "id": "chaves",
+      "from": 12.3,
+      "to": 16.62
+    },
+    {
+      "id": "entrevista",
+      "from": 16.62,
+      "to": 19.0
+    },
+    {
+      "id": "imagina",
+      "from": 19.0,
+      "to": 24.5
+    },
+    {
+      "id": "teste",
+      "from": 24.5,
+      "to": 30.35
+    },
+    {
+      "id": "virus",
+      "from": 30.35,
+      "to": 35.62
+    },
+    {
+      "id": "como",
+      "from": 35.62,
+      "to": 38.2
+    },
+    {
+      "id": "banco",
+      "from": 38.2,
+      "to": 46.2
+    },
+    {
+      "id": "carteiras",
+      "from": 46.2,
+      "to": 53.3
+    },
+    {
+      "id": "carimbo",
+      "from": 53.3,
+      "to": 60.6
+    },
+    {
+      "id": "saques",
+      "from": 60.6,
+      "to": 68.95
+    },
+    {
+      "id": "meses",
+      "from": 68.95,
+      "to": 74.4
+    },
+    {
+      "id": "fbi",
+      "from": 74.4,
+      "to": 77.8
+    },
+    {
+      "id": "cliente",
+      "from": 77.8,
+      "to": 83.65
+    },
+    {
+      "id": "congelou",
+      "from": 83.65,
+      "to": 90.45
+    },
+    {
+      "id": "pergunta",
+      "from": 90.45,
+      "to": 98.2
+    }
+  ],
+  "cuts": [
+    5.1,
+    12.3,
+    16.62,
+    19.0,
+    24.5,
+    30.35,
+    35.62,
+    38.2,
+    46.2,
+    53.3,
+    55.6,
+    60.6,
+    68.95,
+    74.4,
+    77.8,
+    83.65,
+    90.45
+  ],
+  "overlays": [
+    {
+      "kind": "stat",
+      "from": 0.1,
+      "to": 2.4,
+      "big": "20 MIN",
+      "label": "DE ATAQUE",
+      "id": "ov-01"
+    },
+    {
+      "kind": "source",
+      "from": 0.1,
+      "to": 5.05,
+      "text": "Fonte: TRM Labs via AP, 30/10/2026",
+      "id": "src-02"
+    },
+    {
+      "kind": "stat",
+      "from": 2.45,
+      "to": 5.05,
+      "big": "US$ 6,3 BI",
+      "label": "LEVADOS DA BINANCE",
+      "id": "ov-03"
+    },
+    {
+      "kind": "title",
+      "from": 5.15,
+      "to": 7.8,
+      "text": "A MAIOR CORRETORA\nDE CRIPTO DO MUNDO",
+      "id": "ov-04"
+    },
+    {
+      "kind": "title",
+      "from": 7.85,
+      "to": 10.15,
+      "text": "O MAIOR ROUBO\nDE CRIPTO DA HISTÓRIA",
+      "id": "ov-05"
+    },
+    {
+      "kind": "source",
+      "from": 7.85,
+      "to": 12.25,
+      "text": "Fonte: Al Jazeera; AP, 30/10/2026",
+      "id": "src-06"
+    },
+    {
+      "kind": "stat",
+      "from": 10.2,
+      "to": 12.25,
+      "big": "4×",
+      "label": "O RECORDE ANTERIOR",
+      "id": "ov-07"
+    },
+    {
+      "kind": "title",
+      "from": 12.35,
+      "to": 15.2,
+      "text": "E O MAIS\nESTRANHO",
+      "id": "ov-08"
+    },
+    {
+      "kind": "source",
+      "from": 13.9,
+      "to": 16.57,
+      "text": "Fonte: Binance via Al Jazeera, 30/10/2026",
+      "id": "src-09"
+    },
+    {
+      "kind": "chip",
+      "from": 15.25,
+      "to": 16.57,
+      "text": "NENHUMA CHAVE VAZOU",
+      "style": "green",
+      "id": "ov-10"
+    },
+    {
+      "kind": "title",
+      "from": 16.67,
+      "to": 18.95,
+      "text": "UMA ENTREVISTA\nDE EMPREGO",
+      "id": "ov-11"
+    },
+    {
+      "kind": "source",
+      "from": 16.67,
+      "to": 18.95,
+      "text": "Fonte: Binance via CNBC, 03/11/2026",
+      "id": "src-12"
+    },
+    {
+      "kind": "title",
+      "from": 19.05,
+      "to": 21.7,
+      "text": "IMAGINA: VOCÊ É\nO ENGENHEIRO",
+      "id": "ov-13"
+    },
+    {
+      "kind": "title",
+      "from": 21.75,
+      "to": 24.45,
+      "text": "A VAGA\nDOS SONHOS",
+      "id": "ov-14"
+    },
+    {
+      "kind": "title",
+      "from": 24.55,
+      "to": 26.75,
+      "text": "VÁRIAS\nENTREVISTAS",
+      "id": "ov-15"
+    },
+    {
+      "kind": "title",
+      "from": 26.8,
+      "to": 30.3,
+      "text": "TESTE DE\nPROGRAMAÇÃO",
+      "id": "ov-16"
+    },
+    {
+      "kind": "source",
+      "from": 26.8,
+      "to": 35.57,
+      "text": "Fonte: Binance via CNBC, 03/11/2026",
+      "id": "src-17"
+    },
+    {
+      "kind": "chip",
+      "from": 30.4,
+      "to": 33.2,
+      "text": "VÍRUS ESCONDIDO",
+      "style": "red",
+      "id": "ov-18"
+    },
+    {
+      "kind": "title",
+      "from": 33.25,
+      "to": 35.57,
+      "text": "A PORTA\nDE ENTRADA",
+      "id": "ov-19"
+    },
+    {
+      "kind": "title",
+      "from": 35.67,
+      "to": 38.15,
+      "text": "COMO UM COMPUTADOR\nABRE BILHÕES?",
+      "id": "ov-20"
+    },
+    {
+      "kind": "title",
+      "from": 38.25,
+      "to": 39.45,
+      "text": "PENSA NUM BANCO",
+      "id": "ov-21"
+    },
+    {
+      "kind": "title",
+      "from": 39.5,
+      "to": 43.0,
+      "text": "O COFRE,\nNO SUBSOLO",
+      "id": "ov-22"
+    },
+    {
+      "kind": "title",
+      "from": 43.05,
+      "to": 46.15,
+      "text": "A GAVETA\nDO CAIXA",
+      "id": "ov-23"
+    },
+    {
+      "kind": "title",
+      "from": 46.25,
+      "to": 48.6,
+      "text": "NA CRIPTO\nÉ IGUAL",
+      "id": "ov-24"
+    },
+    {
+      "kind": "title",
+      "from": 48.65,
+      "to": 50.75,
+      "text": "FRIA:\nFORA DA INTERNET",
+      "id": "ov-25"
+    },
+    {
+      "kind": "source",
+      "from": 48.65,
+      "to": 53.25,
+      "text": "Fonte: Richard Teng via AP, 31/10/2026",
+      "id": "src-26"
+    },
+    {
+      "kind": "title",
+      "from": 50.8,
+      "to": 53.25,
+      "text": "QUENTE:\nLIGADA",
+      "id": "ov-27"
+    },
+    {
+      "kind": "title",
+      "from": 53.35,
+      "to": 55.55,
+      "text": "NEM TOCARAM\nNO COFRE",
+      "id": "ov-28"
+    },
+    {
+      "kind": "title",
+      "from": 55.65,
+      "to": 58.15,
+      "text": "O CARIMBO\nDO GERENTE",
+      "id": "ov-29"
+    },
+    {
+      "kind": "chip",
+      "from": 58.2,
+      "to": 60.55,
+      "text": "AUTORIZA OS SAQUES",
+      "style": "orange",
+      "id": "ov-30"
+    },
+    {
+      "kind": "source",
+      "from": 58.2,
+      "to": 68.9,
+      "text": "Fonte: Binance via CNBC, 03/11/2026",
+      "id": "src-31"
+    },
+    {
+      "kind": "title",
+      "from": 60.65,
+      "to": 62.05,
+      "text": "DO SEU\nCOMPUTADOR…",
+      "id": "ov-32"
+    },
+    {
+      "kind": "title",
+      "from": 62.1,
+      "to": 65.3,
+      "text": "…PELA IA\nINTERNA…",
+      "id": "ov-33"
+    },
+    {
+      "kind": "title",
+      "from": 65.35,
+      "to": 66.6,
+      "text": "…ATÉ O CARIMBO",
+      "id": "ov-34"
+    },
+    {
+      "kind": "title",
+      "from": 66.65,
+      "to": 68.9,
+      "text": "SAQUE ATRÁS\nDE SAQUE",
+      "id": "ov-35"
+    },
+    {
+      "kind": "title",
+      "from": 69.0,
+      "to": 70.55,
+      "text": "COISA DE\nMESES",
+      "id": "ov-36"
+    },
+    {
+      "kind": "title",
+      "from": 70.6,
+      "to": 74.35,
+      "text": "JUNHO: FERRAMENTA\nFALSA INSTALADA",
+      "id": "ov-37"
+    },
+    {
+      "kind": "source",
+      "from": 70.6,
+      "to": 74.35,
+      "text": "Fonte: Binance via CNBC, 03/11/2026",
+      "id": "src-38"
+    },
+    {
+      "kind": "title",
+      "from": 74.45,
+      "to": 75.2,
+      "text": "QUEM FOI?",
+      "id": "ov-39"
+    },
+    {
+      "kind": "source",
+      "from": 74.45,
+      "to": 77.75,
+      "text": "Foto: Ajay Suresh/Wikimedia · FBI, 31/10",
+      "id": "src-40"
+    },
+    {
+      "kind": "title",
+      "from": 75.25,
+      "to": 77.75,
+      "text": "FBI: COREIA\nDO NORTE",
+      "id": "ov-41"
+    },
+    {
+      "kind": "title",
+      "from": 77.85,
+      "to": 80.9,
+      "text": "AGORA IMAGINA:\nVOCÊ É CLIENTE",
+      "id": "ov-42"
+    },
+    {
+      "kind": "title",
+      "from": 80.95,
+      "to": 81.95,
+      "text": "TENTA SACAR…",
+      "id": "ov-43"
+    },
+    {
+      "kind": "chip",
+      "from": 82.0,
+      "to": 83.6,
+      "text": "SAQUES SUSPENSOS",
+      "style": "red",
+      "id": "ov-44"
+    },
+    {
+      "kind": "source",
+      "from": 82.0,
+      "to": 83.6,
+      "text": "Fonte: Al Jazeera, 30/10/2026",
+      "id": "src-45"
+    },
+    {
+      "kind": "stat",
+      "from": 83.7,
+      "to": 87.05,
+      "big": "≈ US$ 3 BI",
+      "label": "CONGELADOS",
+      "id": "ov-46"
+    },
+    {
+      "kind": "source",
+      "from": 83.7,
+      "to": 90.4,
+      "text": "Fonte: Reuters via Al Jazeera; CNBC",
+      "id": "src-47"
+    },
+    {
+      "kind": "title",
+      "from": 87.1,
+      "to": 90.4,
+      "text": "PROMETEU COBRIR\nTODAS AS PERDAS",
+      "id": "ov-48"
+    },
+    {
+      "kind": "question",
+      "from": 90.5,
+      "to": 98.2,
+      "text": "CONFIA NA BINANCE…\nOU FOGE?",
+      "sub": "DE CORRETORA DE VEZ",
+      "id": "ov-49"
+    },
+    {
+      "kind": "source",
+      "from": 90.5,
+      "to": 98.2,
+      "text": "Não é recomendação de investimento.",
+      "id": "src-50"
+    },
+    {
+      "id": "cta",
+      "kind": "cta",
+      "from": 96.2,
+      "to": 98.2,
+      "html": "Comenta: <b>CONFIA</b> ou <b>FOGE</b>"
+    }
+  ],
+  "sfx": [
+    [
+      0.2,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      2.48,
+      "impact-bass-1.mp3",
+      -9
+    ],
+    [
+      4.2,
+      "ping.mp3",
+      -18
+    ],
+    [
+      5.04,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      10.24,
+      "impact-bass-2.mp3",
+      -11
+    ],
+    [
+      12.24,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      16.02,
+      "chime.mp3",
+      -16
+    ],
+    [
+      16.56,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      18.94,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      21.96,
+      "notification.mp3",
+      -18
+    ],
+    [
+      24.44,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      25.12,
+      "pop.mp3",
+      -18
+    ],
+    [
+      25.6,
+      "pop.mp3",
+      -18
+    ],
+    [
+      28.62,
+      "click.mp3",
+      -12
+    ],
+    [
+      29.88,
+      "glitch-1.mp3",
+      -16
+    ],
+    [
+      30.29,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      32.02,
+      "impact-bass-1.mp3",
+      -9
+    ],
+    [
+      32.1,
+      "error.mp3",
+      -18
+    ],
+    [
+      34.0,
+      "riser.mp3",
+      -24
+    ],
+    [
+      35.56,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      37.4,
+      "impact-bass-2.mp3",
+      -14
+    ],
+    [
+      38.14,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      43.78,
+      "whoosh-short.mp3",
+      -22
+    ],
+    [
+      44.44,
+      "click-soft.mp3",
+      -14
+    ],
+    [
+      46.14,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      49.12,
+      "ping.mp3",
+      -18
+    ],
+    [
+      52.22,
+      "notification.mp3",
+      -20
+    ],
+    [
+      53.24,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      55.3,
+      "impact-bass-2.mp3",
+      -12
+    ],
+    [
+      55.54,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      58.94,
+      "click.mp3",
+      -14
+    ],
+    [
+      60.54,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      62.6,
+      "glitch-2.mp3",
+      -18
+    ],
+    [
+      64.3,
+      "error.mp3",
+      -18
+    ],
+    [
+      66.68,
+      "impact-bass-1.mp3",
+      -12
+    ],
+    [
+      67.45,
+      "impact-bass-1.mp3",
+      -12
+    ],
+    [
+      68.05,
+      "impact-bass-1.mp3",
+      -12
+    ],
+    [
+      68.6,
+      "impact-bass-1.mp3",
+      -12
+    ],
+    [
+      68.89,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      69.4,
+      "key-press.mp3",
+      -18
+    ],
+    [
+      70.1,
+      "key-press.mp3",
+      -18
+    ],
+    [
+      73.92,
+      "error.mp3",
+      -16
+    ],
+    [
+      74.34,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      75.56,
+      "glitch-3.mp3",
+      -18
+    ],
+    [
+      77.74,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      81.2,
+      "click.mp3",
+      -12
+    ],
+    [
+      82.64,
+      "error.mp3",
+      -14
+    ],
+    [
+      83.59,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      84.3,
+      "sparkle.mp3",
+      -18
+    ],
+    [
+      87.8,
+      "chime.mp3",
+      -16
+    ],
+    [
+      90.39,
+      "whoosh.mp3",
+      -22
+    ],
+    [
+      96.2,
+      "ping.mp3",
+      -14
+    ]
+  ],
+  "post": {
+    "title": "HACKERS\nLEVARAM\nUS$ 6 BI",
+    "descricao": "O hack da Binance: em uns 20 minutos, hackers levaram cerca de US$ 6,3 bilhões da maior corretora de cripto do mundo, o maior roubo de criptomoedas da história. Começou numa entrevista de emprego falsa; o FBI aponta a Coreia do Norte. Entenda carteira quente e carteira fria.",
+    "hashtags": [
+      "#binance",
+      "#hackbinance",
+      "#criptomoedas",
+      "#bitcoin",
+      "#ciberseguranca"
+    ],
+    "media": false
+  }
+}
