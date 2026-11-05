@@ -1,0 +1,23 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-correios-anatel
+tema: "Correios e Anatel: por que uma estatal e uma agência do governo ficam sem dinheiro pra funcionar"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 3   # número chocante
+  texto: "Os Correios estão perdendo quase um bilhão de reais por mês."
+
+pergunta_final:
+  origem: 3
+  texto: "Qual problema é pior: gastar mais do que ganha, ou ganhar e não poder gastar?"
+
+analogia: "O caixa da loja e o cofre do dono: o dinheiro passa todo pela mão do caixa e cai no cofre do dono; pra comprar a bobina da maquininha ele tem que pedir, e o dono devolve uns seis de cada cem. A Anatel é o caixa (arrecada R$ 3,4 bi em 2024), o Tesouro é o dono (volta ~6% como orçamento discricionário)."
+
+nota_de_fato: "Anatel é autarquia especial, não estatal: na fala, 'uma estatal e uma agência do governo'. Correios: R$ 925 mi/mês = R$ 5,55 bi do 1º semestre de 2026 ÷ 6; R$ 8,5 bi em 2025, o pior da história. Empréstimo de R$ 7 bi: só a garantia da União foi autorizada (DOU 28/10/2026), daí 'autorizados agora'. Anatel: 6% = orçamento discricionário (custeio e investimento, sem salários), daí 'pra pagar as contas'. Bloqueio de 2026: −18,8% (Decreto 12.990) = 'quase um quinto'. Centro de dados: risco ('pode não pagar'), não calote. Tema político: sem tomar lado; privatização fica de fora."
+
+pedidos_visuais:
+  - "Samuel pediu trocar a foto da Agência Brasil (licença não comercial) por uma de licença livre: Baigorri agora é Saulo Cruz/Agência Senado, CC BY 2.0"
+
+duracao_alvo_s: 88
+aprovado_em: 2026-11-04

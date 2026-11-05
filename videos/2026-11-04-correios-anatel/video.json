@@ -1,0 +1,868 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia única (Anatel): o caixa da loja e o cofre do dono. O buraco no chão e os paletes são ilustrativos (profundidade 2,6 × 8,5; paletes 12 e 7 tapam o buraco).",
+ "slug": "2026-11-04-correios-anatel",
+ "estilo": "analogias-v1",
+ "duration": 91.1,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "Imagina,": "Imagina:",
+   "Centro": "centro",
+   "Dados,": "dados.",
+   "Dados": "dados",
+   "dinheiro,": "dinheiro…",
+   "1": "um",
+   "fixos.": "fixos:",
+   "Resultado?": "Resultado:",
+   "empréstimo.": "empréstimo:",
+   "União.": "União:",
+   "contrário.": "contrário:",
+   "igual.": "igual:",
+   "pior?": "pior:",
+   "Gastar": "gastar",
+   "ganha": "ganha…"
+  }
+ },
+ "media": {
+  "correios-predio": {
+   "file": "midia/correios-predio.jpg",
+   "credit": "M. Oliveira/Ag. Senado",
+   "url": "https://www.flickr.com/photos/agenciasenado/18584592926/",
+   "focus": [
+    0.72,
+    0.5
+   ]
+  },
+  "anatel-sede": {
+   "file": "midia/anatel-sede.jpg",
+   "credit": "S. Maia/Anatel",
+   "url": "https://www.flickr.com/photos/anatel_informa/19764566009/",
+   "focus": [
+    0.42,
+    0.74
+   ]
+  },
+  "correios-marajo": {
+   "file": "midia/correios-marajo.jpg",
+   "credit": "Prburley/Wikimedia Commons",
+   "url": "https://commons.wikimedia.org/wiki/File:Ag%C3%AAncia_Correios_Cachoeira_do_Arari_Par%C3%A1_2023-8793.jpg",
+   "focus": [
+    0.4,
+    0.5
+   ]
+  },
+  "baigorri": {
+   "file": "midia/baigorri.jpg",
+   "credit": "Saulo Cruz/Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:CCS_-_Conselho_de_Comunica%C3%A7%C3%A3o_Social_(54436494763).jpg",
+   "focus": [
+    0.5,
+    0.33
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "furo",
+   "from": 0,
+   "to": 4.38
+  },
+  {
+   "id": "servidores",
+   "from": 4.38,
+   "to": 9.48
+  },
+  {
+   "id": "fotos",
+   "from": 9.48,
+   "to": 14.42
+  },
+  {
+   "id": "compra",
+   "from": 14.42,
+   "to": 17.3
+  },
+  {
+   "id": "rua",
+   "from": 17.3,
+   "to": 23.52
+  },
+  {
+   "id": "marajo",
+   "from": 23.52,
+   "to": 28.44
+  },
+  {
+   "id": "fixos",
+   "from": 28.44,
+   "to": 34.14
+  },
+  {
+   "id": "afunda",
+   "from": 34.14,
+   "to": 40.06
+  },
+  {
+   "id": "buraco",
+   "from": 40.06,
+   "to": 46.08
+  },
+  {
+   "id": "fiadora",
+   "from": 46.08,
+   "to": 49.52
+  },
+  {
+   "id": "arrecada",
+   "from": 49.52,
+   "to": 55.08
+  },
+  {
+   "id": "caixa",
+   "from": 55.08,
+   "to": 61.3
+  },
+  {
+   "id": "bobina",
+   "from": 61.3,
+   "to": 66.88
+  },
+  {
+   "id": "tesouro",
+   "from": 66.88,
+   "to": 72.94
+  },
+  {
+   "id": "bloqueio",
+   "from": 72.94,
+   "to": 78.12
+  },
+  {
+   "id": "metade",
+   "from": 78.12,
+   "to": 81.28
+  },
+  {
+   "id": "baigorri",
+   "from": 81.28,
+   "to": 84.04
+  },
+  {
+   "id": "pergunta",
+   "from": 84.04,
+   "to": 91.1
+  }
+ ],
+ "cuts": [
+  4.38,
+  9.48,
+  14.42,
+  17.3,
+  23.52,
+  28.44,
+  34.14,
+  40.06,
+  46.08,
+  49.52,
+  55.08,
+  61.3,
+  66.88,
+  72.94,
+  78.12,
+  81.28,
+  84.04
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "stat",
+   "from": 0.2,
+   "to": 4.3,
+   "big": "R$ 925 MI",
+   "label": "DE PREJUÍZO POR MÊS"
+  },
+  {
+   "id": "ov-02",
+   "kind": "source",
+   "from": 0.2,
+   "to": 4.3,
+   "text": "Fonte: Correios, 1º sem. 2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 4.6,
+   "to": 9.4,
+   "text": "E A ANATEL?"
+  },
+  {
+   "id": "ov-04",
+   "kind": "source",
+   "from": 9.5,
+   "to": 14.4,
+   "text": "Fotos: M. Oliveira/Ag. Senado; S. Maia/Anatel"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 11.85,
+   "to": 13.15,
+   "text": "SEM DINHEIRO…"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 13.2,
+   "to": 14.36,
+   "text": "POR MOTIVOS\nOPOSTOS"
+  },
+  {
+   "id": "ov-07",
+   "kind": "title",
+   "from": 17.4,
+   "to": 18.65,
+   "text": "QUEM BATE\nNA PORTA?"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 19.9,
+   "to": 21.62,
+   "text": "ENTREGA PRÓPRIA",
+   "style": "orange"
+  },
+  {
+   "id": "ov-09",
+   "kind": "chip",
+   "from": 21.74,
+   "to": 23.45,
+   "text": "CARTA: QUASE NENHUMA",
+   "style": "red"
+  },
+  {
+   "id": "ov-10",
+   "kind": "source",
+   "from": 23.55,
+   "to": 28.4,
+   "text": "Foto: Prburley/Wikimedia Commons"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 25.4,
+   "to": 28.38,
+   "text": "TODO CANTO\nDO BRASIL"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 28.84,
+   "to": 29.75,
+   "text": "9 DE CADA 10",
+   "style": "orange"
+  },
+  {
+   "id": "ov-13",
+   "kind": "stat",
+   "from": 29.8,
+   "to": 34.05,
+   "big": "90%",
+   "label": "DO GASTO É FIXO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "source",
+   "from": 29.8,
+   "to": 34.05,
+   "text": "Fonte: Correios, dez/2025"
+  },
+  {
+   "id": "ov-15",
+   "kind": "stat",
+   "from": 34.9,
+   "to": 38.82,
+   "big": "R$ 8,5 BI",
+   "label": "PREJUÍZO EM 2025"
+  },
+  {
+   "id": "ov-16",
+   "kind": "source",
+   "from": 34.9,
+   "to": 40.0,
+   "text": "Fonte: balanço dos Correios, 2025"
+  },
+  {
+   "id": "ov-17",
+   "kind": "title",
+   "from": 38.9,
+   "to": 40.0,
+   "text": "O PIOR DA\nHISTÓRIA"
+  },
+  {
+   "id": "ov-18",
+   "kind": "chip",
+   "from": 40.9,
+   "to": 41.82,
+   "text": "EMPRÉSTIMO",
+   "style": "orange"
+  },
+  {
+   "id": "ov-19",
+   "kind": "chip",
+   "from": 42.95,
+   "to": 44.05,
+   "text": "R$ 12 BI · DEZ/2025",
+   "style": "dark"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 42.95,
+   "to": 44.05,
+   "text": "Fonte: Gazeta do Povo, 28/10/2026"
+  },
+  {
+   "id": "ov-21",
+   "kind": "chip",
+   "from": 45.12,
+   "to": 46.0,
+   "text": "R$ 7 BI · OUT/2026",
+   "style": "dark"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 45.12,
+   "to": 46.0,
+   "text": "Fonte: Gazeta do Povo, 28/10/2026"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 46.3,
+   "to": 49.45,
+   "text": "FIADORA:\nA UNIÃO"
+  },
+  {
+   "id": "ov-24",
+   "kind": "title",
+   "from": 49.9,
+   "to": 51.45,
+   "text": "COM A ANATEL,\nO CONTRÁRIO"
+  },
+  {
+   "id": "ov-25",
+   "kind": "stat",
+   "from": 51.5,
+   "to": 55.0,
+   "big": "R$ 3,4 BI",
+   "label": "ARRECADADOS EM 2024"
+  },
+  {
+   "id": "ov-26",
+   "kind": "source",
+   "from": 51.5,
+   "to": 55.0,
+   "text": "Fonte: Anatel, ago/2025"
+  },
+  {
+   "id": "ov-27",
+   "kind": "chip",
+   "from": 63.4,
+   "to": 64.5,
+   "text": "TEM QUE PEDIR",
+   "style": "dark"
+  },
+  {
+   "id": "ov-28",
+   "kind": "stat",
+   "from": 65.45,
+   "to": 66.82,
+   "big": "6",
+   "label": "DE CADA 100"
+  },
+  {
+   "id": "ov-29",
+   "kind": "chip",
+   "from": 67.28,
+   "to": 68.35,
+   "text": "ANATEL = O CAIXA",
+   "style": "orange"
+  },
+  {
+   "id": "ov-30",
+   "kind": "chip",
+   "from": 68.4,
+   "to": 70.3,
+   "text": "TESOURO = O DONO",
+   "style": "dark"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 70.38,
+   "to": 72.88,
+   "big": "6%",
+   "label": "VOLTA PRA ANATEL"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 70.38,
+   "to": 72.88,
+   "text": "Fonte: Anatel, média 2020–2024"
+  },
+  {
+   "id": "ov-33",
+   "kind": "chip",
+   "from": 74.4,
+   "to": 75.78,
+   "text": "META FISCAL",
+   "style": "dark"
+  },
+  {
+   "id": "ov-34",
+   "kind": "stat",
+   "from": 75.84,
+   "to": 78.05,
+   "big": "−18,8%",
+   "label": "BLOQUEADO EM 2026"
+  },
+  {
+   "id": "ov-35",
+   "kind": "source",
+   "from": 75.84,
+   "to": 78.05,
+   "text": "Fonte: Decreto 12.990/2026"
+  },
+  {
+   "id": "ov-36",
+   "kind": "source",
+   "from": 78.3,
+   "to": 81.2,
+   "text": "Fonte: Folha, 03/11/2026"
+  },
+  {
+   "id": "ov-37",
+   "kind": "stat",
+   "from": 78.6,
+   "to": 81.2,
+   "big": "R$ 30 MI",
+   "label": "PRO CENTRO DE DADOS"
+  },
+  {
+   "id": "ov-38",
+   "kind": "photo",
+   "from": 81.3,
+   "to": 84.0,
+   "media": "baigorri",
+   "name": "Carlos Baigorri",
+   "role": "Presidente da Anatel"
+  },
+  {
+   "id": "ov-39",
+   "kind": "source",
+   "from": 81.3,
+   "to": 84.0,
+   "text": "Fonte: Folha · Foto: Saulo Cruz/Agência Senado"
+  },
+  {
+   "id": "ov-40",
+   "kind": "chip",
+   "from": 83.0,
+   "to": 84.0,
+   "text": "PEDIU O DESBLOQUEIO",
+   "style": "dark"
+  },
+  {
+   "id": "ov-41",
+   "kind": "question",
+   "from": 84.2,
+   "to": 91.1,
+   "text": "A: gastar mais do que ganha\nB: ganhar e não poder gastar",
+   "sub": "QUAL PROBLEMA É PIOR?"
+  },
+  {
+   "id": "ov-42",
+   "kind": "cta",
+   "from": 89.1,
+   "to": 91.1,
+   "html": "Comenta: <b>A</b> ou <b>B</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh-cinematic.mp3",
+   -18
+  ],
+  [
+   0.6,
+   "pop.mp3",
+   -26
+  ],
+  [
+   1.3,
+   "pop.mp3",
+   -26
+  ],
+  [
+   2.4,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   3.1,
+   "pop.mp3",
+   -26
+  ],
+  [
+   4.38,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   6.95,
+   "glitch-1.mp3",
+   -16
+  ],
+  [
+   7.4,
+   "error.mp3",
+   -22
+  ],
+  [
+   9.48,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   9.5,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   10.6,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   13.5,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   14.42,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   16.5,
+   "click.mp3",
+   -14
+  ],
+  [
+   16.6,
+   "notification.mp3",
+   -19
+  ],
+  [
+   17.3,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   17.54,
+   "chime.mp3",
+   -14
+  ],
+  [
+   18.16,
+   "chime.mp3",
+   -17
+  ],
+  [
+   19.75,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   21.8,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   23.52,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   23.6,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   26.7,
+   "whoosh-cinematic.mp3",
+   -22
+  ],
+  [
+   27.7,
+   "pop.mp3",
+   -20
+  ],
+  [
+   28.44,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   28.95,
+   "click.mp3",
+   -22
+  ],
+  [
+   29.3,
+   "click.mp3",
+   -22
+  ],
+  [
+   29.65,
+   "click.mp3",
+   -22
+  ],
+  [
+   31.4,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   32.3,
+   "pop.mp3",
+   -24
+  ],
+  [
+   32.9,
+   "pop.mp3",
+   -24
+  ],
+  [
+   33.4,
+   "pop.mp3",
+   -24
+  ],
+  [
+   34.14,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   35.2,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   37.5,
+   "impact-bass-1.mp3",
+   -18
+  ],
+  [
+   38.9,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   40.06,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   41.9,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   42.9,
+   "impact-bass-1.mp3",
+   -17
+  ],
+  [
+   44.1,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   45.1,
+   "impact-bass-1.mp3",
+   -19
+  ],
+  [
+   46.08,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   47.27,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   49.52,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   51.6,
+   "riser.mp3",
+   -22
+  ],
+  [
+   54.0,
+   "ping.mp3",
+   -20
+  ],
+  [
+   55.08,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   57.65,
+   "click.mp3",
+   -16
+  ],
+  [
+   58.0,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   58.4,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   59.4,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   60.4,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   61.3,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   62.2,
+   "key-press.mp3",
+   -20
+  ],
+  [
+   63.1,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   64.5,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   65.6,
+   "ping.mp3",
+   -18
+  ],
+  [
+   66.88,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   67.15,
+   "pop.mp3",
+   -18
+  ],
+  [
+   69.35,
+   "pop.mp3",
+   -18
+  ],
+  [
+   70.4,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   72.94,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   76.75,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   77.0,
+   "click.mp3",
+   -16
+  ],
+  [
+   78.12,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   78.7,
+   "glitch-2.mp3",
+   -21
+  ],
+  [
+   81.28,
+   "whoosh-short.mp3",
+   -18
+  ],
+  [
+   84.04,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   85.2,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   87.4,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   89.1,
+   "pop.mp3",
+   -20
+  ]
+ ],
+ "post": {
+  "title": "CORREIOS E ANATEL SEM DINHEIRO",
+  "t": 3.2,
+  "media": false,
+  "descricao": "Os Correios perdem quase R$ 1 bilhão por mês e vivem de empréstimo garantido pela União. A Anatel arrecadou R$ 3,4 bi em 2024, mas só uns 6% voltam pra ela, e agora falta dinheiro pro centro de dados.",
+  "hashtags": [
+   "#correios",
+   "#anatel",
+   "#estatais",
+   "#orcamentopublico",
+   "#economia"
+  ]
+ }
+}
