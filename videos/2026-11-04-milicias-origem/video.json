@@ -1,0 +1,863 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia: o porteiro que tranca todas as portas e cobra pela chave. Laranja = milícia; vermelho = Comando Vermelho (maquete da região, ilustrativa: cresce 6 → 29 casas, ×4,8 ≈ +387%).",
+ "slug": "2026-11-04-milicias-origem",
+ "estilo": "analogias-v1",
+ "duration": 95.9,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra",
+   "Imagina,": "Imagina:",
+   "nenhuma,": "nenhuma…",
+   "traficante,": "traficante.",
+   "fechaduras": "fechaduras…",
+   "bandido.": "bandido:",
+   "promessa?": "promessa:",
+   "Expulsar": "expulsar",
+   "nome.": "nome:",
+   "Milícia.": "milícia.",
+   "comunitária.": "comunitária…",
+   "Um": "um",
+   "milícias.": "Milícias:",
+   "Mais": "mais",
+   "código": "Código",
+   "penal.": "Penal:",
+   "recuando,": "recuando…",
+   "comando": "Comando",
+   "vermelho": "Vermelho",
+   "diz,": "diz:",
+   "proteger,": "proteger…"
+  }
+ },
+ "media": {
+  "palacio": {
+   "file": "midia/palacio.jpg",
+   "credit": "Tomaz Silva/Agência Brasil",
+   "url": "https://commons.wikimedia.org/wiki/File:Pal%C3%A1cio_Tiradentes_2015_02.jpg",
+   "focus": [
+    0.55,
+    0.45
+   ]
+  }
+ },
+ "scenes": [
+  {
+   "id": "porta",
+   "from": 0,
+   "to": 11.45
+  },
+  {
+   "id": "servicos",
+   "from": 11.45,
+   "to": 15.42
+  },
+  {
+   "id": "distintivo",
+   "from": 15.42,
+   "to": 17.86
+  },
+  {
+   "id": "bairro",
+   "from": 17.86,
+   "to": 23.96
+  },
+  {
+   "id": "porteiro",
+   "from": 23.96,
+   "to": 32.86
+  },
+  {
+   "id": "arquivo",
+   "from": 32.86,
+   "to": 43.2
+  },
+  {
+   "id": "riodaspedras",
+   "from": 43.2,
+   "to": 49.99
+  },
+  {
+   "id": "jornal",
+   "from": 49.99,
+   "to": 53.12
+  },
+  {
+   "id": "prefeito",
+   "from": 53.12,
+   "to": 60.04
+  },
+  {
+   "id": "batan",
+   "from": 60.04,
+   "to": 65.3
+  },
+  {
+   "id": "cpi",
+   "from": 65.3,
+   "to": 67.5
+  },
+  {
+   "id": "indiciados",
+   "from": 67.5,
+   "to": 71.28
+  },
+  {
+   "id": "lei",
+   "from": 71.28,
+   "to": 76.6
+  },
+  {
+   "id": "mapa",
+   "from": 76.6,
+   "to": 86.68
+  },
+  {
+   "id": "pergunta",
+   "from": 86.68,
+   "to": 95.9
+  }
+ ],
+ "cuts": [
+  11.45,
+  15.42,
+  17.86,
+  23.96,
+  32.86,
+  43.2,
+  49.99,
+  53.12,
+  60.04,
+  65.3,
+  67.5,
+  71.28,
+  76.6,
+  86.68
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.2,
+   "to": 4.55,
+   "text": "TAXA DE\nSEGURANÇA"
+  },
+  {
+   "id": "ov-02",
+   "kind": "chip",
+   "from": 5.42,
+   "to": 8.7,
+   "text": "TODO MÊS",
+   "style": "red"
+  },
+  {
+   "id": "ov-03",
+   "kind": "chip",
+   "from": 9.2,
+   "to": 11.4,
+   "text": "SEM PEDIR",
+   "style": "dark"
+  },
+  {
+   "id": "ov-04",
+   "kind": "chip",
+   "from": 11.78,
+   "to": 13.3,
+   "text": "GÁS MAIS CARO",
+   "style": "red"
+  },
+  {
+   "id": "ov-05",
+   "kind": "chip",
+   "from": 13.54,
+   "to": 14.2,
+   "text": "INTERNET: SÓ A DELE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-06",
+   "kind": "chip",
+   "from": 14.26,
+   "to": 15.38,
+   "text": "VAN: SÓ A DELE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-07",
+   "kind": "source",
+   "from": 11.6,
+   "to": 15.38,
+   "text": "Fonte: Agência Brasil, 2023"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 15.6,
+   "to": 16.85,
+   "text": "NÃO É TRAFICANTE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-09",
+   "kind": "title",
+   "from": 16.95,
+   "to": 17.82,
+   "text": "MILÍCIA"
+  },
+  {
+   "id": "ov-10",
+   "kind": "chip",
+   "from": 18.0,
+   "to": 19.85,
+   "text": "GRUPO ARMADO",
+   "style": "red"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 19.9,
+   "to": 23.9,
+   "text": "POLICIAIS E\nEX-POLICIAIS"
+  },
+  {
+   "id": "ov-12",
+   "kind": "source",
+   "from": 18.0,
+   "to": 23.9,
+   "text": "Fonte: Agência Brasil, 2023"
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 24.6,
+   "to": 30.2,
+   "text": "O PORTEIRO\nVIRA O DONO"
+  },
+  {
+   "id": "ov-14",
+   "kind": "chip",
+   "from": 30.4,
+   "to": 32.82,
+   "text": "ELE É A SEGURANÇA",
+   "style": "red"
+  },
+  {
+   "id": "ov-15",
+   "kind": "title",
+   "from": 33.0,
+   "to": 34.5,
+   "text": "DE ONDE\nVEIO?"
+  },
+  {
+   "id": "ov-16",
+   "kind": "title",
+   "from": 34.6,
+   "to": 40.95,
+   "text": "ANOS 1950"
+  },
+  {
+   "id": "ov-17",
+   "kind": "source",
+   "from": 34.6,
+   "to": 40.95,
+   "text": "Fonte: Le Monde Diplomatique Brasil"
+  },
+  {
+   "id": "ov-18",
+   "kind": "title",
+   "from": 41.0,
+   "to": 43.15,
+   "text": "ANOS 1960–80"
+  },
+  {
+   "id": "ov-19",
+   "kind": "source",
+   "from": 41.0,
+   "to": 43.15,
+   "text": "Fonte: Fundação Perseu Abramo, 2019"
+  },
+  {
+   "id": "ov-20",
+   "kind": "source",
+   "from": 43.3,
+   "to": 47.7,
+   "text": "Fonte: Agência Pública, 2019"
+  },
+  {
+   "id": "ov-21",
+   "kind": "title",
+   "from": 45.1,
+   "to": 47.7,
+   "text": "DESDE OS\nANOS 1970"
+  },
+  {
+   "id": "ov-22",
+   "kind": "chip",
+   "from": 47.9,
+   "to": 49.95,
+   "text": "EXPULSAR O TRÁFICO",
+   "style": "orange"
+  },
+  {
+   "id": "ov-23",
+   "kind": "stat",
+   "from": 50.1,
+   "to": 53.08,
+   "big": "2005",
+   "label": "O JORNAL DÁ O NOME"
+  },
+  {
+   "id": "ov-24",
+   "kind": "source",
+   "from": 50.1,
+   "to": 53.08,
+   "text": "Fonte: O Globo, 20/03/2005"
+  },
+  {
+   "id": "ov-25",
+   "kind": "stat",
+   "from": 53.3,
+   "to": 56.4,
+   "big": "2006",
+   "label": "O PREFEITO DO RIO"
+  },
+  {
+   "id": "ov-26",
+   "kind": "title",
+   "from": 56.45,
+   "to": 58.4,
+   "text": "“AUTODEFESA\nCOMUNITÁRIA”"
+  },
+  {
+   "id": "ov-27",
+   "kind": "title",
+   "from": 58.45,
+   "to": 60.0,
+   "text": "“UM MAL MENOR\nQUE O TRÁFICO”"
+  },
+  {
+   "id": "ov-28",
+   "kind": "source",
+   "from": 53.3,
+   "to": 60.0,
+   "text": "Fonte: O Globo, dez/2006"
+  },
+  {
+   "id": "ov-29",
+   "kind": "stat",
+   "from": 60.2,
+   "to": 62.6,
+   "big": "2008",
+   "label": "FAVELA DO BATAN, RIO"
+  },
+  {
+   "id": "ov-30",
+   "kind": "chip",
+   "from": 62.7,
+   "to": 64.2,
+   "text": "EQUIPE DE JORNALISTAS",
+   "style": "dark"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 64.28,
+   "to": 65.26,
+   "big": "7 HORAS",
+   "label": "DE TORTURA"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 60.2,
+   "to": 65.26,
+   "text": "Fonte: CPJ, 2008"
+  },
+  {
+   "id": "ov-33",
+   "kind": "title",
+   "from": 65.5,
+   "to": 67.45,
+   "text": "CPI DAS\nMILÍCIAS"
+  },
+  {
+   "id": "ov-34",
+   "kind": "source",
+   "from": 65.3,
+   "to": 67.48,
+   "text": "Foto: Tomaz Silva/Agência Brasil"
+  },
+  {
+   "id": "ov-35",
+   "kind": "stat",
+   "from": 67.92,
+   "to": 69.55,
+   "big": "+200",
+   "label": "INDICIADOS"
+  },
+  {
+   "id": "ov-36",
+   "kind": "chip",
+   "from": 69.6,
+   "to": 71.24,
+   "text": "POLICIAIS E POLÍTICOS",
+   "style": "red"
+  },
+  {
+   "id": "ov-37",
+   "kind": "source",
+   "from": 67.55,
+   "to": 71.24,
+   "text": "Fonte: CPI das Milícias, Alerj (2008)"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 71.45,
+   "to": 74.85,
+   "big": "2012",
+   "label": "MILÍCIA VIRA CRIME"
+  },
+  {
+   "id": "ov-39",
+   "kind": "stat",
+   "from": 74.9,
+   "to": 76.56,
+   "big": "ATÉ 8 ANOS",
+   "label": "DE PRISÃO"
+  },
+  {
+   "id": "ov-40",
+   "kind": "source",
+   "from": 71.45,
+   "to": 76.56,
+   "text": "Fonte: Lei 12.720/2012"
+  },
+  {
+   "id": "ov-41",
+   "kind": "stat",
+   "from": 77.55,
+   "to": 80.1,
+   "big": "+387%",
+   "label": "ÁREA DAS MILÍCIAS EM 16 ANOS"
+  },
+  {
+   "id": "ov-42",
+   "kind": "chip",
+   "from": 80.15,
+   "to": 81.05,
+   "text": "QUASE 5 VEZES",
+   "style": "orange"
+  },
+  {
+   "id": "ov-43",
+   "kind": "source",
+   "from": 76.75,
+   "to": 81.05,
+   "text": "Fonte: Fogo Cruzado e Geni-UFF, 2022"
+  },
+  {
+   "id": "ov-44",
+   "kind": "title",
+   "from": 81.1,
+   "to": 83.35,
+   "text": "HOJE"
+  },
+  {
+   "id": "ov-45",
+   "kind": "chip",
+   "from": 83.4,
+   "to": 84.55,
+   "text": "MILÍCIA RECUA",
+   "style": "orange"
+  },
+  {
+   "id": "ov-46",
+   "kind": "chip",
+   "from": 84.6,
+   "to": 86.64,
+   "text": "CV AVANÇA",
+   "style": "red"
+  },
+  {
+   "id": "ov-47",
+   "kind": "source",
+   "from": 81.1,
+   "to": 86.64,
+   "text": "Fonte: Mapa dos Grupos Armados, dez/2025"
+  },
+  {
+   "id": "ov-48",
+   "kind": "question",
+   "from": 86.8,
+   "to": 95.9,
+   "text": "O que é pior?",
+   "sub": "MILÍCIA OU TRÁFICO"
+  },
+  {
+   "id": "ov-49",
+   "kind": "cta",
+   "from": 93.9,
+   "to": 95.9,
+   "html": "Comenta: <b>MILÍCIA</b> ou <b>TRÁFICO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.1,
+   "whoosh-cinematic.mp3",
+   -18
+  ],
+  [
+   0.35,
+   "click-soft.mp3",
+   -22
+  ],
+  [
+   3.6,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   5.32,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   6.52,
+   "click.mp3",
+   -12
+  ],
+  [
+   6.72,
+   "click.mp3",
+   -12
+  ],
+  [
+   6.92,
+   "click.mp3",
+   -12
+  ],
+  [
+   7.56,
+   "click.mp3",
+   -12
+  ],
+  [
+   7.76,
+   "click.mp3",
+   -12
+  ],
+  [
+   7.9,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   8.39,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   10.97,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   11.42,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   12.6,
+   "pop.mp3",
+   -17
+  ],
+  [
+   13.45,
+   "pop.mp3",
+   -17
+  ],
+  [
+   14.75,
+   "pop.mp3",
+   -17
+  ],
+  [
+   15.39,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   17.1,
+   "impact-bass-2.mp3",
+   -11
+  ],
+  [
+   17.83,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   21.75,
+   "riser.mp3",
+   -20
+  ],
+  [
+   23.93,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   26.7,
+   "pop.mp3",
+   -19
+  ],
+  [
+   27.0,
+   "pop.mp3",
+   -19
+  ],
+  [
+   27.3,
+   "pop.mp3",
+   -19
+  ],
+  [
+   27.6,
+   "pop.mp3",
+   -19
+  ],
+  [
+   27.9,
+   "pop.mp3",
+   -19
+  ],
+  [
+   28.2,
+   "pop.mp3",
+   -19
+  ],
+  [
+   28.5,
+   "pop.mp3",
+   -19
+  ],
+  [
+   28.75,
+   "pop.mp3",
+   -19
+  ],
+  [
+   29.05,
+   "ping.mp3",
+   -18
+  ],
+  [
+   32.83,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   39.74,
+   "impact-bass-1.mp3",
+   -12
+  ],
+  [
+   41.4,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   42.66,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   43.17,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   48.82,
+   "impact-bass-2.mp3",
+   -11
+  ],
+  [
+   49.96,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   50.2,
+   "whoosh.mp3",
+   -18
+  ],
+  [
+   53.09,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   56.5,
+   "click.mp3",
+   -16
+  ],
+  [
+   56.8,
+   "click.mp3",
+   -17
+  ],
+  [
+   57.36,
+   "click.mp3",
+   -16
+  ],
+  [
+   57.81,
+   "click.mp3",
+   -17
+  ],
+  [
+   58.48,
+   "click.mp3",
+   -16
+  ],
+  [
+   58.83,
+   "click.mp3",
+   -17
+  ],
+  [
+   59.44,
+   "click.mp3",
+   -16
+  ],
+  [
+   60.01,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   60.2,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   64.3,
+   "impact-bass-1.mp3",
+   -14
+  ],
+  [
+   65.27,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   65.35,
+   "whoosh.mp3",
+   -18
+  ],
+  [
+   67.47,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   68.0,
+   "pop.mp3",
+   -19
+  ],
+  [
+   68.6,
+   "pop.mp3",
+   -19
+  ],
+  [
+   69.2,
+   "pop.mp3",
+   -19
+  ],
+  [
+   69.8,
+   "pop.mp3",
+   -19
+  ],
+  [
+   70.4,
+   "pop.mp3",
+   -19
+  ],
+  [
+   71.25,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   72.85,
+   "pop.mp3",
+   -16
+  ],
+  [
+   76.18,
+   "impact-bass-1.mp3",
+   -9
+  ],
+  [
+   76.57,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   77.5,
+   "riser.mp3",
+   -19
+  ],
+  [
+   83.6,
+   "glitch-1.mp3",
+   -22
+  ],
+  [
+   85.0,
+   "impact-bass-2.mp3",
+   -16
+  ],
+  [
+   86.65,
+   "whoosh-short.mp3",
+   -22
+  ],
+  [
+   86.75,
+   "whoosh-cinematic.mp3",
+   -18
+  ],
+  [
+   90.3,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   93.65,
+   "pop.mp3",
+   -15
+  ]
+ ],
+ "post": {
+  "title": "QUEM COBRA\nA TAXA?",
+  "descricao": "O que são milícias e como elas começaram no Rio: grupos armados, muitas vezes de policiais e ex-policiais, que cobram taxa de segurança e controlam gás, internet e van. Dos esquadrões da morte dos anos 1950 à CPI de 2008 e à lei de 2012; em 16 anos a área das milícias cresceu 387%.",
+  "hashtags": [
+   "#milicia",
+   "#riodejaneiro",
+   "#segurancapublica",
+   "#crimeorganizado",
+   "#historia"
+  ],
+  "t": 2.2,
+  "media": false
+ }
+}

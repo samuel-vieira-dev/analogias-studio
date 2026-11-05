@@ -1,0 +1,22 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-milicias-origem
+tema: "O que são milícias e como elas começaram no Brasil"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 1   # notícia + imagem forte
+  texto: "No Rio, tem bairro onde quem cobra taxa de segurança é policial."
+
+pergunta_final:
+  origem: 1
+  texto: "O que é pior: a milícia, feita por quem devia proteger, ou o tráfico, que é crime declarado?"
+
+analogia: "O porteiro contratado pra barrar ladrão que troca todas as fechaduras e passa a cobrar pela chave: quem devia proteger vira o dono, e não há a quem reclamar porque ele é a segurança."
+
+nota_de_fato: "CPI da Alerj (2008) pediu 225 indiciamentos (algumas fontes: 226) → 'mais de duzentos'. Área das milícias +387,3% entre os triênios 2006–2008 e 2019–2021 (52,6 → 256,28 km², 4,9×) → 'quase quintuplicou' em 16 anos. Rio das Pedras: 'uma das mais antigas, desde os anos 1970' (Agência Pública). Prefeito de 2006 e presidente da CPI não são nomeados (neutralidade); Marielle fora."
+
+pedidos_visuais: []
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-04
