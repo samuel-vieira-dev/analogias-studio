@@ -448,3 +448,61 @@ function makeCrowdField({ rows = 40, cols = 40, sx = 0.62, sz = 0.7, z0 = 0, see
   place(0); g.add(body, head); asBackdrop(g);
   return { group: g, update: place, items };
 }
+
+// ---------------------------------------------------------------- pizza (vídeo das economias da América do Sul)
+// Cheese top of a pizza (texture over the whole disc, -r..r): melted mozzarella with browned spots, tomato
+// showing through, pepperoni, basil. Cached; each pizza clones it with its own repeat.
+function pizzaTopTex() {
+  return cachedTex("pizza-top", () => {
+    const S2 = 1024, c = makeCanvas(S2, S2), x = c.getContext("2d"), r = mulberry32(51), R = S2 / 2;
+    x.fillStyle = "#c0392b"; x.fillRect(0, 0, S2, S2);
+    const g = x.createRadialGradient(R, R, R * 0.2, R, R, R); g.addColorStop(0, "#f6d27a"); g.addColorStop(0.85, "#f0c060"); g.addColorStop(1, "#d99a3e");
+    x.fillStyle = g; x.beginPath(); x.arc(R, R, R * 0.98, 0, Math.PI * 2); x.fill();
+    for (let i = 0; i < 140; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * R * 0.9, s = 10 + r() * 30; x.fillStyle = `rgba(${r() < 0.5 ? "196,64,40" : "214,110,50"},${0.35 + r() * 0.35})`; x.beginPath(); x.ellipse(R + Math.cos(a) * d, R + Math.sin(a) * d, s, s * (0.5 + r() * 0.5), r() * 3, 0, 6.28); x.fill(); }
+    for (let i = 0; i < 260; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * R * 0.92, s = 4 + r() * 12; x.fillStyle = `rgba(150,90,30,${0.15 + r() * 0.3})`; x.beginPath(); x.arc(R + Math.cos(a) * d, R + Math.sin(a) * d, s, 0, 6.28); x.fill(); }
+    const placed = [];
+    for (let i = 0, tries = 0; i < 20 && tries < 400; tries++) {
+      const a = r() * 6.28, d = Math.sqrt(r()) * R * 0.78, px = R + Math.cos(a) * d, py = R + Math.sin(a) * d, s = 42 + r() * 12;
+      if (placed.some(([qx, qy]) => Math.hypot(qx - px, qy - py) < 112)) continue;   // slices of pepperoni side by side, never piled
+      placed.push([px, py]); i++;
+      const pg = x.createRadialGradient(px - s * 0.3, py - s * 0.3, 2, px, py, s); pg.addColorStop(0, "#c8443a"); pg.addColorStop(0.8, "#9c2a24"); pg.addColorStop(1, "#6e1a16");
+      x.fillStyle = pg; x.beginPath(); x.arc(px, py, s, 0, 6.28); x.fill();
+      for (let k = 0; k < 6; k++) { x.fillStyle = "rgba(240,200,170,0.35)"; x.beginPath(); x.arc(px + (r() - 0.5) * s, py + (r() - 0.5) * s, 3 + r() * 3, 0, 6.28); x.fill(); }
+    }
+    for (let i = 0; i < 22; i++) { const a = r() * 6.28, d = Math.sqrt(r()) * R * 0.8; x.fillStyle = "#2f6b2a"; x.beginPath(); x.ellipse(R + Math.cos(a) * d, R + Math.sin(a) * d, 16, 8, r() * 3, 0, 6.28); x.fill(); }
+    speckle(x, S2, S2, 53, 9000, 0.08, 0.06, 2);
+    return texFrom(c);
+  });
+}
+// Pizza on a round wooden board, cut in `slices` wedges (each its own group: dough, cheese top and its arc
+// of crust), so slices can part and be lifted. Origin: table top, centre.
+// API { group, r, top, slices: [{ group, mid }], spread(k): every slice moves out by k·gap,
+//       lift(i, k, out): slice i rises and slides `out` m along its own direction }
+function makePizzaPie({ r = 0.4, slices = 8, gap = 0.018, board = true } = {}) {
+  const g = new THREE.Group(), h = r * 0.05, crustR = r * 0.085, by = board ? 0.03 : 0;
+  if (board) {
+    const b = new THREE.Mesh(new THREE.CylinderGeometry(r * 1.1, r * 1.1, 0.03, 64), pmat("#ffffff", { map: woodTex("#8a5a32"), roughness: 0.5, clearcoat: 0.3 })); b.position.y = 0.015; g.add(b);
+    g.add(contactShadow(r * 2.8, r * 2.8));
+  }
+  const top = pizzaTopTex().clone(); top.needsUpdate = true; top.repeat.set(1 / (2 * r), 1 / (2 * r)); top.offset.set(0.5, 0.5);
+  const cheese = pmat("#ffffff", { map: top, roughness: 0.55, clearcoat: 0.25 }), dough = pmat("#e3b36d", { roughness: 0.8 });
+  const crust = pmat("#c98a46", { roughness: 0.7, map: noiseTex({ base: "#c98a46", amount: 0.22, size: 2, seed: 57 }) });
+  const list = [];
+  for (let i = 0; i < slices; i++) {
+    const a0 = (i / slices) * Math.PI * 2, a1 = ((i + 1) / slices) * Math.PI * 2, mid = (a0 + a1) / 2, rr = r - crustR * 0.6;
+    const sg = new THREE.Group(); sg.position.y = by; g.add(sg);
+    const sh = new THREE.Shape(); sh.moveTo(0, 0); sh.absarc(0, 0, rr, a0, a1, false); sh.lineTo(0, 0);
+    const geo = new THREE.ExtrudeGeometry(sh, { depth: h, bevelEnabled: false, curveSegments: Math.max(4, Math.round(64 / slices)) }); geo.rotateX(-Math.PI / 2);
+    sg.add(new THREE.Mesh(geo, [cheese, dough]));
+    const tor = new THREE.TorusGeometry(r - crustR, crustR, 10, Math.max(4, Math.round(96 / slices)), a1 - a0); tor.rotateZ(a0); tor.rotateX(-Math.PI / 2);
+    const cm = new THREE.Mesh(tor, crust); cm.position.y = h * 0.75; cm.scale.y = 0.75; sg.add(cm);
+    list.push({ group: sg, mid, dir: new V3(Math.cos(mid), 0, -Math.sin(mid)), k: 0, lift: 0, out: 0 });
+  }
+  let spreadK = 0;
+  const place = (s) => { s.group.position.set(s.dir.x * (gap * spreadK + s.out * s.lift), by + 0.12 * eOut(s.lift), s.dir.z * (gap * spreadK + s.out * s.lift)); };
+  return {
+    group: g, r, top: by + h + crustR, slices: list,
+    spread(k) { spreadK = k; list.forEach(place); },
+    lift(i, k, out = 0.3) { const s = list[i]; s.lift = clamp(k); s.out = out; place(s); },
+  };
+}

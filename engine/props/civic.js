@@ -341,3 +341,21 @@ function makeInkMark(text, w, h, { ink = "#c8231a", seed = 7 } = {}) {
   m.userData.plate = { text, w, h, depth: 0, frac: px / ph, detail: false };
   return m;
 }
+
+// Graduation cap (capelo): skull cap, square board on top, button and a gold tassel hanging over the edge.
+// Origin: bottom centre (rests on a plinth). API { group, h }
+function makeGraduationCap({ s = 0.6, color = "#16181d" } = {}) {
+  const g = new THREE.Group(), cloth = pmat(color, { roughness: 0.75, sheen: 0.4, sheenColor: new THREE.Color("#3a3f4a") }), gold = pmat(GOLD_METAL, { metalness: 0.9, roughness: 0.32 });
+  const skullH = s * 0.32, skull = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.34, s * 0.37, skullH, 40), cloth); skull.position.y = skullH / 2; g.add(skull);
+  const band = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.372, s * 0.372, s * 0.05, 40, 1, true), pmat("#0d0e11", { roughness: 0.6, side: THREE.DoubleSide })); band.position.y = s * 0.03; g.add(band);
+  const bt = s * 0.035, board = new THREE.Mesh(rbox(s, bt, s, s * 0.01), cloth); board.position.y = skullH + bt / 2; board.rotation.y = Math.PI / 4; g.add(board);
+  const top = skullH + bt;
+  const btn = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.035, s * 0.035, s * 0.02, 16), gold); btn.position.y = top + s * 0.01; g.add(btn);
+  // cord from the button to the front corner, then the tassel hanging down outside the skull
+  const corner = new V3(0, top + bt * 0.2, s * 0.707), cordLen = corner.clone().setY(top).length();
+  const cord = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.008, s * 0.008, cordLen, 6), gold); cord.position.set(0, top + s * 0.012, corner.z / 2); cord.rotation.x = Math.PI / 2; g.add(cord);
+  const hang = s * 0.26, drop = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.008, s * 0.008, hang, 6), gold); drop.position.set(0, top - hang / 2, corner.z + s * 0.01); g.add(drop);
+  const tassel = new THREE.Mesh(new THREE.CylinderGeometry(s * 0.02, s * 0.045, s * 0.16, 12), gold); tassel.position.set(0, top - hang - s * 0.08, corner.z + s * 0.01); g.add(tassel);
+  g.add(contactShadow(s * 1.2, s * 1.2));
+  return { group: g, h: top + s * 0.02 };
+}

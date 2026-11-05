@@ -1,0 +1,18 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-04-economias-america-do-sul
+estilo: analogias-v1
+tema: "Comparar as economias e a qualidade de vida dos países da América do Sul, numa animação com o mapa da América do Sul em 3D."
+referencias_visuais: []
+
+hook:
+  origem: 5   # pergunta que cutuca
+  texto: "Você sabe qual é o país mais rico da América do Sul?"
+
+pergunta_final:
+  origem: 2
+  texto: "E aí, se você pudesse escolher: o que pesa mais, salário alto ou viver mais?"
+
+analogia: "A pizza: o Brasil tem a maior pizza da festa, mas divide com 213 milhões de pessoas; a Guiana tem uma pizza pequena para 1 milhão, e cada fatia lá é mais que o dobro da nossa (PIB total × PIB por pessoa)."
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-04

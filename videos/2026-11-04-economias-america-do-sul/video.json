@@ -1,0 +1,632 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Prismas do mapa: PIB 2025 (Brasil 2,25 m), PIB por pessoa (Guiana 2,0 m, 2015 e 2025), IDH (0,6 → 0, Chile 1,6 m; 2013 e 2023). Moedas da cena 'metade': 1 moeda ≈ US$ 92 bi (Brasil 25 × os outros 11, 25).",
+ "slug": "2026-11-04-economias-america-do-sul",
+ "estilo": "analogias-v1",
+ "duration": 90.0,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra"
+  }
+ },
+ "media": {},
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 3.34
+  },
+  {
+   "id": "regua",
+   "from": 3.34,
+   "to": 5.5
+  },
+  {
+   "id": "imagina",
+   "from": 5.5,
+   "to": 9.62
+  },
+  {
+   "id": "tamanho",
+   "from": 9.62,
+   "to": 14.2
+  },
+  {
+   "id": "metade",
+   "from": 14.2,
+   "to": 18.62
+  },
+  {
+   "id": "porpessoa",
+   "from": 18.62,
+   "to": 25.7
+  },
+  {
+   "id": "pizza",
+   "from": 25.7,
+   "to": 32.9
+  },
+  {
+   "id": "pizzaGuiana",
+   "from": 32.9,
+   "to": 39.12
+  },
+  {
+   "id": "rank2015",
+   "from": 39.12,
+   "to": 42.36
+  },
+  {
+   "id": "petroleo",
+   "from": 42.36,
+   "to": 46.3
+  },
+  {
+   "id": "cresce",
+   "from": 46.3,
+   "to": 50.85
+  },
+  {
+   "id": "calma",
+   "from": 50.85,
+   "to": 54.1
+  },
+  {
+   "id": "idh",
+   "from": 54.1,
+   "to": 60.1
+  },
+  {
+   "id": "cone",
+   "from": 60.1,
+   "to": 64.45
+  },
+  {
+   "id": "norte",
+   "from": 64.45,
+   "to": 68.95
+  },
+  {
+   "id": "anos",
+   "from": 68.95,
+   "to": 73.5
+  },
+  {
+   "id": "venezuela",
+   "from": 73.5,
+   "to": 79.25
+  },
+  {
+   "id": "reguas",
+   "from": 79.25,
+   "to": 82.2
+  },
+  {
+   "id": "pergunta",
+   "from": 82.2,
+   "to": 90.0
+  }
+ ],
+ "cuts": [
+  3.34,
+  5.5,
+  9.62,
+  14.2,
+  18.62,
+  25.7,
+  32.9,
+  39.12,
+  42.36,
+  46.3,
+  50.85,
+  54.1,
+  60.1,
+  64.45,
+  68.95,
+  73.5,
+  79.25,
+  82.2
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "title",
+   "from": 0.1,
+   "to": 3.3,
+   "text": "O MAIS RICO DA\nAMÉRICA DO SUL?"
+  },
+  {
+   "id": "ov-02",
+   "kind": "chip",
+   "from": 7.8,
+   "to": 9.55,
+   "text": "12 OPÇÕES",
+   "style": "orange"
+  },
+  {
+   "id": "ov-03",
+   "kind": "title",
+   "from": 9.75,
+   "to": 14.15,
+   "text": "TAMANHO DA\nECONOMIA"
+  },
+  {
+   "id": "ov-04",
+   "kind": "source",
+   "from": 9.7,
+   "to": 25.65,
+   "text": "Fonte: FMI, out/2026"
+  },
+  {
+   "id": "ov-05",
+   "kind": "stat",
+   "from": 15.85,
+   "to": 18.55,
+   "big": "49,7%",
+   "label": "DO PIB DA AMÉRICA DO SUL"
+  },
+  {
+   "id": "ov-06",
+   "kind": "title",
+   "from": 18.8,
+   "to": 22.2,
+   "text": "POR PESSOA"
+  },
+  {
+   "id": "ov-07",
+   "kind": "chip",
+   "from": 22.3,
+   "to": 24.05,
+   "text": "BRASIL: 5º · US$ 10,7 MIL",
+   "style": "green"
+  },
+  {
+   "id": "ov-08",
+   "kind": "chip",
+   "from": 24.1,
+   "to": 25.65,
+   "text": "1º GUIANA · US$ 26 MIL",
+   "style": "orange"
+  },
+  {
+   "id": "ov-09",
+   "kind": "source",
+   "from": 30.4,
+   "to": 50.8,
+   "text": "Fonte: FMI, out/2026"
+  },
+  {
+   "id": "ov-10",
+   "kind": "stat",
+   "from": 37.3,
+   "to": 39.05,
+   "big": "2,4×",
+   "label": "FATIA DA GUIANA × DO BRASIL"
+  },
+  {
+   "id": "ov-11",
+   "kind": "counter",
+   "from": 39.3,
+   "to": 46.2,
+   "label": "GUIANA",
+   "steps": [
+    [
+     39.3,
+     "2015",
+     "10º",
+     "NO PIB POR PESSOA",
+     "dark"
+    ],
+    [
+     42.5,
+     "2019",
+     "PETRÓLEO",
+     "COMEÇA A PRODUÇÃO NO MAR",
+     "orange"
+    ]
+   ]
+  },
+  {
+   "id": "ov-12",
+   "kind": "counter",
+   "from": 46.45,
+   "to": 50.8,
+   "label": "PIB POR PESSOA · GUIANA",
+   "steps": [
+    [
+     46.45,
+     "2015",
+     "US$ 5,8 MIL",
+     "PIB POR PESSOA · GUIANA",
+     "dark"
+    ],
+    [
+     49.6,
+     "2025",
+     "US$ 26,1 MIL",
+     "4,5× MAIS",
+     "orange"
+    ]
+   ]
+  },
+  {
+   "id": "ov-13",
+   "kind": "title",
+   "from": 54.3,
+   "to": 56.85,
+   "text": "IDH"
+  },
+  {
+   "id": "ov-14",
+   "kind": "chip",
+   "from": 56.9,
+   "to": 60.0,
+   "text": "VIDA · ESTUDO · RENDA",
+   "style": "dark"
+  },
+  {
+   "id": "ov-15",
+   "kind": "source",
+   "from": 54.2,
+   "to": 79.2,
+   "text": "Fonte: PNUD, RDH 2025"
+  },
+  {
+   "id": "ov-16",
+   "kind": "chip",
+   "from": 61.75,
+   "to": 64.4,
+   "text": "1º CHILE · IDH 0,878",
+   "style": "dark"
+  },
+  {
+   "id": "ov-17",
+   "kind": "chip",
+   "from": 65.55,
+   "to": 68.9,
+   "text": "BRASIL 6º · GUIANA 8º",
+   "style": "dark"
+  },
+  {
+   "id": "ov-18",
+   "kind": "stat",
+   "from": 70.6,
+   "to": 73.45,
+   "big": "81 × 70",
+   "label": "ANOS DE VIDA · CHILE × GUIANA"
+  },
+  {
+   "id": "ov-19",
+   "kind": "counter",
+   "from": 74.85,
+   "to": 79.2,
+   "label": "IDH DA VENEZUELA",
+   "steps": [
+    [
+     74.85,
+     "2013",
+     "0,773",
+     "ACIMA DO BRASIL (0,762)",
+     "dark"
+    ],
+    [
+     78.0,
+     "2023",
+     "0,709",
+     "ÚLTIMA DA AMÉRICA DO SUL",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "ov-20",
+   "kind": "question",
+   "from": 82.4,
+   "to": 90.0,
+   "text": "SALÁRIO ALTO OU\nVIVER MAIS?",
+   "sub": "O QUE PESA MAIS?"
+  },
+  {
+   "id": "ov-21",
+   "kind": "source",
+   "from": 82.3,
+   "to": 90.0,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 87.9,
+   "to": 90.0,
+   "html": "Comenta: <b>SALÁRIO</b> ou <b>VIDA</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.15,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   0.4,
+   "riser.mp3",
+   -24
+  ],
+  [
+   1.6,
+   "ping.mp3",
+   -18
+  ],
+  [
+   3.26,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   3.5,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   5.42,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   7.85,
+   "pop.mp3",
+   -16
+  ],
+  [
+   9.54,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   13.3,
+   "impact-bass-1.mp3",
+   -11
+  ],
+  [
+   14.12,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   15.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   18.54,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   22.5,
+   "pop.mp3",
+   -15
+  ],
+  [
+   25.1,
+   "chime.mp3",
+   -16
+  ],
+  [
+   25.62,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   30.4,
+   "pop.mp3",
+   -16
+  ],
+  [
+   32.82,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   35.7,
+   "pop.mp3",
+   -16
+  ],
+  [
+   36.4,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   37.3,
+   "impact-bass-2.mp3",
+   -14
+  ],
+  [
+   39.04,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   41.2,
+   "click.mp3",
+   -17
+  ],
+  [
+   42.28,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   42.5,
+   "ping.mp3",
+   -17
+  ],
+  [
+   45.15,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   46.22,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   49.6,
+   "chime.mp3",
+   -16
+  ],
+  [
+   50.77,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   53.66,
+   "glitch-1.mp3",
+   -20
+  ],
+  [
+   54.02,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   55.9,
+   "pop.mp3",
+   -16
+  ],
+  [
+   58.2,
+   "pop.mp3",
+   -17
+  ],
+  [
+   59.0,
+   "pop.mp3",
+   -17
+  ],
+  [
+   59.55,
+   "pop.mp3",
+   -17
+  ],
+  [
+   60.02,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   61.8,
+   "pop.mp3",
+   -15
+  ],
+  [
+   62.48,
+   "pop.mp3",
+   -16
+  ],
+  [
+   63.14,
+   "pop.mp3",
+   -16
+  ],
+  [
+   64.37,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   65.6,
+   "pop.mp3",
+   -15
+  ],
+  [
+   66.85,
+   "error.mp3",
+   -19
+  ],
+  [
+   67.26,
+   "pop.mp3",
+   -16
+  ],
+  [
+   68.87,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   70.6,
+   "impact-bass-2.mp3",
+   -15
+  ],
+  [
+   73.0,
+   "click-soft.mp3",
+   -16
+  ],
+  [
+   73.42,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   74.9,
+   "ping.mp3",
+   -17
+  ],
+  [
+   78.0,
+   "impact-bass-1.mp3",
+   -13
+  ],
+  [
+   79.17,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   80.2,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   82.12,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   82.45,
+   "riser.mp3",
+   -24
+  ],
+  [
+   86.0,
+   "pop.mp3",
+   -16
+  ],
+  [
+   87.0,
+   "pop.mp3",
+   -16
+  ]
+ ],
+ "post": {
+  "title": "O MAIS RICO DA\nAMÉRICA DO SUL?",
+  "descricao": "Qual é o país mais rico da América do Sul? Depende da régua: no tamanho da economia o Brasil faz quase metade do PIB do continente; por pessoa, a Guiana do petróleo lidera e o Brasil é o 5º; no IDH, o Chile é o 1º, o Brasil o 6º e a Guiana a 8ª. Dados do FMI (2025) e do PNUD (RDH 2025).",
+  "hashtags": [
+   "#americadosul",
+   "#economia",
+   "#guiana",
+   "#idh",
+   "#brasil"
+  ],
+  "media": false
+ }
+}
