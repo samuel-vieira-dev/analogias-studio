@@ -1,0 +1,19 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-06-lei-rouanet-recorde
+estilo: explicando-direito
+tema: "Lei Rouanet bate recorde — e de onde vem esse subsídio (renúncia fiscal do imposto de renda)"
+referencias_visuais: []
+
+hook:
+  origem: 5   # consequência
+  texto: "Recorde da Rouanet: bilhões em imposto que o governo deixa de receber."
+
+pergunta_final:
+  origem: 3   # vai só na legenda do post (estilo Explicando Direito)
+  texto: "Lei Rouanet: investimento que volta pra economia, ou imposto que deveria ir pra saúde e educação?"
+
+pedidos:
+  - "Explicar também de onde vem esse subsídio"
+
+duracao_alvo_s: 73
+aprovado_em: 2026-11-06

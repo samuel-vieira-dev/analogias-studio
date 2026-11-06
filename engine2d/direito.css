@@ -9,7 +9,7 @@
 #ROOT .d-block { position:absolute; text-align:center; opacity:0; z-index:20; transform-origin:50% 0%; }
 #ROOT .d-line { white-space:nowrap; font-family:'Anton'; text-transform:uppercase; color:var(--tinta); }
 #ROOT .d-line.small { font-size:var(--small-px); line-height:1.12; letter-spacing:0.005em; }
-#ROOT .d-line.big { font-size:var(--big-px); line-height:1.02; letter-spacing:0.005em; margin:0.04em 0 0.06em; }
+#ROOT .d-line.big { font-size:var(--big-px); line-height:1.02; letter-spacing:0.005em; margin:0.12em 0 0.06em; }   /* topo maior: til e circunflexo (MILHÕES, PATRIMÔNIO) não encostam na linha de cima */
 #ROOT .w { position:relative; display:inline-block; isolation:isolate; vertical-align:baseline; }
 #ROOT .w.fn { font-size:0.64em; }
 #ROOT .w .g { color:var(--fantasma); opacity:0; display:inline-block; }
@@ -62,7 +62,7 @@
 #ROOT .d-card .top { display:flex; align-items:center; gap:18px; }
 #ROOT .d-card .top svg { width:62px; height:62px; flex:none; }
 #ROOT .d-card .gr { font:400 104px/1 'Anton'; white-space:nowrap; color:var(--tinta); }
-#ROOT .d-card .pq { margin-top:12px; font:700 28px/1.2 'Inter'; text-transform:uppercase; letter-spacing:0.02em; color:#262b2f; white-space:nowrap; }
+#ROOT .d-card .pq { margin-top:22px; font:700 28px/1.2 'Inter'; text-transform:uppercase; letter-spacing:0.02em; color:#262b2f; white-space:nowrap; }
 #ROOT .d-card.canto { position:absolute; right:-10px; bottom:-40px; transform-origin:100% 100%; }
 #ROOT .d-nota { display:flex; align-items:stretch; background:var(--cartao); box-shadow:0 10px 24px rgba(0,0,0,0.2); max-width:660px; text-align:left; }
 #ROOT .d-nota .lab { background:var(--tinta); color:var(--creme); font:400 30px/1 'Anton'; padding:0 18px; display:flex; align-items:center; }

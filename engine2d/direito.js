@@ -50,11 +50,11 @@ function buildDireito(root, SPEC) {
       el.appendChild(le); ln.el = le;
     }
     root.appendChild(el); b.el = el;
-    // cada linha cabe na largura da zona, mesmo crescida na saída (BLOCK_EXIT_SCALE); o bloco inteiro cabe na altura (as fontes já carregaram)
+    // cada linha cabe na largura da zona e o bloco inteiro na altura, mesmo crescidos na saída (BLOCK_EXIT_SCALE; as fontes já carregaram)
     const width = (le) => { const rg = document.createRange(); rg.selectNodeContents(le); return rg.getBoundingClientRect().width; };
     for (const ln of b.lines) { let s = parseFloat(getComputedStyle(ln.el).fontSize); const min = ln.big ? 56 : 30;
       while (width(ln.el) > HZ.w / BLOCK_EXIT_SCALE - 8 && s > min) { s -= 2; ln.el.style.fontSize = s + "px"; } }
-    for (let k = 0; k < 12 && el.offsetHeight > HZ.h; k++) for (const ln of b.lines) ln.el.style.fontSize = parseFloat(getComputedStyle(ln.el).fontSize) * 0.94 + "px";
+    for (let k = 0; k < 12 && el.offsetHeight > HZ.h / BLOCK_EXIT_SCALE - 4; k++) for (const ln of b.lines) ln.el.style.fontSize = parseFloat(getComputedStyle(ln.el).fontSize) * 0.94 + "px";
   }
 
   // ---------------------------------------------------------- componentes
@@ -172,7 +172,8 @@ function buildDireito(root, SPEC) {
     },
     rosca(v, inner) {
       const el = svgEl(400, 400, `<circle cx="200" cy="200" r="150" fill="none" stroke="#c6ccd1" stroke-width="44"/><circle class="arc" cx="200" cy="200" r="150" fill="none" stroke="${cor(v.cor, COR.vermelho)}" stroke-width="44" pathLength="100" stroke-dasharray="100 100" stroke-dashoffset="100" transform="rotate(-90 200 200)"/>`);
-      const num = h("div", "", "0%"); Object.assign(num.style, { position: "absolute", inset: "0", display: "flex", alignItems: "center", justifyContent: "center", font: "400 120px/1 'Anton'", color: "#16191c" });
+      const fin = String(v.valor) + (v.sufixo ?? "%"), fs = fin.length <= 2 ? 120 : fin.length === 3 ? 96 : 78;   // o número final cabe dentro do anel (miolo de 256 px)
+      const num = h("div", "", "0%"); Object.assign(num.style, { position: "absolute", inset: "0", display: "flex", alignItems: "center", justifyContent: "center", font: `400 ${fs}px/1 'Anton'`, color: "#16191c" });
       el.appendChild(num); inner.appendChild(el);
       if (v.rotulo) { const r = h("div", "", esc(v.rotulo)); Object.assign(r.style, { font: "400 44px/1 'Anton'", textTransform: "uppercase", marginTop: "-10px" }); inner.appendChild(r); pop(r, v.t + 0.3, { s0: 0.9 }); }
       const p = { x: 0 };

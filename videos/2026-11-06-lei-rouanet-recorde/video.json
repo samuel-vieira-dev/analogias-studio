@@ -1,0 +1,462 @@
+{
+  "slug": "2026-11-06-lei-rouanet-recorde",
+  "estilo": "explicando-direito",
+  "duration": 74.78,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json",
+    "music": "assets/trilhas/explicando-direito.mp3",
+    "music_db": -15,
+    "music_loop": true,
+    "music_fade": 0.4
+  },
+  "icone": "documento",
+  "media": {
+    "concerto": {
+      "file": "midia/concerto.jpg",
+      "credit": "Henrique Boney",
+      "url": "https://commons.wikimedia.org/wiki/File:Concerto_na_Sala_S%C3%A3o_Paulo.jpg",
+      "focus": [
+        0.5,
+        0.55
+      ]
+    },
+    "petrobras-sede": {
+      "file": "midia/petrobras-sede.jpg",
+      "credit": "Wilfredor",
+      "url": "https://commons.wikimedia.org/wiki/File:Sede_Petrobras_en_R%C3%ADo_de_Janeiro.jpg",
+      "focus": [
+        0.5,
+        0.45
+      ]
+    }
+  },
+  "texto": [
+    "recorde da | # [rouanet]:",
+    "bilhões em imposto | que o governo | # deixa de [receber|vermelho].",
+    "este ano, a lei rouanet | # recebeu mais de [25 mil]",
+    "propostas, | o maior número | # da [história|preto].",
+    "e captou 1 bilhão | # e [670 milhões] | até outubro,",
+    "# [recorde] pro período.",
+    "no ano passado, | # foram [3,4 bilhões],",
+    "o terceiro | # recorde [seguido|circulo].",
+    "porém, esse dinheiro | # [não|vermelho] sai do orçamento | da cultura.",
+    "ele sai do | # [imposto de renda|preto].",
+    "funciona assim: | o ministério da cultura | # [aprova] o projeto,",
+    "ou seja, dá | # [licença] | pra buscar patrocínio.",
+    "então, uma empresa | que deve imposto | # pode mandar até [4%]",
+    "dele direto | # pra conta do [projeto].",
+    "pessoa física, | # até [6%].",
+    "em teatro, livros, | música instrumental | # e [patrimônio],",
+    "o desconto | # é de [100%|preto].",
+    "nesses casos, a empresa | # [escolhe] o projeto | e põe a marca,",
+    "mas o dinheiro | # é [imposto|vermelho]",
+    "que o governo | # deixa de [receber].",
+    "é a | # [renúncia fiscal|preto].",
+    "a maior patrocinadora | # é a [petrobras], | uma estatal:",
+    "# [278 milhões] | este ano, até agosto.",
+    "o discurso oficial | # é que [vale a pena|verde]:",
+    "um estudo da | # [fgv], encomendado | pelo ministério,",
+    "diz que cada real | # movimentou mais de [7 reais] | na economia.",
+    "porém, críticos | # apontam a [concentração|vermelho]:",
+    "no ano passado, | # [72%] do dinheiro | ficou no sudeste.",
+    "e o recorde deste ano | # ainda deve [crescer]:",
+    "no ano passado, | # mais da [metade|circulo] | do dinheiro",
+    "só entrou | # em [novembro e dezembro|preto]."
+  ],
+  "visuais": [
+    {
+      "tipo": "foto-cheia",
+      "t": 0,
+      "media": "concerto",
+      "pb": true
+    },
+    {
+      "tipo": "documento",
+      "em": "bilhões",
+      "transicao": "impacto",
+      "etiqueta": "Lei 8.313/1991",
+      "titulo": "Lei Rouanet",
+      "clipe": true,
+      "carimbo": {
+        "texto": "RENÚNCIA FISCAL",
+        "em": "receber",
+        "pos": [
+          50,
+          88
+        ]
+      },
+      "linhas": [
+        {
+          "texto": "Patrocínio pago com imposto de renda",
+          "tag": "art. 18"
+        },
+        {
+          "texto": "Projeto aprovado pelo MinC",
+          "tag": "art. 19"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "este ano",
+      "icone": "documento",
+      "grande": "25.650",
+      "pequeno": "propostas em 2026"
+    },
+    {
+      "tipo": "cartao",
+      "em": "o maior número",
+      "icone": "calendario",
+      "grande": "RECORDE",
+      "pequeno": "de propostas desde 1991"
+    },
+    {
+      "tipo": "barras",
+      "em": "bilhão",
+      "barras": [
+        {
+          "grupo": "2024",
+          "valor": 1.31,
+          "rotulo": "1,31 BI",
+          "cor": "cinza",
+          "nome": "JAN–OUT"
+        },
+        {
+          "grupo": "2025",
+          "valor": 1.61,
+          "rotulo": "1,61 BI",
+          "cor": "cinza",
+          "nome": "JAN–OUT"
+        },
+        {
+          "grupo": "2026",
+          "valor": 1.67,
+          "rotulo": "1,67 BI",
+          "cor": "vermelho",
+          "em": "seiscentos e setenta",
+          "nome": "JAN–OUT"
+        }
+      ],
+      "nota": {
+        "rotulo": "JAN–OUT",
+        "texto": "Só de janeiro a outubro de cada ano",
+        "sub": "balanço do Ministério da Cultura"
+      },
+      "carimbo": {
+        "texto": "RECORDE",
+        "em": "período",
+        "pos": [
+          50,
+          12
+        ]
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "no ano passado",
+      "icone": "calendario",
+      "grande": "3,4 BILHÕES",
+      "pequeno": "no ano inteiro de 2025",
+      "carimbo": {
+        "texto": "3º RECORDE SEGUIDO",
+        "em": "bilhões",
+        "pos": [
+          50,
+          165
+        ]
+      }
+    },
+    {
+      "tipo": "palavras",
+      "em": "porém esse",
+      "transicao": "impacto",
+      "itens": [
+        {
+          "texto": "ORÇAMENTO",
+          "riscar": "não sai"
+        },
+        {
+          "texto": "IMPOSTO",
+          "cor": "vermelho",
+          "em": "imposto de renda"
+        }
+      ]
+    },
+    {
+      "tipo": "documento",
+      "em": "funciona assim",
+      "etiqueta": "Lei 8.313/1991 · art. 19",
+      "titulo": "Projeto aprovado",
+      "clipe": true,
+      "linhas": [
+        {
+          "texto": "Aprovado pelo Ministério da Cultura",
+          "tag": "MinC",
+          "destaque": "aprova"
+        },
+        {
+          "texto": "Valor autorizado para captar",
+          "tag": "teto",
+          "em": "projeto"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "ou seja",
+      "icone": "documento",
+      "grande": "LICENÇA",
+      "pequeno": "pra buscar patrocínio · não é dinheiro"
+    },
+    {
+      "tipo": "cartao",
+      "em": "então uma empresa",
+      "grande": "ATÉ 4%",
+      "pequeno": "do imposto devido · empresa",
+      "nota": {
+        "rotulo": "DECRETO 11.453/2023",
+        "texto": "Art. 60: até 4% do imposto devido",
+        "sub": "empresas no lucro real",
+        "em": "até quatro"
+      }
+    },
+    {
+      "tipo": "documento",
+      "em": "dele direto",
+      "etiqueta": "Decreto 11.453/2023 · art. 65",
+      "titulo": "Conta do projeto",
+      "clipe": true,
+      "linhas": [
+        {
+          "texto": "O dinheiro vai direto pro projeto",
+          "tag": "conta própria",
+          "destaque": "conta"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "pessoa física",
+      "icone": "pessoa",
+      "grande": "ATÉ 6%",
+      "pequeno": "do imposto devido · pessoa física"
+    },
+    {
+      "tipo": "palavras",
+      "em": "em teatro",
+      "itens": [
+        {
+          "texto": "TEATRO"
+        },
+        {
+          "texto": "LIVROS",
+          "em": "livros"
+        },
+        {
+          "texto": "MÚSICA",
+          "em": "música"
+        },
+        {
+          "texto": "PATRIMÔNIO",
+          "em": "patrimônio"
+        }
+      ]
+    },
+    {
+      "tipo": "cartao",
+      "em": "o desconto",
+      "grande": "100%",
+      "pequeno": "do patrocínio sai do imposto",
+      "nota": {
+        "rotulo": "LEI 8.313/1991",
+        "texto": "Art. 18: dentro do teto de 4% ou 6%"
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "nesses casos",
+      "grande": "A MARCA",
+      "pequeno": "é da empresa que escolhe o projeto"
+    },
+    {
+      "tipo": "cartao",
+      "em": "mas o dinheiro",
+      "grande": "O DINHEIRO",
+      "pequeno": "é imposto que não entra no caixa",
+      "carimbo": {
+        "texto": "RENÚNCIA FISCAL",
+        "em": "renúncia",
+        "pos": [
+          50,
+          165
+        ]
+      }
+    },
+    {
+      "tipo": "fotos",
+      "em": "a maior patrocinadora",
+      "formato": "retrato",
+      "itens": [
+        {
+          "media": "petrobras-sede",
+          "nome": "Petrobras · sede no Rio"
+        }
+      ],
+      "nota": {
+        "rotulo": "ESTATAL",
+        "texto": "Maior patrocinadora da Rouanet",
+        "em": "petrobras"
+      }
+    },
+    {
+      "tipo": "cartao",
+      "em": "duzentos e setenta e oito",
+      "grande": "278 MILHÕES",
+      "pequeno": "Petrobras em 2026, até agosto",
+      "nota": {
+        "rotulo": "SALIC",
+        "texto": "Dados até 27/08/2026, via Poder360"
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "o discurso oficial",
+      "nome": "microfone",
+      "rotulo": "DISCURSO OFICIAL",
+      "corRotulo": "verde"
+    },
+    {
+      "tipo": "documento",
+      "em": "um estudo",
+      "etiqueta": "FGV · jan/2026",
+      "titulo": "Impacto da Lei Rouanet",
+      "clipe": true,
+      "linhas": [
+        {
+          "texto": "Dados de 2024",
+          "tag": "FGV"
+        },
+        {
+          "texto": "Encomendado pelo Ministério da Cultura",
+          "tag": "MinC",
+          "em": "encomendado",
+          "destaque": "ministério"
+        }
+      ]
+    },
+    {
+      "tipo": "numeros",
+      "em": "diz que cada",
+      "itens": [
+        {
+          "texto": "1",
+          "rotulo": "real de renúncia"
+        },
+        {
+          "op": "→",
+          "em": "mais de"
+        },
+        {
+          "texto": "7,59",
+          "rotulo": "reais na economia",
+          "cor": "verde",
+          "em": "mais de"
+        }
+      ]
+    },
+    {
+      "tipo": "icone",
+      "em": "porém críticos",
+      "transicao": "corte",
+      "nome": "lupa",
+      "rotulo": "O QUE DIZEM OS CRÍTICOS"
+    },
+    {
+      "tipo": "rosca",
+      "em": "no ano passado",
+      "valor": 72,
+      "rotulo": "da captação de 2025 no Sudeste",
+      "cor": "vermelho",
+      "nota": {
+        "rotulo": "MINISTÉRIO DA CULTURA",
+        "texto": "R$ 2,45 bi de R$ 3,41 bi",
+        "em": "sudeste"
+      }
+    },
+    {
+      "tipo": "icone",
+      "em": "e o recorde deste ano",
+      "nome": "calendario",
+      "rotulo": "2026 AINDA NÃO FECHOU"
+    },
+    {
+      "tipo": "barras",
+      "em": "no ano passado",
+      "barras": [
+        {
+          "grupo": "JAN–OUT",
+          "valor": 1.61,
+          "rotulo": "1,61 BI",
+          "cor": "cinza"
+        },
+        {
+          "grupo": "NOV–DEZ",
+          "valor": 1.8,
+          "rotulo": "~1,8 BI",
+          "cor": "vermelho",
+          "em": "metade"
+        }
+      ],
+      "nota": {
+        "rotulo": "2025",
+        "texto": "Ano inteiro: R$ 3,41 bi · até outubro: R$ 1,61 bi",
+        "sub": "a diferença entrou em novembro e dezembro"
+      }
+    }
+  ],
+  "sfx": [
+    [
+      1.41,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      4.01,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      14.59,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      17.07,
+      "impact-bass-1.mp3",
+      -6
+    ],
+    [
+      19.11,
+      "whoosh-cinematic.mp3",
+      -8
+    ],
+    [
+      47.41,
+      "impact-bass-1.mp3",
+      -6
+    ]
+  ],
+  "post": {
+    "title": "QUEM PAGA A\n[ROUANET?]",
+    "descricao": "Lei Rouanet bate recorde: mais de 25 mil propostas em 2026 e R$ 1,67 bilhão captados até outubro. De onde vem o dinheiro: empresas e pessoas físicas mandam parte do imposto de renda (até 4% e 6%) para projetos aprovados pelo Ministério da Cultura. É renúncia fiscal, e a maior patrocinadora é a Petrobras.",
+    "hashtags": [
+      "#leirouanet",
+      "#rouanet",
+      "#impostoderenda",
+      "#renunciafiscal",
+      "#cultura"
+    ],
+    "t": 1.0
+  }
+}
