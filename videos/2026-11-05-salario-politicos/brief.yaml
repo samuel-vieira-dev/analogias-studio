@@ -1,0 +1,22 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-05-salario-politicos
+tema: "Quanto custam os salários dos políticos aos cofres públicos"
+estilo: analogias-v1
+referencias_visuais: []
+
+hook:
+  origem: 3   # número chocante
+  texto: "Um deputado pode custar duzentos e setenta e cinco mil por mês."
+
+pergunta_final:
+  origem: 3
+  texto: "Político deveria ganhar menos, ou salário alto atrai gente melhor pro cargo?"
+
+analogia: "O técnico de futebol: o salário dele vira manchete, mas ele chega com a comissão técnica inteira, escolhida por ele, e o clube paga todo mundo, o ônibus e o hotel. O deputado é o técnico; a verba de gabinete (25 assessores escolhidos por ele), a cota e a moradia são a comissão, o ônibus e o hotel."
+
+nota_de_fato: "Não existe total oficial do salário de todos os políticos do país: o vídeo fica no Congresso (números exatos) e fecha com os ~58 mil vereadores, sem total. R$ 275 mil = teto em RR (46.366,19 + 165.806,07 + 58.474,70 + 4.253); no DF, R$ 253,8 mil, daí 'pode custar' e 'até'. Salário = 16,9% a 18,3% do teto ('menos de um quinto'). R$ 1,5 bi = teto se os 513 usarem tudo ('pode passar'). R$ 330 mi = 594 × salário × 12, sem 13º (sem fonte oficial atual), daí 'mais de'. R$ 1,55 = 330,5 mi ÷ 213,4 mi (IBGE 2025). Tema político: sem tomar lado; nenhuma foto de político específico."
+
+pedidos_visuais: []
+
+duracao_alvo_s: 88
+aprovado_em: 2026-11-05

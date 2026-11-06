@@ -1,0 +1,778 @@
+{
+ "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia única: o técnico de futebol (o salário vira manchete; a comissão técnica, o ônibus e o hotel o clube paga). Disco do custo em fatias de tamanho real (teto em RR); o plenário tem 513 cadeiras; os pontos do mapa são cidades, ilustrativos.",
+ "slug": "2026-11-05-salario-politicos",
+ "estilo": "analogias-v1",
+ "duration": 91.4,
+ "audio": {
+  "narration": "audio/narration.wav",
+  "words": "audio/words.json"
+ },
+ "captions": {
+  "fix": {
+   "para": "pra",
+   "Para": "Pra"
+  }
+ },
+ "media": {
+  "congresso": {
+   "file": "midia/congresso.jpg",
+   "credit": "Agência Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Imagens_de_Bras%C3%ADlia_-_Fachada_do_Pal%C3%A1cio_do_Congresso_Nacional_(53457492293).jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "author": "Agência Senado",
+   "license": "CC BY 2.0"
+  },
+  "plenario": {
+   "file": "midia/plenario.jpg",
+   "credit": "Ag. Senado",
+   "url": "https://commons.wikimedia.org/wiki/File:Plen%C3%A1rio_do_Congresso_(21630525922).jpg",
+   "focus": [
+    0.5,
+    0.5
+   ],
+   "author": "Agência Senado",
+   "license": "CC BY 2.0"
+  },
+  "senado": {
+   "file": "midia/senado.jpg",
+   "credit": "Boaventuravinicius",
+   "url": "https://commons.wikimedia.org/wiki/File:Plen%C3%A1rio_do_Senado_Federal.jpg",
+   "focus": [
+    0.5,
+    0.68
+   ],
+   "author": "Boaventuravinicius",
+   "license": "CC BY-SA 4.0"
+  }
+ },
+ "scenes": [
+  {
+   "id": "conta",
+   "from": 0,
+   "to": 6.56
+  },
+  {
+   "id": "eleito",
+   "from": 6.56,
+   "to": 9.46
+  },
+  {
+   "id": "contracheque",
+   "from": 9.46,
+   "to": 17.06
+  },
+  {
+   "id": "chave",
+   "from": 17.06,
+   "to": 23.92
+  },
+  {
+   "id": "cartao",
+   "from": 23.92,
+   "to": 30.38
+  },
+  {
+   "id": "assessores",
+   "from": 30.38,
+   "to": 37.98
+  },
+  {
+   "id": "tecnico",
+   "from": 37.98,
+   "to": 42.02
+  },
+  {
+   "id": "comissao",
+   "from": 42.02,
+   "to": 48.9
+  },
+  {
+   "id": "soma",
+   "from": 48.9,
+   "to": 55.2
+  },
+  {
+   "id": "plenario",
+   "from": 55.2,
+   "to": 62.32
+  },
+  {
+   "id": "salarios",
+   "from": 62.32,
+   "to": 70.44
+  },
+  {
+   "id": "porpessoa",
+   "from": 70.44,
+   "to": 75.92
+  },
+  {
+   "id": "vereadores",
+   "from": 75.92,
+   "to": 83.88
+  },
+  {
+   "id": "pergunta",
+   "from": 83.88,
+   "to": 91.4
+  }
+ ],
+ "cuts": [
+  6.56,
+  9.46,
+  17.06,
+  23.92,
+  30.38,
+  37.98,
+  42.02,
+  48.9,
+  55.2,
+  62.32,
+  70.44,
+  75.92,
+  83.88
+ ],
+ "overlays": [
+  {
+   "id": "ov-01",
+   "kind": "stat",
+   "from": 0.2,
+   "to": 4.1,
+   "big": "R$ 275 MIL",
+   "label": "POR MÊS, POR DEPUTADO"
+  },
+  {
+   "id": "ov-02",
+   "kind": "source",
+   "from": 0.2,
+   "to": 4.1,
+   "text": "Fonte: Câmara dos Deputados, 2026"
+  },
+  {
+   "id": "ov-03",
+   "kind": "chip",
+   "from": 4.3,
+   "to": 5.25,
+   "text": "E O SALÁRIO?",
+   "style": "dark"
+  },
+  {
+   "id": "ov-04",
+   "kind": "chip",
+   "from": 5.35,
+   "to": 6.5,
+   "text": "A PARTE MAIS BARATA",
+   "style": "dark"
+  },
+  {
+   "id": "ov-05",
+   "kind": "title",
+   "from": 6.7,
+   "to": 9.4,
+   "text": "IMAGINA:\nVOCÊ FOI ELEITO"
+  },
+  {
+   "id": "ov-06",
+   "kind": "source",
+   "from": 6.6,
+   "to": 9.4,
+   "text": "Foto: Agência Senado"
+  },
+  {
+   "id": "ov-07",
+   "kind": "chip",
+   "from": 10.0,
+   "to": 11.1,
+   "text": "1º CONTRACHEQUE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-08",
+   "kind": "stat",
+   "from": 11.2,
+   "to": 14.35,
+   "big": "R$ 46.366",
+   "label": "DE SALÁRIO POR MÊS"
+  },
+  {
+   "id": "ov-09",
+   "kind": "stat",
+   "from": 14.5,
+   "to": 17.0,
+   "big": "≈ 29",
+   "label": "SALÁRIOS MÍNIMOS"
+  },
+  {
+   "id": "ov-10",
+   "kind": "source",
+   "from": 11.2,
+   "to": 17.0,
+   "text": "Fonte: Câmara; Decreto 12.797/2025"
+  },
+  {
+   "id": "ov-11",
+   "kind": "title",
+   "from": 17.15,
+   "to": 18.5,
+   "text": "MAS AÍ CHEGA\nO RESTO"
+  },
+  {
+   "id": "ov-12",
+   "kind": "chip",
+   "from": 18.9,
+   "to": 21.2,
+   "text": "APARTAMENTO EM BRASÍLIA",
+   "style": "dark"
+  },
+  {
+   "id": "ov-13",
+   "kind": "stat",
+   "from": 21.3,
+   "to": 23.85,
+   "big": "R$ 4.253",
+   "label": "POR MÊS · AUXÍLIO-MORADIA"
+  },
+  {
+   "id": "ov-14",
+   "kind": "source",
+   "from": 18.9,
+   "to": 23.85,
+   "text": "Fonte: Câmara dos Deputados, 2026"
+  },
+  {
+   "id": "ov-15",
+   "kind": "chip",
+   "from": 24.1,
+   "to": 25.1,
+   "text": "COTA PARLAMENTAR",
+   "style": "orange"
+  },
+  {
+   "id": "ov-16",
+   "kind": "stat",
+   "from": 25.2,
+   "to": 30.3,
+   "big": "ATÉ R$ 58 MIL",
+   "label": "POR MÊS, NO TETO"
+  },
+  {
+   "id": "ov-17",
+   "kind": "source",
+   "from": 25.2,
+   "to": 30.3,
+   "text": "Fonte: Câmara, Ato da Mesa 244/2026"
+  },
+  {
+   "id": "ov-18",
+   "kind": "chip",
+   "from": 30.6,
+   "to": 31.8,
+   "text": "A MAIOR FATIA",
+   "style": "orange"
+  },
+  {
+   "id": "ov-19",
+   "kind": "stat",
+   "from": 31.9,
+   "to": 34.85,
+   "big": "R$ 165 MIL",
+   "label": "POR MÊS · GABINETE"
+  },
+  {
+   "id": "ov-20",
+   "kind": "chip",
+   "from": 34.95,
+   "to": 36.7,
+   "text": "ATÉ 25 ASSESSORES",
+   "style": "orange"
+  },
+  {
+   "id": "ov-21",
+   "kind": "chip",
+   "from": 36.85,
+   "to": 37.92,
+   "text": "ESCOLHIDOS POR VOCÊ",
+   "style": "red"
+  },
+  {
+   "id": "ov-22",
+   "kind": "source",
+   "from": 31.9,
+   "to": 37.92,
+   "text": "Fonte: Câmara dos Deputados, 2026"
+  },
+  {
+   "id": "ov-23",
+   "kind": "title",
+   "from": 38.1,
+   "to": 40.2,
+   "text": "É COMO UM\nTÉCNICO DE FUTEBOL"
+  },
+  {
+   "id": "ov-24",
+   "kind": "chip",
+   "from": 40.45,
+   "to": 41.95,
+   "text": "O SALÁRIO VIRA MANCHETE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-25",
+   "kind": "chip",
+   "from": 42.9,
+   "to": 45.5,
+   "text": "COMISSÃO TÉCNICA",
+   "style": "dark"
+  },
+  {
+   "id": "ov-26",
+   "kind": "chip",
+   "from": 45.7,
+   "to": 48.85,
+   "text": "O CLUBE PAGA TUDO",
+   "style": "orange"
+  },
+  {
+   "id": "ov-27",
+   "kind": "stat",
+   "from": 49.9,
+   "to": 52.75,
+   "big": "R$ 275 MIL",
+   "label": "POR MÊS, NO TETO"
+  },
+  {
+   "id": "ov-28",
+   "kind": "chip",
+   "from": 52.85,
+   "to": 55.15,
+   "text": "MENOS DE 1/5",
+   "style": "orange"
+  },
+  {
+   "id": "ov-29",
+   "kind": "source",
+   "from": 49.9,
+   "to": 55.15,
+   "text": "Teto em Roraima · Fonte: Câmara, 2026"
+  },
+  {
+   "id": "ov-30",
+   "kind": "chip",
+   "from": 56.2,
+   "to": 58.25,
+   "text": "× 513 DEPUTADOS",
+   "style": "dark"
+  },
+  {
+   "id": "ov-31",
+   "kind": "stat",
+   "from": 58.4,
+   "to": 62.25,
+   "big": "R$ 1,5 BI",
+   "label": "POR ANO, NO TETO"
+  },
+  {
+   "id": "ov-32",
+   "kind": "source",
+   "from": 58.4,
+   "to": 62.25,
+   "text": "Se todos usarem o teto · Fonte: Câmara"
+  },
+  {
+   "id": "ov-33",
+   "kind": "chip",
+   "from": 62.45,
+   "to": 63.65,
+   "text": "SÓ OS SALÁRIOS",
+   "style": "orange"
+  },
+  {
+   "id": "ov-34",
+   "kind": "chip",
+   "from": 63.8,
+   "to": 67.9,
+   "text": "DEPUTADOS + SENADORES",
+   "style": "dark"
+  },
+  {
+   "id": "ov-35",
+   "kind": "stat",
+   "from": 68.0,
+   "to": 70.38,
+   "big": "R$ 330 MI",
+   "label": "POR ANO, SÓ DE SALÁRIO"
+  },
+  {
+   "id": "ov-36",
+   "kind": "source",
+   "from": 63.4,
+   "to": 70.38,
+   "text": "Fotos: Ag. Senado; Boaventuravinicius"
+  },
+  {
+   "id": "ov-37",
+   "kind": "chip",
+   "from": 71.0,
+   "to": 73.5,
+   "text": "÷ 213 MILHÕES",
+   "style": "dark"
+  },
+  {
+   "id": "ov-38",
+   "kind": "stat",
+   "from": 73.65,
+   "to": 75.85,
+   "big": "R$ 1,55",
+   "label": "POR BRASILEIRO, POR ANO"
+  },
+  {
+   "id": "ov-39",
+   "kind": "source",
+   "from": 71.0,
+   "to": 75.85,
+   "text": "Fonte: IBGE, 2025"
+  },
+  {
+   "id": "ov-40",
+   "kind": "chip",
+   "from": 76.1,
+   "to": 77.6,
+   "text": "SÓ O CONGRESSO",
+   "style": "orange"
+  },
+  {
+   "id": "ov-41",
+   "kind": "stat",
+   "from": 79.5,
+   "to": 81.75,
+   "big": "≈ 58 MIL",
+   "label": "VEREADORES NO BRASIL"
+  },
+  {
+   "id": "ov-42",
+   "kind": "chip",
+   "from": 81.85,
+   "to": 83.82,
+   "text": "CADA CIDADE DECIDE",
+   "style": "dark"
+  },
+  {
+   "id": "ov-43",
+   "kind": "source",
+   "from": 79.5,
+   "to": 83.82,
+   "text": "Fonte: TSE, eleições 2024"
+  },
+  {
+   "id": "ov-44",
+   "kind": "question",
+   "from": 84.0,
+   "to": 91.35,
+   "text": "MENOS: ganhar menos\nALTO: atrai gente melhor",
+   "sub": "E VOCÊ, O QUE ACHA?"
+  },
+  {
+   "id": "ov-45",
+   "kind": "cta",
+   "from": 89.3,
+   "to": 91.4,
+   "html": "Comenta: <b>MENOS</b> ou <b>ALTO</b>"
+  }
+ ],
+ "sfx": [
+  [
+   0.05,
+   "whoosh-cinematic.mp3",
+   -18
+  ],
+  [
+   3.28,
+   "impact-bass-2.mp3",
+   -18
+  ],
+  [
+   4.5,
+   "click.mp3",
+   -16
+  ],
+  [
+   5.4,
+   "pop.mp3",
+   -24
+  ],
+  [
+   6.56,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   6.62,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   9.46,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   9.95,
+   "click-soft.mp3",
+   -18
+  ],
+  [
+   14.55,
+   "pop.mp3",
+   -27
+  ],
+  [
+   14.9,
+   "pop.mp3",
+   -27
+  ],
+  [
+   15.25,
+   "pop.mp3",
+   -27
+  ],
+  [
+   15.6,
+   "pop.mp3",
+   -27
+  ],
+  [
+   15.95,
+   "pop.mp3",
+   -27
+  ],
+  [
+   17.06,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   17.47,
+   "click.mp3",
+   -18
+  ],
+  [
+   17.72,
+   "click.mp3",
+   -18
+  ],
+  [
+   17.97,
+   "click.mp3",
+   -18
+  ],
+  [
+   18.82,
+   "chime.mp3",
+   -20
+  ],
+  [
+   23.92,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   24.25,
+   "ping.mp3",
+   -22
+  ],
+  [
+   27.1,
+   "pop.mp3",
+   -24
+  ],
+  [
+   27.9,
+   "pop.mp3",
+   -24
+  ],
+  [
+   28.85,
+   "pop.mp3",
+   -24
+  ],
+  [
+   29.55,
+   "pop.mp3",
+   -24
+  ],
+  [
+   30.38,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   36.75,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   37.98,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   40.6,
+   "whoosh-short.mp3",
+   -20
+  ],
+  [
+   42.02,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   46.1,
+   "glitch-1.mp3",
+   -24
+  ],
+  [
+   46.9,
+   "whoosh.mp3",
+   -20
+  ],
+  [
+   48.9,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   49.3,
+   "click-soft.mp3",
+   -20
+  ],
+  [
+   52.9,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   53.15,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   55.2,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   56.2,
+   "riser.mp3",
+   -22
+  ],
+  [
+   60.7,
+   "impact-bass-2.mp3",
+   -20
+  ],
+  [
+   62.32,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   63.5,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   65.4,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   67.0,
+   "riser.mp3",
+   -22
+  ],
+  [
+   68.1,
+   "impact-bass-1.mp3",
+   -22
+  ],
+  [
+   70.44,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   70.6,
+   "sparkle.mp3",
+   -22
+  ],
+  [
+   73.55,
+   "pop.mp3",
+   -22
+  ],
+  [
+   73.85,
+   "pop.mp3",
+   -22
+  ],
+  [
+   74.15,
+   "pop.mp3",
+   -22
+  ],
+  [
+   75.92,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   77.3,
+   "whoosh-short.mp3",
+   -21
+  ],
+  [
+   79.5,
+   "sparkle.mp3",
+   -20
+  ],
+  [
+   81.9,
+   "chime.mp3",
+   -22
+  ],
+  [
+   83.88,
+   "whoosh.mp3",
+   -17
+  ],
+  [
+   85.7,
+   "click.mp3",
+   -20
+  ],
+  [
+   87.3,
+   "click.mp3",
+   -20
+  ],
+  [
+   89.3,
+   "notification.mp3",
+   -20
+  ]
+ ],
+ "post": {
+  "title": "R$ 275 MIL\nPOR DEPUTADO",
+  "descricao": "Quanto custa um deputado federal: salário de R$ 46.366, mais gabinete com até 25 assessores, cota parlamentar e auxílio-moradia, até R$ 275 mil por mês. Só os salários do Congresso passam de R$ 330 milhões por ano.",
+  "hashtags": [
+   "#deputadofederal",
+   "#salariodepolitico",
+   "#congressonacional",
+   "#camaradosdeputados",
+   "#dinheiropublico"
+  ]
+ }
+}
