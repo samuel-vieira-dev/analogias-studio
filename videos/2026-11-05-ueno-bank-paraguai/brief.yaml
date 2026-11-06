@@ -1,0 +1,20 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-05-ueno-bank-paraguai
+estilo: analogias-v1
+tema: "O escândalo bancário no Paraguai: a quebra do ueno bank e a renúncia de Santiago Peña"
+referencias_visuais: []
+
+hook:
+  origem: 3
+  texto: "Quase metade do Paraguai era cliente do banco que acabou de quebrar."
+
+pergunta_final:
+  origem: 1
+  texto: "Então: quem tem mais culpa? Os donos que esvaziaram o banco, ou o Banco Central que devia fiscalizar?"
+
+analogia: "Banco = prédio: nos andares o dinheiro dos clientes; nas colunas o capital dos donos que a lei obriga a ter; o fiscal bate e as colunas estão ocas; o Banco Central interdita o prédio com o dinheiro de todo mundo dentro."
+
+pedidos: []
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-05

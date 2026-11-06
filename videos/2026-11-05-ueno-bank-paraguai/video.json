@@ -1,0 +1,911 @@
+{
+  "_doc": "Tempos em segundos do áudio final (audio/words.json). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia única: o banco é um prédio sobre colunas (capital dos donos); o fiscal acha as colunas ocas; o BC interdita. Os 50 mil da fala 17 são hipotéticos (25 maços de 2 mil; linha em 19 = 38 mil).",
+  "slug": "2026-11-05-ueno-bank-paraguai",
+  "estilo": "analogias-v1",
+  "duration": 93.6,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json"
+  },
+  "captions": {
+    "fix": {
+      "para": "pra",
+      "Para": "Pra",
+      "Penha": "Peña",
+      "Penha,": "Peña,",
+      "Ueno.": "ueno.",
+      "Ueno": "ueno",
+      "Imagina,": "Imagina:",
+      "-presidente": "presidente"
+    }
+  },
+  "media": {
+    "bcp": {
+      "file": "midia/bcp.jpg",
+      "credit": "F. Méndez/Wikimedia",
+      "url": "https://commons.wikimedia.org/wiki/File:Banco_Central_del_Paraguay_by_Felipe_M%C3%A9ndez.jpg",
+      "focus": [
+        0.5,
+        0.4
+      ],
+      "author": "Felipe Méndez",
+      "license": "CC BY-SA 3.0"
+    },
+    "pena": {
+      "file": "midia/pena.jpg",
+      "credit": "Pres. Taiwan",
+      "url": "https://commons.wikimedia.org/wiki/File:Santiago_Pe%C3%B1a_mayo_2026_(cropped).jpg",
+      "focus": [
+        0.5,
+        0.3
+      ],
+      "author": "Wang Yu Ching (Office of the President, Taiwan)",
+      "license": "CC BY 4.0"
+    },
+    "carvallo": {
+      "file": "midia/carvallo.jpg",
+      "credit": "BCP",
+      "url": "https://commons.wikimedia.org/wiki/File:Carlos_Carvallo_Spalding_2025.jpg",
+      "focus": [
+        0.5,
+        0.35
+      ],
+      "author": "Banco Central del Paraguay",
+      "license": "CC0"
+    },
+    "congresso": {
+      "file": "midia/congresso.jpg",
+      "credit": "FF MM/Wikimedia",
+      "url": "https://commons.wikimedia.org/wiki/File:Congreso_Nacional_de_Paraguay.JPG",
+      "focus": [
+        0.5,
+        0.5
+      ],
+      "author": "FF MM",
+      "license": "CC BY-SA 3.0"
+    }
+  },
+  "scenes": [
+    {
+      "id": "gancho",
+      "from": 0,
+      "to": 4.55
+    },
+    {
+      "id": "app",
+      "from": 4.55,
+      "to": 9.72
+    },
+    {
+      "id": "cartao",
+      "from": 9.72,
+      "to": 11.0
+    },
+    {
+      "id": "bc",
+      "from": 11.0,
+      "to": 15.05
+    },
+    {
+      "id": "predio",
+      "from": 15.05,
+      "to": 22.35
+    },
+    {
+      "id": "prejuizo",
+      "from": 22.35,
+      "to": 24.88
+    },
+    {
+      "id": "ocas",
+      "from": 24.88,
+      "to": 30.2
+    },
+    {
+      "id": "emprestimo",
+      "from": 30.2,
+      "to": 36.4
+    },
+    {
+      "id": "interdita",
+      "from": 36.4,
+      "to": 40.9
+    },
+    {
+      "id": "publico",
+      "from": 40.9,
+      "to": 46.45
+    },
+    {
+      "id": "pena",
+      "from": 46.45,
+      "to": 51.7
+    },
+    {
+      "id": "carvallo",
+      "from": 51.7,
+      "to": 60.1
+    },
+    {
+      "id": "presos",
+      "from": 60.1,
+      "to": 62.2
+    },
+    {
+      "id": "protesto",
+      "from": 62.2,
+      "to": 64.0
+    },
+    {
+      "id": "renuncia",
+      "from": 64.0,
+      "to": 71.4
+    },
+    {
+      "id": "vitalicio",
+      "from": 71.4,
+      "to": 77.75
+    },
+    {
+      "id": "garantia",
+      "from": 77.75,
+      "to": 85.65
+    },
+    {
+      "id": "pergunta",
+      "from": 85.65,
+      "to": 93.6
+    }
+  ],
+  "cuts": [
+    4.55,
+    9.72,
+    11.0,
+    15.05,
+    22.35,
+    24.88,
+    30.2,
+    36.4,
+    40.9,
+    46.45,
+    51.7,
+    60.1,
+    62.2,
+    64.0,
+    66.56,
+    71.4,
+    77.75,
+    85.65
+  ],
+  "overlays": [
+    {
+      "kind": "stat",
+      "from": 0.1,
+      "to": 2.3,
+      "big": "QUASE METADE",
+      "label": "DO PAÍS ERA CLIENTE",
+      "id": "ov-01"
+    },
+    {
+      "kind": "stat",
+      "from": 2.3,
+      "to": 4.5,
+      "big": "~3 MILHÕES",
+      "label": "DE CLIENTES",
+      "id": "ov-02"
+    },
+    {
+      "kind": "source",
+      "from": 0.1,
+      "to": 4.5,
+      "text": "Fonte: EFE; Reuters, 05/11/2026",
+      "id": "ov-03"
+    },
+    {
+      "kind": "title",
+      "from": 4.7,
+      "to": 8.4,
+      "text": "TERÇA,\nDE MADRUGADA",
+      "id": "ov-04"
+    },
+    {
+      "kind": "title",
+      "from": 8.5,
+      "to": 9.72,
+      "text": "SEM SALDO",
+      "id": "ov-05"
+    },
+    {
+      "kind": "title",
+      "from": 9.8,
+      "to": 11.0,
+      "text": "SEM CARTÃO",
+      "id": "ov-06"
+    },
+    {
+      "kind": "source",
+      "from": 8.5,
+      "to": 11.0,
+      "text": "Fonte: Euronews; La Capital, 05/11/2026",
+      "id": "ov-07"
+    },
+    {
+      "kind": "title",
+      "from": 11.1,
+      "to": 12.9,
+      "text": "NÃO É BUG",
+      "id": "ov-08"
+    },
+    {
+      "kind": "title",
+      "from": 12.9,
+      "to": 15.05,
+      "text": "O BANCO CENTRAL\nASSUMIU O UENO",
+      "id": "ov-09"
+    },
+    {
+      "kind": "source",
+      "from": 11.0,
+      "to": 15.05,
+      "text": "Fonte: AP; EFE · Foto: F. Méndez/Wikimedia",
+      "id": "ov-10"
+    },
+    {
+      "kind": "title",
+      "from": 15.1,
+      "to": 16.6,
+      "text": "POR QUÊ?",
+      "id": "ov-11"
+    },
+    {
+      "kind": "title",
+      "from": 17.2,
+      "to": 19.6,
+      "text": "ANDARES =\nDINHEIRO DOS CLIENTES",
+      "id": "ov-12"
+    },
+    {
+      "kind": "title",
+      "from": 19.6,
+      "to": 22.35,
+      "text": "COLUNAS =\nCAPITAL DOS DONOS",
+      "id": "ov-13"
+    },
+    {
+      "kind": "title",
+      "from": 22.5,
+      "to": 23.8,
+      "text": "SE VEM UM PREJUÍZO…",
+      "id": "ov-14"
+    },
+    {
+      "kind": "title",
+      "from": 23.8,
+      "to": 24.88,
+      "text": "AS COLUNAS AGUENTAM",
+      "id": "ov-15"
+    },
+    {
+      "kind": "title",
+      "from": 25.3,
+      "to": 27.5,
+      "text": "O FISCAL BATEU…",
+      "id": "ov-16"
+    },
+    {
+      "kind": "title",
+      "from": 27.5,
+      "to": 28.4,
+      "text": "OCAS",
+      "id": "ov-17"
+    },
+    {
+      "kind": "stat",
+      "from": 28.4,
+      "to": 30.2,
+      "big": "MENOS DA METADE",
+      "label": "DO MÍNIMO DA LEI",
+      "id": "ov-18"
+    },
+    {
+      "kind": "source",
+      "from": 27.5,
+      "to": 30.2,
+      "text": "Fonte: AP; EFE, 05/11/2026",
+      "id": "ov-19"
+    },
+    {
+      "kind": "title",
+      "from": 30.4,
+      "to": 33.5,
+      "text": "EMPRÉSTIMOS AOS\nPRÓPRIOS DONOS",
+      "id": "ov-20"
+    },
+    {
+      "kind": "title",
+      "from": 33.5,
+      "to": 36.4,
+      "text": "ACIMA DO LIMITE\nSEM GARANTIA SUFICIENTE",
+      "id": "ov-21"
+    },
+    {
+      "kind": "source",
+      "from": 30.2,
+      "to": 36.4,
+      "text": "Fonte: AP; Bloomberg, 05/11/2026",
+      "id": "ov-22"
+    },
+    {
+      "kind": "title",
+      "from": 37.1,
+      "to": 38.8,
+      "text": "INTERDITADO",
+      "id": "ov-23"
+    },
+    {
+      "kind": "title",
+      "from": 38.8,
+      "to": 40.9,
+      "text": "COM O DINHEIRO\nDE TODO MUNDO DENTRO",
+      "id": "ov-24"
+    },
+    {
+      "kind": "stat",
+      "from": 41.0,
+      "to": 44.9,
+      "big": "+ DE US$ 800 MI",
+      "label": "EM DINHEIRO PÚBLICO",
+      "id": "ov-25"
+    },
+    {
+      "kind": "title",
+      "from": 44.9,
+      "to": 46.45,
+      "text": "INCLUSIVE DA\nAPOSENTADORIA",
+      "id": "ov-26"
+    },
+    {
+      "kind": "source",
+      "from": 40.9,
+      "to": 46.45,
+      "text": "Fonte: AP; Reuters, 05/11/2026",
+      "id": "ov-27"
+    },
+    {
+      "kind": "title",
+      "from": 46.6,
+      "to": 48.4,
+      "text": "PRESIDENTE\nSANTIAGO PEÑA",
+      "id": "ov-28"
+    },
+    {
+      "kind": "title",
+      "from": 48.4,
+      "to": 51.7,
+      "text": "SÓCIO DO GRUPO\nDONO DO BANCO ATÉ 2025",
+      "id": "ov-29"
+    },
+    {
+      "kind": "source",
+      "from": 46.45,
+      "to": 51.7,
+      "text": "Fonte: Reuters; Bloomberg · Foto: Pres. Taiwan",
+      "id": "ov-30"
+    },
+    {
+      "kind": "title",
+      "from": 51.8,
+      "to": 54.5,
+      "text": "O CHEFE DO\nBANCO CENTRAL",
+      "id": "ov-32"
+    },
+    {
+      "kind": "title",
+      "from": 54.5,
+      "to": 57.1,
+      "text": "PRESIDIU A\nFINANCEIRA UENO",
+      "id": "ov-33"
+    },
+    {
+      "kind": "title",
+      "from": 57.1,
+      "to": 60.1,
+      "text": "BC: ELE SE AFASTAVA\nDESSES CASOS",
+      "id": "ov-34"
+    },
+    {
+      "kind": "source",
+      "from": 51.7,
+      "to": 60.1,
+      "text": "Fonte: Reuters; AP · Fotos: Pres. Taiwan; BCP",
+      "id": "ov-35"
+    },
+    {
+      "kind": "stat",
+      "from": 60.2,
+      "to": 62.2,
+      "big": "8",
+      "label": "EXECUTIVOS PRESOS",
+      "id": "ov-36"
+    },
+    {
+      "kind": "title",
+      "from": 62.2,
+      "to": 64.0,
+      "text": "PROTESTOS\nEM ASSUNÇÃO",
+      "id": "ov-37"
+    },
+    {
+      "kind": "source",
+      "from": 60.1,
+      "to": 64.0,
+      "text": "Fonte: AP; Euronews, 05/11/2026",
+      "id": "ov-38"
+    },
+    {
+      "kind": "title",
+      "from": 64.1,
+      "to": 66.5,
+      "text": "PEÑA ANUNCIOU\nA RENÚNCIA",
+      "id": "ov-39"
+    },
+    {
+      "kind": "title",
+      "from": 66.6,
+      "to": 69.9,
+      "text": "MINUTOS DEPOIS:\nIMPEACHMENT",
+      "id": "ov-40"
+    },
+    {
+      "kind": "stat",
+      "from": 70.0,
+      "to": 71.4,
+      "big": "78 × 0",
+      "label": "NA CÂMARA",
+      "id": "ov-41"
+    },
+    {
+      "kind": "source",
+      "from": 64.0,
+      "to": 66.56,
+      "text": "Fonte: AP; ABC Color, 05/11/2026",
+      "id": "ov-42"
+    },
+    {
+      "kind": "source",
+      "from": 66.56,
+      "to": 71.4,
+      "text": "Fonte: AP; ABC Color · Foto: FF MM/Wikimedia",
+      "id": "ov-43"
+    },
+    {
+      "kind": "title",
+      "from": 71.6,
+      "to": 74.7,
+      "text": "EX-PRESIDENTE =\nSENADOR VITALÍCIO",
+      "id": "ov-44"
+    },
+    {
+      "kind": "title",
+      "from": 74.7,
+      "to": 76.0,
+      "text": "SE NÃO FOR\nCONDENADO",
+      "id": "ov-45"
+    },
+    {
+      "kind": "title",
+      "from": 76.0,
+      "to": 77.75,
+      "text": "AGORA: SENADO",
+      "id": "ov-46"
+    },
+    {
+      "kind": "source",
+      "from": 71.4,
+      "to": 77.75,
+      "text": "Fonte: Constituição, art. 189; El Tribuno",
+      "id": "ov-47"
+    },
+    {
+      "kind": "title",
+      "from": 78.0,
+      "to": 80.7,
+      "text": "VOCÊ: US$ 50 MIL",
+      "id": "ov-48"
+    },
+    {
+      "kind": "stat",
+      "from": 80.7,
+      "to": 83.5,
+      "big": "ATÉ ~US$ 38 MIL",
+      "label": "GARANTIA POR PESSOA",
+      "id": "ov-49"
+    },
+    {
+      "kind": "title",
+      "from": 83.5,
+      "to": 85.65,
+      "text": "O RESTO: DEPENDE\nDO QUE SOBRAR",
+      "id": "ov-50"
+    },
+    {
+      "kind": "source",
+      "from": 80.7,
+      "to": 83.5,
+      "text": "Fonte: Euronews; EFE, 05/11/2026",
+      "id": "ov-51"
+    },
+    {
+      "kind": "source",
+      "from": 83.5,
+      "to": 85.65,
+      "text": "Não é recomendação de investimento.",
+      "id": "ov-52"
+    },
+    {
+      "kind": "question",
+      "from": 85.8,
+      "to": 93.6,
+      "text": "DONOS OU\nBANCO CENTRAL?",
+      "sub": "QUEM TEM MAIS CULPA?",
+      "id": "ov-53"
+    },
+    {
+      "kind": "cta",
+      "from": 91.6,
+      "to": 93.6,
+      "html": "Comenta: <b>DONOS</b> ou <b>BC</b>",
+      "id": "ov-54"
+    }
+  ],
+  "sfx": [
+    [
+      0.05,
+      "whoosh-cinematic.mp3",
+      -18
+    ],
+    [
+      0.4,
+      "pop.mp3",
+      -26
+    ],
+    [
+      1.2,
+      "pop.mp3",
+      -26
+    ],
+    [
+      2.0,
+      "pop.mp3",
+      -26
+    ],
+    [
+      3.64,
+      "impact-bass-2.mp3",
+      -16
+    ],
+    [
+      3.7,
+      "glitch-1.mp3",
+      -20
+    ],
+    [
+      4.5,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      6.92,
+      "click-soft.mp3",
+      -18
+    ],
+    [
+      8.55,
+      "error.mp3",
+      -20
+    ],
+    [
+      9.7,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      10.48,
+      "error.mp3",
+      -18
+    ],
+    [
+      10.95,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      11.2,
+      "whoosh-short.mp3",
+      -21
+    ],
+    [
+      12.95,
+      "impact-bass-1.mp3",
+      -20
+    ],
+    [
+      15.0,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      16.3,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      19.7,
+      "pop.mp3",
+      -22
+    ],
+    [
+      20.6,
+      "pop.mp3",
+      -22
+    ],
+    [
+      22.3,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      23.3,
+      "impact-bass-2.mp3",
+      -14
+    ],
+    [
+      24.85,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      25.64,
+      "click.mp3",
+      -14
+    ],
+    [
+      26.14,
+      "click.mp3",
+      -14
+    ],
+    [
+      26.64,
+      "click.mp3",
+      -14
+    ],
+    [
+      27.56,
+      "impact-bass-1.mp3",
+      -15
+    ],
+    [
+      28.5,
+      "riser.mp3",
+      -24
+    ],
+    [
+      30.15,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      31.0,
+      "whoosh-short.mp3",
+      -22
+    ],
+    [
+      32.5,
+      "ping.mp3",
+      -22
+    ],
+    [
+      33.62,
+      "impact-bass-1.mp3",
+      -20
+    ],
+    [
+      36.35,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      37.25,
+      "impact-bass-2.mp3",
+      -15
+    ],
+    [
+      40.85,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      41.5,
+      "pop.mp3",
+      -22
+    ],
+    [
+      41.75,
+      "pop.mp3",
+      -22
+    ],
+    [
+      42.8,
+      "impact-bass-1.mp3",
+      -20
+    ],
+    [
+      45.0,
+      "pop.mp3",
+      -20
+    ],
+    [
+      46.4,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      46.6,
+      "whoosh-short.mp3",
+      -21
+    ],
+    [
+      47.0,
+      "click.mp3",
+      -18
+    ],
+    [
+      48.7,
+      "pop.mp3",
+      -22
+    ],
+    [
+      49.1,
+      "whoosh-short.mp3",
+      -22
+    ],
+    [
+      51.65,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      51.9,
+      "click.mp3",
+      -18
+    ],
+    [
+      53.3,
+      "pop.mp3",
+      -22
+    ],
+    [
+      55.3,
+      "pop.mp3",
+      -22
+    ],
+    [
+      57.2,
+      "click-soft.mp3",
+      -20
+    ],
+    [
+      60.05,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      61.3,
+      "impact-bass-1.mp3",
+      -17
+    ],
+    [
+      62.2,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      62.3,
+      "glitch-2.mp3",
+      -22
+    ],
+    [
+      63.95,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      64.6,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      66.55,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      70.1,
+      "riser.mp3",
+      -24
+    ],
+    [
+      71.0,
+      "impact-bass-2.mp3",
+      -14
+    ],
+    [
+      71.35,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      75.3,
+      "click.mp3",
+      -18
+    ],
+    [
+      76.2,
+      "impact-bass-1.mp3",
+      -21
+    ],
+    [
+      77.7,
+      "whoosh.mp3",
+      -17
+    ],
+    [
+      78.2,
+      "pop.mp3",
+      -26
+    ],
+    [
+      81.6,
+      "ping.mp3",
+      -20
+    ],
+    [
+      83.9,
+      "whoosh-short.mp3",
+      -22
+    ],
+    [
+      85.0,
+      "click.mp3",
+      -16
+    ],
+    [
+      85.6,
+      "whoosh-cinematic.mp3",
+      -20
+    ],
+    [
+      87.7,
+      "pop.mp3",
+      -20
+    ],
+    [
+      89.9,
+      "pop.mp3",
+      -20
+    ]
+  ],
+  "post": {
+    "title": "O BANCO DE\nMEIO PARAGUAI",
+    "t": 2.9,
+    "media": false,
+    "descricao": "O ueno bank, banco digital com quase 3 milhões de clientes no Paraguai, sofreu intervenção do Banco Central com o capital abaixo da metade do mínimo legal. Peña, que foi sócio do grupo dono do banco, anunciou a renúncia e a Câmara abriu o impeachment por 78 a 0; agora é com o Senado.",
+    "hashtags": [
+      "#paraguai",
+      "#uenobank",
+      "#santiagopena",
+      "#bancocentral",
+      "#impeachment"
+    ]
+  }
+}
