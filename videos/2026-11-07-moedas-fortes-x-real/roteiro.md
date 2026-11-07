@@ -1,0 +1,15 @@
+# Roteiro (storyboard) — As moedas mais fortes do mundo × o real, de 1994 a hoje
+
+Vídeo **sem narração** (pedido do Samuel): só a trilha instrumental (`audio/music.mp3`, ElevenLabs Music v2.5, 60 s) e os números na tela. Gancho 3 e pergunta final 1, escolhidos em 07/11/2026. Os tempos seguem as batidas da música: pancadas em 0 · 6,75 · 13,75; a batida entra em 20,55 (1999); picos em 24,8 (2002) · 30,4 (2008) · 41,0 (2020) · 48,0 (pódio); clímax 53–55; fade 55,5–59.
+
+Medida: quantos reais custa 1 unidade de cada moeda (cotação PTAX de fechamento do Banco Central, dia a dia, 01/07/1994–06/11/2026; euro desde 31/12/1998). Preço nominal, o da casa de câmbio. No pódio, quanto cada uma subiu contra o real, em %: franco +799%, dólar +450%, libra +377% (desde 01/07/1994), euro +333% (desde 31/12/1998).
+
+| # | Tempo | Visual e câmera | Texto na tela (zona) |
+| --- | --- | --- | --- |
+| 1 | 0–6,75 s | Gancho: sala-cofre de um banco; close no pedestal do dólar com a moeda US$ e a placa "+450%" (câmera sobe); na segunda frase a câmera abre para os quatro pedestais (CHF, US$, £, €), os outros três com "?"; o giroflex vermelho começa a girar no silêncio da música | headline: "O DÓLAR SUBIU 450%\nCONTRA O REAL." → "E NEM FOI O QUE\nMAIS SUBIU." · fonte: Banco Central · PTAX, 1994–2026 |
+| 2 | 6,75–13,75 s | 1º/7/1994: balança de dois pratos, moeda R$ × moeda US$ niveladas (câmera gira); em out/1994 o prato do real desce (câmera empurra) | stat "R$ 1 = US$ 1" · "PLANO REAL · 1º/7/1994" → "US$ 1 = R$ 0,83" · "OUT/1994: O REAL VALIA MAIS" |
+| 3 | 13,75–48 s | Corrida: gráfico de linhas 3D numa parede de vidro diante da cidade à noite; uma linha acesa por moeda (dólar verde, euro azul, libra lilás, franco vermelho), uma conta de luz na ponta e, ao lado, a moeda e a placa com o preço em reais (as placas trocam de ordem quando uma moeda passa a outra por 2,5%); linha laranja no R$ 1; anos no plinto. O tempo desacelera nos marcos; a câmera corre com a frente do gráfico e treme nas batidas fortes; a cidade fica vermelha nas crises e verde em 2011 | contador do ANO; selos: CÂMBIO FLUTUANTE · NASCE O EURO (1999) · RECORDE DE 2002 · CRISE DE 2008 · FRANCO PASSA O DÓLAR (2010) · 2011: O REAL MAIS FORTE · DÓLAR PASSA DE R$ 4 (2015) · PANDEMIA: RECORDE (2020) · FRANCO PASSA O EURO (2022–23) · DÓLAR PASSA DE R$ 6 (2024–25) · HOJE · NOV/2026; nos outros anos "PREÇO EM REAIS" · fonte: Banco Central · PTAX |
+| 4 | 48–55 s | De volta ao cofre: o "?" sai e cada pedestal sobe até quanto a moeda subiu contra o real (escala verdadeira, um anel de latão a cada "1 vez"); a placa de % aparece no topo, o franco por último (feixe de luz); câmera abre, depois empurra no franco | "QUANTO SUBIU\nCONTRA O REAL" → stat "+799%" · "FRANCO SUÍÇO, DESDE 1994" · placas +799% · +450% · +377% · +333% · fonte: Banco Central · PTAX · euro desde 1999 |
+| 5 | 55–60 s | Câmera gira em volta do pódio | "VOCÊ ACERTOU A MOEDA\nQUE MAIS SUBIU?" · CTA "Comenta: ACERTEI ou ERREI" · "Não é recomendação de investimento." |
+
+Fontes na tela (canto superior direito): "Fonte: Banco Central · PTAX" na corrida e no pódio; aviso de investimento no fim.

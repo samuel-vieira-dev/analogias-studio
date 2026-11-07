@@ -1,0 +1,19 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, regras) vem do kit.
+slug: 2026-11-07-moedas-fortes-x-real
+estilo: analogias-v1
+tema: "Comparar a valorização ou desvalorização das moedas mais fortes do mundo versus o real ao longo dos anos"
+referencias_visuais: []
+formato: sem-narracao   # pedido do Samuel: "v1 sem narração", só música e o gráfico das moedas evoluindo ano a ano
+
+hook:
+  origem: 3   # número chocante
+  texto: "O dólar subiu 450% contra o real. E nem foi o que mais subiu."
+
+pergunta_final:
+  origem: 1
+  texto: "Você acertou a moeda que mais subiu?"
+  cta: "Comenta: ACERTEI ou ERREI"
+
+moedas: [dolar, euro, libra, franco-suico]   # iene e dinar do Kuwait fora (fatos.md #18, #19)
+duracao_alvo_s: 60
+aprovado_em: 2026-11-07

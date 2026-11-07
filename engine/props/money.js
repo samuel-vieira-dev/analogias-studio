@@ -561,3 +561,65 @@ function makePortNightSet({ quayZ = -3, seed = 6 } = {}) {
   asBackdrop(g);
   return { group: g, update(t) { sea.update(t); sky.update(t); bokeh.update(t); blinks.forEach((b, i) => { b.material.opacity = 0.2 + 0.8 * (Math.sin(t * 3 + i * 1.7) > 0.3 ? 1 : 0); }); } };
 }
+
+// ---------------------------------------------------------------- currency medallions
+// Face of a big struck coin for one currency: brushed gold (or silver) field, an enamel ring in the currency's
+// colour between two raised rims, a ring of beads, and the symbol in the field with a struck highlight.
+// No real coin design (generic: "US$", "€", "£", "CHF", "R$").
+function currencyFaceTex(face, ring, metal = "gold") {
+  return cachedTex(`medal-${face}-${ring}-${metal}`, () => {
+    const c = makeCanvas(512, 512), x = c.getContext("2d"), cx = 256, gold = metal === "gold";
+    const g = x.createRadialGradient(196, 170, 20, cx, cx, 300);
+    g.addColorStop(0, gold ? "#ffe8a8" : "#f6f8fa"); g.addColorStop(0.55, gold ? "#e0ad48" : "#c6ccd3"); g.addColorStop(1, gold ? "#9c6c18" : "#80868e");
+    x.fillStyle = g; x.fillRect(0, 0, 512, 512);
+    speckle(x, 512, 512, 91, 5000, 0.06, 0.05, 1.2);
+    // enamel ring with a glossy band, raised rims either side
+    x.lineWidth = 52; x.strokeStyle = ring; x.beginPath(); x.arc(cx, cx, 206, 0, Math.PI * 2); x.stroke();
+    const gl = x.createLinearGradient(0, 40, 0, 470); gl.addColorStop(0, "rgba(255,255,255,0.32)"); gl.addColorStop(0.5, "rgba(255,255,255,0)"); gl.addColorStop(1, "rgba(0,0,0,0.25)");
+    x.strokeStyle = gl; x.beginPath(); x.arc(cx, cx, 206, 0, Math.PI * 2); x.stroke();
+    for (const [rr, w] of [[236, 10], [176, 7]]) { x.lineWidth = w; x.strokeStyle = gold ? "#fff1c4" : "#ffffff"; x.beginPath(); x.arc(cx, cx, rr, 0, Math.PI * 2); x.stroke(); x.lineWidth = 2; x.strokeStyle = "rgba(0,0,0,0.35)"; x.beginPath(); x.arc(cx, cx, rr + w / 2, 0, Math.PI * 2); x.stroke(); }
+    x.fillStyle = gold ? "#fff0bf" : "#ffffff"; for (let i = 0; i < 36; i++) { const a = (i / 36) * Math.PI * 2; x.beginPath(); x.arc(cx + Math.cos(a) * 206, cx + Math.sin(a) * 206, 4.5, 0, Math.PI * 2); x.fill(); }
+    // the symbol: shadow, highlight, body (a struck look without a bump map)
+    let px = 230; x.font = `900 ${px}px Inter`; while (x.measureText(face).width > 290 && px > 60) { px -= 6; x.font = `900 ${px}px Inter`; }
+    x.textAlign = "center"; x.textBaseline = "middle";
+    x.fillStyle = "rgba(0,0,0,0.35)"; x.fillText(face, cx + 5, cx + 10);
+    x.fillStyle = gold ? "#fff3cc" : "#ffffff"; x.fillText(face, cx - 3, cx + 2);
+    x.fillStyle = gold ? "#8a5a0c" : "#4a5058"; x.fillText(face, cx, cx + 5);
+    return texFrom(c);
+  });
+}
+// Big coin of a currency standing upright, face to +z (and the same face on the back), reeded edge.
+// Origin: centre of the coin. API { group, spin(a), r, t }  spin(a): turns it round its vertical axis.
+function makeCurrencyMedallion(face, { r = 0.16, t = 0.045, ring = "#2fae66", metal = "gold" } = {}) {
+  const group = new THREE.Group(), pivot = new THREE.Group(); group.add(pivot);
+  const edge = pmat(metal === "gold" ? "#d9a441" : "#b9c0c7", { metalness: 1, roughness: 0.3, bumpMap: coinEdgeTex(), bumpScale: 1.2, clearcoat: 0.3 });
+  const body = new THREE.Mesh(new THREE.CylinderGeometry(r, r, t, 64), edge); body.rotation.x = Math.PI / 2; pivot.add(body);
+  const faceM = pmat("#ffffff", { map: currencyFaceTex(face, ring, metal), metalness: 0.55, roughness: 0.32, clearcoat: 0.5, clearcoatRoughness: 0.2 });
+  for (const s of [1, -1]) { const f = new THREE.Mesh(new THREE.CircleGeometry(r * 0.995, 64), faceM); f.position.z = s * (t / 2 + 0.0008); if (s < 0) f.rotation.y = Math.PI; pivot.add(f); }
+  return { group, spin: (a) => { pivot.rotation.y = a; }, r, t };
+}
+// Price tag of a currency in a chart race: a coloured plate with the currency's name on top and its price below
+// ("R$ 5,50"), repainted only when the price text changes. The price line is printed text for the QA.
+// Origin: centre of the plate; faces +z. API { group, set(price), w, h }
+function makeFxTag(name, { w = 0.66, h = 0.3, bg = "#2fae66", fg = "#ffffff" } = {}) {
+  const g = new THREE.Group(), cw = 640, ch = Math.round(cw * h / w), c = makeCanvas(cw, ch), x = c.getContext("2d"), tex = texFrom(c);
+  const face = new THREE.MeshBasicMaterial({ map: tex, toneMapped: false, transparent: true, alphaTest: 0.5 });
+  const side = mat(bg, { roughness: 0.4 });
+  const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, 0.02), [side, side, side, side, face, side]); g.add(m);
+  const pricePx = Math.round(ch * 0.5);
+  m.userData.plate = { text: name, w, h, depth: 0.02, frac: pricePx / ch, detail: false };
+  let key = "";
+  function set(price) {
+    if (price === key) return; key = price;
+    x.clearRect(0, 0, cw, ch); x.fillStyle = bg; roundRect(x, 0, 0, cw, ch, ch * 0.16); x.fill();
+    x.fillStyle = "rgba(0,0,0,0.22)"; roundRect(x, 0, ch * 0.4, cw, ch * 0.6, ch * 0.16); x.fill();
+    x.textAlign = "center"; x.textBaseline = "middle"; x.fillStyle = fg;
+    let np = Math.round(ch * 0.27); x.font = `800 ${np}px Inter`; while (x.measureText(name).width > cw * 0.9 && np > 10) { np -= 2; x.font = `800 ${np}px Inter`; }
+    x.fillText(name, cw / 2, ch * 0.21);
+    let pp = pricePx; x.font = `900 ${pp}px Inter`; while (x.measureText(price).width > cw * 0.9 && pp > 10) { pp -= 2; x.font = `900 ${pp}px Inter`; }
+    m.userData.plate.frac = pp / ch; x.fillText(price, cw / 2, ch * 0.7 + pp * 0.04);
+    tex.needsUpdate = true;
+  }
+  set("R$ 0,00");
+  return { group: g, mesh: m, set, w, h };
+}

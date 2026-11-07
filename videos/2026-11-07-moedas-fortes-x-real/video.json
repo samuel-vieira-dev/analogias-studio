@@ -1,0 +1,588 @@
+{
+ "_doc": "Vídeo sem narração (só música): sem words.json, sem legenda. Tempos em segundos do audio/music.mp3. Overlays só por zona. SERIES/YEARMAP/PODIUM do scenes.js, o contador (ov-ano) e o pódio saem do mesmo gerador (gerar.py).",
+ "slug": "2026-11-07-moedas-fortes-x-real",
+ "estilo": "analogias-v1",
+ "duration": 60.0,
+ "audio": {
+  "music": "audio/music.mp3",
+  "music_db": 0,
+  "music_fade": 1.5
+ },
+ "media": {},
+ "cuts": [
+  6.75,
+  13.75,
+  48.0,
+  55.0
+ ],
+ "overlays": [
+  {
+   "id": "ov-hook1",
+   "kind": "title",
+   "from": 0.3,
+   "to": 3.35,
+   "text": "O DÓLAR SUBIU 450%\nCONTRA O REAL."
+  },
+  {
+   "id": "ov-hook2",
+   "kind": "title",
+   "from": 3.45,
+   "to": 6.65,
+   "text": "E NEM FOI O QUE\nMAIS SUBIU."
+  },
+  {
+   "id": "src-hook",
+   "kind": "source",
+   "from": 0.3,
+   "to": 6.65,
+   "text": "Fonte: Banco Central · PTAX, 1994–2026"
+  },
+  {
+   "id": "ov-1994",
+   "kind": "stat",
+   "from": 6.85,
+   "to": 10.15,
+   "big": "R$ 1 = US$ 1",
+   "label": "PLANO REAL · 1º/7/1994"
+  },
+  {
+   "id": "ov-out94",
+   "kind": "stat",
+   "from": 10.25,
+   "to": 13.65,
+   "big": "US$ 1 = R$ 0,83",
+   "label": "OUT/1994: O REAL VALIA MAIS"
+  },
+  {
+   "id": "src-1994",
+   "kind": "source",
+   "from": 6.85,
+   "to": 13.65,
+   "text": "Fonte: Banco Central · PTAX"
+  },
+  {
+   "id": "ov-ano",
+   "kind": "counter",
+   "from": 13.75,
+   "to": 47.95,
+   "label": "PREÇO EM REAIS",
+   "steps": [
+    [
+     13.75,
+     "1994",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     14.506,
+     "1995",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     16.017,
+     "1996",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     17.528,
+     "1997",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     19.039,
+     "1998",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     20.55,
+     "1999",
+     "",
+     "CÂMBIO FLUTUANTE",
+     "red"
+    ],
+    [
+     21.85,
+     "1999",
+     "",
+     "NASCE O EURO",
+     "orange"
+    ],
+    [
+     23.08,
+     "1999",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     23.1,
+     "2000",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     23.581,
+     "2001",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     24.063,
+     "2002",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     24.3,
+     "2002",
+     "",
+     "RECORDE DE 2002",
+     "red"
+    ],
+    [
+     25.405,
+     "2002",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     25.425,
+     "2003",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     26.157,
+     "2004",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     26.89,
+     "2005",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     27.622,
+     "2006",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     28.355,
+     "2007",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     29.087,
+     "2008",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     29.6,
+     "2008",
+     "",
+     "CRISE DE 2008",
+     "red"
+    ],
+    [
+     30.893,
+     "2008",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     30.913,
+     "2009",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     31.356,
+     "2010",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     31.5,
+     "2010",
+     "",
+     "FRANCO PASSA O DÓLAR",
+     "orange"
+    ],
+    [
+     32.695,
+     "2010",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     32.715,
+     "2011",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     32.735,
+     "2011",
+     "",
+     "2011: O REAL MAIS FORTE",
+     "green"
+    ],
+    [
+     33.935,
+     "2011",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     33.955,
+     "2012",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     34.344,
+     "2013",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     34.732,
+     "2014",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     35.121,
+     "2015",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     35.61,
+     "2015",
+     "",
+     "DÓLAR PASSA DE R$ 4",
+     "red"
+    ],
+    [
+     36.46,
+     "2015",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     36.756,
+     "2016",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     37.707,
+     "2017",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     38.659,
+     "2018",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     39.611,
+     "2019",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     40.562,
+     "2020",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     40.6,
+     "2020",
+     "",
+     "PANDEMIA: RECORDE",
+     "red"
+    ],
+    [
+     42.108,
+     "2020",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     42.128,
+     "2021",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     42.812,
+     "2022",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     42.832,
+     "2022",
+     "",
+     "FRANCO PASSA O EURO",
+     "orange"
+    ],
+    [
+     43.496,
+     "2023",
+     "",
+     "FRANCO PASSA O EURO",
+     "orange"
+    ],
+    [
+     44.181,
+     "2024",
+     "",
+     "FRANCO PASSA O EURO",
+     "orange"
+    ],
+    [
+     44.3,
+     "2024",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     44.81,
+     "2024",
+     "",
+     "DÓLAR PASSA DE R$ 6",
+     "red"
+    ],
+    [
+     45.574,
+     "2025",
+     "",
+     "DÓLAR PASSA DE R$ 6",
+     "red"
+    ],
+    [
+     45.91,
+     "2025",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     46.431,
+     "2026",
+     "",
+     "PREÇO EM REAIS",
+     "dark"
+    ],
+    [
+     46.6,
+     "2026",
+     "",
+     "HOJE · NOV/2026",
+     "orange"
+    ]
+   ]
+  },
+  {
+   "id": "src-corrida",
+   "kind": "source",
+   "from": 13.75,
+   "to": 47.95,
+   "text": "Fonte: Banco Central · PTAX"
+  },
+  {
+   "id": "ov-podio",
+   "kind": "title",
+   "from": 48.1,
+   "to": 51.35,
+   "text": "QUANTO SUBIU\nCONTRA O REAL"
+  },
+  {
+   "id": "ov-franco",
+   "kind": "stat",
+   "from": 51.45,
+   "to": 54.9,
+   "big": "+799%",
+   "label": "FRANCO SUÍÇO, DESDE 1994"
+  },
+  {
+   "id": "src-podio",
+   "kind": "source",
+   "from": 48.1,
+   "to": 54.9,
+   "text": "Fonte: Banco Central · PTAX · euro desde 1999"
+  },
+  {
+   "id": "ov-pergunta",
+   "kind": "question",
+   "from": 55.05,
+   "to": 60.0,
+   "text": "VOCÊ ACERTOU A MOEDA\nQUE MAIS SUBIU?"
+  },
+  {
+   "id": "src-aviso",
+   "kind": "source",
+   "from": 55.05,
+   "to": 60.0,
+   "text": "Não é recomendação de investimento."
+  },
+  {
+   "id": "cta",
+   "kind": "cta",
+   "from": 55.9,
+   "to": 60.0,
+   "html": "Comenta: <b>ACERTEI</b> ou <b>ERREI</b>"
+  }
+ ],
+ "sfx": [
+  [
+   6.75,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   13.75,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   48.0,
+   "whoosh.mp3",
+   -22
+  ],
+  [
+   0.5,
+   "pop.mp3",
+   -18
+  ],
+  [
+   20.55,
+   "pop.mp3",
+   -18
+  ],
+  [
+   3.5,
+   "pop.mp3",
+   -16
+  ],
+  [
+   3.62,
+   "pop.mp3",
+   -16
+  ],
+  [
+   3.74,
+   "pop.mp3",
+   -16
+  ],
+  [
+   49.25,
+   "pop.mp3",
+   -16
+  ],
+  [
+   49.6,
+   "pop.mp3",
+   -16
+  ],
+  [
+   50.6,
+   "pop.mp3",
+   -16
+  ],
+  [
+   56.0,
+   "click-soft.mp3",
+   -14
+  ]
+ ],
+ "scenes": [
+  {
+   "id": "gancho",
+   "from": 0,
+   "to": 6.75
+  },
+  {
+   "id": "balanca",
+   "from": 6.75,
+   "to": 13.75
+  },
+  {
+   "id": "corrida",
+   "from": 13.75,
+   "to": 48.0
+  },
+  {
+   "id": "podio",
+   "from": 48.0,
+   "to": 55.0
+  },
+  {
+   "id": "pergunta",
+   "from": 55.0,
+   "to": 60.0
+  }
+ ],
+ "post": {
+  "title": "O DÓLAR NEM FOI\nO QUE MAIS SUBIU",
+  "descricao": "Dólar, euro, libra e franco suíço contra o real, do Plano Real (1994) a hoje, com a cotação PTAX do Banco Central: o dólar subiu 450%, a libra 377%, o euro 333% (desde 1999) e o franco suíço 799%.",
+  "hashtags": [
+   "#dolar",
+   "#cambio",
+   "#francosuico",
+   "#euro",
+   "#economia"
+  ],
+  "media": false
+ }
+}

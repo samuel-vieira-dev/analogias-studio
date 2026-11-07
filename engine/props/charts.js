@@ -190,3 +190,85 @@ function makeShareDisc({ r = 0.5, h = 0.08, color = RED } = {}) {
   set(0);
   return { group: g, set, r, h };
 }
+
+// ---------------------------------------------------------------- line chart on a glass wall
+// Tube along a polyline lying in a plane of constant z (a chart line): rings of `seg` vertices, one ring per point,
+// so ring i is data point i and setDrawRange(0, i·seg·6) draws the line up to point i.
+function chartTubeGeometry(P, rad, seg = 10) {
+  const n = P.length, pos = new Float32Array(n * seg * 3), idx = [], T = new V3(), N = new V3();
+  for (let i = 0; i < n; i++) {
+    T.copy(P[Math.min(n - 1, i + 1)]).sub(P[Math.max(0, i - 1)]).normalize(); N.set(-T.y, T.x, 0).normalize();
+    for (let j = 0; j < seg; j++) { const a = (j / seg) * Math.PI * 2, c = Math.cos(a) * rad, k = (i * seg + j) * 3; pos[k] = P[i].x + N.x * c; pos[k + 1] = P[i].y + N.y * c; pos[k + 2] = P[i].z + Math.sin(a) * rad; }
+  }
+  for (let i = 0; i < n - 1; i++) for (let j = 0; j < seg; j++) { const a = i * seg + j, b = i * seg + ((j + 1) % seg); idx.push(a, a + seg, b, b, a + seg, b + seg); }
+  const geo = new THREE.BufferGeometry(); geo.setAttribute("position", new THREE.BufferAttribute(pos, 3)); geo.setIndex(idx); geo.computeVertexNormals(); return geo;
+}
+// A line chart built as an installation: a wall of smoked glass standing on a dark plinth, etched grid lines for each
+// unit of value (its label printed at the left of every 5th year) and each year, steel fins behind the glass every
+// 5 years, an orange reference line, and one lit tube per series (a bright core in a soft glow) held off the glass
+// by steel standoffs, one per year. The years are printed on the plinth. Nothing floats: the tubes ride the
+// standoffs, the glass sits in a steel channel on the plinth. First used in 2026-11-07-moedas-fortes-x-real.
+//   series: [{ key, pts: [[year, value], …] sorted, color, z (the tube's distance in front of the glass) }]
+//   o: from/to (years), xs (m per year), ys (m per unit of value), vmax (top of the grid), ref (value of the
+//      orange line, or null), unit (prefix of the axis labels, "R$ "), r (tube radius)
+// Origin: the glass at z = 0; x = xs·(year − from); y = base + ys·value; front = +z.
+// API { group, xOf(year), yOf(value), at(key, year) → value|null, tip(key, year) → V3|null, reveal(year), glow(k),
+//       base, top, x0, x1 } — reveal(year) draws every tube and its standoffs up to that (fractional) year.
+function makeLineChartWall(series, { from, to, xs = 0.55, ys = 0.6, vmax = 8.6, ref = 1, unit = "", r = 0.035, plinthH = 0.16 } = {}) {
+  const g = new THREE.Group(), deco = new THREE.Group(), base = plinthH + 0.12, top = base + vmax * ys + 0.15;
+  const xOf = (y) => (y - from) * xs, yOf = (v) => base + v * ys, x0 = xOf(from) - 0.8, x1 = xOf(to) + 1.8, L = x1 - x0, cx = (x0 + x1) / 2;
+  g.add(deco);
+  deco.add(makeChartPlinth(x0, x1, { h: plinthH, z0: -0.2, z1: 0.95 }));
+  for (let y = Math.ceil(from); y <= Math.floor(to); y++) { const tg = makeFloorTag(String(y), { w: 0.34, h: 0.13 }); tg.position.set(xOf(y), plinthH, 0.72); deco.add(tg); }
+  // smoked glass in a steel channel, a top rail, fins behind the glass every 5 years
+  const glass = new THREE.Mesh(new THREE.PlaneGeometry(L, top - plinthH), new THREE.MeshPhysicalMaterial({ color: "#0b1626", roughness: 0.1, metalness: 0.2, transparent: true, opacity: 0.5, envMapIntensity: 1.3, depthWrite: false }));
+  glass.position.set(cx, plinthH + (top - plinthH) / 2, 0); deco.add(glass);
+  const steel = pmat("#2a2e34", { metalness: 0.85, roughness: 0.3 });
+  for (const [y, h] of [[plinthH + 0.05, 0.1], [top, 0.07]]) { const b = new THREE.Mesh(rbox(L, h, 0.09, 0.01), steel); b.position.set(cx, y, 0); deco.add(b); }
+  for (let y = Math.ceil(from / 5) * 5; y <= to; y += 5) { const f = new THREE.Mesh(new THREE.BoxGeometry(0.05, top - plinthH, 0.16), steel); f.position.set(xOf(y), plinthH + (top - plinthH) / 2, -0.09); deco.add(f); }
+  // etched grid: a line per unit of value, a fainter one per year (stronger every 5 years)
+  const etch = (o) => new THREE.MeshBasicMaterial({ color: "#d9e4f2", transparent: true, opacity: o, depthWrite: false, toneMapped: false });
+  for (let v = 1; v <= Math.floor(vmax); v++) if (v !== ref) { const m = new THREE.Mesh(new THREE.BoxGeometry(L, 0.009, 0.002), etch(0.2)); m.position.set(cx, yOf(v), 0.004); deco.add(m); }
+  for (let y = Math.ceil(from); y <= to; y++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.006, top - base, 0.002), etch(y % 5 ? 0.07 : 0.16)); m.position.set(xOf(y), base + (top - base) / 2, 0.004); deco.add(m); }
+  for (let y = Math.ceil(from / 5) * 5; y <= to; y += 5) for (let v = 1; v <= Math.floor(vmax); v++) {
+    const p = makePlate(unit + v, 0.34, 0.12, { bg: null, fg: "#cfd9e6", depth: 0.002, detail: true }); p.position.set(xOf(y) + 0.24, yOf(v) + 0.085, 0.005); deco.add(p);
+  }
+  let refMat = null;
+  if (ref != null) { refMat = new THREE.MeshBasicMaterial({ color: ORANGE, toneMapped: false }); const m = new THREE.Mesh(new THREE.BoxGeometry(L, 0.022, 0.006), refMat); m.position.set(cx, yOf(ref), 0.006); deco.add(m); }
+  asBackdrop(deco);
+  // the tubes and their standoffs
+  const S = {}, pin = new THREE.CylinderGeometry(0.009, 0.009, 1, 8); pin.rotateX(Math.PI / 2); pin.translate(0, 0, 0.5);
+  const pinM = pmat("#9aa2ab", { metalness: 0.95, roughness: 0.25 }), seg = 10;
+  for (const s of series) {
+    const P = s.pts.map(([y, v]) => new V3(xOf(y), yOf(v), s.z));
+    const col = new THREE.Color(s.color), hot = col.clone().lerp(new THREE.Color("#ffffff"), 0.35);
+    const core = new THREE.Mesh(chartTubeGeometry(P, r, seg), new THREE.MeshBasicMaterial({ color: hot, toneMapped: false }));
+    const halo = new THREE.Mesh(chartTubeGeometry(P, r * 2.6, seg), new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: 0.28, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false }));
+    core.userData.noShadow = halo.userData.noShadow = true; core.frustumCulled = halo.frustumCulled = false;
+    const years = []; for (let y = Math.ceil(s.pts[0][0]); y <= s.pts[s.pts.length - 1][0]; y++) years.push(y);
+    const pins = new THREE.InstancedMesh(pin, pinM, Math.max(1, years.length)), d = new THREE.Object3D();
+    g.add(core, halo, pins);
+    S[s.key] = { s, core, halo, pins, years, d };
+  }
+  const at = (key, y) => {
+    const p = S[key].s.pts; if (y < p[0][0]) return null;
+    let lo = 0, hi = p.length - 1; if (y >= p[hi][0]) return p[hi][1];
+    while (hi - lo > 1) { const m = (lo + hi) >> 1; if (p[m][0] <= y) lo = m; else hi = m; }
+    return lerp(p[lo][1], p[hi][1], (y - p[lo][0]) / (p[hi][0] - p[lo][0]));
+  };
+  for (const k in S) { const o = S[k]; o.years.forEach((y, i) => { o.d.position.set(xOf(y), yOf(at(k, y)), 0); o.d.scale.set(1, 1, o.s.z); o.d.updateMatrix(); o.pins.setMatrixAt(i, o.d.matrix); }); }
+  function reveal(y) {
+    for (const k in S) {
+      const o = S[k], p = o.s.pts; let i = -1; while (i + 1 < p.length && p[i + 1][0] <= y) i++;
+      const n = Math.max(0, i) * seg * 6; o.core.geometry.setDrawRange(0, n); o.halo.geometry.setDrawRange(0, n); o.core.visible = o.halo.visible = i > 0;
+      const c = o.years.filter((yy) => yy <= y).length; o.pins.count = Math.max(1, c); o.pins.visible = c > 0;
+    }
+  }
+  reveal(from);
+  return {
+    group: g, xOf, yOf, at, base, top, x0, x1,
+    tip: (key, y) => { const v = at(key, y); return v == null ? null : new V3(xOf(Math.min(y, S[key].s.pts[S[key].s.pts.length - 1][0])), yOf(v), S[key].s.z); },
+    reveal,
+    glow(k) { for (const key in S) S[key].halo.material.opacity = 0.28 * k; if (refMat) refMat.color.set(ORANGE).multiplyScalar(0.6 + 0.4 * k); },
+  };
+}
