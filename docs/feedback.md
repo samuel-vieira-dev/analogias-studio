@@ -22,6 +22,12 @@ As regras de 27 a 31/10/2026 (área segura centralizada, realismo, fotos com cr�
 
 <!-- entradas novas aqui, a mais recente primeiro -->
 
+### 2026-11-10 · voz nova (sem vídeo)
+- Gostou: —
+- Não gostou: acabaram os créditos do ElevenLabs; trocou a voz para a Narrador Analogias (VoiceStudio, local). Testou a velocidade 1,15 e 1,08 para caber em 90 s.
+- Mudou no kit: `tools/voice.py` e `channel.yaml → voz` (VoiceStudio, `velocidade` 1,0) · `SKILL.md` (etapa 6) e `docs/ferramentas.md` — a voz nova · `docs/roteiro.md` — 90 s ≈ 215 palavras (era 240–250): acima de 1,0 a voz pulou frases inteiras, então o texto encurta em vez de a voz acelerar.
+- Neste vídeo: amostras de `2026-11-06-empreender-brasil`, `2026-11-06-split-payment` e `2026-11-07-censura-ditadura-hoje` a 1,0; os três roteiros têm 248–253 palavras (saem com 98–112 s).
+
 ### 2026-11-04 · 2026-11-03-impeachments-brasil
 - Gostou: — (só comentou a capa)
 - Não gostou: "essas capas não estão boas; preciso que as capas de vídeo sejam sempre centralizadas" — confirmado: título + foto/elemento como um bloco centralizado na altura (a capa tinha o título no alto e a foto descendo até o pé).

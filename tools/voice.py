@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Narration takes from the local VoiceStudio app (OmniVoice, free, runs on this Mac).
 
-usage: python3 tools/voice.py videos/<slug> [--takes 2]
+usage: python3 tools/voice.py videos/<slug> [--takes 2] [--speed 1.15]
 
 Reads   videos/<slug>/narracao.txt and channel.yaml voz (the same voice for every estilo)
 Writes  videos/<slug>/audio/takes/take-<n>.wav  (one per seed; pick with tools/transcribe.py)
@@ -38,6 +38,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("video_dir")
     ap.add_argument("--takes", type=int)
+    ap.add_argument("--speed", type=float, help="overrides channel.yaml voz.velocidade")
     args = ap.parse_args()
 
     voz = yaml.safe_load((ROOT / "channel.yaml").read_text())["voz"]
@@ -62,6 +63,7 @@ def main():
             "profile_id": voz["profile_id"],
             "language": voz["idioma"],
             "seed": seed,
+            "speed": args.speed or voz.get("velocidade", 1.0),
             "max_chunk_chars": voz.get("max_chunk_chars", 400),
             "effect_preset": voz.get("efeito", "broadcast"),
         }

@@ -8,7 +8,7 @@ Todo vídeo novo começa com duas perguntas ao Samuel: o **tema** e o **estilo d
 | Cara | cenas 3D realistas (Three.js) com câmera que se mexe, fotos em quadros e porta-retratos, legenda palavra a palavra embaixo | 2D sobre papel cinza: texto cinético grande no alto escrevendo a fala, um elemento por vez no meio (polaroid, cartão, documento, gráfico), impacto no gancho |
 | Bom para | explicar um mecanismo com **uma analogia**; história com cenário "imagina" | notícia de política e justiça; lei, decisão, prazo e número; "o que muda agora" |
 | Narrador | 2ª pessoa ("você", "imagina") | 3ª pessoa, tom de jornal que explica |
-| Duração · ritmo | ~90 s · 2,75 palavras/s | 55–75 s · 3,2 palavras/s, sem pausa |
+| Duração · ritmo | ~90 s · ~215 palavras, 2,5 palavras/s | 55–75 s · 3,2 palavras/s, sem pausa |
 | Final | pergunta de duas escolhas na tela (CTA) | fim seco no último fato; a pergunta vai só na legenda do post |
 | Trilha | nenhuma (o app põe na postagem) | trilha-assinatura grave embaixo da voz, a mesma em todo vídeo |
 | Regras | [`roteiro.md`](roteiro.md), [`visual.md`](visual.md), [`fotos.md`](fotos.md), [`qa.md`](qa.md) | [`explicando-direito/roteiro.md`](explicando-direito/roteiro.md), [`explicando-direito/visual.md`](explicando-direito/visual.md), [`fotos.md`](fotos.md) |

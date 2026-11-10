@@ -39,7 +39,7 @@ Se o Samuel escrever o próprio hook ou pergunta, usar o texto dele como está (
 
 ## Etapa 3 — o roteiro
 
-- 90 s ≈ **240–250 palavras** na voz do Sandro Dutra (2,75 palavras/s depois do aperto de pausas; o ritmo máximo permitido é ×1,06).
+- 90 s ≈ **210–220 palavras** (meta: 215) na voz Narrador Analogias (~2,35 palavras/s na geração, ~2,5 depois do aperto; o ritmo máximo permitido é ×1,06). Com a voz anterior (Sandro Dutra, 2,75 palavras/s) eram 240–250. Não acelerar a geração (`channel.yaml → voz.velocidade` fica em 1,0): a 1,08 e a 1,15 a voz pulou e trocou frases inteiras (teste de 10/11/2026).
 - Estrutura que funcionou: gancho → cena "imagina" com mistério → revelação do nome → analogia no ponto difícil → regras simples → contexto histórico curto → hoje → projeção no passado (os dois lados) → "mas hoje não é aquele dia" → pergunta de duas escolhas.
 - Entregar em tabela: **# · narração · visual · texto na tela (zona)**, mais a tabela dos 5 critérios (onde está · atende?). A coluna **visual** diz `3D: <o que>` ou `foto: <id> (quadro | porta-retrato | cartão)` — foto onde quem assiste se perguntaria "como é isso?" (pessoa citada, o avião, o prédio, o documento), 3D para o resto ([`fotos.md`](fotos.md)).
 - Abaixo do roteiro, a **lista de fotos**: id · o que mostra · onde aparece · fonte/autor · link · licença.

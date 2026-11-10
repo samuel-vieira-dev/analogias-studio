@@ -14,6 +14,7 @@ voz:
   profile_id: 9353e363            # "Narrador Analogias" (voz do Ivan Lima, enviada por ele; desde 10/11/2026)
   idioma: Portuguese (Brazil)
   max_chunk_chars: 400            # corta o texto em frases para não pular trecho
+  velocidade: 1.0                 # speed do VoiceStudio (~2,35 palavras/s); a 1,08 e 1,15 a voz pula frases (10/11/2026)
   takes: 2                        # gera 2 e escolhe pela transcrição
   ritmo_max: 1.06                 # aceleração máxima permitida para caber na duração
   elevenlabs:                     # voz anterior (até 09/11/2026), para quando houver créditos de novo
@@ -53,7 +54,7 @@ estilos:
     nome: "Estilo Explicando Direito"
     docs: [docs/explicando-direito/roteiro.md, docs/explicando-direito/visual.md, docs/fotos.md, docs/explicando-direito/referencia.md]
     duracao_alvo_s: [55, 75]       # referência: 59, 59 e 72 s
-    palavras_por_s: 3.2            # referência: 3,11–3,26 (o v1 fala 2,6–2,75)
+    palavras_por_s: 3.2            # referência: 3,11–3,26 (o v1 fala ~2,5)
     voz:                           # mesma voz do canal, mais rápida: pausas quase zeradas + ritmo até x1,12
       takes: 2
       pausa_s: 0.06

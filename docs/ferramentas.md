@@ -21,7 +21,7 @@
 
 - Voz: **Narrador Analogias** — perfil `9353e363` do VoiceStudio (motor OmniVoice, clone da voz do Ivan Lima, enviada por ele), desde 10/11/2026. Configuração em `channel.yaml → voz`.
 - Chamada: `python3 tools/voice.py videos/<slug>` com o app aberto (API em `http://127.0.0.1:3900`, `POST /generate` com `profile_id` e `seed`). Um take por seed, texto cortado em frases (`max_chunk_chars` 400) para não pular trecho. Saída: `audio/takes/take-N.wav`.
-- Custo: nenhum (roda no Mac, GPU Apple). Pode gerar de novo à vontade. Leva ~3 min por take de 100 s; a fala sai a ~2,5 palavras/s antes do `tighten.py`.
+- Custo: nenhum (roda no Mac, GPU Apple). Pode gerar de novo à vontade. Leva ~3 min por take de 100 s; a fala sai a ~2,35 palavras/s antes do `tighten.py` (roteiro de 90 s: ~215 palavras, `docs/roteiro.md`). `--speed` acima de 1,0 cabe mais texto, mas a voz pula e troca frases: não usar.
 - Referência do perfil: até 20 s (o OmniVoice usa no máximo 20 s), começando e terminando em frase inteira, com o texto exato. Com o corte de 30 s que terminava no meio da frase ("…por trás da perfuração"), essa palavra vazava no começo de cada bloco ("pração", 10/11/2026). Hoje: 18,4 s, de "Uma equipe perfura…" a "…tão dura que quebra."; o original está em `~/Documents/Analogias/teste-vozes/narrador-analogias-referencia-original-30s.mp3`.
 - **Nunca** gerar antes do roteiro aprovado.
 - Voz anterior: Sandro Dutra no ElevenLabs (`channel.yaml → voz.elevenlabs`; conector `creative_generate_speech`, ~1.400 créditos por take de 90 s). Só se o Samuel pedir.
