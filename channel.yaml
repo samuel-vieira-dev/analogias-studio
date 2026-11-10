@@ -9,11 +9,16 @@ canal:
   legenda: tiktok                 # a legenda do post (tools/post.py) é sempre escrita para o TikTok
 
 voz:
-  provedor: elevenlabs            # conector ElevenLabs (creative_generate_speech)
-  voice_id: qPfM2laM0pRL4rrZtBGl  # Sandro Dutra - Articulated and Clear
-  modelo: eleven_v4
+  provedor: voicestudio           # app VoiceStudio no Mac (OmniVoice, local, sem créditos): tools/voice.py
+  url: http://127.0.0.1:3900      # API local do app (precisa estar aberto)
+  profile_id: 9353e363            # "Narrador Analogias" (voz do Ivan Lima, enviada por ele; desde 10/11/2026)
+  idioma: Portuguese (Brazil)
+  max_chunk_chars: 400            # corta o texto em frases para não pular trecho
   takes: 2                        # gera 2 e escolhe pela transcrição
   ritmo_max: 1.06                 # aceleração máxima permitida para caber na duração
+  elevenlabs:                     # voz anterior (até 09/11/2026), para quando houver créditos de novo
+    voice_id: qPfM2laM0pRL4rrZtBGl  # Sandro Dutra - Articulated and Clear
+    modelo: eleven_v4
 
 video:
   duracao_alvo_s: 90
@@ -50,8 +55,6 @@ estilos:
     duracao_alvo_s: [55, 75]       # referência: 59, 59 e 72 s
     palavras_por_s: 3.2            # referência: 3,11–3,26 (o v1 fala 2,6–2,75)
     voz:                           # mesma voz do canal, mais rápida: pausas quase zeradas + ritmo até x1,12
-      voice_id: qPfM2laM0pRL4rrZtBGl
-      modelo: eleven_v4
       takes: 2
       pausa_s: 0.06
       pausa_frase_s: 0.14

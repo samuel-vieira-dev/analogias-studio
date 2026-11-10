@@ -1,11 +1,11 @@
 ---
 name: reel-analogias
-description: Cria um Reel/TikTok/Short narrado do @analogias.br — pergunta o tema e o estilo de edição (Estilo Analogias v1, 3D com analogia; ou Estilo Explicando Direito, 2D com texto cinético), checa os fatos, propõe 5 hooks, aprova o roteiro, gera a voz no ElevenLabs, monta as cenas com fotos reais creditadas, roda QA automático + revisão cega e entrega MP4, capa e legenda do post; no fim pede o feedback do Samuel e melhora a skill sozinho.
+description: Cria um Reel/TikTok/Short narrado do @analogias.br — pergunta o tema e o estilo de edição (Estilo Analogias v1, 3D com analogia; ou Estilo Explicando Direito, 2D com texto cinético), checa os fatos, propõe 5 hooks, aprova o roteiro, gera a voz no VoiceStudio (local), monta as cenas com fotos reais creditadas, roda QA automático + revisão cega e entrega MP4, capa e legenda do post; no fim pede o feedback do Samuel e melhora a skill sozinho.
 ---
 
 # Reel narrado — @analogias.br
 
-Produz um vídeo vertical narrado (voz Sandro Dutra) num dos **estilos de edição** do canal ([`docs/estilos.md`](../../../docs/estilos.md)):
+Produz um vídeo vertical narrado (voz Narrador Analogias) num dos **estilos de edição** do canal ([`docs/estilos.md`](../../../docs/estilos.md)):
 
 - **Estilo Analogias v1** (`analogias-v1`): ~90 s, cenas 3D realistas com fotos reais onde elas ajudam a entender, uma analogia no ponto difícil, legendas palavra a palavra, pergunta final na tela.
 - **Estilo Explicando Direito** (`explicando-direito`): 55–75 s, 2D sobre papel cinza, texto cinético que escreve a fala, polaroids, cartões, documentos e gráficos, impacto no gancho, trilha grave constante, fim seco.
@@ -76,14 +76,14 @@ Seguir `docs/roteiro.md`: gancho escolhido nos 3 primeiros segundos; história e
 
 Mostrar o roteiro **completo** e esperar "aprovado" (ou ajustes). **Não gerar voz antes disso.** Depois do ok: salvar `brief.yaml`, `roteiro.md` e `narracao.txt` (texto exato para a voz: números por extenso, "pra", sem símbolos). Baixar as fotos aprovadas para `videos/<slug>/midia/<id>.jpg` (arquivo original da página da fonte, maior resolução) e registrar cada uma em `video.json → media` (`file`, `credit`, `url`, `focus`).
 
-## 6. Narração (ElevenLabs)
+## 6. Narração (VoiceStudio)
 
-`creative_generate_speech` com `prompt` = `narracao.txt`, `voice_id` `qPfM2laM0pRL4rrZtBGl`, `model_id` `eleven_v4`, takes padrão (2). Acompanhar com `creative_get_flow_run_status` até terminar e baixar os dois takes para `audio/takes/`. Nunca chamar de novo para "tentar outra vez" (cobra de novo); se falhar, avisar o Samuel.
+Com o app **VoiceStudio** aberto no Mac: `python3 tools/voice.py videos/<slug>` gera os takes (2, `channel.yaml → voz.takes`) na voz **Narrador Analogias** e salva em `audio/takes/take-N.wav`. Roda local e não gasta crédito; leva alguns minutos por take. Se o app não responder, o script avisa: pedir ao Samuel para abrir o VoiceStudio. A voz do Sandro Dutra (ElevenLabs) fica em `channel.yaml → voz.elevenlabs`, só se o Samuel pedir.
 
 ## 7. Take, ritmo e tempos
 
 ```bash
-python3 tools/transcribe.py videos/<slug>/audio/takes/*.mp3 --ref videos/<slug>/narracao.txt   # nota de cada take → ESCOLHIDO
+python3 tools/transcribe.py videos/<slug>/audio/takes/* --ref videos/<slug>/narracao.txt   # nota de cada take → ESCOLHIDO
 python3 tools/tighten.py <take escolhido> videos/<slug>/audio/narration.wav --target 88
 python3 tools/transcribe.py videos/<slug>/audio/narration.wav --out videos/<slug>/audio/words.json --ref videos/<slug>/narracao.txt
 ```

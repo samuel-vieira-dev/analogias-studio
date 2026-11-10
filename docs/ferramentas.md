@@ -6,7 +6,7 @@
 | --- | --- | --- | --- |
 | 1 | Pesquisa e checagem | busca na web (WebSearch/WebFetch) | `fatos.md` |
 | 2 | Hooks, pergunta, roteiro, aprovação | Claude + `docs/roteiro.md` | `brief.yaml`, `roteiro.md`, `narracao.txt` |
-| 3 | Narração (ou trilha, no vídeo sem narração) | conector **ElevenLabs** (voz; ElevenLabs Music) | `audio/takes/*.mp3` (`audio/music.mp3`) |
+| 3 | Narração (ou trilha, no vídeo sem narração) | **VoiceStudio** local (voz, `tools/voice.py`); conector ElevenLabs Music (trilha) | `audio/takes/take-N.wav` (`audio/music.mp3`) |
 | 4 | Escolha do take | `tools/transcribe.py` (faster-whisper, local) | take escolhido |
 | 5 | Aperto de pausas e ritmo | `tools/tighten.py` | `audio/narration.wav` |
 | 6 | Tempo de cada palavra | `tools/transcribe.py --out` | `audio/words.json` |
@@ -17,13 +17,14 @@
 | 11 | Render | `tools/render.sh` (HyperFrames 0.8.206) | `out/render.mp4` |
 | 12 | Arquivo final e post | `tools/finalize.py` (+ `tools/post.py`, `tools/capa.cjs`) | `out/<slug>.mp4`, `out/<slug>-capa.jpg`, `out/<slug>-post.md` → Filmes/reels |
 
-## ElevenLabs (conector do claude.ai)
+## Voz: VoiceStudio (app local, grátis)
 
-- Voz: **Sandro Dutra** — `qPfM2laM0pRL4rrZtBGl` · modelo `eleven_v4` (definidos em `channel.yaml`).
-- Chamada: `creative_generate_speech` com `prompt` = conteúdo de `narracao.txt`, `voice_id`, `model_id`, `generations_count` padrão (2 takes). Depois, `creative_get_flow_run_status` com o `flow_id` e os `session_ids` até `all_completed`; baixar o áudio de cada take para `audio/takes/`.
-- Custo: ~1.400 créditos por take de 90 s (≈2.800 pelos dois). `estimate_only: true` mostra o preço antes.
-- **Nunca** repetir a chamada para "tentar de novo": cada chamada cobra outra geração.
+- Voz: **Narrador Analogias** — perfil `9353e363` do VoiceStudio (motor OmniVoice, clone da voz do Ivan Lima, enviada por ele), desde 10/11/2026. Configuração em `channel.yaml → voz`.
+- Chamada: `python3 tools/voice.py videos/<slug>` com o app aberto (API em `http://127.0.0.1:3900`, `POST /generate` com `profile_id` e `seed`). Um take por seed, texto cortado em frases (`max_chunk_chars` 400) para não pular trecho. Saída: `audio/takes/take-N.wav`.
+- Custo: nenhum (roda no Mac, GPU Apple). Pode gerar de novo à vontade. Leva ~3 min por take de 100 s; a fala sai a ~2,5 palavras/s antes do `tighten.py`.
+- Referência do perfil: até 20 s (o OmniVoice usa no máximo 20 s), começando e terminando em frase inteira, com o texto exato. Com o corte de 30 s que terminava no meio da frase ("…por trás da perfuração"), essa palavra vazava no começo de cada bloco ("pração", 10/11/2026). Hoje: 18,4 s, de "Uma equipe perfura…" a "…tão dura que quebra."; o original está em `~/Documents/Analogias/teste-vozes/narrador-analogias-referencia-original-30s.mp3`.
 - **Nunca** gerar antes do roteiro aprovado.
+- Voz anterior: Sandro Dutra no ElevenLabs (`channel.yaml → voz.elevenlabs`; conector `creative_generate_speech`, ~1.400 créditos por take de 90 s). Só se o Samuel pedir.
 
 ## Áudio local (grátis)
 

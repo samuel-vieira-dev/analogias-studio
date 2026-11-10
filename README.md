@@ -8,7 +8,7 @@ Estilos ([`docs/estilos.md`](docs/estilos.md)):
 - **Estilo Explicando Direito** — 2D sobre papel, texto cinético que escreve a fala, polaroids, cartões, documentos e gráficos, ~60 s ([referência e regras](docs/explicando-direito/)).
 
 ```
-tema + estilo ─► pesquisa + fatos ─► 5 hooks / 3 perguntas ─► roteiro ─► APROVAÇÃO ─► voz (ElevenLabs, 2 takes)
+tema + estilo ─► pesquisa + fatos ─► 5 hooks / 3 perguntas ─► roteiro ─► APROVAÇÃO ─► voz (VoiceStudio, 2 takes)
      ─► melhor take + aperto ─► tempos das palavras ─► cenas (3D + textos por zona | 2D: texto + visuais)
      ─► mix ─► build ─► QA (bloqueia) + prévia ─► render ─► MP4 + capa + legenda do post em Filmes/reels
 ```
@@ -27,7 +27,7 @@ Primeira vez numa máquina: `bash tools/setup.sh`.
 - **Revisão cega**: a prévia tira um quadro por plano e recorta cada objeto numa folha numerada; um subagente que não conhece o roteiro diz o que vê (foi assim que o telhado de lado do Lula teria sido pego).
 - **Fotos reais** ([`docs/fotos.md`](docs/fotos.md)): quadro de investigação, porta-retrato no palco e cartão 2D, com zoom lento e crédito obrigatório na tela.
 - **Post pronto** ([`docs/ferramentas.md`](docs/ferramentas.md#post-capa-e-legenda-local-grátis)): o `finalize` entrega junto do MP4 a capa (`<slug>-capa.jpg`: quadro do gancho com o título na faixa de cima, legível no recorte 3:4 do perfil, com a foto da pessoa quando houver) e a legenda (`<slug>-post.md`: gancho, pergunta, chamada para comentar, hashtags, fontes que entraram na fala e crédito das fotos).
-- **Regras de roteiro** do canal ([`docs/roteiro.md`](docs/roteiro.md)) e **ferramentas** ([`docs/ferramentas.md`](docs/ferramentas.md)): ElevenLabs (Sandro Dutra), faster-whisper, HyperFrames 0.8.206, ffmpeg.
+- **Regras de roteiro** do canal ([`docs/roteiro.md`](docs/roteiro.md)) e **ferramentas** ([`docs/ferramentas.md`](docs/ferramentas.md)): VoiceStudio (Narrador Analogias), faster-whisper, HyperFrames 0.8.206, ffmpeg.
 
 ## Estrutura
 
@@ -47,7 +47,7 @@ Exemplo completo: [`videos/2026-10-31-banco-master-fgc/`](videos/2026-10-31-banc
 ## Comandos
 
 ```bash
-python3 tools/transcribe.py videos/<slug>/audio/takes/*.mp3 --ref videos/<slug>/narracao.txt
+python3 tools/transcribe.py videos/<slug>/audio/takes/* --ref videos/<slug>/narracao.txt
 python3 tools/tighten.py <take> videos/<slug>/audio/narration.wav --target 88
 python3 tools/transcribe.py videos/<slug>/audio/narration.wav --out videos/<slug>/audio/words.json
 python3 tools/mix.py videos/<slug>

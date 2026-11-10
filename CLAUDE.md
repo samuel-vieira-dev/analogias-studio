@@ -17,7 +17,7 @@ Kit de produção dos Reels narrados do @analogias.br (Samuel Vieira). Para cria
 ## Regras de trabalho
 
 - Todo vídeo novo começa perguntando ao Samuel o tema e o estilo de edição (`SKILL.md` → etapa 0); as regras de cada estilo valem só para ele.
-- Nunca gerar narração no ElevenLabs antes do roteiro aprovado pelo Samuel.
+- Nunca gerar narração (VoiceStudio, `tools/voice.py`) antes do roteiro aprovado pelo Samuel.
 - Nunca renderizar sem `node tools/qa.cjs` limpo e atual (`tools/render.sh` confere) e sem a revisão cega da prévia (`docs/qa.md`).
 - Foto real só com crédito na tela; nunca imagem de IA ou editada de pessoa ou fato real (`docs/fotos.md`).
 - Não editar `videos/*/build/` (é gerado): editar `scenes.js`, `video.json`, `engine/` ou `tools/build.py`.
