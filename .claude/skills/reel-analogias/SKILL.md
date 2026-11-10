@@ -70,7 +70,7 @@ Se ele escrever o próprio texto, usar como está (só apontar se ferir uma regr
 
 ## 4. Roteiro
 
-Seguir `docs/roteiro.md`: gancho escolhido nos 3 primeiros segundos; história em segunda pessoa que gera curiosidade; projeção cenográfica; clareza de criança; termina na pergunta escolhida. ~240–250 palavras para 90 s. Entregar em tabela **# · narração · visual · texto na tela (zona)** + tabela dos 5 critérios (onde está · atende?) + os fatos usados + a **lista de fotos**. Na coluna visual, para cada plano: `3D: ...` ou `foto: <id> (quadro | porta-retrato | cartão)`. Critério: qual formato faz quem assiste entender o quadro mais rápido? Foto para pessoa citada (primeira menção), objeto/lugar/evento real específico e prova; 3D para mecanismo, analogia, número e cenário "imagina".
+Seguir `docs/roteiro.md`: gancho escolhido nos 3 primeiros segundos; história em segunda pessoa que gera curiosidade; projeção cenográfica; clareza de criança; termina na pergunta escolhida. ~215 palavras para 90 s na voz Narrador Analogias (`docs/roteiro.md`). Entregar em tabela **# · narração · visual · texto na tela (zona)** + tabela dos 5 critérios (onde está · atende?) + os fatos usados + a **lista de fotos**. Na coluna visual, para cada plano: `3D: ...` ou `foto: <id> (quadro | porta-retrato | cartão)`. Critério: qual formato faz quem assiste entender o quadro mais rápido? Foto para pessoa citada (primeira menção), objeto/lugar/evento real específico e prova; 3D para mecanismo, analogia, número e cenário "imagina".
 
 ## 5. Aprovação — portão obrigatório
 

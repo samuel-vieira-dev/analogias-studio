@@ -1,0 +1,16 @@
+# Input do vídeo. Só isto vem do Samuel; o resto (área segura, estilo, voz, regras) vem do kit.
+slug: 2026-11-06-split-payment
+estilo: analogias-v1
+tema: "Como vai funcionar o split payment da reforma tributária: o banco separa o imposto (CBS e IBS) na hora do pagamento entre empresas; testes, previsão para 2027 e os dois lados (tom neutro, fontes na tela)"
+referencias_visuais: []
+
+hook:
+  origem: 6
+  texto: "Daqui a alguns meses, sua venda não vai cair inteira na conta."
+
+pergunta_final:
+  origem: 1
+  texto: "O split é bom, porque pega quem sonega... ou ruim, porque aperta o caixa de quem paga certo?"
+
+duracao_alvo_s: 90
+aprovado_em: 2026-11-07

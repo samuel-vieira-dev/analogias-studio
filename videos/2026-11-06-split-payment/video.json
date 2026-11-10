@@ -1,0 +1,535 @@
+{
+  "_doc": "Tempos em segundos do áudio final (audio/words.json, corrigido para o texto aprovado). Overlays nunca têm coordenadas: só zona (config/layout.json). Analogia única: o contracheque (o desconto sai antes de cair na conta). Nenhum valor em reais inventado; a nota fiscal e o painel não têm números. Voz: Narrador Analogias (VoiceStudio), take-3 (gancho) + take-4 (resto), 10/11/2026.",
+  "slug": "2026-11-06-split-payment",
+  "estilo": "analogias-v1",
+  "duration": 90.0,
+  "audio": {
+    "narration": "audio/narration.wav",
+    "words": "audio/words.json"
+  },
+  "captions": {
+    "fix": {
+      "para": "pra",
+      "Para": "Pra"
+    }
+  },
+  "media": {},
+  "scenes": [
+    {
+      "id": "gancho",
+      "from": 0,
+      "to": 4.2
+    },
+    {
+      "id": "caminho",
+      "from": 4.2,
+      "to": 15.62
+    },
+    {
+      "id": "banco",
+      "from": 15.62,
+      "to": 25.45
+    },
+    {
+      "id": "salario",
+      "from": 25.45,
+      "to": 33.35
+    },
+    {
+      "id": "nota",
+      "from": 33.35,
+      "to": 44.1
+    },
+    {
+      "id": "padaria",
+      "from": 44.1,
+      "to": 52.25
+    },
+    {
+      "id": "datas",
+      "from": 52.25,
+      "to": 67.85
+    },
+    {
+      "id": "lados",
+      "from": 67.85,
+      "to": 80.3
+    },
+    {
+      "id": "pergunta",
+      "from": 80.3,
+      "to": 90.0
+    }
+  ],
+  "cuts": [
+    4.2,
+    15.62,
+    25.45,
+    33.35,
+    44.1,
+    52.25,
+    67.85,
+    72.45,
+    80.3
+  ],
+  "overlays": [
+    {
+      "id": "ov-01",
+      "kind": "title",
+      "from": 0.15,
+      "to": 4.12,
+      "text": "SUA VENDA NÃO VAI\nCAIR INTEIRA"
+    },
+    {
+      "id": "ov-02",
+      "kind": "title",
+      "from": 4.35,
+      "to": 7.95,
+      "text": "IMAGINA: VOCÊ\nVENDE PRA UMA LOJA"
+    },
+    {
+      "id": "ov-03",
+      "kind": "chip",
+      "from": 8.1,
+      "to": 11.1,
+      "text": "A LOJA PAGOU NO PIX",
+      "style": "dark"
+    },
+    {
+      "id": "ov-04",
+      "kind": "title",
+      "from": 11.25,
+      "to": 13.4,
+      "text": "MAS CAIU MENOS\nNA SUA CONTA"
+    },
+    {
+      "id": "ov-05",
+      "kind": "title",
+      "from": 13.55,
+      "to": 15.55,
+      "text": "CADÊ O RESTO?"
+    },
+    {
+      "id": "ov-06",
+      "kind": "title",
+      "from": 15.8,
+      "to": 20.1,
+      "text": "SPLIT PAYMENT =\nPAGAMENTO DIVIDIDO"
+    },
+    {
+      "id": "ov-07",
+      "kind": "chip",
+      "from": 20.25,
+      "to": 24.1,
+      "text": "O BANCO SEPARA NA HORA",
+      "style": "orange"
+    },
+    {
+      "id": "ov-08",
+      "kind": "chip",
+      "from": 24.25,
+      "to": 25.4,
+      "text": "VOCÊ FICA COM O RESTO",
+      "style": "green"
+    },
+    {
+      "id": "ov-09",
+      "kind": "source",
+      "from": 15.8,
+      "to": 25.4,
+      "text": "Fonte: LC 214/2025, arts. 31 a 35"
+    },
+    {
+      "id": "ov-10",
+      "kind": "title",
+      "from": 25.6,
+      "to": 30.8,
+      "text": "IGUAL AO SALÁRIO:\nO DESCONTO SAI ANTES"
+    },
+    {
+      "id": "ov-11",
+      "kind": "chip",
+      "from": 30.95,
+      "to": 33.3,
+      "text": "AGORA: VENDA ENTRE EMPRESAS",
+      "style": "orange"
+    },
+    {
+      "id": "ov-12",
+      "kind": "title",
+      "from": 33.5,
+      "to": 37.85,
+      "text": "A NOTA FISCAL\nVAI JUNTO"
+    },
+    {
+      "id": "ov-13",
+      "kind": "chip",
+      "from": 37.95,
+      "to": 39.75,
+      "text": "O BANCO CONSULTA O GOVERNO",
+      "style": "dark"
+    },
+    {
+      "id": "ov-14",
+      "kind": "chip",
+      "from": 39.8,
+      "to": 40.65,
+      "text": "SEPARA SÓ O QUE FALTA",
+      "style": "orange"
+    },
+    {
+      "id": "ov-15",
+      "kind": "stat",
+      "from": 40.8,
+      "to": 44.05,
+      "big": "3 DIAS ÚTEIS",
+      "label": "PRA DEVOLVER O QUE SAIU A MAIS"
+    },
+    {
+      "id": "ov-16",
+      "kind": "source",
+      "from": 33.5,
+      "to": 44.05,
+      "text": "Fonte: LC 214/2025, art. 32"
+    },
+    {
+      "id": "ov-17",
+      "kind": "title",
+      "from": 44.25,
+      "to": 46.45,
+      "text": "E VOCÊ, NO PIX\nDA PADARIA?"
+    },
+    {
+      "id": "ov-18",
+      "kind": "title",
+      "from": 46.55,
+      "to": 48.3,
+      "text": "NO COMEÇO,\nNADA MUDA"
+    },
+    {
+      "id": "ov-19",
+      "kind": "chip",
+      "from": 48.4,
+      "to": 49.8,
+      "text": "MESMO PREÇO",
+      "style": "dark"
+    },
+    {
+      "id": "ov-20",
+      "kind": "chip",
+      "from": 49.85,
+      "to": 51.15,
+      "text": "NÃO É IMPOSTO NOVO",
+      "style": "dark"
+    },
+    {
+      "id": "ov-21",
+      "kind": "chip",
+      "from": 51.2,
+      "to": 52.2,
+      "text": "SEM TAXA DO PIX",
+      "style": "green"
+    },
+    {
+      "id": "ov-22",
+      "kind": "source",
+      "from": 46.55,
+      "to": 52.2,
+      "text": "Fonte: Agência Brasil, 30/04/2026"
+    },
+    {
+      "id": "ov-23",
+      "kind": "chip",
+      "from": 52.4,
+      "to": 55.6,
+      "text": "TESTES DESDE 15/10/2026",
+      "style": "dark"
+    },
+    {
+      "id": "ov-24",
+      "kind": "title",
+      "from": 55.75,
+      "to": 59.7,
+      "text": "PREVISÃO: 2º\nSEMESTRE DE 2027"
+    },
+    {
+      "id": "ov-25",
+      "kind": "chip",
+      "from": 59.8,
+      "to": 63.0,
+      "text": "OPCIONAL · PIX E BOLETO",
+      "style": "orange"
+    },
+    {
+      "id": "ov-26",
+      "kind": "title",
+      "from": 63.1,
+      "to": 64.2,
+      "text": "OBRIGATÓRIO?"
+    },
+    {
+      "id": "ov-27",
+      "kind": "stat",
+      "from": 64.3,
+      "to": 67.8,
+      "big": "2028",
+      "label": "META, AINDA SEM REGRA"
+    },
+    {
+      "id": "ov-28",
+      "kind": "source",
+      "from": 52.4,
+      "to": 67.8,
+      "text": "Fonte: Receita Federal; Comsefaz, 2026"
+    },
+    {
+      "id": "ov-29",
+      "kind": "title",
+      "from": 68.0,
+      "to": 72.35,
+      "text": "DE UM LADO: MAIS\nDIFÍCIL SONEGAR"
+    },
+    {
+      "id": "ov-30",
+      "kind": "source",
+      "from": 68.0,
+      "to": 72.35,
+      "text": "Fonte: Serpro"
+    },
+    {
+      "id": "ov-31",
+      "kind": "title",
+      "from": 72.6,
+      "to": 77.75,
+      "text": "DO OUTRO: O IMPOSTO\nFICA NO CAIXA ATÉ LÁ"
+    },
+    {
+      "id": "ov-32",
+      "kind": "chip",
+      "from": 77.9,
+      "to": 80.2,
+      "text": "COM O SPLIT: SAI NA HORA",
+      "style": "red"
+    },
+    {
+      "id": "ov-33",
+      "kind": "source",
+      "from": 72.6,
+      "to": 80.2,
+      "text": "Fonte: MP 2.158-35/2001, art. 18"
+    },
+    {
+      "id": "ov-34",
+      "kind": "question",
+      "from": 80.5,
+      "to": 89.95,
+      "text": "BOM: pega quem sonega\nRUIM: aperta o caixa",
+      "sub": "E VOCÊ, O QUE ACHA?"
+    },
+    {
+      "id": "ov-35",
+      "kind": "cta",
+      "from": 88.1,
+      "to": 90.0,
+      "html": "Comenta: <b>BOM</b> ou <b>RUIM</b>"
+    }
+  ],
+  "sfx": [
+    [
+      0.05,
+      "whoosh-cinematic.mp3",
+      -18
+    ],
+    [
+      2.75,
+      "whoosh-short.mp3",
+      -21
+    ],
+    [
+      3.3,
+      "impact-bass-2.mp3",
+      -19
+    ],
+    [
+      4.2,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      5.9,
+      "click-soft.mp3",
+      -20
+    ],
+    [
+      8.35,
+      "ping.mp3",
+      -23
+    ],
+    [
+      14.6,
+      "impact-bass-1.mp3",
+      -21
+    ],
+    [
+      15.62,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      20.4,
+      "click.mp3",
+      -19
+    ],
+    [
+      22.4,
+      "ping.mp3",
+      -22
+    ],
+    [
+      24.3,
+      "pop.mp3",
+      -24
+    ],
+    [
+      25.45,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      26.8,
+      "pop.mp3",
+      -22
+    ],
+    [
+      27.9,
+      "pop.mp3",
+      -22
+    ],
+    [
+      29.6,
+      "whoosh-short.mp3",
+      -22
+    ],
+    [
+      30.95,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      33.35,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      38.2,
+      "ping.mp3",
+      -22
+    ],
+    [
+      39.3,
+      "pop.mp3",
+      -23
+    ],
+    [
+      41.0,
+      "pop.mp3",
+      -23
+    ],
+    [
+      43.4,
+      "ping.mp3",
+      -22
+    ],
+    [
+      44.1,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      45.9,
+      "click-soft.mp3",
+      -20
+    ],
+    [
+      48.45,
+      "pop.mp3",
+      -23
+    ],
+    [
+      51.3,
+      "ping.mp3",
+      -22
+    ],
+    [
+      52.25,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      52.5,
+      "pop.mp3",
+      -23
+    ],
+    [
+      56.0,
+      "pop.mp3",
+      -23
+    ],
+    [
+      63.0,
+      "impact-bass-1.mp3",
+      -22
+    ],
+    [
+      67.85,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      69.1,
+      "impact-bass-2.mp3",
+      -19
+    ],
+    [
+      72.45,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      76.3,
+      "click.mp3",
+      -20
+    ],
+    [
+      79.3,
+      "whoosh-short.mp3",
+      -20
+    ],
+    [
+      80.3,
+      "whoosh.mp3",
+      -18
+    ],
+    [
+      82.6,
+      "pop.mp3",
+      -24
+    ],
+    [
+      84.6,
+      "pop.mp3",
+      -24
+    ]
+  ],
+  "post": {
+    "title": "SUA VENDA\nNÃO CAI\nINTEIRA",
+    "descricao": "Split payment da reforma tributária: no pagamento entre empresas, o banco separa o imposto na hora e manda pro governo. Testes já começaram; previsão de opcional no segundo semestre de 2027, pelo Pix e pelo boleto; obrigatório é meta pra 2028, ainda sem regra.",
+    "hashtags": [
+      "#splitpayment",
+      "#reformatributaria",
+      "#impostos",
+      "#pix",
+      "#empreendedor"
+    ]
+  }
+}
